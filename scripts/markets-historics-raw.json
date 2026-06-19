@@ -1,0 +1,1188 @@
+{
+  "summary": "Research prediction-market AI forecasts (Polymarket/Metaculus/etc) + historical benchmark backfill for the Robots app trajectory charts",
+  "agentCount": 12,
+  "logs": [],
+  "result": {
+    "markets": [
+      {
+        "question": "Which company has the best AI model end of 2026? (resolves on Chatbot Arena / lmarena.ai overall rank)",
+        "platform": "Polymarket",
+        "forecast": "Anthropic 64% (Google 15%, OpenAI 10%, xAI 8%, Z.ai 2%, all others ≤1%)",
+        "category": "ranking",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-12-31",
+        "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
+      },
+      {
+        "question": "Which company has the best AI model end of June? (Chatbot Arena overall rank)",
+        "platform": "Polymarket",
+        "forecast": "Anthropic 94.6% (Google 3.8%, OpenAI 1.9%, rest <1%)",
+        "category": "ranking",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-06-30",
+        "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-june"
+      },
+      {
+        "question": "Which company has the best AI model end of July? (Chatbot Arena overall rank)",
+        "platform": "Polymarket",
+        "forecast": "Anthropic 83% (Google 14%); ~$420K volume as of Jun 18",
+        "category": "ranking",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-07-31",
+        "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
+      },
+      {
+        "question": "Which companies will have a #1 AI model by December 31? (multi-select, Chatbot Arena rank, style control off — Anthropic NOT listed as an option, so these are the field 'who unseats Anthropic' bets)",
+        "platform": "Polymarket",
+        "forecast": "Google 45%, OpenAI 32%, Meta 14%, xAI 14%, ByteDance/DeepSeek/Amazon/Microsoft ~10%, others ~7-9%",
+        "category": "ranking",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-12-31",
+        "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
+      },
+      {
+        "question": "GPT-6 released by…? (publicly accessible, explicitly named GPT-6 / successor to GPT-5; GPT-5.5 excluded)",
+        "platform": "Polymarket",
+        "forecast": "By Dec 31 2026: 82% YES; by Sep 30 2026: 52%; by Jul 31: 7%; by Jun 30: 2%. ~$369K volume",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "resolveDate": "2026-12-31",
+        "url": "https://polymarket.com/event/gpt-6-released-by"
+      },
+      {
+        "question": "GPT-5.6 released by…? (publicly accessible; GPT-6/new flagship generation does NOT count)",
+        "platform": "Polymarket",
+        "forecast": "By Jul 31: 97% YES; by Jun 30: 86%; by Jun 23: 4%. ~$1.03M volume",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "resolveDate": "2026-07-31",
+        "url": "https://polymarket.com/event/gpt-5pt6-released-by"
+      },
+      {
+        "question": "Gemini 4.0 released by June 30, 2026? (Gemini 4.0 Flash made publicly available)",
+        "platform": "Polymarket",
+        "forecast": "~10% YES / 90% NO. ~$84K volume",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "resolveDate": "2026-06-30",
+        "url": "https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026"
+      },
+      {
+        "question": "Claude 5 released by…? (publicly accessible, explicitly named Claude 5 / successor to Claude 4; Claude 4.5/4.x does not count)",
+        "platform": "Polymarket",
+        "forecast": "Multi-date market; near-term (Jun/Sep 2026) dates trading low-probability NO — no Claude 5 yet as of mid-Jun; full per-date odds not cleanly returned. ~$4.49M volume",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "resolveDate": "2026-09-30",
+        "url": "https://polymarket.com/event/claude-5-released-by"
+      },
+      {
+        "question": "AI model scores ≥90% on FrontierMath Benchmark before 2027? (resolution source: Epoch AI)",
+        "platform": "Polymarket",
+        "forecast": "82% YES / 18% NO. ~$96K volume",
+        "impliedValue": 90,
+        "category": "benchmark",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-12-31",
+        "url": "https://polymarket.com/event/ai-model-scores-90-on-frontiermath-benchmark-before-2027"
+      },
+      {
+        "question": "OpenAI GPT score on FrontierMath Benchmark by June 30? (Epoch AI leaderboard, Tiers 1-3) — tiered ≥45/50/60/70%",
+        "platform": "Polymarket",
+        "forecast": "≥45%, ≥50%, ≥60%, ≥70% all at ~100% YES (GPT-5.5 already ~52%); resolved Yes. ~$43K volume",
+        "impliedValue": 70,
+        "category": "benchmark",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-06-30",
+        "url": "https://polymarket.com/event/openai-gpt-score-on-frontiermath-benchmark-by-june-30"
+      },
+      {
+        "question": "Will any AI model reach ___ Overall Arena Elo Score by June 30? (Chatbot Arena, style control off)",
+        "platform": "Polymarket",
+        "forecast": "≥1510: 13% YES; ≥1520: 3%; ≥1530: 1% (leader ~1504-1510 in mid-June). ~$35K volume",
+        "impliedValue": 1510,
+        "category": "capability",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-06-30",
+        "url": "https://polymarket.com/event/will-any-ai-model-reach-overall-arena-score-by-june-30"
+      },
+      {
+        "question": "OpenAI announces it has achieved AGI before 2027?",
+        "platform": "Polymarket",
+        "forecast": "13% YES / 87% NO (spiked to ~23% after Jensen Huang's late-April AGI claim, since cooled). ~$80K volume",
+        "category": "capability",
+        "relevantBenchmark": "agi",
+        "resolveDate": "2026-12-31",
+        "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027"
+      },
+      {
+        "question": "Next Google Gemini model: Arena debut at ≥1480/1490/1500/1510/1520 Elo within 7 days of release? (Chatbot Arena overall)",
+        "platform": "Polymarket",
+        "forecast": "Active, ~$207K volume; per-threshold YES odds not cleanly returned by fetch (each tier conditional on an as-yet-unreleased next Gemini). Reported as exists-but-unconfirmed-numbers",
+        "impliedValue": 1500,
+        "category": "capability",
+        "relevantBenchmark": "other",
+        "resolveDate": "2026-12-31",
+        "url": "https://polymarket.com/event/next-google-gemini-model-arena-debut"
+      },
+      {
+        "question": "Highest GPQA Diamond score by any LLM in 2026 (and 2027)",
+        "platform": "Metaculus",
+        "forecast": "2026 community median 99.1%; 2027 median ~99.1% (2024 resolved 87.7, 2025 estimate 97.6). 30 forecasters. Near-saturation.",
+        "impliedValue": 99.1,
+        "relevantBenchmark": "other",
+        "category": "benchmark",
+        "resolveDate": "2026-12-31 (2026 subquestion); 2027-12-31 (2027 subquestion)",
+        "url": "https://www.metaculus.com/questions/22056/highest-gpqa-diamond-score-2024-to-2027/"
+      },
+      {
+        "question": "Top ARC-AGI-2 score achieved by any AI in 2026",
+        "platform": "Metaculus",
+        "forecast": "Community median 93.4 (50% CI 89.3–96.7). 737 forecasters. Note: aggressive vs. ~sub-20% real ARC-AGI-2 scores through 2025 — verify resolution scale before relying on it.",
+        "impliedValue": 93.4,
+        "relevantBenchmark": "agi",
+        "category": "benchmark",
+        "resolveDate": "2026-12-31 (closes end of 2026)",
+        "url": "https://www.metaculus.com/questions/41131/top-arc-agi-2-score-in-2026/"
+      },
+      {
+        "question": "Highest SWE-bench Verified score by any AI model as of April 30, 2026",
+        "platform": "Metaculus",
+        "forecast": "RESOLVED at 83% (community had predicted ~83% median, IQR ~82–88). This is the leaderboard/officially-verified max, which runs below vendor self-reported figures.",
+        "impliedValue": 83,
+        "relevantBenchmark": "swe",
+        "category": "benchmark",
+        "resolveDate": "2026-04-30 (resolved; question closed Mar 31 2026)",
+        "url": "https://www.metaculus.com/c/VAISI/42280/highest-swe-bench-verified-score-by-may-2026/"
+      },
+      {
+        "question": "When will AI models hit 90% on SWE-bench Verified?",
+        "platform": "Metaculus",
+        "forecast": "RESOLVED 07 Apr 2026 — a model crossed 90% on SWE-bench Verified in early April 2026. (In mild tension with the 83% leaderboard-verified resolution above; different resolution sources.)",
+        "impliedValue": 90,
+        "relevantBenchmark": "swe",
+        "category": "benchmark",
+        "resolveDate": "2026-04-07 (resolved)",
+        "url": "https://www.metaculus.com/c/arb/28610/when-will-ais-hit-90-on-swe-bench-verified/"
+      },
+      {
+        "question": "When will weakly general AI be publicly known? (most-cited near-term Metaculus AGI question)",
+        "platform": "Metaculus",
+        "forecast": "Community median 25 Jun 2028 (IQR 11 Nov 2026 – Mar 2032).",
+        "relevantBenchmark": "agi",
+        "category": "capability",
+        "resolveDate": "On resolution (date-of-event question)",
+        "url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/"
+      },
+      {
+        "question": "When will the first general AI system be devised, tested, and publicly announced? (strong AGI)",
+        "platform": "Metaculus",
+        "forecast": "Community median Mar 2033. 1.9k forecasters, 654 comments — Metaculus's flagship strong-AGI question.",
+        "relevantBenchmark": "agi",
+        "category": "capability",
+        "resolveDate": "On resolution (date-of-event question)",
+        "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
+      },
+      {
+        "question": "AGI by 2029 / by 2033 (full four-condition Metaculus definition incl. robotics)",
+        "platform": "Metaculus",
+        "forecast": "~25% by 2029, ~50% by 2033 (Feb 2026 update). Stripping the robotics requirement informally pulls the mass forward ~2–3 years (≈2027–2031).",
+        "relevantBenchmark": "agi",
+        "category": "capability",
+        "resolveDate": "2029 / 2033 thresholds",
+        "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
+      },
+      {
+        "question": "Will the ARC-AGI grand prize be claimed by end of 2026?",
+        "platform": "Metaculus",
+        "forecast": "~49% (Metaculus-aggregated, early 2026).",
+        "relevantBenchmark": "agi",
+        "category": "benchmark",
+        "resolveDate": "2026-12-31",
+        "url": "https://www.metaculus.com/questions/41131/top-arc-agi-2-score-in-2026/"
+      },
+      {
+        "question": "Will AI achieve >80% on FrontierMath by January 2027?",
+        "platform": "Metaculus",
+        "forecast": "~44%.",
+        "impliedValue": 80,
+        "relevantBenchmark": "other",
+        "category": "benchmark",
+        "resolveDate": "2027-01-31",
+        "url": "https://www.metaculus.com/questions/"
+      },
+      {
+        "question": "Will an AI system beat human pros in a forecasting tournament by 2030?",
+        "platform": "Metaculus",
+        "forecast": "98% chance. 185 forecasters.",
+        "relevantBenchmark": "capability",
+        "category": "capability",
+        "resolveDate": "2030",
+        "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
+      },
+      {
+        "question": "When will GPT-5.6 (next OpenAI frontier model) be publicly released?",
+        "platform": "Polymarket",
+        "forecast": "~87% by June 30 2026; ~96% by July 31 2026; ~83% implied for a June 22–28 window. ~$960k volume. (Metaculus/Manifold show ~97% by Sep 30 2026.) GPT-5.5 already shipped Apr 23 2026.",
+        "relevantBenchmark": "none",
+        "category": "release",
+        "resolveDate": "2026-06-30 / 2026-07-31 brackets",
+        "url": "https://polymarket.com/event/gpt-5pt6-released-by"
+      },
+      {
+        "question": "Will OpenAI publicly release a model branded GPT-5.6 by Sept 30, 2026?",
+        "platform": "Manifold",
+        "forecast": "~97%.",
+        "relevantBenchmark": "none",
+        "category": "release",
+        "resolveDate": "2026-09-30",
+        "url": "https://manifold.markets/CalibratedGhosts/will-openai-publicly-release-a-gpt5"
+      },
+      {
+        "question": "Artificial Analysis Intelligence Index — top model score (live benchmark, NOT a forecast market)",
+        "platform": "Epoch AI",
+        "forecast": "No prediction-market or Metaculus question exists for the AA Index. Live value (reported honestly): Claude Opus 4.8 leads at 61.4 (May 28 2026); Gemini 3.1 Pro 57.2; top tier 57+. Index aggregates ~10 evals.",
+        "impliedValue": 61.4,
+        "relevantBenchmark": "aa",
+        "category": "ranking",
+        "resolveDate": "N/A (continuously-updated leaderboard, no forecast question)",
+        "url": "https://www.datalearner.com/en/leaderboards/external/aa-quality-index"
+      },
+      {
+        "question": "Compute used in the largest ML training run before 2030 (frontier compute scaling)",
+        "platform": "Metaculus",
+        "forecast": "No clean 2026/2027-resolving Metaculus market with a current median; the existing question is an 'amplified forecasting' framing. Best authoritative context (Epoch AI, not a market): frontier training compute growing ~4–5×/yr; largest known run ~5e26 FLOP (Grok 4); AI-2027 projects ~2e28 FLOP by early 2027.",
+        "impliedValue": 5e+26,
+        "relevantBenchmark": "compute",
+        "category": "capability",
+        "resolveDate": "2030 (existing question); no specific 2026/2027 market found",
+        "url": "https://www.metaculus.com/questions/4732/amplified-forecasting-what-will-bucks-informed-prediction-of-compute-used-in-the-largest-ml-training-run-before-2030-be/"
+      },
+      {
+        "question": "Best AI at the end of 2026 (top-ranked LLM by company)",
+        "platform": "Kalshi",
+        "forecast": "Anthropic ~64% (66.7% per Jun 18 aggregator), Google ~13%, OpenAI ~12%, xAI ~8%, Meta ~3%, Alibaba ~1%, Baidu ~0.3%",
+        "resolveDate": "2026-12-31",
+        "category": "ranking",
+        "relevantBenchmark": "aa",
+        "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+        "impliedValue": 64.2
+      },
+      {
+        "question": "Best AI this week (top-ranked LLM, weekly)",
+        "platform": "Kalshi",
+        "forecast": "Anthropic ~98%, all others 1-2%",
+        "resolveDate": "2026-06-20",
+        "category": "ranking",
+        "relevantBenchmark": "aa",
+        "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26jun20",
+        "impliedValue": 98
+      },
+      {
+        "question": "Which AI company will have the best coding model at end of 2026 (LiveBench Coding Average)",
+        "platform": "Kalshi",
+        "forecast": "Anthropic ~58%, OpenAI ~31%, xAI ~6%, Google ~4%, others ~1% each",
+        "resolveDate": "2026-12-31",
+        "category": "capability",
+        "relevantBenchmark": "swe",
+        "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+        "impliedValue": 58
+      },
+      {
+        "question": "Which company has the best AI model end of June 2026 (LMArena, no style control)",
+        "platform": "Manifold",
+        "forecast": "Anthropic 78.5%, Google 13.3%, OpenAI 6.3%, xAI 0.6%, Meta 0.5%, DeepSeek 0.3%",
+        "resolveDate": "2026-06-30",
+        "category": "ranking",
+        "relevantBenchmark": "aa",
+        "url": "https://manifold.markets/Bayesian/which-company-has-the-best-ai-model-tN0h8n0yzQ",
+        "impliedValue": 78.5
+      },
+      {
+        "question": "Which company had the best AI model end of January 2026 (LMArena) - RESOLVED",
+        "platform": "Manifold",
+        "forecast": "Resolved Google (was 99% pre-resolution); illustrates the Google->Anthropic swing across H1 2026",
+        "resolveDate": "2026-02-01",
+        "category": "ranking",
+        "relevantBenchmark": "aa",
+        "url": "https://manifold.markets/Bayesian/which-company-has-the-best-ai-model-hnNnI6lALy",
+        "impliedValue": 99
+      },
+      {
+        "question": "GPT-6 released in 2026?",
+        "platform": "Manifold",
+        "forecast": "71.2%",
+        "resolveDate": "2026-12-31",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "url": "https://manifold.markets/predyx_markets/gpt6-released-in-2026",
+        "impliedValue": 71.2
+      },
+      {
+        "question": "Will OpenAI release a model marketed as GPT-6 by August 31, 2026?",
+        "platform": "Manifold",
+        "forecast": "23%",
+        "resolveDate": "2026-08-31",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "url": "https://manifold.markets/predyx_markets/will-openai-release-a-model-markete",
+        "impliedValue": 23
+      },
+      {
+        "question": "Will OpenAI publicly release a GPT-5.6 model by September 30, 2026? (per search aggregation)",
+        "platform": "Manifold",
+        "forecast": "~97% (Polymarket/Manifold also price GPT-5.6 by Jun 30 at ~80-89%)",
+        "resolveDate": "2026-09-30",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "url": "https://manifold.markets/CalibratedGhosts/will-openai-publicly-release-a-gpt5",
+        "impliedValue": 97
+      },
+      {
+        "question": "Will Anthropic release Claude 5 / Opus 5 before July 1, 2026? (NOTE: conflicts with a sister market showing 22% by Aug 31 - wording/staleness suspect, treat cautiously)",
+        "platform": "Manifold",
+        "forecast": "99% (by Jul 1) vs 22.1% (by Aug 31) - inconsistent across two markets, low confidence",
+        "resolveDate": "2026-07-01",
+        "category": "release",
+        "relevantBenchmark": "none",
+        "url": "https://manifold.markets/Bayesian/will-anthropic-release-claude-5-or",
+        "impliedValue": 99
+      },
+      {
+        "question": "Will any AI model score above 95% on ARC-AGI-2 by end of 2026?",
+        "platform": "Manifold",
+        "forecast": "72.4%",
+        "resolveDate": "2027-01-26",
+        "category": "benchmark",
+        "relevantBenchmark": "agi",
+        "url": "https://manifold.markets/CalibratedGhosts/will-any-ai-model-score-above-95-on-C8Q2tNUhyI",
+        "impliedValue": 95
+      },
+      {
+        "question": "Will the ARC-AGI Grand Prize be claimed before January 2027?",
+        "platform": "Manifold",
+        "forecast": "45%",
+        "resolveDate": "2027-01-31",
+        "category": "benchmark",
+        "relevantBenchmark": "agi",
+        "url": "https://manifold.markets/CalibratedGhosts/will-the-arc-agi-grand-prize-be-cla-svtrhb42tx",
+        "impliedValue": 45
+      },
+      {
+        "question": "Will any AI achieve a score of 25% on ARC-AGI-3 by the end of 2026?",
+        "platform": "Manifold",
+        "forecast": "39.5%",
+        "resolveDate": "2027-01-26",
+        "category": "benchmark",
+        "relevantBenchmark": "agi",
+        "url": "https://manifold.markets/CalibratedGhosts/will-any-ai-achieve-a-score-of-25-o",
+        "impliedValue": 25
+      },
+      {
+        "question": "Above-human scores on ARC-AGI-3 in 2026?",
+        "platform": "Manifold",
+        "forecast": "14.7%",
+        "resolveDate": "2027-01-26",
+        "category": "benchmark",
+        "relevantBenchmark": "agi",
+        "url": "https://manifold.markets/CalibratedGhosts/above-human-scores-on-arcagi3-in-20",
+        "impliedValue": 0
+      },
+      {
+        "question": "Will we get AGI before 2027?",
+        "platform": "Manifold",
+        "forecast": "~3-8% (two markets: 2.9% and 8.1%)",
+        "resolveDate": "2026-12-30",
+        "category": "capability",
+        "relevantBenchmark": "agi",
+        "url": "https://manifold.markets/Bayesian/will-we-get-agi-before-2027-d7b5f2b00ace",
+        "impliedValue": 5
+      },
+      {
+        "question": "Will any AI model score above 90% on ARC-AGI-2 before April 2026? (RESOLVED context: Gemini 3 Deepthink v2 hit 84.6%, fell short)",
+        "platform": "Manifold",
+        "forecast": "Was ~41% pre-resolution; threshold not met by April",
+        "resolveDate": "2026-04-01",
+        "category": "benchmark",
+        "relevantBenchmark": "agi",
+        "url": "https://manifold.markets/CalibratedGhosts/will-any-ai-model-score-above-90-on",
+        "impliedValue": 90
+      },
+      {
+        "question": "Superhuman Coder (SC) milestone — AI that can do any coding task the best AGI-company engineer does, faster and cheaper. When does it arrive?",
+        "platform": "AI 2027 (Lifland/Jurkovic, AI Futures Project)",
+        "forecast": "All-things-considered median 2028-2030; 2027 is among the single most likely years. Eli Lifland: time-horizon model Feb 2029 (80% CI Apr 2026-2052), benchmarks-and-gaps Mar 2030. Nikola Jurkovic: 2027-2028. Original AI 2027 headline median ~Mar 2027; updated forecasts pushed later. Non-trivial probability mass on end-2026/2027 but it is not the median.",
+        "relevantBenchmark": "agi",
+        "category": "capability",
+        "resolveDate": "2027-12-31",
+        "url": "https://ai-2027.com/research/timelines-forecast"
+      },
+      {
+        "question": "METR task-completion time horizon (length of software task a frontier model can do at 50% reliability) — where does it land?",
+        "platform": "METR (Time Horizon 1.1, Jan 2026) + community extrapolation",
+        "forecast": "Frontier as of Jan 2026: Claude Opus 4.5 ~320 min (~5.3 hr), GPT-5 ~214 min, o3 ~121 min. Doubling time ~89-131 days (≈3-4.3 months) on the 2024+ trend (~10x/yr at the fast rate). Extrapolation puts frontier near ~600+ min by end-2026 and month-long tasks plausibly in 2027 if the fast trend holds; debate on whether it reverts to the 7-month doubling.",
+        "impliedValue": 600,
+        "relevantBenchmark": "swe",
+        "category": "capability",
+        "resolveDate": "2026-12-31",
+        "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/"
+      },
+      {
+        "question": "SWE-bench Verified — best frontier score",
+        "platform": "Stanford AI Index 2026 / Epoch AI / live leaderboards",
+        "forecast": "Effectively saturated. Rose from ~60% to near-100% in one year (Stanford AI Index 2026). Current top (Jun 18 2026): Claude Mythos 5 95.5%, Claude Fable 5 95%, Claude Opus 4.8 88.6%. Forecast: ceiling ~95-99% reached during 2026; benchmark loses discriminating power, focus shifting to agentic/long-horizon variants.",
+        "impliedValue": 96,
+        "relevantBenchmark": "swe",
+        "category": "benchmark",
+        "resolveDate": "2026-12-31",
+        "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+      },
+      {
+        "question": "GPQA Diamond (PhD-level science) — best frontier score",
+        "platform": "Metaculus / Epoch AI / Stanford AI Index 2026",
+        "forecast": "Metaculus forecasters: 97.3% in 2026, 98.9% in 2027 (30% chance of ≥99%). Current: Gemini 3.1 Pro 94.1%, Grok 4 87%; models already past the 81.2% human-expert baseline (hitting ~93%). Near-saturated.",
+        "impliedValue": 97.3,
+        "relevantBenchmark": "other",
+        "category": "benchmark",
+        "resolveDate": "2026-12-31",
+        "url": "https://www.metaculus.com/questions/21920/what-will-be-the-best-score-on-the-gpqa-benchmark-before-2025/"
+      },
+      {
+        "question": "Artificial Analysis Intelligence Index — frontier ceiling and trajectory",
+        "platform": "Artificial Analysis (v3/v4)",
+        "forecast": "Index repeatedly rebased as it saturates: v3 top models tied ~57 (Apr 2026); a June public snapshot shows Claude Opus 4.8 ~55.7, GPT-5.5 ~54.8. AA dropped MMLU-Pro/AIME-2025/LiveCodeBench in v4 (Jan 2026) due to saturation. No single AA point-forecast exists; trajectory = steady rise into the high-50s/60s on current scale, with the index re-versioned rather than left to cap out. Humanity's Last Exam (a component) still only ~35-45%, the main remaining headroom.",
+        "impliedValue": 60,
+        "relevantBenchmark": "aa",
+        "category": "benchmark",
+        "resolveDate": "2026-12-31",
+        "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
+      },
+      {
+        "question": "Humanity's Last Exam (HLE) — frontier score (the hardest unsaturated component of AA Index)",
+        "platform": "Stanford AI Index 2026 / Artificial Analysis",
+        "forecast": "Frontier gained ~30 percentage points in one year. Current leaders ~35-45% (Gemini 3.1 Pro 44.7%); human experts ~90%, leaving a 45-55 pt gap. This is the benchmark with real headroom into 2027; rapid gains expected but full saturation unlikely by end-2026.",
+        "impliedValue": 45,
+        "relevantBenchmark": "other",
+        "category": "benchmark",
+        "resolveDate": "2026-12-31",
+        "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+      },
+      {
+        "question": "Frontier training compute — when does the top model trend cross 1e26 FLOP, and how fast does it grow?",
+        "platform": "Epoch AI (Trends / compute forecasts)",
+        "forecast": "Training compute growing ~4-5x/year (doubling ~5.2 months) since 2020. Top-1 frontier crosses 1e26 FLOP median ~Jan 2026; frontier open-weight models cross 1e26 ~Nov 2025 (90% CI to Nov 2026). Largest known run: Grok 4 ~5e26 FLOP. Extrapolation: largest runs ~1e27-1e28 FLOP by end-2027, ~1e29 by 2030.",
+        "impliedValue": 5e+26,
+        "relevantBenchmark": "compute",
+        "category": "capability",
+        "resolveDate": "2027-12-31",
+        "url": "https://epoch.ai/trends"
+      },
+      {
+        "question": "How many notable AI models will exceed 1e26 FLOP of training compute?",
+        "platform": "Epoch AI (model-count forecast, arXiv 2504.16138)",
+        "forecast": "~10 models by 2026, between 10 and 80 by 2027, ~80 by 2028, 200+ by 2030.",
+        "impliedValue": 80,
+        "relevantBenchmark": "compute",
+        "category": "capability",
+        "resolveDate": "2027-12-31",
+        "url": "https://epoch.ai/publications/model-counts-compute-thresholds"
+      },
+      {
+        "question": "Pace of frontier model releases in 2026",
+        "platform": "Industry trackers (LM Council, TeamDay.ai, Polymarket)",
+        "forecast": "Most compressed release cycle on record: ~7 frontier models Feb-Apr 2026 alone. ~5 major closed releases since Feb (Gemini 3.1 Pro, Claude Sonnet 5, Claude Opus 4.7, GPT-5.5, Grok 4.3) plus 6+ major open-weight (DeepSeek V4, Qwen3-Coder-Next, GLM-5, Kimi K2.6, etc.). Each major lab shipping a new flagship roughly every 1-3 months; no slowdown projected. Polymarket: 'best AI model end of June' ~95% Anthropic.",
+        "relevantBenchmark": "other",
+        "category": "release",
+        "resolveDate": "2026-06-30",
+        "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-june"
+      },
+      {
+        "question": "AI vs human forecasting (Metaculus FutureEval) — when do AI systems surpass humans at prediction?",
+        "platform": "Metaculus (FutureEval, launched Feb 2026)",
+        "forecast": "AI projected to surpass the broader Metaculus community ~Apr 2026 and Pro Forecasters ~mid-2027.",
+        "relevantBenchmark": "other",
+        "category": "capability",
+        "resolveDate": "2027-06-30",
+        "url": "https://markets.financialcontent.com/stocks/article/gnwcq-2026-2-18-metaculus-launches-futureeval-to-track-ai-forecasting-accuracy"
+      },
+      {
+        "question": "AGI timeline (prediction-market / aggregate forecaster view)",
+        "platform": "Metaculus / prediction-market aggregate (Feb 2026)",
+        "forecast": "~25% chance of AGI by 2029, 50% by 2033. Contrast: Grace et al. expert survey median for High-Level Machine Intelligence ~2047 (shortened 13 yrs vs the 2022 survey). Markets far more aggressive than the academic survey median.",
+        "relevantBenchmark": "agi",
+        "category": "capability",
+        "resolveDate": "2033-12-31",
+        "url": "https://forecastingaifutures.substack.com/p/forecasting-agi-insights-from-prediction-markets"
+      }
+    ],
+    "historics": [
+      {
+        "benchmark": "aa",
+        "model": "GPT-4 (March 2023)",
+        "lab": "OpenAI",
+        "date": "2023-03",
+        "value": 29,
+        "estimate": true,
+        "basis": "Back-estimate onto AA Intelligence Index v2 (2025) scale. AA's own 2024 review back-estimated GPT-4 on the Quality Index (avg MMLU 86.4 / GPQA~35 / MATH~42 / HumanEval~67). On the harder 2025 v2 scale GPT-4o-2024 anchors at 41 (verified) and was a clear step above original GPT-4, so GPT-4 maps to high-20s. Proxy from MMLU/GPQA/HumanEval."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Claude 2",
+        "lab": "Anthropic",
+        "date": "2023-07",
+        "value": 22,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. Claude 2 (MMLU 78.5, HumanEval 71, GSM8K 88, GPQA not tested) sat clearly below GPT-4. Mapped from MMLU/HumanEval relative ranking; AA never tested it live."
+      },
+      {
+        "benchmark": "aa",
+        "model": "GPT-4 Turbo",
+        "lab": "OpenAI",
+        "date": "2023-11",
+        "value": 31,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA 2024 review placed GPT-4 Turbo marginally above GPT-4 on Quality Index (MMLU ~86, better MATH/coding). Proxy from benchmark profile + relative ranking to the 41 GPT-4o anchor."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Gemini 1.0 Ultra",
+        "lab": "Google DeepMind",
+        "date": "2023-12",
+        "value": 30,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. Gemini 1.0 Ultra (MMLU 90.0, GPQA not std, HumanEval 74.4) was GPT-4-class; AA 2024 review plotted it near GPT-4 Turbo. Mapped from MMLU/HumanEval."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Claude 3 Opus",
+        "lab": "Anthropic",
+        "date": "2024-03",
+        "value": 34,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. Claude 3 Opus (MMLU 86.8, GPQA Diamond 50.4, MATH 60, HumanEval 84.9) clearly topped GPT-4 Turbo and sat just below 2024 GPT-4o-class. GPQA 50 is the load-bearing signal. Proxy mapping."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Gemini 1.5 Pro (May '24)",
+        "lab": "Google DeepMind",
+        "date": "2024-05",
+        "value": 34,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. Appeared in AA 2024 review Quality Index band near Claude 3 Opus / pre-GPT-4o frontier (MMLU 85.9, GPQA ~46, HumanEval 84). Proxy from benchmark profile."
+      },
+      {
+        "benchmark": "aa",
+        "model": "GPT-4o (May '24)",
+        "lab": "OpenAI",
+        "date": "2024-05",
+        "value": 41,
+        "estimate": false,
+        "basis": "AA-stated: GPT-4o sat at 41 on the AA Intelligence Index before its March-2025 update (AA tweet: 'jumped from 41 to 50'). Original 2024 release value."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Claude 3.5 Sonnet (Jun '24)",
+        "lab": "Anthropic",
+        "date": "2024-06",
+        "value": 42,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. In AA's 2024 review, Claude 3.5 Sonnet (Jun) led the non-reasoning frontier just at/above GPT-4o-2024 (MMLU-Pro ~76, GPQA Diamond 59, HumanEval 92, MATH 71). Pinned ~1pt above the verified GPT-4o 41 anchor by contemporaneous ranking."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Gemini 1.5 Pro (Sep '24)",
+        "lab": "Google DeepMind",
+        "date": "2024-09",
+        "value": 40,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA 2024 'Leading Models (Late 2024)' chart placed Gemini 1.5 Pro (Sep) just below the GPT-4o/3.5-Sonnet frontier cluster. Proxy from ordering + GPQA ~50/MMLU-Pro profile."
+      },
+      {
+        "benchmark": "aa",
+        "model": "o1-preview",
+        "lab": "OpenAI",
+        "date": "2024-09",
+        "value": 58,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. First reasoning model; AA review headlined it as 'the first major leap beyond GPT-4.' Final o1 verified at 62; o1-preview sat a few points below it. Interpolated from o1=62 anchor and contemporaneous gap."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Claude 3.5 Sonnet (Oct '24)",
+        "lab": "Anthropic",
+        "date": "2024-10",
+        "value": 44,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA 'Late 2024' chart placed the Oct refresh top of the non-reasoning pack, just above GPT-4o (41) and the June 3.5 Sonnet. Proxy from contemporaneous ranking; GPQA Diamond ~65, MMLU-Pro ~78."
+      },
+      {
+        "benchmark": "aa",
+        "model": "o1-mini",
+        "lab": "OpenAI",
+        "date": "2024-09",
+        "value": 54,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA 'Late 2024' chart placed o1-mini in the reasoning tier below o1/o1-preview but well above all non-reasoning models. Mapped between the 41 non-reasoning frontier and o1=62."
+      },
+      {
+        "benchmark": "aa",
+        "model": "o1",
+        "lab": "OpenAI",
+        "date": "2024-12",
+        "value": 62,
+        "estimate": false,
+        "basis": "AA-stated value: o1 = 62 on the AA Intelligence Index (cited directly in AA's DeepSeek R1 update article and methodology comparisons)."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Gemini 2.0 Flash (exp)",
+        "lab": "Google DeepMind",
+        "date": "2024-12",
+        "value": 48,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA 'Late 2024' chart had Gemini 2.0 Flash (exp) as the leading non-o1 model, above GPT-4o/3.5-Sonnet. AA later noted GPT-4o-Mar(50) 'leapfrogged Gemini 2.0 Flash', so 2.0 Flash sat just under 50. Proxy ~48."
+      },
+      {
+        "benchmark": "aa",
+        "model": "DeepSeek V3",
+        "lab": "DeepSeek",
+        "date": "2024-12",
+        "value": 46,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. V3 (non-reasoning) launched at the top of the open-weights non-reasoning frontier, roughly GPT-4o/Gemini-2.0-Flash class (MMLU-Pro 75.9, GPQA 59, MATH 90). Proxy from contemporaneous ranking just below 50."
+      },
+      {
+        "benchmark": "aa",
+        "model": "DeepSeek R1",
+        "lab": "DeepSeek",
+        "date": "2025-01",
+        "value": 60,
+        "estimate": false,
+        "basis": "AA-stated: R1 original = 60 on the AA Intelligence Index (AA article: 'R1 0528 has jumped from 60 to 68'). Tied near o1 at launch."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Gemini 2.0 Flash (GA)",
+        "lab": "Google DeepMind",
+        "date": "2025-02",
+        "value": 48,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. GA non-reasoning Flash held ~48, consistent with AA's note that GPT-4o-Mar(50) sat just above Gemini 2.0 Flash. Proxy."
+      },
+      {
+        "benchmark": "aa",
+        "model": "o3-mini (high)",
+        "lab": "OpenAI",
+        "date": "2025-01",
+        "value": 63,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA placed o3-mini(high) around the o1 level (62-64), top reasoning tier in early 2025. Mapped from o1=62 / o3=70 anchors and AA's contemporaneous ordering."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Claude 3.7 Sonnet (Thinking)",
+        "lab": "Anthropic",
+        "date": "2025-02",
+        "value": 57,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA placed Claude 3.7 Sonnet (extended thinking) in the high-50s reasoning band, below o1/o3-mini-high but well above non-reasoning. Proxy from contemporaneous ranking + GPQA/AIME profile."
+      },
+      {
+        "benchmark": "aa",
+        "model": "GPT-4o (Mar '25)",
+        "lab": "OpenAI",
+        "date": "2025-03",
+        "value": 50,
+        "estimate": false,
+        "basis": "AA-stated: the March 2025 GPT-4o update 'jumped from 41 to 50' on the AA Intelligence Index, becoming the leading non-reasoning model for coding (AA tweet)."
+      },
+      {
+        "benchmark": "aa",
+        "model": "DeepSeek V3 (0324)",
+        "lab": "DeepSeek",
+        "date": "2025-03",
+        "value": 53,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. The March-2025 V3 refresh was AA's top non-reasoning open model, a few points above original V3 (~46→53) and the new GPT-4o(50). Proxy from contemporaneous ranking."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Gemini 2.5 Pro",
+        "lab": "Google DeepMind",
+        "date": "2025-03",
+        "value": 68,
+        "estimate": false,
+        "basis": "AA-stated: Gemini 2.5 Pro = 68 on the AA Intelligence Index (AA R1-update article: 'DeepSeek R1 0528 ... tied with Google Gemini 2.5 Pro at 68')."
+      },
+      {
+        "benchmark": "aa",
+        "model": "o3",
+        "lab": "OpenAI",
+        "date": "2025-04",
+        "value": 70,
+        "estimate": false,
+        "basis": "AA-stated: o3 = 70 on the AA Intelligence Index (cited in AA R1-update article; gap o1->o3 = 62->70)."
+      },
+      {
+        "benchmark": "aa",
+        "model": "o4-mini (high)",
+        "lab": "OpenAI",
+        "date": "2025-04",
+        "value": 70,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA reported o4-mini(high) roughly tied with o3 at the frontier (~70), ahead of R1 on coding. Proxy from o3=70 anchor + AA's contemporaneous statements."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Grok 3 (Reasoning)",
+        "lab": "xAI",
+        "date": "2025-02",
+        "value": 66,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. AA placed Grok 3 reasoning in the high-60s, just below the o3/Gemini-2.5-Pro frontier and above o1. Proxy from contemporaneous ordering."
+      },
+      {
+        "benchmark": "aa",
+        "model": "DeepSeek R1 (0528)",
+        "lab": "DeepSeek",
+        "date": "2025-05",
+        "value": 68,
+        "estimate": false,
+        "basis": "AA-stated: R1-0528 = 68 on the AA Intelligence Index, jumped from 60, tied with Gemini 2.5 Pro and #2 open-weights leader (AA article + tweet, May 2025)."
+      },
+      {
+        "benchmark": "aa",
+        "model": "Claude 4 Opus (Thinking)",
+        "lab": "Anthropic",
+        "date": "2025-05",
+        "value": 64,
+        "estimate": true,
+        "basis": "Back-estimate, v2 scale. Claude 4 Opus (extended thinking) landed in the mid-60s reasoning band at launch, below the o3/Gemini-2.5-Pro/R1-0528 cluster (~68-70). Proxy from contemporaneous ranking + GPQA/HLE profile."
+      },
+      {
+        "benchmark": "swe",
+        "model": "GPT-4 (original SWE-bench)",
+        "lab": "OpenAI",
+        "date": "2023-12",
+        "value": 1.74,
+        "estimate": false,
+        "basis": "Original SWE-bench paper (Princeton/PLI, Dec 2023), GPT-4 with Oracle retrieval; ~1.74% resolved. Often quoted as ~1.7%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "GPT-4 (original SWE-bench, BM25)",
+        "lab": "OpenAI",
+        "date": "2023-12",
+        "value": 1.31,
+        "estimate": true,
+        "basis": "Original SWE-bench paper reports GPT-4 ~1.3% in the BM25 retrieval setting (Oracle ~1.74%); BM25 value reconstructed from the paper's two-setting table, exact digit approximate."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Claude 2 (original SWE-bench)",
+        "lab": "Anthropic",
+        "date": "2023-12",
+        "value": 1.96,
+        "estimate": false,
+        "basis": "Original SWE-bench paper (Dec 2023): Claude 2 resolved 1.96% (best of the tested base LLMs, Oracle setting)."
+      },
+      {
+        "benchmark": "swe",
+        "model": "ChatGPT-3.5 (original SWE-bench)",
+        "lab": "OpenAI",
+        "date": "2023-12",
+        "value": 0.4,
+        "estimate": false,
+        "basis": "Original SWE-bench paper (Dec 2023): GPT-3.5/ChatGPT-3.5 ~0.2-0.4% resolved; lowest of the headline models."
+      },
+      {
+        "benchmark": "swe",
+        "model": "GPT-4o (original SWE-bench, Agentless)",
+        "lab": "OpenAI",
+        "date": "2024-08",
+        "value": 16,
+        "estimate": false,
+        "basis": "OpenAI's SWE-bench Verified launch post (Aug 13 2024) cites GPT-4o at 16% on original SWE-bench with the Agentless scaffold, vs 33.2% on Verified."
+      },
+      {
+        "benchmark": "swe",
+        "model": "GPT-4 (SWE-bench Verified, back-estimate)",
+        "lab": "OpenAI",
+        "date": "2024-08",
+        "value": 12,
+        "estimate": true,
+        "basis": "GPT-4 predates Verified (Aug 2024). Estimated by mapping its original-SWE-bench standing below GPT-4o (16% original) onto the Verified scale; GPT-4 < GPT-4o, so ~10-14% with a modern agentic scaffold. Mid ~12%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "GPT-4o (SWE-bench Verified)",
+        "lab": "OpenAI",
+        "date": "2024-08",
+        "value": 33.2,
+        "estimate": false,
+        "basis": "OpenAI SWE-bench Verified launch (Aug 13 2024): GPT-4o resolves 33.2% with Agentless scaffold."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Claude 3 Opus (SWE-bench Verified)",
+        "lab": "Anthropic",
+        "date": "2024-08",
+        "value": 22,
+        "estimate": false,
+        "basis": "Anthropic SWE-bench research page (Claude 3.5 Sonnet writeup) reports Claude 3 Opus at 22% on Verified with Anthropic's agentic scaffold."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Claude 3 Opus (original SWE-bench, back-estimate)",
+        "lab": "Anthropic",
+        "date": "2024-03",
+        "value": 11,
+        "estimate": true,
+        "basis": "Claude 3 Opus (Mar 2024) was not headline-reported on original SWE-bench. Estimated from its 22% Verified score; Verified runs roughly ~1.7-2x original at this capability band, giving ~10-13% original. Mid ~11%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Claude 3.5 Sonnet (SWE-bench Verified, original release)",
+        "lab": "Anthropic",
+        "date": "2024-06",
+        "value": 33,
+        "estimate": false,
+        "basis": "Anthropic + OpenAI sources: first Claude 3.5 Sonnet (Jun 2024) at 33% on Verified (Anthropic agentic scaffold), comparable to GPT-4o's 33.2%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Claude 3.5 Sonnet (new / upgraded, SWE-bench Verified)",
+        "lab": "Anthropic",
+        "date": "2024-10",
+        "value": 49,
+        "estimate": false,
+        "basis": "Anthropic 'Claude SWE-bench Performance' page + Oct 22 2024 model launch: upgraded Claude 3.5 Sonnet at 49% Verified, prior SOTA was 45%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Claude 3.7 Sonnet (SWE-bench Verified)",
+        "lab": "Anthropic",
+        "date": "2025-02",
+        "value": 62.3,
+        "estimate": false,
+        "basis": "Anthropic Claude 3.7 Sonnet launch (Feb 24 2025): 62.3% Verified standard; 70.3% with custom/parallel-compute scaffold."
+      },
+      {
+        "benchmark": "swe",
+        "model": "o1-preview (SWE-bench Verified)",
+        "lab": "OpenAI",
+        "date": "2024-09",
+        "value": 41.3,
+        "estimate": false,
+        "basis": "OpenAI o1 System Card (Sep/Dec 2024): o1-preview 41.3% on Verified."
+      },
+      {
+        "benchmark": "swe",
+        "model": "o1 (SWE-bench Verified)",
+        "lab": "OpenAI",
+        "date": "2024-12",
+        "value": 48.9,
+        "estimate": false,
+        "basis": "OpenAI o1 (released Dec 5 2024): 48.9% on Verified per OpenAI reporting (system-card era figure; 40.9% was an earlier internal-scaffold number)."
+      },
+      {
+        "benchmark": "swe",
+        "model": "o3 (preview, SWE-bench Verified)",
+        "lab": "OpenAI",
+        "date": "2024-12",
+        "value": 71.7,
+        "estimate": false,
+        "basis": "OpenAI o3 announcement (Dec 20 2024): 71.7% on Verified, SOTA at the time."
+      },
+      {
+        "benchmark": "swe",
+        "model": "o3-mini (SWE-bench Verified)",
+        "lab": "OpenAI",
+        "date": "2025-01",
+        "value": 49.3,
+        "estimate": false,
+        "basis": "OpenAI o3-mini (Jan 31 2025): 49.3% on Verified."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Gemini 1.0 Pro / Ultra (SWE-bench Verified, back-estimate)",
+        "lab": "Google DeepMind",
+        "date": "2023-12",
+        "value": 4,
+        "estimate": true,
+        "basis": "Gemini 1.0 (Dec 2023) predates Verified and was not SWE-bench-reported. Estimated near the GPT-4-era floor (original SWE-bench ~1-3%; on Verified scale ~3-6%). Mid ~4%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Gemini 1.5 Pro (SWE-bench Verified, back-estimate)",
+        "lab": "Google DeepMind",
+        "date": "2024-05",
+        "value": 22,
+        "estimate": true,
+        "basis": "Gemini 1.5 Pro (2024) was rarely officially SWE-bench-reported; third-party agentic runs land roughly in the low-mid 20s% on Verified, comparable to Claude 3 Opus. Estimated ~22%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Gemini 2.0 Flash (SWE-bench Verified, back-estimate)",
+        "lab": "Google DeepMind",
+        "date": "2024-12",
+        "value": 30,
+        "estimate": true,
+        "basis": "Gemini 2.0 Flash (Dec 2024) Verified not headline-reported by Google; third-party agentic harnesses put it roughly high-20s to low-30s%. Estimated ~30%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Gemini 2.5 Pro (SWE-bench Verified)",
+        "lab": "Google DeepMind",
+        "date": "2025-03",
+        "value": 63.8,
+        "estimate": false,
+        "basis": "Google Gemini 2.5 Pro launch (Mar 2025): 63.8% on Verified with a custom agent setup (single-attempt figure widely cited)."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Llama 3.1 405B (SWE-bench Verified, back-estimate)",
+        "lab": "Meta",
+        "date": "2024-07",
+        "value": 23,
+        "estimate": true,
+        "basis": "Llama 3.1 405B (Jul 2024) not officially SWE-bench-reported by Meta; third-party agentic evals cluster around low-20s% on Verified, near Claude 3 Opus / Gemini 1.5 Pro tier. Estimated ~23%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Llama 3.3 70B (SWE-bench Verified, back-estimate)",
+        "lab": "Meta",
+        "date": "2024-12",
+        "value": 24,
+        "estimate": true,
+        "basis": "Llama 3.3 70B (Dec 2024) roughly matches 405B on coding; third-party Verified runs ~mid-20s%. Estimated ~24%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "Llama 4 Maverick (SWE-bench Verified, back-estimate)",
+        "lab": "Meta",
+        "date": "2025-04",
+        "value": 35,
+        "estimate": true,
+        "basis": "Llama 4 Maverick (Apr 2025) coding gains over Llama 3.x; Meta did not headline a Verified number, third-party agentic runs roughly low-to-mid 30s%. Estimated ~35%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "DeepSeek-V2.5 (SWE-bench Verified, back-estimate)",
+        "lab": "DeepSeek",
+        "date": "2024-09",
+        "value": 18,
+        "estimate": true,
+        "basis": "DeepSeek-V2.5 (Sep 2024) predates DeepSeek's official Verified reporting; capability sits below V3's 42%. Estimated ~16-20% on Verified. Mid ~18%."
+      },
+      {
+        "benchmark": "swe",
+        "model": "DeepSeek-V3 (SWE-bench Verified)",
+        "lab": "DeepSeek",
+        "date": "2024-12",
+        "value": 42,
+        "estimate": false,
+        "basis": "DeepSeek-V3 Technical Report (Dec 2024): 42.0% on SWE-bench Verified."
+      },
+      {
+        "benchmark": "swe",
+        "model": "DeepSeek-R1 (SWE-bench Verified)",
+        "lab": "DeepSeek",
+        "date": "2025-01",
+        "value": 49.2,
+        "estimate": false,
+        "basis": "DeepSeek-R1 release (Jan 2025): 49.2% on SWE-bench Verified per DeepSeek reporting."
+      }
+    ],
+    "predictions": [
+      {
+        "lab": "OpenAI",
+        "benchmark": "aa",
+        "expectedDate": "2026-09",
+        "predicted": 62,
+        "low": 58,
+        "high": 67,
+        "basis": "Next OpenAI flagship is GPT-5.6/early GPT-6 territory. GPT-5.5 sits at ~54.8 AA; o3=70 on the older anchor but the v3/v4 frontier is compressed in the high-50s/low-60s. A 5.6-class bump lands ~62, with GPT-6 upside toward the high-60s if it ships by Sept. Anchored to Epoch/AA frontier-ceiling trajectory and OpenAI's own o-series slope.",
+        "source": "Polymarket GPT-5.6 (~96% by Jul 31) + GPT-6 (52% by Sep); Artificial Analysis Index frontier trajectory (Epoch/AA)"
+      },
+      {
+        "lab": "OpenAI",
+        "benchmark": "swe",
+        "expectedDate": "2026-09",
+        "predicted": 80,
+        "low": 74,
+        "high": 88,
+        "basis": "GPT-5.5-class OpenAI models trail Anthropic on SWE-bench Verified; o3 hit 71.7%, the trend points to high-70s/low-80s for the next flagship, with GPT-6 upside toward ~88% near the saturating ceiling. Kalshi prices OpenAI ~31% to hold the best coding model at year-end (2nd behind Anthropic), consistent with sitting a notch below the 95% frontier.",
+        "source": "Kalshi best-coding-model 2026 (OpenAI ~31%); Stanford AI Index 2026 SWE-bench saturation (~95-96% ceiling)"
+      },
+      {
+        "lab": "Anthropic",
+        "benchmark": "aa",
+        "expectedDate": "2026-09",
+        "predicted": 63,
+        "low": 59,
+        "high": 69,
+        "basis": "Anthropic leads the AA Index now (Opus 4.8 ~55.7-61.4 across snapshots). The $4.49M Claude 5 market shows no Claude 5 before Q3, so the next accessible flagship is an Opus 4.x bump (~63) rather than a full generation; Claude 5 would push the high band. Anthropic's 64% to hold best-model-2026 supports continued frontier leadership.",
+        "source": "Polymarket/Kalshi best-model-2026 (Anthropic ~64%); Polymarket Claude 5 market ($4.49M, no Claude 5 yet); AA Index live (Opus 4.8 lead)"
+      },
+      {
+        "lab": "Anthropic",
+        "benchmark": "swe",
+        "expectedDate": "2026-09",
+        "predicted": 94,
+        "low": 90,
+        "high": 96,
+        "basis": "Anthropic is the SWE-bench leader (Opus 4.8 88.6% accessible; the pulled Mythos/Fable 5 hit 95-95.5%). Next accessible flagship likely reclaims ~94% near the saturating ceiling. Kalshi prices Anthropic ~58% to hold the best coding model at year-end. Ceiling capped ~96% per AI Index saturation.",
+        "source": "Kalshi best-coding-model 2026 (Anthropic ~58%); Stanford AI Index 2026 (SWE-bench ~95-96% ceiling); Metaculus 90%-crossing resolved Apr 2026"
+      },
+      {
+        "lab": "Google",
+        "benchmark": "aa",
+        "expectedDate": "2026-10",
+        "predicted": 61,
+        "low": 56,
+        "high": 67,
+        "basis": "Gemini 3.1 Pro sits at 57.2 AA. Gemini 4.0 is only ~10% likely by Jun 30, so the next Gemini (4.0 Flash/Pro) lands ~Q4 and a generational bump points to ~61, high-60s on the upside. Google is the top challenger to Anthropic (45% in the 'who gets #1' multi-select).",
+        "source": "Polymarket Gemini 4.0 (~10% by Jun 30 → Q4 release); Polymarket 'which companies will have #1' (Google 45%); Next-Gemini Arena-debut market"
+      },
+      {
+        "lab": "Google",
+        "benchmark": "swe",
+        "expectedDate": "2026-10",
+        "predicted": 89,
+        "low": 83,
+        "high": 94,
+        "basis": "Gemini 2.5 Pro hit 63.8% Verified; the 3.x line reached ~85-88%, so Gemini 4.0 should clear ~89% toward the saturating ceiling. Kalshi prices Google only ~4% for best coding model (behind Anthropic/OpenAI), so it likely trails the absolute SWE frontier despite a strong jump.",
+        "source": "Kalshi best-coding-model 2026 (Google ~4%); Stanford AI Index 2026 (SWE saturation); Gemini line trajectory (2.5 Pro 63.8% → 3.x mid-80s)"
+      },
+      {
+        "lab": "xAI",
+        "benchmark": "aa",
+        "expectedDate": "2026-09",
+        "predicted": 59,
+        "low": 54,
+        "high": 64,
+        "basis": "Grok 3 reasoning back-estimated ~66 on the old scale; Grok 4.3 shipped recently and xAI ships every 1-3 months, so the next Grok lands ~Sept at ~59 on the compressed v3/v4 frontier. xAI is priced 8% to hold best-model-2026 and 14% in the 'who unseats Anthropic' field — a credible but second-tier frontier contender.",
+        "source": "Polymarket best-model-2026 (xAI 8%) + 'who gets #1' (xAI 14%); release-pace tracker (flagship every 1-3 months)"
+      },
+      {
+        "lab": "xAI",
+        "benchmark": "swe",
+        "expectedDate": "2026-09",
+        "predicted": 82,
+        "low": 75,
+        "high": 89,
+        "basis": "Grok 4 trained on the largest known compute run (~5e26 FLOP) and the 4.x line tracks the OpenAI tier on coding; next Grok projects to low-80s Verified. Kalshi prices xAI ~6% for best coding model — competitive but below the Anthropic/OpenAI frontier and short of the ~95% ceiling.",
+        "source": "Kalshi best-coding-model 2026 (xAI ~6%); Epoch compute trend (Grok 4 ~5e26 FLOP frontier); SWE saturation ceiling"
+      },
+      {
+        "lab": "DeepSeek",
+        "benchmark": "aa",
+        "expectedDate": "2026-09",
+        "predicted": 58,
+        "low": 52,
+        "high": 63,
+        "basis": "DeepSeek R1-0528 reached 68 on the old anchor (tied Gemini 2.5 Pro); V4 already shipped per the release-pace note, so the next (R2 / V4.x) lands ~Q3 at ~58 on the compressed current frontier. No dedicated DeepSeek market exists, so the band is widened; DeepSeek registers only ~10% in the broad 'who gets #1' field.",
+        "source": "Polymarket 'which companies will have #1' (DeepSeek ~10%, no dedicated market → extrapolated); DeepSeek AA trajectory (R1-0528 = 68 old scale)"
+      },
+      {
+        "lab": "DeepSeek",
+        "benchmark": "swe",
+        "expectedDate": "2026-09",
+        "predicted": 78,
+        "low": 70,
+        "high": 85,
+        "basis": "DeepSeek-R1 hit 49.2% Verified and V3 42%; the open-weight frontier has since climbed, so the next DeepSeek flagship projects to high-70s. No DeepSeek-specific coding market, so the band is wide; it leads open-weights but trails the closed Anthropic/OpenAI SWE frontier.",
+        "source": "DeepSeek SWE trajectory (R1 49.2% → open-weight frontier climb); Stanford AI Index 2026 open-vs-closed gap (no dedicated market → extrapolated)"
+      },
+      {
+        "lab": "Zhipu",
+        "benchmark": "aa",
+        "expectedDate": "2026-10",
+        "predicted": 55,
+        "low": 48,
+        "high": 61,
+        "basis": "Zhipu/Z.ai registers ~2% in the best-model-2026 market and shipped GLM-5; the next GLM (~Q4) projects to ~55 on the AA frontier — a strong open-weight model a notch behind the leaders. No dedicated Zhipu market, so the band is wide and pulled below the frontier cluster.",
+        "source": "Polymarket best-model-2026 (Z.ai 2%); GLM-5 release-pace note (extrapolated trajectory, no dedicated market)"
+      },
+      {
+        "lab": "Zhipu",
+        "benchmark": "swe",
+        "expectedDate": "2026-10",
+        "predicted": 74,
+        "low": 65,
+        "high": 82,
+        "basis": "GLM-5 is a competitive open-weight coder but Zhipu is not benchmark-headlined on Verified; the next GLM projects to low-to-mid-70s, tracking the open-weight pack below DeepSeek's frontier. Band widened for thin evidence; no Zhipu coding market exists.",
+        "source": "Release-pace tracker (GLM-5, 6+ major open-weight releases since Feb); open-weight SWE trajectory (no dedicated market → extrapolated)"
+      },
+      {
+        "lab": "Meta",
+        "benchmark": "aa",
+        "expectedDate": "2026-10",
+        "predicted": 54,
+        "low": 47,
+        "high": 61,
+        "basis": "Meta is priced 14% in the 'who unseats Anthropic' field but its Llama 4.x line has trailed the frontier; the next Llama projects to ~54 AA, a clear step up but still behind the high-50s/60s leaders. Wide band reflects Meta's uneven recent trajectory and no dedicated AA market.",
+        "source": "Polymarket 'which companies will have #1' (Meta 14%); Llama line trajectory (4 Maverick lagged frontier, extrapolated)"
+      },
+      {
+        "lab": "Meta",
+        "benchmark": "swe",
+        "expectedDate": "2026-10",
+        "predicted": 72,
+        "low": 62,
+        "high": 81,
+        "basis": "Llama 4 Maverick back-estimated ~35% Verified — well behind the frontier — so even a strong next-gen Llama projects to low-70s, trailing both closed leaders and DeepSeek. Meta is not priced in the coding-model market, so the band is wide and centered below the open-weight frontier.",
+        "source": "Polymarket 'who gets #1' (Meta 14%); Llama 4 Maverick ~35% Verified back-estimate (trajectory, no dedicated coding market)"
+      },
+      {
+        "lab": "Alibaba",
+        "benchmark": "aa",
+        "expectedDate": "2026-10",
+        "predicted": 56,
+        "low": 49,
+        "high": 62,
+        "basis": "Alibaba/Qwen registers ~1% in the best-model markets but ships rapidly (Qwen3-Coder-Next already out); the next Qwen flagship (~Q4) projects to ~56 AA, near the top of the open-weight pack alongside DeepSeek. Band widened for the absence of a Qwen-specific market.",
+        "source": "Kalshi best-model-2026 (Alibaba ~1%); Qwen3-Coder-Next release-pace note (trajectory, no dedicated market)"
+      },
+      {
+        "lab": "Alibaba",
+        "benchmark": "swe",
+        "expectedDate": "2026-10",
+        "predicted": 76,
+        "low": 67,
+        "high": 84,
+        "basis": "Qwen3-Coder-Next is explicitly a coding-focused open-weight model, so Alibaba's next flagship plausibly leads or ties the open-weight SWE pack at ~76%, just behind DeepSeek and the closed frontier. No Qwen coding market exists, so the band stays wide.",
+        "source": "Qwen3-Coder-Next release note (coding-specialized open-weight); open-weight SWE trajectory (no dedicated market → extrapolated)"
+      }
+    ],
+    "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
+    "verify": [
+      {
+        "fact": "GPT-4 scored only about 1.7% on the original SWE-bench when it was introduced in 2023.",
+        "verdict": "confirmed",
+        "note": "CONFIRMED by the primary source: the original SWE-bench paper (Jimenez et al., \"SWE-bench: Can Language Models Resolve Real-World GitHub Issues?\", arXiv:2310.06770, first posted Oct 2023, later ICLR 2024). Extracted the PDF text directly (saved at /Users/christian/.claude/projects/-Users-christian/376db47d-cee0-426f-9ede-41c2b74b4921/tool-results/webfetch-1781902154849-yk3u6u.pdf). In Table 18 (\"Oracle\" Retrieval, the main per-model retrieval setting), GPT-4 (model gpt-4-32k-0613) resolved exactly 1.74% (34.00% apply rate) — this matches \"about 1.7%.\" Two honesty caveats that do not break the claim: (1) GPT-4's score depended on retrieval setting: 1.3% with BM25, 1.74% with \"Oracle,\" and 3.40% with the more generous \"Oracle-collapsed\" setting — so \"1.7%\" is the standard oracle number, not a single universal figure. (2) Per the paper's footnote, GPT-4 was evaluated only on a 25% random subset of SWE-bench tasks due to budget constraints, not the full test set. Also note a common confusion: the paper's frequently-quoted headline \"best model resolves only 1.96%\" refers to Claude 2 (BM25), not GPT-4. But the specific claim about GPT-4 ~1.7% is accurate against the original 2023 benchmark."
+      },
+      {
+        "fact": "The Artificial Analysis Intelligence Index did not exist before roughly 2024.",
+        "verdict": "confirmed",
+        "note": "Confirmed against primary and secondary sources. Artificial Analysis (the independent AI-benchmarking site at artificialanalysis.ai) was founded in 2023 (per its company profile / Grokipedia and PitchBook listings). Its Intelligence Index version history, on the company's own methodology page (https://artificialanalysis.ai/methodology/intelligence-benchmarking), dates v1.0 to January 2024, with v1.0–1.3 spanning Jan 2024–Feb 2025, then v2.x (2025), v3.0 (Sep 2025), v4.0 (Jan 2026), and v4.1 (Jun 2026). Since the company itself only launched in 2023 and the index's first version is dated January 2024, no such index existed before ~2024 — the claim holds.\n\nTwo caveats: (1) Do NOT confuse this with the Stanford HAI \"AI Index Report,\" a separate, distinct publication running annually since 2017 — that one DID exist before 2024, but it is not the \"Artificial Analysis Intelligence Index.\" (2) The decisive Jan-2024/v1.0 date came from a WebFetch read of the methodology page; I could not independently re-surface that exact string in search snippets, but the corroborated 2023 founding date makes any pre-2024 Intelligence Index impossible regardless. Verdict: confirmed; \"roughly 2024\" is accurate (v1.0 = Jan 2024)."
+      },
+      {
+        "fact": "CLAIM: Metaculus and Polymarket both host active prediction markets about AI model capabilities and release timing in 2026.",
+        "verdict": "confirmed",
+        "note": "Both platforms verified as hosting active 2026 AI markets; one minor terminology caveat. POLYMARKET (confirmed via direct WebFetch): the event \"Which company has best AI model end of June\" is live and tradeable — $15.9M total volume, real-time bid/ask, 15 company outcomes (Anthropic 95%, Google, OpenAI, etc.), resolving Jun 30 2026 12:00 ET against the Chatbot Arena LLM leaderboard. A full monthly series exists (end of March/April/May/June, plus \"second best\" variants), squarely about AI model capability/leadership. METACULUS (WebFetch returned 403 — site blocks the fetch model — so corroborated via search of metaculus.com content instead): hosts active AI-progress questions with live community/aggregate forecasts, e.g. 49% that the ARC-AGI grand prize is claimed by end of 2026, 44% that AI exceeds 80% on FrontierMath by Jan 2027, plus AGI-timeline forecasts (25% by 2029, 50% by 2033). It also launched FutureEval (Feb 18 2026), a benchmark scoring AI models on Metaculus forecasting questions. CAVEAT on wording: Metaculus is technically a forecasting/prediction platform, not a real-money 'market' in the betting sense Polymarket is — it uses community probability aggregation, not traded shares. If 'prediction markets' is read loosely as 'prediction questions/forecasts,' the claim is fully accurate for both. The substantive assertion — both platforms actively cover AI capabilities and release timing in 2026 — is solidly confirmed. Could not refute it. Sources: polymarket.com/event/which-company-has-best-ai-model-end-of-june (direct fetch); metaculus.com/futureeval/ and Metaculus community forecasts (via search; direct fetch 403-blocked)."
+      },
+      {
+        "fact": "OpenAI o1 substantially raised frontier scores on reasoning/coding benchmarks vs GPT-4o in late 2024.",
+        "verdict": "confirmed",
+        "note": "CONFIRMED via OpenAI's official \"Learning to reason with LLMs\" announcement (Sept 12, 2024), corroborated across multiple independent sources (Vellum, Analytics Vidhya, Encord, TalkAI). The gains are large and not marginal: AIME 2024 math — GPT-4o ~12-13% vs o1 74% single-sample / 83% with consensus sampling (a ~6x jump). Codeforces competitive coding — GPT-4o 808 Elo (~11th percentile) vs o1 89th percentile. GPQA Diamond PhD-science — o1 exceeded GPT-4o and surpassed human PhD-level accuracy. MMLU — o1 beat GPT-4o on 54 of 57 subcategories. The \"frontier\" framing is accurate: these were SOTA reasoning results at release. One precision caveat worth flagging — the headline 83%/89th-percentile figures are for the full o1 model; the model actually released to the public in Sept 2024 was o1-preview, which scored somewhat lower (e.g. ~62nd-percentile Codeforces, lower AIME) but still well above GPT-4o. So the directional claim is solid regardless of which o1 variant you anchor on; only the exact magnitude shifts. Sources: https://openai.com/index/learning-to-reason-with-llms/ ; https://www.vellum.ai/blog/analysis-openai-o1-vs-gpt-4o ; https://www.analyticsvidhya.com/blog/2024/09/gpt-4o-vs-openai-o1/"
+      },
+      {
+        "fact": "DeepSeek R1 (Jan 2025) brought open-weights reasoning close to the proprietary frontier.",
+        "verdict": "confirmed",
+        "note": "Confirmed against primary sources. DeepSeek's own arXiv paper (2501.12948v1) abstract states verbatim: \"DeepSeek-R1 achieves performance comparable to OpenAI-o1-1217 on reasoning tasks.\" Released Jan 20, 2025 under MIT license with fully open weights (R1, R1-Zero, plus six distilled 1.5B-70B checkpoints) per DeepSeek's official release notes (\"Performance on par with OpenAI-o1\"; \"released under the MIT License\"). Benchmark numbers show near-parity with OpenAI's then-frontier reasoning model o1-1217: AIME 2024 79.8% (R1) vs 79.2% (o1), MATH-500 97.3% vs 96.4%; o1 held a slight edge on GPQA Diamond and Codeforces. Additionally peer-reviewed in Nature (2025, s41586-025-09422-z) — unusually strong validation for an LLM release. One minor framing note: the apt frontier comparison is o1, not o3 (announced but not broadly released in Jan 2025); the claim's hedge \"close to the frontier\" accommodates this and does not overreach. Sources: arxiv.org/abs/2501.12948, api-docs.deepseek.com/news/news250120, nature.com/articles/s41586-025-09422-z."
+      }
+    ]
+  }
+}
