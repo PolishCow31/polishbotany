@@ -20,13 +20,15 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 - PWA: `manifest.json`, `sw.js` (data network-first = always fresh; shell cache-first).
 - Committed as the initial git commit.
 
-**P1 — NEXT (data fold-in):** the `ai-history-foundation` workflow (run id
-`wf_0dd4029e-ae5`, task `w7ozy0g5h`) is researching the full GPT-3→2026 history +
-benchmark trajectories + forecasts. When it lands: assemble real `models.json` (~100
-models, all eras), `trends.json` (MMLU/GPQA/SWE-bench/HumanEval/AA-Index/MATH/context/
-price trajectories), `predictions.json` (forecaster output + bands), `narrative`/
-landmarks; set `dataVersion:1`. The app then comes fully alive — no code changes needed,
-only data.
+**P1 DONE (Jun 19):** the `ai-history-foundation` workflow (`wf_0dd4029e-ae5`) returned
+the full history; `scripts/build_data.py` transformed it into the live data files —
+**96 models GPT-1→2026, 48 landmarks, 8 trend curves** (MMLU/GPQA/SWE-bench/HumanEval/
+AA-Index/MATH/context/price) with **16 forecasts attached to the curves**. `dataVersion:1`,
+seed banner gone. Verified at 375px: Now (23 cards), History (48-node timeline from
+GPT-1 2018), Trends (8 charts incl. prediction cones), Predict (16 gauges). Re-run
+`python3 scripts/build_data.py <workflow-output.json>` to rebuild from a fresh run.
+NOTE: app renamed **AI Tracker → Robots**; bump `SHELL_V` in sw.js on any index.html
+change (cache-first shell — caught me once this session).
 
 **P2 — deploy + automate (needs Christian's go):**
 - Create GitHub repo under polishcow31 (Chrome — token can't create repos). Free Pages
