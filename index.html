@@ -130,6 +130,20 @@
   .td-meta{font:600 10.5px var(--mono);color:var(--ink3);margin-top:3px}
   .td-why{font-size:12px;color:var(--ink2);margin-top:6px;line-height:1.45}
   svg circle[data-model]:active,svg circle[data-pred]:active{r:6.5}
+  .hh{width:100%;border-collapse:collapse;font-size:12px;min-width:320px}
+  .hh th{text-align:right;font:700 10px var(--mono);color:var(--ink3);padding:5px 7px;border-bottom:1px solid var(--line2);text-transform:uppercase}
+  .hh th:first-child{text-align:left}
+  .hh td{text-align:right;padding:7px;border-bottom:1px solid var(--line);font-family:var(--mono);color:var(--ink)}
+  .hh td:first-child{text-align:left;font-family:var(--sans);font-weight:650}
+  .hh tr:last-child td{border-bottom:none}
+  .hh .hhm{display:flex;align-items:center;gap:6px}
+  .hh .hd{width:8px;height:8px;border-radius:50%;flex:none}
+  .mktrow{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+  .mkt-top{display:flex;align-items:center;gap:8px}
+  .mkt-plat{font:700 9px var(--mono);border:1px solid;border-radius:5px;padding:2px 6px;text-transform:uppercase}
+  .mkt-fc{margin-left:auto;font:700 13px var(--mono);color:var(--ink)}
+  .mkt-q{font-size:12px;color:var(--ink2);margin-top:6px;line-height:1.4}
+  .mkt-d{font:600 10px var(--mono);color:var(--ink3);margin-top:4px}
 
   /* horizontal bar (head-to-head + weights) */
   .bar{display:grid;grid-template-columns:96px 1fr 40px;align-items:center;gap:8px;margin-bottom:8px}
@@ -242,7 +256,6 @@
   <section class="view on" id="v-home"></section>
   <section class="view" id="v-now"></section>
   <section class="view" id="v-charts"></section>
-  <section class="view" id="v-predict"></section>
   <section class="view" id="v-more"></section>
 </main>
 
@@ -250,7 +263,6 @@
   <button data-v="home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/></svg><span>Home</span></button>
   <button data-v="now"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Now</span></button>
   <button data-v="charts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 8-9"/><path d="M3 21h18"/></svg><span>Charts</span></button>
-  <button data-v="predict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 4 10.5c-.7.6-1 1-1 2v.5H9V15c0-1-.3-1.4-1-2A6 6 0 0 1 12 3z"/><path d="M9.5 21h5"/></svg><span>Predict</span></button>
   <button data-v="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></button>
 </nav>
 
@@ -317,7 +329,7 @@ async function boot(){
     const [m,t,p,meta] = await Promise.all(['models','trends','predictions','meta'].map(f=>fetch('data/'+f+'.json').then(r=>r.json())));
     DATA = {models:m.models||[], trends:t.trends||[], predictions:p.predictions||[], methodology:p.methodology||'', meta};
   }catch(e){ console.error(e); }
-  renderUpd(); renderHome(); renderNow(); renderCharts(); renderPredict(); renderMore();
+  renderUpd(); renderHome(); renderNow(); renderCharts(); renderMore();
 }
 
 function renderUpd(){
@@ -365,8 +377,7 @@ function renderHome(){
     <div class="hsec">Explore</div>
     <div class="explore">
       <button data-goto="now"><b>Now</b><span>every model since GPT-1, with specs &amp; price</span></button>
-      <button data-goto="charts"><b>Charts</b><span>trends, cadence, weights</span></button>
-      <button data-goto="predict"><b>Predict</b><span>forecasts + what's coming</span></button>
+      <button data-goto="charts"><b>Charts</b><span>trajectories, cadence, head-to-head, forecasts</span></button>
       <button data-goto="more"><b>More</b><span>full leaderboard, fact-checks, sources</span></button>
     </div>`;
 }
@@ -485,19 +496,55 @@ function weightsChart(){
     s+=`<text class="mn" x="${(xt+6).toFixed(1)}" y="${y+3}" font-size="9.5" fill="${C.ink2}">${m.total>=1000?(m.total/1000)+'T':m.total+'B'} · ${lbl}</text>`;});
   return s+'</svg>';
 }
+let MARKETS=[];
+function cadenceLine(){
+  const C={line:css('--line'),ink3:css('--ink3'),accent:css('--accent')};
+  const bins={};
+  DATA.models.forEach(m=>{const d=m.released;if(!d)return;const y=+d.slice(0,4),mo=+(d.slice(5,7)||1);if(!y)return;const t=y+Math.floor((mo-1)/3)/4;bins[t]=(bins[t]||0)+1;});
+  const pts=Object.entries(bins).map(([t,c])=>({t:+t,c})).sort((a,b)=>a.t-b.t);
+  if(pts.length<3)return '<div class="empty">Not enough data.</div>';
+  const roll=pts.map(p=>{const w=pts.filter(q=>q.t>p.t-1+1e-6&&q.t<=p.t);return {t:p.t,v:w.reduce((s,q)=>s+q.c,0)/w.length};});
+  const x0=pts[0].t,x1=pts[pts.length-1].t+0.25,y1=Math.max(...pts.map(p=>p.c),...roll.map(p=>p.v))*1.12;
+  const W=500,H=200,L=28,R=12,T=12,B=24;
+  const X=t=>L+((t-x0)/(x1-x0))*(W-L-R),Y=v=>T+(1-v/y1)*(H-T-B);
+  let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" style="width:100%;height:auto">`;
+  for(let i=0;i<=3;i++){const yy=y1*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end" fill="${C.ink3}">${yy.toFixed(0)}</text>`;}
+  for(let y=Math.ceil(x0);y<=Math.floor(x1);y++)s+=`<text x="${X(y).toFixed(1)}" y="${H-6}" font-size="9" text-anchor="middle" fill="${C.ink3}">${y}</text>`;
+  s+=`<polyline points="${roll.map(p=>`${X(p.t).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  pts.forEach(p=>s+=`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.c).toFixed(1)}" r="2.4" fill="${C.ink3}"><title>${p.c} that quarter</title></circle>`);
+  s+='</svg>';
+  const recent=roll[roll.length-1].v,early=roll[Math.min(roll.length-1,4)].v||roll[0].v;
+  return s+`<div class="accsub" style="margin-top:8px">Line = trailing-year average of tracked releases per quarter; gray dots = each quarter's count. The pace climbed from ~${early.toFixed(1)}/qtr to ~${recent.toFixed(1)}/qtr — about ${(recent/Math.max(0.4,early)).toFixed(0)}× the early-years rate.</div>`;
+}
+function headToHead(){
+  const cands=DATA.models.filter(m=>m.status==='live');
+  const top=cands.map(m=>({m,aa:benchOf(m,'aa')})).filter(o=>o.aa!=null).sort((a,b)=>b.aa-a.aa).slice(0,6).map(o=>o.m);
+  if(!top.length)return '<div class="empty">No data.</div>';
+  const cols=[['aa','AA'],['swe','SWE'],['gpqa','GPQA'],['aime','AIME']];
+  return `<div style="overflow-x:auto"><table class="hh"><thead><tr><th>Model</th>${cols.map(c=>`<th>${c[1]}</th>`).join('')}<th>$/M</th></tr></thead><tbody>
+    ${top.map(m=>`<tr><td class="hhm"><span class="hd" style="background:${labHex(m.lab)}"></span>${m.name}</td>${cols.map(c=>{const v=benchOf(m,c[0]);return `<td>${v!=null?Math.round(v*10)/10:'·'}</td>`;}).join('')}<td>${priceFor(m.name)?'$'+priceFor(m.name).split('/')[1]:'·'}</td></tr>`).join('')}
+  </tbody></table></div><div class="accsub" style="margin-top:8px">Top frontier models by AA Index, across the benchmarks that matter. · = not reported.</div>`;
+}
+function marketRow(mk){
+  const p=(mk.platform||'').toLowerCase();
+  const pc=p.includes('poly')?'#5b8cff':p.includes('metac')?'#34d399':p.includes('mani')?'#f5b945':p.includes('epoch')?'#a855f7':'#7c8aa0';
+  return `<div class="mktrow"><div class="mkt-top"><span class="mkt-plat" style="color:${pc};border-color:${pc}66">${mk.platform}</span><span class="mkt-fc">${mk.forecast}</span></div><div class="mkt-q">${mk.question}</div>${mk.resolveDate?`<div class="mkt-d">resolves ${mk.resolveDate}</div>`:''}</div>`;
+}
 function renderCharts(){
-  const cad=cadence();
-  $('#v-charts').innerHTML = `<div class="vh">Charts</div>
-    <div class="vsub">Tap a section to open. Solid = measured, dashed + shaded = forecast with its uncertainty band.</div>
-    <details class="acc" open><summary><span class="tw">▶</span>Trends over time<span class="ct">${DATA.trends.length}</span></summary>
-      <div class="body">${DATA.trends.map(t=>`<div class="chartcard"><h4>${t.benchmark} ${t.saturated?'<span class="sattag">SATURATED</span>':''}</h4><div class="cd">${t.unit||''}${t.notes?' · '+t.notes:''}</div>${trendChart(t)}<div class="lgd"><span><span class="swline"></span>measured</span>${(t.predicted&&t.predicted.length)?'<span><span class="swdash"></span>forecast</span><span><span class="swband"></span>uncertainty</span>':''}</div></div>`).join('')||'<div class="empty">No trends.</div>'}</div></details>
-    <details class="acc"><summary><span class="tw">▶</span>Release cadence — 2026</summary>
-      <div class="body"><div class="accsub">Every 2026 release on its ship date, by lab lane. Dot size = same-day multi-drops; shaded = lulls.</div>${cad.stats}${cad.svg}</div></details>
-    <details class="acc"><summary><span class="tw">▶</span>Open weights — size &amp; sparsity</summary>
-      <div class="body"><div class="accsub">Total weights (dim) vs active per token (bright), log scale. The gap is the MoE efficiency win; × = sparsity.</div>${weightsChart()}</div></details>
+  $('#v-charts').innerHTML = `<div class="vh">Charts &amp; forecasts</div>
+    <div class="vsub">How each company's frontier has climbed, how fast models ship, and where the next ones are likely to land.</div>
+    <details class="acc" open><summary><span class="tw">▶</span>Frontier by company<span class="ct">AA · SWE</span></summary>
+      <div class="body"><div class="accsub">Each lab's leading model over time — the line jumps when they ship a stronger one. Tap a dot for the model; faded dot + dashed line = predicted next (anchored to the prediction markets below).</div>
+      ${trajBlock('aa','AA Intelligence Index','Composite 0–100 — the headline "how smart" score.')}
+      ${trajBlock('swe','SWE-bench','Real software-engineering issue resolution, % solved.')}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>Release cadence</summary>
+      <div class="body"><div class="accsub">How the pace of model releases has accelerated, on historical averages.</div>${cadenceLine()}</div></details>
     <details class="acc"><summary><span class="tw">▶</span>Head-to-head</summary>
-      <div class="body"><div class="chartcard"><h4>AA Intelligence Index — the ~57 ceiling</h4><div class="cd">GPT-5.5 then Fable 5 first to clear it; version-stamped, treat as rough.</div>${barChart(HH_AA,65,57)}</div>
-      <div class="chartcard"><h4>SWE-bench Pro — coding</h4><div class="cd">% of real software-eng issues resolved.</div>${barChart(HH_SWE,100)}</div></div></details>`;
+      <div class="body"><div class="accsub">The current frontier, top models across the key benchmarks.</div>${headToHead()}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>Prediction markets<span class="ct">${MARKETS.length||'…'}</span></summary>
+      <div class="body"><div class="accsub">What forecasters and prediction markets actually expect — these anchor the dashed forecasts above.</div>${MARKETS.length?MARKETS.map(marketRow).join(''):'<div class="empty">Market forecasts are being researched — they land on the next data sync.</div>'}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>On the horizon<span class="ct">${UPCOMING.length}</span></summary>
+      <div class="body">${UPCOMING.map(u=>`<div class="hrow ${u.status==='rum'?'rum':''}"><div class="hname">${u.lab?`<span class="dot" style="background:${labHex(u.lab)}"></span>`:''}${u.name} <span class="hpill ${u.status==='un'?'h-un':u.status==='soon'?'h-soon':'h-rum'}">${u.status==='un'?'UNRELEASED':u.status==='soon'?'EXPECTED':'RUMORED'}</span></div><div class="hwhat">${u.what}</div></div>`).join('')}</div></details>`;
 }
 
 // ---------------- PREDICT (per-company trajectories + forecasts combined) ----------------
@@ -547,15 +594,6 @@ function trajBlock(cat,title,sub){
     ${multiLineChart(leadingTrajectory(cands,cat),cat)}
     <div id="detail-${cat}"><div class="tdhint">Tap any dot to see the model · faded dot = predicted next</div></div></div>`;
 }
-function renderPredict(){
-  $('#v-predict').innerHTML = `<div class="vh">Frontier by company</div>
-    <div class="vsub">Each lab's leading model over time — the line jumps when they ship a stronger one (Sonnet → Opus, and so on). Tap a dot to see which model; the faded dot + dashed line is the predicted next release.</div>
-    ${trajBlock('aa','AA Intelligence Index','Composite 0–100 — the headline "how smart" score.')}
-    ${trajBlock('swe','SWE-bench','Real software-engineering issue resolution, % solved.')}
-    <div class="vh" style="margin-top:22px">On the horizon</div>
-    <div class="vsub">Announced, expected, or rumored — graded by signal strength.</div>
-    ${UPCOMING.map(u=>`<div class="hrow ${u.status==='rum'?'rum':''}"><div class="hname">${u.lab?`<span class="dot" style="background:${labHex(u.lab)}"></span>`:''}${u.name} <span class="hpill ${u.status==='un'?'h-un':u.status==='soon'?'h-soon':'h-rum'}">${u.status==='un'?'UNRELEASED':u.status==='soon'?'EXPECTED':'RUMORED'}</span></div><div class="hwhat">${u.what}</div></div>`).join('')}`;
-}
 
 // ---------------- MORE ----------------
 function renderMore(){
@@ -586,7 +624,7 @@ document.addEventListener('click',e=>{
   const g=e.target.closest('[data-goto]'); if(g){const t=g.dataset.goto;$$('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===t));$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));window.scrollTo(0,0);return;}
   const dot=e.target.closest('circle[data-model]'); if(dot){const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model'));const d=$('#detail-'+dot.getAttribute('data-bench'));if(m&&d)d.innerHTML=trajDetailCard(m,dot.getAttribute('data-bench'));return;}
   const pdot=e.target.closest('circle[data-pred]'); if(pdot){const pp=pdot.getAttribute('data-pred').split('|');const d=$('#detail-'+pdot.getAttribute('data-bench'));if(d)d.innerHTML=`<div class="tdetail pred"><div class="td-top"><span class="td-nm">${pp[0]} — next model</span><span class="td-sc">≈${pp[1]}</span></div><div class="td-why">Predicted next release, ~3–4 months out — a calibrated extrapolation of ${pp[0]}'s recent trajectory, not a confirmed model yet.</div></div>`;return;}
-  const sg=e.target.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode; if(which==='home'){homeMode=mode;renderHome();} else if(which==='now'){nowCat=mode;renderNow();} else if(which==='traj-aa'){trajMode.aa=mode;renderPredict();} else if(which==='traj-swe'){trajMode.swe=mode;renderPredict();} return;}
+  const sg=e.target.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode; if(which==='home'){homeMode=mode;renderHome();} else if(which==='now'){nowCat=mode;renderNow();} else if(which==='traj-aa'){trajMode.aa=mode;renderCharts();} else if(which==='traj-swe'){trajMode.swe=mode;renderCharts();} return;}
   const f=e.target.closest('.fchip'); if(f){ if(f.dataset.nl!==undefined){nowLandmarks=f.dataset.nl==='1';renderNow();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
   const mo=e.target.closest('.more'); if(mo){const c=mo.closest('.mcard');c.classList.toggle('exp');c.querySelector('.notable').classList.toggle('clip');mo.textContent=c.classList.contains('exp')?'less ▴':'more ▾';return;}
 });
