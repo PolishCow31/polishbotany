@@ -112,6 +112,19 @@
   .swline{width:13px;height:0;border-top:2px solid var(--accent)} .swdash{width:13px;height:0;border-top:2px dashed var(--warn)}
   .swband{width:11px;height:8px;border-radius:2px;background:rgba(245,185,69,.2);border:1px solid rgba(245,185,69,.4)}
   .sattag{font:700 9px var(--mono);color:var(--ghost);background:rgba(154,163,178,.1);padding:2px 5px;border-radius:5px}
+  .legend2{display:flex;flex-wrap:wrap;gap:9px 12px;margin-top:9px;font:600 10px var(--mono);color:var(--ink3)}
+  .legend2 span{display:inline-flex;align-items:center;gap:5px}
+  .legend2 .ld{width:9px;height:9px;border-radius:50%}
+  .tdhint{font:600 10.5px var(--mono);color:var(--ink3);text-align:center;padding:9px;margin-top:10px;background:var(--bg);border:1px dashed var(--line2);border-radius:9px}
+  .tdetail{margin-top:10px;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--lab,var(--accent));border-radius:9px;padding:10px 12px}
+  .tdetail.pred{border-left-color:var(--warn);border-left-style:dashed}
+  .td-top{display:flex;align-items:baseline;gap:8px}
+  .td-nm{font-size:13.5px;font-weight:730}
+  .td-sc{margin-left:auto;font:700 14px var(--mono);color:var(--accent)}
+  .tdetail.pred .td-sc{color:var(--warn)}
+  .td-meta{font:600 10.5px var(--mono);color:var(--ink3);margin-top:3px}
+  .td-why{font-size:12px;color:var(--ink2);margin-top:6px;line-height:1.45}
+  svg circle[data-model]:active,svg circle[data-pred]:active{r:6.5}
 
   /* horizontal bar (head-to-head + weights) */
   .bar{display:grid;grid-template-columns:96px 1fr 40px;align-items:center;gap:8px;margin-bottom:8px}
@@ -241,6 +254,8 @@
 <script>
 const LABV = {OpenAI:'--openai',Anthropic:'--anthropic',Google:'--google','Google DeepMind':'--google',DeepMind:'--google',xAI:'--xai',Mistral:'--mistral','Mistral AI':'--mistral',Alibaba:'--qwen','Alibaba (Qwen)':'--qwen',Qwen:'--qwen',NVIDIA:'--nvidia',Microsoft:'--microsoft','Microsoft + NVIDIA':'--microsoft',Moonshot:'--moonshot','Moonshot AI':'--moonshot',Meta:'--meta','Meta AI':'--meta','Meta Superintelligence Labs':'--meta',DeepSeek:'--deepseek',Zhipu:'--zhipu','Z.ai':'--zhipu','Zhipu / Z.ai':'--zhipu','Zhipu AI':'--zhipu'};
 function labVar(l){ if(LABV[l]) return LABV[l]; const k=Object.keys(LABV).find(x=>l&&l.includes(x.split(' ')[0])); return k?LABV[k]:'--ghost'; }
+const CANON={'--openai':'OpenAI','--anthropic':'Anthropic','--google':'Google','--xai':'xAI','--mistral':'Mistral','--qwen':'Alibaba','--nvidia':'NVIDIA','--microsoft':'Microsoft','--moonshot':'Moonshot','--meta':'Meta','--deepseek':'DeepSeek','--zhipu':'Zhipu'};
+function canonLab(l){ return CANON[labVar(l)] || l; }
 const $ = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
@@ -491,21 +506,60 @@ function renderCharts(){
       <div class="chartcard"><h4>SWE-bench Pro — coding</h4><div class="cd">% of real software-eng issues resolved.</div>${barChart(HH_SWE,100)}</div></div></details>`;
 }
 
-// ---------------- PREDICT ----------------
+// ---------------- PREDICT (per-company trajectories + forecasts combined) ----------------
+let trajOpen={aa:false,swe:false};
+function leadingTrajectory(cands,cat){
+  const byLab={};
+  cands.forEach(m=>{const v=benchOf(m,cat);if(v==null||!m.released)return;const L=canonLab(m.lab);(byLab[L]=byLab[L]||[]).push({t:tval(m.released),date:m.released,v,model:m.name});});
+  const series=[];
+  Object.entries(byLab).forEach(([lab,pts])=>{
+    pts.sort((a,b)=>a.t-b.t);
+    let best=-Infinity;const lead=[];
+    pts.forEach(p=>{if(p.v>best+0.001){best=p.v;lead.push(p);}});
+    if(!lead.length)return;
+    const last=lead[lead.length-1];let slope=0;
+    if(lead.length>=2){const p=lead[lead.length-2];slope=(last.v-p.v)/Math.max(0.08,last.t-p.t);}
+    const dt=0.33;let pv=last.v+(lead.length>=2?slope*dt:Math.max(1,last.v*0.04));
+    pv=Math.max(last.v+0.3,Math.min(pv,cat==='aa'?78:96));
+    series.push({lab,points:lead,pred:{t:last.t+dt,v:+pv.toFixed(1)}});
+  });
+  return series.sort((a,b)=>b.points[b.points.length-1].v-a.points[a.points.length-1].v);
+}
+function multiLineChart(series,cat){
+  if(!series.length)return '<div class="empty">No data for that filter.</div>';
+  const C={line:css('--line'),ink3:css('--ink3'),bg:css('--bg')};
+  const allP=series.flatMap(s=>[...s.points.map(p=>({t:p.t,v:p.v})),{t:s.pred.t,v:s.pred.v}]);
+  let x0=Math.min(...allP.map(p=>p.t)),x1=Math.max(...allP.map(p=>p.t));if(x1-x0<0.3)x1=x0+0.4;
+  let y0=Math.min(...allP.map(p=>p.v)),y1=Math.max(...allP.map(p=>p.v));const pad=(y1-y0)*.12||4;y0-=pad;y1+=pad;
+  const W=500,H=250,L=34,R=12,T=12,B=26;
+  const X=t=>L+((t-x0)/(x1-x0))*(W-L-R),Y=v=>T+(1-(v-y0)/(y1-y0))*(H-T-B);
+  let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" style="width:100%;height:auto">`;
+  for(let i=0;i<=3;i++){const yy=y0+(y1-y0)*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end" fill="${C.ink3}">${yy.toFixed(0)}</text>`;}
+  for(let y=Math.floor(x0);y<=Math.ceil(x1);y++){if(y>=x0-0.05&&y<=x1+0.05)s+=`<text x="${X(y).toFixed(1)}" y="${H-6}" font-size="9" text-anchor="middle" fill="${C.ink3}">${y}</text>`;}
+  series.forEach(se=>{const col=labHex(se.lab),last=se.points[se.points.length-1];
+    s+=`<polyline points="${se.points.map(p=>`${X(p.t).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ')}" fill="none" stroke="${col}" stroke-width="2.2" stroke-linejoin="round"/>`;
+    s+=`<line x1="${X(last.t).toFixed(1)}" y1="${Y(last.v).toFixed(1)}" x2="${X(se.pred.t).toFixed(1)}" y2="${Y(se.pred.v).toFixed(1)}" stroke="${col}" stroke-width="2" stroke-dasharray="4 4" opacity=".7"/>`;
+    s+=`<circle cx="${X(se.pred.t).toFixed(1)}" cy="${Y(se.pred.v).toFixed(1)}" r="5" fill="${col}" opacity=".34" stroke="${col}" stroke-width="1.5" data-pred="${se.lab}|${se.pred.v}" data-bench="${cat}" style="cursor:pointer"/>`;
+    se.points.forEach(p=>{s+=`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4.5" fill="${col}" stroke="${C.bg}" stroke-width="1.5" data-model="${p.model.replace(/"/g,'&quot;')}" data-bench="${cat}" style="cursor:pointer"><title>${p.model}: ${p.v}</title></circle>`;});});
+  s+='</svg>';
+  return s+`<div class="legend2">${series.map(se=>`<span><span class="ld" style="background:${labHex(se.lab)}"></span>${se.lab.split(' ')[0]}</span>`).join('')}</div>`;
+}
+function trajDetailCard(m,cat){const v=benchOf(m,cat);return `<div class="tdetail" style="--lab:${labHex(m.lab)}"><div class="td-top"><span class="td-nm">${m.name}</span><span class="td-sc">${v}${cat==='aa'?'':'%'}</span></div><div class="td-meta">${m.lab} · ${fmtDate(m.released)} ${statusBadge(m.status)}${m.open?' <span class="badge b-open">OPEN</span>':''}</div>${m.notable?`<div class="td-why">${m.notable}</div>`:''}</div>`;}
+function trajBlock(cat,title,sub){
+  let cands=DATA.models.filter(x=>x.status!=='preview');
+  if(trajOpen[cat])cands=cands.filter(x=>x.open);
+  return `<div class="chartcard"><h4>${title}</h4><div class="cd">${sub}</div>
+    <div class="filters"><button class="fchip to ${trajOpen[cat]?'':'on'}" data-to="${cat}" data-tov="0">All companies</button><button class="fchip to ${trajOpen[cat]?'on':''}" data-to="${cat}" data-tov="1">Open-source only</button></div>
+    ${multiLineChart(leadingTrajectory(cands,cat),cat)}
+    <div id="detail-${cat}"><div class="tdhint">Tap any dot to see the model · faded dot = predicted next</div></div></div>`;
+}
 function renderPredict(){
-  const ps=DATA.predictions||[];
-  $('#v-predict').innerHTML = `<div class="vh">Predictions &amp; what's coming</div>
-    <div class="vsub">Where un-tested or announced models are likely to land — point estimate + an honest uncertainty band.</div>
-    ${ps.length?ps.map(p=>{
-      const lo=Math.min(p.low,p.predicted),hi=Math.max(p.high,p.predicted),span=hi-lo||1;
-      const bl=((p.low-lo)/span)*100,bw=((p.high-p.low)/span)*100,pp=((p.predicted-lo)/span)*100;
-      return `<div class="pcard"><div class="ptop"><span class="pnm">${p.model}</span><span class="pbench">${(p.benchmark||'').replace(/\s*\(.*\)/,'')}</span></div>
-        <div class="pmeta">${p.lab||''}${p.expectedDate?' · '+p.expectedDate:''} ${p.confidence?`<span class="conf ${p.confidence}">${p.confidence.toUpperCase()}</span>`:''}</div>
-        <div class="gauge"><div class="gtrack"><div class="band" style="left:${bl}%;width:${bw}%"></div><div class="gv" style="left:${pp}%">${p.predicted}</div><div class="pt" style="left:${pp}%"></div></div>
-        <div class="lbls"><span>${lo.toFixed(0)}</span><span>band ${p.low}–${p.high}</span><span>${hi.toFixed(0)}</span></div></div>
-        ${p.basis?`<div class="basis">${p.basis}</div>`:''}</div>`;}).join(''):'<div class="empty">No forecasts.</div>'}
+  $('#v-predict').innerHTML = `<div class="vh">Frontier by company</div>
+    <div class="vsub">Each lab's leading model over time — the line jumps when they ship a stronger one (Sonnet → Opus, and so on). Tap a dot to see which model; the faded dot + dashed line is the predicted next release.</div>
+    ${trajBlock('aa','AA Intelligence Index','Composite 0–100 — the headline "how smart" score.')}
+    ${trajBlock('swe','SWE-bench','Real software-engineering issue resolution, % solved.')}
     <div class="vh" style="margin-top:22px">On the horizon</div>
-    <div class="vsub">Announced, expected, or rumored — graded by signal strength. Generative-media is honestly flagged rumored (failed fact-check).</div>
+    <div class="vsub">Announced, expected, or rumored — graded by signal strength.</div>
     ${UPCOMING.map(u=>`<div class="hrow ${u.status==='rum'?'rum':''}"><div class="hname">${u.lab?`<span class="dot" style="background:${labHex(u.lab)}"></span>`:''}${u.name} <span class="hpill ${u.status==='un'?'h-un':u.status==='soon'?'h-soon':'h-rum'}">${u.status==='un'?'UNRELEASED':u.status==='soon'?'EXPECTED':'RUMORED'}</span></div><div class="hwhat">${u.what}</div></div>`).join('')}`;
 }
 
@@ -536,7 +590,9 @@ function renderMore(){
 $('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('#nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.view').forEach(v=>v.classList.remove('on'));$('#v-'+b.dataset.v).classList.add('on');window.scrollTo(0,0);});
 document.addEventListener('click',e=>{
   const g=e.target.closest('[data-goto]'); if(g){const t=g.dataset.goto;$$('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===t));$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));window.scrollTo(0,0);return;}
-  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.ho!==undefined){homeOpenOnly=f.dataset.ho==='1';renderHome();} else if(f.dataset.hf!==undefined){histFrontierOnly=f.dataset.hf==='1';histAll=false;renderHistory();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
+  const dot=e.target.closest('circle[data-model]'); if(dot){const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model'));const d=$('#detail-'+dot.getAttribute('data-bench'));if(m&&d)d.innerHTML=trajDetailCard(m,dot.getAttribute('data-bench'));return;}
+  const pdot=e.target.closest('circle[data-pred]'); if(pdot){const pp=pdot.getAttribute('data-pred').split('|');const d=$('#detail-'+pdot.getAttribute('data-bench'));if(d)d.innerHTML=`<div class="tdetail pred"><div class="td-top"><span class="td-nm">${pp[0]} — next model</span><span class="td-sc">≈${pp[1]}</span></div><div class="td-why">Predicted next release, ~3–4 months out — a calibrated extrapolation of ${pp[0]}'s recent trajectory, not a confirmed model yet.</div></div>`;return;}
+  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.to!==undefined){trajOpen[f.dataset.to]=f.dataset.tov==='1';renderPredict();} else if(f.dataset.ho!==undefined){homeOpenOnly=f.dataset.ho==='1';renderHome();} else if(f.dataset.hf!==undefined){histFrontierOnly=f.dataset.hf==='1';histAll=false;renderHistory();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
   const mo=e.target.closest('.more'); if(mo){const c=mo.closest('.mcard');c.classList.toggle('exp');c.querySelector('.notable').classList.toggle('clip');mo.textContent=c.classList.contains('exp')?'less ▴':'more ▾';return;}
   if(e.target.id==='histmore'){histAll=true;renderHistory();}
 });
