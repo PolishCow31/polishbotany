@@ -55,6 +55,7 @@
   .fchip .sw{width:8px;height:8px;border-radius:50%}
   .fchip.off{opacity:.34}
   .fchip.all{border-color:var(--line2)}
+  .fchip.on{border-color:var(--accent);color:var(--ink);background:rgba(91,140,255,.13)}
 
   /* model card */
   .mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px;position:relative;overflow:hidden}
@@ -328,15 +329,22 @@ function renderNow(){
 }
 
 // ---------------- HISTORY ----------------
-let histAll=false;
+let histAll=false, histFrontierOnly=false;
 function renderHistory(){
-  const ms=DATA.models.filter(m=>m.milestone).sort((a,b)=>(b.released||'').localeCompare(a.released||''));
+  let ms=DATA.models.filter(m=>m.milestone);
+  const total=ms.length, frontierN=ms.filter(m=>!m.open).length;
+  if(histFrontierOnly) ms=ms.filter(m=>!m.open);
+  ms.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   const shown = histAll?ms:ms.slice(0,16);
   $('#v-history').innerHTML = `<div class="vh">History since GPT-3</div>
     <div class="vsub">The landmark models that moved the field — newest first, back to GPT-3 (and the GPT-1/2/BERT pre-history where the modern curve begins).</div>
+    <div class="filters">
+      <button class="fchip hf ${histFrontierOnly?'':'on'}" data-hf="0">All ${total}</button>
+      <button class="fchip hf ${histFrontierOnly?'on':''}" data-hf="1">Frontier only ${frontierN}</button>
+    </div>
     <div class="tl">${shown.map(m=>`<div class="tnode" style="--lab:${labHex(m.lab)}">
       <div class="yr">${fmtDate(m.released)}</div>
-      <div class="nm">${m.name}<span class="lab">${m.lab}</span></div>
+      <div class="nm">${m.name}<span class="lab">${m.lab}</span>${m.open?' <span class="badge b-open" style="font-size:8.5px;padding:1px 4px">OPEN</span>':''}</div>
       <div class="why">${m.notable||''}</div></div>`).join('')}</div>
     ${!histAll&&ms.length>16?`<div class="showall"><button id="histmore">Show all ${ms.length} landmarks ▾</button></div>`:''}`;
 }
@@ -470,7 +478,7 @@ function renderMore(){
 // ---------------- events ----------------
 $('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('#nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.view').forEach(v=>v.classList.remove('on'));$('#v-'+b.dataset.v).classList.add('on');window.scrollTo(0,0);});
 document.addEventListener('click',e=>{
-  const f=e.target.closest('.fchip'); if(f){nowFilter=f.dataset.lab||null;renderNow();return;}
+  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.hf!==undefined){histFrontierOnly=f.dataset.hf==='1';histAll=false;renderHistory();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
   const mo=e.target.closest('.more'); if(mo){const c=mo.closest('.mcard');c.classList.toggle('exp');c.querySelector('.notable').classList.toggle('clip');mo.textContent=c.classList.contains('exp')?'less ▴':'more ▾';return;}
   if(e.target.id==='histmore'){histAll=true;renderHistory();}
 });
