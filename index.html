@@ -56,6 +56,11 @@
   .fchip.off{opacity:.34}
   .fchip.all{border-color:var(--line2)}
   .fchip.on{border-color:var(--accent);color:var(--ink);background:rgba(91,140,255,.13)}
+  /* segmented Frontier ↔ Open switch */
+  .seg{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-bottom:12px;max-width:100%}
+  .seg button{border:none;background:none;color:var(--ink3);font:650 12.5px var(--sans);padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.12s}
+  .seg button.on{background:var(--panel2);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.35)}
+  .seg button[data-mode="open"].on{color:#7ea6ff}
 
   /* model card */
   .mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px;position:relative;overflow:hidden}
@@ -327,7 +332,9 @@ function priceFor(name){ const k=(name||'').toLowerCase(); return PRICES[k] || O
 function statusBadge(s){const m={live:'b-live',pulled:'b-pulled',preview:'b-preview',historic:'b-historic'}[s];return m?`<span class="badge ${m}">${s.toUpperCase()}</span>`:'';}
 
 // ---------------- HOME ----------------
-let homeOpenOnly=false;
+let homeMode='frontier';
+function segCtl(seg,mode,opts){return `<div class="seg" data-seg="${seg}">${opts.map(o=>`<button data-mode="${o[0]}" class="${mode===o[0]?'on':''}">${o[1]}</button>`).join('')}</div>`;}
+const FO=[['frontier','Frontier'],['open','Open source']];
 function benchOf(m,cat){const b=m.benchmarks||{},ks=Object.keys(b);
   const re={aa:/aa[ -]?index|intelligence index/i,swe:/swe[ -]?bench/i,gpqa:/gpqa/i,aime:/aime/i}[cat];
   if(!re)return null;
@@ -344,13 +351,13 @@ function pickBest(cands,uc){
 function renderHome(){
   const meta=DATA.meta||{};
   let cands=DATA.models.filter(x=>x.status==='live');
-  if(homeOpenOnly)cands=cands.filter(x=>x.open);
+  cands=cands.filter(x=> homeMode==='open'?x.open:!x.open);
   const lb=cands.map(x=>({x,aa:benchOf(x,'aa')})).filter(o=>o.aa!=null).sort((a,b)=>b.aa-a.aa).slice(0,5);
   const picks=USECASES.map(uc=>({uc,p:pickBest(cands,uc)})).filter(o=>o.p);
   const top=lb[0];
   $('#v-home').innerHTML=`<div class="vh">Overview</div>
-    <div class="hero"><b>${cands.length}</b> ${homeOpenOnly?'open-weight ':''}models available right now. The frontier sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>
-    <div class="filters"><button class="fchip ho ${homeOpenOnly?'':'on'}" data-ho="0">All models</button><button class="fchip ho ${homeOpenOnly?'on':''}" data-ho="1">Open-source only</button></div>
+    <div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>
+    ${segCtl('home',homeMode,FO)}
     <div class="hsec">Leaderboard · AA Index</div>
     ${lb.length?lb.map((o,i)=>`<div class="lbrow ${i===0?'gold':''}"><div class="lbrank">${i+1}</div><div><div class="lbname"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${labHex(o.x.lab)}"></span>${o.x.name}${o.x.open?' <span class="badge b-open" style="font-size:8px;padding:1px 4px">OPEN</span>':''}</div><div class="lbsub">${o.x.lab}</div></div><div class="lbscore">${o.aa}<small>AA-INDEX</small></div></div>`).join(''):'<div class="empty">No AA-Index data for that filter — try All models.</div>'}
     <div class="hsec">Best model for…</div>
@@ -383,25 +390,27 @@ function modelCard(m){
     ${m.notable?`<div class="notable clip">${m.notable}</div><div class="more">more ▾</div>`:''}
   </div>`;
 }
-let nowLandmarks=false, nowFrontier=false;
+let nowLandmarks=false, nowCat='all';
 function renderNow(){
-  const all=DATA.models;
-  const cnt={}; all.forEach(m=>{const L=canonLab(m.lab); cnt[L]=(cnt[L]||0)+1;});
+  let base=DATA.models.slice();
+  if(nowCat==='frontier') base=base.filter(m=>!m.open);
+  else if(nowCat==='open') base=base.filter(m=>m.open);
+  const cnt={}; base.forEach(m=>{const L=canonLab(m.lab); cnt[L]=(cnt[L]||0)+1;});
   const labs=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]);
-  let list=all.slice();
+  if(nowFilter && !cnt[nowFilter]) nowFilter=null;
+  let list=base;
   if(nowFilter) list=list.filter(m=>canonLab(m.lab)===nowFilter);
   if(nowLandmarks) list=list.filter(m=>m.milestone);
-  if(nowFrontier) list=list.filter(m=>!m.open);
   list.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   $('#v-now').innerHTML = `<div class="vh">Every model · newest first</div>
-    <div class="vsub">The full catalog since GPT-1 (2018). <span style="color:var(--warn)">★</span> = landmark. Tap a lab to filter; the toggles narrow to landmarks or closed-weight only. Tap "more" on a card to expand.</div>
+    <div class="vsub">The full catalog since GPT-1 (2018). <span style="color:var(--warn)">★</span> = landmark. Switch Frontier ↔ Open source, filter by lab, or show landmarks only. Tap "more" to expand a card.</div>
+    ${segCtl('now',nowCat,[['all','All'],['frontier','Frontier'],['open','Open source']])}
     <div class="filters">
-      <button class="fchip all ${nowFilter?'':'on'}" data-lab="">All ${all.length}</button>
+      <button class="fchip all ${nowFilter?'':'on'}" data-lab="">All ${base.length}</button>
       ${labs.map(l=>`<button class="fchip ${nowFilter&&nowFilter!==l?'off':''}" data-lab="${l}"><span class="sw" style="background:${labHex(l)}"></span>${l} ${cnt[l]}</button>`).join('')}
     </div>
     <div class="filters" style="margin-top:-2px">
       <button class="fchip nl ${nowLandmarks?'on':''}" data-nl="${nowLandmarks?0:1}">★ Landmarks only</button>
-      <button class="fchip nf ${nowFrontier?'on':''}" data-nf="${nowFrontier?0:1}">Frontier only (no open)</button>
     </div>
     ${list.length?list.map(modelCard).join(''):'<div class="empty">No models for that filter.</div>'}`;
 }
@@ -492,7 +501,7 @@ function renderCharts(){
 }
 
 // ---------------- PREDICT (per-company trajectories + forecasts combined) ----------------
-let trajOpen={aa:false,swe:false};
+let trajMode={aa:'frontier',swe:'frontier'};
 function leadingTrajectory(cands,cat){
   const byLab={};
   cands.forEach(m=>{const v=benchOf(m,cat);if(v==null||!m.released)return;const L=canonLab(m.lab);(byLab[L]=byLab[L]||[]).push({t:tval(m.released),date:m.released,v,model:m.name});});
@@ -532,9 +541,9 @@ function multiLineChart(series,cat){
 function trajDetailCard(m,cat){const v=benchOf(m,cat);return `<div class="tdetail" style="--lab:${labHex(m.lab)}"><div class="td-top"><span class="td-nm">${m.name}</span><span class="td-sc">${v}${cat==='aa'?'':'%'}</span></div><div class="td-meta">${m.lab} · ${fmtDate(m.released)} ${statusBadge(m.status)}${m.open?' <span class="badge b-open">OPEN</span>':''}</div>${m.notable?`<div class="td-why">${m.notable}</div>`:''}</div>`;}
 function trajBlock(cat,title,sub){
   let cands=DATA.models.filter(x=>x.status!=='preview');
-  if(trajOpen[cat])cands=cands.filter(x=>x.open);
+  cands=cands.filter(x=> trajMode[cat]==='open'?x.open:!x.open);
   return `<div class="chartcard"><h4>${title}</h4><div class="cd">${sub}</div>
-    <div class="filters"><button class="fchip to ${trajOpen[cat]?'':'on'}" data-to="${cat}" data-tov="0">All companies</button><button class="fchip to ${trajOpen[cat]?'on':''}" data-to="${cat}" data-tov="1">Open-source only</button></div>
+    ${segCtl('traj-'+cat,trajMode[cat],FO)}
     ${multiLineChart(leadingTrajectory(cands,cat),cat)}
     <div id="detail-${cat}"><div class="tdhint">Tap any dot to see the model · faded dot = predicted next</div></div></div>`;
 }
@@ -577,7 +586,8 @@ document.addEventListener('click',e=>{
   const g=e.target.closest('[data-goto]'); if(g){const t=g.dataset.goto;$$('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===t));$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));window.scrollTo(0,0);return;}
   const dot=e.target.closest('circle[data-model]'); if(dot){const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model'));const d=$('#detail-'+dot.getAttribute('data-bench'));if(m&&d)d.innerHTML=trajDetailCard(m,dot.getAttribute('data-bench'));return;}
   const pdot=e.target.closest('circle[data-pred]'); if(pdot){const pp=pdot.getAttribute('data-pred').split('|');const d=$('#detail-'+pdot.getAttribute('data-bench'));if(d)d.innerHTML=`<div class="tdetail pred"><div class="td-top"><span class="td-nm">${pp[0]} — next model</span><span class="td-sc">≈${pp[1]}</span></div><div class="td-why">Predicted next release, ~3–4 months out — a calibrated extrapolation of ${pp[0]}'s recent trajectory, not a confirmed model yet.</div></div>`;return;}
-  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.to!==undefined){trajOpen[f.dataset.to]=f.dataset.tov==='1';renderPredict();} else if(f.dataset.ho!==undefined){homeOpenOnly=f.dataset.ho==='1';renderHome();} else if(f.dataset.nl!==undefined){nowLandmarks=f.dataset.nl==='1';renderNow();} else if(f.dataset.nf!==undefined){nowFrontier=f.dataset.nf==='1';renderNow();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
+  const sg=e.target.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode; if(which==='home'){homeMode=mode;renderHome();} else if(which==='now'){nowCat=mode;renderNow();} else if(which==='traj-aa'){trajMode.aa=mode;renderPredict();} else if(which==='traj-swe'){trajMode.swe=mode;renderPredict();} return;}
+  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.nl!==undefined){nowLandmarks=f.dataset.nl==='1';renderNow();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
   const mo=e.target.closest('.more'); if(mo){const c=mo.closest('.mcard');c.classList.toggle('exp');c.querySelector('.notable').classList.toggle('clip');mo.textContent=c.classList.contains('exp')?'less ▴':'more ▾';return;}
 });
 
