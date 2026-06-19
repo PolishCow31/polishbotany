@@ -6,12 +6,12 @@
 <meta name="theme-color" content="#080a0f">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="AI Tracker">
+<meta name="apple-mobile-web-app-title" content="Robots">
 <meta name="robots" content="noindex">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080a0f'/%3E%3Cpolyline points='5,24 13,16 19,20 27,7' fill='none' stroke='%235b8cff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
-<title>AI Tracker</title>
+<title>Robots</title>
 <style>
   :root{
     --bg:#080a0f; --bg2:#0d1018; --panel:#11151f; --panel2:#161b27;
@@ -126,7 +126,7 @@
 <header class="bar">
   <div class="row">
     <svg class="logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#11151f" stroke="#222a3a"/><polyline points="5,24 13,16 19,20 27,7" fill="none" stroke="#5b8cff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <h1>AI Tracker</h1>
+    <h1>Robots</h1>
     <div class="upd" id="upd">loading…</div>
   </div>
 </header>
@@ -306,7 +306,7 @@ function renderPredict(){
 function renderAbout(){
   const m=DATA.meta||{};
   $('#v-about').innerHTML = `<div class="vh">About</div>
-    <div class="note"><b>AI Tracker</b> is a living record of public AI — every landmark model since GPT-3 (June 2020), the trajectory of the benchmarks, and forecasts for what's coming. Built for Christian &amp; his dad.</div>
+    <div class="note"><b>Robots</b> is a living record of public AI — every landmark model since GPT-3 (June 2020), the trajectory of the benchmarks, and forecasts for what's coming. Built for Christian &amp; his dad.</div>
     <div class="note"><b>It updates itself.</b> Twice a day a research pass looks for new models and benchmark results, verifies them, and pushes the changes here automatically. Last update: <b style="color:var(--good)">${m.lastUpdated?fmtDate(m.lastUpdated.slice(0,10))+' '+(new Date(m.lastUpdated)).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}):'—'}</b> · ${m.sweeps||0} sweeps · data v${m.dataVersion||0}.</div>
     <div class="note"><b>Predictions.</b> ${DATA.methodology||'For un-tested models, we fit the recent frontier trajectory of each benchmark, place the estimate at the model\'s expected date, and show an uncertainty band that widens further into the future. Measured data always overrides a forecast.'}</div>
     <div class="note" style="color:var(--ink3);font-size:12px">A refute in research means "not yet verified," not "false forever." Numbers carry source-confidence; benchmark indices are version-stamped and not always cross-comparable. Snapshot of a field that moves weekly.</div>`;

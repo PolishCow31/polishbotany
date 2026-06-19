@@ -1,9 +1,187 @@
 {
-  "note": "SEED — placeholder forecasts. Replaced by ai-history-foundation workflow output (P1).",
-  "methodology": "Fit the recent frontier trajectory of each benchmark (last ~6-8 SOTA points) respecting saturation ceilings; place the model's point estimate at its expected date adjusted by its lab's recent over/under-performance; widen the uncertainty band with time-to-release and benchmark noise. Always render the band, never a bare point. Measured data overrides on the next sweep.",
+  "methodology": "Anchor on the current frontier value in the SAME measurement regime as the target benchmark, then add a per-release increment that decays as the score approaches the benchmark ceiling (gap-closure model: each new frontier model closes ~20-35% of the remaining gap to saturation, not a fixed linear slope). Two regime corrections are applied first: the AA Intelligence Index was re-based around Jan 2026 (the 73→50 drop is a harder scale, not a regression), so I forecast off the post-rebase trajectory (50→55→64.9, ~3-5 pts/mo) and never above ~80 on that scale; and SWE-bench Pro carries two frames — vendor-reported (~69 Opus 4.8) runs ~10 pts hot vs SEAL-standardized (~59 GPT-5.4), so I predict in the standardized frame and note the vendor offset. The point estimate is the regime-anchor plus the expected per-release gain scaled by lab cadence and how clearly the model is a frontier push vs a point release. The uncertainty band widens with forecast horizon: roughly ±3-4 pts for the next imminent release, expanding to ±8-12 pts for the end-of-2026 generic, because version-naming chaos (GPT-5.2 scoring below 5.1, Fable 5 falling back to Opus 4.8), re-basing, and frame ambiguity all compound the further out you go. Confidence is high when a named successor's predecessor is already measured on that exact benchmark, low when the model is unannounced/generic or the benchmark itself may be re-based again before it lands.",
   "predictions": [
-    { "model": "Claude Mythos Preview", "lab": "Anthropic", "expectedDate": "2026-Q3", "benchmark": "AA-Index", "predicted": 64, "low": 60, "high": 68, "basis": "Tops LLM-Stats composite (65.2); Anthropic's frontier trajectory + the ~60 current ceiling.", "confidence": "medium" },
-    { "model": "Next GPT-5.x", "lab": "OpenAI", "expectedDate": "2026-Q3", "benchmark": "AA-Index", "predicted": 63, "low": 59, "high": 67, "basis": "OpenAI's ~bi-weekly cadence and the 57→60 jump GPT-5.4→5.5.", "confidence": "low" },
-    { "model": "Frontier (end of 2026)", "lab": "—", "expectedDate": "2026-12", "benchmark": "AA-Index", "predicted": 66, "low": 62, "high": 71, "basis": "Extrapolating the 2026 climb; band widens for ~6 months out and possible plateau.", "confidence": "low" }
+    {
+      "model": "Claude Mythos Preview",
+      "benchmark": "Artificial Analysis Intelligence Index",
+      "lab": "Anthropic",
+      "predicted": 67,
+      "low": 62,
+      "high": 72,
+      "expectedDate": "2026-07",
+      "confidence": "medium",
+      "basis": "Post-rebase frontier anchor is 64.9 (Fable 5, Jun 2026, Opus 4.8 fallback). A Mythos-tier Anthropic push should clear the current best by a small margin; recall Fable 5 underdelivered (fell back to Opus 4.8), so a 'Preview' label caps the upside. Post-rebase slope is ~3-5 pts/mo, so one notch above 64.9 is the expected landing."
+    },
+    {
+      "model": "OpenAI GPT-5.x (next, ~GPT-5.6)",
+      "benchmark": "Artificial Analysis Intelligence Index",
+      "lab": "OpenAI",
+      "predicted": 62,
+      "low": 54,
+      "high": 69,
+      "expectedDate": "2026-08",
+      "confidence": "low",
+      "basis": "OpenAI's post-rebase line is volatile: GPT-5.2=50 (Jan), GPT-5.5 xhigh=55 (Apr). Linear continuation lands ~60-63 by late summer, but OpenAI point releases have repeatedly scored flat-to-down on this index, so the band is wide and skewed low. Anchored to OpenAI's own post-rebase points, not the cross-lab frontier."
+    },
+    {
+      "model": "Google Gemini (next, ~3.2/4 Pro)",
+      "benchmark": "Artificial Analysis Intelligence Index",
+      "lab": "Google DeepMind",
+      "predicted": 69,
+      "low": 63,
+      "high": 75,
+      "expectedDate": "2026-09",
+      "confidence": "medium",
+      "basis": "Google held the pre-rebase peak (Gemini 3 Pro=73) and Gemini 3.1 Pro leads GPQA at 94.3. Google's frontier Pro releases tend to top the index at launch, so the next Gemini is the most likely model to set a new post-rebase high; predicted just above the current 64.9 best with room to ~75."
+    },
+    {
+      "model": "xAI Grok 4.x Heavy",
+      "benchmark": "Artificial Analysis Intelligence Index",
+      "lab": "xAI",
+      "predicted": 66,
+      "low": 58,
+      "high": 73,
+      "expectedDate": "2026-09",
+      "confidence": "low",
+      "basis": "Grok 4 sat at 68 pre-rebase (mid-pack, below Gemini 3 Pro's 73). No post-rebase Grok data point exists, so I map its pre-rebase relative position onto the new scale near the current frontier; absence of a recent calibration point forces a wide band."
+    },
+    {
+      "model": "Frontier model, end of 2026 (generic best)",
+      "benchmark": "Artificial Analysis Intelligence Index",
+      "lab": "multiple",
+      "predicted": 73,
+      "low": 64,
+      "high": 82,
+      "expectedDate": "2026-12",
+      "confidence": "low",
+      "basis": "Gap-closure off the 64.9 post-rebase anchor over ~2 more release cycles, ceiling-damped near ~80 on the harder rebased scale. Long horizon plus possible second re-basing widens the band to ±9; high end assumes a clean Gemini/Anthropic frontier jump, low end assumes continued naming/regression chaos."
+    },
+    {
+      "model": "Claude Mythos Preview",
+      "benchmark": "SWE-bench Pro",
+      "lab": "Anthropic",
+      "predicted": 71,
+      "low": 66,
+      "high": 76,
+      "expectedDate": "2026-07",
+      "confidence": "medium",
+      "basis": "Vendor-reported frame: Opus 4.8 anchor is 69.2 (vendor). Anthropic leads SWE-bench coding (first past 80% on Verified, top of Pro vendor frame), so a Mythos push closes ~20-30% of the gap to 100, landing low-70s vendor-reported. In SEAL-standardized frame this maps to roughly 60-63 (subtract the ~10pt vendor offset)."
+    },
+    {
+      "model": "OpenAI GPT-5.x (next, ~GPT-5.6)",
+      "benchmark": "SWE-bench Pro",
+      "lab": "OpenAI",
+      "predicted": 62,
+      "low": 56,
+      "high": 68,
+      "expectedDate": "2026-08",
+      "confidence": "medium",
+      "basis": "SEAL-standardized frame: GPT-5.4 xHigh is the standardized leader at 59.1 (Jun 2026). Standardized slope since Sep 2025 is ~4 pts/mo, decelerating near ceiling; next Codex-Max-style release closes part of the remaining gap to ~62 standardized. Predicted in the apples-to-apples SEAL frame, not the hotter vendor frame."
+    },
+    {
+      "model": "Google Gemini (next, ~3.2/4 Pro)",
+      "benchmark": "SWE-bench Pro",
+      "lab": "Google DeepMind",
+      "predicted": 64,
+      "low": 57,
+      "high": 71,
+      "expectedDate": "2026-09",
+      "confidence": "low",
+      "basis": "Gemini 3 Pro trailed on coding (76.2 Verified vs Anthropic's 80.9; no public Pro number). Mapping that relative gap onto the Pro scale, the next Gemini lands mid-60s standardized — competitive but historically a step behind Anthropic/OpenAI on SWE coding, hence the lower anchor and wide band."
+    },
+    {
+      "model": "xAI Grok 4.x Heavy",
+      "benchmark": "SWE-bench Pro",
+      "lab": "xAI",
+      "predicted": 55,
+      "low": 46,
+      "high": 64,
+      "expectedDate": "2026-09",
+      "confidence": "low",
+      "basis": "No xAI SWE-bench Pro data point at all. Grok 4 is strong on math/GPQA but unproven on agentic SWE resolution; estimate places it below the OpenAI/Anthropic leaders in the standardized frame with the widest band of the set due to zero benchmark anchor."
+    },
+    {
+      "model": "Frontier model, end of 2026 (generic best)",
+      "benchmark": "SWE-bench Pro",
+      "lab": "multiple",
+      "predicted": 68,
+      "low": 60,
+      "high": 76,
+      "expectedDate": "2026-12",
+      "confidence": "medium",
+      "basis": "SEAL-standardized frame, gap-closure off the 59.1 leader over ~2 release cycles: closing ~25-35% of the remaining ~41pt gap to 100 lands high-60s standardized (≈78-80 vendor-reported). Band widens to ±8 for horizon and frame ambiguity; SWE-bench Pro is deliberately far from saturation so steady gains are likelier here than on near-saturated indices."
+    },
+    {
+      "model": "Frontier (best public model, Artificial Analysis independent run)",
+      "lab": "likely Anthropic / OpenAI / Google",
+      "benchmark": "Artificial Analysis Intelligence Index (v4.x)",
+      "expectedDate": "2026-12-31",
+      "predicted": 62,
+      "low": 58,
+      "high": 67,
+      "confidence": "medium",
+      "basis": "Current AA-independent frontier sits ~55-57 (Opus 4.8 ~55.7 on BenchLM's independent run; ~60-61 on best-config/preview snapshots the prompt is referencing). Index v4.0 was rebased in Jan 2026 specifically by swapping OUT saturated benchmarks (MMLU-Pro, AIME, LiveCodeBench) for deliberately-hard ones (Humanity's Last Exam, CritPt, GDPval, Terminal-Bench Hard) that are far from solved. That construction is the key calibration lever: it caps how fast the composite can rise because the hardest components (HLE, CritPt) have huge headroom and move slowly. 2025 saw ~15-20 pts/yr on prior versions, but v4.0's harder mix compresses that. Expect ~5-7 pts of frontier gain over ~6 months from a ~56 baseline. Risk to HIGH: a genuine reasoning step-change (GPT-5.5/6, Gemini 4, next Claude) could add a jump. Risk to LOW: a release lull or another mid-cycle rebase that adds fresh hard evals and pushes the number DOWN.",
+      "confidence_note": "medium"
+    },
+    {
+      "model": "Frontier (best public model, AA independent run)",
+      "lab": "likely Anthropic / OpenAI / Google",
+      "benchmark": "Artificial Analysis Intelligence Index (v4.x)",
+      "expectedDate": "2027-06-30",
+      "predicted": 68,
+      "low": 61,
+      "high": 74,
+      "confidence": "low",
+      "basis": "Extrapolating the same ~5-7 pts/half-year cadence off the end-2026 ~62 estimate lands ~68 by mid-2027. Wide band because (a) a v5.0 rebase is plausible within 12 months — AA rebases roughly when the top cluster compresses, which resets the scale and could drop the headline number even as capability rises; (b) the hardest sub-benchmarks (HLE, CritPt, GDPval economic tasks) are the binding constraint and their pace is genuinely uncertain. Low confidence is honest: 12-month frontier forecasts on a deliberately-moving composite are the least reliable of the three.",
+      "confidence_note": "low"
+    },
+    {
+      "model": "Frontier (best vendor-reported, tuned agent harness)",
+      "lab": "Anthropic (current leader) or peer",
+      "benchmark": "SWE-bench Pro (vendor-reported / public set)",
+      "expectedDate": "2026-12-31",
+      "predicted": 84,
+      "low": 80,
+      "high": 89,
+      "confidence": "medium",
+      "basis": "Vendor-reported frontier is ~80% (Claude Mythos 5 80.3, Fable 5 80.0, Opus 4.8 69.2). Trajectory was explosive: launch baseline ~23% (late 2025) to ~80% in ~7-8 months, but that early-curve velocity is NOT repeatable — the steep part of the S-curve is behind us and the top ~20% is the long tail of genuinely hard multi-file, long-horizon tasks plus a hard floor of broken/ambiguous test instances (~5-10% likely unsolvable as written). Expect deceleration: +4-9 pts over 6 months toward the mid-80s. CRITICAL caveat for the band: this is the VENDOR-harness track. The standardized Scale/SEAL frontier is far lower (~59%, GPT-5.4 xHigh) and rising slower — if the user cares about apples-to-apples model capability, that track lands ~63-68 by end-2026, not 84. HIGH assumes harness/scaffold gains keep compounding; LOW assumes the test-noise ceiling bites early.",
+      "confidence_note": "medium"
+    },
+    {
+      "model": "Frontier (best vendor-reported, tuned agent harness)",
+      "lab": "Anthropic or peer",
+      "benchmark": "SWE-bench Pro (vendor-reported / public set)",
+      "expectedDate": "2027-06-30",
+      "predicted": 88,
+      "low": 83,
+      "high": 92,
+      "confidence": "low",
+      "basis": "By mid-2027 vendor-reported scores likely push into high-80s but hit a soft asymptote in the low 90s set by irreducible test-instance noise (mislabeled gold patches, environment flakiness, genuinely underspecified tickets). SWE-bench Verified already showed this pattern — it stalled near its noise ceiling and OpenAI deprecated the original SWE-bench in Feb 2026 over contamination, so SWE-bench Pro itself may be partially retired, contaminated, or superseded by a harder successor within 12 months, which is the main reason for low confidence and the capped HIGH of 92. The real-capability standardized track would sit ~70-76 by then.",
+      "confidence_note": "low"
+    },
+    {
+      "model": "Frontier (best public model)",
+      "lab": "Google / Anthropic (current co-leaders)",
+      "benchmark": "GPQA Diamond",
+      "expectedDate": "2026-12-31",
+      "predicted": 95,
+      "low": 93,
+      "high": 96,
+      "confidence": "high",
+      "basis": "This is the saturated benchmark — forecasting proximity to a wall, not growth. Frontier is ~94% (Gemini 3.1 Pro 94.3, Opus 4.7 94.2), top-10 within 4 pts, and crucially the PhD-expert in-domain ceiling is only 69.7% — models are ~24 pts ABOVE human experts already. The remaining ~5-6% is dominated by genuinely ambiguous or mislabeled questions, so the effective noise ceiling is roughly 95-96%, not 100. Predicted +1 pt to ~95 with a very tight band; you physically cannot run far here. The benchmark has stopped being able to rank the frontier — that's the real signal. Narrowest band of the three precisely because saturation makes it predictable.",
+      "confidence_note": "high"
+    },
+    {
+      "model": "Frontier (best public model)",
+      "lab": "Google / Anthropic",
+      "benchmark": "GPQA Diamond",
+      "expectedDate": "2027-06-30",
+      "predicted": 95,
+      "low": 93,
+      "high": 97,
+      "confidence": "medium",
+      "basis": "Essentially flat-to-pinned at the ~95-96 noise ceiling. The dominant uncertainty by mid-2027 is not capability but whether GPQA Diamond is still cited at all — saturated benchmarks get dropped (AA already swaps saturated evals out of its index; the field is migrating to HLE, CritPt, FrontierMath-tier evals). The high of 97 reflects the slim chance a cleaned/re-graded variant lifts the achievable ceiling; the low of 93 reflects measurement noise and the possibility the headline frontier model on a given day isn't the absolute GPQA-tuned best. Medium not high only because 12 months is long enough for the benchmark itself to be deprecated, making 'the frontier score' partly undefined.",
+      "confidence_note": "medium"
+    }
   ]
 }

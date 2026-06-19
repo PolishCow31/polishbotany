@@ -1,8 +1,61 @@
 {
-  "lastUpdated": "2026-06-19T15:13:00-04:00",
-  "models": 10,
-  "labs": 6,
-  "sweeps": 0,
-  "dataVersion": 0,
-  "note": "Seed scaffold. P1 folds in the ai-history-foundation workflow (full history GPT-3 → 2026 + trends + forecasts). Auto-updater not yet installed."
+  "lastUpdated": "2026-06-19T15:35:58-04:00",
+  "models": 96,
+  "labs": 20,
+  "sweeps": 1,
+  "dataVersion": 1,
+  "narrative": "In 2020, GPT-3 showed that sheer scale turned a language model into a general-purpose, promptable tool, making scale the industry's organizing thesis. ChatGPT in late 2022 wrapped that capability in a chat box and reached a hundred million people, igniting a race that GPT-4 in 2023 escalated into multimodal, near-professional reasoning, while open models like LLaMA and Mistral built a parallel ecosystem. The next leap was thinking time, not size: OpenAI's o1 made inference-time reasoning a new scaling axis in 2024, and DeepSeek-R1 reproduced that frontier openly and cheaply in early 2025, collapsing the moat between labs and everyone else. Through 2025 the race turned into a crowded sprint of GPT-5, Gemini 3, Grok 4, and Claude's Opus 4 line, where gains grew incremental and agentic, measured in coding and tool-use skill. By mid-2026 the story is consolidation and diffusion: a few labs ship near-monthly releases, reasoning and agency are table stakes, and the open frontier sits close enough behind that capability, not access, is the scarce thing.",
+  "landmarks": [
+    {
+      "name": "GPT-3 (davinci, 175B)",
+      "date": "2020-05-28",
+      "why": "Proved scaling alone yields general-purpose, promptable language ability; set the scaling thesis of the era."
+    },
+    {
+      "name": "ChatGPT (GPT-3.5)",
+      "date": "2022-11-30",
+      "why": "Put conversational AI in front of the public and triggered the fastest consumer-tech adoption ever."
+    },
+    {
+      "name": "GPT-4",
+      "date": "2023-03-14",
+      "why": "First broadly multimodal frontier model with near-professional reasoning; set the bar rivals chased for years."
+    },
+    {
+      "name": "Llama 2",
+      "date": "2023-07-18",
+      "why": "A usable open-weight model licensed for commercial use, anchoring open source against the closed labs."
+    },
+    {
+      "name": "Mixtral 8x7B",
+      "date": "2023-12-11",
+      "why": "Brought sparse mixture-of-experts to open weights, making frontier-class quality cheap to run."
+    },
+    {
+      "name": "GPT-4o",
+      "date": "2024-05-13",
+      "why": "Unified text, vision, and real-time voice in one native model, normalizing cheap omni-modal interaction."
+    },
+    {
+      "name": "OpenAI o1-preview",
+      "date": "2024-09-12",
+      "why": "Opened inference-time reasoning, trading test-time compute for accuracy as a new scaling axis."
+    },
+    {
+      "name": "DeepSeek-R1",
+      "date": "2025-01-20",
+      "why": "Matched the reasoning frontier as an open, low-cost model, shattering the closed-lab moat assumption."
+    },
+    {
+      "name": "GPT-5",
+      "date": "2025-08-07",
+      "why": "Fused reasoning, multimodality, and agentic tool-use into one flagship; the pivot to integrated agentic systems."
+    },
+    {
+      "name": "Google Gemini 3 Pro",
+      "date": "2025-11-18",
+      "why": "Cemented Google as a frontier co-leader and a mature, multi-lab, near-parity landscape into 2026."
+    }
+  ],
+  "note": "P1: real history GPT-1 -> 2026 from ai-history-foundation workflow."
 }

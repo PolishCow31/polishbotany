@@ -1,36 +1,744 @@
 {
-  "note": "SEED — placeholder benchmark trajectories. Replaced by ai-history-foundation workflow output (P1).",
   "trends": [
     {
       "benchmark": "MMLU",
-      "unit": "% accuracy",
       "higherBetter": true,
-      "saturated": true,
+      "unit": "% accuracy (average over 57 subjects)",
       "points": [
-        { "date": "2020-06", "model": "GPT-3", "lab": "OpenAI", "value": 43.9 },
-        { "date": "2022-11", "model": "ChatGPT", "lab": "OpenAI", "value": 70.0 },
-        { "date": "2023-03", "model": "GPT-4", "lab": "OpenAI", "value": 86.4 },
-        { "date": "2024-03", "model": "Claude 3 Opus", "lab": "Anthropic", "value": 86.8 },
-        { "date": "2024-05", "model": "GPT-4o", "lab": "OpenAI", "value": 88.7 },
-        { "date": "2025-02", "model": "frontier", "lab": "multiple", "value": 92.0 }
+        {
+          "date": "2020-09",
+          "model": "GPT-3 175B",
+          "lab": "OpenAI",
+          "value": 43.9
+        },
+        {
+          "date": "2021-12",
+          "model": "Gopher 280B",
+          "lab": "DeepMind",
+          "value": 60
+        },
+        {
+          "date": "2022-03",
+          "model": "Chinchilla 70B",
+          "lab": "DeepMind",
+          "value": 67.6
+        },
+        {
+          "date": "2022-04",
+          "model": "PaLM 540B",
+          "lab": "Google",
+          "value": 69.3
+        },
+        {
+          "date": "2022-10",
+          "model": "Flan-PaLM 540B",
+          "lab": "Google",
+          "value": 75.2
+        },
+        {
+          "date": "2023-03",
+          "model": "GPT-4",
+          "lab": "OpenAI",
+          "value": 86.4
+        },
+        {
+          "date": "2023-12",
+          "model": "Gemini Ultra",
+          "lab": "Google DeepMind",
+          "value": 90.04
+        },
+        {
+          "date": "2024-05",
+          "model": "GPT-4o",
+          "lab": "OpenAI",
+          "value": 88.7
+        },
+        {
+          "date": "2024-06",
+          "model": "Claude 3.5 Sonnet",
+          "lab": "Anthropic",
+          "value": 88.7
+        },
+        {
+          "date": "2024-07",
+          "model": "Llama 3.1 405B Instruct",
+          "lab": "Meta",
+          "value": 88.6
+        }
       ],
+      "notes": "METHODOLOGY IS THE STORY — these points are NOT all measured the same way, so treat the curve as a trend, not a strict apples-to-apples ranking.\n\n5-SHOT ERA (2020–2023, clean & comparable): GPT-3 43.9, Gopher 60.0, Chinchilla 67.6, PaLM 69.3, Flan-PaLM 75.2, GPT-4 86.4 — all standard 5-shot, no chain-of-thought. This stretch is the genuinely comparable frontier. GPT-4's 86.4% (vs GPT-3.5's 70.0%) is confirmed in the GPT-4 technical report, 5-shot.\n\nTHE METHODOLOGY BREAK (Dec 2023): Gemini Ultra's 90.04% — the first reported score to cross the ~89.8% human-expert estimate and the headline \"MMLU solved\" moment — used CoT@32 (uncertainty-routed chain-of-thought, majority vote over 32 samples), NOT 5-shot. Google's own table showed Gemini Ultra at only ~83.7% under the same 5-shot setup GPT-4 used; the 90.04 is the cherry-picked best protocol. So the 86.4 → 90.04 jump partly reflects a change in eval method, not pure capability. From here on, labs report under inconsistent protocols (5-shot, 0-shot CoT, 5-shot CoT), making post-2023 numbers only loosely comparable.\n\n2024 CLUSTER (0-shot CoT for most): GPT-4o 88.7 (OpenAI simple-evals), Claude 3.5 Sonnet 88.7 (0-shot CoT), Llama 3.1 405B 88.6 — all within ~2 pts of each other and of GPT-4, i.e. inside measurement noise for a ~15.9k-question test.\n\nSATURATION (why it stopped being useful): (1) Ceiling — top models cluster in the high-80s/low-90s, within noise of each other AND of the ~89.8% human-expert bound, so the benchmark can no longer rank frontier models. (2) Label quality — a June 2024 manual audit (\"Are We Done with MMLU?\") found ~6.5% of questions have errors in answer keys/wording, putting an effective ceiling well below 100% and making sub-point differences meaningless. (3) Contamination — ~27.7% of MMLU found in DCLM-baseline training data. Result: from late 2024 the field moved the frontier discriminator to MMLU-Pro (Sept 2024: ~12k questions, 10 choices instead of 4, harder reasoning, less contamination), MMLU-Redux, and MMLU-CF (contamination-free). By 2025–2026 MMLU itself is treated as a saturated legacy check, not a frontier signal.\n\nCAVEATS ON THE POINTS: Dates are model-release/report dates (rounded to month). Gemini Ultra public release was Feb 2024 but the 90.04 was published in the Dec 6 2023 Gemini technical report — dated to the report. Several 2024 scores come from each lab's own card/eval harness, so a ±1–2 pt spread across leaderboards is normal. I deliberately did NOT include various higher 2025–2026 leaderboard figures (e.g. 90–91.5% for Gemini 3.x / later Claude) as frontier \"advances\" because at that point the metric is saturated and the differences are within noise / non-comparable protocols — including them would imply a precision the benchmark no longer has.",
       "predicted": [],
-      "notes": "Saturated near ~90% by 2024-25; no longer a useful frontier discriminator. Seed values approximate."
+      "saturated": true
+    },
+    {
+      "benchmark": "GPQA Diamond",
+      "unit": "% accuracy (198-question Diamond subset)",
+      "higherBetter": true,
+      "points": [
+        {
+          "date": "2023-11",
+          "model": "GPT-4 (baseline)",
+          "lab": "OpenAI",
+          "value": 39
+        },
+        {
+          "date": "2024-06",
+          "model": "Claude 3.5 Sonnet",
+          "lab": "Anthropic",
+          "value": 59.4
+        },
+        {
+          "date": "2024-09",
+          "model": "o1",
+          "lab": "OpenAI",
+          "value": 78
+        },
+        {
+          "date": "2024-12",
+          "model": "o3 (announced)",
+          "lab": "OpenAI",
+          "value": 87.7
+        },
+        {
+          "date": "2025-03",
+          "model": "Gemini 2.5 Pro",
+          "lab": "Google DeepMind",
+          "value": 84
+        },
+        {
+          "date": "2025-07",
+          "model": "Grok 4 Heavy",
+          "lab": "xAI",
+          "value": 87.5
+        },
+        {
+          "date": "2025-08",
+          "model": "GPT-5",
+          "lab": "OpenAI",
+          "value": 85.7
+        },
+        {
+          "date": "2025-11",
+          "model": "Gemini 3 Pro",
+          "lab": "Google DeepMind",
+          "value": 91.9
+        },
+        {
+          "date": "2026-02",
+          "model": "Gemini 3.1 Pro Preview",
+          "lab": "Google DeepMind",
+          "value": 94.3
+        }
+      ],
+      "notes": "FRONTIER TRAJECTORY (best-score-over-time, oldest→newest). Climb runs ~39% (GPT-4, Nov 2023) → 94%+ (Gemini 3.1 Pro, Feb 2026), passing the PhD-expert baseline (~65-70%; OpenAI measured 69.7%) around the o1 release in Sept 2024.\n\nCLEAN SOTA HANDOFFS: GPT-4 39% (paper baseline, Nov 2023) → Claude 3.5 Sonnet 59.4% (highest pre-reasoning-model, Jun 2024) → o1 ~78% (first reasoning model, first to clearly beat human experts, Sep 2024) → o3 87.7% (announced Dec 2024, big jump) → Gemini 2.5 Pro 84% (Mar 2025, Epoch-verified, \"best independently-confirmed result to date\" at the time) → Grok 4 Heavy ~87.5% (Jul 2025) → Gemini 3 Pro ~91.9% (Nov 2025, first sustained 90%+) → Gemini 3.1 Pro ~94.3% (Feb 2026).\n\nMETHODOLOGY CAVEATS — these matter:\n(1) TWO MEASUREMENT REGIMES. Early figures (GPT-4 39%, Claude 3.5 Sonnet 59.4%) come from the original GPQA paper / GPQA Eval leaderboard using zero-shot chain-of-thought, single-attempt. Later figures increasingly come from Epoch AI's independent eval, which became the de-facto standard tracker. Cross-regime comparisons are approximate, not apples-to-apples.\n(2) o1/o3 NUMBERS ARE LAB-REPORTED, often with consensus/maj@k or \"high-compute\" settings (o1 ~77-78% pass@1, ~78% w/ consensus; o3 87.7% was the Dec-2024 announcement figure, not yet independently audited at release). Treat lab self-reports as a slight over-estimate vs. independent pass@1.\n(3) NON-FRONTIER-but-higher SYSTEMS exist and are intentionally EXCLUDED from the base-model line: a Google DeepMind agentic system (\"Aristotle\") was cited at ~92% in Jul 2025 — that's a multi-agent/tool system, not a single-model pass@1, so it doesn't belong on a base-model frontier. Same logic excludes consensus@1024-style stunt numbers.\n(4) SATURATION. The benchmark is now effectively saturating: top of the 2026 cluster (Gemini 3.1 Pro ~94%, GPT-5.2 ~92%, Claude Opus 4.5/4.6 ~88-91%, Grok 4.1 ~88%) sits well above the human-expert ceiling (~70%, or ~74% discounting expert mistakes). Diamond has only 198 questions, so ~1-2% differences are within label-noise/ambiguous-question error — rankings inside the top cluster are not statistically meaningful. Headline numbers above ~94% (e.g. unreleased-preview claims of 94.6-95.4%) should be treated as marketing-grade, near the noise floor of the test itself.\n(5) Some 2026 dates/models (GPT-5.2, Claude Opus 4.5/4.6, Gemini 3.1) reflect a fast-moving late-2025/2026 release cadence; exact peak depends on which preview/checkpoint you count. The load-bearing fact is the SHAPE: 40→60→78→88→92→94 over ~27 months.",
+      "predicted": [
+        {
+          "date": "2026-12",
+          "model": "Frontier (best public model)",
+          "lab": "Google / Anthropic (current co-leaders)",
+          "value": 95,
+          "low": 93,
+          "high": 96
+        },
+        {
+          "date": "2027-06",
+          "model": "Frontier (best public model)",
+          "lab": "Google / Anthropic",
+          "value": 95,
+          "low": 93,
+          "high": 97
+        }
+      ],
+      "saturated": true
+    },
+    {
+      "benchmark": "SWE-bench",
+      "higherBetter": true,
+      "unit": "% resolved (pass@1 / % of instances resolved)",
+      "points": [
+        {
+          "date": "2023-10",
+          "model": "GPT-4 (best non-agent baseline at introduction)",
+          "lab": "Princeton NLP / Stanford / UChicago (benchmark authors)",
+          "value": 1.96,
+          "variant": "SWE-bench (original, 2294 tasks)"
+        },
+        {
+          "date": "2024-03",
+          "model": "Devin",
+          "lab": "Cognition",
+          "value": 13.86,
+          "variant": "SWE-bench (original; evaluated on a 570-task subset)"
+        },
+        {
+          "date": "2024-06",
+          "model": "Claude 3.5 Sonnet (Anthropic agent harness)",
+          "lab": "Anthropic",
+          "value": 49,
+          "variant": "SWE-bench Verified (500-task; reported alongside ~50% on original full set via agent scaffold)"
+        },
+        {
+          "date": "2024-08",
+          "model": "GPT-4o (Agentless scaffold, at Verified release)",
+          "lab": "OpenAI",
+          "value": 33.2,
+          "variant": "SWE-bench Verified (500-task) — variant introduced Aug 13 2024"
+        },
+        {
+          "date": "2024-10",
+          "model": "Claude 3.5 Sonnet (upgraded, 'new' / v2)",
+          "lab": "Anthropic",
+          "value": 49,
+          "variant": "SWE-bench Verified"
+        },
+        {
+          "date": "2025-02",
+          "model": "Claude 3.7 Sonnet",
+          "lab": "Anthropic",
+          "value": 70.3,
+          "variant": "SWE-bench Verified (with custom scaffold; 63.7% no-scaffold)"
+        },
+        {
+          "date": "2025-04",
+          "model": "OpenAI o3 (high)",
+          "lab": "OpenAI",
+          "value": 69.1,
+          "variant": "SWE-bench Verified"
+        },
+        {
+          "date": "2025-05",
+          "model": "Claude Opus 4 (high-compute parallel sampling)",
+          "lab": "Anthropic",
+          "value": 79.4,
+          "variant": "SWE-bench Verified (72.5% single-attempt; 79.4% high-compute)"
+        },
+        {
+          "date": "2025-08",
+          "model": "GPT-5",
+          "lab": "OpenAI",
+          "value": 74.9,
+          "variant": "SWE-bench Verified"
+        },
+        {
+          "date": "2025-09",
+          "model": "Claude Sonnet 4.5",
+          "lab": "Anthropic",
+          "value": 77.2,
+          "variant": "SWE-bench Verified"
+        },
+        {
+          "date": "2025-09-19",
+          "model": "GPT-5 (best at Pro launch)",
+          "lab": "Scale AI SEAL (benchmark) / OpenAI (model)",
+          "value": 23.3,
+          "variant": "SWE-bench Pro — public set (1865 total; 731 public). Variant introduced; new much-harder scale"
+        },
+        {
+          "date": "2025-11-18",
+          "model": "Gemini 3 Pro",
+          "lab": "Google DeepMind",
+          "value": 76.2,
+          "variant": "SWE-bench Verified"
+        },
+        {
+          "date": "2025-11-19",
+          "model": "GPT-5.1-Codex-Max (xhigh)",
+          "lab": "OpenAI",
+          "value": 77.9,
+          "variant": "SWE-bench Verified"
+        },
+        {
+          "date": "2025-11-24",
+          "model": "Claude Opus 4.5",
+          "lab": "Anthropic",
+          "value": 80.9,
+          "variant": "SWE-bench Verified — first model to exceed 80%"
+        },
+        {
+          "date": "2026-06",
+          "model": "Opus 4.8 (vendor-reported, SWE-bench Pro)",
+          "lab": "Anthropic",
+          "value": 69.2,
+          "variant": "SWE-bench Pro — vendor-reported; standardized SEAL leader was GPT-5.4 (xHigh) at 59.1%"
+        }
+      ],
+      "notes": "THREE DIFFERENT SCALES — do not plot on one axis without grouping by variant:\n\n(1) SWE-bench (original, 2,294 real GitHub-issue tasks; Princeton et al., introduced Oct 2023). Brutal at first (GPT-4 ~1.96%). Devin pushed the agent frontier to ~13.9% (Mar 2024, on a subset). By mid-2024 agent harnesses on Claude 3.5 Sonnet reached ~50% on the full set. After Aug 2024 the field largely STOPPED reporting the original full set as the headline frontier.\n\n(2) SWE-bench Verified (500 human-validated tasks; released by OpenAI WITH the SWE-bench authors on Aug 13 2024 to fix unsolvable/ambiguous tasks in the original). This became THE standard frontier benchmark from late 2024 onward. Trajectory: 33.2% (GPT-4o, Aug 2024) → 49% (Claude 3.5 Sonnet) → 70.3% (Claude 3.7, Feb 2025, scaffolded) → ~79% (Opus 4, May 2025, high-compute) → 74.9% GPT-5 (Aug 2025) → 77.2% Sonnet 4.5 (Sep 2025) → 76.2% Gemini 3 Pro / 77.9% GPT-5.1-Codex-Max (Nov 18-19 2025) → 80.9% Claude Opus 4.5 (Nov 24 2025, FIRST over 80%). Verified is now visibly SATURATING in the high-70s/low-80s — frontier gains per model are shrinking and scaffold/compute settings dominate the last few points.\n\n(3) SWE-bench Pro (Scale AI / SEAL, released Sep 19 2025; 1,865 tasks across public/held-out/commercial repos, contamination-resistant, much harder). Launch frontier was only ~23% (GPT-5 23.3%, Opus 4.1 23.1% on public set) — a deliberate reset of the difficulty curve once Verified saturated. Pro climbed fast through early 2026 (standardized SEAL leader ~59% by mid-2026; vendor self-reports higher, e.g. Opus 4.8 ~69%).\n\nCAVEATS: (a) Most headline scores are VENDOR-SELF-REPORTED, not independently standardized — scaffold, tool access, reasoning-effort level, and parallel-sampling/high-compute settings vary widely and account for several points of spread (e.g. Opus 4's 72.5% vs 79.4% is the same model at different compute). Scale's SEAL and Princeton's HAL try to standardize and generally report LOWER numbers than vendor claims. (b) Claude 3.7's 70.3% used a benchmark-specific scaffold (63.7% without). (c) Post-Jan-2026 / mid-2026 frontier: aggregator pages claim ~88-95% (e.g. Opus 4.8 ~88%, and 'Fable 5'/'Mythos 5' at ~95%) on Verified — I EXCLUDED the 90%+ claims as unsourced/SEO-aggregator-only and not corroborated by a primary release or standardized leaderboard (Fable 5/Mythos 5 were also pulled from availability around Jun 2026). Treat anything above ~81% on Verified as unverified until a primary source confirms. (d) Variant confusion is the #1 misreading risk: a 'SWE-bench' number near 23% is almost certainly Pro, near 80% is Verified, near 50% (in 2024) is the original full set with an agent.",
+      "predicted": [
+        {
+          "date": "2026-07",
+          "model": "Claude Mythos Preview",
+          "lab": "Anthropic",
+          "value": 71,
+          "low": 66,
+          "high": 76
+        },
+        {
+          "date": "2026-08",
+          "model": "OpenAI GPT-5.x (next, ~GPT-5.6)",
+          "lab": "OpenAI",
+          "value": 62,
+          "low": 56,
+          "high": 68
+        },
+        {
+          "date": "2026-09",
+          "model": "Google Gemini (next, ~3.2/4 Pro)",
+          "lab": "Google DeepMind",
+          "value": 64,
+          "low": 57,
+          "high": 71
+        },
+        {
+          "date": "2026-09",
+          "model": "xAI Grok 4.x Heavy",
+          "lab": "xAI",
+          "value": 55,
+          "low": 46,
+          "high": 64
+        },
+        {
+          "date": "2026-12",
+          "model": "Frontier model, end of 2026 (generic best)",
+          "lab": "multiple",
+          "value": 68,
+          "low": 60,
+          "high": 76
+        },
+        {
+          "date": "2026-12",
+          "model": "Frontier (best vendor-reported, tuned agent harness)",
+          "lab": "Anthropic (current leader) or peer",
+          "value": 84,
+          "low": 80,
+          "high": 89
+        },
+        {
+          "date": "2027-06",
+          "model": "Frontier (best vendor-reported, tuned agent harness)",
+          "lab": "Anthropic or peer",
+          "value": 88,
+          "low": 83,
+          "high": 92
+        }
+      ],
+      "saturated": true
+    },
+    {
+      "benchmark": "HumanEval",
+      "unit": "%",
+      "higherBetter": true,
+      "points": [
+        {
+          "date": "2021-07",
+          "model": "Codex-12B",
+          "lab": "OpenAI",
+          "value": 28.8
+        },
+        {
+          "date": "2021-07",
+          "model": "Codex-S (fine-tuned)",
+          "lab": "OpenAI",
+          "value": 37.7
+        },
+        {
+          "date": "2022-11",
+          "model": "GPT-3.5 / ChatGPT (text-davinci / gpt-3.5)",
+          "lab": "OpenAI",
+          "value": 48.1
+        },
+        {
+          "date": "2023-03",
+          "model": "GPT-4 (0-shot, technical report)",
+          "lab": "OpenAI",
+          "value": 67
+        },
+        {
+          "date": "2023-07",
+          "model": "Claude 2",
+          "lab": "Anthropic",
+          "value": 71.2
+        },
+        {
+          "date": "2023-08",
+          "model": "WizardCoder-Python-34B-V1.0",
+          "lab": "Microsoft / WizardLM",
+          "value": 73.2
+        },
+        {
+          "date": "2023-11",
+          "model": "GPT-4 Turbo",
+          "lab": "OpenAI",
+          "value": 90.2
+        },
+        {
+          "date": "2024-05",
+          "model": "AutoCoder",
+          "lab": "academic (Lei et al.)",
+          "value": 90.9
+        },
+        {
+          "date": "2024-06",
+          "model": "Claude 3.5 Sonnet",
+          "lab": "Anthropic",
+          "value": 92
+        },
+        {
+          "date": "2024-09",
+          "model": "o1-preview / o1-mini",
+          "lab": "OpenAI",
+          "value": 96.3
+        }
+      ],
+      "notes": "FRONTIER (running best, oldest→newest). Each point is the best-known prompted/general-model pass@1 at that date, with two code-specialized waypoints noted inline.\n\nDETAIL PER POINT:\n- 2021-07 Codex-12B 28.8% — the benchmark's debut (paper \"Evaluating LLMs Trained on Code\", arXiv:2107.03374). Same paper: GPT-3=0%, GPT-J=11.4%. With 100-sample reranking Codex hit 44.5% (mean-logprob) / 77.5% (oracle pass@100) — those are NOT pass@1 and are excluded from the frontier line.\n- 2021-07 Codex-S 37.7% — supervised-fine-tuned variant from the SAME paper; the true 2021 single-model pass@1 ceiling.\n- 2022-11 GPT-3.5 ~48% — gpt-3.5-turbo benchmarks at ~48.1% pass@1. CAVEAT: WizardCoder's paper instead cites \"ChatGPT-3.5\" at 72.5%; figures for this family vary widely by snapshot/eval harness (48–73%). Treat the GPT-3.5 datapoint as the softest in the series.\n- 2023-03 GPT-4 67.0% — 0-shot figure from the GPT-4 Technical Report (Mar 15 2023, arXiv:2303.08774). CAVEAT: the \"Sparks of AGI\" paper (Bubeck et al., a week later) reported 82% for GPT-4; the gap reflects prompting/eval differences. 67% is the official-report number.\n- 2023-07 Claude 2 71.2% — Anthropic, announced Jul 11 2023; 0-shot, up from Claude 1.3's 56.0%.\n- 2023-08 WizardCoder-Python-34B 73.2% — code-specialized open model; notable for being first to beat the GPT-4 (Mar-2023, 67%) report figure, ChatGPT-3.5, and Claude 2 on HumanEval. A specialist spike, not a general-model frontier move.\n- 2023-11 GPT-4 Turbo 90.2% — first clean break above 90% (announced Nov 2023). Big jump from the Mar-2023 GPT-4 number reflects both model improvement and maturing prompting/eval.\n- 2024-05 AutoCoder 90.9% — academic model (arXiv:2405.14906) reported as first to surpass GPT-4 Turbo / GPT-4o pass@1 (90.9 vs 90.2). Specialist result; marginal.\n- 2024-06 Claude 3.5 Sonnet 92.0% — edged GPT-4o's 90.2% on HumanEval Python tests.\n- 2024-09 o1-preview / o1-mini 96.3% — reasoning models, effectively the saturation ceiling on standard HumanEval.\n\nSATURATION: HumanEval is fully saturated for frontier comparison from late-2023 onward. Once every frontier model clears ~90%, 1–2 point gaps are sampling/temperature noise, not capability — rankings stop being meaningful. By 2024 GPT-4o, Claude 3.5, and Gemini 1.5 all exceeded 90%.\n\nCONTAMINATION / METHODOLOGY CAVEATS: (1) HumanEval has been in public training mixes for years (translated, paraphrased, mirrored across GitHub) — high scores from post-2023 models partly measure memorization, not novel synthesis. (2) Frontier models drop ~7–8 points on the harder EvalPlus variant (extra edge-case tests), exposing the gap between benchmark scores and robustness. (3) The 2021 \"44.5% / 77.5%\" Codex numbers and GPT-4's 67-vs-82 split show how sensitive results are to k, reranking, and prompting — only consistent 0-shot/few-shot pass@1 single-sample figures belong on this line. The field moved to EvalPlus, EvoEval, BigCodeBench, and SWE-bench as successors precisely because HumanEval no longer differentiates top models.\n\nVERSION NOTE: only one \"HumanEval\" benchmark (164 Python problems, unchanged since 2021) — no dataset version drift; the variance is entirely in eval harness and model, not the test set itself.",
+      "predicted": [],
+      "saturated": true
     },
     {
       "benchmark": "AA Intelligence Index",
-      "unit": "0-100 composite",
       "higherBetter": true,
-      "saturated": false,
+      "unit": "composite index points (0-100 scale; version-dependent)",
       "points": [
-        { "date": "2026-02", "model": "Gemini 3.1 Pro", "lab": "Google", "value": 57 },
-        { "date": "2026-04", "model": "GPT-5.5", "lab": "OpenAI", "value": 60.2 },
-        { "date": "2026-06", "model": "Fable 5", "lab": "Anthropic", "value": 60 }
+        {
+          "date": "2024-05",
+          "model": "GPT-4o",
+          "lab": "OpenAI",
+          "value": 71
+        },
+        {
+          "date": "2024-06",
+          "model": "Claude 3.5 Sonnet",
+          "lab": "Anthropic",
+          "value": 77
+        },
+        {
+          "date": "2024-09",
+          "model": "o1-preview",
+          "lab": "OpenAI",
+          "value": 86
+        },
+        {
+          "date": "2024-12",
+          "model": "o1",
+          "lab": "OpenAI",
+          "value": 90
+        },
+        {
+          "date": "2025-04",
+          "model": "o3 / o4-mini (high)",
+          "lab": "OpenAI",
+          "value": 67
+        },
+        {
+          "date": "2025-06",
+          "model": "Gemini 2.5 Pro",
+          "lab": "Google",
+          "value": 65
+        },
+        {
+          "date": "2025-07",
+          "model": "Grok 4",
+          "lab": "xAI",
+          "value": 68
+        },
+        {
+          "date": "2025-08-07",
+          "model": "GPT-5 (high/max)",
+          "lab": "OpenAI",
+          "value": 69
+        },
+        {
+          "date": "2025-11-18",
+          "model": "Gemini 3 Pro",
+          "lab": "Google",
+          "value": 73
+        },
+        {
+          "date": "2026-01-06",
+          "model": "GPT-5.2 (extended)",
+          "lab": "OpenAI",
+          "value": 50
+        },
+        {
+          "date": "2026-04-23",
+          "model": "GPT-5.5 (xhigh)",
+          "lab": "OpenAI",
+          "value": 55
+        },
+        {
+          "date": "2026-06-10",
+          "model": "Claude Fable 5 (Max Effort, Opus 4.8 fallback)",
+          "lab": "Anthropic",
+          "value": 64.9
+        }
       ],
+      "notes": "CRITICAL VERSION CAVEAT — scores are NOT comparable across index versions. AA re-stamps the index (v1 → v2.x → v3.0 → v4.0 → v4.1) and recalibrates the scale each time, so the raw number is only meaningful within one version era. The same model can carry very different numbers under different versions (e.g. Claude Fable 5 = 64.9 at its June 10 2026 launch on the then-current v4.0.x index, but reads as 60 on v4.1 after the June 16 2026 rescale; Gemini 3 Pro led at ~73 on v3.0 in Nov 2025 but back-scores to ~48 on v4.0). Treat this as TWO+ different scales spliced into one trajectory, not a continuous line.\n\nREGIME 1 — original scale (v1–v3, 2024 through Dec 2025): index ran roughly 0–100 and SATURATED into the high-60s/70s. The 2024 reasoning-era values (o1-preview ~86, o1 ~90) reflect the early scale before AA rebased/expanded the benchmark suite in 2025; by the v2.1/v2.2 era (Aug 2025) the frontier had compressed to ~65–69 (GPT-5 high = 68/69, Grok 4 = 68, o3 & o4-mini = 67, Gemini 2.5 Pro = 65 — all confirmed at GPT-5's Aug 7 2025 launch). v3.0 (Sept 2 2025) added Terminal-Bench Hard + τ²-Bench Telecom and equal-weighted categories; the v3.0 frontier peaked at ~73 (Gemini 3 Pro, Nov 18 2025, debuting +3 over GPT-5.1; then GPT-5.2 extended / Claude Opus 4.5 / Grok 4.1 clustered near the top through Dec 2025).\n\nREGIME 2 — v4.0 reset (Jan 6 2026): AA deliberately overhauled the index to reduce saturation and restore headroom, REMOVING MMLU-Pro, AIME 2025, LiveCodeBench and adding real-world/agentic evals (GDPval-AA, AA-Omniscience, CritPt). This crushed the top score from ~73 (v3.0) to ~50 (v4.0) for the same frontier — GPT-5.2 (extended) led the v4.0 launch at ~50, with Claude Opus 4.5 and Gemini 3 Pro just behind. The 2026 climb 50 → 55 → ~65 (GPT-5.5 in April at 55; Fable 5 at #1 ~5 pts clear in June) is real progress WITHIN the v4.0 era. v4.1 (June 16 2026) re-stamped again (GDPval-AA v2, τ³-Banking, Terminal-Bench v2.1, dropped IFBench, weighted agents 34%) and rescaled the band upward — which is why post-June-16 sources show Fable 5 = 60, Opus 4.8 = 56, GPT-5.5 = 55, and at least one source reads Opus 4.8 = 61.4 / GPT-5.5 = 60.2. Same models, different version, different numbers.\n\nCONFIDENCE: 2025–2026 points (Apr 2025 onward) are well-sourced with contemporaneous AA figures. The four 2024 points (GPT-4o, Claude 3.5 Sonnet, o1-preview, o1) are from the original v1/v2-era leaderboard and are LOWER CONFIDENCE / approximate — I could not pull a contemporaneous archived 2024 snapshot (Wayback fetch blocked), and AA's live site now retro-scores these models on v4.x (e.g. it currently shows GPT-4o Nov'24 = 17 on the v4.0 scale, which is NOT the contemporaneous value). The 2024 numbers given are the original-scale readings; the exact ordering of o1-preview vs o1 and their precise values should be verified against a 2024 archive before being quoted as hard data. The 'task ceiling ~60 (GPT-5.5 / Fable 5)' framing maps to the v4.0/v4.1 era top band, not the old scale.",
       "predicted": [
-        { "date": "2026-12", "model": "frontier (forecast)", "lab": "—", "value": 66, "low": 62, "high": 71 }
+        {
+          "date": "2026-07",
+          "model": "Claude Mythos Preview",
+          "lab": "Anthropic",
+          "value": 67,
+          "low": 62,
+          "high": 72
+        },
+        {
+          "date": "2026-08",
+          "model": "OpenAI GPT-5.x (next, ~GPT-5.6)",
+          "lab": "OpenAI",
+          "value": 62,
+          "low": 54,
+          "high": 69
+        },
+        {
+          "date": "2026-09",
+          "model": "Google Gemini (next, ~3.2/4 Pro)",
+          "lab": "Google DeepMind",
+          "value": 69,
+          "low": 63,
+          "high": 75
+        },
+        {
+          "date": "2026-09",
+          "model": "xAI Grok 4.x Heavy",
+          "lab": "xAI",
+          "value": 66,
+          "low": 58,
+          "high": 73
+        },
+        {
+          "date": "2026-12",
+          "model": "Frontier model, end of 2026 (generic best)",
+          "lab": "multiple",
+          "value": 73,
+          "low": 64,
+          "high": 82
+        },
+        {
+          "date": "2026-12",
+          "model": "Frontier (best public model, Artificial Analysis independent run)",
+          "lab": "likely Anthropic / OpenAI / Google",
+          "value": 62,
+          "low": 58,
+          "high": 67
+        },
+        {
+          "date": "2027-06",
+          "model": "Frontier (best public model, AA independent run)",
+          "lab": "likely Anthropic / OpenAI / Google",
+          "value": 68,
+          "low": 61,
+          "high": 74
+        }
       ],
-      "notes": "Version-stamped (v4.0 vs v4.1 not comparable). Seed; full trajectory from 2024 lands in P1."
+      "saturated": true
+    },
+    {
+      "benchmark": "Math (MATH → AIME)",
+      "higherBetter": true,
+      "unit": "% accuracy (pass@1 unless noted)",
+      "notes": "VERSION CHANGE mid-series: the frontier benchmark shifts from the MATH dataset (Hendrycks 2021, 12,500 competition problems) to AIME (American Invitational Mathematics Examination, 15 problems/year) once MATH saturated. They are NOT the same test — values across the break are not directly comparable, hence the two-phase trajectory. METHODOLOGY CAVEATS: (1) pass@1 = single greedy/sampled answer; majority-voting (maj@k / cons@k) inflates scores substantially and is a different metric — e.g. Minerva 540B is 33.6% pass@1 but 50.3% maj@64; o1 is 74% single-sample but 83% cons@64 on AIME 2024; DeepSeek-R1 is 79.8% pass@1 but ~86.7% with majority voting. I used pass@1 as the comparable value where available and flagged voted/tool numbers in the model field. (2) The 2023-07 GPT-4 Code Interpreter 69.7% is TOOL-AUGMENTED (executes Python), not pure reasoning — a methodology jump, not a pure-model jump. (3) MATH SATURATION: by the o1 generation MATH-500 reached ~94-96% and is considered saturated/retired as a frontier signal; the live frontier moved to AIME and beyond (FrontierMath, where even o3 was ~25%). (4) AIME SATURATION (2025-2026): top models (GPT-5 ~100%, Grok 4 ~95%, Gemini 2.5/3 Pro ~92-95%, o3 ~96.7% on AIME 2024) now cluster near ceiling on a 15-question test, where one arithmetic slip = ~6.7%, making rankings noisy and the benchmark itself near-saturated. AIME 2024 vs AIME 2025 are different problem sets (2025 numbers run a few points lower and are less contamination-prone). The big discontinuity is unmistakable: GPT-4o managed ~12% on AIME 2024; o1 (Sept 2024, first RL-trained reasoning model) jumped to ~74% pass@1 — the reasoning-model arrival. THE BIG REASONING-MODEL JUMP: GPT-4o ~13% → o1 74% (Sept 2024) → o3 96.7% (Dec 2024 announce) on AIME 2024.",
+      "points": [
+        {
+          "date": "2021-03",
+          "model": "GPT-3 / fine-tuned GPT-2 (benchmark introduction baseline)",
+          "lab": "OpenAI / UC Berkeley (Hendrycks et al.)",
+          "value": 6.9
+        },
+        {
+          "date": "2022-06",
+          "model": "Minerva 540B (pass@1; 50.3% with maj@64)",
+          "lab": "Google",
+          "value": 33.6
+        },
+        {
+          "date": "2023-03",
+          "model": "GPT-4 (4-shot chain-of-thought)",
+          "lab": "OpenAI",
+          "value": 42.5
+        },
+        {
+          "date": "2023-07",
+          "model": "GPT-4 + Code Interpreter (tool-augmented, new SOTA)",
+          "lab": "OpenAI",
+          "value": 69.7
+        },
+        {
+          "date": "2024-09",
+          "model": "o1 — AIME 2024, single-sample (first RL reasoning model; 83% cons@64)",
+          "lab": "OpenAI",
+          "value": 74
+        },
+        {
+          "date": "2025-01",
+          "model": "DeepSeek-R1 — AIME 2024, pass@1 (open-weights, matches o1; 86.7% maj-vote)",
+          "lab": "DeepSeek",
+          "value": 79.8
+        },
+        {
+          "date": "2024-12",
+          "model": "o3 — AIME 2024 (announced Dec 2024, released Apr 2025)",
+          "lab": "OpenAI",
+          "value": 96.7
+        },
+        {
+          "date": "2025-07",
+          "model": "Grok 4 — AIME 2025 (near-saturation cluster)",
+          "lab": "xAI",
+          "value": 95
+        },
+        {
+          "date": "2025-08",
+          "model": "GPT-5 — AIME 2025 (near-perfect / saturated)",
+          "lab": "OpenAI",
+          "value": 100
+        }
+      ],
+      "predicted": [],
+      "saturated": true
+    },
+    {
+      "benchmark": "Context window",
+      "unit": "tokens",
+      "higherBetter": true,
+      "points": [
+        {
+          "date": "2020-06",
+          "lab": "OpenAI",
+          "model": "GPT-3 (davinci)",
+          "value": 2048
+        },
+        {
+          "date": "2023-03-14",
+          "lab": "OpenAI",
+          "model": "GPT-4 (32K variant)",
+          "value": 32768
+        },
+        {
+          "date": "2023-07-11",
+          "lab": "Anthropic",
+          "model": "Claude 2",
+          "value": 100000
+        },
+        {
+          "date": "2023-11-06",
+          "lab": "OpenAI",
+          "model": "GPT-4 Turbo",
+          "value": 128000
+        },
+        {
+          "date": "2023-11-21",
+          "lab": "Anthropic",
+          "model": "Claude 2.1",
+          "value": 200000
+        },
+        {
+          "date": "2024-02-15",
+          "lab": "Google",
+          "model": "Gemini 1.5 Pro (preview)",
+          "value": 1000000
+        },
+        {
+          "date": "2024-06-27",
+          "lab": "Google",
+          "model": "Gemini 1.5 Pro (2M)",
+          "value": 2000000
+        },
+        {
+          "date": "2025-04-05",
+          "lab": "Meta",
+          "model": "Llama 4 Scout",
+          "value": 10000000
+        },
+        {
+          "date": "2026-06",
+          "lab": "Multiple (frontier standard)",
+          "model": "GPT-5.4/5.5, Claude Opus 4.8/Fable 5, Gemini 3.1 Pro",
+          "value": 1000000
+        }
+      ],
+      "notes": "Definition: \"frontier max\" = the largest context window available on a leading commercial/flagship model at each notable expansion, oldest→newest. Trajectory: 2K (2020) → 32K (2023) → 100K → 128K → 200K (all 2023) → 1M → 2M (2024) → 10M claimed (2025) → 1M–2M as standard (2026).\n\nPer-point caveats:\n- GPT-3 (2020-06-11 API beta; paper 2020-05-28): 2,048 tokens. GPT-2 (2019) was 1,024; GPT-3 doubled it.\n- GPT-4 (2023-03-14): launched at 8,192 standard; a 32,768 (32K) variant was demoed/limited-access at launch and rolled out broadly later in 2023. 32K is the frontier value; 8K was the default most users saw.\n- Claude 2 (2023-07-11): 100K, first 100K-class window, public beta.\n- GPT-4 Turbo (2023-11-06, DevDay): 128K — briefly the frontier.\n- Claude 2.1 (2023-11-21): 200K — retook the lead just 15 days after GPT-4 Turbo. Note: independent NIAH (\"needle-in-haystack\") testing showed degraded recall well below the 200K advertised cap — the first prominent \"advertised ≠ effective\" gap.\n- Gemini 1.5 Pro (2024-02-15): 1M in private preview (default API was 128K); a 10M-token research result was reported in the tech report but never shipped as a product. 1M is the shippable frontier value.\n- Gemini 1.5 Pro 2M (2024-06-27, post-I/O GA): 2,000,000 — largest input of any mainstream commercial model; cleanest \"2M frontier\" datapoint. Google later quietly defaulted newer models (2.5/3.x) back to 1M.\n\nSATURATION / METHODOLOGY: After mid-2024 the frontier MAX stopped climbing on mainstream flagships and the field converged. Gemini 2.5 Pro (2025-03-25) = 1M (2M beta promised). OpenAI GPT-4.1 (2025-04-14) brought OpenAI to 1M. By 2026, 1M is table stakes: GPT-5.4 (272K standard, 1M in API at 2x surcharge), GPT-5.5, Claude Opus 4.8 / Fable 5 (1M; Anthropic 1M reached full GA at standard pricing 2026-03-13), Gemini 3.1 Pro (1,048,576). The included 2026 point uses 1M as the representative *standard* frontier — i.e., the curve flattened, it did not keep doubling.\n\nOUTLIER / HEAVIEST CAVEAT: Llama 4 Scout (Meta, 2025-04-05) advertises 10M tokens — technically the highest number on the curve — but it's an open-weight MoE whose 10M is largely theoretical (trained far shorter, heavy effective-recall degradation, rarely usable at full length in practice). Qwen Long (Alibaba) also advertises ~10M in 2026 at very low cost. These are \"advertised ceiling\" numbers, not effective-frontier; treated here as the nominal max rather than the practical one. Conservative read of the *practical* frontier in 2026 is 1M–2M.",
+      "predicted": [],
+      "saturated": true
+    },
+    {
+      "benchmark": "API price ($/1M out)",
+      "unit": "USD per 1M output tokens",
+      "higherBetter": false,
+      "points": [
+        {
+          "date": "2020-06",
+          "model": "GPT-3 davinci",
+          "lab": "OpenAI",
+          "value": 60,
+          "input": 60
+        },
+        {
+          "date": "2023-03-14",
+          "model": "GPT-4 (8K)",
+          "lab": "OpenAI",
+          "value": 60,
+          "input": 30
+        },
+        {
+          "date": "2023-11-06",
+          "model": "GPT-4 Turbo (128K)",
+          "lab": "OpenAI",
+          "value": 30,
+          "input": 10
+        },
+        {
+          "date": "2024-03-04",
+          "model": "Claude 3 Opus",
+          "lab": "Anthropic",
+          "value": 75,
+          "input": 15
+        },
+        {
+          "date": "2024-05-13",
+          "model": "GPT-4o",
+          "lab": "OpenAI",
+          "value": 15,
+          "input": 5
+        },
+        {
+          "date": "2024-06-20",
+          "model": "Claude 3.5 Sonnet",
+          "lab": "Anthropic",
+          "value": 15,
+          "input": 3
+        },
+        {
+          "date": "2024-10",
+          "model": "GPT-4o (price cut)",
+          "lab": "OpenAI",
+          "value": 10,
+          "input": 2.5
+        },
+        {
+          "date": "2025-04-14",
+          "model": "GPT-4.1",
+          "lab": "OpenAI",
+          "value": 8,
+          "input": 2
+        },
+        {
+          "date": "2025-08-07",
+          "model": "GPT-5",
+          "lab": "OpenAI",
+          "value": 10,
+          "input": 1.25
+        },
+        {
+          "date": "2026-05-28",
+          "model": "Claude Opus 4.8",
+          "lab": "Anthropic",
+          "value": 25,
+          "input": 5
+        }
+      ],
+      "notes": "Benchmark is API LIST price, not a capability score — lower is better, and the story is the cost collapse as capability-per-dollar exploded. Primary `value` = output $/1M tokens (the headline metric requested); `input` field carries input $/1M where it adds signal.\n\nTRAJECTORY LOGIC: I traced the *leading/flagship* model of each period rather than a single vendor, because the frontier baton passed between labs. Two parallel families coexist: OpenAI's GPT line and Anthropic's Claude/Opus line. Anthropic's top-tier \"Opus\" models persistently sit at a premium ($75 output for 3 Opus / Opus 4, only recently $25 for Opus 4.8), while OpenAI's flagship trended sharply cheaper — so the \"frontier price\" depends on whether you index on the cheapest-frontier or the most-capable-frontier. I included both vendors' notable points to show this honestly rather than cherry-picking the falling line.\n\nKEY DATA POINTS (all sourced):\n- GPT-3 davinci (OpenAI, 2020): $60/1M (was quoted as $0.06/1K tokens). Cut to $20/1M (~$0.02/1K) in Sept 2022. This is the same headline output number as GPT-4 three years later — but GPT-4 was vastly more capable for the same price, the first big capability-per-dollar jump.\n- GPT-4 8K (OpenAI, Mar 14 2023): $30 in / $60 out. The canonical \"$60/Mtok output\" frontier anchor.\n- GPT-4 Turbo (OpenAI, Nov 6 2023): $10 in / $30 out, 128K context. 2x cheaper output, more capable.\n- Claude 3 Opus (Anthropic, Mar 4 2024): $15 in / $75 out — note this is ABOVE GPT-4's output price; Anthropic priced its frontier at a premium. (One source quoted $18.75 input; $15/$75 is the canonical Anthropic-stated rate.)\n- GPT-4o (OpenAI, May 13 2024): $5 in / $15 out. Big step down, multimodal, GPT-4-class.\n- Claude 3.5 Sonnet (Anthropic, Jun 20 2024): $3 in / $15 out — beat Claude 3 Opus on benchmarks at 1/5 the price; the clearest single intra-lab capability-per-dollar leap.\n- GPT-4o price cut (OpenAI, Oct 2024): $2.50 in / $10 out (50% cut, via gpt-4o-2024-08-06 snapshot).\n- GPT-4.1 (OpenAI, Apr 14 2025): $2 in / $8 out, frontier-class, cheaper than 4o.\n- GPT-5 (OpenAI, Aug 7 2025): $1.25 in / $10 out. Frontier reasoning model at near-commodity input price.\n- Claude Opus 4.8 (Anthropic, May 28 2026): $5 in / $25 out — Anthropic's flagship Opus tier finally dropped from the long-standing $75 output to $25.\n\nCAVEATS / CONFLICTS RESOLVED:\n- GPT-5 launch price: one aggregator (tokenmix.ai) listed $5/$20, but OpenRouter, OpenAI's own announcement, and pecollective all confirm $1.25 in / $10 out at the Aug 7 2025 launch. I used the corroborated $1.25/$10. (Search snippets also surfaced $0.625/$5 — that's the 50%-off Batch API rate, not list.)\n- NOT a monotone fall. Two upward outliers worth flagging: (a) GPT-4.5 (OpenAI, Feb 2025) launched at $75 in / $150 out — a deliberate premium research-preview, an outlier I excluded from the main flagship line; (b) the Anthropic Opus tier held $75 output from Mar 2024 (Claude 3 Opus) all the way through Opus 4/4.1 (2025) before dropping. So \"frontier price\" only collapses cleanly if you track the cheapest-frontier (OpenAI GPT line); the most-capable-frontier (Opus) collapsed much later and less.\n- Prices are standard real-time list rates. Batch API is ~50% off and prompt caching ~90% off on cached input across both vendors throughout — so effective costs ran well below these list numbers, especially 2024 onward.\n- Headline trend per a curated history source: frontier OUTPUT price fell ~4x on the GPT line ($60 GPT-4 2023 → $15 by 2025-26 flagships), while input price fell far more steeply (GPT-4 $30 → GPT-5 $1.25 = ~24x), because output tokens stayed relatively more expensive than input across the board.\n\nBeyond-2026 context surfaced but not included as frontier points (later/post-cutoff, vendor-specific): GPT-5.4 (~$2.50/$15) and GPT-5.5 (a price INCREASE to $5/$30, Apr 2026) — i.e., the collapse is not guaranteed to continue; OpenAI raised prices on the GPT-5.5 line. Treat any 2026+ figure as lightly sourced from pricing aggregators.",
+      "predicted": [],
+      "saturated": false
     }
   ]
 }

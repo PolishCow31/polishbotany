@@ -1,16 +1,1574 @@
 {
-  "version": 0,
-  "note": "SEED data — placeholder landmark models. Replaced by the ai-history-foundation workflow output (P1).",
+  "version": 1,
   "models": [
-    { "name": "GPT-3", "lab": "OpenAI", "released": "2020-06-11", "params": "175B", "context": "2K", "modality": "Text", "open": false, "benchmarks": { "MMLU": 43.9 }, "milestone": true, "status": "historic", "notable": "The anchor of the modern era — 175B params, few-shot learning, the first model to feel general." },
-    { "name": "ChatGPT (GPT-3.5)", "lab": "OpenAI", "released": "2022-11-30", "params": "—", "context": "4K", "modality": "Text", "open": false, "benchmarks": { "MMLU": 70.0 }, "milestone": true, "status": "historic", "notable": "The public-adoption explosion — 100M users in two months. The moment AI went mainstream." },
-    { "name": "GPT-4", "lab": "OpenAI", "released": "2023-03-14", "params": "—", "context": "8K-32K", "modality": "Text+vision", "open": false, "benchmarks": { "MMLU": 86.4, "HumanEval": 67 }, "milestone": true, "status": "historic", "notable": "First model to clear ~85% MMLU; multimodal; the 2023 frontier standard." },
-    { "name": "Llama 2", "lab": "Meta", "released": "2023-07-18", "params": "7B-70B", "context": "4K", "modality": "Text", "open": true, "benchmarks": { "MMLU": 68.9 }, "milestone": true, "status": "historic", "notable": "Open weights with a permissive license — kicked off the open-model ecosystem." },
-    { "name": "Claude 3 Opus", "lab": "Anthropic", "released": "2024-03-04", "params": "—", "context": "200K", "modality": "Text+vision", "open": false, "benchmarks": { "MMLU": 86.8, "GPQA": 50.4, "HumanEval": 84.9 }, "milestone": true, "status": "historic", "notable": "Anthropic's first model to match/beat GPT-4; 200K context." },
-    { "name": "OpenAI o1", "lab": "OpenAI", "released": "2024-09-12", "params": "—", "context": "128K", "modality": "Text", "open": false, "benchmarks": { "GPQA": 78, "AIME": 83 }, "milestone": true, "status": "historic", "notable": "The reasoning paradigm — test-time compute / chain-of-thought as a product. Changed the game." },
-    { "name": "DeepSeek R1", "lab": "DeepSeek", "released": "2025-01-20", "params": "671B MoE", "context": "128K", "modality": "Text", "open": true, "benchmarks": { "GPQA": 71, "AIME": 79.8 }, "milestone": true, "status": "historic", "notable": "Open-weights reasoning at frontier level — the 'DeepSeek shock' that proved reasoning could be open and cheap." },
-    { "name": "GPT-5.5", "lab": "OpenAI", "released": "2026-04-23", "params": "—", "context": "1M", "modality": "Text+tools", "open": false, "benchmarks": { "AA-Index": 60.2, "SWE-bench-Pro": 58.6, "HLE": 52.2 }, "milestone": true, "status": "live", "notable": "First model to break the ~57 Artificial Analysis Index ceiling." },
-    { "name": "Claude Opus 4.8", "lab": "Anthropic", "released": "2026-05-28", "params": "—", "context": "1M", "modality": "Text", "open": false, "benchmarks": { "SWE-bench-Pro": 69.2, "HLE": 57.9 }, "milestone": false, "status": "live", "notable": "Current stable Opus." },
-    { "name": "Claude Fable 5", "lab": "Anthropic", "released": "2026-06-09", "params": "—", "context": "1M", "modality": "Text", "open": false, "benchmarks": { "AA-Index": 60, "SWE-bench-Pro": 80.3 }, "milestone": true, "status": "pulled", "notable": "#1 on the AA Index the day it shipped — pulled ~Jun 12 by a US export order." }
+    {
+      "name": "GPT-1 (Generative Pre-Training)",
+      "lab": "OpenAI",
+      "released": "2018-06-11",
+      "params": "117M",
+      "context": "512",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "GLUE": 72.8
+      },
+      "notable": "First GPT. Established the generative pre-training + supervised fine-tuning recipe on a Transformer decoder; hit GLUE 72.8 and beat SOTA on 9 of 12 NLP tasks, proving unsupervised pre-training transfers.",
+      "status": "historic"
+    },
+    {
+      "name": "BERT-Large",
+      "lab": "Google",
+      "released": "2018-10-11",
+      "params": "340M",
+      "context": "512",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "GLUE": 80.5,
+        "SQuAD-v1.1-F1": 93.2,
+        "SQuAD-v2.0-F1": 83.1
+      },
+      "notable": "Bidirectional Transformer encoder pre-trained with masked-language-modeling. Paper arXiv Oct 11 2018, code Nov 2018. Smashed GLUE (to 80.5) and 11 NLP tasks; defined the pre-train/fine-tune encoder paradigm that dominated NLP 2018-2020. BERT-Base = 110M params.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-2",
+      "lab": "OpenAI",
+      "released": "2019-02-14",
+      "params": "1.5B",
+      "context": "1024",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "LAMBADA-acc-zero-shot": 63.24,
+        "WikiText-103-perplexity": 17.48
+      },
+      "notable": "Announced Feb 14 2019; full 1.5B model staged-released and only fully open Nov 5 2019 over misuse fears ('too dangerous'). Trained on 40GB WebText (8M pages). Showed zero-shot multitask ability from scale alone and set SOTA on 7 of 8 LM datasets. Sizes: 124M/355M/774M/1.5B.",
+      "status": "historic"
+    },
+    {
+      "name": "Megatron-LM (8.3B)",
+      "lab": "NVIDIA",
+      "released": "2019-09-17",
+      "params": "8.3B",
+      "context": "1024",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "LAMBADA-acc": 66.5,
+        "WikiText-103-perplexity": 10.81,
+        "RACE-acc": 90.9
+      },
+      "notable": "Demonstrated intra-layer (tensor) model parallelism to train an 8.3B-param GPT-2-style model on 512 GPUs at 15.1 PetaFLOPs / 76% scaling efficiency. The systems milestone that made >10B-param dense training practical; set SOTA on WikiText-103 (ppl 10.8), LAMBADA (66.5%), RACE (90.9%).",
+      "status": "historic"
+    },
+    {
+      "name": "T5-11B (Text-to-Text Transfer Transformer)",
+      "lab": "Google",
+      "released": "2019-10-23",
+      "params": "11B",
+      "context": "512",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "SuperGLUE": 88.9,
+        "GLUE": 90.3,
+        "SQuAD-EM": 90.06
+      },
+      "notable": "Cast every NLP task as text-to-text. Encoder-decoder pre-trained on the 750GB+ C4 corpus (introduced alongside it). Largest 11B variant set SOTA on SuperGLUE (88.9, up from RoBERTa's 84.6), GLUE, SQuAD and CNN/DM. Systematic study of transfer-learning design choices.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-3 (davinci, 175B)",
+      "lab": "OpenAI",
+      "released": "2020-05-28",
+      "params": "175B",
+      "context": "2048",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "LAMBADA-acc-few-shot": 86.4,
+        "TriviaQA-few-shot": 71.2,
+        "MMLU": 43.9,
+        "SuperGLUE-few-shot": 71.8
+      },
+      "notable": "The anchor. 'Language Models are Few-Shot Learners' (arXiv May 28 2020); API beta June 11 2020. 175B params, 96 layers, 2048-token context, ~300B training tokens. Demonstrated in-context / few-shot learning without weight updates — a paradigm shift. LAMBADA 86.4% (+18 pts SOTA), TriviaQA 71.2% few-shot. MMLU 43.9% few-shot was reported by the separate MMLU paper (Hendrycks et al., arXiv Sept 7 2020), not the original GPT-3 paper. Closed weights / API-only — the commercial-API era begins. HumanEval did not yet exist (created July 2021).",
+      "status": "historic"
+    },
+    {
+      "name": "OpenAI Codex (code-davinci)",
+      "lab": "OpenAI",
+      "released": "2021-08",
+      "params": "12B",
+      "context": "4K",
+      "modality": "text/code",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "HumanEval": 28.8
+      },
+      "notable": "First production code-generation LLM (GPT-3 fine-tuned on public source code); powered GitHub Copilot and introduced the HumanEval benchmark (28.8% pass@1, 72.3% pass@100). Private beta Aug 2021.",
+      "status": "historic"
+    },
+    {
+      "name": "Megatron-Turing NLG 530B (MT-NLG)",
+      "lab": "Microsoft + NVIDIA",
+      "released": "2021-10-11",
+      "params": "530B",
+      "context": "2K",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {},
+      "notable": "Largest monolithic (dense, non-MoE) transformer LM at the time: 530B params, 105 layers, trained with DeepSpeed+Megatron on 560 DGX A100 servers. A high-water mark for the 'just scale dense models' approach.",
+      "status": "historic"
+    },
+    {
+      "name": "Gopher",
+      "lab": "DeepMind",
+      "released": "2021-12-08",
+      "params": "280B",
+      "context": "2K",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 60,
+        "BIG-bench": 54.4
+      },
+      "notable": "DeepMind's first frontier-scale LM (280B, trained on ~300B tokens). Large-scale study across 152 tasks; established DeepMind as a serious language-AI player and provided the compute baseline later reused by Chinchilla. MMLU ~60% (some cites 56.2).",
+      "status": "historic"
+    },
+    {
+      "name": "InstructGPT (text-davinci-002 / GPT-3.5)",
+      "lab": "OpenAI",
+      "released": "2022-01-27",
+      "params": "175B",
+      "context": "4K",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {},
+      "notable": "Introduced RLHF (reinforcement learning from human feedback) to align LMs to instructions. A 1.3B InstructGPT was preferred by humans over 175B GPT-3 — the alignment-over-scale insight that defined the GPT-3.5 line and ChatGPT. Paper 'Training language models to follow instructions with human feedback' (Ouyang et al., Mar 2022).",
+      "status": "historic"
+    },
+    {
+      "name": "Chinchilla",
+      "lab": "DeepMind",
+      "released": "2022-03-29",
+      "params": "70B",
+      "context": "2K",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 67.5
+      },
+      "notable": "Established the Chinchilla scaling laws: compute-optimal training pairs ~20 tokens per parameter, so prior models were vastly under-trained. 70B trained on 1.4T tokens beat the 280B Gopher (and GPT-3, MT-NLG) at equal compute — redirected the entire field from 'bigger' to 'more data.' MMLU 67.5%.",
+      "status": "historic"
+    },
+    {
+      "name": "PaLM (540B)",
+      "lab": "Google",
+      "released": "2022-04-04",
+      "params": "540B",
+      "context": "2K",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 69.3
+      },
+      "notable": "Largest dense LM of the era (540B), trained on the Pathways system across two TPU v4 pods (6144 chips). New SOTA on MMLU (69.3%, 5-shot) and demonstrated breakthrough chain-of-thought / multi-step reasoning and emergent capabilities at scale. Paper arXiv:2204.02311 (Apr 2022).",
+      "status": "historic"
+    },
+    {
+      "name": "BLOOM",
+      "lab": "BigScience (Hugging Face-coordinated)",
+      "released": "2022-07-12",
+      "params": "176B",
+      "context": "2K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {},
+      "notable": "First truly open, fully transparent LLM at GPT-3 scale (176B). Built by ~1000 researchers across 70+ countries; multilingual by design (46 natural + 13 programming languages, ROOTS corpus, ~366B tokens). Released under the Responsible AI License — landmark for open-access AI.",
+      "status": "historic"
+    },
+    {
+      "name": "ChatGPT (GPT-3.5)",
+      "lab": "OpenAI",
+      "released": "2022-11-30",
+      "params": "175B",
+      "context": "4K",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {},
+      "notable": "The single biggest public-adoption milestone in AI history. Conversational RLHF-tuned sibling of InstructGPT (GPT-3.5); reached 1M users in 5 days and ~100M by Jan 2023 — fastest-growing consumer app at the time. Triggered the generative-AI mainstream era and the LLM arms race.",
+      "status": "historic"
+    },
+    {
+      "name": "LLaMA (1)",
+      "lab": "Meta AI",
+      "released": "2023-02-24",
+      "params": "7B / 13B / 33B / 65B",
+      "context": "2K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 63.4
+      },
+      "notable": "Foundational open-weights release that ignited the open-LLM ecosystem; LLaMA-13B beat GPT-3 175B on most benchmarks, LLaMA-65B rivaled Chinchilla-70B/PaLM-540B. 65B MMLU 63.4 (5-shot). Weights leaked then became the base for Alpaca/Vicuna and the whole local-LLM movement.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 1",
+      "lab": "Anthropic",
+      "released": "2023-03-14",
+      "params": "unknown",
+      "context": "9K",
+      "modality": "text",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "Anthropic's first public assistant, launched same day as GPT-4 in two tiers (Claude + faster/cheaper Claude Instant). ~9K-token context at launch; Constitutional-AI 'helpful, honest, harmless' framing. Context later expanded to 100K in May 2023 (Claude 1.3).",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-4",
+      "lab": "OpenAI",
+      "released": "2023-03-14",
+      "params": "unknown (rumored ~1.8T MoE)",
+      "context": "8K (32K API variant)",
+      "modality": "text+image (multimodal input)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 86.4,
+        "HumanEval": 67,
+        "GSM8K": 92
+      },
+      "notable": "Frontier paradigm-setter: first broadly-multimodal (image+text in) flagship, MMLU 86.4% (5-shot), HumanEval 67%, GSM8K ~92%. Technical report deliberately withheld size/architecture/training details. 8K default and 32K extended context. Set the bar the rest of 2023 chased.",
+      "status": "historic"
+    },
+    {
+      "name": "Falcon 40B",
+      "lab": "Technology Innovation Institute (TII, UAE)",
+      "released": "2023-05-25",
+      "params": "40B",
+      "context": "2K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "Open-weight model trained on 1T tokens of the RefinedWeb dataset; topped the Hugging Face Open LLM Leaderboard mid-2023. Released under a permissive (later Apache-2.0-style) license for research and commercial use.",
+      "status": "historic"
+    },
+    {
+      "name": "PaLM 2",
+      "lab": "Google",
+      "released": "2023-05-10",
+      "params": "unknown (~340B reported; smaller than PaLM 540B)",
+      "context": "8K",
+      "modality": "text",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 78.3,
+        "GSM8K": 80.7
+      },
+      "notable": "Powered Bard and Google's 2023 stack; came in Gecko/Otter/Bison/Unicorn sizes. Strong multilingual + reasoning, MMLU 78.3, GSM8K 80.7. Announced at Google I/O May 10 2023. Beat PaLM-540B while being smaller and more efficient.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 2",
+      "lab": "Anthropic",
+      "released": "2023-07-11",
+      "params": "unknown",
+      "context": "100K",
+      "modality": "text",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "HumanEval": 71.2,
+        "GSM8K": 88
+      },
+      "notable": "Headlined the 100K-token context window (~75K words) — the long-context breakthrough of 2023, dwarfing GPT-4's 8K/32K. HumanEval 71.2% (up from Claude 1.3's 56%), GSM8K 88%. First Claude with a public chat product (claude.ai).",
+      "status": "historic"
+    },
+    {
+      "name": "Llama 2",
+      "lab": "Meta AI",
+      "released": "2023-07-18",
+      "params": "7B / 13B / 70B",
+      "context": "4K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 68.9,
+        "GSM8K": 56.8,
+        "HumanEval": 29.9
+      },
+      "notable": "First frontier-adjacent open model with a genuine commercial license — became the default open base for the next year. 70B: MMLU 68.9, GSM8K 56.8, HumanEval 29.9. Trained on 40% more data than LLaMA 1; shipped RLHF chat variants. 4K context.",
+      "status": "historic"
+    },
+    {
+      "name": "Falcon 180B",
+      "lab": "Technology Innovation Institute (TII, UAE)",
+      "released": "2023-09-06",
+      "params": "180B",
+      "context": "2K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 68.74
+      },
+      "notable": "Largest openly-released LLM at the time (180B params, 3.5T training tokens); outperformed Llama 2 on MMLU (~68.7 on HF leaderboard) and approached PaLM 2. Released under the Falcon-180B TII license (Apache-2.0-based with use restrictions).",
+      "status": "historic"
+    },
+    {
+      "name": "Mistral 7B",
+      "lab": "Mistral AI",
+      "released": "2023-09-27",
+      "params": "7.3B",
+      "context": "8K (4K sliding-window attention)",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "Apache-2.0 efficiency landmark: a 7B that beat Llama 2 13B on every benchmark and rivaled 34B-class models on reasoning. Introduced grouped-query + sliding-window attention. Mistral AI's debut model, downloaded en masse as a fine-tune base.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-4 Turbo",
+      "lab": "OpenAI",
+      "released": "2023-11-06",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "text+image",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "Announced at OpenAI's first DevDay (gpt-4-1106-preview): 128K context (~300 pages), knowledge cutoff April 2023, and sharply cheaper pricing than GPT-4. Brought GPT-4 closer to the long-context bar Claude 2 had set.",
+      "status": "historic"
+    },
+    {
+      "name": "Gemini 1.0 (Ultra / Pro / Nano)",
+      "lab": "Google DeepMind",
+      "released": "2023-12-06",
+      "params": "unknown",
+      "context": "32K",
+      "modality": "natively multimodal (text+image+audio+video)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 90,
+        "GSM8K": 94.4,
+        "MATH": 53.2,
+        "HumanEval": 74.4
+      },
+      "notable": "First natively-multimodal frontier model and the first to beat the human-expert MMLU baseline (Ultra 90.0%, 5-shot CoT). Ultra: GSM8K 94.4, MATH 53.2, HumanEval 74.4 — surpassed GPT-4 on most of 32 tested benchmarks. Pro shipped Dec 13 (MMLU ~71.8); Ultra followed early 2024.",
+      "status": "historic"
+    },
+    {
+      "name": "Mixtral 8x7B",
+      "lab": "Mistral AI",
+      "released": "2023-12-11",
+      "params": "46.7B total / 12.9B active (sparse MoE)",
+      "context": "32K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 70.6
+      },
+      "notable": "First strong open sparse Mixture-of-Experts: 8 experts, 2 active per token, so 47B quality at ~13B inference cost. Matched/beat Llama 2 70B and GPT-3.5 on most benchmarks (MMLU 70.6), Apache-2.0, 32K context. Proved open MoE viable and kicked off the MoE wave.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-4o",
+      "lab": "OpenAI",
+      "released": "2024-05-13",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "text+image+audio (omni; voice, vision, text in/out)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 88.7,
+        "GPQA": 53.6,
+        "MATH": 76.6,
+        "HumanEval": 90.2
+      },
+      "notable": "First natively end-to-end multimodal ('omni') flagship handling text, audio and vision in a single model with ~320ms real-time voice latency; matched GPT-4 Turbo intelligence at 2x speed and half the cost.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-4o mini",
+      "lab": "OpenAI",
+      "released": "2024-07-18",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "text+image (omni-derived)",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 82,
+        "HumanEval": 87.2,
+        "MATH": 70.2
+      },
+      "notable": "Cheap, fast small model that replaced GPT-3.5 Turbo; ~82% MMLU at a fraction of the cost, became the default budget API workhorse.",
+      "status": "historic"
+    },
+    {
+      "name": "OpenAI o1-preview",
+      "lab": "OpenAI",
+      "released": "2024-09-12",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "text (reasoning, hidden chain-of-thought)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "GPQA": 73.3,
+        "AIME": 56.7,
+        "MATH": 85.5
+      },
+      "notable": "Launched the inference-time-compute 'reasoning' paradigm (long internal chain-of-thought via RL); AIME jumped from GPT-4o's ~12% to 56.7% solo (83% w/ consensus). First of the o-series.",
+      "status": "historic"
+    },
+    {
+      "name": "OpenAI o1-mini",
+      "lab": "OpenAI",
+      "released": "2024-09-12",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "text (reasoning)",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "AIME": 70,
+        "MATH": 90
+      },
+      "notable": "Smaller, ~80% cheaper reasoning model specialized for STEM/coding; competitive with full o1 on AIME (70.0% vs 74.4%) despite less world knowledge.",
+      "status": "historic"
+    },
+    {
+      "name": "OpenAI o1",
+      "lab": "OpenAI",
+      "released": "2024-12-05",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text+image (reasoning)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "GPQA": 78,
+        "AIME": 74.4,
+        "MATH": 94.8
+      },
+      "notable": "Full o1 GA (with o1 pro mode) during '12 Days of OpenAI'; exceeded human PhD-level on GPQA Diamond (78%), ~89th-percentile Codeforces. Cemented the reasoning era.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 3 Opus",
+      "lab": "Anthropic",
+      "released": "2024-03-04",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text+vision",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 86.8,
+        "GPQA": 50.4,
+        "MATH": 60.1,
+        "HumanEval": 84.9
+      },
+      "notable": "Anthropic's first model to credibly match/beat GPT-4-class on most benchmarks; flagship of the Claude 3 family, added vision, 200K context.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 3 Sonnet",
+      "lab": "Anthropic",
+      "released": "2024-03-04",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text+vision",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 79,
+        "GPQA": 40.4,
+        "HumanEval": 73
+      },
+      "notable": "Mid-tier balanced model of the Claude 3 launch; 2x faster than Opus at lower cost.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 3 Haiku",
+      "lab": "Anthropic",
+      "released": "2024-03-13",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text+vision",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 75.2,
+        "GPQA": 33.3,
+        "HumanEval": 75.9
+      },
+      "notable": "Fastest/cheapest Claude 3 tier; near-instant responses with vision, the budget option in the family.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 3.5 Sonnet",
+      "lab": "Anthropic",
+      "released": "2024-06-20",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text+vision",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 88.7,
+        "GPQA": 59.4,
+        "HumanEval": 92,
+        "SWE-bench": 33.4,
+        "MATH": 71.1
+      },
+      "notable": "Mid-tier model that beat its own flagship Opus and GPT-4o on most benchmarks at 2x Opus speed; defined the price/performance frontier of 2024.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 3.5 Sonnet (new / v2)",
+      "lab": "Anthropic",
+      "released": "2024-10-22",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text+vision",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "SWE-bench": 49,
+        "GPQA": 65,
+        "MMLU": 89
+      },
+      "notable": "Upgraded 'new' 3.5 Sonnet introduced public 'computer use' (agentic GUI control) beta; jumped SWE-bench Verified to 49.0%, beating o1-preview on agentic coding.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 3.5 Haiku",
+      "lab": "Anthropic",
+      "released": "2024-11-04",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "SWE-bench": 40.6,
+        "HumanEval": 88.1
+      },
+      "notable": "Fast/cheap model that matched the original Claude 3 Opus on many coding tasks; SWE-bench Verified 40.6%.",
+      "status": "historic"
+    },
+    {
+      "name": "Gemini 1.5 Pro",
+      "lab": "Google DeepMind",
+      "released": "2024-02-15",
+      "params": "unknown",
+      "context": "1M (2M in preview)",
+      "modality": "text+image+audio+video",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 85.9,
+        "MATH": 67.7,
+        "HumanEval": 84.1,
+        "GPQA": 46.2
+      },
+      "notable": "First mainstream model with a 1M-token context window (2M in preview); MoE architecture, near-perfect long-context retrieval, native multimodal incl. video. GA May 2024.",
+      "status": "historic"
+    },
+    {
+      "name": "Gemini 1.5 Flash",
+      "lab": "Google DeepMind",
+      "released": "2024-05-14",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "text+image+audio+video",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 78.9,
+        "MATH": 54.9,
+        "HumanEval": 74.3
+      },
+      "notable": "Distilled, lighter, faster sibling of 1.5 Pro keeping the 1M context; cheap high-volume multimodal workhorse, announced at Google I/O 2024.",
+      "status": "historic"
+    },
+    {
+      "name": "Gemini 2.0 Flash",
+      "lab": "Google DeepMind",
+      "released": "2024-12-11",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "text+image+audio+video (native image/audio out)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 76.4,
+        "GPQA": 65.2,
+        "MATH": 89.7
+      },
+      "notable": "First Gemini 2.0 model (experimental); ~2x faster than 1.5 Pro while beating it, added native tool use, native image+audio generation, and an agentic 'Multimodal Live' API.",
+      "status": "historic"
+    },
+    {
+      "name": "Llama 3 8B",
+      "lab": "Meta",
+      "released": "2024-04-18",
+      "params": "8B",
+      "context": "8K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 66.6,
+        "HumanEval": 62.2,
+        "MATH": 30
+      },
+      "notable": "Small open-weights model trained on 15T tokens; punched well above its size class and became a fine-tuning default.",
+      "status": "historic"
+    },
+    {
+      "name": "Llama 3 70B",
+      "lab": "Meta",
+      "released": "2024-04-18",
+      "params": "70B",
+      "context": "8K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 79.5,
+        "HumanEval": 81.7,
+        "MATH": 50.4,
+        "GPQA": 39.5
+      },
+      "notable": "Open 70B that closed much of the gap to GPT-4-class on knowledge; relaunched Meta's open-weights leadership. Limited 8K context.",
+      "status": "historic"
+    },
+    {
+      "name": "Llama 3.1 405B",
+      "lab": "Meta",
+      "released": "2024-07-23",
+      "params": "405B",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 88.6,
+        "GPQA": 51.1,
+        "HumanEval": 89,
+        "MATH": 73.8
+      },
+      "notable": "First openly available model to rival GPT-4o/Claude 3.5 Sonnet at the frontier; 405B dense, expanded all Llama 3.1 sizes to 128K context.",
+      "status": "historic"
+    },
+    {
+      "name": "Llama 3.1 70B",
+      "lab": "Meta",
+      "released": "2024-07-23",
+      "params": "70B",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 86,
+        "HumanEval": 80.5,
+        "MATH": 68,
+        "GPQA": 46.7
+      },
+      "notable": "Llama 3 70B refreshed with 128K context and big gains; strong open mid-size workhorse.",
+      "status": "historic"
+    },
+    {
+      "name": "Llama 3.3 70B",
+      "lab": "Meta",
+      "released": "2024-12-06",
+      "params": "70B",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 86,
+        "GPQA": 50.5,
+        "HumanEval": 88.4,
+        "MATH": 77,
+        "AA-Index": 14
+      },
+      "notable": "Stealth-dropped on Hugging Face; delivered near-405B quality at 70B size/cost, beating Claude 3 Opus on 5/6 major benchmarks.",
+      "status": "historic"
+    },
+    {
+      "name": "DeepSeek-V2",
+      "lab": "DeepSeek",
+      "released": "2024-05-06",
+      "params": "236B (21B active, MoE)",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 78.5,
+        "HumanEval": 81.1,
+        "MATH": 43.6
+      },
+      "notable": "Introduced Multi-head Latent Attention (MLA) + fine-grained MoE for radically cheap inference (21B of 236B active); triggered China's LLM price war.",
+      "status": "historic"
+    },
+    {
+      "name": "DeepSeek-V3",
+      "lab": "DeepSeek",
+      "released": "2024-12-26",
+      "params": "671B (37B active, MoE)",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 88.5,
+        "GPQA": 59.1,
+        "HumanEval": 82.6,
+        "MATH": 90.2
+      },
+      "notable": "671B MoE trained for ~$5.6M (≈2.8M H800 GPU-hours) yet matched GPT-4o / Claude 3.5 Sonnet; FP8 training + MLA. The open model that shook the frontier.",
+      "status": "historic"
+    },
+    {
+      "name": "Qwen2-72B",
+      "lab": "Alibaba",
+      "released": "2024-06-06",
+      "params": "72B",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 84.2,
+        "HumanEval": 64.6,
+        "MATH": 59.7,
+        "GPQA": 37.9
+      },
+      "notable": "Strong open dense 72B with 128K context and broad multilingual coverage; topped open-model leaderboards mid-2024.",
+      "status": "historic"
+    },
+    {
+      "name": "Qwen2.5-72B",
+      "lab": "Alibaba",
+      "released": "2024-09-19",
+      "params": "72B",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "MMLU": 86.1,
+        "MATH": 83.1,
+        "HumanEval": 86.6,
+        "GPQA": 49
+      },
+      "notable": "Flagship of a huge Qwen2.5 family (0.5B–72B, plus Coder/Math); trained on 18T tokens, big math/coding jump (MATH 69→83), became the leading open base for fine-tunes.",
+      "status": "historic"
+    },
+    {
+      "name": "Mistral Large",
+      "lab": "Mistral AI",
+      "released": "2024-02-26",
+      "params": "unknown",
+      "context": "32K",
+      "modality": "text",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 81.2,
+        "HumanEval": 45.1,
+        "MATH": 45
+      },
+      "notable": "Mistral's first closed flagship, ranked #2 to GPT-4 on MMLU at launch; debuted alongside the Azure partnership and 'Le Chat'.",
+      "status": "historic"
+    },
+    {
+      "name": "Mistral Large 2",
+      "lab": "Mistral AI",
+      "released": "2024-07-24",
+      "params": "123B",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {
+        "MMLU": 84,
+        "HumanEval": 92,
+        "MATH": 71.5,
+        "GPQA": 48
+      },
+      "notable": "123B dense with 128K context, strong code/math and multilingual; open weights under a research (non-commercial) license, competitive with Llama 3.1 405B at a third the size.",
+      "status": "historic"
+    },
+    {
+      "name": "OpenAI o3-mini",
+      "lab": "OpenAI",
+      "released": "2025-01-31",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text (reasoning)",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "GPQA": 79.7,
+        "AIME": 87.3
+      },
+      "notable": "Cost-efficient STEM reasoning model; o1-level reasoning at medium effort for a fraction of the cost. AIME is AIME 2024; GPQA is high-effort GPQA Diamond.",
+      "status": "historic"
+    },
+    {
+      "name": "DeepSeek-R1",
+      "lab": "DeepSeek",
+      "released": "2025-01-20",
+      "params": "671B total / 37B active (MoE)",
+      "context": "128K",
+      "modality": "text (reasoning)",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {
+        "GPQA": 71.5,
+        "AIME": 79.8
+      },
+      "notable": "The open-weights reasoning shock: first open model to rival OpenAI o1 on math/science, trained with large-scale RL, released under MIT with a public technical report. Triggered a market-wide selloff and reset expectations for open reasoning. AIME=AIME 2024.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-4.5 (Orion)",
+      "lab": "OpenAI",
+      "released": "2025-02-27",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "text + vision",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "OpenAI's largest pretraining-scaled (non-reasoning) chat model, codenamed Orion. Positioned for EQ/writing/lower hallucination rather than reasoning. Deprecated from the API July 14 2025 in favor of GPT-4.1 — effectively the end of the pure-scaling line.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude 3.7 Sonnet",
+      "lab": "Anthropic",
+      "released": "2025-02-24",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text + vision",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "SWE-bench": 70.3
+      },
+      "notable": "First Anthropic hybrid reasoning model (toggleable extended thinking) and launched alongside Claude Code. SWE-bench Verified ~62-70% (70.3% with custom scaffold); set the template for the agentic-coding era. 128K output in extended-thinking mode.",
+      "status": "historic"
+    },
+    {
+      "name": "xAI Grok 3",
+      "lab": "xAI",
+      "released": "2025-02-17",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "text + vision",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "GPQA": 84.6,
+        "AIME": 93.3
+      },
+      "notable": "Trained on the Colossus ~100-200k GPU cluster; 'Think' reasoning mode plus DeepSearch agent. GPQA Diamond 84.6 and AIME 2025 93.3 with cons@64 test-time compute.",
+      "status": "historic"
+    },
+    {
+      "name": "Google Gemini 2.5 Pro",
+      "lab": "Google DeepMind",
+      "released": "2025-03-25",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "multimodal (text, image, audio, video)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "GPQA": 84,
+        "AIME": 86.7,
+        "HLE": 18.8
+      },
+      "notable": "Native 'thinking' model with a 1M-token context that topped LMArena at launch and led math/science benchmarks. SOTA 18.8% on Humanity's Last Exam (no tools) at release. AIME=AIME 2025.",
+      "status": "historic"
+    },
+    {
+      "name": "Meta Llama 4 Scout",
+      "lab": "Meta",
+      "released": "2025-04-05",
+      "params": "109B total / 17B active (16 experts, MoE)",
+      "context": "10M",
+      "modality": "natively multimodal (text + image)",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {},
+      "notable": "First natively-multimodal MoE Llama; 10M-token context was the largest of any open model at launch. Released under the Llama 4 community license (open weights, not OSI-open).",
+      "status": "historic"
+    },
+    {
+      "name": "Meta Llama 4 Maverick",
+      "lab": "Meta",
+      "released": "2025-04-05",
+      "params": "400B total / 17B active (128 experts, MoE)",
+      "context": "1M",
+      "modality": "natively multimodal (text + image)",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "Distilled from a ~288B-active 'Behemoth' teacher; pitched as beating GPT-4o and Gemini 2.0 Flash and rivaling DeepSeek V3 on reasoning/coding at far fewer active params. The flagship Behemoth never shipped in 2025.",
+      "status": "historic"
+    },
+    {
+      "name": "OpenAI o3",
+      "lab": "OpenAI",
+      "released": "2025-04-16",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text + vision (reasoning, tool-use)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "GPQA": 87.7,
+        "SWE-bench": 71.7,
+        "AIME": 98.4
+      },
+      "notable": "First OpenAI reasoning model that uses tools (web, Python, vision) inside the chain of thought — the agentic-reasoning template. AIME 2025 98.4% pass@1 with tools; Codeforces ~2727 Elo.",
+      "status": "historic"
+    },
+    {
+      "name": "OpenAI o4-mini",
+      "lab": "OpenAI",
+      "released": "2025-04-16",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text + vision (reasoning, tool-use)",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "AIME": 99.5
+      },
+      "notable": "Small, cheap tool-using reasoner; best-in-class AIME (99.5% with a Python interpreter on AIME 2025). First model in the 'o4' line.",
+      "status": "historic"
+    },
+    {
+      "name": "Alibaba Qwen3-235B-A22B",
+      "lab": "Alibaba (Qwen)",
+      "released": "2025-04-29",
+      "params": "235B total / 22B active (MoE)",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": true,
+      "benchmarks": {},
+      "notable": "Flagship of the Qwen3 family (six dense + two MoE models, 0.6B-235B), Apache-2.0. Hybrid 'thinking/non-thinking' single-model toggle; pitched as competitive with DeepSeek-R1, o1, Grok-3 and Gemini 2.5 Pro. A leading open-weights release of 2025.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude Opus 4",
+      "lab": "Anthropic",
+      "released": "2025-05-22",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text + vision (hybrid reasoning)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "SWE-bench": 72.5,
+        "GPQA": 79.6,
+        "AIME": 75.5
+      },
+      "notable": "Frontier coding/agent model built for long-horizon autonomous work (Claude Code in the background); SWE-bench Verified ~72.5% led the field at launch. GPQA/AIME with extended thinking. Hybrid instant+reasoning model.",
+      "status": "historic"
+    },
+    {
+      "name": "Claude Sonnet 4",
+      "lab": "Anthropic",
+      "released": "2025-05-22",
+      "params": "unknown",
+      "context": "200K",
+      "modality": "text + vision (hybrid reasoning)",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {
+        "SWE-bench": 72.7,
+        "GPQA": 75.4
+      },
+      "notable": "Cost-efficient successor to 3.7 Sonnet; hybrid reasoning, strong agentic coding. SWE-bench Verified ~72-73%.",
+      "status": "historic"
+    },
+    {
+      "name": "DeepSeek-R1-0528",
+      "lab": "DeepSeek",
+      "released": "2025-05-28",
+      "params": "671B total / 37B active (MoE)",
+      "context": "128K",
+      "modality": "text (reasoning)",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {
+        "GPQA": 81,
+        "AIME": 87.5
+      },
+      "notable": "Major refresh of R1: AIME 2025 jumped 70.0 -> 87.5, GPQA 71.5 -> 81.0, fewer hallucinations, plus JSON/function-calling. Brought the leading open model up to date with Google/OpenAI. Open weights (MIT).",
+      "status": "historic"
+    },
+    {
+      "name": "xAI Grok 4",
+      "lab": "xAI",
+      "released": "2025-07-09",
+      "params": "~1.7T (reported, MoE)",
+      "context": "256K",
+      "modality": "text + vision (reasoning, tool-use)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "GPQA": 87.7,
+        "AIME": 94.3,
+        "HLE": 23.9
+      },
+      "notable": "Trained on the 200k-GPU Colossus cluster with ~100x Grok 2 compute. Native tool-use reasoning; Grok 4 Heavy (multi-agent) pushed HLE to ~44% with tools. AIME 2025 ~92-100%. Briefly the AA Intelligence Index leader at launch.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-5",
+      "lab": "OpenAI",
+      "released": "2025-08-07",
+      "params": "unknown",
+      "context": "400K",
+      "modality": "multimodal (text + vision), router + reasoning",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "SWE-bench": 74.9,
+        "GPQA": 88.4,
+        "AIME": 94.6,
+        "HLE": 42
+      },
+      "notable": "Unified system with an automatic router between a fast model and a 'thinking' reasoning model; ships as gpt-5 / mini / nano / pro. 400K total context (272K input). SWE-bench Verified ~74.9%; HLE ~42% (GPT-5 Pro, with tools). Frontier leader on the AA Intelligence Index at launch.",
+      "status": "historic"
+    },
+    {
+      "name": "DeepSeek-V3.1",
+      "lab": "DeepSeek",
+      "released": "2025-08-21",
+      "params": "671B total / 37B active (MoE)",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "Hybrid model fusing V3 (direct) and R1 (chain-of-thought) into one — thinking/non-thinking via chat template. Open weights; a step toward DeepSeek's single-model agentic line. (V3 base launched 2024-12-26.)",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-5.1",
+      "lab": "OpenAI",
+      "released": "2025-11-12",
+      "params": "unknown",
+      "context": "400K",
+      "modality": "multimodal, router + reasoning",
+      "open": false,
+      "milestone": false,
+      "benchmarks": {},
+      "notable": "Refresh of GPT-5: GPT-5.1 Instant + GPT-5.1 Thinking, 'warmer' default personality and 8 selectable personalities. API Nov 13; additional variants Nov 19.",
+      "status": "historic"
+    },
+    {
+      "name": "Google Gemini 3 Pro",
+      "lab": "Google DeepMind",
+      "released": "2025-11-18",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "multimodal (text, image, audio, video)",
+      "open": false,
+      "milestone": true,
+      "benchmarks": {
+        "GPQA": 91.9,
+        "HLE": 37.5
+      },
+      "notable": "Record-setting frontier model: HLE 37.5% (no tools, then a record), GPQA Diamond 91.9%. Deep Think mode pushed HLE to 41.0% and GPQA to 93.8%. Last major frontier launch of 2025.",
+      "status": "historic"
+    },
+    {
+      "name": "GPT-5.3-Codex",
+      "lab": "OpenAI",
+      "released": "2026-02-05",
+      "params": "unknown",
+      "context": "192K",
+      "modality": "text + image in, text out (agentic coding)",
+      "open": false,
+      "benchmarks": {
+        "SWE-bench Pro": 56.8
+      },
+      "milestone": false,
+      "notable": "Flagship Codex model; ~25% faster than its predecessor, fed coding gains into the later GPT-5.4 general model. A Spark variant shipped with a 128K window.",
+      "pricing": "",
+      "status": "live"
+    },
+    {
+      "name": "GPT-5.4",
+      "lab": "OpenAI",
+      "released": "2026-03-05",
+      "params": "unknown",
+      "context": "1M (922K in / 128K out)",
+      "modality": "multimodal text/image, text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 57,
+        "SWE-bench Pro": 57.7,
+        "GPQA": 92.8
+      },
+      "milestone": false,
+      "notable": "First time a new OpenAI flagship did NOT top the AA Index outright — tied Gemini 3.1 Pro at 57. Folded GPT-5.3-Codex coding into a general reasoner. Mini/nano followed Mar 17. $2.50/$15.",
+      "pricing": "$2.50 in / $15 out per 1M (Pro: $30/$180)",
+      "status": "live"
+    },
+    {
+      "name": "GPT-5.5",
+      "lab": "OpenAI",
+      "released": "2026-04-23",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 57,
+        "GPQA": 0,
+        "Terminal-Bench 2.0": 82.7,
+        "FrontierMath T1-3": 51.7,
+        "FrontierMath T4": 35.4
+      },
+      "milestone": false,
+      "notable": "Briefly the leading model (AA Index ~60.2, later edged out by Opus 4.8 at 61.4). Shipped Thinking/Pro/Instant variants plus a GPT-5.5-Cyber security model. Per-token price doubled to $5/$30.",
+      "pricing": "$5 in / $30 out per 1M (Pro: $30/$180)",
+      "status": "live"
+    },
+    {
+      "name": "GPT-5.5 Pro",
+      "lab": "OpenAI",
+      "released": "2026-04-23",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "multimodal, text out (deep agentic reasoning)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "notable": "Top-tier agentic/research variant of GPT-5.5, no free tier, extra API safeguards. Most expensive OpenAI tier of the cycle at $30/$180.",
+      "pricing": "$30 in / $180 out per 1M",
+      "status": "live"
+    },
+    {
+      "name": "Claude Opus 4.6",
+      "lab": "Anthropic",
+      "released": "2026-02-05",
+      "params": "unknown",
+      "context": "1M (beta) / 128K out",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 53,
+        "SWE-bench": 80.8,
+        "SWE-bench Pro": 51.9,
+        "GPQA": 91.3
+      },
+      "milestone": false,
+      "notable": "First Opus with a 1M-token beta context; introduced adaptive thinking and 'agent teams' in Claude Code. $5/$25.",
+      "pricing": "$5 in / $25 out per 1M",
+      "status": "live"
+    },
+    {
+      "name": "Claude Sonnet 4.6",
+      "lab": "Anthropic",
+      "released": "2026-02-17",
+      "params": "unknown",
+      "context": "1M (beta) / 64K out",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "SWE-bench": 79.6,
+        "Terminal-Bench 2.0": 59.1,
+        "OSWorld": 72.5,
+        "ARC-AGI-2": 58.3
+      },
+      "milestone": false,
+      "notable": "Mid-tier workhorse within 1-2 pts of Opus 4.6 on SWE-bench at a fraction of cost; 4.3x jump on ARC-AGI-2 vs Sonnet 4.5. Users preferred it to Opus 4.5 59% of the time. $3/$15.",
+      "pricing": "$3 in / $15 out per 1M",
+      "status": "live"
+    },
+    {
+      "name": "Claude Opus 4.7",
+      "lab": "Anthropic",
+      "released": "2026-04-16",
+      "params": "unknown",
+      "context": "1M (beta) / 128K out",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 57.3,
+        "SWE-bench": 87.6,
+        "SWE-bench Pro": 64.3,
+        "GPQA": 94.2
+      },
+      "milestone": false,
+      "notable": "Big jump on hardest coding tasks; new 'xhigh' effort level, higher-res vision (2576px), file-system memory recall. AA Index ~57.3 (4.1 below the later 4.8).",
+      "pricing": "$5 in / $25 out per 1M",
+      "status": "live"
+    },
+    {
+      "name": "Claude Opus 4.8",
+      "lab": "Anthropic",
+      "released": "2026-05-28",
+      "params": "unknown",
+      "context": "1M (beta) / 128K out",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 61.4,
+        "SWE-bench": 88.6,
+        "SWE-bench Pro": 69.2,
+        "GPQA": 93.6,
+        "HLE": 57.9
+      },
+      "milestone": true,
+      "notable": "Retook #1 on the AA Intelligence Index (61.4) from OpenAI's GPT-5.5 (60.2) and led Humanity's Last Exam (57.9 w/ tools). ~4x less likely than 4.7 to let flaws pass; added Dynamic Workflows preview. 84% on Online-Mind2Web.",
+      "pricing": "$5 in / $25 out per 1M",
+      "status": "live"
+    },
+    {
+      "name": "Claude Haiku 4.5",
+      "lab": "Anthropic",
+      "released": "2025-10-15",
+      "params": "unknown",
+      "context": "200K / 64K out",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "SWE-bench": 73.3,
+        "SWE-bench Pro": 39.5,
+        "OSWorld": 50.7
+      },
+      "milestone": false,
+      "notable": "Released Oct 2025 (BEFORE the Feb-Jun 2026 window) but still the current small-tier Claude through mid-2026. Near-frontier coding (73.3% SWE-bench) at $1/$5, the cheap engine for multi-agent setups.",
+      "pricing": "$1 in / $5 out per 1M",
+      "status": "historic"
+    },
+    {
+      "name": "Claude Fable 5",
+      "lab": "Anthropic",
+      "released": "2026-06-09",
+      "params": "unknown",
+      "context": "1M / 128K out",
+      "modality": "multimodal, text out, always-on adaptive thinking",
+      "open": false,
+      "benchmarks": {
+        "SWE-bench": 95,
+        "SWE-bench Pro": 80.3
+      },
+      "milestone": true,
+      "notable": "Mythos-class GA model, top reported SWE-bench Verified of the cycle (~95%). PULLED worldwide Jun 12 2026 by a US Commerce export-control order (national-security/jailbreak concern) — disabled for all users incl. API, no return date. First major model withdrawn by US gov directive. $10/$50.",
+      "pricing": "$10 in / $50 out per 1M",
+      "status": "pulled"
+    },
+    {
+      "name": "Claude Mythos 5 (Preview)",
+      "lab": "Anthropic",
+      "released": "2026-06-09",
+      "params": "unknown",
+      "context": "1M / 128K out",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "SWE-bench": 93.9,
+        "SWE-bench Pro": 77.8
+      },
+      "milestone": false,
+      "notable": "Limited-availability sibling to Fable 5 via 'Project Glasswing' — effectively a preview, never broadly released. Suspended alongside Fable 5 on Jun 12 2026 by the same export-control order. Benchmark figures are preview-grade.",
+      "pricing": "$10 in / $50 out per 1M (preview)",
+      "status": "preview"
+    },
+    {
+      "name": "Gemini 3.1 Pro",
+      "lab": "Google DeepMind",
+      "released": "2026-02-19",
+      "params": "unknown",
+      "context": "1M / 64K out",
+      "modality": "natively multimodal (text/audio/image/video/code), text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 57,
+        "SWE-bench": 80.6,
+        "GPQA": 94.3,
+        "HLE": 51.4
+      },
+      "milestone": false,
+      "notable": "Took the AA Index top spot (57) on release, two weeks ahead of GPT-5.4 which only tied it. Native video input, 1M context. GPQA 94.3 (highest of the cluster).",
+      "pricing": "",
+      "status": "live"
+    },
+    {
+      "name": "Gemini 3 Flash",
+      "lab": "Google DeepMind",
+      "released": "2026",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "multimodal (text/image/speech/video), text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 35
+      },
+      "milestone": false,
+      "notable": "Pro-grade reasoning at Flash speed/cost. Non-reasoning AA Index 35. Line later iterated to Gemini 3.5 Flash (AA 50, May 19 2026) and 3.1 Flash-Lite (AA 25, Mar 3 2026). $0.50/$3.",
+      "pricing": "$0.50 in / $3 out per 1M",
+      "status": "live"
+    },
+    {
+      "name": "DiffusionGemma",
+      "lab": "Google DeepMind",
+      "released": "2026-06-10",
+      "params": "25.2B total / ~3.8B active (MoE)",
+      "context": "unknown",
+      "modality": "text/image/video in, text out (discrete diffusion)",
+      "open": true,
+      "benchmarks": {},
+      "milestone": true,
+      "notable": "First open-weight text-DIFFUSION LLM — denoises 256-token blocks in parallel instead of autoregressive decoding. >1000 tok/s on a single H100 (up to 4x faster), trading quality for speed (sits below Gemma 4). Apache 2.0, day-zero vLLM/HF/MLX/SGLang support.",
+      "pricing": "open weights (Apache 2.0)",
+      "status": "live"
+    },
+    {
+      "name": "Grok 4.20 Beta",
+      "lab": "xAI",
+      "released": "2026-03-03",
+      "params": "unknown",
+      "context": "unknown",
+      "modality": "multimodal, text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 49
+      },
+      "milestone": false,
+      "notable": "Rapid-learning beta line; 'Beta 2' (Mar 3) fixed instruction-following, hallucinations, LaTeX, image search. Reasoning variant (0309 v2, Apr 7) scored 49 on the AA Index.",
+      "pricing": "",
+      "status": "live"
+    },
+    {
+      "name": "Grok 4.3",
+      "lab": "xAI",
+      "released": "2026-05-06",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "multimodal incl. native video input, text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 53
+      },
+      "milestone": false,
+      "notable": "xAI's 'cheap frontier' play: AA Index 53 (below GPT-5.5/Gemini 3.1 Pro) but aggressively priced at $1.25/$2.50 with native video and 1M context. Beta Apr 17, public API Apr 30, GA early May.",
+      "pricing": "$1.25 in / $2.50 out per 1M",
+      "status": "live"
+    },
+    {
+      "name": "Mistral Large 3",
+      "lab": "Mistral AI",
+      "released": "2025-12-02",
+      "params": "675B total / 41B active (sparse MoE)",
+      "context": "256K",
+      "modality": "text (+ multimodal family), text out",
+      "open": true,
+      "benchmarks": {
+        "GPQA": 68,
+        "MMLU-Pro": 80.7,
+        "MATH-500": 93.6
+      },
+      "milestone": false,
+      "notable": "Released Dec 2025 (BEFORE the window) but the active flagship through 2026. 675B Apache-2.0 open-weight MoE, very cheap at $0.50/$1.50. Ministral 3 (3B/8B/14B) small siblings shipped alongside.",
+      "pricing": "$0.50 in / $1.50 out per 1M (Apache 2.0 open weights)",
+      "status": "historic"
+    },
+    {
+      "name": "Ministral 3",
+      "lab": "Mistral AI",
+      "released": "2025-12",
+      "params": "3B / 8B / 14B variants",
+      "context": "256K",
+      "modality": "text, text out",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "notable": "Edge/small-model line paired with Large 3, marketed as best performance-per-cost in its class; GA on Amazon Bedrock. Open weights.",
+      "pricing": "open weights",
+      "status": "historic"
+    },
+    {
+      "name": "Qwen3.5-397B-A17B",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-02-16",
+      "params": "397B total / 17B active (MoE, 512 experts)",
+      "context": "256K",
+      "modality": "natively multimodal (first Qwen open model with native vision), text out",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 45,
+        "SWE-bench": 76.4,
+        "GPQA": 88.4,
+        "MMLU-Pro": 87.8,
+        "AIME 2026": 91.3
+      },
+      "milestone": false,
+      "notable": "Flagship of the Qwen3.5 wave; #3 open-weights model on AA Index (45) at launch. Unified text+vision lines, 201 languages, 8.6-19x throughput gain, 256K context decodes ~19x faster than Qwen3-Max. Beat Alibaba's own trillion-param model at lower cost.",
+      "pricing": "open weights",
+      "status": "live"
+    },
+    {
+      "name": "Kimi K2.7 Code",
+      "lab": "Moonshot AI",
+      "released": "2026-06-12",
+      "params": "1T total / 32B active (MoE, 384 experts)",
+      "context": "256K",
+      "modality": "text, text out (agentic coding-first)",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "notable": "1T open-weight coding MoE (Modified MIT). ~30% fewer reasoning tokens than K2.6; all published numbers are Moonshot's OWN proprietary benches (Kimi Code Bench v2 +21.8%, etc.) — NO independent SWE-bench/GPQA/Terminal-Bench numbers as of release. $0.95/$4.00.",
+      "pricing": "$0.95 in / $4.00 out per 1M (open weights)",
+      "status": "live"
+    },
+    {
+      "name": "NVIDIA Nemotron 3 Ultra",
+      "lab": "NVIDIA",
+      "released": "2026-06-04",
+      "params": "550B total / 55B active (hybrid Mamba-Transformer MoE)",
+      "context": "1M",
+      "modality": "text, text out",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 48
+      },
+      "milestone": false,
+      "notable": "Announced at Computex Jun 1, released Jun 4. Fastest US open-weights frontier model (>300 tok/s) and best US open-weight intelligence (AA 48) — but still behind Chinese open models (Kimi K2.6 at 54). Full release of weights, reward models, quantized variants, and training recipes under NVIDIA Open Model License.",
+      "pricing": "open weights (NVIDIA Open Model License)",
+      "status": "live"
+    },
+    {
+      "name": "MAI-Thinking-1",
+      "lab": "Microsoft AI",
+      "released": "2026-06-02",
+      "params": "~1T total / 35B active (sparse MoE)",
+      "context": "256K",
+      "modality": "text, text out (reasoning)",
+      "open": false,
+      "benchmarks": {
+        "AIME 2025": 97,
+        "AIME 2026": 94.5
+      },
+      "milestone": true,
+      "notable": "Microsoft's FIRST in-house reasoning model, explicitly trained WITHOUT OpenAI data — a strategic decoupling. Competitive with Opus 4.6 on SWE-bench Pro; preferred over Claude Sonnet 4.6 in blind human eval (Surge). Unveiled at Build 2026.",
+      "pricing": "",
+      "status": "live"
+    },
+    {
+      "name": "MAI-Code-1-Flash",
+      "lab": "Microsoft AI",
+      "released": "2026-06-02",
+      "params": "unknown",
+      "context": "unknown",
+      "modality": "text, text out (coding)",
+      "open": false,
+      "benchmarks": {
+        "SWE-bench Pro": 51.2
+      },
+      "milestone": false,
+      "notable": "Microsoft's in-house coding model. Beats Claude Haiku 4.5 on all four core coding benches incl. a 16-pt SWE-bench Pro lead (51.2 vs 35.2), solving harder tasks with up to 60% fewer tokens. Part of a 7-model MAI drop at Build 2026.",
+      "pricing": "",
+      "status": "live"
+    },
+    {
+      "name": "Meta Muse Spark",
+      "lab": "Meta (Superintelligence Labs)",
+      "released": "2026-04-08",
+      "params": "unknown",
+      "context": "unknown",
+      "modality": "voice/text/image in, text out (natively multimodal reasoning)",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 52,
+        "HealthBench Hard": 42.8,
+        "HLE": 50.2
+      },
+      "milestone": true,
+      "notable": "Meta's FIRST proprietary/closed model — a sharp break from the open Llama line ('hopes to open-source future versions'). AA Index 52; leads on HealthBench Hard and HLE-Contemplating but trails on coding/agentic. Matches Llama 4 Maverick with >10x less compute. Free at meta.ai.",
+      "pricing": "free at meta.ai (closed weights)",
+      "status": "live"
+    },
+    {
+      "name": "GLM-5",
+      "lab": "Zhipu / Z.ai",
+      "released": "2026-02-11",
+      "params": "~745B total / 44B active (MoE, 256 experts, 8 active)",
+      "context": "200K",
+      "modality": "text, text out (agentic)",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 50,
+        "SWE-bench": 77.8,
+        "HLE": 50.4
+      },
+      "milestone": false,
+      "notable": "744B open-weight (MIT) flagship that rivaled GPT-5.2; top open-weights AA Index (50) at launch. GLM-5.1 incremental upgrade Mar 27. HLE 50.4 beat Claude Opus 4.5.",
+      "pricing": "open weights (MIT)",
+      "status": "live"
+    },
+    {
+      "name": "GLM-5.2",
+      "lab": "Zhipu / Z.ai",
+      "released": "2026-06-13",
+      "params": "~744B total / ~40B active (MoE)",
+      "context": "1M",
+      "modality": "text, text out",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Pro": 62.1,
+        "HLE": 54.7,
+        "Terminal-Bench 2.1": 82.7,
+        "AIME": 99.2
+      },
+      "milestone": false,
+      "notable": "Open-weight (MIT) model that beat GPT-5.5 on several long-horizon coding benches at ~1/6 the cost. New IndexShare attention cuts per-token FLOPs 2.9x at 1M context. Trails Opus 4.8 on raw SWE-bench Pro (62.1 vs 69.2) but leads on Terminal-Bench 2.1 best-harness and agentic math.",
+      "pricing": "open weights (MIT)",
+      "status": "live"
+    }
   ]
 }

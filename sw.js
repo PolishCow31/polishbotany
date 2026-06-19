@@ -3,7 +3,7 @@
 // Data  = network-first (twice-daily updates must always show fresh; cache is
 //         only the offline fallback). This is the fix for the iOS PWA stale-bundle
 //         trap — the thing that changes often is never served stale.
-const SHELL_V = 'shell-v1';
+const SHELL_V = 'shell-v2';
 const SHELL = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', (e) => {
