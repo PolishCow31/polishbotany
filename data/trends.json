@@ -1,0 +1,36 @@
+{
+  "note": "SEED — placeholder benchmark trajectories. Replaced by ai-history-foundation workflow output (P1).",
+  "trends": [
+    {
+      "benchmark": "MMLU",
+      "unit": "% accuracy",
+      "higherBetter": true,
+      "saturated": true,
+      "points": [
+        { "date": "2020-06", "model": "GPT-3", "lab": "OpenAI", "value": 43.9 },
+        { "date": "2022-11", "model": "ChatGPT", "lab": "OpenAI", "value": 70.0 },
+        { "date": "2023-03", "model": "GPT-4", "lab": "OpenAI", "value": 86.4 },
+        { "date": "2024-03", "model": "Claude 3 Opus", "lab": "Anthropic", "value": 86.8 },
+        { "date": "2024-05", "model": "GPT-4o", "lab": "OpenAI", "value": 88.7 },
+        { "date": "2025-02", "model": "frontier", "lab": "multiple", "value": 92.0 }
+      ],
+      "predicted": [],
+      "notes": "Saturated near ~90% by 2024-25; no longer a useful frontier discriminator. Seed values approximate."
+    },
+    {
+      "benchmark": "AA Intelligence Index",
+      "unit": "0-100 composite",
+      "higherBetter": true,
+      "saturated": false,
+      "points": [
+        { "date": "2026-02", "model": "Gemini 3.1 Pro", "lab": "Google", "value": 57 },
+        { "date": "2026-04", "model": "GPT-5.5", "lab": "OpenAI", "value": 60.2 },
+        { "date": "2026-06", "model": "Fable 5", "lab": "Anthropic", "value": 60 }
+      ],
+      "predicted": [
+        { "date": "2026-12", "model": "frontier (forecast)", "lab": "—", "value": 66, "low": 62, "high": 71 }
+      ],
+      "notes": "Version-stamped (v4.0 vs v4.1 not comparable). Seed; full trajectory from 2024 lands in P1."
+    }
+  ]
+}

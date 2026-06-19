@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#080a0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="AI Tracker">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23080a0f'/%3E%3Cpolyline points='5,24 13,16 19,20 27,7' fill='none' stroke='%235b8cff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>AI Tracker</title>
+<style>
+  :root{
+    --bg:#080a0f; --bg2:#0d1018; --panel:#11151f; --panel2:#161b27;
+    --line:#222a3a; --line2:#2e394d;
+    --ink:#e8edf6; --ink2:#aab4c6; --ink3:#6b7689;
+    --accent:#5b8cff; --good:#34d399; --warn:#f5b945; --bad:#f06d6d; --ghost:#7c8aa0;
+    --openai:#10a37f; --anthropic:#d97757; --google:#5b8cff; --xai:#9aa3b2;
+    --mistral:#fa520f; --qwen:#a855f7; --nvidia:#76b900; --microsoft:#2da8f0;
+    --moonshot:#ec4899; --meta:#2f6bff; --deepseek:#5b50e0; --zhipu:#12b5a6; --meta2:#888;
+    --mono:"SF Mono",ui-monospace,Menlo,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;
+    --navh:62px;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  body{max-width:540px;margin:0 auto;min-height:100vh;position:relative;
+    border-left:1px solid var(--line);border-right:1px solid var(--line);
+    background:radial-gradient(700px 380px at 80% -6%,rgba(91,140,255,.10),transparent 60%),var(--bg);}
+  a{color:#8db4ff;text-decoration:none}
+
+  /* ---------- app bar ---------- */
+  header.bar{position:sticky;top:0;z-index:20;padding:calc(env(safe-area-inset-top) + 14px) 18px 12px;
+    background:linear-gradient(180deg,var(--bg) 78%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar .row{display:flex;align-items:center;gap:10px}
+  .logo{width:26px;height:26px;flex:none}
+  .bar h1{font-size:19px;font-weight:780;letter-spacing:-.01em;margin:0}
+  .bar .upd{margin-left:auto;text-align:right;font:600 10.5px var(--mono);color:var(--ink3);line-height:1.4}
+  .bar .upd b{color:var(--good)}
+
+  /* ---------- views ---------- */
+  main{padding:16px 16px calc(var(--navh) + env(safe-area-inset-bottom) + 22px)}
+  .view{display:none;animation:fade .2s ease}
+  .view.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+  .vh{font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:4px 0 4px}
+  .vsub{font-size:13px;color:var(--ink3);margin:0 0 16px;line-height:1.5}
+
+  /* ---------- model card ---------- */
+  .mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-bottom:11px;position:relative;overflow:hidden}
+  .mcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lab,var(--ink3))}
+  .mcard .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .mcard .nm{font-size:16px;font-weight:740}
+  .mcard .lab{font:600 12px var(--sans);color:var(--ink2);display:inline-flex;align-items:center;gap:5px}
+  .mcard .lab .dot{width:7px;height:7px;border-radius:50%;background:var(--lab,var(--ink3))}
+  .mcard .dt{margin-left:auto;font:600 11.5px var(--mono);color:var(--ink3)}
+  .mcard .notable{font-size:13px;color:var(--ink2);margin-top:7px;line-height:1.45}
+  .mcard .specs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .chiplet{font:600 11px var(--mono);background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:3px 7px;color:var(--ink2)}
+  .chiplet b{color:var(--ink)}
+  .badge{font:700 9.5px var(--mono);padding:2px 6px;border-radius:5px;letter-spacing:.03em}
+  .b-live{background:rgba(52,211,153,.12);color:var(--good)} .b-pulled{background:rgba(240,109,109,.12);color:var(--bad)}
+  .b-preview{background:rgba(245,185,69,.12);color:var(--warn)} .b-open{background:rgba(91,140,255,.12);color:#7ea6ff}
+  .b-historic{background:rgba(154,163,178,.12);color:var(--ghost)} .b-milestone{background:rgba(245,185,69,.14);color:var(--warn)}
+
+  /* ---------- timeline ---------- */
+  .tl{position:relative;padding-left:20px;margin-top:6px}
+  .tl::before{content:"";position:absolute;left:4px;top:6px;bottom:6px;width:2px;background:var(--line2)}
+  .tnode{position:relative;margin-bottom:16px}
+  .tnode::before{content:"";position:absolute;left:-20px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--lab,var(--accent));box-shadow:0 0 0 4px var(--bg)}
+  .tnode .yr{font:700 11px var(--mono);color:var(--accent)}
+  .tnode .nm{font-size:15px;font-weight:720;margin-top:1px}
+  .tnode .nm .lab{font:600 11.5px var(--sans);color:var(--ink3);margin-left:6px}
+  .tnode .why{font-size:12.5px;color:var(--ink2);margin-top:3px;line-height:1.45}
+
+  /* ---------- chart card ---------- */
+  .chartcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 14px 12px;margin-bottom:13px}
+  .chartcard h3{margin:0 0 2px;font-size:15px;font-weight:720}
+  .chartcard .cd{font-size:11.5px;color:var(--ink3);margin-bottom:8px;line-height:1.45}
+  .svgchart{display:block;width:100%;height:auto;overflow:visible}
+  .svgchart text{font-family:var(--mono);fill:var(--ink3)}
+  .chartcard .lgd{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font:600 10.5px var(--mono);color:var(--ink3)}
+  .chartcard .lgd span{display:inline-flex;align-items:center;gap:5px}
+  .swline{width:14px;height:0;border-top:2px solid var(--accent)} .swdash{width:14px;height:0;border-top:2px dashed var(--warn)}
+  .swband{width:12px;height:9px;border-radius:2px;background:rgba(245,185,69,.2);border:1px solid rgba(245,185,69,.4)}
+  .sattag{font:700 9.5px var(--mono);color:var(--ghost);background:rgba(154,163,178,.1);padding:2px 6px;border-radius:5px}
+
+  /* ---------- prediction card ---------- */
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-bottom:11px}
+  .pcard .ptop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .pcard .pnm{font-size:15px;font-weight:730}
+  .pcard .pbench{margin-left:auto;font:700 11px var(--mono);color:var(--accent)}
+  .pcard .pmeta{font:600 11px var(--mono);color:var(--ink3);margin-top:2px}
+  .pcard .basis{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.45}
+  .gauge{margin-top:11px}
+  .gauge .track{position:relative;height:30px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .gauge .band{position:absolute;top:0;bottom:0;background:rgba(245,185,69,.16);border-left:1px solid rgba(245,185,69,.5);border-right:1px solid rgba(245,185,69,.5)}
+  .gauge .pt{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:var(--warn);transform:translate(-50%,-50%);box-shadow:0 0 0 3px var(--panel)}
+  .gauge .lbls{display:flex;justify-content:space-between;font:600 10px var(--mono);color:var(--ink3);margin-top:4px}
+  .gauge .val{position:absolute;top:-2px;transform:translateX(-50%);font:700 11px var(--mono);color:var(--warn)}
+  .conf{font:700 9.5px var(--mono);padding:2px 6px;border-radius:5px}
+  .conf.high{background:rgba(52,211,153,.12);color:var(--good)} .conf.medium{background:rgba(245,185,69,.12);color:var(--warn)} .conf.low{background:rgba(240,109,109,.12);color:var(--bad)}
+
+  .note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:12px}
+  .note b{color:var(--ink)}
+  .seedbanner{background:linear-gradient(100deg,rgba(245,185,69,.08),var(--panel));border:1px solid rgba(245,185,69,.25);border-left:3px solid var(--warn);border-radius:11px;padding:11px 14px;font-size:12px;color:var(--ink2);margin-bottom:14px;line-height:1.5}
+
+  /* ---------- bottom nav ---------- */
+  nav.tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:540px;z-index:30;
+    display:flex;background:rgba(12,15,22,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);
+    padding-bottom:env(safe-area-inset-bottom);height:calc(var(--navh) + env(safe-area-inset-bottom))}
+  nav.tabs button{flex:1;background:none;border:none;color:var(--ink3);font-family:var(--sans);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;padding:8px 2px;transition:color .15s}
+  nav.tabs button.on{color:var(--accent)}
+  nav.tabs button svg{width:21px;height:21px}
+  nav.tabs button span{font-size:10px;font-weight:650;letter-spacing:.01em}
+
+  .empty{text-align:center;color:var(--ink3);font-size:13px;padding:30px 10px}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="row">
+    <svg class="logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#11151f" stroke="#222a3a"/><polyline points="5,24 13,16 19,20 27,7" fill="none" stroke="#5b8cff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <h1>AI Tracker</h1>
+    <div class="upd" id="upd">loading…</div>
+  </div>
+</header>
+
+<main>
+  <section class="view on" id="v-now"></section>
+  <section class="view" id="v-history"></section>
+  <section class="view" id="v-trends"></section>
+  <section class="view" id="v-predict"></section>
+  <section class="view" id="v-about"></section>
+</main>
+
+<nav class="tabs" id="nav">
+  <button data-v="now" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Now</span></button>
+  <button data-v="history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v14M4 7h13l-2.5 3L17 13H4"/></svg><span>History</span></button>
+  <button data-v="trends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 8-9"/><path d="M3 21h18"/></svg><span>Trends</span></button>
+  <button data-v="predict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 4 10.5c-.7.6-1 1-1 2v.5H9V15c0-1-.3-1.4-1-2A6 6 0 0 1 12 3z"/><path d="M9.5 21h5"/></svg><span>Predict</span></button>
+  <button data-v="about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>About</span></button>
+</nav>
+
+<script>
+const LAB = {OpenAI:'--openai',Anthropic:'--anthropic',Google:'--google',xAI:'--xai',Mistral:'--mistral',Alibaba:'--qwen',Qwen:'--qwen',NVIDIA:'--nvidia',Microsoft:'--microsoft',Moonshot:'--moonshot',Meta:'--meta',DeepSeek:'--deepseek',Zhipu:'--zhipu','Z.ai':'--zhipu',DeepMind:'--google','Google DeepMind':'--google'};
+const labVar = l => LAB[l] || '--ghost';
+const $ = (s,r=document)=>r.querySelector(s);
+const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const labHex = l => css(labVar(l)) || css('--ghost');
+
+let DATA = {models:[],trends:[],predictions:[],meta:{}};
+
+async function boot(){
+  try{
+    const [models,trends,preds,meta] = await Promise.all([
+      fetch('data/models.json').then(r=>r.json()),
+      fetch('data/trends.json').then(r=>r.json()),
+      fetch('data/predictions.json').then(r=>r.json()),
+      fetch('data/meta.json').then(r=>r.json()),
+    ]);
+    DATA = {models:models.models||[], trends:trends.trends||[], predictions:preds.predictions||[], methodology:preds.methodology||'', meta};
+    DATA.seed = (meta.dataVersion||0) === 0;
+  }catch(e){ console.error(e); }
+  renderUpd(); renderNow(); renderHistory(); renderTrends(); renderPredict(); renderAbout();
+}
+
+function renderUpd(){
+  const m=DATA.meta||{};
+  const d = m.lastUpdated ? new Date(m.lastUpdated) : null;
+  const ago = d ? timeAgo(d) : '—';
+  $('#upd').innerHTML = `<b>●</b> updated ${ago}<br>${m.models||DATA.models.length} models · ${m.sweeps||0} sweeps`;
+}
+function timeAgo(d){
+  const s=(Date.now()-d.getTime())/1000;
+  if(s<3600) return Math.max(1,Math.round(s/60))+'m ago';
+  if(s<86400) return Math.round(s/3600)+'h ago';
+  return Math.round(s/86400)+'d ago';
+}
+const fmtDate = s => { if(!s) return ''; const p=s.split('-'); const M=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return p[2]?`${M[+p[1]]} ${+p[2]}, ${p[0]}`:`${M[+p[1]]||''} ${p[0]}`; };
+const yr = s => (s||'').slice(0,4);
+function seedBanner(){ return DATA.seed ? `<div class="seedbanner">Seed scaffold — the full GPT-3→2026 history, trend curves, and forecasts are being researched now and will populate automatically (data v0).</div>` : ''; }
+
+function statusBadge(s){ const m={live:'b-live',pulled:'b-pulled',preview:'b-preview',open:'b-open',historic:'b-historic'}; const c=m[s]; return c?`<span class="badge ${c}">${(s||'').toUpperCase()}</span>`:''; }
+
+function modelCard(m){
+  const b=m.benchmarks||{};
+  const benchChips=Object.entries(b).slice(0,4).map(([k,v])=>`<span class="chiplet">${k} <b>${v}</b></span>`).join('');
+  return `<div class="mcard" style="--lab:${labHex(m.lab)}">
+    <div class="top"><span class="nm">${m.name}</span>
+      <span class="lab"><span class="dot"></span>${m.lab}</span>
+      <span class="dt">${fmtDate(m.released)}</span></div>
+    <div class="specs">
+      ${m.milestone?'<span class="badge b-milestone">★ LANDMARK</span>':''}
+      ${statusBadge(m.status)}
+      ${m.open?'<span class="badge b-open">OPEN</span>':''}
+      ${m.params&&m.params!=='—'?`<span class="chiplet">${m.params}</span>`:''}
+      ${m.context&&m.context!=='—'?`<span class="chiplet">${m.context} ctx</span>`:''}
+      ${benchChips}
+    </div>
+    ${m.notable?`<div class="notable">${m.notable}</div>`:''}
+  </div>`;
+}
+
+function renderNow(){
+  const live=DATA.models.filter(m=>['live','preview','open'].includes(m.status)||yr(m.released)==='2026')
+    .sort((a,b)=>(b.released||'').localeCompare(a.released||''));
+  $('#v-now').innerHTML = `<div class="vh">The frontier now</div>
+    <div class="vsub">The newest and currently-available models, freshest first.</div>
+    ${seedBanner()}
+    ${live.length?live.map(modelCard).join(''):'<div class="empty">No current models yet.</div>'}`;
+}
+
+function renderHistory(){
+  const ms=DATA.models.filter(m=>m.milestone).sort((a,b)=>(a.released||'').localeCompare(b.released||''));
+  const land = (DATA.narrative&&DATA.narrative.landmarks)||null;
+  $('#v-history').innerHTML = `<div class="vh">History since GPT-3</div>
+    <div class="vsub">The landmark models that moved the field, June 2020 to today. GPT-1/2/BERT were public too — GPT-3 is where the modern curve begins.</div>
+    ${seedBanner()}
+    <div class="tl">${ms.map(m=>`<div class="tnode" style="--lab:${labHex(m.lab)}">
+      <div class="yr">${fmtDate(m.released)}</div>
+      <div class="nm">${m.name}<span class="lab">${m.lab}</span></div>
+      <div class="why">${m.notable||''}</div>
+    </div>`).join('')}</div>`;
+}
+
+// ----- time-series chart with prediction band -----
+function tval(s){ const p=(s||'').split('-'); return (+p[0]||2020) + ((+p[1]||1)-1)/12; }
+function renderTrendChart(t){
+  const C={line:css('--line'),ink3:css('--ink3'),accent:css('--accent'),warn:css('--warn'),bg:css('--bg')};
+  const meas=(t.points||[]).slice().sort((a,b)=>tval(a.date)-tval(b.date));
+  const pred=(t.predicted||[]).slice().sort((a,b)=>tval(a.date)-tval(b.date));
+  if(!meas.length) return '<div class="empty">No data yet.</div>';
+  const all=[...meas,...pred];
+  const xs=all.map(p=>tval(p.date)), ys=all.flatMap(p=>[p.value,p.low,p.high].filter(v=>v!=null));
+  let x0v=Math.min(...xs), x1v=Math.max(...xs); if(x1v===x0v)x1v+=0.5;
+  let y0v=Math.min(...ys), y1v=Math.max(...ys); const pad=(y1v-y0v)*0.12||5; y0v-=pad; y1v+=pad;
+  const W=500,H=190,L=34,R=12,T=12,B=26;
+  const X=v=>L+((tval(v)-x0v)/(x1v-x0v))*(W-L-R);
+  const Y=v=>T+(1-(v-y0v)/(y1v-y0v))*(H-T-B);
+  let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:190px">`;
+  // y gridlines (~4)
+  for(let i=0;i<=3;i++){const yy=y0v+(y1v-y0v)*i/3; const py=Y(yy).toFixed(1);
+    s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-5}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end">${yy.toFixed(0)}</text>`;}
+  // year x labels
+  const yrs=[...new Set(all.map(p=>+yr(p.date)))].sort();
+  yrs.forEach(y=>{const px=X(y+'-06').toFixed(1); s+=`<text x="${px}" y="${H-7}" font-size="9" text-anchor="middle">'${String(y).slice(2)}</text>`;});
+  // prediction band polygon (low/high) joining last measured point
+  if(pred.length){
+    const last=meas[meas.length-1];
+    const lo=[{date:last.date,low:last.value,high:last.value},...pred.filter(p=>p.low!=null)];
+    if(lo.length>1){
+      const up=lo.map(p=>`${X(p.date).toFixed(1)},${Y(p.high).toFixed(1)}`);
+      const dn=lo.slice().reverse().map(p=>`${X(p.date).toFixed(1)},${Y(p.low).toFixed(1)}`);
+      s+=`<polygon points="${up.concat(dn).join(' ')}" fill="${C.warn}" opacity=".16"/>`;
+    }
+    // dashed predicted line from last measured
+    const pl=[last,...pred].map(p=>`${X(p.date).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ');
+    s+=`<polyline points="${pl}" fill="none" stroke="${C.warn}" stroke-width="2" stroke-dasharray="5 4"/>`;
+    pred.forEach(p=>{s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="4" fill="${C.bg}" stroke="${C.warn}" stroke-width="2"><title>${p.model}: ${p.value} (band ${p.low}–${p.high}) ${fmtDate(p.date)}</title></circle>`;});
+  }
+  // measured solid line + dots
+  s+=`<polyline points="${meas.map(p=>`${X(p.date).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  meas.forEach(p=>{s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="4" fill="${C.accent}" stroke="${C.bg}" stroke-width="1.5"><title>${p.model}: ${p.value} ${fmtDate(p.date)}</title></circle>`;});
+  s+=`</svg>`;
+  return s;
+}
+function renderTrends(){
+  $('#v-trends').innerHTML = `<div class="vh">Trends over time</div>
+    <div class="vsub">How each benchmark has climbed. <span style="color:var(--accent)">Solid</span> = measured; <span style="color:var(--warn)">dashed + shaded</span> = forecast with its uncertainty band.</div>
+    ${seedBanner()}
+    ${DATA.trends.length?DATA.trends.map(t=>`<div class="chartcard">
+      <h3>${t.benchmark} ${t.saturated?'<span class="sattag">SATURATED</span>':''}</h3>
+      <div class="cd">${t.unit||''}${t.notes?' · '+t.notes:''}</div>
+      ${renderTrendChart(t)}
+      <div class="lgd"><span><span class="swline"></span>measured</span>${(t.predicted&&t.predicted.length)?'<span><span class="swdash"></span>forecast</span><span><span class="swband"></span>uncertainty</span>':''}</div>
+    </div>`).join(''):'<div class="empty">Trend data lands in P1.</div>'}`;
+}
+
+function renderPredict(){
+  const ps=DATA.predictions||[];
+  $('#v-predict').innerHTML = `<div class="vh">Predictions</div>
+    <div class="vsub">Where un-tested or announced models are likely to land — point estimate with an honest uncertainty band.</div>
+    ${seedBanner()}
+    ${ps.length?ps.map(p=>{
+      const lo=Math.min(p.low,p.predicted), hi=Math.max(p.high,p.predicted), span=hi-lo||1;
+      const bl=((p.low-lo)/span)*100, bw=((p.high-p.low)/span)*100, pp=((p.predicted-lo)/span)*100;
+      return `<div class="pcard">
+        <div class="ptop"><span class="pnm">${p.model}</span><span class="pbench">${p.benchmark}</span></div>
+        <div class="pmeta">${p.lab||''}${p.expectedDate?' · expected '+p.expectedDate:''} ${p.confidence?`<span class="conf ${p.confidence}">${p.confidence.toUpperCase()}</span>`:''}</div>
+        <div class="gauge"><div class="track">
+          <div class="band" style="left:${bl}%;width:${bw}%"></div>
+          <div class="val" style="left:${pp}%">${p.predicted}</div>
+          <div class="pt" style="left:${pp}%"></div>
+        </div><div class="lbls"><span>${lo.toFixed(0)}</span><span>band ${p.low}–${p.high}</span><span>${hi.toFixed(0)}</span></div></div>
+        ${p.basis?`<div class="basis">${p.basis}</div>`:''}
+      </div>`;}).join(''):'<div class="empty">Forecasts land in P1.</div>'}`;
+}
+
+function renderAbout(){
+  const m=DATA.meta||{};
+  $('#v-about').innerHTML = `<div class="vh">About</div>
+    <div class="note"><b>AI Tracker</b> is a living record of public AI — every landmark model since GPT-3 (June 2020), the trajectory of the benchmarks, and forecasts for what's coming. Built for Christian &amp; his dad.</div>
+    <div class="note"><b>It updates itself.</b> Twice a day a research pass looks for new models and benchmark results, verifies them, and pushes the changes here automatically. Last update: <b style="color:var(--good)">${m.lastUpdated?fmtDate(m.lastUpdated.slice(0,10))+' '+(new Date(m.lastUpdated)).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}):'—'}</b> · ${m.sweeps||0} sweeps · data v${m.dataVersion||0}.</div>
+    <div class="note"><b>Predictions.</b> ${DATA.methodology||'For un-tested models, we fit the recent frontier trajectory of each benchmark, place the estimate at the model\'s expected date, and show an uncertainty band that widens further into the future. Measured data always overrides a forecast.'}</div>
+    <div class="note" style="color:var(--ink3);font-size:12px">A refute in research means "not yet verified," not "false forever." Numbers carry source-confidence; benchmark indices are version-stamped and not always cross-comparable. Snapshot of a field that moves weekly.</div>`;
+}
+
+// nav
+$('#nav').addEventListener('click', e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  $$('#nav button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+  $$('.view').forEach(v=>v.classList.remove('on')); $('#v-'+b.dataset.v).classList.add('on');
+  window.scrollTo(0,0);
+});
+
+if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+boot();
+</script>
+</body>
+</html>

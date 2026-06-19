@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AI Tracker twice-daily updater. Install:
+       cp scripts/com.christian.ai-tracker.plist ~/Library/LaunchAgents/
+       launchctl load ~/Library/LaunchAgents/com.christian.ai-tracker.plist
+     Uninstall: launchctl unload ~/Library/LaunchAgents/com.christian.ai-tracker.plist -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.christian.ai-tracker</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/christian/Sites/AI/scripts/update.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>StandardOutPath</key>
+  <string>/Users/christian/Sites/AI/scripts/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/christian/Sites/AI/scripts/launchd.err.log</string>
+</dict>
+</plist>

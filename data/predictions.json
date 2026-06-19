@@ -1,0 +1,9 @@
+{
+  "note": "SEED — placeholder forecasts. Replaced by ai-history-foundation workflow output (P1).",
+  "methodology": "Fit the recent frontier trajectory of each benchmark (last ~6-8 SOTA points) respecting saturation ceilings; place the model's point estimate at its expected date adjusted by its lab's recent over/under-performance; widen the uncertainty band with time-to-release and benchmark noise. Always render the band, never a bare point. Measured data overrides on the next sweep.",
+  "predictions": [
+    { "model": "Claude Mythos Preview", "lab": "Anthropic", "expectedDate": "2026-Q3", "benchmark": "AA-Index", "predicted": 64, "low": 60, "high": 68, "basis": "Tops LLM-Stats composite (65.2); Anthropic's frontier trajectory + the ~60 current ceiling.", "confidence": "medium" },
+    { "model": "Next GPT-5.x", "lab": "OpenAI", "expectedDate": "2026-Q3", "benchmark": "AA-Index", "predicted": 63, "low": 59, "high": 67, "basis": "OpenAI's ~bi-weekly cadence and the 57→60 jump GPT-5.4→5.5.", "confidence": "low" },
+    { "model": "Frontier (end of 2026)", "lab": "—", "expectedDate": "2026-12", "benchmark": "AA-Index", "predicted": 66, "low": 62, "high": 71, "basis": "Extrapolating the 2026 climb; band widens for ~6 months out and possible plateau.", "confidence": "low" }
+  ]
+}
