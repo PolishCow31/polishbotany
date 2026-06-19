@@ -3,7 +3,7 @@
 // Data  = network-first (twice-daily updates must always show fresh; cache is
 //         only the offline fallback). This is the fix for the iOS PWA stale-bundle
 //         trap — the thing that changes often is never served stale.
-const SHELL_V = 'shell-v2';
+const SHELL_V = 'shell-v3';
 const SHELL = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', (e) => {
@@ -18,17 +18,16 @@ self.addEventListener('activate', (e) => {
   );
 });
 
+// Network-first for everything (this app updates often — data twice daily, and the
+// shell changes during dev). Cache is the OFFLINE fallback only, so nothing ever goes
+// stale while online. Kills the iOS PWA stale-bundle trap entirely.
 self.addEventListener('fetch', (e) => {
-  const url = new URL(e.request.url);
-  if (url.pathname.includes('/data/')) {
-    e.respondWith(
-      fetch(e.request).then((r) => {
-        const cp = r.clone();
-        caches.open('ai-data').then((c) => c.put(e.request, cp));
-        return r;
-      }).catch(() => caches.match(e.request))
-    );
-  } else {
-    e.respondWith(caches.match(e.request).then((r) => r || fetch(e.request)));
-  }
+  if (e.request.method !== 'GET') return;
+  e.respondWith(
+    fetch(e.request).then((r) => {
+      const cp = r.clone();
+      caches.open('ai-rt').then((c) => c.put(e.request, cp));
+      return r;
+    }).catch(() => caches.match(e.request))
+  );
 });

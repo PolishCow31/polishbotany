@@ -20,105 +20,177 @@
     --accent:#5b8cff; --good:#34d399; --warn:#f5b945; --bad:#f06d6d; --ghost:#7c8aa0;
     --openai:#10a37f; --anthropic:#d97757; --google:#5b8cff; --xai:#9aa3b2;
     --mistral:#fa520f; --qwen:#a855f7; --nvidia:#76b900; --microsoft:#2da8f0;
-    --moonshot:#ec4899; --meta:#2f6bff; --deepseek:#5b50e0; --zhipu:#12b5a6; --meta2:#888;
+    --moonshot:#ec4899; --meta:#2f6bff; --deepseek:#5b50e0; --zhipu:#12b5a6;
     --mono:"SF Mono",ui-monospace,Menlo,monospace;
     --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,system-ui,sans-serif;
     --navh:62px;
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-  body{max-width:540px;margin:0 auto;min-height:100vh;position:relative;
+  body{max-width:560px;margin:0 auto;min-height:100vh;position:relative;
     border-left:1px solid var(--line);border-right:1px solid var(--line);
     background:radial-gradient(700px 380px at 80% -6%,rgba(91,140,255,.10),transparent 60%),var(--bg);}
   a{color:#8db4ff;text-decoration:none}
 
-  /* ---------- app bar ---------- */
   header.bar{position:sticky;top:0;z-index:20;padding:calc(env(safe-area-inset-top) + 14px) 18px 12px;
     background:linear-gradient(180deg,var(--bg) 78%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
   .bar .row{display:flex;align-items:center;gap:10px}
   .logo{width:26px;height:26px;flex:none}
   .bar h1{font-size:19px;font-weight:780;letter-spacing:-.01em;margin:0}
-  .bar .upd{margin-left:auto;text-align:right;font:600 10.5px var(--mono);color:var(--ink3);line-height:1.4}
+  .bar .upd{margin-left:auto;text-align:right;font:600 10px var(--mono);color:var(--ink3);line-height:1.45;white-space:nowrap}
   .bar .upd b{color:var(--good)}
 
-  /* ---------- views ---------- */
-  main{padding:16px 16px calc(var(--navh) + env(safe-area-inset-bottom) + 22px)}
+  main{padding:14px 14px calc(var(--navh) + env(safe-area-inset-bottom) + 22px)}
   .view{display:none;animation:fade .2s ease}
   .view.on{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
   .vh{font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:4px 0 4px}
-  .vsub{font-size:13px;color:var(--ink3);margin:0 0 16px;line-height:1.5}
+  .vsub{font-size:12.5px;color:var(--ink3);margin:0 0 14px;line-height:1.5}
 
-  /* ---------- model card ---------- */
-  .mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-bottom:11px;position:relative;overflow:hidden}
+  /* filter chips */
+  .filters{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;margin:0 -2px 4px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .fchip{flex:none;border:1px solid var(--line);background:var(--bg2);color:var(--ink2);border-radius:999px;
+    padding:5px 11px;font:600 12px var(--sans);display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap}
+  .fchip .sw{width:8px;height:8px;border-radius:50%}
+  .fchip.off{opacity:.34}
+  .fchip.all{border-color:var(--line2)}
+
+  /* model card */
+  .mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px;position:relative;overflow:hidden}
   .mcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lab,var(--ink3))}
   .mcard .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-  .mcard .nm{font-size:16px;font-weight:740}
+  .mcard .nm{font-size:15.5px;font-weight:740}
   .mcard .lab{font:600 12px var(--sans);color:var(--ink2);display:inline-flex;align-items:center;gap:5px}
   .mcard .lab .dot{width:7px;height:7px;border-radius:50%;background:var(--lab,var(--ink3))}
-  .mcard .dt{margin-left:auto;font:600 11.5px var(--mono);color:var(--ink3)}
-  .mcard .notable{font-size:13px;color:var(--ink2);margin-top:7px;line-height:1.45}
-  .mcard .specs{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .mcard .dt{margin-left:auto;font:600 11px var(--mono);color:var(--ink3)}
+  .mcard .notable{font-size:12.5px;color:var(--ink2);margin-top:7px;line-height:1.45;max-height:3.2em;overflow:hidden;position:relative}
+  .mcard.exp .notable{max-height:none}
+  .mcard .notable.clip::after{content:"";position:absolute;right:0;bottom:0;width:40px;height:1.4em;background:linear-gradient(90deg,transparent,var(--panel))}
+  .mcard .more{font:600 11px var(--mono);color:var(--accent);margin-top:4px;cursor:pointer}
+  .specs{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
   .chiplet{font:600 11px var(--mono);background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:3px 7px;color:var(--ink2)}
   .chiplet b{color:var(--ink)}
+  .chiplet.price b{color:var(--good)} .chiplet.price i{color:var(--warn);font-style:normal}
   .badge{font:700 9.5px var(--mono);padding:2px 6px;border-radius:5px;letter-spacing:.03em}
   .b-live{background:rgba(52,211,153,.12);color:var(--good)} .b-pulled{background:rgba(240,109,109,.12);color:var(--bad)}
   .b-preview{background:rgba(245,185,69,.12);color:var(--warn)} .b-open{background:rgba(91,140,255,.12);color:#7ea6ff}
   .b-historic{background:rgba(154,163,178,.12);color:var(--ghost)} .b-milestone{background:rgba(245,185,69,.14);color:var(--warn)}
 
-  /* ---------- timeline ---------- */
+  /* timeline */
   .tl{position:relative;padding-left:20px;margin-top:6px}
   .tl::before{content:"";position:absolute;left:4px;top:6px;bottom:6px;width:2px;background:var(--line2)}
-  .tnode{position:relative;margin-bottom:16px}
+  .tnode{position:relative;margin-bottom:15px}
   .tnode::before{content:"";position:absolute;left:-20px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--lab,var(--accent));box-shadow:0 0 0 4px var(--bg)}
   .tnode .yr{font:700 11px var(--mono);color:var(--accent)}
-  .tnode .nm{font-size:15px;font-weight:720;margin-top:1px}
-  .tnode .nm .lab{font:600 11.5px var(--sans);color:var(--ink3);margin-left:6px}
-  .tnode .why{font-size:12.5px;color:var(--ink2);margin-top:3px;line-height:1.45}
+  .tnode .nm{font-size:14.5px;font-weight:720;margin-top:1px}
+  .tnode .nm .lab{font:600 11px var(--sans);color:var(--ink3);margin-left:6px}
+  .tnode .why{font-size:12px;color:var(--ink2);margin-top:3px;line-height:1.45}
+  .showall{text-align:center;margin:6px 0 2px}
+  .showall button{background:var(--panel);border:1px solid var(--line2);color:var(--accent);border-radius:999px;padding:8px 18px;font:650 12.5px var(--sans);cursor:pointer}
 
-  /* ---------- chart card ---------- */
-  .chartcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 14px 12px;margin-bottom:13px}
-  .chartcard h3{margin:0 0 2px;font-size:15px;font-weight:720}
-  .chartcard .cd{font-size:11.5px;color:var(--ink3);margin-bottom:8px;line-height:1.45}
+  /* accordion */
+  details.acc{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
+  details.acc>summary{cursor:pointer;padding:13px 15px;font-weight:720;font-size:14.5px;display:flex;align-items:center;gap:9px;list-style:none}
+  details.acc>summary::-webkit-details-marker{display:none}
+  details.acc>summary .tw{transition:.2s;color:var(--ink3);font-size:11px}
+  details.acc[open]>summary .tw{transform:rotate(90deg)}
+  details.acc>summary .ct{margin-left:auto;font:600 11px var(--mono);color:var(--ink3)}
+  details.acc .body{padding:0 13px 14px}
+  .accsub{font-size:11.5px;color:var(--ink3);margin:-2px 0 10px;line-height:1.45}
+
+  /* charts */
   .svgchart{display:block;width:100%;height:auto;overflow:visible}
   .svgchart text{font-family:var(--mono);fill:var(--ink3)}
-  .chartcard .lgd{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;font:600 10.5px var(--mono);color:var(--ink3)}
-  .chartcard .lgd span{display:inline-flex;align-items:center;gap:5px}
-  .swline{width:14px;height:0;border-top:2px solid var(--accent)} .swdash{width:14px;height:0;border-top:2px dashed var(--warn)}
-  .swband{width:12px;height:9px;border-radius:2px;background:rgba(245,185,69,.2);border:1px solid rgba(245,185,69,.4)}
-  .sattag{font:700 9.5px var(--mono);color:var(--ghost);background:rgba(154,163,178,.1);padding:2px 6px;border-radius:5px}
+  .svgchart .mn{font-family:var(--mono)}
+  .chartcard{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:13px 12px 10px;margin-bottom:11px}
+  .chartcard h4{margin:0 0 2px;font-size:13.5px;font-weight:720;color:var(--ink)}
+  .chartcard .cd{font-size:11px;color:var(--ink3);margin-bottom:8px;line-height:1.4}
+  .lgd{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font:600 10px var(--mono);color:var(--ink3)}
+  .lgd span{display:inline-flex;align-items:center;gap:5px}
+  .swline{width:13px;height:0;border-top:2px solid var(--accent)} .swdash{width:13px;height:0;border-top:2px dashed var(--warn)}
+  .swband{width:11px;height:8px;border-radius:2px;background:rgba(245,185,69,.2);border:1px solid rgba(245,185,69,.4)}
+  .sattag{font:700 9px var(--mono);color:var(--ghost);background:rgba(154,163,178,.1);padding:2px 5px;border-radius:5px}
 
-  /* ---------- prediction card ---------- */
-  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 15px;margin-bottom:11px}
+  /* horizontal bar (head-to-head + weights) */
+  .bar{display:grid;grid-template-columns:96px 1fr 40px;align-items:center;gap:8px;margin-bottom:8px}
+  .bar .bl{font-size:11.5px;color:var(--ink2);text-align:right;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar .track{height:18px;background:var(--bg);border-radius:5px;overflow:hidden;position:relative;border:1px solid var(--line)}
+  .bar .fill{height:100%;border-radius:4px}
+  .bar .bv{font:700 11.5px var(--mono);color:var(--ink)}
+  .ceil-tick{position:absolute;top:-3px;bottom:-3px;border-left:2px dashed rgba(245,185,69,.6);z-index:3}
+  .ceil-lab{font:700 10px var(--mono);color:var(--warn);margin:0 0 9px;display:flex;align-items:center;gap:7px}
+  .ceil-lab::before{content:"";width:16px;border-top:2px dashed rgba(245,185,69,.6)}
+  .wlabel{font:600 10.5px var(--mono);color:var(--ink2);white-space:nowrap}
+
+  /* cadence stats */
+  .cadstats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:2px 0 14px}
+  .cadstat{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .cadstat .v{font:780 18px var(--sans);color:var(--ink);line-height:1.1}
+  .cadstat .v small{font-size:11px;color:var(--ink2);font-weight:600}
+  .cadstat .l{font:600 10.5px var(--sans);color:var(--ink3);margin-top:4px;line-height:1.3}
+
+  /* prediction gauge */
+  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px}
   .pcard .ptop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-  .pcard .pnm{font-size:15px;font-weight:730}
-  .pcard .pbench{margin-left:auto;font:700 11px var(--mono);color:var(--accent)}
-  .pcard .pmeta{font:600 11px var(--mono);color:var(--ink3);margin-top:2px}
-  .pcard .basis{font-size:12.5px;color:var(--ink2);margin-top:8px;line-height:1.45}
-  .gauge{margin-top:11px}
-  .gauge .track{position:relative;height:30px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .pcard .pnm{font-size:14.5px;font-weight:730}
+  .pcard .pbench{margin-left:auto;font:700 10.5px var(--mono);color:var(--accent)}
+  .pcard .pmeta{font:600 10.5px var(--mono);color:var(--ink3);margin-top:2px}
+  .pcard .basis{font-size:12px;color:var(--ink2);margin-top:8px;line-height:1.45}
+  .gauge{margin-top:10px}
+  .gauge .gtrack{position:relative;height:28px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
   .gauge .band{position:absolute;top:0;bottom:0;background:rgba(245,185,69,.16);border-left:1px solid rgba(245,185,69,.5);border-right:1px solid rgba(245,185,69,.5)}
   .gauge .pt{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:var(--warn);transform:translate(-50%,-50%);box-shadow:0 0 0 3px var(--panel)}
-  .gauge .lbls{display:flex;justify-content:space-between;font:600 10px var(--mono);color:var(--ink3);margin-top:4px}
-  .gauge .val{position:absolute;top:-2px;transform:translateX(-50%);font:700 11px var(--mono);color:var(--warn)}
-  .conf{font:700 9.5px var(--mono);padding:2px 6px;border-radius:5px}
+  .gauge .gv{position:absolute;top:-1px;transform:translateX(-50%);font:700 11px var(--mono);color:var(--warn)}
+  .gauge .lbls{display:flex;justify-content:space-between;font:600 9.5px var(--mono);color:var(--ink3);margin-top:4px}
+  .conf{font:700 9px var(--mono);padding:2px 6px;border-radius:5px}
   .conf.high{background:rgba(52,211,153,.12);color:var(--good)} .conf.medium{background:rgba(245,185,69,.12);color:var(--warn)} .conf.low{background:rgba(240,109,109,.12);color:var(--bad)}
 
-  .note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:13px;color:var(--ink2);line-height:1.55;margin-bottom:12px}
-  .note b{color:var(--ink)}
-  .seedbanner{background:linear-gradient(100deg,rgba(245,185,69,.08),var(--panel));border:1px solid rgba(245,185,69,.25);border-left:3px solid var(--warn);border-radius:11px;padding:11px 14px;font-size:12px;color:var(--ink2);margin-bottom:14px;line-height:1.5}
+  /* leaderboard */
+  .lbrow{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:11px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px}
+  .lbrow.gold{border-color:rgba(245,185,69,.4);background:linear-gradient(100deg,rgba(245,185,69,.07),var(--bg2))}
+  .lbrank{font:780 19px var(--mono);color:var(--ink3);text-align:center}
+  .lbrow.gold .lbrank{color:var(--warn)}
+  .lbname{font-weight:730;font-size:14px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .lbsub{font:600 10.5px var(--mono);color:var(--ink3);margin-top:2px}
+  .lbscore{text-align:right;font:780 18px var(--mono);color:var(--ink)}
+  .lbscore small{display:block;font:600 8.5px var(--mono);color:var(--ink3);letter-spacing:.05em}
 
-  /* ---------- bottom nav ---------- */
-  nav.tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:540px;z-index:30;
+  /* upcoming + killed rows */
+  .hrow{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px}
+  .hrow.rum{opacity:.82;border-style:dashed}
+  .hname{font-size:13.5px;font-weight:720;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px}
+  .hname .dot{width:8px;height:8px;border-radius:50%}
+  .hwhat{font-size:12px;color:var(--ink2);line-height:1.45}
+  .hpill{font:700 9px var(--mono);padding:2px 6px;border-radius:5px}
+  .h-un{background:rgba(245,185,69,.12);color:var(--warn)} .h-soon{background:rgba(91,140,255,.12);color:#7ea6ff}
+  .h-rum{background:rgba(154,163,178,.1);color:var(--ghost)}
+  .kill{display:flex;gap:11px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px}
+  .kill .x{color:var(--bad);font-weight:800;flex:none}
+  .kclaim{font-size:12.5px;color:var(--ink);font-weight:600;margin-bottom:3px;line-height:1.4}
+  .kmeta{font:600 10.5px var(--mono);color:var(--ink3)}
+  .correction{background:linear-gradient(100deg,rgba(52,211,153,.09),var(--bg2));border:1px solid rgba(52,211,153,.3);border-left:3px solid var(--good);border-radius:11px;padding:11px 13px;font-size:12px;color:var(--ink2);line-height:1.5;margin-bottom:12px}
+  .correction b{color:var(--ink)}
+  .src{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:11.5px}
+  .src:first-child{border-top:none}
+  .src a{color:#8db4ff;word-break:break-all}
+  .sq{font:700 8.5px var(--mono);padding:2px 5px;border-radius:4px;flex:none}
+  .sq.primary{background:rgba(52,211,153,.13);color:var(--good)} .sq.secondary{background:rgba(91,140,255,.13);color:#7ea6ff} .sq.blog{background:rgba(154,163,178,.12);color:var(--ghost)}
+
+  .note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:12.5px;color:var(--ink2);line-height:1.55;margin-bottom:10px}
+  .note b{color:var(--ink)}
+  .caveat{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:11.5px;color:var(--ink3);line-height:1.5;margin-top:11px}
+  .caveat b{color:var(--ink2)}
+  .empty{text-align:center;color:var(--ink3);font-size:12.5px;padding:24px 10px}
+
+  nav.tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:560px;z-index:30;
     display:flex;background:rgba(12,15,22,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);
     padding-bottom:env(safe-area-inset-bottom);height:calc(var(--navh) + env(safe-area-inset-bottom))}
   nav.tabs button{flex:1;background:none;border:none;color:var(--ink3);font-family:var(--sans);
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;padding:8px 2px;transition:color .15s}
   nav.tabs button.on{color:var(--accent)}
   nav.tabs button svg{width:21px;height:21px}
-  nav.tabs button span{font-size:10px;font-weight:650;letter-spacing:.01em}
-
-  .empty{text-align:center;color:var(--ink3);font-size:13px;padding:30px 10px}
+  nav.tabs button span{font-size:10px;font-weight:650}
 </style>
 </head>
 <body>
@@ -134,193 +206,276 @@
 <main>
   <section class="view on" id="v-now"></section>
   <section class="view" id="v-history"></section>
-  <section class="view" id="v-trends"></section>
+  <section class="view" id="v-charts"></section>
   <section class="view" id="v-predict"></section>
-  <section class="view" id="v-about"></section>
+  <section class="view" id="v-more"></section>
 </main>
 
 <nav class="tabs" id="nav">
   <button data-v="now" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Now</span></button>
   <button data-v="history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v14M4 7h13l-2.5 3L17 13H4"/></svg><span>History</span></button>
-  <button data-v="trends"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 8-9"/><path d="M3 21h18"/></svg><span>Trends</span></button>
+  <button data-v="charts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 8-9"/><path d="M3 21h18"/></svg><span>Charts</span></button>
   <button data-v="predict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 4 10.5c-.7.6-1 1-1 2v.5H9V15c0-1-.3-1.4-1-2A6 6 0 0 1 12 3z"/><path d="M9.5 21h5"/></svg><span>Predict</span></button>
-  <button data-v="about"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg><span>About</span></button>
+  <button data-v="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></button>
 </nav>
 
 <script>
-const LAB = {OpenAI:'--openai',Anthropic:'--anthropic',Google:'--google',xAI:'--xai',Mistral:'--mistral',Alibaba:'--qwen',Qwen:'--qwen',NVIDIA:'--nvidia',Microsoft:'--microsoft',Moonshot:'--moonshot',Meta:'--meta',DeepSeek:'--deepseek',Zhipu:'--zhipu','Z.ai':'--zhipu',DeepMind:'--google','Google DeepMind':'--google'};
-const labVar = l => LAB[l] || '--ghost';
+const LABV = {OpenAI:'--openai',Anthropic:'--anthropic',Google:'--google','Google DeepMind':'--google',DeepMind:'--google',xAI:'--xai',Mistral:'--mistral','Mistral AI':'--mistral',Alibaba:'--qwen','Alibaba (Qwen)':'--qwen',Qwen:'--qwen',NVIDIA:'--nvidia',Microsoft:'--microsoft','Microsoft + NVIDIA':'--microsoft',Moonshot:'--moonshot','Moonshot AI':'--moonshot',Meta:'--meta','Meta AI':'--meta','Meta Superintelligence Labs':'--meta',DeepSeek:'--deepseek',Zhipu:'--zhipu','Z.ai':'--zhipu','Zhipu / Z.ai':'--zhipu','Zhipu AI':'--zhipu'};
+function labVar(l){ if(LABV[l]) return LABV[l]; const k=Object.keys(LABV).find(x=>l&&l.includes(x.split(' ')[0])); return k?LABV[k]:'--ghost'; }
 const $ = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
 const labHex = l => css(labVar(l)) || css('--ghost');
+const esc = s => (s==null?'':String(s));
+
+// ---- static / editorial data (current; the auto-updater can later data-ify these) ----
+const PRICES = {'gpt-5.5':'5/30','gpt-5.5 pro':'30/180','claude opus 4.8':'5/25','claude opus 4.7':'5/25','claude sonnet 4.6':'3/15','claude haiku 4.5':'1/5','gemini 3.1 pro':'2/12','gemini 3 flash':'0.5/3','grok 4.3':'1.25/2.5','grok 4.20 beta':'1.25/2.5','glm-5.2':'1.4/4.4','claude fable 5':'10/50','mistral large 3':'0.5/1.5','kimi k2.7 code':'0.95/4.0'};
+const WEIGHTS = [
+  {n:'DeepSeek V4-Pro',lab:'DeepSeek',total:1600,active:49},
+  {n:'Kimi K2.7 Code',lab:'Moonshot',total:1000,active:32},
+  {n:'GLM-5.2',lab:'Zhipu',total:744,active:40},
+  {n:'Mistral Large 3',lab:'Mistral',total:675,active:41},
+  {n:'Nemotron 3 Ultra',lab:'NVIDIA',total:550,active:55},
+  {n:'DeepSeek V4-Flash',lab:'DeepSeek',total:284,active:13},
+  {n:'Qwen3.5-35B',lab:'Alibaba',total:35,active:3},
+  {n:'DiffusionGemma',lab:'Google',total:26,active:3.8},
+  {n:'Ministral 3 · 14B',lab:'Mistral',total:14,active:14,dense:true},
+];
+const HH_AA = [{l:'GPT-5.5',v:60.2,lab:'OpenAI',hl:true},{l:'Fable 5',v:60,lab:'Anthropic',hl:true},{l:'Grok 4.3',v:53,lab:'xAI'},{l:'Muse Spark',v:52,lab:'Meta'},{l:'GLM-5.2',v:51,lab:'Zhipu'},{l:'~ prior tie',v:57,lab:'OpenAI',approx:true}];
+const HH_SWE = [{l:'Fable 5',v:80.3,lab:'Anthropic'},{l:'Opus 4.8',v:69.2,lab:'Anthropic'},{l:'Opus 4.7',v:64.3,lab:'Anthropic'},{l:'GLM-5.2',v:62.1,lab:'Zhipu'},{l:'GPT-5.5',v:58.6,lab:'OpenAI'}];
+const LB = [
+  {rank:1,name:'Claude Mythos Preview',lab:'Anthropic',score:65.2,sub:'GPQA 94.6% · UNRELEASED',gold:true,flag:'preview'},
+  {rank:2,name:'GPT-5.2 Pro',lab:'OpenAI',score:63.2,sub:'released',flag:'live'},
+  {rank:3,name:'Claude Opus 4.8',lab:'Anthropic',score:61.3,sub:'released · current stable Opus',flag:'live'},
+];
+const UPCOMING = [
+  {name:'Claude Mythos Preview',lab:'Anthropic',status:'un',what:'Tops LLM-Stats (65.2, GPQA 94.6%) but never publicly released — held back by the Jun 12 US export order.'},
+  {name:'Mistral Large 3 — Reasoning',lab:'Mistral',status:'soon',what:'A reasoning variant of Large 3 was flagged "coming soon" on Mistral\'s own page; still unshipped as of April.'},
+  {name:'Grok 4.20 Heavy · 4.3 "0309 v2"',lab:'xAI',status:'soon',what:'xAI docs reference heavier / variant Grok tiers whose exact specs the research couldn\'t pin down yet.'},
+  {name:'Fable 5 / Mythos — return?',lab:'Anthropic',status:'un',what:'Both pulled ~Jun 12 by the US export order. Whether/when they return for any customer is unknown.'},
+  {name:'Generative-media wave',lab:null,status:'rum',what:'Veo 4, Sora 2, Seedance 2.0, Imagen 4, Kling, ElevenLabs/Stability music — all surfaced but NONE survived fact-check. Real activity likely; verified specs are not.'},
+];
+const KILLED = [
+  {claim:'Google shipped a Gemini 3.5 Flash + "Gemini Omni" on May 19, 2026',vote:'1–2',src:'aireleasetracker'},
+  {claim:'Opus 4.7 scored AA Index 57.28 / Coding 52.51',vote:'0–3',src:'whatllm.org'},
+  {claim:'OpenAI\'s Feb-28 flagship was GPT-5.2 at $1.75 / $14 per M',vote:'1–2',src:'intuitionlabs'},
+  {claim:'Grok 4.20: Mar 10 API, 2M ctx, $2/$6 (real: Feb, 1M, $1.25/$2.50)',vote:'0–3',src:'buildfastwithai'},
+  {claim:'Opus 4.8 at $7.22/M (real: $5/$25; its 1M context was right)',vote:'0–3',src:'llm-stats'},
+  {claim:'Over-specific Grok 4.3 figures from a bundled blog para',vote:'1–2',src:'venturebeat'},
+];
+const SOURCES = [
+  {u:'anthropic.com/news',q:'primary'},{u:'platform.claude.com/docs',q:'primary'},{u:'mistral.ai/news/mistral-3',q:'primary'},
+  {u:'docs.x.ai/developers/models',q:'primary'},{u:'api-docs.deepseek.com',q:'primary'},{u:'about.fb.com/news (Muse Spark)',q:'primary'},
+  {u:'huggingface.co (Qwen, GLM, Gemma)',q:'primary'},{u:'deepmind.google/models',q:'primary'},{u:'research.nvidia.com/labs/nemotron',q:'primary'},
+  {u:'artificialanalysis.ai',q:'secondary'},{u:'llm-stats.com',q:'secondary'},{u:'en.wikipedia.org (model pages)',q:'secondary'},
+  {u:'vellum.ai/llm-leaderboard',q:'secondary'},{u:'techcrunch.com',q:'secondary'},{u:'venturebeat.com',q:'secondary'},
+  {u:'aireleasetracker.com',q:'secondary'},{u:'buildfastwithai.com',q:'blog'},{u:'marktechpost.com',q:'blog'},
+];
 
 let DATA = {models:[],trends:[],predictions:[],meta:{}};
+let nowFilter = null;
 
 async function boot(){
   try{
-    const [models,trends,preds,meta] = await Promise.all([
-      fetch('data/models.json').then(r=>r.json()),
-      fetch('data/trends.json').then(r=>r.json()),
-      fetch('data/predictions.json').then(r=>r.json()),
-      fetch('data/meta.json').then(r=>r.json()),
-    ]);
-    DATA = {models:models.models||[], trends:trends.trends||[], predictions:preds.predictions||[], methodology:preds.methodology||'', meta};
-    DATA.seed = (meta.dataVersion||0) === 0;
+    const [m,t,p,meta] = await Promise.all(['models','trends','predictions','meta'].map(f=>fetch('data/'+f+'.json').then(r=>r.json())));
+    DATA = {models:m.models||[], trends:t.trends||[], predictions:p.predictions||[], methodology:p.methodology||'', meta};
   }catch(e){ console.error(e); }
-  renderUpd(); renderNow(); renderHistory(); renderTrends(); renderPredict(); renderAbout();
+  renderUpd(); renderNow(); renderHistory(); renderCharts(); renderPredict(); renderMore();
 }
 
 function renderUpd(){
-  const m=DATA.meta||{};
-  const d = m.lastUpdated ? new Date(m.lastUpdated) : null;
-  const ago = d ? timeAgo(d) : '—';
-  $('#upd').innerHTML = `<b>●</b> updated ${ago}<br>${m.models||DATA.models.length} models · ${m.sweeps||0} sweeps`;
+  const m=DATA.meta||{}, d=m.lastUpdated?new Date(m.lastUpdated):null;
+  $('#upd').innerHTML = `<b>●</b> updated ${d?timeAgo(d):'—'}<br>${m.models||DATA.models.length} models · ${m.sweeps||0} sweeps`;
 }
-function timeAgo(d){
-  const s=(Date.now()-d.getTime())/1000;
-  if(s<3600) return Math.max(1,Math.round(s/60))+'m ago';
-  if(s<86400) return Math.round(s/3600)+'h ago';
-  return Math.round(s/86400)+'d ago';
-}
-const fmtDate = s => { if(!s) return ''; const p=s.split('-'); const M=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return p[2]?`${M[+p[1]]} ${+p[2]}, ${p[0]}`:`${M[+p[1]]||''} ${p[0]}`; };
+function timeAgo(d){const s=(Date.now()-d.getTime())/1000;if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+const MM=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmtDate = s => { if(!s)return''; const p=s.split('-'); return p[2]?`${MM[+p[1]]} ${+p[2]}, ${p[0]}`:`${MM[+p[1]]||''} ${p[0]}`; };
 const yr = s => (s||'').slice(0,4);
-function seedBanner(){ return DATA.seed ? `<div class="seedbanner">Seed scaffold — the full GPT-3→2026 history, trend curves, and forecasts are being researched now and will populate automatically (data v0).</div>` : ''; }
+function priceFor(name){ const k=(name||'').toLowerCase(); return PRICES[k] || Object.entries(PRICES).find(([kk])=>k.includes(kk))?.[1]; }
+function statusBadge(s){const m={live:'b-live',pulled:'b-pulled',preview:'b-preview',historic:'b-historic'}[s];return m?`<span class="badge ${m}">${s.toUpperCase()}</span>`:'';}
 
-function statusBadge(s){ const m={live:'b-live',pulled:'b-pulled',preview:'b-preview',open:'b-open',historic:'b-historic'}; const c=m[s]; return c?`<span class="badge ${c}">${(s||'').toUpperCase()}</span>`:''; }
-
+// ---------------- NOW ----------------
 function modelCard(m){
-  const b=m.benchmarks||{};
-  const benchChips=Object.entries(b).slice(0,4).map(([k,v])=>`<span class="chiplet">${k} <b>${v}</b></span>`).join('');
+  const b=m.benchmarks||{}, pr=priceFor(m.name);
+  const benchChips=Object.entries(b).slice(0,4).map(([k,v])=>`<span class="chiplet">${k.replace(/\s*\(.*\)/,'')} <b>${v}</b></span>`).join('');
   return `<div class="mcard" style="--lab:${labHex(m.lab)}">
     <div class="top"><span class="nm">${m.name}</span>
       <span class="lab"><span class="dot"></span>${m.lab}</span>
       <span class="dt">${fmtDate(m.released)}</span></div>
     <div class="specs">
-      ${m.milestone?'<span class="badge b-milestone">★ LANDMARK</span>':''}
-      ${statusBadge(m.status)}
-      ${m.open?'<span class="badge b-open">OPEN</span>':''}
+      ${m.milestone?'<span class="badge b-milestone">★</span>':''}${statusBadge(m.status)}${m.open?'<span class="badge b-open">OPEN</span>':''}
+      ${pr?`<span class="chiplet price">$<b>${pr.split('/')[0]}</b>/<i>${pr.split('/')[1]}</i></span>`:''}
       ${m.params&&m.params!=='—'?`<span class="chiplet">${m.params}</span>`:''}
       ${m.context&&m.context!=='—'?`<span class="chiplet">${m.context} ctx</span>`:''}
+      ${m.modality?`<span class="chiplet" style="color:var(--ink3)">${m.modality}</span>`:''}
       ${benchChips}
     </div>
-    ${m.notable?`<div class="notable">${m.notable}</div>`:''}
+    ${m.notable?`<div class="notable clip">${m.notable}</div><div class="more">more ▾</div>`:''}
   </div>`;
 }
-
 function renderNow(){
-  const live=DATA.models.filter(m=>['live','preview','open'].includes(m.status)||yr(m.released)==='2026')
-    .sort((a,b)=>(b.released||'').localeCompare(a.released||''));
+  let live=DATA.models.filter(m=>['live','preview','pulled'].includes(m.status)||yr(m.released)==='2026');
+  const labs=[...new Set(live.map(m=>m.lab))];
+  if(nowFilter) live=live.filter(m=>m.lab===nowFilter);
+  live.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   $('#v-now').innerHTML = `<div class="vh">The frontier now</div>
-    <div class="vsub">The newest and currently-available models, freshest first.</div>
-    ${seedBanner()}
-    ${live.length?live.map(modelCard).join(''):'<div class="empty">No current models yet.</div>'}`;
+    <div class="vsub">Current & recent models. Tap a lab to filter, tap "more" to expand.</div>
+    <div class="filters">
+      <button class="fchip all ${nowFilter?'':'on'}" data-lab="">All ${DATA.models.filter(m=>yr(m.released)==='2026'||['live','preview','pulled'].includes(m.status)).length}</button>
+      ${labs.map(l=>`<button class="fchip ${nowFilter&&nowFilter!==l?'off':''}" data-lab="${l}"><span class="sw" style="background:${labHex(l)}"></span>${l}</button>`).join('')}
+    </div>
+    ${live.length?live.map(modelCard).join(''):'<div class="empty">No models for that filter.</div>'}`;
 }
 
+// ---------------- HISTORY ----------------
+let histAll=false;
 function renderHistory(){
   const ms=DATA.models.filter(m=>m.milestone).sort((a,b)=>(a.released||'').localeCompare(b.released||''));
-  const land = (DATA.narrative&&DATA.narrative.landmarks)||null;
+  const shown = histAll?ms:ms.slice(0,16);
   $('#v-history').innerHTML = `<div class="vh">History since GPT-3</div>
-    <div class="vsub">The landmark models that moved the field, June 2020 to today. GPT-1/2/BERT were public too — GPT-3 is where the modern curve begins.</div>
-    ${seedBanner()}
-    <div class="tl">${ms.map(m=>`<div class="tnode" style="--lab:${labHex(m.lab)}">
+    <div class="vsub">The landmark models that moved the field — June 2020 to today. GPT-1/2/BERT were public too; GPT-3 is where the modern curve begins.</div>
+    <div class="tl">${shown.map(m=>`<div class="tnode" style="--lab:${labHex(m.lab)}">
       <div class="yr">${fmtDate(m.released)}</div>
       <div class="nm">${m.name}<span class="lab">${m.lab}</span></div>
-      <div class="why">${m.notable||''}</div>
-    </div>`).join('')}</div>`;
+      <div class="why">${m.notable||''}</div></div>`).join('')}</div>
+    ${!histAll&&ms.length>16?`<div class="showall"><button id="histmore">Show all ${ms.length} landmarks ▾</button></div>`:''}`;
 }
 
-// ----- time-series chart with prediction band -----
-function tval(s){ const p=(s||'').split('-'); return (+p[0]||2020) + ((+p[1]||1)-1)/12; }
-function renderTrendChart(t){
+// ---------------- CHARTS ----------------
+function tval(s){const p=(s||'').split('-');return(+p[0]||2020)+((+p[1]||1)-1)/12;}
+function trendChart(t){
   const C={line:css('--line'),ink3:css('--ink3'),accent:css('--accent'),warn:css('--warn'),bg:css('--bg')};
   const meas=(t.points||[]).slice().sort((a,b)=>tval(a.date)-tval(b.date));
   const pred=(t.predicted||[]).slice().sort((a,b)=>tval(a.date)-tval(b.date));
-  if(!meas.length) return '<div class="empty">No data yet.</div>';
-  const all=[...meas,...pred];
-  const xs=all.map(p=>tval(p.date)), ys=all.flatMap(p=>[p.value,p.low,p.high].filter(v=>v!=null));
-  let x0v=Math.min(...xs), x1v=Math.max(...xs); if(x1v===x0v)x1v+=0.5;
-  let y0v=Math.min(...ys), y1v=Math.max(...ys); const pad=(y1v-y0v)*0.12||5; y0v-=pad; y1v+=pad;
-  const W=500,H=190,L=34,R=12,T=12,B=26;
-  const X=v=>L+((tval(v)-x0v)/(x1v-x0v))*(W-L-R);
-  const Y=v=>T+(1-(v-y0v)/(y1v-y0v))*(H-T-B);
-  let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:190px">`;
-  // y gridlines (~4)
-  for(let i=0;i<=3;i++){const yy=y0v+(y1v-y0v)*i/3; const py=Y(yy).toFixed(1);
-    s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-5}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end">${yy.toFixed(0)}</text>`;}
-  // year x labels
-  const yrs=[...new Set(all.map(p=>+yr(p.date)))].sort();
-  yrs.forEach(y=>{const px=X(y+'-06').toFixed(1); s+=`<text x="${px}" y="${H-7}" font-size="9" text-anchor="middle">'${String(y).slice(2)}</text>`;});
-  // prediction band polygon (low/high) joining last measured point
-  if(pred.length){
-    const last=meas[meas.length-1];
-    const lo=[{date:last.date,low:last.value,high:last.value},...pred.filter(p=>p.low!=null)];
-    if(lo.length>1){
-      const up=lo.map(p=>`${X(p.date).toFixed(1)},${Y(p.high).toFixed(1)}`);
-      const dn=lo.slice().reverse().map(p=>`${X(p.date).toFixed(1)},${Y(p.low).toFixed(1)}`);
-      s+=`<polygon points="${up.concat(dn).join(' ')}" fill="${C.warn}" opacity=".16"/>`;
-    }
-    // dashed predicted line from last measured
-    const pl=[last,...pred].map(p=>`${X(p.date).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ');
-    s+=`<polyline points="${pl}" fill="none" stroke="${C.warn}" stroke-width="2" stroke-dasharray="5 4"/>`;
-    pred.forEach(p=>{s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="4" fill="${C.bg}" stroke="${C.warn}" stroke-width="2"><title>${p.model}: ${p.value} (band ${p.low}–${p.high}) ${fmtDate(p.date)}</title></circle>`;});
-  }
-  // measured solid line + dots
+  if(!meas.length) return '<div class="empty">No data.</div>';
+  const all=[...meas,...pred], xs=all.map(p=>tval(p.date)), ys=all.flatMap(p=>[p.value,p.low,p.high].filter(v=>v!=null));
+  let x0v=Math.min(...xs),x1v=Math.max(...xs); if(x1v===x0v)x1v+=.5;
+  let y0v=Math.min(...ys),y1v=Math.max(...ys); const pad=(y1v-y0v)*.12||5; y0v-=pad; y1v+=pad;
+  const W=500,H=170,L=32,R=10,T=10,B=24;
+  const X=v=>L+((tval(v)-x0v)/(x1v-x0v))*(W-L-R), Y=v=>T+(1-(v-y0v)/(y1v-y0v))*(H-T-B);
+  let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:170px">`;
+  for(let i=0;i<=3;i++){const yy=y0v+(y1v-y0v)*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end">${yy.toFixed(0)}</text>`;}
+  [...new Set(all.map(p=>+yr(p.date)))].sort().forEach(y=>{s+=`<text x="${X(y+'-06').toFixed(1)}" y="${H-6}" font-size="9" text-anchor="middle">'${String(y).slice(2)}</text>`;});
+  if(pred.length){const last=meas[meas.length-1],lo=[{date:last.date,low:last.value,high:last.value},...pred.filter(p=>p.low!=null)];
+    if(lo.length>1){const up=lo.map(p=>`${X(p.date).toFixed(1)},${Y(p.high).toFixed(1)}`),dn=lo.slice().reverse().map(p=>`${X(p.date).toFixed(1)},${Y(p.low).toFixed(1)}`);s+=`<polygon points="${up.concat(dn).join(' ')}" fill="${C.warn}" opacity=".16"/>`;}
+    s+=`<polyline points="${[last,...pred].map(p=>`${X(p.date).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.warn}" stroke-width="2" stroke-dasharray="5 4"/>`;
+    pred.forEach(p=>s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="4" fill="${C.bg}" stroke="${C.warn}" stroke-width="2"><title>${p.model}: ${p.value} (band ${p.low}–${p.high})</title></circle>`);}
   s+=`<polyline points="${meas.map(p=>`${X(p.date).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
-  meas.forEach(p=>{s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="4" fill="${C.accent}" stroke="${C.bg}" stroke-width="1.5"><title>${p.model}: ${p.value} ${fmtDate(p.date)}</title></circle>`;});
-  s+=`</svg>`;
-  return s;
+  meas.forEach(p=>s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="3.5" fill="${C.accent}" stroke="${C.bg}" stroke-width="1.5"><title>${p.model}: ${p.value} ${fmtDate(p.date)}</title></circle>`);
+  return s+'</svg>';
 }
-function renderTrends(){
-  $('#v-trends').innerHTML = `<div class="vh">Trends over time</div>
-    <div class="vsub">How each benchmark has climbed. <span style="color:var(--accent)">Solid</span> = measured; <span style="color:var(--warn)">dashed + shaded</span> = forecast with its uncertainty band.</div>
-    ${seedBanner()}
-    ${DATA.trends.length?DATA.trends.map(t=>`<div class="chartcard">
-      <h3>${t.benchmark} ${t.saturated?'<span class="sattag">SATURATED</span>':''}</h3>
-      <div class="cd">${t.unit||''}${t.notes?' · '+t.notes:''}</div>
-      ${renderTrendChart(t)}
-      <div class="lgd"><span><span class="swline"></span>measured</span>${(t.predicted&&t.predicted.length)?'<span><span class="swdash"></span>forecast</span><span><span class="swband"></span>uncertainty</span>':''}</div>
-    </div>`).join(''):'<div class="empty">Trend data lands in P1.</div>'}`;
+function barChart(data,max,ceil){
+  const tick=ceil?`<div class="ceil-tick" style="left:${(ceil/max*100).toFixed(1)}%"></div>`:'';
+  const lab=ceil?`<div class="ceil-lab">prior ceiling ≈ ${ceil}</div>`:'';
+  return lab+data.map(d=>`<div class="bar"><div class="bl">${d.l}</div><div class="track">${tick}<div class="fill" style="width:${(d.v/max*100).toFixed(1)}%;background:${labHex(d.lab)};${d.hl?'box-shadow:0 0 10px '+labHex(d.lab):''};${d.approx?'opacity:.6':''}"></div></div><div class="bv">${d.v}${d.approx?'~':''}</div></div>`).join('');
+}
+const DAYMS=864e5, ddays=(a,b)=>Math.round((new Date(b+'T00:00:00')-new Date(a+'T00:00:00'))/DAYMS);
+function cadence(){
+  const C={line:css('--line'),ink3:css('--ink3'),ink2:css('--ink2'),bg:css('--bg')};
+  const all=DATA.models.filter(m=>(m.released||'')>='2026-01').map(m=>({lab:m.lab,sort:(m.released||'').slice(0,10)})).filter(m=>m.sort.length>=7);
+  if(!all.length) return {stats:'',svg:'<div class="empty">No 2026 data.</div>'};
+  const labCount={},labFirst={};all.forEach(m=>{labCount[m.lab]=(labCount[m.lab]||0)+1;if(!labFirst[m.lab]||m.sort<labFirst[m.lab])labFirst[m.lab]=m.sort;});
+  const lanes=Object.keys(labCount).sort((a,b)=>labCount[b]-labCount[a]||(labFirst[a]<labFirst[b]?-1:1)).slice(0,10);
+  const dates=[...new Set(all.map(m=>m.sort))].sort();
+  const gaps=dates.slice(1).map((d,i)=>ddays(dates[i],d)),sg=[...gaps].sort((a,b)=>a-b);
+  const median=sg.length?(sg.length%2?sg[(sg.length-1)/2]:(sg[sg.length/2-1]+sg[sg.length/2])/2):0;
+  const span=ddays(dates[0],dates[dates.length-1]),top1=lanes[0];
+  const byMo={};all.forEach(m=>{const k=m.sort.slice(0,7);byMo[k]=(byMo[k]||0)+1;});
+  const moE=Object.entries(byMo).sort((a,b)=>b[1]-a[1]),busy=moE[0],quiet=moE[moE.length-1];
+  const stats=`<div class="cadstats">
+    <div class="cadstat"><div class="v">${all.length} <small>releases</small></div><div class="l">${lanes.length} labs · ${span}-day span</div></div>
+    <div class="cadstat"><div class="v">~${(span/Math.max(1,all.length-1)).toFixed(1)}d <small>each</small></div><div class="l">median ${median}d between dates</div></div>
+    <div class="cadstat"><div class="v">${top1} <small>led</small></div><div class="l">${labCount[top1]} releases</div></div>
+    <div class="cadstat"><div class="v">${MM[+busy[0].slice(5)]} ${busy[1]}</div><div class="l">busiest · ${MM[+quiet[0].slice(5)]} ${quiet[1]} quietest</div></div></div>`;
+  const TS0=new Date('2026-02-01'),TS1=new Date('2026-06-30');
+  const MO=[['2026-02','Feb'],['2026-03','Mar'],['2026-04','Apr'],['2026-05','May'],['2026-06','Jun']];
+  const x0=86,x1=466,top=10,lh=24,bot=22,H=top+lanes.length*lh+bot,botY=top+lanes.length*lh;
+  const dx=iso=>x0+(new Date(iso+'T00:00:00')-TS0)/(TS1-TS0)*(x1-x0);
+  const grp={};all.forEach(m=>{const k=m.lab+'|'+m.sort;(grp[k]=grp[k]||{lab:m.lab,sort:m.sort,n:0}).n++;});
+  let s=`<svg class="svgchart" viewBox="0 0 500 ${H}">`;
+  gaps.forEach((g,i)=>{if(g>=21){const xa=dx(dates[i])+4,xb=dx(dates[i+1])-4;s+=`<rect x="${xa.toFixed(1)}" y="${top}" width="${(xb-xa).toFixed(1)}" height="${lanes.length*lh}" fill="${C.ink3}" opacity=".07"/><text class="mn" x="${((xa+xb)/2).toFixed(1)}" y="${(botY-6).toFixed(1)}" font-size="8.5" text-anchor="middle" fill="${C.ink3}">${g}d</text>`;}});
+  MO.forEach(([iso,l])=>{const x=dx(iso+'-01').toFixed(1);s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${botY}" stroke="${C.line}"/><text class="mn" x="${x}" y="${botY+15}" font-size="9" text-anchor="middle" fill="${C.ink3}">${l}</text>`;});
+  lanes.forEach((lab,i)=>{const y=top+i*lh+lh/2;s+=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="${C.line}" opacity=".5"/><text x="${x0-8}" y="${y+3}" font-size="10" font-weight="700" text-anchor="end" fill="${labHex(lab)}" font-family="var(--sans)">${lab.split(' ')[0]}</text><text class="mn" x="${x1+10}" y="${y+3}" font-size="10" font-weight="700" fill="${C.ink2}">${labCount[lab]}</text>`;});
+  Object.values(grp).forEach(g=>{const i=lanes.indexOf(g.lab);if(i<0)return;const y=top+i*lh+lh/2,r=(3.5+(g.n-1)*1.4).toFixed(1);s+=`<circle cx="${dx(g.sort).toFixed(1)}" cy="${y}" r="${r}" fill="${labHex(g.lab)}" stroke="${C.bg}" stroke-width="1.3"><title>${g.lab} ×${g.n} — ${fmtDate(g.sort)}</title></circle>`;});
+  return {stats, svg:s+'</svg>'};
+}
+function weightsChart(){
+  const C={line:css('--line'),ink3:css('--ink3'),ink2:css('--ink2')};
+  const x0=92,x1=400,top=8,rh=26,bh=11,H=top+WEIGHTS.length*rh+22,LG=Math.log10(2000),xS=p=>x0+Math.log10(p)/LG*(x1-x0);
+  let s=`<svg class="svgchart" viewBox="0 0 500 ${H}">`;
+  [1,10,100,1000].forEach(p=>{const x=xS(p).toFixed(1);s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${top+WEIGHTS.length*rh}" stroke="${C.line}" opacity=".5"/><text class="mn" x="${x}" y="${top+WEIGHTS.length*rh+15}" font-size="9" text-anchor="middle" fill="${C.ink3}">${p>=1000?'1T':p+'B'}</text>`;});
+  WEIGHTS.forEach((m,i)=>{const y=top+i*rh+rh/2,col=labHex(m.lab),xt=xS(m.total),xa=xS(m.active);
+    s+=`<text x="${x0-7}" y="${y+3}" font-size="10" font-weight="700" text-anchor="end" fill="${col}" font-family="var(--sans)">${m.n.replace(/ .*/,'')}</text>`;
+    s+=`<rect x="${x0}" y="${(y-bh/2).toFixed(1)}" width="${(xt-x0).toFixed(1)}" height="${bh}" rx="2.5" fill="${col}" opacity=".26"/><rect x="${x0}" y="${(y-bh/2).toFixed(1)}" width="${(xa-x0).toFixed(1)}" height="${bh}" rx="2.5" fill="${col}"><title>${m.n}: ${m.total>=1000?(m.total/1000)+'T':m.total+'B'} total, ${m.active}B active</title></rect>`;
+    const sp=Math.round(m.total/m.active),lbl=m.dense?'dense':`${sp}×`;
+    s+=`<text class="mn" x="${(xt+6).toFixed(1)}" y="${y+3}" font-size="9.5" fill="${C.ink2}">${m.total>=1000?(m.total/1000)+'T':m.total+'B'} · ${lbl}</text>`;});
+  return s+'</svg>';
+}
+function renderCharts(){
+  const cad=cadence();
+  $('#v-charts').innerHTML = `<div class="vh">Charts</div>
+    <div class="vsub">Tap a section to open. Solid = measured, dashed + shaded = forecast with its uncertainty band.</div>
+    <details class="acc" open><summary><span class="tw">▶</span>Trends over time<span class="ct">${DATA.trends.length}</span></summary>
+      <div class="body">${DATA.trends.map(t=>`<div class="chartcard"><h4>${t.benchmark} ${t.saturated?'<span class="sattag">SATURATED</span>':''}</h4><div class="cd">${t.unit||''}${t.notes?' · '+t.notes:''}</div>${trendChart(t)}<div class="lgd"><span><span class="swline"></span>measured</span>${(t.predicted&&t.predicted.length)?'<span><span class="swdash"></span>forecast</span><span><span class="swband"></span>uncertainty</span>':''}</div></div>`).join('')||'<div class="empty">No trends.</div>'}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>Release cadence — 2026</summary>
+      <div class="body"><div class="accsub">Every 2026 release on its ship date, by lab lane. Dot size = same-day multi-drops; shaded = lulls.</div>${cad.stats}${cad.svg}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>Open weights — size &amp; sparsity</summary>
+      <div class="body"><div class="accsub">Total weights (dim) vs active per token (bright), log scale. The gap is the MoE efficiency win; × = sparsity.</div>${weightsChart()}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>Head-to-head</summary>
+      <div class="body"><div class="chartcard"><h4>AA Intelligence Index — the ~57 ceiling</h4><div class="cd">GPT-5.5 then Fable 5 first to clear it; version-stamped, treat as rough.</div>${barChart(HH_AA,65,57)}</div>
+      <div class="chartcard"><h4>SWE-bench Pro — coding</h4><div class="cd">% of real software-eng issues resolved.</div>${barChart(HH_SWE,100)}</div></div></details>`;
 }
 
+// ---------------- PREDICT ----------------
 function renderPredict(){
   const ps=DATA.predictions||[];
-  $('#v-predict').innerHTML = `<div class="vh">Predictions</div>
-    <div class="vsub">Where un-tested or announced models are likely to land — point estimate with an honest uncertainty band.</div>
-    ${seedBanner()}
+  $('#v-predict').innerHTML = `<div class="vh">Predictions &amp; what's coming</div>
+    <div class="vsub">Where un-tested or announced models are likely to land — point estimate + an honest uncertainty band.</div>
     ${ps.length?ps.map(p=>{
-      const lo=Math.min(p.low,p.predicted), hi=Math.max(p.high,p.predicted), span=hi-lo||1;
-      const bl=((p.low-lo)/span)*100, bw=((p.high-p.low)/span)*100, pp=((p.predicted-lo)/span)*100;
-      return `<div class="pcard">
-        <div class="ptop"><span class="pnm">${p.model}</span><span class="pbench">${p.benchmark}</span></div>
-        <div class="pmeta">${p.lab||''}${p.expectedDate?' · expected '+p.expectedDate:''} ${p.confidence?`<span class="conf ${p.confidence}">${p.confidence.toUpperCase()}</span>`:''}</div>
-        <div class="gauge"><div class="track">
-          <div class="band" style="left:${bl}%;width:${bw}%"></div>
-          <div class="val" style="left:${pp}%">${p.predicted}</div>
-          <div class="pt" style="left:${pp}%"></div>
-        </div><div class="lbls"><span>${lo.toFixed(0)}</span><span>band ${p.low}–${p.high}</span><span>${hi.toFixed(0)}</span></div></div>
-        ${p.basis?`<div class="basis">${p.basis}</div>`:''}
-      </div>`;}).join(''):'<div class="empty">Forecasts land in P1.</div>'}`;
+      const lo=Math.min(p.low,p.predicted),hi=Math.max(p.high,p.predicted),span=hi-lo||1;
+      const bl=((p.low-lo)/span)*100,bw=((p.high-p.low)/span)*100,pp=((p.predicted-lo)/span)*100;
+      return `<div class="pcard"><div class="ptop"><span class="pnm">${p.model}</span><span class="pbench">${(p.benchmark||'').replace(/\s*\(.*\)/,'')}</span></div>
+        <div class="pmeta">${p.lab||''}${p.expectedDate?' · '+p.expectedDate:''} ${p.confidence?`<span class="conf ${p.confidence}">${p.confidence.toUpperCase()}</span>`:''}</div>
+        <div class="gauge"><div class="gtrack"><div class="band" style="left:${bl}%;width:${bw}%"></div><div class="gv" style="left:${pp}%">${p.predicted}</div><div class="pt" style="left:${pp}%"></div></div>
+        <div class="lbls"><span>${lo.toFixed(0)}</span><span>band ${p.low}–${p.high}</span><span>${hi.toFixed(0)}</span></div></div>
+        ${p.basis?`<div class="basis">${p.basis}</div>`:''}</div>`;}).join(''):'<div class="empty">No forecasts.</div>'}
+    <div class="vh" style="margin-top:22px">On the horizon</div>
+    <div class="vsub">Announced, expected, or rumored — graded by signal strength. Generative-media is honestly flagged rumored (failed fact-check).</div>
+    ${UPCOMING.map(u=>`<div class="hrow ${u.status==='rum'?'rum':''}"><div class="hname">${u.lab?`<span class="dot" style="background:${labHex(u.lab)}"></span>`:''}${u.name} <span class="hpill ${u.status==='un'?'h-un':u.status==='soon'?'h-soon':'h-rum'}">${u.status==='un'?'UNRELEASED':u.status==='soon'?'EXPECTED':'RUMORED'}</span></div><div class="hwhat">${u.what}</div></div>`).join('')}`;
 }
 
-function renderAbout(){
+// ---------------- MORE ----------------
+function renderMore(){
   const m=DATA.meta||{};
-  $('#v-about').innerHTML = `<div class="vh">About</div>
-    <div class="note"><b>Robots</b> is a living record of public AI — every landmark model since GPT-3 (June 2020), the trajectory of the benchmarks, and forecasts for what's coming. Built for Christian &amp; his dad.</div>
-    <div class="note"><b>It updates itself.</b> Twice a day a research pass looks for new models and benchmark results, verifies them, and pushes the changes here automatically. Last update: <b style="color:var(--good)">${m.lastUpdated?fmtDate(m.lastUpdated.slice(0,10))+' '+(new Date(m.lastUpdated)).toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'}):'—'}</b> · ${m.sweeps||0} sweeps · data v${m.dataVersion||0}.</div>
-    <div class="note"><b>Predictions.</b> ${DATA.methodology||'For un-tested models, we fit the recent frontier trajectory of each benchmark, place the estimate at the model\'s expected date, and show an uncertainty band that widens further into the future. Measured data always overrides a forecast.'}</div>
-    <div class="note" style="color:var(--ink3);font-size:12px">A refute in research means "not yet verified," not "false forever." Numbers carry source-confidence; benchmark indices are version-stamped and not always cross-comparable. Snapshot of a field that moves weekly.</div>`;
+  $('#v-more').innerHTML = `<div class="vh">More</div>
+    <details class="acc" open><summary><span class="tw">▶</span>Leaderboard<span class="ct">LLM-Stats</span></summary>
+      <div class="body"><div class="accsub">LLM-Stats composite "Score" on the last snapshot — one ranking, reasoning-weighted. #1 is unreleased; the board is noisy.</div>
+      ${LB.map(r=>`<div class="lbrow ${r.gold?'gold':''}"><div class="lbrank">${r.rank}</div><div><div class="lbname"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${labHex(r.lab)}"></span>${r.name} ${statusBadge(r.flag)}</div><div class="lbsub">${r.lab} · ${r.sub}</div></div><div class="lbscore">${r.score}<small>LLM-STATS</small></div></div>`).join('')}
+      <div class="caveat">Conflicts with the Artificial Analysis index (which orders GPT-5.5 / Fable 5 / GLM-5.2 / Grok 4.3 differently). Different operators, different weightings — no single board is authoritative.</div></div></details>
+    <details class="acc"><summary><span class="tw">▶</span>Didn't make the cut<span class="ct">${KILLED.length}</span></summary>
+      <div class="body"><div class="correction"><b>Re-sweep correction:</b> a 2nd research pass overturned <b>5 earlier refutations</b> with primary sources — GLM-5.2, DeepSeek V4-Pro/Flash, Meta Muse Spark, Grok 4.20/4.3 are all real, now in the tables. A refute means "not yet verified," not "false forever." Below = still unverified or wrong:</div>
+      ${KILLED.map(k=>`<div class="kill"><div class="x">✗</div><div><div class="kclaim">${k.claim}</div><div class="kmeta">refuted ${k.vote} · ${k.src}</div></div></div>`).join('')}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>Sources<span class="ct">${SOURCES.length}+</span></summary>
+      <div class="body"><div class="accsub">Backbone dates/benchmarks trace to primary vendor/model-card/HF sources; pricing & some scores via aggregators, kept only on corroboration.</div>
+      ${SOURCES.map(s=>`<div class="src"><span class="sq ${s.q}">${s.q.slice(0,4).toUpperCase()}</span><span>${s.u}</span></div>`).join('')}</div></details>
+    <details class="acc"><summary><span class="tw">▶</span>How it works</summary>
+      <div class="body">
+        <div class="note"><b>Robots</b> is a living record of public AI — every landmark since GPT-3 (Jun 2020), the benchmark curves, and forecasts. Built for Christian &amp; his dad.</div>
+        <div class="note"><b>It updates itself</b> twice a day: a research pass finds new models/benchmarks, verifies them, and pushes here automatically. Last update <b style="color:var(--good)">${m.lastUpdated?fmtDate(m.lastUpdated.slice(0,10)):'—'}</b> · ${m.sweeps||0} sweeps · v${m.dataVersion||0}.</div>
+        <div class="note"><b>Predictions.</b> ${DATA.methodology||'For un-tested models we fit the recent frontier trajectory of a benchmark, place the estimate at the model\'s expected date, and widen the band the further out we forecast. Measured data always overrides a forecast on the next sweep.'}</div>
+        <div class="caveat">Benchmark indices are version-stamped and not always cross-comparable; aggregator leaderboards disagree. A snapshot of a field that moves weekly.</div>
+      </div></details>`;
 }
 
-// nav
-$('#nav').addEventListener('click', e=>{
-  const b=e.target.closest('button'); if(!b) return;
-  $$('#nav button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
-  $$('.view').forEach(v=>v.classList.remove('on')); $('#v-'+b.dataset.v).classList.add('on');
-  window.scrollTo(0,0);
+// ---------------- events ----------------
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('#nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.view').forEach(v=>v.classList.remove('on'));$('#v-'+b.dataset.v).classList.add('on');window.scrollTo(0,0);});
+document.addEventListener('click',e=>{
+  const f=e.target.closest('.fchip'); if(f){nowFilter=f.dataset.lab||null;renderNow();return;}
+  const mo=e.target.closest('.more'); if(mo){const c=mo.closest('.mcard');c.classList.toggle('exp');c.querySelector('.notable').classList.toggle('clip');mo.textContent=c.classList.contains('exp')?'less ▴':'more ▾';return;}
+  if(e.target.id==='histmore'){histAll=true;renderHistory();}
 });
 
-if('serviceWorker' in navigator){ navigator.serviceWorker.register('sw.js').catch(()=>{}); }
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 boot();
 </script>
 </body>
