@@ -190,8 +190,24 @@
   nav.tabs button{flex:1;background:none;border:none;color:var(--ink3);font-family:var(--sans);
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;padding:8px 2px;transition:color .15s}
   nav.tabs button.on{color:var(--accent)}
-  nav.tabs button svg{width:21px;height:21px}
-  nav.tabs button span{font-size:10px;font-weight:650}
+  nav.tabs button svg{width:20px;height:20px}
+  nav.tabs button span{font-size:9.5px;font-weight:650}
+
+  /* home */
+  .hero{font-size:13px;color:var(--ink2);line-height:1.55;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:13px 15px;margin-bottom:13px}
+  .hero b{color:var(--ink)}
+  .hsec{font:700 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:20px 0 10px;display:flex;align-items:center;gap:10px}
+  .hsec::after{content:"";flex:1;height:1px;background:var(--line)}
+  .bestgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .bestcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px;border-left:3px solid var(--lab,var(--accent))}
+  .bclabel{font:600 10.5px var(--sans);color:var(--ink3)}
+  .bcname{font-size:13.5px;font-weight:730;margin-top:3px;line-height:1.2}
+  .bcval{font:700 11.5px var(--mono);color:var(--accent);margin-top:4px}
+  .explore{display:flex;flex-direction:column;gap:7px}
+  .explore button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;display:flex;align-items:baseline;gap:10px;color:var(--ink2);width:100%;font-family:var(--sans)}
+  .explore button b{color:var(--ink);font-size:13.5px;min-width:58px}
+  .explore button span{font-size:11.5px;color:var(--ink3)}
+  .explore button::after{content:"›";margin-left:auto;color:var(--ink3);font-size:18px;align-self:center}
 </style>
 </head>
 <body>
@@ -205,7 +221,8 @@
 </header>
 
 <main>
-  <section class="view on" id="v-now"></section>
+  <section class="view on" id="v-home"></section>
+  <section class="view" id="v-now"></section>
   <section class="view" id="v-history"></section>
   <section class="view" id="v-charts"></section>
   <section class="view" id="v-predict"></section>
@@ -213,7 +230,8 @@
 </main>
 
 <nav class="tabs" id="nav">
-  <button data-v="now" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Now</span></button>
+  <button data-v="home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/></svg><span>Home</span></button>
+  <button data-v="now"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Now</span></button>
   <button data-v="history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v14M4 7h13l-2.5 3L17 13H4"/></svg><span>History</span></button>
   <button data-v="charts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 8-9"/><path d="M3 21h18"/></svg><span>Charts</span></button>
   <button data-v="predict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 4 10.5c-.7.6-1 1-1 2v.5H9V15c0-1-.3-1.4-1-2A6 6 0 0 1 12 3z"/><path d="M9.5 21h5"/></svg><span>Predict</span></button>
@@ -281,7 +299,7 @@ async function boot(){
     const [m,t,p,meta] = await Promise.all(['models','trends','predictions','meta'].map(f=>fetch('data/'+f+'.json').then(r=>r.json())));
     DATA = {models:m.models||[], trends:t.trends||[], predictions:p.predictions||[], methodology:p.methodology||'', meta};
   }catch(e){ console.error(e); }
-  renderUpd(); renderNow(); renderHistory(); renderCharts(); renderPredict(); renderMore();
+  renderUpd(); renderHome(); renderNow(); renderHistory(); renderCharts(); renderPredict(); renderMore();
 }
 
 function renderUpd(){
@@ -294,6 +312,45 @@ const fmtDate = s => { if(!s)return''; const p=s.split('-'); return p[2]?`${MM[+
 const yr = s => (s||'').slice(0,4);
 function priceFor(name){ const k=(name||'').toLowerCase(); return PRICES[k] || Object.entries(PRICES).find(([kk])=>k.includes(kk))?.[1]; }
 function statusBadge(s){const m={live:'b-live',pulled:'b-pulled',preview:'b-preview',historic:'b-historic'}[s];return m?`<span class="badge ${m}">${s.toUpperCase()}</span>`:'';}
+
+// ---------------- HOME ----------------
+let homeOpenOnly=false;
+function benchOf(m,cat){const b=m.benchmarks||{},ks=Object.keys(b);
+  const re={aa:/aa[ -]?index|intelligence index/i,swe:/swe[ -]?bench/i,gpqa:/gpqa/i,aime:/aime/i}[cat];
+  if(!re)return null;
+  const vals=ks.filter(k=>re.test(k)).map(k=>b[k]).filter(v=>typeof v==='number');
+  return vals.length?Math.max(...vals):null;}
+function ctxNum(s){if(!s)return 0;const m=(''+s).match(/([\d.]+)\s*([KMT])?/i);if(!m)return 0;let v=+m[1];const u=(m[2]||'').toUpperCase();if(u==='K')v*=1e3;if(u==='M')v*=1e6;if(u==='T')v*=1e9;return v;}
+function outPrice(name){const p=priceFor(name);return p?+p.split('/')[1]:null;}
+const USECASES=[{label:'Top overall',cat:'aa',suf:''},{label:'Coding',cat:'swe',suf:'%'},{label:'Science · GPQA',cat:'gpqa',suf:'%'},{label:'Math · AIME',cat:'aime',suf:'%'},{label:'Longest context',cat:'context'},{label:'Best value',cat:'value'}];
+function pickBest(cands,uc){
+  if(uc.cat==='context'){let b=null,bv=0;cands.forEach(m=>{const v=ctxNum(m.context);if(v>bv){bv=v;b=m;}});return b?{m:b,disp:(b.context||'').replace(/\s*[\(/].*$/,'').trim()+' ctx'}:null;}
+  if(uc.cat==='value'){let b=null,bs=-1;cands.forEach(m=>{const aa=benchOf(m,'aa'),p=outPrice(m.name);if(aa&&p){const s=aa/p;if(s>bs){bs=s;b=m;}}});return b?{m:b,disp:'$'+outPrice(b.name)+'/M'}:null;}
+  let b=null,bv=-1;cands.forEach(m=>{const v=benchOf(m,uc.cat);if(v!=null&&v>bv){bv=v;b=m;}});return b?{m:b,disp:bv+(uc.suf||'')}:null;
+}
+function renderHome(){
+  const meta=DATA.meta||{};
+  let cands=DATA.models.filter(x=>x.status==='live');
+  if(homeOpenOnly)cands=cands.filter(x=>x.open);
+  const lb=cands.map(x=>({x,aa:benchOf(x,'aa')})).filter(o=>o.aa!=null).sort((a,b)=>b.aa-a.aa).slice(0,5);
+  const picks=USECASES.map(uc=>({uc,p:pickBest(cands,uc)})).filter(o=>o.p);
+  const top=lb[0];
+  $('#v-home').innerHTML=`<div class="vh">Overview</div>
+    <div class="hero"><b>${cands.length}</b> ${homeOpenOnly?'open-weight ':''}models available right now. The frontier sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>
+    <div class="filters"><button class="fchip ho ${homeOpenOnly?'':'on'}" data-ho="0">All models</button><button class="fchip ho ${homeOpenOnly?'on':''}" data-ho="1">Open-source only</button></div>
+    <div class="hsec">Leaderboard · AA Index</div>
+    ${lb.length?lb.map((o,i)=>`<div class="lbrow ${i===0?'gold':''}"><div class="lbrank">${i+1}</div><div><div class="lbname"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${labHex(o.x.lab)}"></span>${o.x.name}${o.x.open?' <span class="badge b-open" style="font-size:8px;padding:1px 4px">OPEN</span>':''}</div><div class="lbsub">${o.x.lab}</div></div><div class="lbscore">${o.aa}<small>AA-INDEX</small></div></div>`).join(''):'<div class="empty">No AA-Index data for that filter — try All models.</div>'}
+    <div class="hsec">Best model for…</div>
+    <div class="bestgrid">${picks.map(o=>`<div class="bestcard" style="--lab:${labHex(o.p.m.lab)}"><div class="bclabel">${o.uc.label}</div><div class="bcname">${o.p.m.name}</div><div class="bcval">${o.p.disp}</div></div>`).join('')||'<div class="empty">—</div>'}</div>
+    <div class="hsec">Explore</div>
+    <div class="explore">
+      <button data-goto="now"><b>Now</b><span>current frontier, every spec &amp; price</span></button>
+      <button data-goto="history"><b>History</b><span>every landmark since GPT-3</span></button>
+      <button data-goto="charts"><b>Charts</b><span>trends, cadence, weights</span></button>
+      <button data-goto="predict"><b>Predict</b><span>forecasts + what's coming</span></button>
+      <button data-goto="more"><b>More</b><span>full leaderboard, fact-checks, sources</span></button>
+    </div>`;
+}
 
 // ---------------- NOW ----------------
 function modelCard(m){
@@ -478,7 +535,8 @@ function renderMore(){
 // ---------------- events ----------------
 $('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('#nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.view').forEach(v=>v.classList.remove('on'));$('#v-'+b.dataset.v).classList.add('on');window.scrollTo(0,0);});
 document.addEventListener('click',e=>{
-  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.hf!==undefined){histFrontierOnly=f.dataset.hf==='1';histAll=false;renderHistory();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
+  const g=e.target.closest('[data-goto]'); if(g){const t=g.dataset.goto;$$('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===t));$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));window.scrollTo(0,0);return;}
+  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.ho!==undefined){homeOpenOnly=f.dataset.ho==='1';renderHome();} else if(f.dataset.hf!==undefined){histFrontierOnly=f.dataset.hf==='1';histAll=false;renderHistory();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
   const mo=e.target.closest('.more'); if(mo){const c=mo.closest('.mcard');c.classList.toggle('exp');c.querySelector('.notable').classList.toggle('clip');mo.textContent=c.classList.contains('exp')?'less ▴':'more ▾';return;}
   if(e.target.id==='histmore'){histAll=true;renderHistory();}
 });
