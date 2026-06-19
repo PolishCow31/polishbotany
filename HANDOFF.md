@@ -27,8 +27,15 @@ AA-Index/MATH/context/price) with **16 forecasts attached to the curves**. `data
 seed banner gone. Verified at 375px: Now (23 cards), History (48-node timeline from
 GPT-1 2018), Trends (8 charts incl. prediction cones), Predict (16 gauges). Re-run
 `python3 scripts/build_data.py <workflow-output.json>` to rebuild from a fresh run.
-NOTE: app renamed **AI Tracker → Robots**; bump `SHELL_V` in sw.js on any index.html
-change (cache-first shell — caught me once this session).
+NOTES: app renamed **AI Tracker → Robots**. Views: **Now** (lab-filter chips + rich
+cards: price/modality/all-benchmarks, tap-to-expand), **History** (16 landmarks +
+show-all), **Charts** (accordions: trends-over-time / cadence-2026 / weights-sparsity /
+head-to-head), **Predict** (forecast gauges + Upcoming/horizon list), **More**
+(accordions: leaderboard / didn't-make-the-cut / sources / how-it-works). `sw.js` is now
+**network-first for everything** (cache = offline fallback only) — no more SHELL_V
+bumping, dev changes and twice-daily data both always show fresh. A few editorial sets
+(WEIGHTS, leaderboard, killed, sources, prices) are embedded static in index.html for now
+— data-ify them later so the updater maintains them.
 
 **P2 — deploy + automate (needs Christian's go):**
 - Create GitHub repo under polishcow31 (Chrome — token can't create repos). Free Pages
