@@ -236,7 +236,6 @@
 <main>
   <section class="view on" id="v-home"></section>
   <section class="view" id="v-now"></section>
-  <section class="view" id="v-history"></section>
   <section class="view" id="v-charts"></section>
   <section class="view" id="v-predict"></section>
   <section class="view" id="v-more"></section>
@@ -244,8 +243,7 @@
 
 <nav class="tabs" id="nav">
   <button data-v="home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/></svg><span>Home</span></button>
-  <button data-v="now"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Now</span></button>
-  <button data-v="history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5v14M4 7h13l-2.5 3L17 13H4"/></svg><span>History</span></button>
+  <button data-v="now"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Now</span></button>
   <button data-v="charts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 8-9"/><path d="M3 21h18"/></svg><span>Charts</span></button>
   <button data-v="predict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 1 4 10.5c-.7.6-1 1-1 2v.5H9V15c0-1-.3-1.4-1-2A6 6 0 0 1 12 3z"/><path d="M9.5 21h5"/></svg><span>Predict</span></button>
   <button data-v="more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg><span>More</span></button>
@@ -314,7 +312,7 @@ async function boot(){
     const [m,t,p,meta] = await Promise.all(['models','trends','predictions','meta'].map(f=>fetch('data/'+f+'.json').then(r=>r.json())));
     DATA = {models:m.models||[], trends:t.trends||[], predictions:p.predictions||[], methodology:p.methodology||'', meta};
   }catch(e){ console.error(e); }
-  renderUpd(); renderHome(); renderNow(); renderHistory(); renderCharts(); renderPredict(); renderMore();
+  renderUpd(); renderHome(); renderNow(); renderCharts(); renderPredict(); renderMore();
 }
 
 function renderUpd(){
@@ -359,8 +357,7 @@ function renderHome(){
     <div class="bestgrid">${picks.map(o=>`<div class="bestcard" style="--lab:${labHex(o.p.m.lab)}"><div class="bclabel">${o.uc.label}</div><div class="bcname">${o.p.m.name}</div><div class="bcval">${o.p.disp}</div></div>`).join('')||'<div class="empty">—</div>'}</div>
     <div class="hsec">Explore</div>
     <div class="explore">
-      <button data-goto="now"><b>Now</b><span>current frontier, every spec &amp; price</span></button>
-      <button data-goto="history"><b>History</b><span>every landmark since GPT-3</span></button>
+      <button data-goto="now"><b>Now</b><span>every model since GPT-1, with specs &amp; price</span></button>
       <button data-goto="charts"><b>Charts</b><span>trends, cadence, weights</span></button>
       <button data-goto="predict"><b>Predict</b><span>forecasts + what's coming</span></button>
       <button data-goto="more"><b>More</b><span>full leaderboard, fact-checks, sources</span></button>
@@ -386,39 +383,27 @@ function modelCard(m){
     ${m.notable?`<div class="notable clip">${m.notable}</div><div class="more">more ▾</div>`:''}
   </div>`;
 }
+let nowLandmarks=false, nowFrontier=false;
 function renderNow(){
-  let live=DATA.models.filter(m=>['live','preview','pulled'].includes(m.status)||yr(m.released)==='2026');
-  const labs=[...new Set(live.map(m=>m.lab))];
-  if(nowFilter) live=live.filter(m=>m.lab===nowFilter);
-  live.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
-  $('#v-now').innerHTML = `<div class="vh">The frontier now</div>
-    <div class="vsub">Current & recent models. Tap a lab to filter, tap "more" to expand.</div>
+  const all=DATA.models;
+  const cnt={}; all.forEach(m=>{const L=canonLab(m.lab); cnt[L]=(cnt[L]||0)+1;});
+  const labs=Object.keys(cnt).sort((a,b)=>cnt[b]-cnt[a]);
+  let list=all.slice();
+  if(nowFilter) list=list.filter(m=>canonLab(m.lab)===nowFilter);
+  if(nowLandmarks) list=list.filter(m=>m.milestone);
+  if(nowFrontier) list=list.filter(m=>!m.open);
+  list.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
+  $('#v-now').innerHTML = `<div class="vh">Every model · newest first</div>
+    <div class="vsub">The full catalog since GPT-1 (2018). <span style="color:var(--warn)">★</span> = landmark. Tap a lab to filter; the toggles narrow to landmarks or closed-weight only. Tap "more" on a card to expand.</div>
     <div class="filters">
-      <button class="fchip all ${nowFilter?'':'on'}" data-lab="">All ${DATA.models.filter(m=>yr(m.released)==='2026'||['live','preview','pulled'].includes(m.status)).length}</button>
-      ${labs.map(l=>`<button class="fchip ${nowFilter&&nowFilter!==l?'off':''}" data-lab="${l}"><span class="sw" style="background:${labHex(l)}"></span>${l}</button>`).join('')}
+      <button class="fchip all ${nowFilter?'':'on'}" data-lab="">All ${all.length}</button>
+      ${labs.map(l=>`<button class="fchip ${nowFilter&&nowFilter!==l?'off':''}" data-lab="${l}"><span class="sw" style="background:${labHex(l)}"></span>${l} ${cnt[l]}</button>`).join('')}
     </div>
-    ${live.length?live.map(modelCard).join(''):'<div class="empty">No models for that filter.</div>'}`;
-}
-
-// ---------------- HISTORY ----------------
-let histAll=false, histFrontierOnly=false;
-function renderHistory(){
-  let ms=DATA.models.filter(m=>m.milestone);
-  const total=ms.length, frontierN=ms.filter(m=>!m.open).length;
-  if(histFrontierOnly) ms=ms.filter(m=>!m.open);
-  ms.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
-  const shown = histAll?ms:ms.slice(0,16);
-  $('#v-history').innerHTML = `<div class="vh">History since GPT-3</div>
-    <div class="vsub">The landmark models that moved the field — newest first, back to GPT-3 (and the GPT-1/2/BERT pre-history where the modern curve begins).</div>
-    <div class="filters">
-      <button class="fchip hf ${histFrontierOnly?'':'on'}" data-hf="0">All ${total}</button>
-      <button class="fchip hf ${histFrontierOnly?'on':''}" data-hf="1">Frontier only ${frontierN}</button>
+    <div class="filters" style="margin-top:-2px">
+      <button class="fchip nl ${nowLandmarks?'on':''}" data-nl="${nowLandmarks?0:1}">★ Landmarks only</button>
+      <button class="fchip nf ${nowFrontier?'on':''}" data-nf="${nowFrontier?0:1}">Frontier only (no open)</button>
     </div>
-    <div class="tl">${shown.map(m=>`<div class="tnode" style="--lab:${labHex(m.lab)}">
-      <div class="yr">${fmtDate(m.released)}</div>
-      <div class="nm">${m.name}<span class="lab">${m.lab}</span>${m.open?' <span class="badge b-open" style="font-size:8.5px;padding:1px 4px">OPEN</span>':''}</div>
-      <div class="why">${m.notable||''}</div></div>`).join('')}</div>
-    ${!histAll&&ms.length>16?`<div class="showall"><button id="histmore">Show all ${ms.length} landmarks ▾</button></div>`:''}`;
+    ${list.length?list.map(modelCard).join(''):'<div class="empty">No models for that filter.</div>'}`;
 }
 
 // ---------------- CHARTS ----------------
@@ -592,9 +577,8 @@ document.addEventListener('click',e=>{
   const g=e.target.closest('[data-goto]'); if(g){const t=g.dataset.goto;$$('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===t));$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));window.scrollTo(0,0);return;}
   const dot=e.target.closest('circle[data-model]'); if(dot){const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model'));const d=$('#detail-'+dot.getAttribute('data-bench'));if(m&&d)d.innerHTML=trajDetailCard(m,dot.getAttribute('data-bench'));return;}
   const pdot=e.target.closest('circle[data-pred]'); if(pdot){const pp=pdot.getAttribute('data-pred').split('|');const d=$('#detail-'+pdot.getAttribute('data-bench'));if(d)d.innerHTML=`<div class="tdetail pred"><div class="td-top"><span class="td-nm">${pp[0]} — next model</span><span class="td-sc">≈${pp[1]}</span></div><div class="td-why">Predicted next release, ~3–4 months out — a calibrated extrapolation of ${pp[0]}'s recent trajectory, not a confirmed model yet.</div></div>`;return;}
-  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.to!==undefined){trajOpen[f.dataset.to]=f.dataset.tov==='1';renderPredict();} else if(f.dataset.ho!==undefined){homeOpenOnly=f.dataset.ho==='1';renderHome();} else if(f.dataset.hf!==undefined){histFrontierOnly=f.dataset.hf==='1';histAll=false;renderHistory();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
+  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.to!==undefined){trajOpen[f.dataset.to]=f.dataset.tov==='1';renderPredict();} else if(f.dataset.ho!==undefined){homeOpenOnly=f.dataset.ho==='1';renderHome();} else if(f.dataset.nl!==undefined){nowLandmarks=f.dataset.nl==='1';renderNow();} else if(f.dataset.nf!==undefined){nowFrontier=f.dataset.nf==='1';renderNow();} else {nowFilter=f.dataset.lab||null;renderNow();} return;}
   const mo=e.target.closest('.more'); if(mo){const c=mo.closest('.mcard');c.classList.toggle('exp');c.querySelector('.notable').classList.toggle('clip');mo.textContent=c.classList.contains('exp')?'less ▴':'more ▾';return;}
-  if(e.target.id==='histmore'){histAll=true;renderHistory();}
 });
 
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
