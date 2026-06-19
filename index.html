@@ -330,10 +330,10 @@ function renderNow(){
 // ---------------- HISTORY ----------------
 let histAll=false;
 function renderHistory(){
-  const ms=DATA.models.filter(m=>m.milestone).sort((a,b)=>(a.released||'').localeCompare(b.released||''));
+  const ms=DATA.models.filter(m=>m.milestone).sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   const shown = histAll?ms:ms.slice(0,16);
   $('#v-history').innerHTML = `<div class="vh">History since GPT-3</div>
-    <div class="vsub">The landmark models that moved the field — June 2020 to today. GPT-1/2/BERT were public too; GPT-3 is where the modern curve begins.</div>
+    <div class="vsub">The landmark models that moved the field — newest first, back to GPT-3 (and the GPT-1/2/BERT pre-history where the modern curve begins).</div>
     <div class="tl">${shown.map(m=>`<div class="tnode" style="--lab:${labHex(m.lab)}">
       <div class="yr">${fmtDate(m.released)}</div>
       <div class="nm">${m.name}<span class="lab">${m.lab}</span></div>
