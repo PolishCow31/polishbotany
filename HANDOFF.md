@@ -5,6 +5,21 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 19 2026
 
+### ✓ DONE (Jun 19, session 21) — tie card → popup; preview panel onto :8095
+(1) **"Best model for…" tie card now opens the bottom-sheet POPUP** (like the model Details) instead of expanding
+inline. `bestCard()` writes each tie to a `TIEMAP` (keyed by use-case label, reset each `renderHome`) + renders
+`data-tie="<label>"`; new `tieInfo()`/`openTieModal()` show the label, "N-way tie · value", and all tied models as
+`.tierow`s (lab dot + name + lab). Handler `[data-tieexpand]`→`[data-tie]`. Verified: 10-way "Longest context" tie
+opens a clean popup listing all 10. (Old `.tielist/.tiechip/.tiecard.exp` CSS now unused, left harmless.)
+(2) **Preview panel now shows the real :8095 app with data.** The panel had been showing the bare index.html file
+(no server context → couldn't fetch `data/` → "0 models"). Killed the detached persistent http.server on 8095 and
+ran `preview_start aitracker` so the PREVIEW tooling owns 8095 (serverId per session) and serves the directory →
+data loads (96 models verified in-panel). TRADEOFF: the preview server is NOT detached, so it dies on session
+switch (the old persistent-server guidance) — but the app is published live now, so his phone can use
+polishcow31.github.io/polishbotany; the panel is for in-session preview. To restore a detached server later:
+`nohup python3 -m http.server 8095 --directory /Users/christian/Sites/AI >/dev/null 2>&1 &` (but that re-conflicts
+with preview_start). **Redeploy = `git push`.**
+
 ### ✓ DONE (Jun 19, session 20) — NBP forest background · border wildflowers · 5-frame fox walk
 (1) **Forest background (nano-banana PRO).** Generated a moody misty-pine forest (`img/forest-bg.jpg`, 860px, NBP
 Pro 2K 9:16, downscaled). New fixed `#forest` layer (z-2) = the image (`center top/cover fixed`) under a dark
