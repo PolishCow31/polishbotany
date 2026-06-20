@@ -414,6 +414,15 @@
   .hero.pulse{padding:14px 16px}
   .pulse-txt{font-size:16.9px;line-height:1.64;color:var(--ink2)}
   .pulse-txt b{color:var(--ink);font-weight:700}
+  .pulse-txt.clamp{max-height:calc(1.64em * 4);overflow:hidden;position:relative}
+  .pulse-txt.clamp::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1.95em;
+    background:linear-gradient(to bottom,transparent,var(--panel) 86%);pointer-events:none}
+  .pulse-more{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;
+    margin-top:4px;padding:7px 0 2px;background:none;border:none;cursor:pointer;
+    color:var(--accent);font:650 14.4px var(--sans);letter-spacing:.02em}
+  .pulse-more[hidden]{display:none}
+  .pulse-more .pm-caret{font-size:11px;line-height:1;transition:transform .18s}
+  .pulse-more[aria-expanded="true"] .pm-caret{transform:rotate(180deg)}
   .pulse-meta{margin-top:11px;padding-top:9px;border-top:1px solid var(--line);
     font:600 12.5px var(--mono);letter-spacing:.02em;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
   .pulse-meta .pulse-dot{color:var(--accent);animation:pulseGlow 2.6s ease-in-out infinite}
@@ -572,7 +581,7 @@ function renderHome(){
   const pulseWhen = (PULSE&&PULSE.updated)?timeAgo(new Date(PULSE.updated)):(meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—');
   const pulseRoutine = (PULSE&&PULSE.routine==='AM')?'6am sweep':(PULSE&&PULSE.routine==='PM')?'6pm sweep':'latest sweep';
   const heroHTML = pulseTxt
-    ? `<div class="hero pulse"><div class="pulse-txt">${fmtPulse(pulseTxt)}</div></div>`
+    ? `<div class="hero pulse"><div class="pulse-txt clamp">${fmtPulse(pulseTxt)}</div><button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button></div>`
     : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>`;
   $('#v-home').innerHTML=`<div class="vh">Overview</div>
     ${heroHTML}
@@ -581,6 +590,9 @@ function renderHome(){
     ${lb.length?lb.map((o,i)=>`<div class="lbrow ${i===0?'gold':''}"><div class="lbrank">${i+1}</div><div><div class="lbname"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${labHex(o.x.lab)}"></span>${o.x.name}${o.x.open?' <span class="badge b-open" style="font-size:10.0px;padding:1px 4px">OPEN</span>':''}</div><div class="lbsub">${o.x.lab}</div></div><div class="lbscore">${o.aa}<small>AA-INDEX</small></div></div>`).join(''):'<div class="empty">No AA-Index data for that filter — try All models.</div>'}
     <div class="hsec">Best model for…</div>
     <div class="bestgrid">${picks.map(bestCard).join('')||'<div class="empty">—</div>'}</div>`;
+  // Pulse clamp: only offer "Read more" when the brief actually overflows 4 lines
+  const ptx=$('#v-home .pulse-txt'), pmore=$('#v-home .pulse-more');
+  if(ptx&&pmore&&ptx.scrollHeight<=ptx.clientHeight+2){ ptx.classList.remove('clamp'); pmore.hidden=true; }
 }
 
 // ---------------- NOW ----------------
@@ -1043,6 +1055,7 @@ document.addEventListener('click',e=>{
     if(v==='now'){nowCat=val;renderNow();} else if(v==='charts'){chartsTab=val;renderCharts();}
     else if(v==='predict'){predictTab=val;renderPredict();} else if(v==='news'){newsTopic=(val==='all'?null:val);renderNews();}
     return; }
+  const pm=e.target.closest('[data-pulse-toggle]'); if(pm){ const tx=pm.parentElement.querySelector('.pulse-txt'); if(tx){ const expanded=!tx.classList.toggle('clamp'); pm.setAttribute('aria-expanded',expanded?'true':'false'); const lab=pm.querySelector('.pm-label'); if(lab)lab.textContent=expanded?'Read less':'Read more'; } return; }
   const ib=e.target.closest('[data-info]'); if(ib){openModal(ib.getAttribute('data-info'));return;}
   if(e.target.closest('.modal-bg')||e.target.closest('.modal-x')){closeModal();return;}
 });
