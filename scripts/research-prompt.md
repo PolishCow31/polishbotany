@@ -29,6 +29,9 @@ Schema (omit any array that's empty; if nothing new, write `{}`):
   "news": [ { "title","source","url","date","topic","blurb" } ],
   "editorial": { "prices": {}, "pulse": "<one dense 4-6 sentence what's-up paragraph, **bold** key facts>" },
   "releases": [ { "model","lab","expectedWindow","expectedDate","prob","frontier","status","basis","source" } ],
+  "markets": [ { "question","platform","forecast","category","relevantBenchmark","resolveDate","url" } ],
+  "marketsStory": [ { "h","t" } ],
+  "trajForecasts": [ { "lab","benchmark","expectedDate","predicted","low","high","basis","source" } ],
   "glossary": [ { "term","acronym","category","def","aka": [] } ],
   "briefs": { "<model name>": "<two-paragraph plain-English brief>" },
   "sweepSources": [ { "u","url","q" } ],
@@ -85,6 +88,44 @@ shipped, a date slipped, market odds moved), output the **full current** list (i
 - `frontier` = true ONLY for a true flagship frontier model (GPT-6, next Gemini Pro, next Opus/Claude 5,
   Grok 5). `status` ∈ confirmed|expected|rumored. `basis` ≤24 words. Cite `source`.
 - Drop models that have actually SHIPPED (they belong in models.json now, not the radar).
+
+## Also refresh the PREDICTION MARKETS (`markets` + `marketsStory`) — the "Predict" tab ★ HIGH PRIORITY
+**This is one of the most important sections of the app — research it THOROUGHLY every run.** It shows what
+real prediction markets and forecasters expect about the AI race. Pull LIVE odds across **Polymarket,
+Metaculus, Kalshi, Manifold** (plus Epoch AI / METR forecasts that have a clean public URL). Be
+comprehensive — report a BROAD set of currently-OPEN markets (aim ~25–45), spanning all four categories.
+
+For each market output: `question` (the market's actual question), `platform` (Polymarket | Metaculus |
+Kalshi | Manifold | Epoch AI | METR), `forecast` (**LEAD with the headline probability as a number+`%`**,
+then brief context — the app draws the bar from the FIRST `%`; e.g. `"97% — Polymarket, by Jul 31"` or
+`"Anthropic 64% (Google 15%, OpenAI 10%, xAI 8%)"`), `category` (EXACTLY one of: `ranking` | `release` |
+`benchmark` | `capability`), `relevantBenchmark` (the benchmark it concerns, or `"other"`), `resolveDate`
+(`YYYY-MM-DD`), and the REAL market `url`.
+
+Cover all four categories:
+- `ranking` — who leads (best model / #1 lab by end of a period; LMArena/Chatbot-Arena #1).
+- `release` — what ships and when (GPT-6, next Gemini Pro, next Claude/Opus, Grok 5, etc., by a date).
+- `benchmark` — benchmark milestones (SWE-bench %, FrontierMath, ARC-AGI, HLE, MMLU saturation…).
+- `capability` — big-picture / AGI (AGI by year, automation/jobs markets, major capability claims).
+
+INTEGRITY (same discipline as the news feed):
+- **Real URLs only.** Only include a market whose URL you actually found in results; the url's domain MUST
+  match the platform — Polymarket→`polymarket.com`, Metaculus→`metaculus.com`, Kalshi→`kalshi.com`,
+  Manifold→`manifold.markets`, Epoch AI→`epoch.ai`, METR→`metr.org` — or the merge silently drops it.
+  NEVER guess or construct a market URL.
+- **Open markets only** — exclude anything already RESOLVED or whose `resolveDate` has passed.
+- **NEVER fabricate** a probability or date. If you can't read the live odds, leave that market out.
+- The merge refreshes existing markets BY URL (re-reading a market just updates its odds), appends new ones,
+  and prunes resolved/past markets — so just report the current open set with current numbers.
+
+Also **REWRITE `marketsStory`** — the narrative above the market list. EXACTLY **4 paragraphs** as
+`[ {"h":"<bold lead-in —>","t":"<paragraph>"}, ... ]`, grounded in THIS run's actual market numbers:
+(1) the race right now (who leads, by how much), (2) what ships next (imminent releases + odds),
+(3) benchmarks saturating, (4) the long game / AGI horizon. Plain reporting voice, real numbers, no hype.
+
+(Optional) If the forecast picture shifted, update `trajForecasts` — the chart forecast cones: one per
+`{lab, benchmark∈[aa,swe]}` you can ground, `{lab,benchmark,expectedDate(YYYY-MM),predicted,low,high,basis,source}`.
+Send the FULL set you're confident in (it replaces the old cones), or omit it entirely if unchanged.
 
 ## Also extend the glossary (`glossary`) — the "Definitions & acronyms" search in More
 ADD any genuinely missing AI term/acronym (additive — existing terms are kept, so don't resend them).
