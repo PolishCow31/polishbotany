@@ -71,21 +71,6 @@
   .seg button[data-mode="open"].on{color:#7ea6ff}
 
   /* model card */
-  .mcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px;position:relative;overflow:hidden}
-  .mcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--lab,var(--ink3))}
-  .mcard .top{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-  .mcard .nm{font-size:19.4px;font-weight:740}
-  .mcard .lab{font:600 15.0px var(--sans);color:var(--ink2);display:inline-flex;align-items:center;gap:5px}
-  .mcard .lab .dot{width:7px;height:7px;border-radius:50%;background:var(--lab,var(--ink3))}
-  .mcard .dt{margin-left:auto;font:600 13.8px var(--mono);color:var(--ink3)}
-  .mcard .notable{font-size:15.6px;color:var(--ink2);margin-top:7px;line-height:1.45;max-height:3.2em;overflow:hidden;position:relative}
-  .mcard.exp .notable{max-height:none}
-  .mcard .notable.clip::after{content:"";position:absolute;right:0;bottom:0;width:40px;height:1.4em;background:linear-gradient(90deg,transparent,var(--panel))}
-  .mcard .more{font:600 13.8px var(--mono);color:var(--accent);margin-top:4px;cursor:pointer}
-  .specs{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
-  .chiplet{font:600 13.8px var(--mono);background:var(--bg2);border:1px solid var(--line);border-radius:6px;padding:3px 7px;color:var(--ink2)}
-  .chiplet b{color:var(--ink)}
-  .chiplet.price b{color:var(--good)} .chiplet.price i{color:var(--warn);font-style:normal}
   .badge{font:700 11.9px var(--mono);padding:2px 6px;border-radius:5px;letter-spacing:.03em}
   .b-live{background:rgba(52,211,153,.12);color:var(--good)} .b-pulled{background:rgba(240,109,109,.12);color:var(--bad)}
   .b-preview{background:rgba(245,185,69,.12);color:var(--warn)} .b-open{background:rgba(91,140,255,.12);color:#7ea6ff}
@@ -231,9 +216,6 @@
   .mi-nm{font-size:23.8px;font-weight:760;color:var(--ink);padding-right:34px;line-height:1.25}
   .mi-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:15.0px;color:var(--ink2);margin-top:7px}
   .mi-meta .dot{width:8px;height:8px;border-radius:50%}
-  .mi-specs{font:600 14.4px var(--mono);color:var(--ink3);margin-top:7px}
-  .mi-bench{font-size:14.4px;color:var(--ink2);margin-top:8px;line-height:1.65;padding:8px 10px;background:var(--bg2);border:1px solid var(--line);border-radius:9px}
-  .mi-bench b{color:var(--ink);font-family:var(--mono)}
   .mi-brief{margin-top:12px}
   .mi-brief p{font-size:16.9px;color:var(--ink);line-height:1.62;margin:0 0 11px}
   .mi-brief p:last-child{margin-bottom:0}
@@ -357,21 +339,19 @@
 
   /* ════════════════ FOREST / WOODLAND @ DUSK — restrained reskin (overrides above) ════════════════ */
   /* soft & rounded, warm-bordered cards with a gentle drop shadow (cozier than the original) */
-  .mcard,.chartcard,details.acc,.pcard,.phero,.lbrow,.mktrow,.newsrow,.hrow,.kill,.cadstat,.note,.caveat,
+  .chartcard,details.acc,.pcard,.phero,.lbrow,.mktrow,.newsrow,.hrow,.kill,.cadstat,.note,.caveat,
   .bestcard,.modal-card,.reldet,.tdetail,.correction{border-radius:16px}
-  .mcard,.chartcard,details.acc,.pcard,.lbrow{box-shadow:0 2px 12px rgba(0,0,0,.26);border-color:var(--line)}
-  .mcard:hover,.lbrow:hover{box-shadow:0 4px 18px rgba(0,0,0,.34)}
-  .infobtn,.showall button,.gsearch,.fchip,.seg,.chiplet,.badge,.hpill,.conf,.sq,.pbar,.mkt-bar{border-radius:10px}
+  .chartcard,details.acc,.pcard,.lbrow{box-shadow:0 2px 12px rgba(0,0,0,.26);border-color:var(--line)}
+  .lbrow:hover{box-shadow:0 4px 18px rgba(0,0,0,.34)}
+  .infobtn,.showall button,.gsearch,.fchip,.seg,.badge,.hpill,.conf,.sq,.pbar,.mkt-bar{border-radius:10px}
   /* topographic contour backdrop behind charts (faint concentric rings = elevation map) */
   .chartcard{background-image:
     repeating-radial-gradient(circle at 22% 118%,rgba(98,193,119,.055) 0 1px,transparent 1px 18px),
     repeating-radial-gradient(circle at 86% -12%,rgba(143,182,143,.04) 0 1px,transparent 1px 22px);}
-  /* keep the lab stripe soft */
-  .mcard::before{opacity:.85}
   /* recolor the bits that were hard-coded blue so nothing reads as the old theme */
   .b-open{background:rgba(98,193,119,.13)!important;color:var(--accent)!important}
   .seg button[data-mode="open"].on{color:#9fd9ad}
-  .src a,.srcu,.mcard .more{color:#8fd6a0!important}
+  .src a,.srcu{color:#8fd6a0!important}
   /* status pills + source-quality badge off old-blue → forest */
   .h-soon{background:rgba(98,193,119,.14);color:#9fd9ad}
   .sq.secondary{background:rgba(98,193,119,.13);color:#8fd6a0}
@@ -447,7 +427,6 @@
   .mrow-dot{width:9px;height:9px;border-radius:50%;flex:none;align-self:flex-start;margin-top:6px}
   .mrow-main{min-width:0;flex:1}
   .mrow-nm{font:700 17.5px var(--sans);color:var(--ink);line-height:1.22;overflow-wrap:anywhere}
-  .mrow-star{color:var(--warn);font-size:13px}
   .mrow-sub{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:4px}
   .mrow-sub .badge{font-size:9.6px;padding:1px 5px}
   .mrow-labdt{font:500 13.4px var(--mono);color:var(--ink3)}
@@ -606,8 +585,6 @@ function renderHome(){
   TIEMAP={};   // rebuilt as bestCard() renders each tie
   const top=lb[0];
   const pulseTxt = (PULSE&&PULSE.text)?PULSE.text:'';
-  const pulseWhen = (PULSE&&PULSE.updated)?timeAgo(new Date(PULSE.updated)):(meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—');
-  const pulseRoutine = (PULSE&&PULSE.routine==='AM')?'6am sweep':(PULSE&&PULSE.routine==='PM')?'6pm sweep':'latest sweep';
   const heroHTML = pulseTxt
     ? `<div class="hero pulse"><div class="pulse-txt clamp">${fmtPulse(pulseTxt)}</div><button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button></div>`
     : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>`;
@@ -629,7 +606,7 @@ function modelCard(m){
   // lives in the Details popup (modelInfo). Tap anywhere on the row to open it.
   const flag = (m.status && m.status!=='live') ? statusBadge(m.status) : '';   // only flag non-live (preview/pulled); LIVE stays clean
   const openTag = m.open ? '<span class="badge b-open">OPEN</span>' : '';
-  return `<div class="mrow" data-info="${esc(m.name).replace(/"/g,'&quot;')}" role="button" tabindex="0" aria-label="${he(m.name)} — details">
+  return `<div class="mrow" data-info="${he(m.name)}" role="button" tabindex="0" aria-label="${he(m.name)} — details">
     <span class="mrow-dot" style="background:${labHex(m.lab)}"></span>
     <div class="mrow-main">
       <div class="mrow-nm">${he(m.name)}</div>

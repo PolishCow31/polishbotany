@@ -232,9 +232,11 @@ def main():
             if k in lo:
                 return dom
         return None
+    def valid_date(d):
+        return bool(re.match(r"^\d{4}-\d{2}-\d{2}$", (d or "")[:10]))
     def mkt_open(q, fc, rd):
         d = (rd or "")[:10]
-        if d and re.match(r"^\d{4}-\d{2}-\d{2}$", d) and d < today_s:
+        if valid_date(d) and d < today_s:
             return False
         if re.search(r"resolved", (q or "") + " " + (fc or ""), re.I):
             return False
@@ -242,10 +244,9 @@ def main():
     def mkt_ok(m):
         q, url, fc = m.get("question"), (m.get("url") or ""), (m.get("forecast") or "")
         dom = mkt_domain(m.get("platform"))
-        d = (m.get("resolveDate") or "")[:10]
         if not (q and fc and dom and dom in url and url.startswith("http")):
             return False
-        if not re.match(r"^\d{4}-\d{2}-\d{2}$", d):
+        if not valid_date(m.get("resolveDate")):
             return False
         return mkt_open(q, fc, m.get("resolveDate"))
     def mkt_clean(m):
