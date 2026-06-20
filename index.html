@@ -606,7 +606,8 @@ function modelCard(m){
   // lives in the Details popup (modelInfo). Tap anywhere on the row to open it.
   const flag = (m.status && m.status!=='live') ? statusBadge(m.status) : '';   // only flag non-live (preview/pulled); LIVE stays clean
   const openTag = m.open ? '<span class="badge b-open">OPEN</span>' : '';
-  return `<div class="mrow" data-info="${he(m.name)}" role="button" tabindex="0" aria-label="${he(m.name)} — details">
+  const nm=he(m.name).replace(/"/g,'&quot;');   // he() escapes &<> ; also escape " for the attributes (matches the .lnk[data-href] convention)
+  return `<div class="mrow" data-info="${nm}" role="button" tabindex="0" aria-label="${nm} — details">
     <span class="mrow-dot" style="background:${labHex(m.lab)}"></span>
     <div class="mrow-main">
       <div class="mrow-nm">${he(m.name)}</div>
@@ -798,7 +799,7 @@ function marketRow(mk){
 }
 const todayISO = () => new Date().toISOString().slice(0,10);
 function marketIsOpen(mk){
-  if(/resolved/i.test((mk.forecast||'')+' '+(mk.question||''))) return false;     // explicitly resolved
+  if(/\bresolved\b/i.test((mk.forecast||'')+' '+(mk.question||''))) return false;  // explicitly resolved (word-bounded so "unresolved" doesn't match)
   const dm=(mk.resolveDate||'').match(/^(\d{4}-\d{2}-\d{2})/);
   if(dm && dm[1] < todayISO()) return false;                                       // resolve date already passed
   return true;
@@ -1074,6 +1075,8 @@ document.addEventListener('click',e=>{
   if(e.target.closest('.modal-bg')||e.target.closest('.modal-x')){closeModal();return;}
 });
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+// keyboard-activate the div-based buttons (model rows, tie cards): Enter/Space → click
+document.addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('[role="button"][tabindex]')){ e.preventDefault(); e.target.click(); } });
 
 document.addEventListener('input',e=>{ if(e.target&&e.target.id==='glossq'){ const r=$('#glossres'); if(r) r.innerHTML=glossResults(e.target.value.trim()); } });
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}

@@ -234,11 +234,13 @@ def main():
         return None
     def valid_date(d):
         return bool(re.match(r"^\d{4}-\d{2}-\d{2}$", (d or "")[:10]))
+    def url_key(u):   # canonical dedup key: ignore case/trailing-slash/query so a re-read refreshes in place
+        return norm(u).rstrip("/").split("?")[0].split("#")[0]
     def mkt_open(q, fc, rd):
         d = (rd or "")[:10]
         if valid_date(d) and d < today_s:
             return False
-        if re.search(r"resolved", (q or "") + " " + (fc or ""), re.I):
+        if re.search(r"\bresolved\b", (q or "") + " " + (fc or ""), re.I):   # word-bounded so "unresolved" isn't matched
             return False
         return True
     def mkt_ok(m):
@@ -254,8 +256,8 @@ def main():
         return {"question": m.get("question"), "platform": m.get("platform"), "forecast": m.get("forecast"),
                 "category": cat, "relevantBenchmark": m.get("relevantBenchmark", "other"),
                 "resolveDate": m.get("resolveDate"), "url": m.get("url")}
-    mkt_added = mkt_upd = story_set = traj_set = 0
-    if delta.get("markets") or delta.get("marketsStory") or delta.get("trajForecasts"):
+    mkt_added = mkt_upd = story_set = 0
+    if delta.get("markets") or delta.get("marketsStory"):
         try:
             fc = load("forecasts.json")
         except FileNotFoundError:
@@ -263,11 +265,11 @@ def main():
         # markets: refresh existing by url + append new (validated), then prune resolved/past
         if delta.get("markets"):
             existing = fc.get("markets", []) or []
-            by_url = {norm(m.get("url")): m for m in existing if m.get("url")}
+            by_url = {url_key(m.get("url")): m for m in existing if m.get("url")}
             for m in delta["markets"]:
                 if not mkt_ok(m):
                     continue
-                clean = mkt_clean(m); k = norm(clean["url"])
+                clean = mkt_clean(m); k = url_key(clean["url"])
                 if k in by_url:
                     by_url[k].update(clean); mkt_upd += 1
                 else:
@@ -279,15 +281,12 @@ def main():
         ms = delta.get("marketsStory")
         if isinstance(ms, list) and 3 <= len(ms) <= 6 and all(isinstance(s, dict) and s.get("t") for s in ms):
             fc["marketsStory"] = [{"h": s.get("h", ""), "t": s.get("t")} for s in ms]; story_set = len(ms)
-        # trajForecasts: optional full-set replace (chart cones)
-        tf = delta.get("trajForecasts")
-        if isinstance(tf, list) and len(tf) >= 4:
-            TFK = ("lab", "benchmark", "expectedDate", "predicted", "low", "high", "basis", "source")
-            fc["trajForecasts"] = [{k: t.get(k) for k in TFK} for t in tf if t.get("lab") and t.get("benchmark")]
-            traj_set = len(fc["trajForecasts"])
-        if mkt_added or mkt_upd or story_set or traj_set:
+        # NOTE: trajForecasts are deliberately NOT auto-updated — they're currently unrendered, and a thin
+        # LLM-proposed set would wholesale-replace the curated chart cones (data loss). Kept manual, like
+        # historics/methodology, all of which this save preserves untouched.
+        if mkt_added or mkt_upd or story_set:
             fc["updated"] = now_iso
-            save("forecasts.json", fc)   # historics + methodology preserved untouched
+            save("forecasts.json", fc)   # historics + methodology + trajForecasts preserved untouched
 
     # 7. bump meta
     meta["lastUpdated"] = now_iso
@@ -303,7 +302,7 @@ def main():
     print(f"merged: +{added} models, ~{updated} updated, +{points} points, "
           f"{promoted} promoted, +{news_added} news (-{news_dropped} rejected), "
           f"{ed_changed} editorial fields, {rel_changed} releases, "
-          f"+{mkt_added} markets (~{mkt_upd} refreshed, {story_set}p story, {traj_set} cones), "
+          f"+{mkt_added} markets (~{mkt_upd} refreshed, {story_set}p story), "
           f"+{gloss_added} terms, {briefs_changed} briefs, {src_logged} sources; "
           f"dataVersion={meta['dataVersion']}")
     return 0

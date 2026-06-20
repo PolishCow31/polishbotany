@@ -31,7 +31,6 @@ Schema (omit any array that's empty; if nothing new, write `{}`):
   "releases": [ { "model","lab","expectedWindow","expectedDate","prob","frontier","status","basis","source" } ],
   "markets": [ { "question","platform","forecast","category","relevantBenchmark","resolveDate","url" } ],
   "marketsStory": [ { "h","t" } ],
-  "trajForecasts": [ { "lab","benchmark","expectedDate","predicted","low","high","basis","source" } ],
   "glossary": [ { "term","acronym","category","def","aka": [] } ],
   "briefs": { "<model name>": "<two-paragraph plain-English brief>" },
   "sweepSources": [ { "u","url","q" } ],
@@ -122,10 +121,6 @@ Also **REWRITE `marketsStory`** — the narrative above the market list. EXACTLY
 `[ {"h":"<bold lead-in —>","t":"<paragraph>"}, ... ]`, grounded in THIS run's actual market numbers:
 (1) the race right now (who leads, by how much), (2) what ships next (imminent releases + odds),
 (3) benchmarks saturating, (4) the long game / AGI horizon. Plain reporting voice, real numbers, no hype.
-
-(Optional) If the forecast picture shifted, update `trajForecasts` — the chart forecast cones: one per
-`{lab, benchmark∈[aa,swe]}` you can ground, `{lab,benchmark,expectedDate(YYYY-MM),predicted,low,high,basis,source}`.
-Send the FULL set you're confident in (it replaces the old cones), or omit it entirely if unchanged.
 
 ## Also extend the glossary (`glossary`) — the "Definitions & acronyms" search in More
 ADD any genuinely missing AI term/acronym (additive — existing terms are kept, so don't resend them).
