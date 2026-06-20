@@ -17,6 +17,15 @@ merges any delta written. (2) `research-prompt.md` markets section dialed back t
 markets + any new ones, skip-slow-pages** (the set persists + refreshes by URL, so it stays thorough over time).
 Next AM run should be back to a few minutes. Watch `scripts/update.log` if a run ever looks stuck again.
 
+**Also Jun 20 (post-6pm-run):** (a) **Pulse AA-scale regression caught + fixed** — the 6pm sweep wrote the Pulse on
+the OLD **v4.0** scale ("61.4 on the live v4.0 scale, ~4 points clear of Gemini 3.1 Pro") contradicting the
+leaderboard right below it (app is **v4.1**, Opus 4.8=**56**, runner-up GPT-5.5=55). Corrected the live Pulse +
+**hardened `research-prompt.md` to PIN v4.1** (use the models.json value, never re-research a v4.0 number). LESSON:
+`merge.py` validates STRUCTURE (real URLs, valid dates) but NOT factual consistency, so a wrong-scale Pulse sailed
+through — if it recurs, add a merge.py guard rejecting a v4.0-range AA number in the Pulse. (b) **UI: removed the
+header bottom-border + the `.hsec::after` section-header hairlines** (all tabs) per his "lines blocking the page" ask
+— part of the night's minimal/clean direction (see [[feedback_minimal_clean_ui]]).
+
 
 
 ### ✅ DONE (Jun 20, session 26c) — prediction markets folded into the twice-daily loop (gap closed)
