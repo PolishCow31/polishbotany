@@ -32,13 +32,10 @@
   html{background:#0a110d}
   html,body{margin:0;padding:0;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
   body{max-width:560px;margin:0 auto;min-height:100vh;position:relative;
-    border-left:1px solid var(--line2);border-right:1px solid var(--line2);
     background:transparent;}
-  /* real NBP forest as the grounded backdrop, with a dark scrim so the UI stays legible */
+  /* soft light-sage watercolor texture — even & airy behind the cards */
   #forest{position:fixed;inset:0;z-index:-2;pointer-events:none;
-    background:
-      linear-gradient(180deg,rgba(8,17,11,.74) 0%,rgba(8,17,11,.5) 28%,rgba(8,17,11,.44) 58%,rgba(8,17,11,.66) 100%),
-      url(img/forest-bg.jpg) center top/cover fixed;}
+    background:url(img/bgtex-a.jpeg) center top/cover fixed, #cfe3c2;}
   #pollen{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;opacity:.55}
   ::selection{background:rgba(98,193,119,.28);color:#fff}
   a{color:#8fd6a0;text-decoration:none}
@@ -285,7 +282,7 @@
 
   /* leaderboard */
   .lbrow{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:11px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px}
-  .lbrow.gold{border-color:rgba(245,185,69,.4);background:linear-gradient(100deg,rgba(245,185,69,.07),var(--bg2))}
+  .lbrow.gold{border-color:rgba(245,185,69,.4);background:linear-gradient(100deg,rgba(245,185,69,.07),var(--bg2)),var(--bg2)}
   .lbrank{font:780 23.8px var(--mono);color:var(--ink3);text-align:center}
   .lbrow.gold .lbrank{color:var(--warn)}
   .lbname{font-weight:730;font-size:17.5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
@@ -432,6 +429,13 @@
   #v-more .gsearch{margin-top:4px}
   .gloss-hint{font-size:15.6px;color:var(--ink3);line-height:1.55;padding:18px 6px;text-align:center}
   .gloss-hint b{color:var(--ink2);font-family:var(--mono)}
+  /* ── LIGHT SAGE BACKDROP: text that sits bare on the bg goes deep forest-green so it stays legible ── */
+  .vh{color:#27492f}
+  .hsec{color:#375a43}
+  .vsub{color:#3c5a43}
+  .gloss-hint{color:#456a4d}
+  .gloss-hint b{color:#27492f}
+  .empty{color:#456a4d}
 </style>
 </head>
 <body>
@@ -1074,7 +1078,7 @@ boot();
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dpr=Math.min(window.devicePixelRatio||1,2), FPS=24;
   let W=0,H=0,parts=[];
-  const COLORS=['rgba(196,214,150,A)','rgba(150,196,150,A)','rgba(217,184,120,A)']; // pollen-gold + soft greens
+  const COLORS=['rgba(74,110,66,A)','rgba(96,130,80,A)','rgba(150,128,70,A)']; // muted sage + soft olive — read on the light bg
   function make(){ return {
     x:Math.random()*W, y:Math.random()*H,
     r:0.6+Math.random()*1.7,
