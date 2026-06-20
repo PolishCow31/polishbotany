@@ -5,6 +5,24 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 19 2026
 
+### ✓ DONE (Jun 19, session 20) — NBP forest background · border wildflowers · 5-frame fox walk
+(1) **Forest background (nano-banana PRO).** Generated a moody misty-pine forest (`img/forest-bg.jpg`, 860px, NBP
+Pro 2K 9:16, downscaled). New fixed `#forest` layer (z-2) = the image (`center top/cover fixed`) under a dark
+vertical scrim gradient (`.88` top → `.42` mid → `.72` bottom) so the bright misty sky doesn't wash out the header
+and the UI stays legible. Body bg → transparent (forest shows through margins/gaps/header); column borders bumped to
+`--line2`; pollen opacity .7→.55. Grounds the app; cards stay opaque/readable over it.
+(2) **Wildflowers framing the borders** (his ask: on the borders, NOT covering data). 2 nano-banana wildflower
+sprigs (`flower-a/b.png`, white-cream + pink-lavender, magenta-keyed). New fixed `#flowers` overlay matching the
+column (max-width 560 centered) with 6 sprigs anchored in the **edge gutter / corners** (`.fl-tl/-tr/-ml/-mr/-bl/-br`,
+small ~33-44px, negative offsets so they sit at/just outside the column frame). On desktop they hug the column edge
+in the margin; on mobile in the ~14px card-padding gutter — clear of card text (verified: no real text coverage).
+(3) **Fox walk = 5 frames now.** Added 3 nano-banana frames; dropped the first "leap" reroll (body too low/stretched)
+and regenerated it body-height-locked. WALK cycle = `[a,e,b,d,c]` with a per-frame `BOB` bounce array, cadence
+165→**115ms**. (`fox-walk-c/d/e.png` added; all magenta-keyed, nearest-resized.) Walk reads much smoother (foreground
+tab; rAF still pauses when hidden). Verified: forest+flowers+fox load, data intact (96 models, Pulse), zero console
+errors. **Redeploy = `git push`.** NOTE: preview-panel shows "0 models" only because that sandbox can't fetch
+`data/` — the real localhost server + live site load data fine.
+
 ### ✓ DONE (Jun 19, session 19) — removed all foliage; gave the fox a real walk cycle
 (1) **Removed ALL vines/branches** per his call — deleted the `decorate()` foliage IIFE + `.vine-deco` CSS + the
 3 vine PNGs (`git rm` vine-corner/vine-hang/sprig). Verified 0 `.vine-deco`, no 404s, no console errors.
