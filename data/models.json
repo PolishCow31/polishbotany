@@ -1569,6 +1569,41 @@
       "notable": "Open-weight (MIT) model that beat GPT-5.5 on several long-horizon coding benches at ~1/6 the cost. New IndexShare attention cuts per-token FLOPs 2.9x at 1M context. Trails Opus 4.8 on raw SWE-bench Pro (62.1 vs 69.2) but leads on Terminal-Bench 2.1 best-harness and agentic math.",
       "pricing": "open weights (MIT)",
       "status": "live"
+    },
+    {
+      "name": "DeepSeek-V4-Pro",
+      "lab": "DeepSeek",
+      "released": "2026-04-24",
+      "params": "1.6T total / 49B active (MoE)",
+      "context": "1M",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 52
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "DeepSeek's return to the open frontier after V3.1: a 1.6T-param MoE (49B active) with a 1M-token default context via a new hybrid attention stack (Compressed Sparse + Heavily Compressed Attention) that needs only ~27% of V3.2's per-token FLOPs and ~10% of its KV cache at 1M context. Open weights. AA Intelligence Index 52 (live v4.0 scale) — the #2 open-weights model behind Moonshot's Kimi K2.6 (54), ahead of GLM-5 (50) and NVIDIA Nemotron 3 Ultra (48). Shipped as a 'preview'; no stable GA as of mid-June 2026.",
+      "sources": [
+        "https://api-docs.deepseek.com/news/news260424",
+        "https://artificialanalysis.ai/models/deepseek-v4-pro"
+      ]
+    },
+    {
+      "name": "DeepSeek-V4-Flash",
+      "lab": "DeepSeek",
+      "released": "2026-04-24",
+      "params": "284B total / 13B active (MoE)",
+      "context": "1M",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Small, fast sibling to V4-Pro launched the same day: 284B total / 13B active MoE, 1M-token default context, 384K max output. Same Compressed-Sparse/Heavily-Compressed attention for cheap long-context inference. Open weights, preview status. Positioned as DeepSeek's high-volume budget tier against Gemini 3 Flash and Qwen small models.",
+      "sources": [
+        "https://api-docs.deepseek.com/news/news260424"
+      ]
     }
   ]
 }
