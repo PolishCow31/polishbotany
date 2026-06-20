@@ -41,7 +41,11 @@ Rules:
 - Match `name` exactly to existing entries when updating/promoting.
 - Dates `YYYY-MM-DD` or `YYYY-MM`. Numbers as numbers, not strings.
 - Valid JSON only. No prose, no markdown — just write the file.
-- Flag the Artificial Analysis Index version if you cite one (v4.0 vs v4.1 differ).
+- **AA-Index scale is PINNED to v4.1.** The app's leaderboard + `models.json` use Artificial Analysis's
+  **live v4.1** scale (Claude Opus 4.8 = **56**, GPT-5.5 = 55, Gemini 3.1 Pro = 46). Whenever you write an
+  AA-Index number ANYWHERE — especially the `pulse` — USE the value already in `models.json` (the v4.1 number).
+  **NEVER** cite the old **v4.0** scale (Opus 4.8 ≈ 61) or a number you re-researched off a v4.0 source — it
+  contradicts the leaderboard right below the pulse and makes the app look broken. Match the leaderboard.
 
 ## Also refresh the News feed (`news`) — the "News" tab
 Find 6–12 of the most important, RECENT (last ~2 weeks) AI stories from large, reputable,
