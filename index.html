@@ -392,9 +392,9 @@
   .fox-shadow{position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);width:78%;height:6px;border-radius:50%;
     background:radial-gradient(ellipse at center,rgba(0,0,0,.4),transparent 72%)}
   /* ── file-cabinet sub-tabs (Current / Charts / Predict / News): active tab is stitched to the panel ── */
-  .ftabs{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;margin:2px 0 0;padding:3px 1px 0;position:relative;z-index:2}
+  .ftabs{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;margin:2px 0 0;padding:3px 1px 0;position:relative;z-index:2;touch-action:pan-x;overscroll-behavior-x:contain}
   .ftabs::-webkit-scrollbar{display:none}
-  .ftab{flex:none;display:inline-flex;align-items:center;gap:7px;background:var(--bg2);
+  .ftab{flex:none;-webkit-user-select:none;user-select:none;display:inline-flex;align-items:center;gap:7px;background:var(--bg2);
     border:1px solid var(--line);border-bottom:none;border-radius:11px 11px 0 0;
     padding:9px 14px;font:650 15.6px var(--sans);color:var(--ink3);cursor:pointer;white-space:nowrap;
     position:relative;margin-bottom:-1px;transition:color .12s,background .12s}
@@ -436,6 +436,7 @@
   .gloss-hint{color:#456a4d}
   .gloss-hint b{color:#27492f}
   .empty{color:#456a4d}
+  .vh-upd{color:#5c7d62;font-weight:400}
 </style>
 </head>
 <body>
@@ -575,6 +576,7 @@ function tieInfo(t){
 function openTieModal(t){ if(!t)return; $('#modalcard').innerHTML=tieInfo(t); $('#modal').hidden=false; document.body.style.overflow='hidden'; $('#modalcard').scrollTop=0; }
 function renderHome(){
   const meta=DATA.meta||{};
+  const updAgo=meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'';
   let cands=DATA.models.filter(x=>x.status==='live');
   cands=cands.filter(x=> homeMode==='open'?x.open:!x.open);
   const lb=cands.map(x=>({x,aa:benchOf(x,'aa')})).filter(o=>o.aa!=null).sort((a,b)=>b.aa-a.aa).slice(0,5);
@@ -587,7 +589,7 @@ function renderHome(){
   const heroHTML = pulseTxt
     ? `<div class="hero pulse"><div class="pulse-txt clamp">${fmtPulse(pulseTxt)}</div><button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button></div>`
     : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>`;
-  $('#v-home').innerHTML=`<div class="vh">Overview</div>
+  $('#v-home').innerHTML=`<div class="vh">Overview${updAgo?`<span class="vh-upd"> · updated ${updAgo}</span>`:''}</div>
     ${heroHTML}
     ${segCtl('home',homeMode,FO)}
     <div class="hsec">Leaderboard · AA Index</div>
@@ -1023,11 +1025,11 @@ function renderSources(){
   sw.forEach(s=>{ const wk=sWeekKey(s.date); let W=weeks.find(w=>w.key===wk); if(!W){W={key:wk,days:[],n:0};weeks.push(W);} let D=W.days.find(d=>d.date===s.date); if(!D){D={date:s.date,sweeps:[],n:0};W.days.push(D);} D.sweeps.push(s); const c=(s.sources||[]).length; D.n+=c; W.n+=c; });
   let out='';
   weeks.forEach((W,wi)=>{
-    out+=`<details class="subacc"${wi===0?' open':''}><summary><span class="tw">▶</span>${sWeekLabel(W.key)}<span class="ct">${W.n}</span></summary><div class="subbody">`;
+    out+=`<details class="subacc"><summary><span class="tw">▶</span>${sWeekLabel(W.key)}<span class="ct">${W.n}</span></summary><div class="subbody">`;
     W.days.forEach((D,di)=>{
-      out+=`<details class="subacc"${wi===0&&di===0?' open':''}><summary><span class="tw">▶</span>${sDayLabel(D.date)}<span class="ct">${D.n}</span></summary><div class="subbody">`;
+      out+=`<details class="subacc"><summary><span class="tw">▶</span>${sDayLabel(D.date)}<span class="ct">${D.n}</span></summary><div class="subbody">`;
       D.sweeps.forEach((s,si)=>{
-        out+=`<details class="subacc"${wi===0&&di===0&&si===0?' open':''}><summary><span class="tw">▶</span>${sSweepLabel(s)}<span class="ct">${(s.sources||[]).length}</span></summary><div class="subbody srclist">${(s.sources||[]).map(srcRow).join('')}</div></details>`;
+        out+=`<details class="subacc"><summary><span class="tw">▶</span>${sSweepLabel(s)}<span class="ct">${(s.sources||[]).length}</span></summary><div class="subbody srclist">${(s.sources||[]).map(srcRow).join('')}</div></details>`;
       });
       out+=`</div></details>`;
     });
@@ -1123,6 +1125,8 @@ boot();
     const dt=last?Math.min(0.05,(t-last)/1000):0; last=t;
     const hero=homeHero();
     if(!hero){ fox.classList.add('fox-off'); return; }
+    const vv=window.visualViewport;
+    if(vv && vv.scale>1.01){ fox.classList.add('fox-off'); return; }   // pinch-zoomed: fixed positioning detaches the fox — hide until back to 1x
     fox.classList.remove('fox-off');
     const r=hero.getBoundingClientRect();
     const fw=fox.offsetWidth||58, fh=fox.offsetHeight||46;
