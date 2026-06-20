@@ -440,6 +440,18 @@
   .gloss-hint b{color:#27492f}
   .empty{color:#456a4d}
   .vh-upd{color:#5c7d62;font-weight:400}
+  /* Current tab: compact name-first rows; full detail lives in the Details popup */
+  .mrow{display:flex;align-items:center;gap:11px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px;cursor:pointer;transition:border-color .12s,background .12s}
+  .mrow:hover,.mrow:focus-visible{border-color:var(--line2);background:var(--panel);outline:none}
+  .mrow:active{background:var(--panel2)}
+  .mrow-dot{width:9px;height:9px;border-radius:50%;flex:none;align-self:flex-start;margin-top:6px}
+  .mrow-main{min-width:0;flex:1}
+  .mrow-nm{font:700 17.5px var(--sans);color:var(--ink);line-height:1.22;overflow-wrap:anywhere}
+  .mrow-star{color:var(--warn);font-size:13px}
+  .mrow-sub{display:flex;align-items:center;flex-wrap:wrap;gap:6px;margin-top:4px}
+  .mrow-sub .badge{font-size:9.6px;padding:1px 5px}
+  .mrow-labdt{font:500 13.4px var(--mono);color:var(--ink3)}
+  .mrow-chev{color:var(--ghost);font-size:20px;line-height:1;flex:none;align-self:center}
 </style>
 </head>
 <body>
@@ -606,21 +618,18 @@ function renderHome(){
 
 // ---------------- NOW ----------------
 function modelCard(m){
-  const b=m.benchmarks||{}, pr=priceFor(m.name);
-  const benchChips=Object.entries(b).slice(0,4).map(([k,v])=>`<span class="chiplet">${k.replace(/\s*\(.*\)/,'')} <b>${v}</b></span>`).join('');
-  return `<div class="mcard" style="--lab:${labHex(m.lab)}">
-    <div class="top"><span class="nm">${m.name}</span>
-      <span class="lab"><span class="dot"></span>${m.lab}</span>
-      <span class="dt">${fmtDate(m.released)}</span></div>
-    <div class="specs">
-      ${m.milestone?'<span class="badge b-milestone">★</span>':''}${statusBadge(m.status)}${m.open?'<span class="badge b-open">OPEN</span>':''}
-      ${pr?`<span class="chiplet price">$<b>${pr.split('/')[0]}</b>/<i>${pr.split('/')[1]}</i></span>`:''}
-      ${m.params&&m.params!=='—'?`<span class="chiplet">${m.params}</span>`:''}
-      ${m.context&&m.context!=='—'?`<span class="chiplet">${m.context} ctx</span>`:''}
-      ${m.modality?`<span class="chiplet" style="color:var(--ink3)">${m.modality}</span>`:''}
-      ${benchChips}
+  // Current tab = a clean name-first list; the full breakdown (specs, all benchmarks, brief)
+  // lives in the Details popup (modelInfo). Tap anywhere on the row to open it.
+  const star = m.milestone ? ' <span class="mrow-star" title="landmark">★</span>' : '';
+  const flag = (m.status && m.status!=='live') ? statusBadge(m.status) : '';   // only flag non-live (preview/pulled); LIVE stays clean
+  const openTag = m.open ? '<span class="badge b-open">OPEN</span>' : '';
+  return `<div class="mrow" data-info="${esc(m.name).replace(/"/g,'&quot;')}" role="button" tabindex="0" aria-label="${he(m.name)} — details">
+    <span class="mrow-dot" style="background:${labHex(m.lab)}"></span>
+    <div class="mrow-main">
+      <div class="mrow-nm">${he(m.name)}${star}</div>
+      <div class="mrow-sub">${flag}${openTag}<span class="mrow-labdt">${he(m.lab)} · ${fmtDate(m.released)}</span></div>
     </div>
-    <button class="infobtn" data-info="${esc(m.name).replace(/"/g,'&quot;')}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.6" r="0.2" stroke-width="2.6"/></svg>Details</button>
+    <span class="mrow-chev">›</span>
   </div>`;
 }
 function synthBrief(m){
