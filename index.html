@@ -416,8 +416,6 @@
   #v-more .gsearch{margin-top:4px}
   .gloss-hint{font-size:12.5px;color:var(--ink3);line-height:1.55;padding:18px 6px;text-align:center}
   .gloss-hint b{color:var(--ink2);font-family:var(--mono)}
-  /* realistic foliage (nano-banana assets) creeping onto random card borders */
-  .vine-deco{position:absolute;z-index:6;pointer-events:none;opacity:.93;filter:drop-shadow(0 2px 3px rgba(0,0,0,.45));transform-origin:center}
 </style>
 </head>
 <body>
@@ -1099,9 +1097,9 @@ boot();
     else if(mode==='walk'){
       x+=dir*SPEED*dt;
       if(x>=maxX){x=maxX;dir=-1;} else if(x<=minX){x=minX;dir=1;}
-      if(t-stepT>190){ stepT=t; frame^=1; }
+      if(t-stepT>165){ stepT=t; frame^=1; }
       setSrc(WALK[frame]);
-      bob = frame ? -1.5 : 0;                                         // little 2-step gait bob
+      bob = frame ? -2.5 : 0;                                         // body lifts on the gathered/passing frame → bouncy trot
       if(!modeUntil) modeUntil=t+4000+Math.random()*6000;
       if(t>modeUntil){ mode='sit'; modeUntil=t+3000+Math.random()*5000; }
     } else {                                                          // sitting
@@ -1116,43 +1114,6 @@ boot();
   document.addEventListener('visibilitychange',()=>{ last=0; });      // avoid a dt spike after the tab was hidden
 })();
 
-/* ════════ realistic foliage — scatter nano-banana vine/leaf assets onto random card borders ════════ */
-(function(){
-  const ASSETS=[
-    {src:'img/vine-corner.png', kind:'corner', wmin:94, wmax:122},
-    {src:'img/sprig.png',       kind:'corner', wmin:46, wmax:64},
-    {src:'img/vine-hang.png',   kind:'hang',   wmin:30, wmax:44},
-  ];
-  const SEL='.mcard,.chartcard,.pcard,.newsrow,.mktrow,.ftab-panel,.phero,.bestcard,.note';
-  function hsh(s){let h=2166136261;for(let i=0;i<s.length;i++){h^=s.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
-  function decorate(){
-    document.querySelectorAll(SEL).forEach((c,i)=>{
-      if(c.dataset.vine!==undefined) return;                 // decided already (stable per element)
-      const h=hsh((c.textContent||'').slice(0,50)+'|'+i+'|'+(''+c.className).slice(0,24));
-      if(h%100>=26){ c.dataset.vine='0'; return; }           // ~26% of cards get foliage
-      c.dataset.vine='1';
-      const a=ASSETS[h%ASSETS.length], w=a.wmin+((h>>4)%(a.wmax-a.wmin+1)), rot=((h>>7)%9)-4;
-      const img=document.createElement('img');
-      img.className='vine-deco'; img.alt=''; img.src=a.src; img.style.width=w+'px';
-      if(getComputedStyle(c).position==='static') c.style.position='relative';
-      c.style.overflow='visible'; c.style.zIndex='1';        // let the vine overhang neighbours
-      if(a.kind==='hang'){                                  // drape down the RIGHT edge, below the date row
-        img.style.right='-12px'; img.style.top=(24+((h>>2)%16))+'%';
-        img.style.transform='rotate('+rot+'deg)';
-      } else {
-        const k=[2,3][h%2], ov=12;                          // BR / BL only — clear of titles (TL) and dates (TR)
-        img.style.transform=['','','scale(-1,-1)','scaleY(-1)'][k]+' rotate('+rot+'deg)';
-        if(k===2){img.style.bottom=-ov+'px';img.style.right=-ov+'px';}
-        else{img.style.bottom=-ov+'px';img.style.left=-ov+'px';}
-      }
-      c.appendChild(img);
-    });
-  }
-  const main=document.querySelector('main'); let t;
-  const obs=new MutationObserver(()=>{ clearTimeout(t); t=setTimeout(()=>{ obs.disconnect(); decorate(); obs.observe(main,{childList:true,subtree:true}); }, 90); });
-  decorate();
-  obs.observe(main,{childList:true,subtree:true});
-})();
 </script>
 </body>
 </html>

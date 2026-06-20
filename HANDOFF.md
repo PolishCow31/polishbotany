@@ -5,6 +5,36 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 19 2026
 
+### ✓ DONE (Jun 19, session 19) — removed all foliage; gave the fox a real walk cycle
+(1) **Removed ALL vines/branches** per his call — deleted the `decorate()` foliage IIFE + `.vine-deco` CSS + the
+3 vine PNGs (`git rm` vine-corner/vine-hang/sprig). Verified 0 `.vine-deco`, no 404s, no console errors.
+(2) **Fox walk now actually animates.** The old `fox-walk-b` was ~identical to `-a` (the model barely moved the
+legs) so the 2-frame swap showed no motion. Regenerated `fox-walk-b` via nano-banana as a distinct **passing pose**
+(legs gathered under the body, lifted) using `-a` as the style reference — confirmed visibly distinct (stride vs
+gathered). Controller tuned: frame cadence 190→**165ms**, gait bob -1.5→**-2.5px** (body lifts on the passing
+frame → bouncy trot). Walk reads animated on a foreground tab (rAF still pauses when hidden). **Redeployed via
+`git push`** (site is live at polishcow31.github.io/polishbotany).
+
+### ✓ DONE (Jun 19, session 18) — RENAMED to Botany · PUBLISHED · walking fox
+**(1) Renamed Robots → Botany.** `<title>`/apple-title/`<h1>`/manifest name+short_name = "Botany"; logo+favicon
+swapped from the chart-line to a green leaf glyph; manifest theme/bg → `#0b140f`.
+**(2) PUBLISHED (he gave the go).** New PUBLIC repo **github.com/PolishCow31/polishbotany** (created via Chrome —
+token still can't, 403). Committed all pending work to `main`, `git push` via the osxkeychain cred (worked), enabled
+Pages via Chrome (Settings▸Pages → Deploy from branch `main` `/ (root)` → Save). **Live (unlisted): https://polishcow31.github.io/polishbotany/**
+(robots.txt `Disallow:/` + noindex meta both present). Added `.gitignore` for the local backups (`index.html.bak-*`,
+`*.matrix-shelved`, `_delta.json`, `*-raw.jpeg`). First Pages build takes ~1-2 min. **Re-deploy now = `git push`.**
+**(3) Fox rebuilt** to walk + sit. Three nano-banana pixel sprites (`img/fox-walk-a/b.png`, `fox-sit.png` — finer
+pixels, "more real"; keyed via the magenta PIL workflow, nearest-resized to preserve pixels). New element = an
+`<img id="fox-img">` (not the SVG rects). Controller (rAF in the effects script): the fox **ambles** left↔right along
+the **top edge of the overview** (feet on `.hero`'s top border, tracked each frame via `getBoundingClientRect`),
+**flips** to face its direction, alternates the 2 walk frames + a gait bob, and **randomly sits** (swaps to the sit
+sprite, pauses 3-8s) then resumes. Added `#v-home .hero{margin-top:54px}` to open a walking band ABOVE the card so
+the fox is on-top-not-inside and **never overlaps the "OVERVIEW" words** (it sits in the band below the vh). rAF
+pauses when the tab's hidden (so it looked frozen in the headless verify tab — it's correct; runs on a foreground
+tab). Verified: rename live, fox positions on the rim clear of OVERVIEW (geometry + screenshot), data intact, zero
+console errors. Backup before this: `index.html.bak-prevines` (pre-fox-sprites work is in git history).
+**NEXT per his plan: keep perfecting UI, then perfect the routines (install the 6am/6pm launchd updater — still not installed), then done.**
+
 ### ✓ DONE (Jun 19, session 17) — realistic foliage on random card borders (replaced the bad SVG branches)
 He called the bottom SVG branches "done poorly" (a cheap stroke-path fake — exactly what [[feedback_realistic_visuals]]
 warns against) and asked for "mostly realistic branches/vines/leaves on random borders." **Removed the `#roots`
