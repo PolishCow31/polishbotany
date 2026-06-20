@@ -5,6 +5,20 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 19 2026
 
+### ✓ DONE (Jun 19, session 22) — removed flowers · brighter forest · fox smoothness fix
+(1) **Removed ALL flowers** (CSS `#flowers`/`.fl-*` + the 6-img element + `git rm flower-a/b.png`). He'll re-add
+later as **overhead-view flower BUDS** (top-down), a different style — NOT the side-view sprigs. Don't re-add yet.
+(2) **Background swapped — brighter, less gloomy.** New nano-banana **Pro** sunlit forest (golden light, fresh
+greens, mossy path) replaces the gloomy misty one (`img/forest-bg.jpg` overwritten). Scrim lightened
+(`.88/.42/.72` → `.74/.5/.44/.66`) so the sunlight shows but UI stays legible (header has its own dark bg; cards are
+opaque). Verified readable.
+(3) **Fox smoothness fix** (he said glitchy). Root cause: the 5 frames had **different canvas sizes** (220×146/156/
+…) so each swap resized + shifted the fox; AND the JS `BOB` lifted the WHOLE sprite (feet off the ground = hopping).
+Fixes: **normalized all 5 walk frames to a uniform 194×140 canvas** (crop→scale to common width→pad bottom-center so
+feet align), set `bob=0` (gait is baked into the bottom-anchored frames, feet stay planted), `image-rendering:auto`
+(frames are LANCZOS-scaled now), cadence 115→135ms, fox height 46→48. Verified: all 5 frames 194×140, no console
+errors, data intact (96 models). Redeploy = `git push`.
+
 ### ✓ DONE (Jun 19, session 21) — tie card → popup; preview panel onto :8095
 (1) **"Best model for…" tie card now opens the bottom-sheet POPUP** (like the model Details) instead of expanding
 inline. `bestCard()` writes each tie to a `TIEMAP` (keyed by use-case label, reset each `renderHome`) + renders
