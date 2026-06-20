@@ -20,6 +20,24 @@ def save(name, obj):
 def norm(s):
     return (s or "").lower().replace("  ", " ").strip()
 
+# News integrity guard: the headless updater researches via WebSearch, which can hallucinate
+# URLs. A news item is only accepted if its source is known AND the url is on that source's
+# real domain (a "CNBC" item must link to cnbc.com). Catches the common right-outlet-wrong-link
+# fabrication. The feed is a rolling window, so anything that slips is short-lived anyway.
+NEWS_MAX = 24
+NEWS_DOMAINS = {
+    "CNBC": "cnbc.com", "AP": "apnews.com", "Reuters": "reuters.com", "Bloomberg": "bloomberg.com",
+    "WSJ": "wsj.com", "FT": "ft.com", "The Economist": "economist.com", "Axios": "axios.com",
+    "Nature": "nature.com", "MIT Tech Review": "technologyreview.com",
+    "IEEE Spectrum": "spectrum.ieee.org", "The Verge": "theverge.com",
+    "Ars Technica": "arstechnica.com", "Science": "science.org",
+}
+NEWS_KEYS = ("title", "source", "url", "date", "topic", "blurb")
+def news_ok(it):
+    src, url = it.get("source"), (it.get("url") or "")
+    dom = NEWS_DOMAINS.get(src)
+    return bool(dom and dom in url and url.startswith("http") and it.get("title") and it.get("date"))
+
 def main():
     delta_path = os.path.join(DATA, "_delta.json")
     if not os.path.exists(delta_path):
@@ -83,9 +101,125 @@ def main():
                 x["measuredDate"] = pr.get("date")
                 promoted += 1
 
-    # 5. bump meta
     et = timezone(timedelta(hours=-4))
-    meta["lastUpdated"] = datetime.now(et).replace(microsecond=0).isoformat()
+    now_dt = datetime.now(et)
+    now_iso = now_dt.replace(microsecond=0).isoformat()
+
+    # 5. news — rolling refresh: validate, dedupe by url, newest-first, cap the window
+    news_added = news_dropped = 0
+    if delta.get("news"):
+        try:
+            news = load("news.json")
+        except FileNotFoundError:
+            news = {"items": []}
+        items = news.get("items", []) or []
+        seen = {norm(x.get("url")) for x in items}
+        for it in delta["news"]:
+            if not news_ok(it):
+                news_dropped += 1; continue
+            k = norm(it.get("url"))
+            if k in seen:
+                continue
+            items.append({kk: it.get(kk) for kk in NEWS_KEYS}); seen.add(k); news_added += 1
+        if news_added:
+            items.sort(key=lambda x: (x.get("date") or ""), reverse=True)
+            news["items"] = items[:NEWS_MAX]
+            news["updated"] = now_iso
+            save("news.json", news)
+
+    # 6. editorial — merge prices (never drop), replace any provided snapshot list
+    ed_changed = 0
+    ed_delta = delta.get("editorial") or {}
+    if ed_delta:
+        try:
+            ed = load("editorial.json")
+        except FileNotFoundError:
+            ed = {}
+        if isinstance(ed_delta.get("prices"), dict):
+            ed.setdefault("prices", {}).update({norm(k): v for k, v in ed_delta["prices"].items()}); ed_changed += 1
+        for key in ("leaderboard", "upcoming", "killed", "sources"):
+            if ed_delta.get(key):
+                ed[key] = ed_delta[key]; ed_changed += 1
+        # pulse — the Home "what's up" paragraph; replace each run, stamp time + which routine (AM/PM)
+        pulse_in = ed_delta.get("pulse")
+        pulse_text = pulse_in.get("text") if isinstance(pulse_in, dict) else (pulse_in if isinstance(pulse_in, str) else None)
+        if pulse_text and pulse_text.strip():
+            routine = "AM" if now_dt.hour < 12 else "PM"
+            ed["pulse"] = {"text": pulse_text.strip(), "updated": now_iso, "routine": routine}; ed_changed += 1
+        if ed_changed:
+            ed["updated"] = now_iso
+            save("editorial.json", ed)
+
+    # 6b. releases — replace the frontier-release radar snapshot if provided (dates/probs shift)
+    rel_changed = 0
+    if delta.get("releases"):
+        try:
+            rel = load("releases.json")
+        except FileNotFoundError:
+            rel = {}
+        RELK = ("model", "lab", "expectedWindow", "expectedDate", "prob", "frontier", "status", "basis", "source")
+        rel["items"] = [{k: r.get(k) for k in RELK} for r in delta["releases"]]
+        rel["updated"] = now_iso
+        save("releases.json", rel); rel_changed = len(rel["items"])
+
+    # 6c. glossary — additive by term (never drop existing definitions)
+    gloss_added = 0
+    if delta.get("glossary"):
+        try:
+            gl = load("glossary.json")
+        except FileNotFoundError:
+            gl = {"terms": []}
+        gterms = gl.get("terms", []) or []
+        gseen = {norm(t.get("term")) for t in gterms}
+        GK = ("term", "acronym", "category", "def", "aka")
+        for t in delta["glossary"]:
+            k = norm(t.get("term"))
+            if not k or k in gseen or not t.get("def"):
+                continue
+            gterms.append({kk: t.get(kk) for kk in GK}); gseen.add(k); gloss_added += 1
+        if gloss_added:
+            gterms.sort(key=lambda x: (x.get("term") or "").lower())
+            gl["terms"] = gterms; gl["updated"] = now_iso
+            save("glossary.json", gl)
+
+    # 6d. briefs — per-model plain-English writeups, merged by model name (add/replace)
+    briefs_changed = 0
+    if delta.get("briefs"):
+        try:
+            bf = load("briefs.json")
+        except FileNotFoundError:
+            bf = {"briefs": {}}
+        bf.setdefault("briefs", {})
+        for name, txt in (delta["briefs"] or {}).items():
+            if name and txt:
+                bf["briefs"][name] = txt; briefs_changed += 1
+        if briefs_changed:
+            bf["updated"] = now_iso
+            save("briefs.json", bf)
+
+    # 6e. sources — log this sweep's consulted sources under today's AM/PM routine
+    src_logged = 0
+    if delta.get("sweepSources"):
+        try:
+            sj = load("sources.json")
+        except FileNotFoundError:
+            sj = {"sweeps": []}
+        sj.setdefault("sweeps", [])
+        routine = "AM" if now_dt.hour < 12 else "PM"
+        date_s = now_dt.strftime("%Y-%m-%d")
+        srcs = [{k: x.get(k) for k in ("u", "url", "q")} for x in (delta["sweepSources"] or []) if x.get("u") or x.get("url")]
+        if srcs:
+            entry = next((s for s in sj["sweeps"] if s.get("date") == date_s and s.get("routine") == routine), None)
+            if entry:
+                entry["sources"] = srcs            # same routine ran twice the same day -> overwrite
+            else:
+                sj["sweeps"].append({"date": date_s, "routine": routine, "sources": srcs})
+            sj["updated"] = now_iso
+            save("sources.json", sj)
+            src_logged = len(srcs)
+
+    # 7. bump meta
+    meta["lastUpdated"] = now_iso
     meta["models"] = len(models["models"])
     meta["labs"] = len({norm(m.get("lab")) for m in models["models"] if m.get("lab")})
     meta["sweeps"] = int(meta.get("sweeps", 0)) + 1
@@ -96,7 +230,9 @@ def main():
     save("predictions.json", preds)
     save("meta.json", meta)
     print(f"merged: +{added} models, ~{updated} updated, +{points} points, "
-          f"{promoted} promoted; dataVersion={meta['dataVersion']}")
+          f"{promoted} promoted, +{news_added} news (-{news_dropped} rejected), "
+          f"{ed_changed} editorial fields, {rel_changed} releases, +{gloss_added} terms, "
+          f"{briefs_changed} briefs, {src_logged} sources; dataVersion={meta['dataVersion']}")
     return 0
 
 if __name__ == "__main__":

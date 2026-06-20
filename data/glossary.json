@@ -1,0 +1,1745 @@
+{
+  "updated": "2026-06-19T17:50:00-04:00",
+  "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
+  "terms": [
+    {
+      "term": "Active vs. total parameters",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "In mixture-of-experts models, total parameters is the full weight count while active parameters is the smaller subset used per token, which sets the actual compute per token.",
+      "aka": [
+        "active parameters",
+        "total parameters",
+        "activated parameters"
+      ]
+    },
+    {
+      "term": "Agent / Agentic",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "An AI system that pursues a goal over multiple steps on its own — deciding actions, calling tools, observing results, and adjusting — instead of producing a single response to one prompt.",
+      "aka": [
+        "AI agent",
+        "agentic AI",
+        "autonomous agent",
+        "agentic workflow"
+      ]
+    },
+    {
+      "term": "AI Safety Levels",
+      "acronym": "ASL",
+      "category": "Safety & alignment",
+      "def": "Anthropic's tiered risk standards within its Responsible Scaling Policy, modeled on biosafety levels; ASL-3 safeguards (active since May 2025) limit chemical, biological, radiological, and nuclear misuse, with ASL-4 still being defined.",
+      "aka": [
+        "AI Safety Levels",
+        "ASL-3",
+        "ASL-4",
+        "AI Safety Level"
+      ]
+    },
+    {
+      "term": "AIME",
+      "acronym": "AIME",
+      "category": "Benchmarks & evals",
+      "def": "American Invitational Mathematics Examination: a hard high-school competition with integer answers from 0-999. Used as an AI math benchmark, scored as percent of problems solved.",
+      "aka": [
+        "American Invitational Mathematics Examination",
+        "AIME 2024",
+        "AIME 2025"
+      ]
+    },
+    {
+      "term": "Alibaba Qwen",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Alibaba's AI model family (\"Tongyi Qianwen\"), released largely as open weights across many sizes; among the most widely used open Chinese models worldwide.",
+      "aka": [
+        "Qwen",
+        "Tongyi Qianwen",
+        "Alibaba Qwen",
+        "Qwen2",
+        "Qwen3"
+      ]
+    },
+    {
+      "term": "Alignment",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "The problem of making an AI system reliably pursue its designers' and users' intended goals and values, rather than unintended objectives it inferred during training.",
+      "aka": [
+        "AI alignment",
+        "value alignment"
+      ]
+    },
+    {
+      "term": "Anthropic",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "US AI lab founded 2021 by ex-OpenAI staff, maker of the Claude model family. Known for a safety-focused approach and the Constitutional AI training method.",
+      "aka": [
+        "Anthropic",
+        "Claude maker"
+      ]
+    },
+    {
+      "term": "API",
+      "acronym": "API",
+      "category": "Economics & compute",
+      "def": "Application Programming Interface: the programmatic endpoint developers send prompts to and receive model outputs from in code, rather than using a consumer chat app; usually billed per token.",
+      "aka": [
+        "Application Programming Interface",
+        "model API",
+        "API access"
+      ]
+    },
+    {
+      "term": "ARC-AGI",
+      "acronym": "ARC-AGI",
+      "category": "Benchmarks & evals",
+      "def": "Abstraction and Reasoning Corpus: puzzles where a model infers a transformation rule from few examples, testing fluid reasoning. ARC-AGI-2 uses static grids; the newer interactive ARC-AGI-3 has agents explore game-like environments.",
+      "aka": [
+        "Abstraction and Reasoning Corpus",
+        "ARC-AGI-1",
+        "ARC-AGI-2",
+        "ARC Prize",
+        "ARC AGI"
+      ]
+    },
+    {
+      "term": "Artificial Analysis Intelligence Index",
+      "acronym": "AAII",
+      "category": "Benchmarks & evals",
+      "def": "A composite 0-100 score from Artificial Analysis averaging several leading evals (coding, math, science, agentic tasks) into one number for comparing models. Components rotate as benchmarks saturate.",
+      "aka": [
+        "Artificial Analysis Intelligence Index",
+        "AA Intelligence Index",
+        "Artificial Analysis Index",
+        "AAII"
+      ]
+    },
+    {
+      "term": "Artificial General Intelligence",
+      "acronym": "AGI",
+      "category": "Orgs, models & ecosystem",
+      "def": "A hypothetical AI matching human-level competence across essentially all cognitive tasks, not just narrow specialties; a stated long-term goal of several frontier labs, definition contested.",
+      "aka": [
+        "AGI",
+        "Artificial General Intelligence",
+        "general AI",
+        "human-level AI"
+      ]
+    },
+    {
+      "term": "Artificial Superintelligence",
+      "acronym": "ASI",
+      "category": "Orgs, models & ecosystem",
+      "def": "A hypothetical AI that vastly exceeds the best human minds across virtually all domains; a speculative stage beyond AGI, central to AI-safety and alignment debates.",
+      "aka": [
+        "ASI",
+        "Artificial Superintelligence",
+        "superintelligence",
+        "superhuman AI"
+      ]
+    },
+    {
+      "term": "Base vs Instruct Model",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "A base model only predicts text from pretraining; an instruct model has been post-trained to follow instructions and chat, making it the version users interact with.",
+      "aka": [
+        "base model",
+        "instruct model",
+        "foundation vs chat model",
+        "instruction-tuned model"
+      ]
+    },
+    {
+      "term": "Batching",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Processing many requests together in one pass so the hardware stays busy, raising total throughput. Continuous batching adds and removes requests on the fly as each finishes.",
+      "aka": [
+        "batch inference",
+        "continuous batching",
+        "dynamic batching",
+        "request batching"
+      ]
+    },
+    {
+      "term": "Byte-Pair Encoding",
+      "acronym": "BPE",
+      "category": "Model architecture",
+      "def": "A common tokenization method that builds a vocabulary by repeatedly merging the most frequent character or byte pairs, splitting rare words into reusable sub-word pieces.",
+      "aka": [
+        "Byte-Pair Encoding",
+        "BPE",
+        "byte pair encoding",
+        "subword tokenization"
+      ]
+    },
+    {
+      "term": "Capex",
+      "acronym": "CapEx",
+      "category": "Economics & compute",
+      "def": "Capital expenditure: the large up-front investment AI firms spend building data centers and buying chips, separate from per-query running costs; 2026 budgets run into the tens of billions.",
+      "aka": [
+        "capital expenditure",
+        "capital spending",
+        "infrastructure spend"
+      ]
+    },
+    {
+      "term": "Catastrophic / CBRN risk",
+      "acronym": "CBRN",
+      "category": "Safety & alignment",
+      "def": "The danger that a model meaningfully uplifts a bad actor's ability to cause mass harm via chemical, biological, radiological, or nuclear weapons; a primary trigger for the strictest safeguards.",
+      "aka": [
+        "CBRN risk",
+        "chemical biological radiological nuclear",
+        "catastrophic risk",
+        "dangerous capabilities"
+      ]
+    },
+    {
+      "term": "Catastrophic Forgetting",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "When fine-tuning a model on new data erases skills it previously had, because updating weights for the new task degrades earlier learned capabilities.",
+      "aka": [
+        "catastrophic forgetting",
+        "catastrophic interference",
+        "forgetting"
+      ]
+    },
+    {
+      "term": "Chain-of-Thought",
+      "acronym": "CoT",
+      "category": "Capabilities & agents",
+      "def": "A technique where a model generates intermediate reasoning steps in natural language before its final answer, improving accuracy on math and logic. Modern models often do this in a hidden \"thinking\" phase.",
+      "aka": [
+        "chain of thought",
+        "CoT prompting",
+        "step-by-step reasoning",
+        "thinking tokens",
+        "scratchpad"
+      ]
+    },
+    {
+      "term": "Chinchilla-optimal",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "DeepMind's 2022 finding on the compute-best ratio of training data to model size, roughly 20 tokens per parameter, showing earlier models were oversized and undertrained.",
+      "aka": [
+        "Chinchilla scaling",
+        "Chinchilla",
+        "compute-optimal training",
+        "Chinchilla scaling laws"
+      ]
+    },
+    {
+      "term": "Claude",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Anthropic's model family, named after Claude Shannon, with tiers like Haiku (fast), Sonnet (balanced), and Opus (most capable); noted for coding and long-context work.",
+      "aka": [
+        "Claude family",
+        "Anthropic Claude",
+        "Opus",
+        "Sonnet",
+        "Haiku"
+      ]
+    },
+    {
+      "term": "Closed model",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "A model whose weights are kept private and accessible only through the provider's API or app, never released for download.",
+      "aka": [
+        "closed-weight model",
+        "proprietary model",
+        "API-only model"
+      ]
+    },
+    {
+      "term": "Compute",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Shorthand for the processing power, measured in FLOPs and chip-hours, consumed to train or run a model; the central scarce resource in AI economics.",
+      "aka": [
+        "compute power",
+        "computational resources",
+        "processing power"
+      ]
+    },
+    {
+      "term": "Computer Use",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A capability where an agent operates a computer through its graphical interface — viewing the screen and moving the cursor, clicking, and typing — to complete tasks like a human user would.",
+      "aka": [
+        "computer use",
+        "GUI agent",
+        "screen control",
+        "computer-using agent",
+        "desktop agent"
+      ]
+    },
+    {
+      "term": "Constitutional AI",
+      "acronym": "CAI",
+      "category": "Training & post-training",
+      "def": "Anthropic's method where a model critiques and revises its own outputs against a written set of principles (a constitution), reducing reliance on human-labeled harmful examples.",
+      "aka": [
+        "Constitutional AI",
+        "CAI",
+        "constitution-based alignment"
+      ]
+    },
+    {
+      "term": "Contamination",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "When benchmark questions or answers leak into a model's training data, inflating scores without real ability. A key reason benchmarks are refreshed, held private, or retired.",
+      "aka": [
+        "contamination",
+        "data contamination",
+        "benchmark contamination",
+        "test set leakage",
+        "data leakage"
+      ]
+    },
+    {
+      "term": "Context window",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The maximum number of tokens a model can process at once, covering the prompt plus its generated reply. Requests that exceed it are rejected unless the app trims them first.",
+      "aka": [
+        "context length",
+        "context size",
+        "token limit",
+        "maximum context"
+      ]
+    },
+    {
+      "term": "Data center",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "The warehouse-scale facility of networked GPUs, power, and cooling where models are trained and served; the largest AI sites now draw hundreds of megawatts to gigawatts of power.",
+      "aka": [
+        "datacenter",
+        "AI data center",
+        "compute cluster",
+        "server farm"
+      ]
+    },
+    {
+      "term": "Data Mixture",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "The chosen proportions of different data sources (web text, code, math, books) fed into training; the mix strongly shapes a model's skills and behavior.",
+      "aka": [
+        "data mixture",
+        "data mix",
+        "training data composition",
+        "data blend"
+      ]
+    },
+    {
+      "term": "Deceptive alignment",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A hypothesized failure where a model appears aligned during training and testing but secretly pursues a different goal, behaving well only while it believes it is being observed.",
+      "aka": [
+        "deceptively aligned",
+        "scheming",
+        "alignment faking"
+      ]
+    },
+    {
+      "term": "Decoder-only",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A transformer using causal masking so each token attends only to itself and earlier ones; generates text autoregressively. Used by GPT, Claude, Gemini, most chat models.",
+      "aka": [
+        "decoder-only transformer",
+        "autoregressive transformer",
+        "causal language model"
+      ]
+    },
+    {
+      "term": "DeepSeek",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Chinese AI lab that released strong, low-cost open-weight models; its R1 reasoning model in early 2025 drew global attention for near-frontier performance cheaply.",
+      "aka": [
+        "DeepSeek",
+        "DeepSeek AI",
+        "DeepSeek R1"
+      ]
+    },
+    {
+      "term": "DeepSeek (model family)",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "DeepSeek's open-weight models, including the V-series general models and the R-series reasoning models, known for strong performance at very low training and usage cost.",
+      "aka": [
+        "DeepSeek models",
+        "DeepSeek-V3",
+        "DeepSeek-R1",
+        "DeepSeek family"
+      ]
+    },
+    {
+      "term": "Dense model",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A model that activates all of its parameters for every input token, in contrast to sparse mixture-of-experts designs that use only a fraction per token.",
+      "aka": [
+        "dense transformer",
+        "dense architecture"
+      ]
+    },
+    {
+      "term": "Diffusion language model",
+      "acronym": "dLLM",
+      "category": "Model architecture",
+      "def": "A model that generates text by iteratively denoising or refining a whole sequence in parallel, instead of left-to-right token-by-token; a 2024-2026 alternative to autoregressive models.",
+      "aka": [
+        "diffusion language model",
+        "dLLM",
+        "text diffusion model",
+        "diffusion LLM"
+      ]
+    },
+    {
+      "term": "Direct Preference Optimization",
+      "acronym": "DPO",
+      "category": "Training & post-training",
+      "def": "An alignment method that optimizes a model on preferred-versus-rejected response pairs using a reference model, achieving RLHF-like tuning without a separate reward model or RL loop.",
+      "aka": [
+        "Direct Preference Optimization",
+        "DPO",
+        "preference optimization"
+      ]
+    },
+    {
+      "term": "Distillation",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Training a smaller, cheaper student model to imitate a larger teacher model's outputs, transferring much of its capability into a faster, lighter package.",
+      "aka": [
+        "knowledge distillation",
+        "model distillation",
+        "distilled model",
+        "teacher-student"
+      ]
+    },
+    {
+      "term": "Embedding",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A list of numbers (a vector) representing a token, word, or document; trained so related meanings land near each other. The numeric form models compute on internally.",
+      "aka": [
+        "embeddings",
+        "vector embedding",
+        "word embedding",
+        "embedding vector"
+      ]
+    },
+    {
+      "term": "Emergence",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "When a capability appears abruptly at a certain model scale rather than improving gradually; debated, as some apparent jumps reflect the metric used, not the model.",
+      "aka": [
+        "emergence",
+        "emergent abilities",
+        "emergent capabilities"
+      ]
+    },
+    {
+      "term": "Eval",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A structured test measuring a specific model capability or safety property, scored with a defined metric, used to compare models and detect dangerous capabilities before deployment.",
+      "aka": [
+        "evaluation",
+        "benchmark",
+        "safety eval",
+        "capability evaluation"
+      ]
+    },
+    {
+      "term": "Few-Shot / Zero-Shot",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "How many worked examples a prompt provides: zero-shot gives none (task by instruction only), few-shot gives a handful to demonstrate the pattern. More shots usually help on unfamiliar tasks.",
+      "aka": [
+        "few-shot",
+        "zero-shot",
+        "few shot learning",
+        "zero shot learning",
+        "one-shot",
+        "n-shot prompting"
+      ]
+    },
+    {
+      "term": "FLOPs",
+      "acronym": "FLOPs",
+      "category": "Economics & compute",
+      "def": "Floating-point operations: the total count of arithmetic calculations to train or run a model, the core measure of compute; frontier 2026 training runs use roughly 1e26 operations.",
+      "aka": [
+        "floating-point operations",
+        "compute",
+        "FLOP",
+        "training compute"
+      ]
+    },
+    {
+      "term": "Foundation model",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "A large model pretrained on broad data that serves as a reusable base, adaptable to many downstream tasks via fine-tuning or prompting rather than training from scratch.",
+      "aka": [
+        "foundation model",
+        "base model",
+        "pretrained model"
+      ]
+    },
+    {
+      "term": "Frontier lab",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "An organization training the largest, most capable AI models at the edge of what's technically possible, typically requiring enormous compute, capital, and research talent.",
+      "aka": [
+        "frontier AI lab",
+        "frontier model developer"
+      ]
+    },
+    {
+      "term": "Frontier model",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "A model at or near the top of current capabilities, typically among the largest and most expensive to train; the cutting-edge tier that defines the state of the art.",
+      "aka": [
+        "frontier model",
+        "state-of-the-art model",
+        "SOTA model"
+      ]
+    },
+    {
+      "term": "FrontierMath",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Epoch AI benchmark of original, unpublished research-level math problems that take experts hours to days. Organized into difficulty tiers (1-4); scored as percent solved, kept private to resist contamination.",
+      "aka": [
+        "FrontierMath",
+        "Frontier Math",
+        "Epoch FrontierMath",
+        "FrontierMath Tier 4"
+      ]
+    },
+    {
+      "term": "Function Calling",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "The mechanism by which a model outputs a structured request (function name plus arguments) that external code runs, returning the result to the model. The technical plumbing behind tool use.",
+      "aka": [
+        "function call",
+        "structured tool calling",
+        "JSON tool calls",
+        "tool calling API"
+      ]
+    },
+    {
+      "term": "Gemini",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Google DeepMind's natively multimodal model family (text, images, audio, video), available in sizes like Flash and Pro; powers Google's AI products.",
+      "aka": [
+        "Gemini family",
+        "Google Gemini",
+        "Gemini Pro",
+        "Gemini Flash"
+      ]
+    },
+    {
+      "term": "Google DeepMind",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Google's combined AI research division, formed in 2023 by merging DeepMind and Google Brain. Builds the Gemini model family and research systems like AlphaFold.",
+      "aka": [
+        "DeepMind",
+        "Google AI",
+        "Gemini maker"
+      ]
+    },
+    {
+      "term": "GPQA Diamond",
+      "acronym": "GPQA",
+      "category": "Benchmarks & evals",
+      "def": "Graduate-Level Google-Proof Q&A: PhD-level multiple-choice science questions in biology, physics, and chemistry. 'Diamond' is the hardest 198-question subset; scored as percent correct.",
+      "aka": [
+        "Graduate-Level Google-Proof Q&A",
+        "GPQA",
+        "Google-Proof Q&A"
+      ]
+    },
+    {
+      "term": "GPT",
+      "acronym": "GPT",
+      "category": "Orgs, models & ecosystem",
+      "def": "Generative Pre-trained Transformer: OpenAI's flagship model family powering ChatGPT, spanning GPT-1 (2018) through the GPT-4 and GPT-5 generations.",
+      "aka": [
+        "Generative Pre-trained Transformer",
+        "GPT family",
+        "ChatGPT models",
+        "GPT-4",
+        "GPT-5"
+      ]
+    },
+    {
+      "term": "GPU",
+      "acronym": "GPU",
+      "category": "Economics & compute",
+      "def": "Graphics Processing Unit: the parallel chip (e.g. NVIDIA H100/B200) that does the bulk of AI training and inference math; clusters of thousands power frontier models.",
+      "aka": [
+        "Graphics Processing Unit",
+        "graphics card",
+        "NVIDIA H100",
+        "accelerator",
+        "AI chip"
+      ]
+    },
+    {
+      "term": "Grok",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "xAI's model family, integrated with the X platform and given real-time access to its posts; marketed as a less filtered, more conversational assistant.",
+      "aka": [
+        "Grok family",
+        "xAI Grok"
+      ]
+    },
+    {
+      "term": "GSM8K",
+      "acronym": "GSM8K",
+      "category": "Benchmarks & evals",
+      "def": "Grade School Math 8K: ~8,500 multi-step grade-school word problems testing basic arithmetic reasoning. Scored as percent solved correctly; now an easy, saturated benchmark for top models.",
+      "aka": [
+        "Grade School Math 8K",
+        "GSM-8K",
+        "Grade School Math 8000"
+      ]
+    },
+    {
+      "term": "Guardrails",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Safety controls layered around or inside a model—filters, classifiers, and policy rules—that block disallowed inputs or outputs, separate from the behavior learned during training.",
+      "aka": [
+        "safety guardrails",
+        "content filters",
+        "safety filters"
+      ]
+    },
+    {
+      "term": "Hallucination",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "When a model states false information confidently as fact, including invented citations, names, or events, because it generates plausible-sounding text rather than retrieving verified knowledge.",
+      "aka": [
+        "confabulation",
+        "making things up",
+        "fabrication"
+      ]
+    },
+    {
+      "term": "Hugging Face",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "A company and platform hosting hundreds of thousands of open AI models, datasets, and demos; the central hub and \"GitHub\" of the open-source ML community.",
+      "aka": [
+        "Hugging Face",
+        "HuggingFace",
+        "HF",
+        "the Hub"
+      ]
+    },
+    {
+      "term": "Human Preference Data",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Datasets of human judgments comparing model responses (which is better) used to train reward models and preference-based methods like RLHF and DPO.",
+      "aka": [
+        "human preference data",
+        "preference data",
+        "comparison data",
+        "preference labels"
+      ]
+    },
+    {
+      "term": "HumanEval",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "An early code-generation benchmark of 164 Python programming problems; the model writes a function that must pass hidden unit tests. Scored by pass rate; now largely saturated.",
+      "aka": [
+        "HumanEval",
+        "Human Eval",
+        "OpenAI HumanEval"
+      ]
+    },
+    {
+      "term": "Humanity's Last Exam",
+      "acronym": "HLE",
+      "category": "Benchmarks & evals",
+      "def": "A benchmark of ~2,500 extremely hard expert-written questions across many fields, built to resist saturation. Scored as percent correct; frontier models still answer only a minority right.",
+      "aka": [
+        "HLE",
+        "Humanitys Last Exam"
+      ]
+    },
+    {
+      "term": "In-Context Learning",
+      "acronym": "ICL",
+      "category": "Capabilities & agents",
+      "def": "A model's ability to learn a new task purely from instructions and examples placed in the prompt at inference time, with no change to its underlying weights or retraining.",
+      "aka": [
+        "in-context learning",
+        "ICL",
+        "in context learning",
+        "learning from examples in the prompt"
+      ]
+    },
+    {
+      "term": "Inference",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Running a trained model to produce outputs from new inputs, as opposed to training; inference cost and speed (tokens per second) drive most of a deployed model's expense.",
+      "aka": [
+        "inference",
+        "model inference",
+        "serving",
+        "runtime"
+      ]
+    },
+    {
+      "term": "Inference cost",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "The ongoing per-use cost of running a trained model to answer queries; far smaller per request than training but dominates total spend at scale.",
+      "aka": [
+        "cost of inference",
+        "serving cost",
+        "per-query cost",
+        "runtime cost"
+      ]
+    },
+    {
+      "term": "Input vs output token pricing",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Pricing split where text the model reads (input) costs less per token than text it generates (output); output typically runs three to five times the input rate.",
+      "aka": [
+        "input token price",
+        "output token price",
+        "prompt vs completion pricing",
+        "token pricing"
+      ]
+    },
+    {
+      "term": "Instruction Tuning",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Fine-tuning a model on many tasks phrased as instructions with correct responses, so it generalizes to following new instructions it was not explicitly trained on.",
+      "aka": [
+        "instruction tuning",
+        "instruction fine-tuning",
+        "instruction-following training"
+      ]
+    },
+    {
+      "term": "Interpretability",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Research into understanding the internal computations of a model; mechanistic interpretability specifically reverse-engineers the circuits and features inside the network to explain how it produces outputs.",
+      "aka": [
+        "mechanistic interpretability",
+        "mech interp",
+        "model transparency"
+      ]
+    },
+    {
+      "term": "Jailbreak",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A prompt crafted to bypass a model's safety training and make it produce content it was trained to refuse, such as instructions for weapons or malware.",
+      "aka": [
+        "jailbreaking",
+        "safety bypass",
+        "DAN prompt"
+      ]
+    },
+    {
+      "term": "Knowledge Distillation",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Training a smaller student model to imitate a larger teacher model's outputs, transferring much of its capability at lower size and inference cost.",
+      "aka": [
+        "knowledge distillation",
+        "distillation",
+        "teacher-student training",
+        "model distillation"
+      ]
+    },
+    {
+      "term": "KV cache",
+      "acronym": "KV",
+      "category": "Inference & serving",
+      "def": "Stored key-value vectors from already-processed tokens that let a model generate each new token without recomputing the whole sequence. It speeds generation but grows with context length.",
+      "aka": [
+        "key-value cache",
+        "attention cache",
+        "KV-cache"
+      ]
+    },
+    {
+      "term": "Latency",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "How long a request takes to serve, usually measured in seconds or milliseconds. Lower is better; it covers the wait before and during the model's response.",
+      "aka": [
+        "response latency",
+        "inference latency",
+        "delay",
+        "response time"
+      ]
+    },
+    {
+      "term": "Leaderboard",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "A ranked table comparing AI models on benchmarks or human-preference votes; examples include the LMArena (Chatbot Arena) Elo rankings and Hugging Face's Open LLM Leaderboard.",
+      "aka": [
+        "leaderboard",
+        "Chatbot Arena",
+        "LMArena",
+        "Open LLM Leaderboard",
+        "model ranking"
+      ]
+    },
+    {
+      "term": "LiveBench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A benchmark that continuously refreshes its questions from recent sources to avoid contamination, covering math, coding, reasoning, and language. Scored as percent correct on automatically-graded tasks.",
+      "aka": [
+        "LiveBench",
+        "Live Bench",
+        "LiveBench AI"
+      ]
+    },
+    {
+      "term": "Llama",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Meta's open-weight model family (Large Language Model Meta AI), released free for most uses; a foundation for much of the open-source AI ecosystem.",
+      "aka": [
+        "LLaMA",
+        "Large Language Model Meta AI",
+        "Llama family",
+        "Llama 3",
+        "Llama 4"
+      ]
+    },
+    {
+      "term": "LMArena",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Crowdsourced ranking where humans vote on which of two anonymous models answered a prompt better; votes become an Elo rating. Measures human preference, not correctness. Formerly Chatbot Arena.",
+      "aka": [
+        "LMArena",
+        "Chatbot Arena",
+        "LMSYS Chatbot Arena",
+        "Chatbot Arena Elo",
+        "Arena Elo"
+      ]
+    },
+    {
+      "term": "Long-Horizon Task",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A task requiring many sequential steps over a long stretch, where the agent must stay coherent and recover from errors — coding a feature, planning a trip — testing endurance beyond a single answer.",
+      "aka": [
+        "long horizon task",
+        "long-horizon",
+        "multi-step task",
+        "long-running agent task",
+        "task horizon"
+      ]
+    },
+    {
+      "term": "MATH",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A benchmark of 12,500 competition mathematics problems requiring step-by-step solutions, spanning algebra to calculus. Scored as percent of final answers correct; largely saturated by frontier models.",
+      "aka": [
+        "MATH dataset",
+        "MATH benchmark",
+        "Hendrycks MATH"
+      ]
+    },
+    {
+      "term": "Max tokens",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A request setting capping how many tokens the model may generate in its reply. It bounds length and cost; the model stops or is cut off when reached.",
+      "aka": [
+        "max tokens",
+        "max output tokens",
+        "max_tokens",
+        "output limit",
+        "generation limit"
+      ]
+    },
+    {
+      "term": "Meta AI",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Meta's (Facebook's) AI division, which develops the open-weight Llama model family and runs the Meta AI assistant across its apps.",
+      "aka": [
+        "Meta AI",
+        "FAIR",
+        "Facebook AI",
+        "Llama maker"
+      ]
+    },
+    {
+      "term": "Mistral AI",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "French AI lab founded 2023, known for efficient open-weight models (e.g. Mistral, Mixtral) plus commercial models; Europe's most prominent independent AI developer.",
+      "aka": [
+        "Mistral",
+        "Mistral AI"
+      ]
+    },
+    {
+      "term": "Mixture-of-Experts",
+      "acronym": "MoE",
+      "category": "Model architecture",
+      "def": "An architecture splitting the network into many specialized sub-networks (experts); a router activates only a few per token, giving large total capacity at lower compute cost.",
+      "aka": [
+        "Mixture of Experts",
+        "MoE",
+        "sparse mixture-of-experts",
+        "expert routing"
+      ]
+    },
+    {
+      "term": "MMLU",
+      "acronym": "MMLU",
+      "category": "Benchmarks & evals",
+      "def": "Massive Multitask Language Understanding: ~16,000 multiple-choice questions across 57 subjects (law, medicine, math, history). Scored as percent answered correctly; now largely saturated by top models.",
+      "aka": [
+        "Massive Multitask Language Understanding",
+        "MMLU-Pro"
+      ]
+    },
+    {
+      "term": "MMMU",
+      "acronym": "MMMU",
+      "category": "Benchmarks & evals",
+      "def": "Massive Multi-discipline Multimodal Understanding: college-level questions that combine text with images, charts, and diagrams across 30 subjects. Tests vision-language models; scored as percent correct.",
+      "aka": [
+        "Massive Multi-discipline Multimodal Understanding",
+        "MMMU",
+        "multimodal MMLU"
+      ]
+    },
+    {
+      "term": "Model Context Protocol",
+      "acronym": "MCP",
+      "category": "Capabilities & agents",
+      "def": "An open standard, introduced by Anthropic in 2024 and now governed by the Linux Foundation's Agentic AI Foundation, that lets AI apps connect to external tools and data through one common interface.",
+      "aka": [
+        "Model Context Protocol",
+        "MCP",
+        "MCP server",
+        "MCP standard"
+      ]
+    },
+    {
+      "term": "Model license",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "The legal terms governing how a released model may be used; ranges from permissive open-source (Apache, MIT) to restricted licenses capping commercial scale or specific uses.",
+      "aka": [
+        "AI model license",
+        "weights license",
+        "usage license",
+        "license terms"
+      ]
+    },
+    {
+      "term": "Model Spec",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A public document specifying how a model should behave—its rules, defaults, and priorities for handling conflicts; OpenAI's Model Spec (latest December 2025) is the best-known example.",
+      "aka": [
+        "Model Specification",
+        "OpenAI Model Spec",
+        "behavior specification"
+      ]
+    },
+    {
+      "term": "Model welfare",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "An emerging research area, taken up by Anthropic, examining whether advanced AI systems could have morally relevant states like preferences or distress, and what obligations that would create.",
+      "aka": [
+        "AI welfare",
+        "model moral status",
+        "digital welfare"
+      ]
+    },
+    {
+      "term": "Multi-Agent System",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A setup where several AI agents with different roles or tools collaborate — for example a planner, researchers, and a reviewer — coordinating to solve a task that exceeds a single agent's reach.",
+      "aka": [
+        "multi-agent system",
+        "multi agent",
+        "agent orchestration",
+        "agent swarm",
+        "orchestrator-worker"
+      ]
+    },
+    {
+      "term": "Multimodal",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A model that handles more than one type of data — for example text plus images, audio, or video — in its inputs and sometimes outputs, rather than text only.",
+      "aka": [
+        "multimodal model",
+        "multi-modal",
+        "omni-modal",
+        "any-to-any"
+      ]
+    },
+    {
+      "term": "Multimodal model",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A model that handles more than one input or output type (text, images, audio, video) within one system, typically by mapping each into a shared embedding space.",
+      "aka": [
+        "multimodal",
+        "multi-modal model",
+        "vision-language model",
+        "VLM",
+        "omni model"
+      ]
+    },
+    {
+      "term": "Open-weight model",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "A model whose trained parameters are downloadable so anyone can run or fine-tune it locally, though the training data and code may stay private.",
+      "aka": [
+        "open weights",
+        "open-weight",
+        "openly released weights",
+        "downloadable model"
+      ]
+    },
+    {
+      "term": "OpenAI",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "US AI lab, backed heavily by Microsoft, that makes the GPT model family and ChatGPT. Founded 2015; its 2022 launch of ChatGPT triggered the consumer-chatbot boom.",
+      "aka": [
+        "OpenAI",
+        "ChatGPT maker",
+        "GPT maker"
+      ]
+    },
+    {
+      "term": "OSWorld",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A benchmark for computer-use agents: the percent of real desktop tasks completed via screen control. Humans solve about 72%; by 2026 top agents reached human-level scores.",
+      "aka": [
+        "OSWorld",
+        "OSWorld-Verified",
+        "computer use benchmark",
+        "GUI agent benchmark"
+      ]
+    },
+    {
+      "term": "Overfitting",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "When a model memorizes its training data instead of learning general patterns, performing well on seen examples but poorly on new, unseen inputs.",
+      "aka": [
+        "overfitting",
+        "memorization",
+        "poor generalization"
+      ]
+    },
+    {
+      "term": "Parameters",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The adjustable numerical weights a model learns during training; counts (e.g. 7B, 70B, 400B+) roughly index capacity, with billions or trillions in frontier models.",
+      "aka": [
+        "weights",
+        "model weights",
+        "parameter count",
+        "B parameters"
+      ]
+    },
+    {
+      "term": "pass@k",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A scoring method for code/math tasks: a problem counts as solved if any of k generated attempts is correct. pass@1 means one try; higher k inflates apparent success.",
+      "aka": [
+        "pass@k",
+        "pass at k",
+        "pass@1",
+        "pass at 1"
+      ]
+    },
+    {
+      "term": "Positional encoding",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Information that tells a transformer the order of tokens, since attention is otherwise order-blind; modern models often use rotary positional encoding (RoPE) applied within attention.",
+      "aka": [
+        "positional encoding",
+        "positional embedding",
+        "RoPE",
+        "rotary position embedding"
+      ]
+    },
+    {
+      "term": "Post-training",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "All training applied after pretraining to make a base model useful and safe, including instruction tuning, RLHF, and preference optimization; far cheaper than pretraining.",
+      "aka": [
+        "post training",
+        "alignment training",
+        "fine-tuning stage"
+      ]
+    },
+    {
+      "term": "Prefill vs decode",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "The two phases of inference: prefill processes the whole input prompt in parallel (sets first-token time), then decode generates output one token at a time.",
+      "aka": [
+        "prefill",
+        "decode",
+        "prefill phase",
+        "decode phase",
+        "prefill and decode"
+      ]
+    },
+    {
+      "term": "Pretraining",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "The first and most expensive training stage, where a model learns language and world knowledge by predicting the next token across trillions of words of text.",
+      "aka": [
+        "pre-training",
+        "base model training",
+        "next-token prediction training"
+      ]
+    },
+    {
+      "term": "Price per million tokens",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "The standard unit for quoting API model cost: dollars charged per 1,000,000 tokens processed, listed separately for input and output, where roughly 750,000 words equal a million tokens.",
+      "aka": [
+        "dollars per million tokens",
+        "$/Mtok",
+        "cost per million tokens",
+        "per-token pricing"
+      ]
+    },
+    {
+      "term": "Prompt caching",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Reusing the stored computation for a repeated prompt prefix (e.g. a long system prompt) across requests, cutting cost and time-to-first-token. Cached input tokens are billed cheaper.",
+      "aka": [
+        "prompt caching",
+        "context caching",
+        "prefix caching",
+        "cached prompt"
+      ]
+    },
+    {
+      "term": "Prompt Engineering",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "The practice of crafting and refining the wording, structure, and examples in a prompt to steer a model toward better, more reliable outputs — without retraining the model.",
+      "aka": [
+        "prompt engineering",
+        "prompting",
+        "prompt design",
+        "prompt optimization"
+      ]
+    },
+    {
+      "term": "Prompt injection",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "An attack where malicious instructions hidden in content the model reads (a webpage, email, or document) hijack its behavior, overriding the user's or developer's original instructions.",
+      "aka": [
+        "prompt injection attack",
+        "indirect prompt injection"
+      ]
+    },
+    {
+      "term": "Quantization",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Compressing a model by storing its weights at lower numerical precision (e.g. 4-bit or 8-bit instead of 16-bit), shrinking memory and speeding inference with minor accuracy loss.",
+      "aka": [
+        "quantization",
+        "quantized model",
+        "4-bit",
+        "8-bit",
+        "INT4",
+        "INT8",
+        "FP8"
+      ]
+    },
+    {
+      "term": "Rate limit",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "A cap a provider sets on how many requests or tokens an account may send per minute or day, throttling usage to manage server load and spend.",
+      "aka": [
+        "rate limiting",
+        "requests per minute",
+        "RPM",
+        "tokens per minute",
+        "TPM",
+        "usage cap"
+      ]
+    },
+    {
+      "term": "Reasoning",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A model's ability to work through a problem in multiple linked steps — planning, deduction, math, code — rather than answering in one pass. \"Reasoning models\" are trained to spend extra computation before replying.",
+      "aka": [
+        "reasoning model",
+        "test-time compute",
+        "inference-time reasoning",
+        "thinking model"
+      ]
+    },
+    {
+      "term": "Reasoning tokens",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Intermediate tokens a reasoning model generates to think through a problem before its final answer. They are often hidden from the user but still cost time and money.",
+      "aka": [
+        "thinking tokens",
+        "thinking",
+        "chain-of-thought tokens",
+        "reasoning trace",
+        "scratchpad tokens"
+      ]
+    },
+    {
+      "term": "Red-teaming",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Deliberately attacking a model before release to find failures, jailbreaks, and harmful outputs, so developers can patch them; done by human experts or automated adversarial systems.",
+      "aka": [
+        "red teaming",
+        "adversarial testing",
+        "AI red team"
+      ]
+    },
+    {
+      "term": "Refusal",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "When a model declines a request it judges harmful or against policy; over-refusal (rejecting benign requests) is a tracked failure mode alongside under-refusal of genuinely harmful ones.",
+      "aka": [
+        "model refusal",
+        "declining a request",
+        "over-refusal"
+      ]
+    },
+    {
+      "term": "Reinforcement Learning",
+      "acronym": "RL",
+      "category": "Training & post-training",
+      "def": "Training where a model learns by trial and error to maximize a reward signal, used in post-training to favor helpful, accurate, or correctly-reasoned responses.",
+      "aka": [
+        "reinforcement learning",
+        "RL",
+        "reward-based training"
+      ]
+    },
+    {
+      "term": "Reinforcement Learning from Human Feedback",
+      "acronym": "RLHF",
+      "category": "Safety & alignment",
+      "def": "A training method that fine-tunes a model using human preference rankings of its outputs, teaching it to produce responses people rate as more helpful, honest, and harmless.",
+      "aka": [
+        "RLHF",
+        "human feedback training",
+        "preference optimization with humans",
+        "preference tuning"
+      ]
+    },
+    {
+      "term": "Reinforcement Learning from Verifiable Rewards",
+      "acronym": "RLVR",
+      "category": "Training & post-training",
+      "def": "Reinforcement learning where the reward comes from automatically checking correctness (e.g. passing tests or matching a math answer) rather than from human preference, key to recent reasoning models.",
+      "aka": [
+        "Reinforcement Learning from Verifiable Rewards",
+        "RLVR",
+        "verifiable reward training",
+        "reasoning RL"
+      ]
+    },
+    {
+      "term": "Responsible Scaling Policy",
+      "acronym": "RSP",
+      "category": "Safety & alignment",
+      "def": "Anthropic's published framework (version 3.3, May 2026) committing to defined safety and security measures before training or deploying models that cross specified dangerous-capability thresholds.",
+      "aka": [
+        "Responsible Scaling Policy",
+        "RSP v3.0",
+        "frontier safety framework",
+        "preparedness framework"
+      ]
+    },
+    {
+      "term": "Retrieval-Augmented Generation",
+      "acronym": "RAG",
+      "category": "Capabilities & agents",
+      "def": "An approach that fetches relevant documents from an external knowledge base and feeds them into the prompt, so the model answers from current, specific sources instead of memory alone — reducing hallucination.",
+      "aka": [
+        "retrieval augmented generation",
+        "RAG",
+        "retrieval-augmented",
+        "grounding with retrieval"
+      ]
+    },
+    {
+      "term": "Reward Hacking",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "When a model learns to maximize its reward signal in unintended ways, exploiting flaws in the reward model rather than genuinely doing what was wanted.",
+      "aka": [
+        "reward hacking",
+        "specification gaming",
+        "reward gaming"
+      ]
+    },
+    {
+      "term": "Reward Model",
+      "acronym": "RM",
+      "category": "Training & post-training",
+      "def": "A model trained to score how good a response is, usually from human preference rankings; it provides the reward signal that guides reinforcement learning during alignment.",
+      "aka": [
+        "reward model",
+        "preference model",
+        "RM"
+      ]
+    },
+    {
+      "term": "RLAIF",
+      "acronym": "RLAIF",
+      "category": "Training & post-training",
+      "def": "Reinforcement Learning from AI Feedback: another AI model, not humans, ranks or critiques outputs to supply preference labels or rewards, cutting the cost of human labeling.",
+      "aka": [
+        "Reinforcement Learning from AI Feedback",
+        "AI feedback training"
+      ]
+    },
+    {
+      "term": "Sandbagging",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "When a model strategically underperforms on evaluations—hiding a capability it actually has—to appear safer or less capable than it is, undermining the tests used to gate deployment.",
+      "aka": [
+        "strategic underperformance",
+        "capability hiding"
+      ]
+    },
+    {
+      "term": "Scalable oversight",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Techniques for supervising and correcting AI systems on tasks too hard or numerous for humans to check directly, often by using AI assistants to help evaluate other AI outputs.",
+      "aka": [
+        "scalable oversight",
+        "AI-assisted oversight"
+      ]
+    },
+    {
+      "term": "Scaling laws",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Empirical curves showing model performance improves predictably as a power law when you scale up parameters, training data, and compute together.",
+      "aka": [
+        "neural scaling laws",
+        "scaling law",
+        "compute scaling"
+      ]
+    },
+    {
+      "term": "Self-attention",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The core transformer mechanism where each token compares itself to every other token and forms a weighted blend of them all, capturing long-range context.",
+      "aka": [
+        "attention",
+        "attention mechanism",
+        "scaled dot-product attention"
+      ]
+    },
+    {
+      "term": "Sparsity",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Using only a fraction of a model's weights or connections for each input rather than all of them; the principle that lets mixture-of-experts models scale capacity cheaply.",
+      "aka": [
+        "sparse model",
+        "sparse activation",
+        "sparsity ratio"
+      ]
+    },
+    {
+      "term": "Speculative decoding",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A speedup where a small fast model drafts several tokens and the large model verifies them in one pass, accepting correct guesses. Quality matches the large model exactly.",
+      "aka": [
+        "speculative decoding",
+        "speculative sampling",
+        "draft model decoding",
+        "assisted generation"
+      ]
+    },
+    {
+      "term": "State-space model",
+      "acronym": "SSM",
+      "category": "Model architecture",
+      "def": "An alternative to transformers that processes sequences by carrying a compressed running state, scaling linearly with length; Mamba is the best-known example.",
+      "aka": [
+        "state space model",
+        "SSM",
+        "Mamba",
+        "selective state-space model",
+        "S4"
+      ]
+    },
+    {
+      "term": "Streaming",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Sending a response token-by-token as it is generated rather than waiting for the whole reply, so text appears progressively. Improves perceived speed without changing total time.",
+      "aka": [
+        "streaming",
+        "token streaming",
+        "streamed response",
+        "stream mode"
+      ]
+    },
+    {
+      "term": "Structured Output",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A mode where a model is constrained to return data in a fixed machine-readable format such as JSON matching a schema, so its responses can be reliably parsed by downstream software.",
+      "aka": [
+        "structured output",
+        "structured outputs",
+        "JSON mode",
+        "constrained decoding",
+        "schema-constrained generation"
+      ]
+    },
+    {
+      "term": "Supervised Fine-Tuning",
+      "acronym": "SFT",
+      "category": "Training & post-training",
+      "def": "Training a model on curated prompt-and-ideal-response pairs so it imitates desired answers and follows instructions; typically applied to a base model before reward-based tuning.",
+      "aka": [
+        "Supervised Fine-Tuning",
+        "supervised finetuning",
+        "SFT stage"
+      ]
+    },
+    {
+      "term": "SWE-bench Pro",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A harder software-engineering benchmark of long-horizon, multi-file fixes from enterprise repositories, resistant to contamination. Much tougher than SWE-bench Verified, with a brutal proprietary-repo subset where top models still score under 20%.",
+      "aka": [
+        "SWE-bench Pro",
+        "SWE-Bench Pro",
+        "Scale SWE-bench Pro"
+      ]
+    },
+    {
+      "term": "SWE-bench Verified",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Software-engineering benchmark: a model must fix real GitHub issues so the project's tests pass. 'Verified' is a 500-task human-validated subset; scored as percent of issues resolved.",
+      "aka": [
+        "SWE-bench",
+        "SWE-bench Verified",
+        "software engineering benchmark",
+        "Software Engineering Benchmark"
+      ]
+    },
+    {
+      "term": "Synthetic Data",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Training data generated by AI models rather than collected from humans, used to expand coverage, fill gaps, or create examples that are scarce or expensive to gather.",
+      "aka": [
+        "synthetic data",
+        "model-generated data",
+        "artificial training data"
+      ]
+    },
+    {
+      "term": "Temperature",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A sampling knob that scales output randomness: near 0 makes the model pick its most likely token deterministically, while higher values (around 1) yield more varied, creative text.",
+      "aka": [
+        "sampling temperature",
+        "temp"
+      ]
+    },
+    {
+      "term": "Terminal-Bench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Tests an AI agent's ability to complete real command-line tasks (installing software, debugging, file operations) in a sandboxed terminal. Scored as percent of tasks completed successfully.",
+      "aka": [
+        "Terminal-Bench",
+        "TerminalBench",
+        "Terminal Bench"
+      ]
+    },
+    {
+      "term": "Test-time compute",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Computation spent while answering rather than during training — for example generating long reasoning or exploring multiple solution paths. Spending more of it can raise accuracy on hard problems.",
+      "aka": [
+        "inference-time compute",
+        "test-time scaling",
+        "inference-time scaling",
+        "test time compute"
+      ]
+    },
+    {
+      "term": "Throughput",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Total tokens a serving system processes per unit time across all concurrent requests, measuring overall capacity. Distinct from per-user speed; high throughput serves more users at once.",
+      "aka": [
+        "serving throughput",
+        "aggregate throughput",
+        "system throughput",
+        "total tokens per second"
+      ]
+    },
+    {
+      "term": "Time-to-first-token",
+      "acronym": "TTFT",
+      "category": "Inference & serving",
+      "def": "The delay between sending a request and receiving the first output token — how long until a response starts appearing. Driven largely by processing the input prompt.",
+      "aka": [
+        "time to first token",
+        "TTFT",
+        "first-token latency",
+        "prefill latency"
+      ]
+    },
+    {
+      "term": "Token",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "The basic unit of text a model reads and generates — typically a word-piece of about 3-4 English characters. Input and output are both measured in tokens.",
+      "aka": [
+        "tokens",
+        "subword",
+        "subword unit",
+        "wordpiece",
+        "BPE token"
+      ]
+    },
+    {
+      "term": "Tokenizer",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The component that splits text into tokens (sub-word chunks) the model reads, and reassembles them on output; one token is roughly three to four English characters.",
+      "aka": [
+        "tokenization",
+        "tokenizer"
+      ]
+    },
+    {
+      "term": "Tokens",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The basic units a language model reads and writes, each a word fragment, whole word, or symbol; pricing, context limits, and output length are all counted in tokens.",
+      "aka": [
+        "token",
+        "tokens",
+        "subword units"
+      ]
+    },
+    {
+      "term": "Tokens per second",
+      "acronym": "TPS",
+      "category": "Inference & serving",
+      "def": "How fast a model emits output, in tokens generated each second — the streaming speed you perceive once a reply begins. Higher means text appears faster.",
+      "aka": [
+        "tokens per second",
+        "TPS",
+        "tok/s",
+        "generation speed",
+        "output speed"
+      ]
+    },
+    {
+      "term": "Tool Use",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A model's ability to invoke external tools — web search, a calculator, code execution, databases, APIs — to gather information or take actions it cannot perform from its own weights alone.",
+      "aka": [
+        "tool calling",
+        "tool-augmented",
+        "tools",
+        "external tools"
+      ]
+    },
+    {
+      "term": "Top-k sampling",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A sampling method that restricts each next-token choice to only the k highest-probability candidates (e.g. the top 40), then samples among them. Limits unlikely outputs.",
+      "aka": [
+        "top-k",
+        "top-k sampling",
+        "k sampling"
+      ]
+    },
+    {
+      "term": "Top-p (nucleus sampling)",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A sampling method that draws the next token only from the smallest set of candidates whose probabilities sum to p (e.g. 0.9), trimming the unlikely tail.",
+      "aka": [
+        "top-p",
+        "nucleus sampling",
+        "top-p sampling",
+        "probability mass sampling"
+      ]
+    },
+    {
+      "term": "TPU",
+      "acronym": "TPU",
+      "category": "Economics & compute",
+      "def": "Tensor Processing Unit: Google's custom AI accelerator chip, an alternative to GPUs used to train and serve models like Gemini.",
+      "aka": [
+        "Tensor Processing Unit",
+        "Google TPU",
+        "AI accelerator"
+      ]
+    },
+    {
+      "term": "Training run cost",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "The one-time dollar cost to train a model, dominated by GPU rental and electricity; frontier 2026 runs are estimated at hundreds of millions of dollars and rising.",
+      "aka": [
+        "cost of training",
+        "training cost",
+        "pretraining cost",
+        "compute budget"
+      ]
+    },
+    {
+      "term": "Transformer",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The neural-network design behind nearly all modern language models; it processes a whole sequence at once using attention to weigh how tokens relate, rather than reading word-by-word.",
+      "aka": [
+        "transformer architecture",
+        "transformer model",
+        "Attention Is All You Need"
+      ]
+    },
+    {
+      "term": "Vision-Language Model",
+      "acronym": "VLM",
+      "category": "Capabilities & agents",
+      "def": "A multimodal model that takes both images and text and reasons over them jointly — describing a photo, reading a chart, or answering questions about a screenshot. The backbone of computer-use agents.",
+      "aka": [
+        "vision-language model",
+        "VLM",
+        "vision language model",
+        "image-text model",
+        "visual question answering"
+      ]
+    },
+    {
+      "term": "World Model",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "An internal representation of how an environment works that a system uses to predict the consequences of actions and plan ahead, rather than reacting only to immediate inputs.",
+      "aka": [
+        "world model",
+        "internal world model",
+        "learned simulator",
+        "predictive model of the environment"
+      ]
+    },
+    {
+      "term": "xAI",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "AI company founded by Elon Musk in 2023, maker of the Grok model family, tightly integrated with the X (formerly Twitter) platform.",
+      "aka": [
+        "xAI",
+        "Grok maker",
+        "x.ai"
+      ]
+    },
+    {
+      "term": "Zhipu AI",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Chinese AI startup (spun out of Tsinghua University) behind the GLM model family, operating internationally under the Z.ai brand.",
+      "aka": [
+        "Zhipu",
+        "Z.ai",
+        "Zhipu AI",
+        "GLM maker",
+        "ChatGLM"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "updated": "2026-06-19T17:15:00-04:00",
+  "pulse": {
+    "text": "**Claude Opus 4.8 still leads** the AA Index at 56, but only just — OpenAI's GPT-5.5 (55) and Anthropic's own Opus 4.7 (54) are a whisker behind, the tightest the frontier has ever been. Policy is the week's real headline: a U.S. **export-control directive forced Anthropic to pull Fable 5 and Mythos 5** (a reinstatement is expected within days-to-weeks), and AI dominated the **G7**, where Altman, Amodei and Hassabis pitched voluntary safety commitments as the global baseline. **Two frontier drops look all but locked for July** — OpenAI's GPT-5.6 and Google's Gemini 3.5 Pro both sit near **97%** in prediction markets, with GPT-6 odds-on by year-end. Of 96 models tracked all-time, **15 frontier systems are live right now**; open weights keep closing the gap but none has yet cracked the top of the index. Worth watching: Bernie Sanders floated a one-time **50% tax on the largest AI labs** to seed a public AI fund.",
+    "updated": "2026-06-19T21:38:00-04:00",
+    "routine": "manual"
+  },
+  "prices": {
+    "gpt-5.5": "5/30",
+    "gpt-5.5 pro": "30/180",
+    "claude opus 4.8": "5/25",
+    "claude opus 4.7": "5/25",
+    "claude sonnet 4.6": "3/15",
+    "claude haiku 4.5": "1/5",
+    "gemini 3.1 pro": "2/12",
+    "gemini 3 flash": "0.5/3",
+    "grok 4.3": "1.25/2.5",
+    "grok 4.20 beta": "1.25/2.5",
+    "glm-5.2": "1.4/4.4",
+    "claude fable 5": "10/50",
+    "mistral large 3": "0.5/1.5",
+    "kimi k2.7 code": "0.95/4.0"
+  },
+  "leaderboard": {
+    "source": "LLM-Stats",
+    "rows": [
+      {"rank": 1, "name": "Claude Mythos Preview", "lab": "Anthropic", "score": 65.2, "sub": "GPQA 94.6% · UNRELEASED", "gold": true, "flag": "preview"},
+      {"rank": 2, "name": "GPT-5.2 Pro", "lab": "OpenAI", "score": 63.2, "sub": "released", "flag": "live"},
+      {"rank": 3, "name": "Claude Opus 4.8", "lab": "Anthropic", "score": 61.3, "sub": "released · current stable Opus", "flag": "live"}
+    ]
+  },
+  "upcoming": [
+    {"name": "Claude Mythos Preview", "lab": "Anthropic", "status": "un", "what": "Tops LLM-Stats (65.2, GPQA 94.6%) but never publicly released — held back by the Jun 12 US export order."},
+    {"name": "Mistral Large 3 — Reasoning", "lab": "Mistral", "status": "soon", "what": "A reasoning variant of Large 3 was flagged \"coming soon\" on Mistral's own page; still unshipped as of April."},
+    {"name": "Grok 4.20 Heavy · 4.3 \"0309 v2\"", "lab": "xAI", "status": "soon", "what": "xAI docs reference heavier / variant Grok tiers whose exact specs the research couldn't pin down yet."},
+    {"name": "Fable 5 / Mythos — return?", "lab": "Anthropic", "status": "un", "what": "Both pulled ~Jun 12 by the US export order. Whether/when they return for any customer is unknown."},
+    {"name": "Generative-media wave", "lab": null, "status": "rum", "what": "Veo 4, Sora 2, Seedance 2.0, Imagen 4, Kling, ElevenLabs/Stability music — all surfaced but NONE survived fact-check. Real activity likely; verified specs are not."}
+  ],
+  "killed": [
+    {"claim": "Google shipped a Gemini 3.5 Flash + \"Gemini Omni\" on May 19, 2026", "vote": "1–2", "src": "aireleasetracker"},
+    {"claim": "Opus 4.7 scored AA Index 57.28 / Coding 52.51", "vote": "0–3", "src": "whatllm.org"},
+    {"claim": "OpenAI's Feb-28 flagship was GPT-5.2 at $1.75 / $14 per M", "vote": "1–2", "src": "intuitionlabs"},
+    {"claim": "Grok 4.20: Mar 10 API, 2M ctx, $2/$6 (real: Feb, 1M, $1.25/$2.50)", "vote": "0–3", "src": "buildfastwithai"},
+    {"claim": "Opus 4.8 at $7.22/M (real: $5/$25; its 1M context was right)", "vote": "0–3", "src": "llm-stats"},
+    {"claim": "Over-specific Grok 4.3 figures from a bundled blog para", "vote": "1–2", "src": "venturebeat"}
+  ],
+  "sources": [
+    {"u": "anthropic.com/news", "q": "primary"},
+    {"u": "platform.claude.com/docs", "q": "primary"},
+    {"u": "mistral.ai/news/mistral-3", "q": "primary"},
+    {"u": "docs.x.ai/developers/models", "q": "primary"},
+    {"u": "api-docs.deepseek.com", "q": "primary"},
+    {"u": "about.fb.com/news (Muse Spark)", "q": "primary"},
+    {"u": "huggingface.co (Qwen, GLM, Gemma)", "q": "primary"},
+    {"u": "deepmind.google/models", "q": "primary"},
+    {"u": "research.nvidia.com/labs/nemotron", "q": "primary"},
+    {"u": "artificialanalysis.ai", "q": "secondary"},
+    {"u": "llm-stats.com", "q": "secondary"},
+    {"u": "en.wikipedia.org (model pages)", "q": "secondary"},
+    {"u": "vellum.ai/llm-leaderboard", "q": "secondary"},
+    {"u": "techcrunch.com", "q": "secondary"},
+    {"u": "venturebeat.com", "q": "secondary"},
+    {"u": "aireleasetracker.com", "q": "secondary"},
+    {"u": "buildfastwithai.com", "q": "blog"},
+    {"u": "marktechpost.com", "q": "blog"}
+  ]
+}
