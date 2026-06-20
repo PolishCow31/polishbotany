@@ -385,6 +385,9 @@
   .vh{color:var(--accent)}
   .hsec{color:var(--ink2)}
   #v-home .hero{margin-top:54px}   /* a band above the overview for the fox to walk on (keeps it clear of the OVERVIEW words) */
+  /* the Frontier/Open toggle sits down near the leaderboard, away from the Pulse hero */
+  #v-home .seg{margin-top:22px;margin-bottom:0}
+  #v-home .seg + .hsec{margin-top:5px}
   /* ── living pixel fox: ambles along the TOP EDGE of the overview, sits at random ── */
   #fox{position:fixed;z-index:16;pointer-events:none;will-change:left,top;transition:opacity .3s ease}
   #fox.fox-off{opacity:0}
