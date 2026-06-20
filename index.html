@@ -389,7 +389,7 @@
   #v-home .seg{margin-top:22px;margin-bottom:0}
   #v-home .seg + .hsec{margin-top:5px}
   /* ── living pixel fox: ambles along the TOP EDGE of the overview, sits at random ── */
-  #fox{position:fixed;z-index:16;pointer-events:none;will-change:left,top;transition:opacity .3s ease}
+  #fox{position:absolute;z-index:16;pointer-events:none;will-change:left,top;transition:opacity .3s ease}
   #fox.fox-off{opacity:0}
   .fox-img{display:block;height:48px;width:auto;image-rendering:auto;filter:drop-shadow(0 2px 2px rgba(0,0,0,.45))}
   .fox-shadow{position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);width:78%;height:6px;border-radius:50%;
@@ -1128,10 +1128,9 @@ boot();
     const dt=last?Math.min(0.05,(t-last)/1000):0; last=t;
     const hero=homeHero();
     if(!hero){ fox.classList.add('fox-off'); return; }
-    const vv=window.visualViewport;
-    if(vv && vv.scale>1.01){ fox.classList.add('fox-off'); return; }   // pinch-zoomed: fixed positioning detaches the fox — hide until back to 1x
     fox.classList.remove('fox-off');
     const r=hero.getBoundingClientRect();
+    const b=document.body.getBoundingClientRect();   // fox is position:absolute in body's coord space → it's content, so it zooms/pans WITH the hero under pinch (fixed detached). r-b deltas are layout coords = zoom-invariant.
     const fw=fox.offsetWidth||58, fh=fox.offsetHeight||46;
     const minX=8, maxX=Math.max(minX, r.width-fw-8);
     let bob=0;
@@ -1148,8 +1147,8 @@ boot();
       setSrc(SIT);
       if(t>modeUntil){ mode='walk'; modeUntil=t+4000+Math.random()*6000; }
     }
-    fox.style.left=(r.left+x)+'px';
-    fox.style.top=(r.top-fh+bob)+'px';
+    fox.style.left=(r.left-b.left+x)+'px';
+    fox.style.top=(r.top-b.top-fh+bob)+'px';
     img.style.transform = dir<0 ? 'scaleX(-1)' : 'none';              // sprite faces right; flip when heading left
   }
   requestAnimationFrame(tick);
