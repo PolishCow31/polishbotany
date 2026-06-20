@@ -439,7 +439,6 @@
   <div class="row">
     <svg class="logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0f1d17" stroke="#37684a"/><path d="M16 5 C9 11 9 22 16 27 C23 22 23 11 16 5 Z" fill="none" stroke="#62c177" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 8 L16 25" stroke="#62c177" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14 L12 12 M16 14 L20 12 M16 18.5 L12.5 17 M16 18.5 L19.5 17" stroke="#62c177" stroke-width="1.1" stroke-linecap="round"/></svg>
     <h1>Botany</h1>
-    <div class="upd" id="upd">loading…</div>
   </div>
 </header>
 
@@ -505,7 +504,7 @@ async function boot(){
 
 function renderUpd(){
   const m=DATA.meta||{}, d=m.lastUpdated?new Date(m.lastUpdated):null;
-  $('#upd').innerHTML = `<b>●</b> updated ${d?timeAgo(d):'—'}<br>${m.models||DATA.models.length} models · ${m.sweeps||0} sweeps`;
+  const u=$('#upd'); if(u) u.innerHTML = `<b>●</b> updated ${d?timeAgo(d):'—'}<br>${m.models||DATA.models.length} models · ${m.sweeps||0} sweeps`;
 }
 function timeAgo(d){const s=(Date.now()-d.getTime())/1000;if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
 const MM=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
@@ -573,8 +572,7 @@ function renderHome(){
   const pulseWhen = (PULSE&&PULSE.updated)?timeAgo(new Date(PULSE.updated)):(meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—');
   const pulseRoutine = (PULSE&&PULSE.routine==='AM')?'6am sweep':(PULSE&&PULSE.routine==='PM')?'6pm sweep':'latest sweep';
   const heroHTML = pulseTxt
-    ? `<div class="hero pulse"><div class="pulse-txt">${fmtPulse(pulseTxt)}</div>
-        <div class="pulse-meta"><span class="pulse-dot">●</span> The Pulse · ${pulseRoutine} · updated ${pulseWhen} · auto-refreshes 6am &amp; 6pm ET</div></div>`
+    ? `<div class="hero pulse"><div class="pulse-txt">${fmtPulse(pulseTxt)}</div></div>`
     : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>`;
   $('#v-home').innerHTML=`<div class="vh">Overview</div>
     ${heroHTML}

@@ -5,6 +5,13 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 19 2026
 
+### ✓ DONE (Jun 19, session 24) — removed Home meta blurbs
+He didn't want two meta "inserts" on Home: (a) the header `.upd` blurb ("● updated Xh ago / N models · M sweeps")
+— removed the `#upd` element (header now = logo + "Botany" only) and guarded `renderUpd()` (`const u=$('#upd'); if(u)…`);
+(b) the **Pulse meta footer line** ("The Pulse · latest sweep · updated · auto-refreshes 6am & 6pm ET") — dropped the
+`.pulse-meta` div from `heroHTML` (the Pulse paragraph itself stays). `.bar .upd`/`.pulse-meta` CSS + `pulseWhen`/
+`pulseRoutine` vars now unused but harmless. Verified: both gone, data intact, zero console errors. Redeploy=`git push`.
+
 ### ✓ DONE (Jun 19, session 23) — +25% font (dad's eyes) · pinch-to-zoom
 (1) **All fonts ×1.25** (his dad found it hard to read on phone). Done via a targeted regex pass over index.html
 (`scripts`-free, inline python): multiplied every `font-size:Npx` and `font:[weight ]Npx` shorthand value by 1.25
