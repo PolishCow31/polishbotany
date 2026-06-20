@@ -5,6 +5,17 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 19 2026
 
+### ✓ DONE (Jun 19, session 23) — +25% font (dad's eyes) · pinch-to-zoom
+(1) **All fonts ×1.25** (his dad found it hard to read on phone). Done via a targeted regex pass over index.html
+(`scripts`-free, inline python): multiplied every `font-size:Npx` and `font:[weight ]Npx` shorthand value by 1.25
+(129 declarations, CSS + JS template strings). SVG chart text (`font-size="N"` attributes, no px) deliberately left
+alone. Backup: `index.html.bak-prefont`. **Verified at 375px mobile: no horizontal overflow anywhere**, leaderboard
++ 2-col best-grid + nav (6 tabs) + Details/tie modals all still fit; only effect is the `.ftabs` sub-tab strips now
+scroll horizontally (they're overflow-x scrollers by design — fine). Zero console errors.
+(2) **Pinch-to-zoom enabled**: viewport meta dropped `maximum-scale=1.0, user-scalable=no` →
+`width=device-width, initial-scale=1.0, viewport-fit=cover`. Redeploy = `git push`. If a future bump is wanted,
+re-run the same ×factor regex (or revert from the .bak).
+
 ### ✓ DONE (Jun 19, session 22) — removed flowers · brighter forest · fox smoothness fix
 (1) **Removed ALL flowers** (CSS `#flowers`/`.fl-*` + the 6-img element + `git rm flower-a/b.png`). He'll re-add
 later as **overhead-view flower BUDS** (top-down), a different style — NOT the side-view sprigs. Don't re-add yet.
