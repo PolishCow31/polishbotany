@@ -1115,12 +1115,13 @@ boot();
 /* ════════ fox: ambles along the top edge of the Home overview, sits at random, faces its direction ════════ */
 (function(){
   const fox=document.getElementById('fox'), img=document.getElementById('fox-img'); if(!fox||!img) return;
-  const WALK=['img/fox-walk-a.png','img/fox-walk-e.png','img/fox-walk-b.png','img/fox-walk-d.png','img/fox-walk-c.png'];
+  const WALK=['img/fox-walk-1.png','img/fox-walk-5.png','img/fox-walk-6.png','img/fox-walk-2.png','img/fox-walk-4.png','img/fox-walk-8.png','img/fox-walk-7.png','img/fox-walk-3.png'];  // 8-frame walk cycle from a single-generation sprite sheet (consistent body, no head-pop; registered bottom-center). Order chosen by min frame-to-frame change so legs flow contact→pass→opposite-contact→pass.
   const SIT='img/fox-sit.png';   // frames are bottom-anchored + uniform size; gait is baked in, no JS lift (keeps feet planted)
   WALK.concat(SIT).forEach(s=>{const p=new Image();p.src=s;});        // preload all frames
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let x=24, dir=1, mode='walk', last=0, stepT=0, frame=0, modeUntil=0, curSrc='';
-  const SPEED=20;                                                     // px / second — a slow amble
+  let x=24, dir=1, mode='walk', last=0, walked=0, frame=0, modeUntil=0, curSrc='';
+  const SPEED=42;                                                     // px / second — a relaxed walk
+  const STEP_PX=4.5;                                                  // advance one leg frame per this many px MOVED → legs lock to motion (feet plant, no skating); 8 frames × 4.5px = ~36px stride, ~9 fps at this speed
   function homeHero(){ const h=document.getElementById('v-home'); return (h&&h.classList.contains('on'))?h.querySelector('.hero'):null; }
   function setSrc(s){ if(s!==curSrc){ curSrc=s; img.src=s; } }
   function tick(t){
@@ -1136,9 +1137,10 @@ boot();
     let bob=0;
     if(reduce){ setSrc(SIT); }
     else if(mode==='walk'){
-      x+=dir*SPEED*dt;
+      const mv=SPEED*dt;
+      x+=dir*mv; walked+=mv;                                          // distance moved drives the leg cycle
       if(x>=maxX){x=maxX;dir=-1;} else if(x<=minX){x=minX;dir=1;}
-      if(t-stepT>135){ stepT=t; frame=(frame+1)%WALK.length; }
+      frame=Math.floor(walked/STEP_PX)%WALK.length;
       setSrc(WALK[frame]);
       bob = 0;                                                        // no whole-sprite lift — feet stay on the ground
       if(!modeUntil) modeUntil=t+4000+Math.random()*6000;
