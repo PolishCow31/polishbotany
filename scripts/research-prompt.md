@@ -89,10 +89,13 @@ shipped, a date slipped, market odds moved), output the **full current** list (i
 - Drop models that have actually SHIPPED (they belong in models.json now, not the radar).
 
 ## Also refresh the PREDICTION MARKETS (`markets` + `marketsStory`) — the "Predict" tab ★ HIGH PRIORITY
-**This is one of the most important sections of the app — research it THOROUGHLY every run.** It shows what
-real prediction markets and forecasters expect about the AI race. Pull LIVE odds across **Polymarket,
-Metaculus, Kalshi, Manifold** (plus Epoch AI / METR forecasts that have a clean public URL). Be
-comprehensive — report a BROAD set of currently-OPEN markets (aim ~25–45), spanning all four categories.
+This is one of the most important sections of the app. It shows what real prediction markets expect about the
+AI race. **Keep it sharp, not exhaustive: the market set PERSISTS and refreshes BY URL across runs, so you do
+NOT need to re-research every platform every run** (that makes the sweep crawl). Each run: pull LIVE odds for the
+**~10–15 highest-signal OPEN markets** — the headline best-model/lab races, the imminent frontier-release ship
+dates, and a couple of the big benchmark/AGI questions — across **Polymarket, Metaculus, Kalshi, Manifold**, plus
+any genuinely NEW market you come across. Prioritize current numbers + the most-traded markets over breadth.
+Budget your web fetches: if a market page is slow or won't load, skip it and move on rather than retrying.
 
 For each market output: `question` (the market's actual question), `platform` (Polymarket | Metaculus |
 Kalshi | Manifold | Epoch AI | METR), `forecast` (**LEAD with the headline probability as a number+`%`**,

@@ -15,9 +15,14 @@ echo "=== $(ts) update start ===" >> "$LOG"
 #    queues tool calls pending an interactive approval that never comes, so the
 #    delta is never written. Safe here — the AI only PROPOSES data/_delta.json;
 #    merge.py is the deterministic authority that decides what actually lands.
+#    WATCHDOG: a 25-min cap (perl alarm — macOS has no GNU `timeout`) so a hung/too-slow run can
+#    NEVER block future launchd fires (launchd won't start a 2nd instance while one is running).
+#    Non-zero exit (incl. the watchdog kill) does NOT abort — step 2 still merges whatever delta
+#    was written before the cutoff, and logs if none was.
 rm -f data/_delta.json
-"$CLAUDE" -p --dangerously-skip-permissions "$(cat scripts/research-prompt.md)" >> "$LOG" 2>&1 \
-  || { echo "$(ts) claude -p failed" >> "$LOG"; exit 1; }
+perl -e 'alarm shift @ARGV; exec @ARGV' 1500 \
+  "$CLAUDE" -p --dangerously-skip-permissions "$(cat scripts/research-prompt.md)" >> "$LOG" 2>&1 \
+  || echo "$(ts) claude -p exited non-zero / hit the 25-min watchdog — merging any delta it wrote" >> "$LOG"
 
 # 2. deterministic, authoritative merge
 if [ -f data/_delta.json ]; then
