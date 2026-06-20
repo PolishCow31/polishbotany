@@ -3,7 +3,152 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
-## State — Jun 19 2026
+## State — Jun 20 2026
+
+### ✓ LIVE-RUN STATUS (Jun 20) — both daily sweeps fired; PM was slow → watchdog added
+The launchd updater is running in production. **6am sweep: clean, ~4 min** (commit `6bc9f19`, dataVersion 6).
+**6pm sweep: SUCCEEDED but took ~89 min** (fired 18:12 on wake since the Mac slept through 18:00; pushed 19:41,
+commit `1006d43`, dataVersion 7; added +2 models, +3 news, +2 terms, 2 briefs, refreshed markets). The 89-min
+crawl = `claude -p` burned only 17s CPU across it, i.e. blocked on slow/Cloudflare-gated market fetches; root cause
+was the over-heavy "research ~25-45 markets across 4 platforms EVERY run" ask. **Fixed (commit pushed):** (1)
+`update.sh` now wraps `claude -p` in a **25-min perl-alarm watchdog** (macOS has no GNU `timeout`) so a hang can
+never block future fires (launchd won't start a 2nd instance); a kill/non-zero exit no longer aborts — it still
+merges any delta written. (2) `research-prompt.md` markets section dialed back to the **~10-15 highest-signal open
+markets + any new ones, skip-slow-pages** (the set persists + refreshes by URL, so it stays thorough over time).
+Next AM run should be back to a few minutes. Watch `scripts/update.log` if a run ever looks stuck again.
+
+
+
+### ✅ DONE (Jun 20, session 26c) — prediction markets folded into the twice-daily loop (gap closed)
+The Predict tab's **prediction markets + narrative were NOT auto-updating** — `forecasts.json` was built
+only by the manual `build_forecasts.py`; the cron never touched it, so the markets froze. Now in the loop:
+- **`research-prompt.md`** gained a thorough **PREDICTION MARKETS** section (HIGH PRIORITY): research live
+  odds across Polymarket/Metaculus/Kalshi/Manifold (+Epoch/METR) across the 4 categories
+  `ranking|release|benchmark|capability`; `forecast` must LEAD with the headline `%` (the bar reads
+  `firstPct`); real-URL-only + open-only; plus rewrite `marketsStory` (4 `{h,t}` paras) and optionally
+  `trajForecasts` (chart cones). Schema gained `markets`/`marketsStory`/`trajForecasts`.
+- **`merge.py`** section 6f writes `forecasts.json`: markets **refresh BY URL** (re-read = fresh odds), new
+  ones append, **resolved/past pruned**; **integrity guard `mkt_ok`** rejects any url whose domain ≠ platform
+  (`MKT_DOMAINS`, mirrors the news guard); bad categories coerced to `capability`; `marketsStory`(3–6 paras)
+  + `trajForecasts`(≥4) replace-if-provided. **`historics` + `methodology` are NEVER touched** (those are the
+  manual AA-rebaseline territory — see below).
+- **VERIFIED both halves:** synthetic delta (add / refresh-by-url-no-dup / reject-bad-domain / prune-past /
+  coerce-category, historics+methodology preserved) AND a real headless research test (**25 markets found,
+  ALL 25 pass the guard**, all 4 categories; the agent even self-caught a Kalshi URL it had pattern-guessed).
+  First LIVE markets refresh lands on the next scheduled run (6am/6pm) — wiring proven per-link, not yet run live.
+- Runtime logs (`scripts/*.log`) now gitignored.
+- **AA-rebaseline stays MANUAL by design** (the one remaining non-auto piece): when Artificial Analysis
+  re-versions its Index scale (v4.1→v4.2…), every model's score shifts non-linearly and must be RE-FETCHED
+  from AA (not computable from old values), the trigger isn't machine-announced, and it's a DESTRUCTIVE whole-
+  dataset rewrite (opposite of the additive/idempotent merge) that would corrupt every chart+leaderboard at
+  once if wrong. So it's human-launched (matches [[feedback_ai_auditor_architecture]]). To redo it: a research
+  pass re-fetching live AA values + the `historicsUsable` guard, like the Jun 19 v4.0→v4.1 rebaseline.
+
+### ◷ PARKED (Jun 20, session 26b) — fox WALK animation: waiting for Fable 5
+The fox got a UI fix + a deep-dive that ended in a deliberate park:
+- **Pinch-zoom fix (DONE, live):** fox was `position:fixed` → detached from the hero under
+  pinch-zoom (drifted vertically). First "fixed" it by hiding it on zoom — Christian rejected
+  ("don't make him vanish"). REAL FIX: `position:absolute` in body coord space (it's content,
+  zooms WITH the hero); tracking math = body-relative doc coords (`r.left-b.left`, `r.top-b.top`).
+- **Walk cycle (PARKED):** replaced the choppy 5 jiggly frames with an **8-frame cycle** (single
+  sprite-sheet gen → consistent body, registered bottom-center, distance-locked stepping so feet
+  plant). BUT the gait reads as a "paw dance," not walking. Ran `/deep-research` on quadruped gait
+  (verified spec → `docs/fox-walk-gait-spec.md`) and proved the blocker is **nano-banana: it
+  freezes the legs in ~ONE pose** (measured foot-spread identical ~87% across all 12 frames),
+  ignores even a real Muybridge tiger-walk reference. So a correct gait needs a procedural leg-rig,
+  a real artist sprite, or a stronger model. **Christian's call: wait for Fable 5** to come back
+  (export-pulled) and let it draw the frames, rather than hand-rig now. See [[reference_nanobanana_no_gait]].
+- **Cleaned up (DONE, live):** the new 8 frames had floating stray-pixel specks ("green blobs"
+  on the sage bg) → fixed with a **largest-connected-component denoise** (fox intact). Current live
+  fox = consistent-body, blob-free, ambling stiffly (gait parked). Controller's distance-stepping
+  + the absolute-positioning zoom fix stay. **When Fable 5 returns:** regenerate the sheet, run it
+  through key→denoise→register→order-per-spec (`docs/fox-walk-gait-spec.md`), feed the existing
+  controller. Old 5 frames (`fox-walk-a..e`) were git-removed; new frames = `fox-walk-1..8.png`.
+
+### ✅ DONE (Jun 20, session 26) — P2 COMPLETE: the twice-daily updater is INSTALLED + VALIDATED end-to-end · icons · nits
+**THE BIG ONE — the auto-updater works and is live.** This was "the last step before done" for ~a dozen sessions.
+Done autonomously while Christian was away ("take the reins, be appropriate"), pushing each change as applied.
+- **Found + fixed the latent showstopper:** headless `claude -p` was silently QUEUING its Write/WebSearch tool calls
+  pending an interactive permission that never comes in a launchd context → every sweep would have written nothing
+  ("no delta written") and been a silent no-op. **Fix:** `update.sh` now calls
+  `claude -p --dangerously-skip-permissions "$(cat scripts/research-prompt.md)"`. Safe by design — the AI only
+  PROPOSES `data/_delta.json`; deterministic `merge.py` is the authority (the propose/dispose architecture).
+- **launchd job installed + loaded:** `cp scripts/com.christian.ai-tracker.plist ~/Library/LaunchAgents/` +
+  `launchctl load`. Fires **6am & 6pm ET** (RunAtLoad:false). Verified registered (`launchctl list` → com.christian.ai-tracker).
+- **AUTH GOTCHA (recorded):** `claude`'s credentials live in the **login keychain** (`security` service
+  `"Claude Code-credentials"`, acct `christian`), NOT a file. So `env -i` (synthetic minimal env) reports
+  "Not logged in" — but a real **LaunchAgent runs in the GUI login session and DOES reach the keychain.** Don't be
+  fooled by an `env -i` test; the real `launchctl kickstart` is the valid check.
+- **VALIDATED END-TO-END THE REAL WAY:** `launchctl kickstart -k gui/$(id -u)/com.christian.ai-tracker` → job ran in
+  its true launchd context, **authenticated**, did the research pass headless, merged, and **auto-pushed**
+  (commit `9ff575e`), exit 0, empty `launchd.err.log`. So the cron genuinely works, not just "installed."
+- **Two real research sweeps ran tonight** (one I supervised + pushed `data/` manually after verifying; one the cron
+  fired). BOTH were appropriately conservative: 0 new models, and the agent **correctly rejected** false "new model"
+  claims (MiniMax M2.7, Qwen3 Coder Next) AND old-v4.0-scale "61.4" aggregator-slop numbers as untrustworthy rather
+  than fabricating. The one factual addition (Google/SpaceX/xAI **$920M/mo** compute deal) I independently
+  corroborated (DCD/Engadget/CNBC/Techzine) before letting it land. Pulse rewritten each sweep; **dataVersion now 5**,
+  3 sweeps logged. All pushed live.
+- **NOTE — the cron auto-pushes with NO human review** (by design). Tonight's runs were clean + the agent's skepticism
+  is good, but if Christian ever wants a review gate, change `update.sh` step 3 to open a PR / write to a branch
+  instead of `git push` to main. Risk is bounded by merge.py's guards + it's his unlisted personal tracker (revertible).
+- **✓ Home-screen icons** — `icons/icon-192.png` + `icon-512.png` (were referenced by manifest+apple-touch but the
+  folder was EMPTY → broken default icon on Add-to-Home-Screen). Rendered the in-app SVG leaf logo to PNG via
+  **headless Chrome** (`/Applications/Google Chrome.app/.../Google Chrome --headless --screenshot --window-size=NxN`),
+  then PIL-downscaled the 512 to 192 (the direct 192 render came out blank — Chrome min-window quirk; downscale fixed
+  it). Maskable, dark `#0b140f` bg, good safe-zone margin. Pushed.
+- **✓ Nits** — Opus 4.8 `notable` prose 61.4→56 / 60.2→55 (matches the AA-v4.1 leaderboard); `git rm img/forest-bg.jpg`
+  (dead since the sage-bg swap; recoverable from history). Pushed.
+- **CLEANUP CANDIDATES (left untouched, noted):** (1) `editorial.leaderboard` + `editorial.upcoming` hold STALE
+  old-scale data (Opus 4.8 at 61.3, a phantom "Claude Mythos Preview" 65.2) — but they're **UNRENDERED** (removed from
+  the UI in session 7), so nothing leaks; worth a future scrub. (2) `merge.py` re-serializes `editorial.json`
+  pretty-printed, so a 1-field pulse change shows as a ~197-line diff (formatting churn, harmless but noisy).
+- Commits this session: `f01c98f` (Pulse Read-more) `5f91b3a` (sage bg) `6896c9d` (mobile fixes) `56c20c6`(toggle
+  spacing) `…`(nits) `…`(icons) `…`(update.sh fix) + the two auto-update commits. All on `origin/main`.
+**STATE: P0+P1+P2 all DONE. Botany is built, deployed, and self-updating.** Remaining = P3 polish only (in-app
+search, model-detail pages, dad onboarding/share) + the two cleanup candidates above. Christian was reviewing UI
+tweaks ("keep tweaking UI" was open-ended) — pick that back up on his return.
+
+### ✓ DONE (Jun 19, session 25) — Home Pulse "Read more" clamp · forest bg → light-sage texture
+Two asks, both built + verified at 375px (Chrome preview @ :8095), zero console errors, committed.
+**(1) Pulse "Read more" clamp.** The Home Pulse paragraph now collapses to **~4 lines** (`max-height:calc(1.64em*4)`,
+`overflow:hidden`) with the 4th line **fading into the card** (a `.pulse-txt.clamp::after` bottom gradient to
+`var(--panel)`); a centered green **"Read more ▼"** disclosure (`.pulse-more`) expands it → "Read less" + caret
+rotates 180° (`[aria-expanded]`). Delegated handler `[data-pulse-toggle]` (in the doc click block) toggles `.clamp`
+so it survives `renderHome()` re-draws; resets collapsed each Home visit. **Overflow guard** in renderHome: if the
+Pulse doesn't exceed 4 lines (`scrollHeight<=clientHeight+2`) the button is `hidden` and clamp removed — no dangling
+"Read more" on a short Pulse. Commit `f01c98f`.
+**(2) Background: forest photo → soft light-sage WATERCOLOR texture.** Per his ask ("lightly textured lighter green").
+Generated via **nano-banana Flash, 1K, 9:16** → `img/bgtex-a.jpeg` (soft sage watercolor wash, even/airy, no focal
+subject). `#forest` layer rewritten: dropped the dark scrim + `forest-bg.jpg`, now `url(img/bgtex-a.jpeg) center
+top/cover fixed, #cfe3c2`. Cards/header/nav stay DARK (he only asked for the bg) → dark cards float on light sage,
+reads clean. **Dependent legibility fixes (the bg flip would've washed these out):** recolored every bare-on-bg text
+to deep forest-green via overrides appended at END of `<style>` (source-order win) — `.vh #27492f`, `.hsec #375a43`,
+`.vsub #3c5a43`, `.gloss-hint/.empty #456a4d`; **darkened the pollen mote palette** (`COLORS` → muted sage/olive
+`rgba(74,110,66)/(96,130,80)/(150,128,70)`) so the drifting motes read on a light bg; gave the **#1 gold leaderboard
+row an opaque base** (`…,var(--bg2)` second layer) so no sage bleeds through its tint gradient. **Also removed the
+green body side-borders** (`border-left/right:var(--line2)` — his "lime-green phone-size borders = visual noise").
+Verified Home/Charts/More all legible. Commit `5f91b3a`. **Alternates kept on disk (untracked):** `img/bgtex-c.jpeg`
+(a muted LINEN-weave texture — one-line swap if he prefers it) and `img/forest-bg.jpg` (instant revert to forest).
+NOTE: neither alternate is committed; if he settles on sage, `git rm img/forest-bg.jpg` to clean up.
+**(cont., commit `6896c9d`) — 4 mobile fixes:** (a) **file-tab strip drag** — `.ftabs` got `touch-action:pan-x` +
+`overscroll-behavior-x:contain` (+ `user-select:none` on `.ftab`) so the horizontal tab scroller only pans
+sideways instead of dragging vertically/all-over on touch (it still scrolls horizontally by design — News has 8
+topic tabs). (b) **fox falls out of place on pinch-zoom** — FIRST tried hiding it on zoom (Christian rejected: "I'd
+rather he doesn't glitch out vertically" — vanishing is a cop-out). REAL FIX (session 26): the fox was `position:fixed`
+(pinned to the layout viewport) so under pinch it detached from the hero while content zoomed. Changed to
+**`position:absolute`** in body's coord space → it's ordinary CONTENT, so it magnifies/pans in lockstep with the hero;
+tracking math switched to body-relative document coords (`r.left-b.left`, `r.top-b.top`; these are layout coords =
+zoom-invariant). Removed the visualViewport hide-guard. VERIFY GOTCHA: headless preview pages are "hidden" so the
+fox's `requestAnimationFrame` is PAUSED → `fox.style` reads empty in `preview_eval` and the fox looks unpositioned;
+`preview_screenshot` REPLAYS a frame and shows it placed correctly (don't panic — confirmed glued to the hero rim).
+Couldn't physically pinch-zoom headless, so the final feel-confirm is a pinch on Christian's phone. (c) **Sources always fully open** — removed the default `open` on the nested week/day/sweep `<details>` in
+`renderSources()` (lines ~1026/1028/1030) so opening Sources shows a condensed collapsed tree you drill into. (d)
+**Home header** now reads **"Overview · updated Xh ago"** — `renderHome` computes `updAgo=timeAgo(meta.lastUpdated)`,
+renders a muted `.vh-upd` span (this is the lightweight return of the freshness blurb removed in session 24, but
+inline on the OVERVIEW header instead of a separate element). All verified at 375px, zero console errors.
+NOTE on verifying the fox: `preview_screenshot` REPLAYS the `#fox` opacity transition, so the fox can look ~93%
+visible on a non-Home view in a screenshot even though `fox-off`/opacity:0 is correctly applied — trust
+preview_inspect/eval (`foxClasses`), not the shot ([[reference_web_local_gotchas]] §3).
 
 ### ✓ DONE (Jun 19, session 24) — removed Home meta blurbs
 He didn't want two meta "inserts" on Home: (a) the header `.upd` blurb ("● updated Xh ago / N models · M sweeps")
