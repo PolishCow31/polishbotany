@@ -452,6 +452,13 @@
   .mrow-sub .badge{font-size:9.6px;padding:1px 5px}
   .mrow-labdt{font:500 13.4px var(--mono);color:var(--ink3)}
   .mrow-chev{color:var(--ghost);font-size:20px;line-height:1;flex:none;align-self:center}
+  /* Details popup: raw data as clean labeled grids (Specs / Benchmarks) */
+  .mi-sec{font:700 11.8px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:18px 0 8px}
+  .mi-grid{display:grid;grid-template-columns:max-content 1fr;gap:7px 18px;margin:0;align-items:baseline}
+  .mi-grid dt{color:var(--ink3);font:500 14.8px var(--sans)}
+  .mi-grid dd{margin:0;color:var(--ink);font:600 14.8px var(--sans);overflow-wrap:anywhere}
+  .mi-bench2 dd{font-family:var(--mono);font-weight:700}
+  .mi-u{color:var(--ink3);font-weight:400;font-size:.86em}
 </style>
 </head>
 <body>
@@ -620,13 +627,12 @@ function renderHome(){
 function modelCard(m){
   // Current tab = a clean name-first list; the full breakdown (specs, all benchmarks, brief)
   // lives in the Details popup (modelInfo). Tap anywhere on the row to open it.
-  const star = m.milestone ? ' <span class="mrow-star" title="landmark">★</span>' : '';
   const flag = (m.status && m.status!=='live') ? statusBadge(m.status) : '';   // only flag non-live (preview/pulled); LIVE stays clean
   const openTag = m.open ? '<span class="badge b-open">OPEN</span>' : '';
   return `<div class="mrow" data-info="${esc(m.name).replace(/"/g,'&quot;')}" role="button" tabindex="0" aria-label="${he(m.name)} — details">
     <span class="mrow-dot" style="background:${labHex(m.lab)}"></span>
     <div class="mrow-main">
-      <div class="mrow-nm">${he(m.name)}${star}</div>
+      <div class="mrow-nm">${he(m.name)}</div>
       <div class="mrow-sub">${flag}${openTag}<span class="mrow-labdt">${he(m.lab)} · ${fmtDate(m.released)}</span></div>
     </div>
     <span class="mrow-chev">›</span>
@@ -648,13 +654,26 @@ function synthBrief(m){
 function modelInfo(m){
   const b=m.benchmarks||{}, pr=priceFor(m.name);
   const brief=(BRIEFS[m.name]||synthBrief(m)).split(/\n\n+/).map(p=>`<p>${he(p)}</p>`).join('');
-  const benchLine=Object.entries(b).map(([k,v])=>`${he(k.replace(/\s*\(.*\)/,''))} <b>${v}</b>`).join(' · ');
-  const specs=[m.params&&m.params!=='—'?m.params:'', m.context&&m.context!=='—'?m.context+' ctx':'', pr?`$${pr}/M`:'', m.modality||''].filter(Boolean).join(' · ');
+  const ok=v=>v&&v!=='—'&&v!=='unknown';
+  // pricing: "in/out" -> "$in in · $out out / 1M"
+  let price='';
+  if(pr){ const x=String(pr).split('/'); price = x.length===2 ? `$${he(x[0].trim())} in · $${he(x[1].trim())} out <span class="mi-u">/ 1M tok</span>` : `$${he(pr)}`; }
+  const specRows=[
+    ['Parameters', ok(m.params)?he(m.params):''],
+    ['Context', ok(m.context)?he(m.context):''],
+    ['Pricing', price],
+    ['Modality', m.modality?he(m.modality):''],
+    ['License', m.open?'Open weights':'Proprietary'],
+  ].filter(r=>r[1]);
+  const specsHTML = specRows.length?`<div class="mi-sec">Specs</div><dl class="mi-grid">${specRows.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`:'';
+  const be=Object.entries(b);
+  const benchHTML = be.length?`<div class="mi-sec">Benchmarks</div><dl class="mi-grid mi-bench2">${be.map(([k,v])=>`<dt>${he(k.replace(/\s*\(.*\)/,''))}</dt><dd>${he(String(v))}</dd>`).join('')}</dl>`:'';
   return `<button class="modal-x" aria-label="Close">✕</button>
     <div class="mi-nm">${he(m.name)}</div>
-    <div class="mi-meta"><span class="dot" style="background:${labHex(m.lab)}"></span>${he(m.lab)} · ${fmtDate(m.released)} ${statusBadge(m.status)}${m.open?' <span class="badge b-open">OPEN</span>':''}${m.milestone?' <span class="badge b-milestone">★</span>':''}</div>
-    ${specs?`<div class="mi-specs">${he(specs)}</div>`:''}
-    ${benchLine?`<div class="mi-bench">${benchLine}</div>`:''}
+    <div class="mi-meta"><span class="dot" style="background:${labHex(m.lab)}"></span>${he(m.lab)} · ${fmtDate(m.released)} ${statusBadge(m.status)}${m.open?' <span class="badge b-open">OPEN</span>':''}</div>
+    ${specsHTML}
+    ${benchHTML}
+    <div class="mi-sec">About</div>
     <div class="mi-brief">${brief}</div>${BRIEFS[m.name]?'':'<div class="mi-fallback">Quick summary from the model\'s data — a fuller write-up lands on the next sync.</div>'}`;
 }
 function openModal(name){
@@ -677,7 +696,7 @@ function renderNow(){
   list.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   const nAll=DATA.models.length, nFr=DATA.models.filter(m=>!m.open).length, nOp=DATA.models.filter(m=>m.open).length;
   $('#v-now').innerHTML = `<div class="vh">Every model · newest first</div>
-    <div class="vsub">The full catalog since GPT-1 (2018). <span style="color:var(--warn)">★</span> = landmark. Pick a drawer, or tap a card's <b>ⓘ</b> for the full rundown.</div>
+    <div class="vsub">The full catalog since GPT-1 (2018). Pick a drawer, or tap any model for the full rundown.</div>
     ${fileTabs('now',nowCat,[['all','All',nAll],['frontier','Frontier',nFr],['open','Open source',nOp]])}
     <div class="ftab-panel">${list.length?list.map(modelCard).join(''):'<div class="empty">No models here.</div>'}</div>`;
 }
