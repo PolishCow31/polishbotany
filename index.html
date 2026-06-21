@@ -904,12 +904,12 @@ function renderPredict(){
       <div class="phero-k">Next frontier drop</div>
       <div class="phero-m"><span class="rel-dot" style="background:${labHex(nf.lab)}"></span>${he(nf.model)}</div>
       <div class="phero-w">${he(nf.expectedWindow||fmtDate(nf.expectedDate))}${(nf.prob!=null&&nf.prob>=0)?` · <b>${nf.prob}%</b> likely`:''}</div>
-      ${nf.basis?`<div class="phero-b">${he(nf.basis)}</div>`:''}
+      <button class="infobtn" data-rel-info="${RELSORTED.indexOf(nf)}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.6" r="0.2" stroke-width="2.6"/></svg>Details</button>
     </div>`:'';
   const listItems=RELSORTED.filter(r=>r!==nf);
   const panel = predictTab==='markets'
     ? marketsBody()
-    : (RELSORTED.length?`${hero}<div class="accsub" style="margin:10px 0 6px">Everything expected next, soonest first. <b style="color:var(--accent)">FRONTIER</b> = flagship; tap Details for the reasoning.</div>${listItems.map(relRow).join('')}`:'<div class="empty">The release radar is being researched — it lands on the next data sync.</div>');
+    : (RELSORTED.length?`${hero}${listItems.map(relRow).join('')}`:'<div class="empty">The release radar is being researched — it lands on the next data sync.</div>');
   $('#v-predict').innerHTML = `<div class="vh">Predict</div>
     ${fileTabs('predict',predictTab,[['radar','Release radar',RELSORTED.length||''],['markets','Prediction markets',MARKETS.length||'']])}
     <div class="ftab-panel">${panel}</div>`;
