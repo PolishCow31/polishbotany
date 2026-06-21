@@ -465,6 +465,18 @@
   /* More: push the Sources drawer to the bottom of the page */
   #v-more.on{display:flex;flex-direction:column;min-height:calc(100dvh - 186px)}
   #v-more .more-sources{margin-top:auto}
+  /* model-to-model compare — discreet ★ by the Overview opens a popup */
+  .cmp-star{margin-left:9px;color:var(--ink3);opacity:.28;font-size:13px;cursor:pointer;vertical-align:middle;transition:opacity .15s,color .15s}
+  .cmp-star:hover,.cmp-star:focus-visible{opacity:.95;color:var(--accent);outline:none}
+  .cmp-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px;margin:16px 0 10px}
+  .cmp-sel{width:100%;min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:9px;color:var(--ink);font:600 14px var(--sans);padding:9px 6px;-webkit-appearance:none;appearance:none;text-align:center;text-align-last:center}
+  .cmp-vs{font:700 12px var(--mono);color:var(--ink3)}
+  .cmp-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid var(--line)}
+  .cmp-row:last-child{border-bottom:none}
+  .cmp-v{font:700 15.5px var(--mono);color:var(--ink2);text-align:center;overflow-wrap:anywhere}
+  .cmp-v.cmp-win{color:var(--accent)}
+  .cmp-l{font:600 11px var(--mono);color:var(--ink3);text-transform:uppercase;letter-spacing:.06em;text-align:center;min-width:72px}
+  .cmp-foot{font:600 12px var(--mono);color:var(--ink3);margin-top:13px;text-align:center}
 </style>
 </head>
 <body>
@@ -615,7 +627,7 @@ function renderHome(){
   const heroHTML = pulseTxt
     ? `<div class="hero pulse"><div class="pulse-txt clamp">${fmtPulse(pulseTxt)}</div><button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button></div>`
     : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>`;
-  $('#v-home').innerHTML=`<div class="vh">Overview${updAgo?`<span class="vh-upd"> · updated ${updAgo}</span>`:''}</div>
+  $('#v-home').innerHTML=`<div class="vh">Overview${updAgo?`<span class="vh-upd"> · updated ${updAgo}</span>`:''}<span class="cmp-star" data-compare role="button" tabindex="0" aria-label="Compare two models">★</span></div>
     ${heroHTML}
     ${segCtl('home',homeMode,FO)}
     <div class="hsec">Leaderboard · AA Index</div>
@@ -687,6 +699,38 @@ function openModal(name){
   $('#modal').hidden=false; document.body.style.overflow='hidden'; $('#modalcard').scrollTop=0;
 }
 function closeModal(){ const md=$('#modal'); if(md&&!md.hidden){ md.hidden=true; document.body.style.overflow=''; } }
+// ---- model-to-model compare (opens from the discreet ★ by the Overview) ----
+let cmpA=null, cmpB=null;
+function cmpModels(){ return DATA.models.filter(m=>m.status==='live').sort((a,b)=>(benchOf(b,'aa')||0)-(benchOf(a,'aa')||0)); }
+function cmpNum(x,y){ return (x==null||y==null)?0:(x>y?1:x<y?-1:0); }
+function cmpRow(label,av,bv,better){ return `<div class="cmp-row"><div class="cmp-v${better>0?' cmp-win':''}">${av}</div><div class="cmp-l">${label}</div><div class="cmp-v${better<0?' cmp-win':''}">${bv}</div></div>`; }
+function cmpResult(){
+  const a=DATA.models.find(m=>m.name===cmpA), b=DATA.models.find(m=>m.name===cmpB);
+  if(!a||!b) return '<div class="empty">Pick two models.</div>';
+  const v=(x,suf)=>x==null?'—':x+(suf||'');
+  let s='';
+  [['AA-Index','aa',''],['SWE-bench','swe','%'],['GPQA','gpqa','%'],['AIME','aime','%']].forEach(([lbl,cat,suf])=>{const av=benchOf(a,cat),bv=benchOf(b,cat);s+=cmpRow(lbl,v(av,suf),v(bv,suf),cmpNum(av,bv));});
+  s+=cmpRow('Lab', he(canonLab(a.lab)), he(canonLab(b.lab)), 0);
+  s+=cmpRow('Context', he(a.context||'—'), he(b.context||'—'), cmpNum(ctxNum(a.context),ctxNum(b.context)));
+  const pa=outPrice(a.name),pb=outPrice(b.name);
+  s+=cmpRow('Out $/M', pa!=null?'$'+pa:'—', pb!=null?'$'+pb:'—', -cmpNum(pa,pb));
+  s+=cmpRow('Params', he(a.params||'—'), he(b.params||'—'), 0);
+  s+=cmpRow('Released', fmtDate(a.released), fmtDate(b.released), cmpNum(tval(a.released),tval(b.released)));
+  s+=cmpRow('Type', a.open?'Open':'Closed', b.open?'Open':'Closed', 0);
+  return s;
+}
+function cmpSelect(id,sel){ return `<select id="${id}" class="cmp-sel" aria-label="model">${cmpModels().map(m=>`<option value="${he(m.name).replace(/"/g,'&quot;')}"${m.name===sel?' selected':''}>${he(m.name)}</option>`).join('')}</select>`; }
+function compareBody(){
+  return `<button class="modal-x" aria-label="Close">✕</button>
+    <div class="mi-nm" style="font-size:21px;padding-right:34px">Compare models</div>
+    <div class="cmp-head">${cmpSelect('cmpA',cmpA)}<span class="cmp-vs">vs</span>${cmpSelect('cmpB',cmpB)}</div>
+    <div id="cmp-result" class="cmp-grid">${cmpResult()}</div>
+    <div class="cmp-foot">Green = the stronger value · lower price wins</div>`;
+}
+function openCompare(){
+  const lb=cmpModels(); if(!cmpA)cmpA=lb[0]&&lb[0].name; if(!cmpB)cmpB=lb[1]&&lb[1].name;
+  $('#modalcard').innerHTML=compareBody(); $('#modal').hidden=false; document.body.style.overflow='hidden'; $('#modalcard').scrollTop=0;
+}
 // file-cabinet sub-tabs: a tab strip whose active tab is stitched to the panel below
 function fileTabs(view,active,tabs){
   return `<div class="ftabs ${tabs.length<=4?'ftabs-fill':'ftabs-scroll'}" role="tablist">${tabs.map(t=>
@@ -1088,6 +1132,7 @@ document.addEventListener('click',e=>{
   const lk=e.target.closest('.lnk[data-href]'); if(lk){window.open(lk.getAttribute('data-href'),'_blank','noopener');return;}
   const dot=e.target.closest('circle[data-model]'); if(dot){const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model'));const d=$('#detail-'+dot.getAttribute('data-bench'));if(m&&d)d.innerHTML=trajDetailCard(m,dot.getAttribute('data-bench'));return;}
   const rib=e.target.closest('[data-rel-info]'); if(rib){openReleaseModal(rib.getAttribute('data-rel-info'));return;}
+  const cmp=e.target.closest('[data-compare]'); if(cmp){openCompare();return;}
   const sg=e.target.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode; if(which==='home'){homeMode=mode;renderHome();} else if(which==='now'){nowCat=mode;renderNow();} else if(which==='traj-aa'){trajMode.aa=mode;const w=$('#traj-aa-wrap');if(w)w.innerHTML=trajWrap('aa');else renderCharts();} else if(which==='traj-swe'){trajMode.swe=mode;const w=$('#traj-swe-wrap');if(w)w.innerHTML=trajWrap('swe');else renderCharts();} else if(which==='hh'){hhMetric=mode;const w=$('#hh-wrap');if(w)w.innerHTML=headToHead();else renderCharts();} else if(which==='cadence'){cadenceMode=mode;const w=$('#cadence-wrap');if(w)w.innerHTML=cadenceBlock();else renderCharts();} return;}
   const f=e.target.closest('.fchip'); if(f){ if(f.dataset.newsTopic!==undefined){newsTopic=f.dataset.newsTopic||null;renderNews();} return;}
   const ftb=e.target.closest('.ftab'); if(ftb){ const i=ftb.dataset.ftab.indexOf(':'),v=ftb.dataset.ftab.slice(0,i),val=ftb.dataset.ftab.slice(i+1);
@@ -1103,6 +1148,7 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 document.addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('[role="button"][tabindex]')){ e.preventDefault(); e.target.click(); } });
 
 document.addEventListener('input',e=>{ if(e.target&&e.target.id==='glossq'){ const r=$('#glossres'); if(r) r.innerHTML=glossResults(e.target.value.trim()); } });
+document.addEventListener('change',e=>{ if(e.target&&(e.target.id==='cmpA'||e.target.id==='cmpB')){ if(e.target.id==='cmpA')cmpA=e.target.value; else cmpB=e.target.value; const r=$('#cmp-result'); if(r) r.innerHTML=cmpResult(); } });
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
 boot();
 </script>
