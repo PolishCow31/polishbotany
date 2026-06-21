@@ -29,6 +29,13 @@ All on the live working `index.html` (forest theme, lighter palette + Fraunces/S
   bug — `<header class="bar">` was inheriting the bar-CHART `.bar` grid (`grid-template-columns:96px 1fr 40px`, line ~234) →
   contents crammed to 96px; pinned `header.bar{display:block}`.
 - **gitignore:** added `data/*.bak-*` + `index.mk*.html` so the cron's `git add data/` doesn't push the local backups.
+- **Release-radar staleness fix (`scripts/research-prompt.md`, local-only — not deployed, cron reads it locally):** he
+  noticed "radar Jun 19" on Jun 20 and asked why predictions weren't updating. Root cause: the markets sub-tab DOES refresh
+  every sweep (by URL), but the **release-radar** prompt said "if the picture changed, output the list" → the agent could
+  skip re-verifying it, so `releases.json` (+ its `updated` date) froze. Per his call (he doesn't care about the date, only
+  that the INFO refreshes), changed the radar instruction to **re-verify EVERY sweep** — reuse the live market odds it's
+  already pulling to re-check each item's window/prob, promote shipped models out, add new ones, and ALWAYS re-emit the full
+  list (carry-forward all still-pending, drop only shipped/cancelled). Takes effect next 6am sweep; radar data pushes via `data/`.
 
 ### ↩ (Jun 20, session 27) — "GLASSHOUSE, LIGHTS ON" UI overhaul (Mk.1.1) — built + verified, then REVERTED to Mk.1 at his call
 Christian asked for a full UI overhaul via the **frontend-design plugin**, with backups: current = **Mk.1**, new = **Mk.1.1**.

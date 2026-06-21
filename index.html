@@ -911,7 +911,6 @@ function renderPredict(){
     ? marketsBody()
     : (RELSORTED.length?`${hero}<div class="accsub" style="margin:10px 0 6px">Everything expected next, soonest first. <b style="color:var(--accent)">FRONTIER</b> = flagship; tap Details for the reasoning.</div>${listItems.map(relRow).join('')}`:'<div class="empty">The release radar is being researched — it lands on the next data sync.</div>');
   $('#v-predict').innerHTML = `<div class="vh">Predict</div>
-    <div class="vsub">When the next frontier models are expected — and what prediction markets say about the race.${RELMETA.updated?` · radar ${fmtDate((''+RELMETA.updated).slice(0,10))}`:''}</div>
     ${fileTabs('predict',predictTab,[['radar','Release radar',RELSORTED.length||''],['markets','Prediction markets',MARKETS.length||'']])}
     <div class="ftab-panel">${panel}</div>`;
 }

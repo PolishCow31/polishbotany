@@ -81,8 +81,12 @@ research breakthroughs, safety/governance, and AI in medicine.
   routine (AM/PM) wrote it, so just provide the text. Format: `"pulse": "<the paragraph>"`.
 
 ## Also refresh the frontier-release radar (`releases`) — the "Predict" tab
-The radar shows WHICH frontier models are expected next and WHEN. If the picture changed (a model
-shipped, a date slipped, market odds moved), output the **full current** list (it REPLACES the old one).
+The radar shows WHICH frontier models are expected next and WHEN. **Re-verify it EVERY sweep — do NOT skip it just
+because it "looks the same."** You're already pulling live market odds for the PREDICTION MARKETS section below; reuse
+those exact numbers to re-check each pending item's `prob` and `expectedWindow`, promote out any model that has shipped,
+and add any newly-dated release. Then ALWAYS output the **full current** list (it REPLACES the old one — carry forward
+EVERY still-pending item, dropping only the shipped/cancelled, so the radar never silently shrinks). This keeps the
+radar's odds as live as the markets, every 12 hours.
 - One item per expected/upcoming model over the next ~12 months across OpenAI, Google, Anthropic, xAI,
   Meta, DeepSeek, Alibaba, Zhipu, Mistral.
 - `expectedDate` = YYYY-MM central estimate (for sorting); `expectedWindow` = human label ("by Jul 2026").
