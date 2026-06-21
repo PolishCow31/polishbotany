@@ -458,6 +458,13 @@
   #glossres .gt-def{color:#2f4d39}
   #glossres .gt-cat{color:#587a5f}
   #glossres .accsub{color:#466850}
+  /* ≤4 file-tabs FILL the row (no horizontal scroll / cut-off); >4 (News topics) keep scrolling */
+  .ftabs-fill{overflow:visible}
+  .ftabs-fill .ftab{flex:1 1 0;min-width:0;justify-content:center;gap:5px;padding:9px 6px;font-size:14.6px}
+  .ftabs-fill .ftab .ftab-ct{padding:1px 5px}
+  /* More: push the Sources drawer to the bottom of the page */
+  #v-more.on{display:flex;flex-direction:column;min-height:calc(100dvh - 186px)}
+  #v-more .more-sources{margin-top:auto}
 </style>
 </head>
 <body>
@@ -682,7 +689,7 @@ function openModal(name){
 function closeModal(){ const md=$('#modal'); if(md&&!md.hidden){ md.hidden=true; document.body.style.overflow=''; } }
 // file-cabinet sub-tabs: a tab strip whose active tab is stitched to the panel below
 function fileTabs(view,active,tabs){
-  return `<div class="ftabs" role="tablist">${tabs.map(t=>
+  return `<div class="ftabs ${tabs.length<=4?'ftabs-fill':'ftabs-scroll'}" role="tablist">${tabs.map(t=>
     `<button class="ftab${t[0]===active?' on':''}" data-ftab="${view}:${t[0]}" role="tab" aria-selected="${t[0]===active}">${he(t[1])}${(t[2]!=null&&t[2]!=='')?`<span class="ftab-ct">${t[2]}</span>`:''}</button>`
   ).join('')}</div>`;
 }
@@ -694,7 +701,7 @@ function renderNow(){
   list.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   const nAll=DATA.models.length, nFr=DATA.models.filter(m=>!m.open).length, nOp=DATA.models.filter(m=>m.open).length;
   $('#v-now').innerHTML = `<div class="vh">Every model · newest first</div>
-    ${fileTabs('now',nowCat,[['all','All',nAll],['frontier','Frontier',nFr],['open','Open source',nOp]])}
+    ${fileTabs('now',nowCat,[['all','All',nAll],['frontier','Frontier',nFr],['open','Open',nOp]])}
     <div class="ftab-panel">${list.length?list.map(modelCard).join(''):'<div class="empty">No models here.</div>'}</div>`;
 }
 
@@ -864,7 +871,7 @@ function renderCharts(){
       <div id="traj-swe-wrap">${trajWrap('swe')}</div>`;
   }
   $('#v-charts').innerHTML = `<div class="vh">Charts &amp; forecasts</div>
-    ${fileTabs('charts',chartsTab,[['frontier','Frontier by company'],['cadence','Release cadence'],['hh','Head-to-head']])}
+    ${fileTabs('charts',chartsTab,[['frontier','By company'],['cadence','Cadence'],['hh','Head-to-head']])}
     <div class="ftab-panel">${panel}</div>`;
 }
 
@@ -912,7 +919,7 @@ function renderPredict(){
     ? marketsBody()
     : (RELSORTED.length?`${hero}${listItems.map(relRow).join('')}`:'<div class="empty">The release radar is being researched — it lands on the next data sync.</div>');
   $('#v-predict').innerHTML = `<div class="vh">Predict</div>
-    ${fileTabs('predict',predictTab,[['radar','Release radar',RELSORTED.length||''],['markets','Prediction markets',MARKETS.length||'']])}
+    ${fileTabs('predict',predictTab,[['radar','Radar',RELSORTED.length||''],['markets','Markets',MARKETS.length||'']])}
     <div class="ftab-panel">${panel}</div>`;
 }
 
@@ -1069,7 +1076,7 @@ function renderMore(){
   $('#v-more').innerHTML = `<div class="vh">Definitions &amp; acronyms</div>
     <input id="glossq" class="gsearch" type="search" placeholder="Search terms &amp; acronyms — MMLU, MoE, RLHF…" autocomplete="off" autocapitalize="off" spellcheck="false">
     <div id="glossres" class="glist">${glossResults('')}</div>
-    <details class="acc" style="margin-top:18px"><summary><span class="tw">▶</span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
+    <details class="acc more-sources"><summary><span class="tw">▶</span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
       <div class="body"><div class="accsub">Every source the research consulted, logged per twice-daily sweep — newest first. Sources roll up into AM/PM routines, then days, then weeks.</div>${renderSources()}</div></details>`;
 }
 
