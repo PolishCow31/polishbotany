@@ -694,7 +694,6 @@ function renderNow(){
   list.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   const nAll=DATA.models.length, nFr=DATA.models.filter(m=>!m.open).length, nOp=DATA.models.filter(m=>m.open).length;
   $('#v-now').innerHTML = `<div class="vh">Every model · newest first</div>
-    <div class="vsub">The full catalog since GPT-1 (2018). Pick a drawer, or tap any model for the full rundown.</div>
     ${fileTabs('now',nowCat,[['all','All',nAll],['frontier','Frontier',nFr],['open','Open source',nOp]])}
     <div class="ftab-panel">${list.length?list.map(modelCard).join(''):'<div class="empty">No models here.</div>'}</div>`;
 }
@@ -865,7 +864,6 @@ function renderCharts(){
       <div id="traj-swe-wrap">${trajWrap('swe')}</div>`;
   }
   $('#v-charts').innerHTML = `<div class="vh">Charts &amp; forecasts</div>
-    <div class="vsub">How each company's frontier has climbed, how fast models ship, and where the next ones are likely to land.</div>
     ${fileTabs('charts',chartsTab,[['frontier','Frontier by company'],['cadence','Release cadence'],['hh','Head-to-head']])}
     <div class="ftab-panel">${panel}</div>`;
 }
@@ -1015,7 +1013,6 @@ function renderNews(){
   const upd=NEWSMETA.updated?` · refreshed ${fmtDate((''+NEWSMETA.updated).slice(0,10))}`:'';
   const tabs=[['all','All',items.length], ...topics.map(t=>[t,t,items.filter(i=>i.topic===t).length])];
   $('#v-news').innerHTML = `<div class="vh">News &amp; good reads</div>
-    <div class="vsub">Hand-picked recent reporting on AI from large, reputable newsrooms — what's actually moving in models, policy, business, and science.${upd}</div>
     ${items.length?`${fileTabs('news',newsTopic||'all',tabs)}<div class="ftab-panel">${list.map(newsRow).join('')}</div>`
     :`<div class="empty">Curated reads are being gathered — they land on the next sync.</div>`}`;
 }
@@ -1070,7 +1067,6 @@ function renderSources(){
 function renderMore(){
   const totalSrc=SWEEPS.reduce((n,s)=>n+((s.sources||[]).length),0);
   $('#v-more').innerHTML = `<div class="vh">Definitions &amp; acronyms</div>
-    <div class="vsub">Look up any AI term or acronym — ${GLOSSARY.length||'…'} entries, searched live.</div>
     <input id="glossq" class="gsearch" type="search" placeholder="Search terms &amp; acronyms — MMLU, MoE, RLHF…" autocomplete="off" autocapitalize="off" spellcheck="false">
     <div id="glossres" class="glist">${glossResults('')}</div>
     <details class="acc" style="margin-top:18px"><summary><span class="tw">▶</span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
