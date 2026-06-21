@@ -408,6 +408,11 @@
   #splash .sp-brief b{color:#7fe3a1;font-weight:700}
   #splash .sp-skip{position:absolute;bottom:32px;font:600 11.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#5c7d62;opacity:.7}
   @media (prefers-reduced-motion:reduce){#splash .sp-leaf{animation:none}}
+  /* Compare button — lives on the Current tab eyebrow */
+  .vh-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .cmp-btn{flex:none;font:650 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#15732f;
+    background:rgba(21,115,47,.10);border:1px solid rgba(21,115,47,.30);border-radius:999px;padding:5px 12px;cursor:pointer;transition:background .15s}
+  .cmp-btn:hover{background:rgba(21,115,47,.18)}
   .ftab-panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin-top:11px;
     padding:15px 13px;position:relative;z-index:1;box-shadow:0 2px 12px rgba(0,0,0,.22)}
   /* charts/predict bodies inside a panel don't need their own card chrome */
@@ -480,8 +485,7 @@
   .ftabs-scroll{-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
   /* More: Sources flows right under the glossary search and opens downward (extends the page) */
   /* model-to-model compare — discreet ★ by the Overview opens a popup */
-  .cmp-star{margin-left:9px;color:var(--ink3);opacity:.28;font-size:13px;cursor:pointer;vertical-align:middle;transition:opacity .15s,color .15s}
-  .cmp-star:hover,.cmp-star:focus-visible{opacity:.95;color:var(--accent);outline:none}
+  /* (model compare moved from the faint Overview ★ to a Compare button on the Current tab) */
   .cmp-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px;margin:16px 0 10px}
   .cmp-sel{width:100%;min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:9px;color:var(--ink);font:600 14px var(--sans);padding:9px 6px;-webkit-appearance:none;appearance:none;text-align:center;text-align-last:center}
   .cmp-vs{font:700 12px var(--mono);color:var(--ink3)}
@@ -686,7 +690,7 @@ function renderHome(){
   const heroHTML = pulseTxt
     ? `<div class="hero pulse"><div class="pulse-txt clamp">${fmtPulse(pulseTxt)}</div><button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button></div>`
     : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>`;
-  $('#v-home').innerHTML=`<div class="vh">Overview${updAgo?`<span class="vh-upd"> · updated ${updAgo}</span>`:''}<span class="cmp-star" data-compare role="button" tabindex="0" aria-label="Compare two models">★</span></div>
+  $('#v-home').innerHTML=`<div class="vh">Overview${updAgo?`<span class="vh-upd"> · updated ${updAgo}</span>`:''}</div>
     ${heroHTML}
     ${segCtl('home',homeMode,FO)}
     <div class="hsec">Leaderboard · AA Index</div>
@@ -803,7 +807,7 @@ function renderNow(){
   else if(nowCat==='open') list=list.filter(m=>m.open);
   list.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
   const nAll=DATA.models.length, nFr=DATA.models.filter(m=>!m.open).length, nOp=DATA.models.filter(m=>m.open).length;
-  $('#v-now').innerHTML = `<div class="vh">Every model chronologically</div>
+  $('#v-now').innerHTML = `<div class="vh vh-row">Every model chronologically<button class="cmp-btn" data-compare aria-label="Compare two models">⇄ Compare</button></div>
     ${fileTabs('now',nowCat,[['all','All',nAll],['frontier','Frontier',nFr],['open','Open',nOp]])}
     <div class="ftab-panel">${list.length?list.map(modelCard).join(''):'<div class="empty">No models here.</div>'}</div>`;
 }
