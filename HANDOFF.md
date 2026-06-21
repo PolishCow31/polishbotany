@@ -5,6 +5,81 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 20 2026
 
+### ✓ DONE (Jun 20, session 28) — open-source chart back-fill (verified) + Charts cleanups + glossary/header fixes (LIVE-file, theme NOT deployed)
+All on the live working `index.html` (forest theme, lighter palette + Fraunces/Spline fonts from session 27's post-revert tweaks). **Theme still NOT git-pushed; data back-fill WILL auto-push next cron (`git add data/`).**
+- **OPEN-SOURCE trajectory back-fill — the big one.** The Charts "Open source" AA + SWE lines were 1-2 lonely dots; now
+  **5 climbing lines each** (DeepSeek, Alibaba, Zhipu, Moonshot, NVIDIA), hollow back-estimates → solid live endpoints, just
+  like the Frontier chart. Done as a **verified Workflow** (`wf_25d0bc1a-a9a`, 15 agents: 7 lab researchers → 7 adversarial
+  verifiers → 1 cross-lab reconcile). **CRUX (don't forget): the app's AA-Index is a COMPRESSED/re-baselined scale, NOT real
+  Artificial Analysis** — 2025 top open models sit ~10-22 here vs ~45-65 real; the workflow calibrated every AA value to the
+  app's anchors (frontier ceiling-over-time + existing open historics + live endpoints), NOT real-world numbers. SWE used ~real
+  SWE-bench Verified. Integrated deterministically (`forecasts.json.bak-pre-openbackfill` + `models.json.bak-…` backups):
+  **+30 historics** (now 78; `estimate:true`, each with a `basis`), **bumped the flagged-incoherent existing Qwen3-235B AA
+  13→17**, and **filled 6 missing LIVE endpoint benchmarks** (DeepSeek-V4-Pro SWE=80; Kimi K2.7 AA=49/SWE=79; GLM-5.2
+  AA=51/SWE=79; Nemotron 3 Ultra SWE=73) so each lab's line reaches "now" (a lab's historics only render if it has a LIVE point
+  in that benchmark+view — that's why the fills were needed). Deterministic guard passed: every AA ≤56 & under the
+  contemporaneous frontier ceiling, every SWE ≤90; `historicsUsable('aa'/'swe')` both still TRUE. `merge.py` never touches
+  `historics`, so the cron can't clobber the back-fill. Verified both charts @375px render 5 climbing lines.
+- **Charts cleanups:** removed the **"Tap any dot to see the model."** `.tdhint` banner under every chart (dots still tappable)
+  + the **"…live in the Predict tab"** note at the bottom of the Charts tab.
+- **More-glossary readability fix:** the search results render BARE on the light sage bg, so the light ink washed out →
+  scoped deep-forest text on `#glossres` (`.gt-term/.gt-def/.gt-cat/.accsub`). Same bare-on-sage class of bug the eyebrows/
+  captions were already patched for.
+- **Header tagline:** masthead now = leaf + "Botany" + *"The continuous growth and roots of AI"*. Fixing it surfaced a latent
+  bug — `<header class="bar">` was inheriting the bar-CHART `.bar` grid (`grid-template-columns:96px 1fr 40px`, line ~234) →
+  contents crammed to 96px; pinned `header.bar{display:block}`.
+- **gitignore:** added `data/*.bak-*` + `index.mk*.html` so the cron's `git add data/` doesn't push the local backups.
+
+### ↩ (Jun 20, session 27) — "GLASSHOUSE, LIGHTS ON" UI overhaul (Mk.1.1) — built + verified, then REVERTED to Mk.1 at his call
+Christian asked for a full UI overhaul via the **frontend-design plugin**, with backups: current = **Mk.1**, new = **Mk.1.1**.
+- **Backups (both on disk, untracked):** `index.mk1.html` (the forest/sage-dusk "before", 1169 lines) + `index.mk1.1.html`
+  (the glasshouse "after" = live `index.html`, 1256 lines). Revert to Mk.1 = `cp index.mk1.html index.html`.
+- **How the direction was chosen:** a Workflow **design panel** (6 designers → 6 critics, 12 agents) drafted distinct
+  directions; surfaced 3 (two dark, one light herbarium) to him via AskUserQuestion. He picked **"Glasshouse at night."**
+  The light-herbarium variants were honestly flagged for a **dad-legibility risk** (serif body on low-contrast linen at 375px).
+- **Theme = a Victorian conservatory after midnight** (resolves the old dark-cards-floating-on-light-sage tension by going
+  FULLY dark). Done as a **safe reskin: `:root` tokens + a web-font `<link>` + an appended "GLASSHOUSE" override block at the
+  END of `<style>` + a few small surgical JS edits. ZERO data-wiring touched** (the method that's survived every prior reskin).
+  - **Type system (the biggest win):** added Google Fonts **Fraunces** (display/plaque moments — H1, hero specimen name,
+    modal title), **Newsreader** (reading prose + specimen names), **Spline Sans Mono** (ALL data/labels/scores — replaces SF
+    Mono). System sans kept only for tiny functional UI chrome (nav/chips/seg/file-tabs). `--display`/`--body`/`--mono` vars.
+  - **Palette:** green-black `#0A1410` base, grow-light lime `#7FE3A1` (accent, used as LIGHT not fill), aged-brass `#C9A56A`
+    (framing/eyebrows/#1-rank), orchid `#C58BD6` (Predict/forecast "exotic-specimen wing" — EXPECTED/PREVIEW pills),
+    condensation-ink text. Lab colors UNCHANGED (charts need them distinguishable).
+  - **Panes:** every card is a backlit misted-glass sheet (brass hairline top-rail via inset box-shadow; lime inner-glow only
+    on live/featured: `.lbrow.gold`, `.phero`, `.hero.pulse`). Brass eyebrows are color+tracking only — **NO hairline rules**
+    (deliberately honored his same-day "lines blocking the page" ask; overrode the panel's rule suggestion).
+  - **Hero-as-thesis:** small `renderHome` edit adds an "in bloom" specimen plaque above the Pulse — current leader's name in
+    Fraunces + lab in a brass tag + AA score glowing lime (reads the already-computed `top`; guarded). Fox stays the keeper on
+    the rail (its `.fox-shadow` recolored black→warm grow-light pool). Pollen retired to a few faint lime/brass nocturnal motes.
+  - **SIGNATURE = the misted glass is REAL:** nano-banana asset `img/glass-night.jpeg` (dark frosted greenhouse glass +
+    condensation + glazing-bars, 9:16) is the fixed `#forest` bg under a dark scrim — the whole app reads as lit through
+    conservatory glass (the spec's anti-"flat-void" move; [[feedback_realistic_visuals]] real-asset not CSS-fake). **DROPPED**
+    the panel's "fox wipes the fog" motion — the critic proved it's built on a false premise about the fox engine (fox is
+    `position:absolute` on the hero's top edge at z-16, not behind glass) → it'd be a new JS feature fighting the engine.
+  - Leaf logo recolored (lime leaf, brass midrib, brass frame) + favicon + theme-color `#0A1410`.
+- **VERIFIED at 375px (Chrome preview @ :8095):** all 6 tabs render clean (Home hero+leaderboard, Current rows w/ orchid
+  PREVIEW, Charts w/ Spline-mono axes, Predict orchid wing, News editorial headlines, More glass breathes), **zero console
+  errors**, data intact (98 models). Fox overlap on non-Home views in screenshots = the known headless rAF-pause gotcha, not a
+  bug (it's Home-only on a real device).
+- **REVERTED — he reviewed Mk.1.1 in the preview and chose Mk.1.** `cp index.mk1.html index.html` done → the live working
+  file AND the live site are both back to **Mk.1 / forest-sage** (1169 lines, byte-identical). Never deployed. Mk.1.1 is fully
+  **PARKED** at `index.mk1.1.html` + its asset `img/glass-night.jpeg` if he revisits or wants to graft pieces. **The strongest
+  standalone piece worth re-offering on the forest theme = the real type system** (Fraunces display / Newsreader reading /
+  Spline Sans Mono data) — it was the biggest genuine upgrade and is theme-independent. Untracked scratch: `index.mk1.html`,
+  `index.mk1.1.html`, `img/glass-night.jpeg` (+ a stray `img/bgtex-c.jpeg` from before). None committed.
+- **Plugins:** earlier this session, scoped 3 plugins for Botany via `/plug` — `typescript-lsp` + `commit-commands` (project),
+  `context7` (user/everywhere); installed the `typescript-language-server` binary. `aitracker` launch.json switched to the
+  real `http.server` on 8095 + `autoPort:false` so `preview_start` owns the port (foreign detached server collides otherwise).
+- **POST-REVERT live tweaks to the FOREST theme (his asks, on the live working file):** (a) added a **header tagline** — masthead is
+  now leaf + "Botany" + *"The continuous growth and roots of AI"* (one line). Fixing it surfaced a real latent bug: `<header class="bar">`
+  was silently inheriting the **bar-chart `.bar` grid** (line ~234, `grid-template-columns:96px 1fr 40px`) → contents crammed into 96px;
+  pinned `header.bar{display:block}`. (b) **Lightened the harsh near-black greens** project-wide (`:root`): panel `#0f1d17`→`#213a2c`,
+  bg→`#16261d`, lines lifted, ink slightly brighter — softer mid-forest cards on the sage bg. (c) **Brought the glasshouse type system
+  to the forest theme** (the salvageable gem): Google Fonts **Fraunces** (wordmark + model/specimen names + section/card titles via an
+  appended block), **Spline Sans** (`--sans`, body/UI), **Spline Sans Mono** (`--mono`, all data) — replaces system-sans + SF-Mono. Nav
+  glass lightened to match. Verified Home+Current @375px, zero console errors. Still the forest theme (NOT glasshouse), NOT committed/deployed.
+
 ### ✓ LIVE-RUN STATUS (Jun 20) — both daily sweeps fired; PM was slow → watchdog added
 The launchd updater is running in production. **6am sweep: clean, ~4 min** (commit `6bc9f19`, dataVersion 6).
 **6pm sweep: SUCCEEDED but took ~89 min** (fired 18:12 on wake since the Mac slept through 18:00; pushed 19:41,

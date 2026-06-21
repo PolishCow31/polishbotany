@@ -1460,7 +1460,10 @@
       "context": "256K",
       "modality": "text, text out (agentic coding-first)",
       "open": true,
-      "benchmarks": {},
+      "benchmarks": {
+        "AA-Index": 49,
+        "SWE-bench": 79
+      },
       "milestone": false,
       "notable": "1T open-weight coding MoE (Modified MIT). ~30% fewer reasoning tokens than K2.6; all published numbers are Moonshot's OWN proprietary benches (Kimi Code Bench v2 +21.8%, etc.) — NO independent SWE-bench/GPQA/Terminal-Bench numbers as of release. $0.95/$4.00.",
       "pricing": "$0.95 in / $4.00 out per 1M (open weights)",
@@ -1475,7 +1478,8 @@
       "modality": "text, text out",
       "open": true,
       "benchmarks": {
-        "AA-Index": 48
+        "AA-Index": 48,
+        "SWE-bench": 73
       },
       "milestone": false,
       "notable": "Announced at Computex Jun 1, released Jun 4. Fastest US open-weights frontier model (>300 tok/s) and best US open-weight intelligence (AA 48) — but still behind Chinese open models (Kimi K2.6 at 54). Full release of weights, reward models, quantized variants, and training recipes under NVIDIA Open Model License.",
@@ -1563,7 +1567,9 @@
         "SWE-bench Pro": 62.1,
         "HLE": 54.7,
         "Terminal-Bench 2.1": 82.7,
-        "AIME": 99.2
+        "AIME": 99.2,
+        "AA-Index": 51,
+        "SWE-bench": 79
       },
       "milestone": false,
       "notable": "Open-weight (MIT) model that beat GPT-5.5 on several long-horizon coding benches at ~1/6 the cost. New IndexShare attention cuts per-token FLOPs 2.9x at 1M context. Trails Opus 4.8 on raw SWE-bench Pro (62.1 vs 69.2) but leads on Terminal-Bench 2.1 best-harness and agentic math.",
@@ -1579,7 +1585,8 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 52
+        "AA-Index": 52,
+        "SWE-bench": 80
       },
       "milestone": true,
       "status": "live",

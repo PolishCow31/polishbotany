@@ -846,9 +846,9 @@
       "model": "Alibaba Qwen3-235B-A22B",
       "lab": "Alibaba",
       "date": "2025-04",
-      "value": 13,
+      "value": 17,
       "estimate": true,
-      "basis": "Back-scored on Artificial Analysis's current live (v4.1) Intelligence Index"
+      "basis": "Back-scored on Artificial Analysis's current live (v4.1) Intelligence Index [revised 13->17: workflow flagged it too low to bridge to the live Qwen3.5=45]"
     },
     {
       "benchmark": "aa",
@@ -867,6 +867,276 @@
       "value": 10,
       "estimate": true,
       "basis": "Back-scored on Artificial Analysis's current live (v4.1) Intelligence Index"
+    },
+    {
+      "benchmark": "aa",
+      "model": "DeepSeek-V3",
+      "lab": "DeepSeek",
+      "date": "2024-12",
+      "value": 15,
+      "estimate": true,
+      "basis": "Real DeepSeek-V3 (671B MoE, MMLU 88.5, MATH 90.2), a leading open model 12/2024; placed just above Llama 3.3 70B (app anchor 14), under the 2024-12 frontier (o1 in scaffolding ~23) and Q1 ceiling 26."
+    },
+    {
+      "benchmark": "aa",
+      "model": "DeepSeek-R1",
+      "lab": "DeepSeek",
+      "date": "2025-01",
+      "value": 22,
+      "estimate": true,
+      "basis": "R1 (RL reasoning, AIME 79.8, GPQA 71.5), the standout near-frontier open model of early 2025, far above instruct peers; placed just under the contemporaneous frontier (o1~23) and Q1 ceiling 26."
+    },
+    {
+      "benchmark": "aa",
+      "model": "DeepSeek-R1-0528",
+      "lab": "DeepSeek",
+      "date": "2025-05",
+      "value": 28,
+      "estimate": true,
+      "basis": "Real refresh with measured gains over R1 (SWE 49.2->57.6, AIME 87.5); above R1, below the 05/2025 frontier (Opus 4 / Sonnet 4 ~31). Climbs toward live V4-Pro=52."
+    },
+    {
+      "benchmark": "aa",
+      "model": "DeepSeek-V3.1",
+      "lab": "DeepSeek",
+      "date": "2025-08",
+      "value": 34,
+      "estimate": true,
+      "basis": "V3+R1 fusion / agentic step (SWE 66); capped at 34 to stay at/under the Q3-2025 ceiling ~35 (GPT-5~36). Bridges to the live V4-Pro=52 endpoint."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Qwen2.5-72B-Instruct",
+      "lab": "Alibaba",
+      "date": "2024-12",
+      "value": 12,
+      "estimate": true,
+      "basis": "Qwen2.5-72B-Instruct (tech report 12/2024, in-window). Real AA (~16) is actually >= Llama 3.3 70B and ~= DeepSeek-V3; deliberately compressed DOWN to 12 here so the flagship line stays monotone under the too-low existing April Qwen3-235B soft anchor (13). Real V3>=Qwen2.5 relation is inverted on purpose -- see flags."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Qwen3-235B-A22B-Instruct-2507",
+      "lab": "Alibaba",
+      "date": "2025-07",
+      "value": 24,
+      "estimate": true,
+      "basis": "Real Jul-2025 refresh of Qwen3-235B (Instruct-2507), a genuine step over the April release (real AA jumped to mid-60s). Placed at 24, above the April anchor (13), climbing toward live Qwen3.5=45, under the Q3 ceiling ~35."
+    },
+    {
+      "benchmark": "aa",
+      "model": "GLM-4.5",
+      "lab": "Zhipu",
+      "date": "2025-07",
+      "value": 22,
+      "estimate": true,
+      "basis": "GLM-4.5 (2025-07-28, 355B MoE, top open model of its moment); placed above the Apr-2025 open cluster and below the Q3 ceiling ~35. Real-world it was ~= or > Qwen-2507; the 22-vs-24 ordering vs Qwen here is within noise -- flagged."
+    },
+    {
+      "benchmark": "aa",
+      "model": "GLM-4.6",
+      "lab": "Zhipu",
+      "date": "2025-10",
+      "value": 30,
+      "estimate": true,
+      "basis": "GLM-4.6 (~2025-09) a clear coding/reasoning step over 4.5; below the rising Q4 ceiling and climbing monotonically toward the live GLM-5 endpoint (2026-02=50)."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Kimi k1.5",
+      "lab": "Moonshot",
+      "date": "2025-01",
+      "value": 14,
+      "estimate": true,
+      "basis": "Kimi k1.5 (Jan 20 2025): o1-parity reasoning (AIME 77.5, MATH-500 96.2) but weak agentic coding and no modern AA listing. Placed at the early-2025 open floor, strictly below the corrected K2 (17) to stay monotone, well under the Q1 ceiling 26."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Kimi K2",
+      "lab": "Moonshot",
+      "date": "2025-07",
+      "value": 17,
+      "estimate": true,
+      "basis": "Kimi K2 (Jul 2025, 1T MoE). Real AA-v4.1 ~= 19 (non-reasoning) -- NOT mid-40s. Mapped just above the V3/Qwen3-235B cluster, under the Q3 ceiling 35."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Kimi K2-0905",
+      "lab": "Moonshot",
+      "date": "2025-09",
+      "value": 29,
+      "estimate": true,
+      "basis": "Kimi K2-Instruct-0905 (Sep 5 2025): real AA-v4.1 ~= 31, compressed to ~29 via the app's real->app mapping; climbs above K2 (17), under the Q3 ceiling 35."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Mistral Medium 3",
+      "lab": "Mistral",
+      "date": "2025-05",
+      "value": 12,
+      "estimate": true,
+      "basis": "Mistral Medium 3 (2025-05-07), mid-tier general model trailing the leading Chinese open labs; below the Large 3 endpoint anchor (16, 2025-12) and just under open peers, well under the frontier ceiling."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Magistral Medium",
+      "lab": "Mistral",
+      "date": "2025-06",
+      "value": 13,
+      "estimate": true,
+      "basis": "Magistral Medium (2025-06-12), a reasoning model on the Medium 3 checkpoint with a modest general-capability bump; +1 over Medium 3, still below the Large 3 endpoint anchor (16)."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Llama-3.1-Nemotron-Ultra-253B v1",
+      "lab": "NVIDIA",
+      "date": "2025-04",
+      "value": 9,
+      "estimate": true,
+      "basis": "Real model (Apr 7-8 2025, 405B NAS-compressed reasoning model). Live AA Intelligence Index = 9, the floor of its cohort; sits below the Apr-2025 open cluster, far under the Q2 ceiling ~30. Scale-floor placement, climbs monotonically to the live Ultra=48."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Nemotron 3 Nano (31.6B)",
+      "lab": "NVIDIA",
+      "date": "2025-12",
+      "value": 22,
+      "estimate": true,
+      "basis": "Dec-2025 hybrid Mamba-Transformer MoE Nano (real AA read ~24), calibrated to app 22; above the Mistral Large 3 soft anchor (16), well below the Dec-2025 ceiling ~40, climbing from the 253B's 9."
+    },
+    {
+      "benchmark": "aa",
+      "model": "Nemotron 3 Super (120B-A12B)",
+      "lab": "NVIDIA",
+      "date": "2026-03",
+      "value": 34,
+      "estimate": true,
+      "basis": "Mar-2026 120B-A12B MoE (real AA ~25-36); app 34 keeps the ramp Nano 22 -> Super 34 -> live Ultra 48, below the Mar-2026 ceiling (~46-51) and below stronger open peers Qwen3.5 (45) / GLM-5 (50)."
+    },
+    {
+      "benchmark": "swe",
+      "model": "DeepSeek-R1-0528",
+      "lab": "DeepSeek",
+      "date": "2025-05",
+      "value": 57.6,
+      "estimate": true,
+      "basis": "R1-0528 reported SWE-bench Verified rising from R1's anchor 49.2 to ~57.6; above R1, below GLM-5 (77.8) and the V4-Pro endpoint. Direction firm, exact decimal not re-verified."
+    },
+    {
+      "benchmark": "swe",
+      "model": "DeepSeek-V3.1",
+      "lab": "DeepSeek",
+      "date": "2025-08",
+      "value": 66,
+      "estimate": true,
+      "basis": "DeepSeek-V3.1-Think official SWE-bench Verified ~66.0; above R1-0528 (57.6), below GLM-5 (77.8) and the V4-Pro endpoint. Monotone, <90."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Qwen2.5-72B-Instruct",
+      "lab": "Alibaba",
+      "date": "2024-12",
+      "value": 8,
+      "estimate": true,
+      "basis": "Real SWE-bench Verified ~8% (pre-agentic-scaffold era); consistent with DeepSeek-V3 2024-12=42 being a far stronger coder at the same date."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Qwen3-235B-A22B",
+      "lab": "Alibaba",
+      "date": "2025-04",
+      "value": 20,
+      "estimate": true,
+      "basis": "Original (non-thinking) Qwen3-235B-A22B (Apr 28 2025) measured ~16.6% on decontaminated SWE-rebench; placed at 20 for modest scaffold uplift, under Llama4 Maverick anchor (35), climbing to the 2507 point."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Qwen3-235B-A22B-Instruct-2507",
+      "lab": "Alibaba",
+      "date": "2025-07",
+      "value": 50,
+      "estimate": true,
+      "basis": "Official Qwen table: Instruct-2507 = 50.0% SWE-bench Verified (single-attempt). Climbs 8 -> 20 -> 50 -> live Qwen3.5 76.4, under the contemporaneous frontier (Claude 3.7=70.3)."
+    },
+    {
+      "benchmark": "swe",
+      "model": "GLM-4.5",
+      "lab": "Zhipu",
+      "date": "2025-07",
+      "value": 64.2,
+      "estimate": true,
+      "basis": "Reported SWE-bench Verified = 64.2 (GLM-4.5 technical report, arXiv 2508.06471); above DeepSeek-R1 anchor (49.2), below the live GLM-5 endpoint (77.8)."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Kimi K2",
+      "lab": "Moonshot",
+      "date": "2025-07",
+      "value": 65.8,
+      "estimate": true,
+      "basis": "Kimi K2 reported SWE-bench Verified 65.8 pass@1 with bash/editor tools, no test-time compute (tech report arXiv 2507.20534); below the 2026 GLM-5/Qwen3.5 open anchors (~77). Measured."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Kimi K2-0905",
+      "lab": "Moonshot",
+      "date": "2025-09",
+      "value": 69.2,
+      "estimate": true,
+      "basis": "Kimi K2-Instruct-0905 reported SWE-bench Verified 69.2 +/- 0.63 over 5 runs (Moonshot card / NVIDIA NIM / HF); above original K2 (65.8), under the 2026 open frontier anchors. Measured."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Llama 4 Scout",
+      "lab": "Meta",
+      "date": "2025-04",
+      "value": 30,
+      "estimate": true,
+      "basis": "Llama 4 Scout (2025-04-05), lighter 17B-active/16-expert MoE; net-new on SWE. Placed ~30%, just under Maverick's firm anchor (35) as the smaller sibling, above the Llama 3.3 70B SWE anchor (24). Thinly reported -> med."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Devstral Small",
+      "lab": "Mistral",
+      "date": "2025-05",
+      "value": 46.8,
+      "estimate": true,
+      "basis": "Published: Devstral Small (2025-05-21, Mistral x All Hands) scored 46.8 SWE-bench Verified under OpenHands, then open SoTA; above Llama4 Maverick anchor (35), just below DeepSeek-R1 (49.2)."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Devstral Medium",
+      "lab": "Mistral",
+      "date": "2025-07",
+      "value": 61.6,
+      "estimate": true,
+      "basis": "Published: Devstral Medium 2507 (2025-07-10) scored 61.6 SWE-bench Verified; climbs from Devstral Small (46.8), under the mid-2025 frontier and the later open endpoints (~77)."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Llama-3.1-Nemotron-Ultra-253B v1",
+      "lab": "NVIDIA",
+      "date": "2025-04",
+      "value": 31,
+      "estimate": true,
+      "basis": "Math/reasoning model weak at agentic coding; live AA page reports no SWE score (the 80.5 on SEO aggregators is a confabulation). Placed at 31, below DeepSeek-R1 (49.2) and sibling-era Llama4 Maverick (anchored 35)."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Nemotron 3 Nano (31.6B)",
+      "lab": "NVIDIA",
+      "date": "2025-12",
+      "value": 38,
+      "estimate": true,
+      "basis": "NVIDIA Nemotron 3 Nano report cites SWE-bench ~38.8% (vs Qwen3 ~22% at same param count). Climbs from the 253B's 31, below the later Super and the frontier."
+    },
+    {
+      "benchmark": "swe",
+      "model": "Nemotron 3 Super (120B-A12B)",
+      "lab": "NVIDIA",
+      "date": "2026-03",
+      "value": 60,
+      "estimate": true,
+      "basis": "NVIDIA / Artificial Analysis reported Nemotron 3 Super ~60.5% SWE-bench Verified at Mar-2026 launch. Climb 31 -> 38 -> 60; below GLM-5 (77.8), Qwen3.5 (76.4), and the frontier."
     }
   ],
   "trajForecasts": [
