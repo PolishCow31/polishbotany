@@ -403,13 +403,12 @@
   @keyframes spLeaf{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
   #splash .sp-name{font:800 48px var(--display);color:#eef4ea;letter-spacing:-.01em;line-height:1}
   #splash .sp-tag{font-family:var(--display);font-style:italic;font-size:15.5px;color:#7fe3a1;line-height:1.3;max-width:300px}
-  #splash .sp-skip{position:absolute;bottom:32px;font:600 11.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#5c7d62;opacity:.7}
-  #splash .sp-bar{width:150px;height:3px;border-radius:3px;margin-top:24px;background:rgba(127,227,161,.13);overflow:hidden;opacity:0;transition:opacity .3s ease}
+  #splash .sp-bar{width:160px;height:3px;border-radius:3px;margin-top:26px;background:rgba(127,227,161,.13);overflow:hidden;opacity:0;transition:opacity .3s ease}
   #splash .sp-bar.show{opacity:1}
-  #splash .sp-bar-fill{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#3a9e63,#7fe3a1);box-shadow:0 0 9px rgba(127,227,161,.55)}
-  #splash .sp-bar.go .sp-bar-fill{animation:spLoad 1.6s cubic-bezier(.4,.1,.2,1) forwards}
-  @keyframes spLoad{0%{width:0}28%{width:44%}58%{width:69%}84%{width:90%}100%{width:100%}}
-  @media (prefers-reduced-motion:reduce){#splash .sp-leaf{animation:none}#splash .sp-bar.go .sp-bar-fill{animation:none;width:100%}}
+  #splash .sp-bar-fill{display:block;height:100%;width:100%;transform:scaleX(0);transform-origin:left center;border-radius:3px;background:linear-gradient(90deg,#3a9e63,#7fe3a1);box-shadow:0 0 9px rgba(127,227,161,.5)}
+  #splash .sp-bar.go .sp-bar-fill{animation:spLoad 1.5s cubic-bezier(.4,0,.2,1) forwards}
+  @keyframes spLoad{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @media (prefers-reduced-motion:reduce){#splash .sp-leaf{animation:none}#splash .sp-bar.go .sp-bar-fill{animation:none;transform:scaleX(1)}}
   /* Compare button — lives on the Current tab eyebrow */
   .vh-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .cmp-btn{flex:none;font:650 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#15732f;
@@ -506,7 +505,6 @@
   <div class="sp-name">Botany</div>
   <div class="sp-tag">The continuous growth and roots of AI</div>
   <div id="sp-bar" class="sp-bar"><i class="sp-bar-fill"></i></div>
-  <div class="sp-skip">tap to enter</div>
 </div>
 
 <canvas id="pollen" aria-hidden="true"></canvas>
@@ -902,7 +900,7 @@ function marketRow(mk){
   const click=mk.url?` data-href="${he(mk.url).replace(/"/g,'&quot;')}" role="link" tabindex="0"`:'';
   const p=firstPct(mk.forecast);
   return `<div class="mktrow${mk.url?' lnk':''}"${click}>
-    <div class="mkt-top"><span class="mkt-plat" style="color:${pc};border-color:${pc}66">${he(shortPlat(mk.platform))}</span>${mk.resolveDate?`<span class="mkt-d">resolves ${he(mk.resolveDate)}</span>`:''}${mk.url?'<span class="mkt-go">↗</span>':''}</div>
+    <div class="mkt-top"><span class="mkt-plat" style="color:${pc};border-color:${pc}66">${he(shortPlat(mk.platform))}</span>${mk.resolveDate?`<span class="mkt-d">resolves ${he(mk.resolveDate)}</span>`:''}${mk.url?'<span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span>':''}</div>
     <div class="mkt-q">${he(mk.question)}</div>
     ${p!=null?`<div class="mkt-bar"><div class="mkt-bar-fill" style="width:${Math.max(2,p)}%;background:${pc}"></div></div>`:''}
     <div class="mkt-fc2">${he(mk.forecast)}</div></div>`;
@@ -932,9 +930,9 @@ function marketsBody(){
     });
     const rest=open.filter(m=>!known.has(m.category));
     if(rest.length) inner+=`<div class="mktgrp-h">Other<span class="ct">${rest.length}</span></div>${rest.map(marketRow).join('')}`;
-    out+=`<details class="subacc" style="margin-top:14px"><summary><span class="tw">▶</span>Browse the ${open.length} open markets<span class="ct">all</span></summary><div class="subbody">${inner}</div></details>`;
+    out+=`<details class="subacc" style="margin-top:14px"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>Browse the ${open.length} open markets<span class="ct">all</span></summary><div class="subbody">${inner}</div></details>`;
   }
-  if(FCMETHOD) out+=`<details class="subacc"><summary><span class="tw">▶</span>How these forecasts are built</summary><div class="subbody"><div class="accsub" style="margin:2px 0 0">${he(FCMETHOD)}</div></div></details>`;
+  if(FCMETHOD) out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>How these forecasts are built</summary><div class="subbody"><div class="accsub" style="margin:2px 0 0">${he(FCMETHOD)}</div></div></details>`;
   return out;
 }
 const TRAJ_META={aa:['AA Intelligence Index','Composite 0–100 — the headline "how smart" score.'],swe:['SWE-bench','Real software-engineering issue resolution, % solved.']};
@@ -1093,7 +1091,7 @@ function newsRow(it){
   const c=newsColor(it.source);
   const click=it.url?` data-href="${he(it.url).replace(/"/g,'&quot;')}" role="link" tabindex="0"`:'';
   return `<div class="newsrow${it.url?' lnk':''}"${click}>
-    <div class="news-top"><span class="news-src" style="color:${c};border-color:${c}66">${he(it.source||'')}</span>${it.topic?`<span class="news-topic">${he(it.topic)}</span>`:''}<span class="news-date">${it.date?fmtDate(it.date):''}</span>${it.url?'<span class="mkt-go">↗</span>':''}</div>
+    <div class="news-top"><span class="news-src" style="color:${c};border-color:${c}66">${he(it.source||'')}</span>${it.topic?`<span class="news-topic">${he(it.topic)}</span>`:''}<span class="news-date">${it.date?fmtDate(it.date):''}</span>${it.url?'<span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span>':''}</div>
     <div class="news-title">${he(it.title||'')}</div>${it.blurb?`<div class="news-blurb">${he(it.blurb)}</div>`:''}</div>`;
 }
 function renderNews(){
@@ -1133,7 +1131,7 @@ function sWeekKey(dateStr){ const d=sParseD(dateStr); d.setDate(d.getDate()-d.ge
 function sWeekLabel(k){ const a=sParseD(k), b=new Date(a); b.setDate(b.getDate()+6); return `Week of ${MM[a.getMonth()+1]} ${a.getDate()} – ${a.getMonth()===b.getMonth()?'':MM[b.getMonth()+1]+' '}${b.getDate()}`; }
 function sDayLabel(dateStr){ const d=sParseD(dateStr); return `${SDOW[d.getDay()]} ${d.getMonth()+1}/${d.getDate()}`; }
 function sSweepLabel(s){ const d=sParseD(s.date), r=s.routine||'Build'; return `${d.getMonth()+1}/${d.getDate()} ${r} Sources`; }
-function srcRow(s){ const url=s.url||('https://'+(''+(s.u||'')).replace(/\s*\(.*$/,'').split(/\s/)[0]); return `<div class="srcrow lnk" data-href="${he(url).replace(/"/g,'&quot;')}">${s.q?`<span class="sq ${s.q}">${he((''+s.q).slice(0,4).toUpperCase())}</span>`:''}<span class="srcu">${he(s.u||url)}</span><span class="mkt-go">↗</span></div>`; }
+function srcRow(s){ const url=s.url||('https://'+(''+(s.u||'')).replace(/\s*\(.*$/,'').split(/\s/)[0]); return `<div class="srcrow lnk" data-href="${he(url).replace(/"/g,'&quot;')}">${s.q?`<span class="sq ${s.q}">${he((''+s.q).slice(0,4).toUpperCase())}</span>`:''}<span class="srcu">${he(s.u||url)}</span><span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span></div>`; }
 function renderSources(){
   if(!SWEEPS.length) return '<div class="empty">No source sweeps logged yet — they accrue as the research runs (4×/day).</div>';
   const RORD={'9PM':4,'3PM':3,'9AM':2,'3AM':1,'PM':3,'AM':1};   // newest-first within a day; legacy AM/PM still sort
@@ -1143,11 +1141,11 @@ function renderSources(){
   sw.forEach(s=>{ const wk=sWeekKey(s.date); let W=weeks.find(w=>w.key===wk); if(!W){W={key:wk,days:[],n:0};weeks.push(W);} let D=W.days.find(d=>d.date===s.date); if(!D){D={date:s.date,sweeps:[],n:0};W.days.push(D);} D.sweeps.push(s); const c=(s.sources||[]).length; D.n+=c; W.n+=c; });
   let out='';
   weeks.forEach((W,wi)=>{
-    out+=`<details class="subacc"><summary><span class="tw">▶</span>${sWeekLabel(W.key)}<span class="ct">${W.n}</span></summary><div class="subbody">`;
+    out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>${sWeekLabel(W.key)}<span class="ct">${W.n}</span></summary><div class="subbody">`;
     W.days.forEach((D,di)=>{
-      out+=`<details class="subacc"><summary><span class="tw">▶</span>${sDayLabel(D.date)}<span class="ct">${D.n}</span></summary><div class="subbody">`;
+      out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>${sDayLabel(D.date)}<span class="ct">${D.n}</span></summary><div class="subbody">`;
       D.sweeps.forEach((s,si)=>{
-        out+=`<details class="subacc"><summary><span class="tw">▶</span>${sSweepLabel(s)}<span class="ct">${(s.sources||[]).length}</span></summary><div class="subbody srclist">${(s.sources||[]).map(srcRow).join('')}</div></details>`;
+        out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>${sSweepLabel(s)}<span class="ct">${(s.sources||[]).length}</span></summary><div class="subbody srclist">${(s.sources||[]).map(srcRow).join('')}</div></details>`;
       });
       out+=`</div></details>`;
     });
@@ -1160,7 +1158,7 @@ function renderMore(){
   $('#v-more').innerHTML = `<div class="vh">Definitions &amp; acronyms</div>
     <input id="glossq" class="gsearch" type="search" placeholder="Search terms &amp; acronyms — MMLU, MoE, RLHF…" autocomplete="off" autocapitalize="off" spellcheck="false">
     <div id="glossres" class="glist">${glossResults('')}</div>
-    <details class="acc more-sources"><summary><span class="tw">▶</span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
+    <details class="acc more-sources"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
       <div class="body"><div class="accsub">Every source the research consulted, logged per sweep (4×/day) — newest first. Sources roll up by sweep slot, then day, then week.</div>${renderSources()}</div></details>`;
 }
 
