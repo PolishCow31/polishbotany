@@ -407,7 +407,12 @@
   #splash .sp-brief.in{opacity:1}
   #splash .sp-brief b{color:#7fe3a1;font-weight:700}
   #splash .sp-skip{position:absolute;bottom:32px;font:600 11.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#5c7d62;opacity:.7}
-  @media (prefers-reduced-motion:reduce){#splash .sp-leaf{animation:none}}
+  #splash .sp-bar{width:150px;height:3px;border-radius:3px;margin-top:24px;background:rgba(127,227,161,.13);overflow:hidden;opacity:0;transition:opacity .3s ease}
+  #splash .sp-bar.show{opacity:1}
+  #splash .sp-bar-fill{display:block;height:100%;width:0;border-radius:3px;background:linear-gradient(90deg,#3a9e63,#7fe3a1);box-shadow:0 0 9px rgba(127,227,161,.55)}
+  #splash .sp-bar.go .sp-bar-fill{animation:spLoad 1.6s cubic-bezier(.4,.1,.2,1) forwards}
+  @keyframes spLoad{0%{width:0}28%{width:44%}58%{width:69%}84%{width:90%}100%{width:100%}}
+  @media (prefers-reduced-motion:reduce){#splash .sp-leaf{animation:none}#splash .sp-bar.go .sp-bar-fill{animation:none;width:100%}}
   /* Compare button — lives on the Current tab eyebrow */
   .vh-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .cmp-btn{flex:none;font:650 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#15732f;
@@ -504,6 +509,7 @@
   <div class="sp-name">Botany</div>
   <div class="sp-tag">The continuous growth and roots of AI</div>
   <div id="sp-brief" class="sp-brief"></div>
+  <div id="sp-bar" class="sp-bar"><i class="sp-bar-fill"></i></div>
   <div class="sp-skip">tap to enter</div>
 </div>
 
@@ -614,7 +620,8 @@ function dismissSplash(){ const s=$('#splash'); if(s) s.classList.add('gone'); }
 function runSplash(){
   const s=$('#splash'); if(!s) return;
   const b=$('#sp-brief'); if(b){ b.innerHTML=splashBrief(); requestAnimationFrame(()=>b.classList.add('in')); }
-  const t=setTimeout(dismissSplash, 1800);
+  const bar=$('#sp-bar'); if(bar){ bar.classList.add('show'); requestAnimationFrame(()=>bar.classList.add('go')); }
+  const t=setTimeout(dismissSplash, 1900);
   s.addEventListener('click',()=>{clearTimeout(t);dismissSplash();},{once:true});
 }
 setTimeout(()=>{try{dismissSplash();}catch(e){}}, 6000);   // hard backstop: never let the splash stick
