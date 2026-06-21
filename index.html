@@ -380,17 +380,22 @@
   .fox-shadow{position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);width:78%;height:6px;border-radius:50%;
     background:radial-gradient(ellipse at center,rgba(0,0,0,.4),transparent 72%)}
   /* ── file-cabinet sub-tabs (Current / Charts / Predict / News): active tab is stitched to the panel ── */
-  .ftabs{display:flex;gap:5px;overflow-x:auto;scrollbar-width:none;margin:2px 0 0;padding:3px 1px 0;position:relative;z-index:2;touch-action:pan-x;overscroll-behavior-x:contain}
+  /* ── section nav: editorial underline tabs (Fraunces), darkened to read on the light-sage bg ── */
+  .ftabs{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;margin:6px 0 0;padding:0 1px;position:relative;z-index:2;
+    border-bottom:1px solid rgba(40,70,52,.22);touch-action:pan-x;overscroll-behavior-x:contain}
   .ftabs::-webkit-scrollbar{display:none}
-  .ftab{flex:none;-webkit-user-select:none;user-select:none;display:inline-flex;align-items:center;gap:7px;background:var(--bg2);
-    border:1px solid var(--line);border-bottom:none;border-radius:11px 11px 0 0;
-    padding:9px 14px;font:650 15.6px var(--sans);color:var(--ink3);cursor:pointer;white-space:nowrap;
-    position:relative;margin-bottom:-1px;transition:color .12s,background .12s}
-  .ftab:hover{color:var(--ink2);background:var(--panel2)}
-  .ftab .ftab-ct{font:700 12.5px var(--mono);color:var(--ink3);background:rgba(255,255,255,.05);border-radius:6px;padding:1px 6px}
-  .ftab.on{background:var(--panel);color:var(--accent);border-color:var(--line2);z-index:3;font-weight:720}
-  .ftab.on .ftab-ct{color:var(--accent);background:rgba(98,193,119,.13)}
-  .ftab-panel{background:var(--panel);border:1px solid var(--line2);border-radius:0 13px 13px 13px;
+  .ftab{flex:none;-webkit-user-select:none;user-select:none;display:inline-flex;align-items:baseline;gap:6px;
+    background:none;border:none;padding:6px 1px 11px;font:650 16.5px var(--display);letter-spacing:.2px;
+    color:#33503c;cursor:pointer;white-space:nowrap;position:relative;transition:color .16s}
+  .ftab:hover{color:#234829}
+  .ftab.on{color:#15732f}
+  .ftab .ftab-ct{font:650 12px var(--mono);color:#557a5d;font-feature-settings:"tnum";transition:color .16s}
+  .ftab.on .ftab-ct{color:#15732f}
+  /* active marker: a clean underline on the baseline with a soft grow-light glow */
+  .ftab::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2.5px;border-radius:2px;background:transparent;transition:background .16s}
+  .ftab.on::after{background:#15732f;box-shadow:0 1px 7px rgba(21,115,47,.38)}
+  .ftabs-fill{gap:13px}   /* ≤4 tabs: tighter so All + 3 broad News buckets fit without scrolling */
+  .ftab-panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin-top:11px;
     padding:15px 13px;position:relative;z-index:1;box-shadow:0 2px 12px rgba(0,0,0,.22)}
   /* charts/predict bodies inside a panel don't need their own card chrome */
   .ftab-panel .chartcard{border:none;background:none;padding:0;margin:0 0 6px;box-shadow:none}
@@ -458,13 +463,9 @@
   #glossres .gt-def{color:#2f4d39}
   #glossres .gt-cat{color:#587a5f}
   #glossres .accsub{color:#466850}
-  /* ≤4 file-tabs FILL the row (no horizontal scroll / cut-off); >4 (News topics) keep scrolling */
-  .ftabs-fill{overflow:visible}
-  .ftabs-fill .ftab{flex:1 1 0;min-width:0;justify-content:center;gap:5px;padding:9px 6px;font-size:14.6px}
-  .ftabs-fill .ftab .ftab-ct{padding:1px 5px}
-  /* More: push the Sources drawer to the bottom of the page */
-  #v-more.on{display:flex;flex-direction:column;min-height:calc(100dvh - 186px)}
-  #v-more .more-sources{margin-top:auto}
+  /* News (>4 topics) scrolls; soft right-edge fade instead of a hard "Soc..." cut */
+  .ftabs-scroll{-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent)}
+  /* More: Sources flows right under the glossary search and opens downward (extends the page) */
   /* model-to-model compare — discreet ★ by the Overview opens a popup */
   .cmp-star{margin-left:9px;color:var(--ink3);opacity:.28;font-size:13px;cursor:pointer;vertical-align:middle;transition:opacity .15s,color .15s}
   .cmp-star:hover,.cmp-star:focus-visible{opacity:.95;color:var(--accent);outline:none}
@@ -881,7 +882,7 @@ function marketsBody(){
   const open = MARKETS.filter(marketIsOpen);
   if(!FCSTORY.length && !open.length)
     return '<div class="accsub">What forecasters and prediction markets actually expect.</div><div class="empty">Market forecasts are being researched — they land on the next data sync.</div>';
-  let out=`<div class="accsub" style="margin-bottom:11px">What the prediction markets add up to — the consensus across Polymarket, Metaculus, Kalshi and Manifold (already-resolved markets excluded).</div>`;
+  let out='';
   if(FCSTORY.length)
     out+=`<div class="mktstory">${FCSTORY.map(s=>`<p>${s.h?`<b>${he(s.h)}</b> `:''}${he(s.t)}</p>`).join('')}</div>`;
   if(open.length){
@@ -908,10 +909,9 @@ function renderCharts(){
   if(chartsTab==='cadence'){
     panel=`<div class="accsub">How the pace of model releases has accelerated, on historical averages.</div><div id="cadence-wrap">${cadenceBlock()}</div>`;
   } else if(chartsTab==='hh'){
-    panel=`<div class="accsub">Top live models ranked on one benchmark — switch the metric to re-rank the bars.</div><div id="hh-wrap">${headToHead()}</div>`;
+    panel=`<div id="hh-wrap">${headToHead()}</div>`;
   } else {
-    panel=`<div class="accsub">Each lab's frontier over the last 18 months — every model that set or matched its best score (so flagships that tie show too). Tap a dot for the model.</div>
-      <div id="traj-aa-wrap">${trajWrap('aa')}</div>
+    panel=`<div id="traj-aa-wrap">${trajWrap('aa')}</div>
       <div id="traj-swe-wrap">${trajWrap('swe')}</div>`;
   }
   $('#v-charts').innerHTML = `<div class="vh">Charts &amp; forecasts</div>
@@ -1049,6 +1049,10 @@ let newsTopic=null;
 /* source-pill colors muted to forest-harmonious tones (no neon/old-blue), kept distinguishable */
 const NEWS_SRC_COLOR={WSJ:'#6f9ec4',Reuters:'#cf8a52',AP:'#cf6a6a','The Economist':'#c25b7a',Bloomberg:'#4faf86',FT:'#d9a85a',CNBC:'#9a72c0',Axios:'#4fb8a6',Nature:'#62a878','MIT Tech Review':'#a98fd0','The Verge':'#c97f9a','Ars Technica':'#c98a4f','IEEE Spectrum':'#6f93b8',Science:'#55a070'};
 const newsColor=s=>NEWS_SRC_COLOR[s]||'#7c8aa0';
+// 7 fine topics condensed into 3 broad buckets (+All) so the row never scrolls on a phone
+const NEWS_BUCKET={Models:'models',Research:'models',Business:'business',Society:'society',Policy:'society',Safety:'society',Medicine:'society'};
+const newsBucket=t=>NEWS_BUCKET[t]||'society';
+const NEWS_TABS=[['models','Models'],['business','Business'],['society','Society']];
 function newsRow(it){
   const c=newsColor(it.source);
   const click=it.url?` data-href="${he(it.url).replace(/"/g,'&quot;')}" role="link" tabindex="0"`:'';
@@ -1058,11 +1062,10 @@ function newsRow(it){
 }
 function renderNews(){
   const items=[...NEWS].sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-  const topics=[...new Set(items.map(i=>i.topic).filter(Boolean))];
-  if(newsTopic && !topics.includes(newsTopic)) newsTopic=null;
-  const list=newsTopic?items.filter(i=>i.topic===newsTopic):items;
-  const upd=NEWSMETA.updated?` · refreshed ${fmtDate((''+NEWSMETA.updated).slice(0,10))}`:'';
-  const tabs=[['all','All',items.length], ...topics.map(t=>[t,t,items.filter(i=>i.topic===t).length])];
+  const buckets=NEWS_TABS.filter(([k])=>items.some(i=>newsBucket(i.topic)===k));
+  if(newsTopic && !buckets.some(([k])=>k===newsTopic)) newsTopic=null;
+  const list=newsTopic?items.filter(i=>newsBucket(i.topic)===newsTopic):items;
+  const tabs=[['all','All',items.length], ...buckets.map(([k,lbl])=>[k,lbl,items.filter(i=>newsBucket(i.topic)===k).length])];
   $('#v-news').innerHTML = `<div class="vh">News &amp; good reads</div>
     ${items.length?`${fileTabs('news',newsTopic||'all',tabs)}<div class="ftab-panel">${list.map(newsRow).join('')}</div>`
     :`<div class="empty">Curated reads are being gathered — they land on the next sync.</div>`}`;
