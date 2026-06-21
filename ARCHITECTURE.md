@@ -1,7 +1,7 @@
 # AI Tracker — Architecture
 
 A phone-first, self-updating tracker of AI models, benchmarks, and forecasts —
-for Christian & his dad. Lives on GitHub Pages; refreshes itself twice a day.
+for Christian & his dad. Lives on GitHub Pages; refreshes itself 4×/day.
 
 Working name: **AI Tracker** (rename anytime). Project command: `/ai`.
 
@@ -18,7 +18,7 @@ Working name: **AI Tracker** (rename anytime). Project command: `/ai`.
 4. **Predictions** — for announced-but-untested models, a forecast point **plus an
    uncertainty band**. Measured = solid line/dot; predicted = hollow dot + shaded
    interval that widens further into the future.
-5. **Self-updating** — a job runs deep-research **twice a day**, merges new findings
+5. **Self-updating** — a job runs deep-research **4×/day** (3AM/9AM/3PM/9PM ET), merges new findings
    into the data files, and pushes to GitHub so the live app refreshes.
 
 ## The shape (why it's data-driven)
@@ -38,9 +38,9 @@ change. That's what lets a headless job update it without touching code.
     predictions.json    forecasts w/ uncertainty bands
     meta.json           lastUpdated, counts, sweep stats, data version
   scripts/
-    update.sh           the twice-daily updater (launchd target)
+    update.sh           the updater — launchd target, 4×/day
     research-prompt.md   the prompt handed to `claude -p`
-    com.christian.ai-tracker.plist   launchd schedule (6am + 6pm ET)
+    com.christian.ai-tracker.plist   launchd schedule (3AM/9AM/3PM/9PM ET)
   icons/                home-screen icons
   ARCHITECTURE.md  HANDOFF.md  README.md
 ```
@@ -73,11 +73,12 @@ Prediction = { model, lab, expectedDate, benchmark, predicted, low, high, basis,
 
 **meta.json** — `{ lastUpdated (ISO), models (n), labs (n), sweeps (n), dataVersion, note }`
 
-## The twice-daily update loop
+## The update loop (4×/day)
 
 `launchd` (not GitHub Actions — Actions needs a paid API key; Christian's Max
-subscription covers `claude -p` for free) fires `scripts/update.sh` at ~06:00 and
-~18:00 ET.
+subscription covers `claude -p` for free) fires `scripts/update.sh` at 03:00 / 09:00 /
+15:00 / 21:00 ET. More frequent than strictly needed on purpose: the job only runs while
+the Mac is awake, so 4 slots/day make it far likelier one lands during an open-laptop window.
 
 `update.sh` does:
 1. `cd /Users/christian/Sites/AI`
@@ -127,5 +128,5 @@ For a model with no measured score on benchmark B:
 ## Open decisions for Christian
 
 - Repo name / public-or-unlisted (unlisted = robots.txt + noindex, like Mom's).
-- Update times (defaulting 6am/6pm ET).
+- Update times (3AM/9AM/3PM/9PM ET).
 - How aggressive predictions should be (calibrated vs bold).

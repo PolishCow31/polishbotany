@@ -70,15 +70,28 @@ research breakthroughs, safety/governance, and AI in medicine.
 - `prices`: `{ "<model name lowercase>": "in/out" }` for any price you confirmed changed, or a
   new model's price (merged in; existing prices are kept, never dropped). (Prices are the only
   editorial field still shown in the app — don't bother with leaderboard/upcoming/killed.)
-- `pulse`: **ALWAYS rewrite this** — it's the dense "what's up" paragraph at the top of the Home tab,
-  and it's the most visible thing in the app. Write **ONE dense paragraph, 4–6 sentences**, a sharp
-  situation-brief of the AI frontier *right now*, grounded ONLY in the data you're updating this run
-  (models/leaderboard, news, releases/radar, markets). Cover, in flowing prose (not a list): the
-  current AA-Index leader and how tight the race behind it is; the 1–2 biggest news stories this sweep;
-  what frontier model(s) are imminent and the market odds; and one thing worth watching. Wrap the
-  handful of most important facts in `**double asterisks**` (the app renders them bold) — but sparingly,
-  ~4–6 bolds total. No hype, no emoji, plain reporting voice. The merge step stamps the time and which
-  routine (AM/PM) wrote it, so just provide the text. Format: `"pulse": "<the paragraph>"`.
+- `pulse`: **ALWAYS rewrite this — as a CHANGE-brief, not a state-brief.** It's the dense "what's up"
+  paragraph at the top of the Home tab and the most visible thing in the app. Its job is to tell the reader
+  **what moved since the last sweep**, not to restate the standings every 12 hours. **FIRST read the previous
+  pulse** in `data/editorial.json` (`editorial.pulse.text`) so you know exactly what you said last run and can
+  lead with what's genuinely DIFFERENT this time. Then write **ONE dense paragraph, 4–6 sentences**, grounded
+  ONLY in this run's data (models/leaderboard, news, releases/radar, markets):
+  - **LEAD with the single biggest change this sweep** — a model that shipped, a new #1 or ranking shift, a
+    benchmark SOTA, a release that just got dated or promoted out, or a notable market-odds swing (e.g.
+    "GPT-6 jumped to **94%** for July, up from 88%"). The first sentence is the freshest, most important *new*
+    fact — NOT the leaderboard.
+  - Then add only the context needed to make that change land (who leads now, what's imminent), the 1–2 biggest
+    news stories this sweep, and one thing worth watching next. Don't re-survey the whole field — assume the
+    reader saw the last pulse.
+  - **Quiet sweep?** If nothing material actually moved, SAY so plainly up front ("**Quiet 12 hours** — no new
+    models or ranking changes"), then hold the standings in a single line and surface whatever smaller drift
+    there is (a market-odds nudge, an imminent release's clock ticking down, the top news item). **NEVER
+    manufacture movement or re-dress the old pulse as if it were new** — an honest "nothing shipped" reads far
+    better than fake motion.
+  Wrap ~4–6 of the most important facts in `**double asterisks**` (the app renders them bold), sparingly. No
+  hype, no emoji, plain reporting voice. (AA-Index numbers stay on the **v4.1** scale per the pin above —
+  match the leaderboard.) The merge step stamps the time and which sweep slot (3AM/9AM/3PM/9PM ET) wrote it, so just provide the text.
+  Format: `"pulse": "<the paragraph>"`.
 
 ## Also refresh the frontier-release radar (`releases`) — the "Predict" tab
 The radar shows WHICH frontier models are expected next and WHEN. **Re-verify it EVERY sweep — do NOT skip it just
@@ -151,7 +164,7 @@ Merged by name (add/replace), so you only need to send briefs for models you're 
 ## Always log your sources (`sweepSources`) — the "Sources" tab in More
 List EVERY source you actually consulted or cited during this run as `sweepSources`, each
 `{ "u": "<short display label, e.g. anthropic.com/news>", "url": "<full https URL>", "q": "primary|secondary|blog" }`.
-The merge appends this list under today's date and AM/PM routine (before noon ET = AM, else PM), building a
+The merge appends this list under today's date and sweep slot (3AM/9AM/3PM/9PM ET, by the hour it ran), building a
 dated, per-sweep source log. Include real URLs you opened — primary vendor/model-card pages first, then
 aggregators/news. This runs every sweep, even when nothing else changed.
 

@@ -104,6 +104,9 @@ def main():
     et = timezone(timedelta(hours=-4))
     now_dt = datetime.now(et)
     now_iso = now_dt.replace(microsecond=0).isoformat()
+    # which of the 4 daily sweeps this is (3AM/9AM/3PM/9PM ET), bucketed by the hour it actually ran
+    def routine_of(h): return "3AM" if h < 6 else "9AM" if h < 12 else "3PM" if h < 18 else "9PM"
+    routine_now = routine_of(now_dt.hour)
 
     # 5. news — rolling refresh: validate, dedupe by url, newest-first, cap the window
     news_added = news_dropped = 0
@@ -140,11 +143,11 @@ def main():
         for key in ("leaderboard", "upcoming", "killed", "sources"):
             if ed_delta.get(key):
                 ed[key] = ed_delta[key]; ed_changed += 1
-        # pulse — the Home "what's up" paragraph; replace each run, stamp time + which routine (AM/PM)
+        # pulse — the Home "what's up" paragraph; replace each run, stamp time + which sweep slot (3AM/9AM/3PM/9PM)
         pulse_in = ed_delta.get("pulse")
         pulse_text = pulse_in.get("text") if isinstance(pulse_in, dict) else (pulse_in if isinstance(pulse_in, str) else None)
         if pulse_text and pulse_text.strip():
-            routine = "AM" if now_dt.hour < 12 else "PM"
+            routine = routine_now
             ed["pulse"] = {"text": pulse_text.strip(), "updated": now_iso, "routine": routine}; ed_changed += 1
         if ed_changed:
             ed["updated"] = now_iso
@@ -197,7 +200,7 @@ def main():
             bf["updated"] = now_iso
             save("briefs.json", bf)
 
-    # 6e. sources — log this sweep's consulted sources under today's AM/PM routine
+    # 6e. sources — log this sweep's consulted sources under today's sweep slot (3AM/9AM/3PM/9PM)
     src_logged = 0
     if delta.get("sweepSources"):
         try:
@@ -205,7 +208,7 @@ def main():
         except FileNotFoundError:
             sj = {"sweeps": []}
         sj.setdefault("sweeps", [])
-        routine = "AM" if now_dt.hour < 12 else "PM"
+        routine = routine_now
         date_s = now_dt.strftime("%Y-%m-%d")
         srcs = [{k: x.get(k) for k in ("u", "url", "q")} for x in (delta["sweepSources"] or []) if x.get("u") or x.get("url")]
         if srcs:

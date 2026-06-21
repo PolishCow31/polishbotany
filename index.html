@@ -535,7 +535,7 @@ let PRICES={}, LB=[], LBMETA={source:'LLM-Stats'}, UPCOMING=[], KILLED=[], SOURC
 let DATA = {models:[],trends:[],predictions:[],meta:{}};
 
 async function boot(){
-  const J = f => fetch('data/'+f+'.json',{cache:'no-store'}).then(r=>r.json());   // network-fresh: data updates twice daily
+  const J = f => fetch('data/'+f+'.json',{cache:'no-store'}).then(r=>r.json());   // network-fresh: data updates 4×/day
   try{
     const [m,t,p,meta] = await Promise.all([J('models'),J('trends'),J('predictions'),J('meta')]);
     DATA = {models:m.models||[], trends:t.trends||[], predictions:p.predictions||[], methodology:p.methodology||'', meta};
@@ -1093,11 +1093,12 @@ function sParseD(s){ const p=(s||'').split('-').map(Number); return new Date(p[0
 function sWeekKey(dateStr){ const d=sParseD(dateStr); d.setDate(d.getDate()-d.getDay()); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
 function sWeekLabel(k){ const a=sParseD(k), b=new Date(a); b.setDate(b.getDate()+6); return `Week of ${MM[a.getMonth()+1]} ${a.getDate()} – ${a.getMonth()===b.getMonth()?'':MM[b.getMonth()+1]+' '}${b.getDate()}`; }
 function sDayLabel(dateStr){ const d=sParseD(dateStr); return `${SDOW[d.getDay()]} ${d.getMonth()+1}/${d.getDate()}`; }
-function sSweepLabel(s){ const d=sParseD(s.date), r=s.routine==='AM'?'AM':s.routine==='PM'?'PM':'Build'; return `${d.getMonth()+1}/${d.getDate()} ${r} Sources`; }
+function sSweepLabel(s){ const d=sParseD(s.date), r=s.routine||'Build'; return `${d.getMonth()+1}/${d.getDate()} ${r} Sources`; }
 function srcRow(s){ const url=s.url||('https://'+(''+(s.u||'')).replace(/\s*\(.*$/,'').split(/\s/)[0]); return `<div class="srcrow lnk" data-href="${he(url).replace(/"/g,'&quot;')}">${s.q?`<span class="sq ${s.q}">${he((''+s.q).slice(0,4).toUpperCase())}</span>`:''}<span class="srcu">${he(s.u||url)}</span><span class="mkt-go">↗</span></div>`; }
 function renderSources(){
-  if(!SWEEPS.length) return '<div class="empty">No source sweeps logged yet — they accrue as the twice-daily research runs.</div>';
-  const rr=s=>s.routine==='PM'?2:s.routine==='AM'?1:0;
+  if(!SWEEPS.length) return '<div class="empty">No source sweeps logged yet — they accrue as the research runs (4×/day).</div>';
+  const RORD={'9PM':4,'3PM':3,'9AM':2,'3AM':1,'PM':3,'AM':1};   // newest-first within a day; legacy AM/PM still sort
+  const rr=s=>RORD[s.routine]||0;
   const sw=[...SWEEPS].sort((a,b)=> b.date.localeCompare(a.date) || rr(b)-rr(a));
   const weeks=[];
   sw.forEach(s=>{ const wk=sWeekKey(s.date); let W=weeks.find(w=>w.key===wk); if(!W){W={key:wk,days:[],n:0};weeks.push(W);} let D=W.days.find(d=>d.date===s.date); if(!D){D={date:s.date,sweeps:[],n:0};W.days.push(D);} D.sweeps.push(s); const c=(s.sources||[]).length; D.n+=c; W.n+=c; });
@@ -1121,7 +1122,7 @@ function renderMore(){
     <input id="glossq" class="gsearch" type="search" placeholder="Search terms &amp; acronyms — MMLU, MoE, RLHF…" autocomplete="off" autocapitalize="off" spellcheck="false">
     <div id="glossres" class="glist">${glossResults('')}</div>
     <details class="acc more-sources"><summary><span class="tw">▶</span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
-      <div class="body"><div class="accsub">Every source the research consulted, logged per twice-daily sweep — newest first. Sources roll up into AM/PM routines, then days, then weeks.</div>${renderSources()}</div></details>`;
+      <div class="body"><div class="accsub">Every source the research consulted, logged per sweep (4×/day) — newest first. Sources roll up by sweep slot, then day, then week.</div>${renderSources()}</div></details>`;
 }
 
 // ---------------- events ----------------

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """One-shot P1 builder: transform the ai-history-foundation workflow output into
-the app's data files. Run once to seed real data; thereafter the twice-daily
+the app's data files. Run once to seed real data; thereafter the 4×/day
 merge.py keeps it current."""
 import json, os, re, sys
 from datetime import datetime, timezone, timedelta

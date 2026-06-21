@@ -3,9 +3,38 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
-## State — Jun 20 2026
+## State — Jun 21 2026
 
-### ✓ DONE (Jun 20, session 28) — open-source chart back-fill (verified) + Charts cleanups + glossary/header fixes (LIVE-file, theme NOT deployed)
+### ✓ DONE (Jun 21, session 29) — Pulse state-brief → CHANGE-brief · schedule 2×/day → 4×/day (3AM/9AM/3PM/9PM ET) — SHIPPED
+Two asks, both built + verified + pushed live. The schedule change is also live on his Mac (launchd reloaded).
+- **Schedule moved 6am/6pm → 3AM/9AM/3PM/9PM ET (4×/day).** His reasoning: the job only fires while the laptop's awake, so 4 slots/day make it far likelier one lands in an open-laptop window. Changed EVERYWHERE ("all update parameters"):
+  - **`scripts/com.christian.ai-tracker.plist`** — `StartCalendarInterval` = 4 entries (Hour 3/9/15/21). **Installed + reloaded** (`cp` → `launchctl unload`/`load`); `launchctl print` confirms all 4 calendar intervals loaded. THIS is the live driver.
+  - **`scripts/merge.py`** — the routine label was 2-slot AM/PM (`hour<12`). With 4×/day, 3AM+9AM both map to "AM" → the 9AM sweep would OVERWRITE the 3AM one in the sources log (overwrite-by-(date,routine), ~line 214). Fixed: `routine_of(h)` buckets to **3AM/9AM/3PM/9PM** by run-hour (`<6/<12/<18/else`), used at both the pulse stamp and the sources stamp. Compiles; bucket mapping unit-tested (3→3AM, 9→9AM, 15→3PM, 21→9PM, edges clean).
+  - **`index.html`** — `sSweepLabel` shows the slot label as-is (legacy AM/PM/build still render); `RORD` sort map orders 9PM>3PM>9AM>3AM within a day (legacy AM/PM still sort). Verified @ :8095: 98 models, 0 console errors, Sources tree renders both new + legacy labels.
+  - Text/docs swept: `research-prompt.md` (pulse + sources AM/PM refs), `ARCHITECTURE.md` (5 spots inc. the 06:00/18:00 line), `data/sources.json` + `data/news.json` notes, `build_data.py` docstring, memory (`project_ai_tracker.md` + `MEMORY.md`). `grep 6am|6pm|twice-daily|06:00|18:00` is clean outside HANDOFF history.
+- **Pulse: state-brief → CHANGE-brief** (`scripts/research-prompt.md`, the `pulse` instruction). Now: read the PREVIOUS pulse first (`editorial.pulse.text`), **LEAD with the single biggest change since last sweep** (shipped model / ranking shift / benchmark SOTA / market-odds swing), then minimal context; **honest quiet-day fallback** ("Quiet 12 hours — no new models…") instead of manufacturing motion. Guardrails kept (one para, ~4–6 bolds, v4.1 AA pin). **No merge.py change** (pulse stays a string; merge just stamps it). NOTE: the handoff's old claim "merge.py hands it the delta" was WRONG — the agent writes the pulse during its own research pass (before merge runs); it already discovers what's new each run, it just wasn't told to frame around it.
+  - **VERIFIED via a live dry-run** (`claude -p` with the new prompt → throwaway `_delta.json`, no merge/push): on a quiet overnight it produced exactly the right shape — led "Quiet overnight — no new models and no ranking change…", surfaced the one real mover (GPT-5.6's ship-window odds slipping) and diffed it ("down from ~88% last sweep"), v4.1 pinned. Test delta discarded.
+- **Shipped:** committed + `git push` (the live site picks up index.html + the data-note text; scripts/plist aren't Pages-served but live in the repo). **Next sweep: 3AM** (if the Mac's awake).
+
+### ✅ ALL DEPLOYED LIVE (Jun 20 ~11:35pm, session 28 — supersedes any "NOT deployed" note below)
+The whole night's UI refresh + data back-fill is **pushed live** at https://polishcow31.github.io/polishbotany/ (commits up to
+`b09c03a`). The live site is now: **forest theme, LIGHTER mid-forest cards, and `Fraunces` as the SITE-WIDE font** (every
+character — `--sans`/`--mono`/`--display` all Fraunces; `tabular-nums` keeps data aligned; Spline fonts dropped). Shipped tonight:
+- **Type/identity:** Fraunces everywhere; header = leaf + "Botany" + green (`--accent`) tagline "The continuous growth and roots of AI".
+- **Open-source chart back-fill** (the 15-agent workflow) — 5 climbing AA + SWE lines, live. **AA here is a COMPRESSED scale, calibrate to anchors — see the session-28 detail block below.**
+- **Charts:** Frontier/Open toggle added to Release cadence (all 3 sub-tabs toggle now); removed "Tap any dot" + the Predict-tab note.
+- **File-tabs fit the phone:** ≤4 tabs FILL the row (no scroll/cut-off), News(8) still scrolls. Shorter labels (By company/Cadence; Open; Radar/Markets).
+- **Predict:** dropped the caption/radar-date line; hero got a Details button; dropped the "Everything expected next" helper.
+- **All tab subtitle lines removed** (eyebrow → straight to content). Current eyebrow now "Every model chronologically".
+- **More:** glossary readable on sage; Sources drawer pushed to the bottom of the page.
+- **GLOSSARY EXPANDED 152 → 498 terms** (+346, deployed) via a 28-agent workflow (author-per-subdomain → adversarial def-check → dedup). Backup `data/glossary.json.bak-pre-expand`.
+- **NEW FEATURE — model-to-model COMPARE** (deployed): a deliberately faint `.cmp-star` (★) by the Overview eyebrow opens a Compare modal — two `<select>`s (23 live models) + a 10-row side-by-side (AA/SWE/GPQA/AIME/lab/context/out-price/params/released/type), green = stronger value (lower price wins), live re-render on change. Reuses `#modal`. JS lives after `closeModal()`. He wanted it discreet/easter-egg for now.
+- **Updater:** release-radar now re-verifies EVERY sweep (`research-prompt.md`, local — takes effect next 6am).
+- **TODO / discussed (the "what's missing" review):** (a) **Pulse should be a CHANGE-brief, not a state-brief** — its prompt currently asks for a situation summary; sharpen `research-prompt.md` to LEAD with what moved since last sweep (merge.py hands it the delta). Offered, awaiting his go. (b) **Notifications** — flagged for later via a spawn_task chip (`task_3eadc0cf`): cron-triggered (it knows the delta), start simple (ntfy.sh/Telegram), Web-Push is the fuller path; nail threshold rules first (new #1 / new frontier model / model pulled). (c) **News staleness** is the integrity guardrail (won't fabricate) vs tool limits (search lag + WSJ/Reuters/AP/Bloomberg/FT blocked) — known, not easily fixable.
+- **OPEN tweak knobs he may revisit:** eyebrows render UPPERCASE (he typed Title Case — offered the flip, he didn't take it); all-serif incl. tiny data (offered mono-for-data fallback, he said "looks sharp" → keep). The lighter-green `186px` Sources offset + tagline green are easy nudges.
+- Backups still on disk: `index.mk1.html` (forest before tonight) / `index.mk1.1.html` (glasshouse) / `data/*.bak-pre-openbackfill`.
+
+### ✓ DONE (Jun 20, session 28) — open-source chart back-fill (verified) + Charts cleanups + glossary/header fixes (DEPLOYED)
 All on the live working `index.html` (forest theme, lighter palette + Fraunces/Spline fonts from session 27's post-revert tweaks). **Theme still NOT git-pushed; data back-fill WILL auto-push next cron (`git add data/`).**
 - **OPEN-SOURCE trajectory back-fill — the big one.** The Charts "Open source" AA + SWE lines were 1-2 lonely dots; now
   **5 climbing lines each** (DeepSeek, Alibaba, Zhipu, Moonshot, NVIDIA), hollow back-estimates → solid live endpoints, just
@@ -742,7 +771,7 @@ search, model-detail pages, dad onboarding, share.
 
 ## Decided (Jun 19)
 - Name **Robots**; repo `robots` → **polishcow31.github.io/robots, unlisted**; updates
-  **6am/6pm ET**; forecasts **calibrated** + **market-based** (Polymarket/Metaculus/Epoch).
+  **3AM/9AM/3PM/9PM ET (4×/day, changed from 6am/6pm Jun 21)**; forecasts **calibrated** + **market-based** (Polymarket/Metaculus/Epoch).
 - **Deploy (P2) is pending HIS GO** — he chose "look it over first." Don't deploy until
   he says "deploy Robots."
 
