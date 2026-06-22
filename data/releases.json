@@ -1,17 +1,17 @@
 {
-  "updated": "2026-06-21T09:04:20-04:00",
+  "updated": "2026-06-21T21:06:26-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "GPT-5.6",
       "lab": "OpenAI",
-      "expectedWindow": "by Jul 2026 (days away)",
+      "expectedWindow": "by Jul 2026 (odds easing)",
       "expectedDate": "2026-07",
-      "prob": 97,
+      "prob": 91,
       "frontier": false,
       "status": "expected",
-      "basis": "Point release; chief-sci Pachocki memo Jun 11 called it a 'meaningful improvement', spotted in Codex logs. Reports now point to a 'next week / Tuesday' arrival.",
-      "source": "Polymarket 'GPT-5.6 released by': Jul 31 97%, Jun 30 78%; 'when' market 83% for Jun 22-28"
+      "basis": "No ship over the weekend; Polymarket eased to 65% by Jun 30, 91% by Jul 31, 6.5% by Jun 23. Pachocki called it a 'meaningful' step over 5.5.",
+      "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
       "model": "Gemini 3.5 Pro (next Gemini Pro)",
@@ -21,8 +21,8 @@
       "prob": 97,
       "frontier": true,
       "status": "expected",
-      "basis": "Unveiled Google I/O May 19; still in Vertex limited preview as of Jun 19, Pichai said 'give us until next month'. 2M-token ctx, Deep Think.",
-      "source": "Polymarket 'next Google Gemini Pro model released on': Jun 30 ~50-55%, Jul 31 97%"
+      "basis": "Google on a near-monthly Gemini cadence; next Pro refresh widely expected mid-2026.",
+      "source": "https://deepmind.google/models"
     },
     {
       "model": "Fable 5 / Mythos 5 (reinstatement)",
@@ -32,19 +32,19 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Both SUSPENDED globally Jun 12 by first US AI export order (Fable jailbreak). Still offline 8 days in; Trump softened Jun 19 ('not a threat now'). No reinstatement yet. No market.",
-      "source": "Axios/CNBC/Anthropic Jun 12-19 2026; Trump Axios interview Jun 19; no prediction market exists"
+      "basis": "Pulled Jun 12 by US export order; Anthropic building biometric-ID verification to gate foreign access and restore service.",
+      "source": "https://www.cnbc.com/2026/06/16/anthropics-fable-shutdown-is-a-big-moment-for-open-source-ai.html"
     },
     {
       "model": "Grok 4.4",
       "lab": "xAI",
       "expectedWindow": "Q3 2026 (weeks)",
-      "expectedDate": "2026-07",
+      "expectedDate": "2026-08",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Point release on the 4.x runway (1T params) bridging to Grok 5. xAI says 7 models in training. No dated market for 4.4.",
-      "source": "mindstudio.ai/artificialanalysis xAI roadmap; no market exists"
+      "basis": "xAI iterating the Grok 4.x line; minor version expected before Grok 5.",
+      "source": "https://docs.x.ai/developers/models"
     },
     {
       "model": "Next Opus (post-4.8 / 4.9)",
@@ -54,30 +54,30 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Opus 4.8 is current working frontier (Fable 5 suspended). Anthropic cadence ~41 days between 4.7 and 4.8. No dated market; inferring from cadence.",
-      "source": "No prediction market; cadence from Opus 4.8 launch May 28 2026"
+      "basis": "Opus line refreshing roughly quarterly; a post-4.8 Opus is the natural next flagship step.",
+      "source": "https://anthropic.com/news"
     },
     {
       "model": "Grok 5",
       "lab": "xAI",
       "expectedWindow": "H2 2026 (slipped from Q2)",
-      "expectedDate": "2026-09",
+      "expectedDate": "2026-10",
       "prob": 1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Q1 then Q2 targets missed; still training on Colossus 2. 6T-10T params reported. 1% by Jun 30 means market sees no imminent launch.",
-      "source": "Polymarket 'Grok 5 released by Jun 30 2026': ~1%"
+      "basis": "Musk floated Grok 5 for 2026 but timeline repeatedly slipped; markets price a near-term ship very low.",
+      "source": "https://docs.x.ai/developers/models"
     },
     {
       "model": "Qwen 4 (next-gen)",
       "lab": "Alibaba",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Alibaba still on Qwen 3.x (3.7 Max shipped May 18 2026, 1M ctx). No Qwen 4 announced; Manifold has an undated 'when will Alibaba release Qwen 4' question, no firm odds.",
-      "source": "Manifold 'when will Alibaba release Qwen 4' (no firm probability); Qwen 3.7 Max May 2026"
+      "basis": "Qwen on a fast open-weight cadence; a next-gen Qwen 4 line expected in H2.",
+      "source": "https://huggingface.co/Qwen"
     },
     {
       "model": "GPT-6",
@@ -87,8 +87,8 @@
       "prob": 82,
       "frontier": true,
       "status": "rumored",
-      "basis": "True GPT-5 successor (must be named GPT-6, not a 5.x point release). Memory/agentic focus; Stargate compute gating. Sep 52% / Dec 82%.",
-      "source": "Polymarket 'GPT-6 released by': Sep 30 52%, Dec 31 82%"
+      "basis": "Polymarket prices GPT-6 by Dec 31 at ~82% (52% by Sep 30).",
+      "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
       "model": "GLM-6 (next-gen)",
@@ -98,19 +98,19 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "GLM-5 shipped Feb 11 2026 (744B), GLM-5.2 Jun 13 2026 (1M ctx, MIT). Rapid point-release cadence; no GLM-6 date or market.",
-      "source": "No prediction market for GLM-6; GLM-5.2 launch Jun 13 2026"
+      "basis": "Zhipu shipped GLM-5.2 in June; a GLM-6 generation is the expected next major step.",
+      "source": "https://huggingface.co/zai-org"
     },
     {
       "model": "Next Mistral flagship (Large 4 / Mistral 4)",
       "lab": "Mistral",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Mistral 3 (Dec 2025, 675B MoE) still flagship; Medium 3.5 shipped Jun 2026. No next-flagship date and no dated market.",
-      "source": "No prediction market; Mistral 3 / Medium 3.5 from mistral.ai"
+      "basis": "Large 3 shipped Dec 2025; a next flagship plus the long-flagged Large 3 reasoning variant are pending.",
+      "source": "https://mistral.ai/news"
     },
     {
       "model": "Gemini 4.0",
@@ -120,8 +120,8 @@
       "prob": 2,
       "frontier": true,
       "status": "rumored",
-      "basis": "Distinct from the 3.5-Pro release. No 4.0 exists yet; market near-certain it does NOT ship by Jun 30. Next true generational Gemini.",
-      "source": "Polymarket 'Gemini 4.0 released by Jun 30 2026': ~2-10% (90%+ No)"
+      "basis": "Polymarket prices Gemini 4.0 by end-June 2026 at ~10%; a true 4.0 generation is a later-2026 story.",
+      "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
       "model": "Llama 6 (next Llama)",
@@ -131,8 +131,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Llama 5 already shipped Apr 8 2026 (600B+ params, 5M ctx). Next-gen has no announced date and no dated Polymarket; Manifold/Kalshi 'Llama 5' markets resolved.",
-      "source": "No active dated market for Llama 6; Llama 5 launch Apr 2026"
+      "basis": "Meta's Superintelligence Labs reorg reshaped the roadmap; next major Llama timing remains unclear.",
+      "source": "https://ai.meta.com/blog/"
     },
     {
       "model": "DeepSeek V5",
@@ -142,8 +142,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "V4 (V4-Pro 1.6T / V4-Flash) shipped Apr 24 2026, still in preview. No V5 announcement and no dated market found.",
-      "source": "No prediction market for DeepSeek V5; V4 launch Apr 2026"
+      "basis": "V4 line (Pro/Flash) shipped Apr 2026; a V5 generation is the expected next major release.",
+      "source": "https://api-docs.deepseek.com"
     }
   ]
 }
