@@ -1,27 +1,27 @@
 {
-  "updated": "2026-06-22T21:04:03-04:00",
+  "updated": "2026-06-23T03:03:51-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "GPT-5.6",
       "lab": "OpenAI",
-      "expectedWindow": "by Jul 2026 (Jun-30 odds 31%)",
+      "expectedWindow": "by Jul 2026 (Jun-28 'no' at 78%)",
       "expectedDate": "2026-07",
       "prob": 94,
       "frontier": false,
       "status": "expected",
-      "basis": "Still unannounced, no model card. Polymarket June-30 odds slid to 31% (from 47%); July-31 firmed to 94%. Pachocki memo reportedly calls it a 'meaningful' step over 5.5; ~$1.1M staked on a launch window.",
+      "basis": "Still unannounced, no model card. Polymarket's 'not public by Jun 28' line spiked to 78% (up ~67 pts in 24h), collapsing near-term odds; by-Jul-31 holds at 94%. Pachocki memo reportedly calls it a 'meaningful' step over 5.5.",
       "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
       "model": "Gemini 3.5 Pro (next Gemini Pro)",
       "lab": "Google",
-      "expectedWindow": "by Jul 2026",
+      "expectedWindow": "by Jul 2026 (GA window now)",
       "expectedDate": "2026-07",
-      "prob": 97,
+      "prob": 82,
       "frontier": true,
       "status": "expected",
-      "basis": "Announced at I/O (May 19) for 'next month'; 2M-token context + Deep Think, in limited Vertex preview, GA still pending. Gemini 3.5 Flash already GA.",
+      "basis": "Announced at I/O (May 19) for 'next month'; 2M-token context + Deep Think, in limited Vertex preview, GA still pending. Polymarket 82% by Jun 30. Gemini 3.5 Flash already GA.",
       "source": "https://deepmind.google/models/gemini/"
     },
     {
@@ -98,19 +98,19 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "GLM-5.2 shipped Jun 13; a GLM-6 generation is the expected next major step on Zhipu's fast cadence.",
+      "basis": "Zhipu on a rapid open-weight cadence after GLM-5.2; a next-gen GLM-6 expected late 2026.",
       "source": "https://huggingface.co/zai-org"
     },
     {
       "model": "Mistral next flagship / Large 3 Reasoning",
       "lab": "Mistral",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Large 3 shipped Dec 2025; a next flagship plus the long-flagged Large 3 reasoning variant are pending.",
-      "source": "https://mistral.ai/news"
+      "basis": "A reasoning variant of Large 3 was flagged 'coming soon' on Mistral's own page; still unshipped.",
+      "source": "https://mistral.ai/news/mistral-3"
     },
     {
       "model": "Gemini 4.0",
@@ -120,7 +120,7 @@
       "prob": 2,
       "frontier": true,
       "status": "rumored",
-      "basis": "A true 4.0 generation is a later-2026 story; near-term dated markets price it in the low single digits.",
+      "basis": "Polymarket prices Gemini 4.0 by Jun 30 at ~10% NO/~90%; a full 4.0 flagship is a late-2026/early-2027 step. Gemini 4.0 Flash already surfaced.",
       "source": "https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026"
     },
     {
@@ -131,18 +131,18 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Meta's Superintelligence Labs reorg reshaped the roadmap; next major Llama timing remains unclear.",
-      "source": "https://ai.meta.com/blog/"
+      "basis": "Meta's Superintelligence Labs pivoting to closed models (Muse Spark); a next open Llama line is unscheduled.",
+      "source": "https://about.fb.com/news"
     },
     {
       "model": "DeepSeek V5",
       "lab": "DeepSeek",
       "expectedWindow": "H2 2026 / early 2027",
-      "expectedDate": "2026-12",
+      "expectedDate": "2027-01",
       "prob": -1,
-      "frontier": false,
+      "frontier": true,
       "status": "rumored",
-      "basis": "V4 line (Pro/Flash) shipped Apr 2026; a V5 generation is the expected next major release.",
+      "basis": "DeepSeek shipped V4 (Pro/Flash) in April 2026; a V5 is the natural next open-frontier step on their ~yearly major cadence.",
       "source": "https://api-docs.deepseek.com"
     }
   ]
