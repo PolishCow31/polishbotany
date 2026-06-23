@@ -1,16 +1,16 @@
 {
-  "updated": "2026-06-22T09:04:28-04:00",
+  "updated": "2026-06-22T21:04:03-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "GPT-5.6",
       "lab": "OpenAI",
-      "expectedWindow": "by Jul 2026 (Jun-30 odds 47%)",
+      "expectedWindow": "by Jul 2026 (Jun-30 odds 31%)",
       "expectedDate": "2026-07",
-      "prob": 93,
+      "prob": 94,
       "frontier": false,
       "status": "expected",
-      "basis": "Still unannounced, no model card; Polymarket now 47% by Jun 30 (down from 58%), 93% by Jul 31. Pachocki memo reportedly calls it a 'meaningful' step over 5.5.",
+      "basis": "Still unannounced, no model card. Polymarket June-30 odds slid to 31% (from 47%); July-31 firmed to 94%. Pachocki memo reportedly calls it a 'meaningful' step over 5.5; ~$1.1M staked on a launch window.",
       "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
@@ -21,8 +21,8 @@
       "prob": 97,
       "frontier": true,
       "status": "expected",
-      "basis": "Announced at I/O (May 19) for 'next month'; in limited Vertex preview, GA imminent. Gemini 3.5 Flash already GA.",
-      "source": "https://deepmind.google/models"
+      "basis": "Announced at I/O (May 19) for 'next month'; 2M-token context + Deep Think, in limited Vertex preview, GA still pending. Gemini 3.5 Flash already GA.",
+      "source": "https://deepmind.google/models/gemini/"
     },
     {
       "model": "Fable 5 / Mythos 5 (reinstatement)",
@@ -32,8 +32,8 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Pulled by US export order; Anthropic building biometric-ID verification to gate foreign access and restore service.",
-      "source": "https://www.cnbc.com/2026/06/16/anthropics-fable-shutdown-is-a-big-moment-for-open-source-ai.html"
+      "basis": "Pulled by US export order; Anthropic building biometric-ID verification to gate foreign access and restore service. Standoff with Washington escalating.",
+      "source": "https://www.technologyreview.com/2026/06/22/1139424/three-things-to-watch-amid-anthropics-latest-feud-with-the-government/"
     },
     {
       "model": "Grok 4.4",
@@ -84,10 +84,10 @@
       "lab": "OpenAI",
       "expectedWindow": "Q4 2026 (Sep-Dec)",
       "expectedDate": "2026-11",
-      "prob": 72,
+      "prob": 71,
       "frontier": true,
       "status": "rumored",
-      "basis": "Polymarket prices GPT-6 by Dec 31 at ~72% (49% by Sep 30).",
+      "basis": "Polymarket prices GPT-6 by Dec 31 at 71% (44% by Sep 30).",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -98,11 +98,11 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Zhipu shipped GLM-5.2 in June; a GLM-6 generation is the expected next major step.",
+      "basis": "GLM-5.2 shipped Jun 13; a GLM-6 generation is the expected next major step on Zhipu's fast cadence.",
       "source": "https://huggingface.co/zai-org"
     },
     {
-      "model": "Next Mistral flagship (Large 4 / Mistral 4)",
+      "model": "Mistral next flagship / Large 3 Reasoning",
       "lab": "Mistral",
       "expectedWindow": "H2 2026",
       "expectedDate": "2026-10",
@@ -120,8 +120,8 @@
       "prob": 2,
       "frontier": true,
       "status": "rumored",
-      "basis": "Polymarket prices Gemini 4.0 by end-June 2026 at ~10%; a true 4.0 generation is a later-2026 story.",
-      "source": "https://polymarket.com/event/gpt-6-released-by"
+      "basis": "A true 4.0 generation is a later-2026 story; near-term dated markets price it in the low single digits.",
+      "source": "https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026"
     },
     {
       "model": "Llama 6 (next Llama)",
