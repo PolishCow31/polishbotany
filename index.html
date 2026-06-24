@@ -954,7 +954,9 @@ function renderCharts(){
 }
 
 // ---------------- PREDICT (frontier release radar + prediction markets) ----------------
-let RELSORTED=[]; let predictTab='radar';
+let RELSORTED=[]; let predictTab='radar'; let radarFilter='all';
+const OPEN_REL_LABS=new Set(['DeepSeek','Alibaba','Zhipu','Moonshot','NVIDIA','Meta']);   // open-weight labs → "Open source" radar filter
+const isOpenRel=r=>OPEN_REL_LABS.has(r.lab);
 const firstPct = s => { const m=(s||'').match(/(\d{1,3}(?:\.\d)?)\s*%/); return m?Math.max(0,Math.min(100,+m[1])):null; };
 function probBar(p,col){ if(p==null)return''; return `<div class="pbar"><div class="pbar-fill" style="width:${Math.max(2,p)}%;background:${col}"></div><span class="pbar-n">${(+p).toFixed(p%1?1:0)}%</span></div>`; }
 function relStatusPill(s){ const m={confirmed:['CONFIRMED','h-soon'],expected:['EXPECTED','h-soon'],rumored:['RUMORED','h-rum']}[s]||['EXPECTED','h-soon']; return `<span class="hpill ${m[1]}">${m[0]}</span>`; }
@@ -985,17 +987,25 @@ function nextFrontier(){
 }
 function renderPredict(){
   RELSORTED=[...RELEASES].sort((a,b)=>(a.expectedDate||'9999-99').localeCompare(b.expectedDate||'9999-99'));
-  const nf=nextFrontier();
-  const hero = nf?`<div class="phero" style="--lab:${labHex(nf.lab)}">
-      <div class="phero-k">Next frontier drop</div>
-      <div class="phero-m"><span class="rel-dot" style="background:${labHex(nf.lab)}"></span>${he(nf.model)}</div>
-      <div class="phero-w">${he(nf.expectedWindow||fmtDate(nf.expectedDate))}${(nf.prob!=null&&nf.prob>=0)?` · <b>${nf.prob}%</b> likely`:''}</div>
-      <button class="infobtn" data-rel-info="${RELSORTED.indexOf(nf)}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.6" r="0.2" stroke-width="2.6"/></svg>Details</button>
-    </div>`:'';
-  const listItems=RELSORTED.filter(r=>r!==nf);
-  const panel = predictTab==='markets'
-    ? marketsBody()
-    : (RELSORTED.length?`${hero}${listItems.map(relRow).join('')}`:'<div class="empty">The release radar is being researched — it lands on the next data sync.</div>');
+  let radarPanel='';
+  if(RELSORTED.length){
+    const pool = radarFilter==='frontier' ? RELSORTED.filter(r=>r.frontier)
+               : radarFilter==='open' ? RELSORTED.filter(isOpenRel) : RELSORTED;
+    const heroItem = radarFilter==='open' ? (pool.find(r=>r.prob==null||r.prob<0||r.prob>=25)||pool[0]) : nextFrontier();
+    const showHero = heroItem && pool.includes(heroItem);
+    const hero = showHero?`<div class="phero" style="--lab:${labHex(heroItem.lab)}">
+        <div class="phero-k">${radarFilter==='open'?'Next open-source drop':'Next frontier drop'}</div>
+        <div class="phero-m"><span class="rel-dot" style="background:${labHex(heroItem.lab)}"></span>${he(heroItem.model)}</div>
+        <div class="phero-w">${he(heroItem.expectedWindow||fmtDate(heroItem.expectedDate))}${(heroItem.prob!=null&&heroItem.prob>=0)?` · <b>${heroItem.prob}%</b> likely`:''}</div>
+        <button class="infobtn" data-rel-info="${RELSORTED.indexOf(heroItem)}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.6" r="0.2" stroke-width="2.6"/></svg>Details</button>
+      </div>`:'';
+    const listItems = pool.filter(r=>r!==heroItem);
+    const seg = `<div class="seg" data-seg="radar"><button data-mode="all"${radarFilter==='all'?' class="on"':''}>All</button><button data-mode="frontier"${radarFilter==='frontier'?' class="on"':''}>Frontier</button><button data-mode="open"${radarFilter==='open'?' class="on"':''}>Open source</button></div>`;
+    radarPanel = (!showHero && !listItems.length) ? `${seg}<div class="empty">No matching releases on the radar.</div>` : `${seg}${hero}${listItems.map(relRow).join('')}`;
+  } else {
+    radarPanel = '<div class="empty">The release radar is being researched — it lands on the next data sync.</div>';
+  }
+  const panel = predictTab==='markets' ? marketsBody() : radarPanel;
   $('#v-predict').innerHTML = `<div class="vh">Predict</div>
     ${fileTabs('predict',predictTab,[['radar','Radar',RELSORTED.length||''],['markets','Markets',MARKETS.length||'']])}
     <div class="ftab-panel">${panel}</div>`;
@@ -1171,7 +1181,7 @@ document.addEventListener('click',e=>{
   const dot=e.target.closest('circle[data-model]'); if(dot){const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model'));const d=$('#detail-'+dot.getAttribute('data-bench'));if(m&&d)d.innerHTML=trajDetailCard(m,dot.getAttribute('data-bench'));return;}
   const rib=e.target.closest('[data-rel-info]'); if(rib){openReleaseModal(rib.getAttribute('data-rel-info'));return;}
   const cmp=e.target.closest('[data-compare]'); if(cmp){openCompare();return;}
-  const sg=e.target.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode; if(which==='home'){homeMode=mode;renderHome();} else if(which==='now'){nowCat=mode;renderNow();} else if(which==='traj-aa'){trajMode.aa=mode;const w=$('#traj-aa-wrap');if(w)w.innerHTML=trajWrap('aa');else renderCharts();} else if(which==='traj-swe'){trajMode.swe=mode;const w=$('#traj-swe-wrap');if(w)w.innerHTML=trajWrap('swe');else renderCharts();} else if(which==='hh'){hhMetric=mode;const w=$('#hh-wrap');if(w)w.innerHTML=headToHead();else renderCharts();} else if(which==='cadence'){cadenceMode=mode;const w=$('#cadence-wrap');if(w)w.innerHTML=cadenceBlock();else renderCharts();} return;}
+  const sg=e.target.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode; if(which==='home'){homeMode=mode;renderHome();} else if(which==='now'){nowCat=mode;renderNow();} else if(which==='traj-aa'){trajMode.aa=mode;const w=$('#traj-aa-wrap');if(w)w.innerHTML=trajWrap('aa');else renderCharts();} else if(which==='traj-swe'){trajMode.swe=mode;const w=$('#traj-swe-wrap');if(w)w.innerHTML=trajWrap('swe');else renderCharts();} else if(which==='hh'){hhMetric=mode;const w=$('#hh-wrap');if(w)w.innerHTML=headToHead();else renderCharts();} else if(which==='cadence'){cadenceMode=mode;const w=$('#cadence-wrap');if(w)w.innerHTML=cadenceBlock();else renderCharts();} else if(which==='radar'){radarFilter=mode;renderPredict();} return;}
   const f=e.target.closest('.fchip'); if(f){ if(f.dataset.newsTopic!==undefined){newsTopic=f.dataset.newsTopic||null;renderNews();} return;}
   const ftb=e.target.closest('.ftab'); if(ftb){ const i=ftb.dataset.ftab.indexOf(':'),v=ftb.dataset.ftab.slice(0,i),val=ftb.dataset.ftab.slice(i+1);
     if(v==='now'){nowCat=val;renderNow();} else if(v==='charts'){chartsTab=val;renderCharts();}
