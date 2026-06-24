@@ -1,16 +1,16 @@
 {
-  "updated": "2026-06-23T21:04:49-04:00",
+  "updated": "2026-06-24T03:04:15-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "GPT-5.6",
       "lab": "OpenAI",
-      "expectedWindow": "by Jul 2026 (mid-July crossover)",
+      "expectedWindow": "by Jul 2026 (~Jul 10 crossover)",
       "expectedDate": "2026-07",
-      "prob": 94,
+      "prob": 91,
       "frontier": false,
       "status": "expected",
-      "basis": "Still unannounced, no model card. June fully priced out: Polymarket 'not released by June 28' jumped to 93%, by-Jun-30 just ~9%, Jul 9 ~28%, Jul 31 line at 94%. Chief scientist called it a 'meaningful' step over 5.5.",
+      "basis": "Still unannounced, no model card. June fully priced out: Polymarket by-Jun-30 ~14%, June 26 just 3%. July 31 line eased to 91% (from 94%); 50/50 crossover now ~Jul 10, Jul 17 at 80%.",
       "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
@@ -21,19 +21,19 @@
       "prob": 12,
       "frontier": true,
       "status": "expected",
-      "basis": "Announced at I/O (May 19) with 2M-token context + Deep Think; still limited to Vertex preview, no consumer/API GA. Polymarket new-Gemini-flagship by Jun 30 ~11.7% YES. Gemini 3.5 Flash already GA.",
+      "basis": "Announced at I/O (May 19) with 2M-token context + Deep Think; still limited to Vertex preview, no consumer/API GA as of Jun 24. Gemini 3.5 Flash already GA.",
       "source": "https://deepmind.google/models/gemini/"
     },
     {
       "model": "Fable 5 / Mythos 5 (reinstatement)",
       "lab": "Anthropic",
-      "expectedWindow": "coming days-weeks (re-enable)",
+      "expectedWindow": "by Jul 31: ~79%",
       "expectedDate": "2026-07",
-      "prob": -1,
+      "prob": 29,
       "frontier": true,
       "status": "expected",
-      "basis": "Offline to foreign users 11 days into the US export freeze; moved to usage-credit billing for subscribers Jun 23. Intl MD 'very confident' of return in days; reporting cites restoration odds ~57% by Jul 1, ~75% by Jul 17.",
-      "source": "https://www.anthropic.com/news/fable-mythos-access"
+      "basis": "Offline 12+ days into the US export freeze. Restoration odds cooled: Polymarket now ~29% back by Jul 1 (was ~57%), 79% by Jul 31, 88% by year-end. No official date.",
+      "source": "https://polymarket.com/event/claude-fable-5-restored-for-us-customers-by-20260613193753196"
     },
     {
       "model": "Grok 4.4",
