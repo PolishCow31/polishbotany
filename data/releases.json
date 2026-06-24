@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-23T15:04:08-04:00",
+  "updated": "2026-06-23T21:04:49-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Jul 2026 (mid-July crossover)",
       "expectedDate": "2026-07",
-      "prob": 92,
+      "prob": 94,
       "frontier": false,
       "status": "expected",
-      "basis": "Still unannounced, no model card. Polymarket's near-term odds collapsed: by Jun 30 just ~9% YES, Jul 3 12%, Jul 10 46%, Jul 17 82%. By-Jul-31 line at 92%. Chief scientist called it a 'meaningful' step over 5.5.",
+      "basis": "Still unannounced, no model card. June fully priced out: Polymarket 'not released by June 28' jumped to 93%, by-Jun-30 just ~9%, Jul 9 ~28%, Jul 31 line at 94%. Chief scientist called it a 'meaningful' step over 5.5.",
       "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 12,
       "frontier": true,
       "status": "expected",
-      "basis": "Announced at I/O (May 19) with 2M-token context + Deep Think; still limited to Vertex preview, no consumer/API GA. Polymarket new-Gemini-flagship by Jun 30 fell to ~12% YES. Gemini 3.5 Flash already GA.",
+      "basis": "Announced at I/O (May 19) with 2M-token context + Deep Think; still limited to Vertex preview, no consumer/API GA. Polymarket new-Gemini-flagship by Jun 30 ~11.7% YES. Gemini 3.5 Flash already GA.",
       "source": "https://deepmind.google/models/gemini/"
     },
     {
@@ -32,8 +32,8 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Pulled by US export order; Anthropic building biometric-ID verification to gate foreign access and restore service. Standoff with Washington escalating.",
-      "source": "https://www.technologyreview.com/2026/06/22/1139424/three-things-to-watch-amid-anthropics-latest-feud-with-the-government/"
+      "basis": "Offline to foreign users 11 days into the US export freeze; moved to usage-credit billing for subscribers Jun 23. Intl MD 'very confident' of return in days; reporting cites restoration odds ~57% by Jul 1, ~75% by Jul 17.",
+      "source": "https://www.anthropic.com/news/fable-mythos-access"
     },
     {
       "model": "Grok 4.4",
@@ -120,8 +120,8 @@
       "prob": 1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Polymarket prices Gemini 4.0 by Jun 30 at ~0.5% YES; a full 4.0 flagship is a late-2026/early-2027 step.",
-      "source": "https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026"
+      "basis": "Full 4.0 flagship is a late-2026/early-2027 step; Polymarket by-Jun-30 market at ~0.5%.",
+      "source": "https://deepmind.google/models/gemini/"
     },
     {
       "model": "Llama 6 (next Llama)",
@@ -131,18 +131,18 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Meta's Superintelligence Labs pivoting to closed models (Muse Spark); a next open Llama line is unscheduled.",
-      "source": "https://about.fb.com/news"
+      "basis": "Meta pivoted to closed Muse line in 2026; a next open/closed Llama-class flagship is a late-2026/2027 prospect.",
+      "source": "https://huggingface.co/meta-llama"
     },
     {
       "model": "DeepSeek V5",
       "lab": "DeepSeek",
       "expectedWindow": "H2 2026 / early 2027",
-      "expectedDate": "2027-01",
+      "expectedDate": "2026-12",
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "DeepSeek shipped V4 (Pro/Flash) in April 2026; a V5 is the natural next open-frontier step on their ~yearly major cadence.",
+      "basis": "DeepSeek shipped V4 (Pro/Flash) in Apr 2026; a next-gen V5 is the natural H2/early-2027 step.",
       "source": "https://api-docs.deepseek.com"
     }
   ]
