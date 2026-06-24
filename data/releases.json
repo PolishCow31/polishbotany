@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-24T03:04:15-04:00",
+  "updated": "2026-06-24T09:04:11-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Jul 2026 (~Jul 10 crossover)",
       "expectedDate": "2026-07",
-      "prob": 91,
+      "prob": 92,
       "frontier": false,
       "status": "expected",
-      "basis": "Still unannounced, no model card. June fully priced out: Polymarket by-Jun-30 ~14%, June 26 just 3%. July 31 line eased to 91% (from 94%); 50/50 crossover now ~Jul 10, Jul 17 at 80%.",
+      "basis": "Still unannounced, no model card. June fully priced out (by-Jun-30 ~10%). July 31 line 92%, Jul 24 91%, Jul 17 74%, ~Jul 10 the 50/50 crossover. ~$1.25M volume.",
       "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
@@ -27,12 +27,12 @@
     {
       "model": "Fable 5 / Mythos 5 (reinstatement)",
       "lab": "Anthropic",
-      "expectedWindow": "by Jul 31: ~79%",
+      "expectedWindow": "by Jul 31: ~76%",
       "expectedDate": "2026-07",
-      "prob": 29,
+      "prob": 20,
       "frontier": true,
       "status": "expected",
-      "basis": "Offline 12+ days into the US export freeze. Restoration odds cooled: Polymarket now ~29% back by Jul 1 (was ~57%), 79% by Jul 31, 88% by year-end. No official date.",
+      "basis": "Offline 12+ days into the US export freeze. Near-term odds cooled again: Polymarket now ~20% back by Jul 1 (was 29%), 76% by Jul 31, ~92% by year-end. CNBC/AP report Mythos found flaws in classified US systems. No official date.",
       "source": "https://polymarket.com/event/claude-fable-5-restored-for-us-customers-by-20260613193753196"
     },
     {
@@ -76,7 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Qwen on a fast open-weight cadence; a next-gen Qwen 4 line expected in H2.",
+      "basis": "Qwen cadence is fast; a next-generation Qwen flagship is expected in the second half of 2026.",
       "source": "https://huggingface.co/Qwen"
     },
     {
@@ -87,7 +87,7 @@
       "prob": 69,
       "frontier": true,
       "status": "rumored",
-      "basis": "Polymarket prices GPT-6 by Dec 31 at 69% (43.5% by Sep 30, 5.5% by Jul 31).",
+      "basis": "Polymarket: 69% by Dec 31, 43.5% by Sep 30, only 5.5% by Jul 31. The true next-generation flagship, distinct from GPT-5.6.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -98,7 +98,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Zhipu on a rapid open-weight cadence after GLM-5.2; a next-gen GLM-6 expected late 2026.",
+      "basis": "Zhipu shipped GLM-5.2 in June; a next-gen GLM-6 is the expected follow-on later in 2026.",
       "source": "https://huggingface.co/zai-org"
     },
     {
@@ -110,7 +110,7 @@
       "frontier": false,
       "status": "rumored",
       "basis": "A reasoning variant of Large 3 was flagged 'coming soon' on Mistral's own page; still unshipped.",
-      "source": "https://mistral.ai/news/mistral-3"
+      "source": "https://mistral.ai/news"
     },
     {
       "model": "Gemini 4.0",
@@ -120,8 +120,8 @@
       "prob": 1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Full 4.0 flagship is a late-2026/early-2027 step; Polymarket by-Jun-30 market at ~0.5%.",
-      "source": "https://deepmind.google/models/gemini/"
+      "basis": "Polymarket prices Gemini 4.0 by Jun 30 at ~0.5%; a full 4.0 flagship is a late-2026/early-2027 step.",
+      "source": "https://polymarket.com/event/gemini-4pt0-released-by-june-30-2026"
     },
     {
       "model": "Llama 6 (next Llama)",
@@ -131,8 +131,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Meta pivoted to closed Muse line in 2026; a next open/closed Llama-class flagship is a late-2026/2027 prospect.",
-      "source": "https://huggingface.co/meta-llama"
+      "basis": "Meta Superintelligence Labs reorganizing post-Muse Spark; a next major Llama is not clearly dated.",
+      "source": "https://about.fb.com/news"
     },
     {
       "model": "DeepSeek V5",
@@ -140,9 +140,9 @@
       "expectedWindow": "H2 2026 / early 2027",
       "expectedDate": "2026-12",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "rumored",
-      "basis": "DeepSeek shipped V4 (Pro/Flash) in Apr 2026; a next-gen V5 is the natural H2/early-2027 step.",
+      "basis": "DeepSeek shipped V4-Pro/Flash in April; a V5 generation is the natural next step but undated.",
       "source": "https://api-docs.deepseek.com"
     }
   ]
