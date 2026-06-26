@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=29"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=30"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -377,7 +377,7 @@
   /* ── living pixel fox: ambles along the TOP EDGE of the overview, sits at random ── */
   #fox{position:absolute;z-index:16;pointer-events:none;will-change:left,top;transition:opacity .3s ease}
   #fox.fox-off{opacity:0}
-  .fox-img{display:block;height:48px;width:auto;image-rendering:auto;filter:drop-shadow(0 2px 2px rgba(0,0,0,.45))}
+  .fox-img{display:block;height:52px;width:auto;image-rendering:pixelated;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4))}   /* pixel-art fox: crisp chunky upscale, not smoothed */
   .fox-shadow{position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);width:78%;height:6px;border-radius:50%;
     background:radial-gradient(ellipse at center,rgba(0,0,0,.4),transparent 72%)}
   /* ── file-cabinet sub-tabs (Current / Charts / Predict / News): active tab is stitched to the panel ── */
@@ -1256,10 +1256,11 @@ boot();
 /* ════════ fox: ambles along the top edge of the Home overview, sits at random, faces its direction ════════ */
 (function(){
   const fox=document.getElementById('fox'), img=document.getElementById('fox-img'); if(!fox||!img) return;
-  const WALK=['img/fox-walk-1.png','img/fox-walk-2.png','img/fox-walk-3.png','img/fox-walk-4.png','img/fox-walk-5.png','img/fox-walk-6.png','img/fox-walk-7.png','img/fox-walk-8.png'];  // REAL lateral-sequence walk: nano-banana body + 4 procedurally-drawn IK legs (bending knees, feet push back) per docs/fox-walk-gait-spec.md. Frames already in cycle order; regenerate via scripts/build_fox_walk.py.
-  const SIT='img/fox-sit.png';   // frames are bottom-anchored + uniform size; gait is baked in, no JS lift (keeps feet planted)
+  const FOXV=(()=>{ const h=document.querySelector('link[rel="manifest"]'); const m=h&&/[?&]v=(\d+)/.exec(h.getAttribute('href')||''); return m?'?v='+m[1]:''; })();   // bust the fox PNG cache per code deploy (ties to the manifest ?v ship-counter)
+  const WALK=[1,2,3,4,5,6,7,8].map(i=>'img/fox-walk-'+i+'.png'+FOXV);   // hand-authored PIXEL-ART walk, 8 frames in cycle order (lateral-sequence gait). Regenerate via scripts/build_fox_walk.py.
+  const SIT='img/fox-sit.png'+FOXV;   // pixel idle pose; frames bottom-anchored + uniform 38x27, drawn image-rendering:pixelated
   WALK.concat(SIT).forEach(s=>{const p=new Image();p.src=s;});        // preload all frames
-  const reduce=true;   // TEMP (Jun 26): force the fox to SIT — the drawn-legs walk looked wrong in motion; pixel-art walk being rebuilt
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   let x=24, dir=1, mode='walk', last=0, walked=0, frame=0, modeUntil=0, curSrc='';
   const SPEED=42;                                                     // px / second — a relaxed walk
   const STEP_PX=4.5;                                                  // advance one leg frame per this many px MOVED → legs lock to motion (feet plant, no skating); 8 frames × 4.5px = ~36px stride, ~9 fps at this speed
