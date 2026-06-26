@@ -1,10 +1,18 @@
-# Fox walk-cycle gait spec (for the future rebuild)
+# Fox walk-cycle gait spec
+
+> **STATUS: SOLVED — Jun 26 2026.** Implemented in `scripts/build_fox_walk.py`, NOT by
+> waiting for Fable 5. The unlock: stop asking an image model to draw the gait at all —
+> keep the nano-banana fox BODY and draw the 4 legs **procedurally** (2-bone law-of-cosines
+> IK, bending knees, feet plant + push back, lateral-sequence phasing per this spec). Picked
+> via the Jun 26 "fox-walk-approaches" workflow bake-off (4 approaches built + adversarially
+> graded; "drawnlegs" won). Regenerate the frames anytime: `python3 scripts/build_fox_walk.py`
+> (reads pristine `img/fox-source.png` → writes `img/fox-walk-1..8.png` in cycle order).
+> The spec below is what the code implements.
 
 Distilled from a deep-research pass (Jun 20 2026) — verified against peer-reviewed
 biomechanics (Cartmill et al. 2002; Usherwood eLife 2017) + animation craft
 (Williams' *Animator's Survival Kit*, Game Developer / AnimSchool / Slynyrd) +
-Muybridge. Use this to build the walk **when Fable 5 returns** (current nano-banana /
-NB2 CANNOT draw distinct gait phases — see HANDOFF "fox walk parked").
+Muybridge.
 
 ## The gait (a fox = canid = lateral-sequence symmetrical walk)
 

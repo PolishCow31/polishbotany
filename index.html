@@ -1241,7 +1241,7 @@ boot();
 /* ════════ fox: ambles along the top edge of the Home overview, sits at random, faces its direction ════════ */
 (function(){
   const fox=document.getElementById('fox'), img=document.getElementById('fox-img'); if(!fox||!img) return;
-  const WALK=['img/fox-walk-1.png','img/fox-walk-5.png','img/fox-walk-6.png','img/fox-walk-2.png','img/fox-walk-4.png','img/fox-walk-8.png','img/fox-walk-7.png','img/fox-walk-3.png'];  // 8-frame walk cycle from a single-generation sprite sheet (consistent body, no head-pop; registered bottom-center). Order chosen by min frame-to-frame change so legs flow contact→pass→opposite-contact→pass.
+  const WALK=['img/fox-walk-1.png','img/fox-walk-2.png','img/fox-walk-3.png','img/fox-walk-4.png','img/fox-walk-5.png','img/fox-walk-6.png','img/fox-walk-7.png','img/fox-walk-8.png'];  // REAL lateral-sequence walk: nano-banana body + 4 procedurally-drawn IK legs (bending knees, feet push back) per docs/fox-walk-gait-spec.md. Frames already in cycle order; regenerate via scripts/build_fox_walk.py.
   const SIT='img/fox-sit.png';   // frames are bottom-anchored + uniform size; gait is baked in, no JS lift (keeps feet planted)
   WALK.concat(SIT).forEach(s=>{const p=new Image();p.src=s;});        // preload all frames
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
