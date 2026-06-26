@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=28"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=29"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -1259,7 +1259,7 @@ boot();
   const WALK=['img/fox-walk-1.png','img/fox-walk-2.png','img/fox-walk-3.png','img/fox-walk-4.png','img/fox-walk-5.png','img/fox-walk-6.png','img/fox-walk-7.png','img/fox-walk-8.png'];  // REAL lateral-sequence walk: nano-banana body + 4 procedurally-drawn IK legs (bending knees, feet push back) per docs/fox-walk-gait-spec.md. Frames already in cycle order; regenerate via scripts/build_fox_walk.py.
   const SIT='img/fox-sit.png';   // frames are bottom-anchored + uniform size; gait is baked in, no JS lift (keeps feet planted)
   WALK.concat(SIT).forEach(s=>{const p=new Image();p.src=s;});        // preload all frames
-  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reduce=true;   // TEMP (Jun 26): force the fox to SIT — the drawn-legs walk looked wrong in motion; pixel-art walk being rebuilt
   let x=24, dir=1, mode='walk', last=0, walked=0, frame=0, modeUntil=0, curSrc='';
   const SPEED=42;                                                     // px / second — a relaxed walk
   const STEP_PX=4.5;                                                  // advance one leg frame per this many px MOVED → legs lock to motion (feet plant, no skating); 8 frames × 4.5px = ~36px stride, ~9 fps at this speed
