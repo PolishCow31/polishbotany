@@ -3,7 +3,7 @@
 // Data  = network-first (twice-daily updates must always show fresh; cache is
 //         only the offline fallback). This is the fix for the iOS PWA stale-bundle
 //         trap — the thing that changes often is never served stale.
-const SHELL_V = 'shell-v3';
+const SHELL_V = 'shell-v4';
 const SHELL = ['./', './index.html', './manifest.json'];
 
 self.addEventListener('install', (e) => {
@@ -30,4 +30,26 @@ self.addEventListener('fetch', (e) => {
       return r;
     }).catch(() => caches.match(e.request))
   );
+});
+
+// ── Web Push: show the notification the botany-push Worker sends; open/focus the app on tap ──
+self.addEventListener('push', (event) => {
+  let data = {};
+  try { data = event.data ? event.data.json() : {}; }
+  catch (e) { data = { body: event.data ? event.data.text() : '' }; }
+  const options = {
+    body: data.body || '',
+    icon: 'icons/icon-192.png',
+    badge: 'icons/icon-192.png',
+    tag: data.tag || 'botany'
+  };
+  event.waitUntil(self.registration.showNotification(data.title || 'Botany', options));
+});
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
+  const home = self.registration.scope;   // single-page app → any tap just opens Botany
+  event.waitUntil(self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then((list) => {
+    for (const c of list) { if ('focus' in c) return c.focus(); }
+    if (self.clients.openWindow) return self.clients.openWindow(home);
+  }));
 });

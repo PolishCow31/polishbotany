@@ -5,6 +5,15 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 26 2026
 
+### ✓ DONE (Jun 26) — PUSH NOTIFICATIONS (Web Push) — SHIPPED v31
+Botany's on GitHub Pages (no backend), so push runs on a standalone **Cloudflare Worker** + KV (mirrors CyMCAT's pattern, but KV not D1, and cross-origin since the PWA can't host a Pages Function).
+- **Worker:** `botany-push` at `https://botany-push.cozog02.workers.dev` (`push-worker/` in the repo). Hourly cron polls Botany's **public** data (`…/data/models.json` + `news.json`), diffs vs a KV snapshot (`state:lastseen`), and pushes on his 3 chosen triggers: **any new model, breaking news (new news item), a new #1 on the AA Index**. First run just seeds the snapshot (no flood). Self-contained on CF's edge → fires even when his Mac is closed (better than tying to the local update pipeline).
+- **KV namespace** `SUBS` (id `88bb84aade0546f5acc27fd57e5fd1c5`): `sub:<endpoint>` per device + the `state:lastseen` snapshot. **Secrets** (write-only, NOT in repo): `VAPID_PRIVATE_JWK` + `TEST_KEY`. VAPID public key is in `index.html`. `@pushforge/builder` does VAPID signing + RFC-8291.
+- **Endpoints:** POST `/subscribe` + `/unsubscribe` (CORS to `https://polishcow31.github.io`); secret-gated GET `/test?key=` (push to all) + `/run?key=` (run the poll now). The TEST_KEY value is in the project memory (not here — public repo).
+- **Client:** an "Enable notifications" toggle bottom-center of the **More** tab (in `.more-foot`, above the version badge); `sw.js` got `push` + `notificationclick` handlers (SHELL_V→v4). Toggle = subscribe/unsubscribe, reflects live state.
+- **iOS caveat:** Web Push only works for the **installed** PWA (Add to Home Screen). He must enable it ON each device.
+- **Deploy/redeploy:** `cd push-worker && npm install && eval "$(grep '^export CLOUDFLARE_API_TOKEN=' ~/.zshrc)" && npx wrangler deploy`. **NOT yet verified end-to-end** (no real subscriber until he taps Enable on his phone) — once he does, hit `/test?key=` to confirm a real push lands.
+
 ### ↩ + ✓ DONE (Jun 26) — fox redone as PIXEL ART (the "drawnlegs" fox was REJECTED) — SHIPPED v30
 **The "drawnlegs" fox (photoreal nano-banana body + code-drawn IK legs) looked HORRIFYING in motion** — Christian's word. Lesson confirmed: code legs on a smooth photo body = flailing sticks; and **static-frame review LIED** (the strip looked okay; the motion didn't). I'd shipped it on a strip + the synth's rec without seeing motion (headless preview pauses the fox's rAF, so I literally can't watch it — that's the trap). His call: make it an actual **pixel-art sprite**.
 - **New fox = hand-authored chunky PIXEL ART** (`scripts/build_fox_walk.py`, fully rewritten — PIL, ~38x27 native, no nano-banana, no numpy/IK). One cohesive sprite → animated legs read as a game sprite, not sticks. 8-frame lateral-sequence walk (legs cycle, feet push back, 2-beat bob) + a clean standing **idle** pose (`fox-sit.png`; the old photoreal sit would've clashed). Built iteratively (v1→v3) by rendering + eyeballing at display size.

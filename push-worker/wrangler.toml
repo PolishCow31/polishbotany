@@ -1,0 +1,19 @@
+# botany-push — standalone Worker that holds Web Push subscriptions (KV) and SENDS the pushes.
+# Separate from the GitHub-Pages static site (GitHub can't host a backend); only Workers get Cron Triggers.
+# Deploy: cd push-worker && npm install && npx wrangler deploy
+# Secret: npx wrangler secret put VAPID_PRIVATE_JWK   (paste the private JWK)
+name = "botany-push"
+main = "src/index.js"
+compatibility_date = "2026-06-01"
+
+# hourly poll of Botany's public data -> push on new model / breaking news / new #1 (UTC cron)
+[triggers]
+crons = ["0 * * * *"]
+
+# KV holds subscriptions (sub:<endpoint>) + the last-seen snapshot (state:lastseen)
+[[kv_namespaces]]
+binding = "SUBS"
+id = "88bb84aade0546f5acc27fd57e5fd1c5"
+
+# TEST_KEY (gates /test + /run) is a SECRET, not a var — this file is committed to a PUBLIC repo.
+# Set it: npx wrangler secret put TEST_KEY

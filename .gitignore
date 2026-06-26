@@ -12,3 +12,8 @@ img/*-raw.png
 scripts/update.log
 scripts/launchd.out.log
 scripts/launchd.err.log
+# push-worker is deployed to Cloudflare, not served from Pages — don't commit deps/build
+push-worker/node_modules/
+push-worker/package-lock.json
+push-worker/.wrangler/
+.wrangler/
