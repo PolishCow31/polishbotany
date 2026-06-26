@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-25T21:04:04-04:00",
+  "updated": "2026-06-26T03:03:22-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1283,6 +1283,17 @@
       ]
     },
     {
+      "term": "Distillation attack",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Systematically querying a rival's model to harvest its outputs as training data, cloning its capabilities into a cheaper student model without access to the original weights.",
+      "aka": [
+        "model distillation attack",
+        "knowledge extraction attack",
+        "model stealing"
+      ]
+    },
+    {
       "term": "Draft model",
       "acronym": "",
       "category": "Inference & serving",
@@ -1570,6 +1581,16 @@
         "floating-point operations per second",
         "petaFLOPS",
         "exaFLOPS"
+      ]
+    },
+    {
+      "term": "Forward Deployed Engineer",
+      "acronym": "FDE",
+      "category": "Orgs, models & ecosystem",
+      "def": "An engineer embedded with a customer to integrate and tune AI models for their specific workflows; a role labs scaled in 2026 as focus shifted from training to enterprise deployment.",
+      "aka": [
+        "forward-deployed engineer",
+        "deployment engineer"
       ]
     },
     {
