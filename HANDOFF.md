@@ -5,6 +5,10 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Jun 26 2026
 
+### ✓ DONE (Jun 26) — version badge (Plate-style ship-counter), bottom-center of More — SHIPPED
+Copied Plate's `setAppVersion()`: the build version rides the **manifest link's `?v=`** (`<link rel="manifest" href="manifest.json?v=28">`) and is read via regex, so the badge **can't drift** from the deployed asset (blank if unreadable — never a wrong number). Shows a faint mono **"v28"** pinned **bottom-center of the More tab** (`#v-more` is now `display:flex;flex-direction:column`; `.app-ver{margin-top:auto;text-align:center}` — Sources stays normal-flow above it so it still opens DOWN, verified no regression). **Started at v28** (matched `meta.dataVersion` at the time, by his call).
+> **MAINTENANCE RULE — bump `manifest.json?v=N` by 1 on every CODE deploy.** This is the ship-counter (separate from `meta.dataVersion`, which the 8×/day cron auto-climbs on data sweeps). The cron only touches `data/`, so it never bumps `?v=` — only do it when shipping index.html/code. (v28 = the deploy that added the badge + fox walk.)
+
 ### ✓ DONE (Jun 26, session 31) — FOX WALK SOLVED (the months-long parked blocker) — SHIPPED
 The walk gait is fixed — **without** Fable 5. **The unlock: stop asking an image model to draw the gait.**
 - Picked via an ultracode **workflow bake-off** (`wf_834399e1-063`, 9 agents): 4 distinct approaches each built a real 8-frame walk strip + got adversarially graded vs `docs/fox-walk-gait-spec.md`. Ranked: **drawnlegs 8.2 (winner)**, cutoutrig 7.4, codepixel 6.3 (clean gait but crude code-drawn body = the look he rejected), **stylized 2.5 DROPPED (confirmed paw-dance — the bug itself)**. I viewed every strip to verify the ranking before acting.
