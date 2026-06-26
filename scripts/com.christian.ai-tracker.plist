@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- AI Tracker updater — runs 4×/day at 3AM/9AM/3PM/9PM ET. Install:
+<!-- AI Tracker updater — runs 8×/day, every 3h (12AM/3AM/6AM/9AM/12PM/3PM/6PM/9PM ET). Install:
        cp scripts/com.christian.ai-tracker.plist ~/Library/LaunchAgents/
        launchctl load ~/Library/LaunchAgents/com.christian.ai-tracker.plist
      Uninstall: launchctl unload ~/Library/LaunchAgents/com.christian.ai-tracker.plist -->
@@ -15,9 +15,13 @@
   </array>
   <key>StartCalendarInterval</key>
   <array>
+    <dict><key>Hour</key><integer>0</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Hour</key><integer>3</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Hour</key><integer>15</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>0</integer></dict>
     <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>0</integer></dict>
   </array>
   <key>RunAtLoad</key>

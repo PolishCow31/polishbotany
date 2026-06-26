@@ -3,7 +3,13 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
-## State — Jun 21 2026
+## State — Jun 26 2026
+
+### ✓ DONE (Jun 23–26, session 30) — Predict/Radar All·Frontier·Open filter · schedule 4×→8×/day (every 3h) — SHIPPED
+- **Predict → Radar got an All / Frontier / Open-source segmented filter** (`.seg` in the radar panel, wired into the existing seg handler as `which==='radar'`). Frontier = `frontier:true` items (7); Open-source = open-weight labs (`OPEN_REL_LABS` = DeepSeek/Alibaba/Zhipu/Moonshot/NVIDIA/Meta) → 4; a frontier-tier open model (DeepSeek V5) shows in BOTH (classified by open-ness, like Current). Hero adapts ("Next frontier drop" / "Next open-source drop"). Lab-inferred so new sweep items auto-classify — no data/prompt change. Verified all 3 modes @375px, fits, 0 errors.
+- **Schedule bumped 4×/day → 8×/day, every 3h** (12AM/3AM/6AM/9AM/12PM/3PM/6PM/9PM ET) at his explicit call. I flagged it as marginal (the frontier rarely moves intraday + launchd already catch-up-fires at wake, so it's mostly more empty sweeps) — he wanted it live anyway; no $ since `claude -p` is Max-covered. Redid the slot labels **4→8** so the Sources log doesn't clobber: `merge.py routine_of(h)=["12AM","3AM","6AM","9AM","12PM","3PM","6PM","9PM"][(h//3)%8]`; `index.html` RORD got the 8 keys for sort. plist = 8 `StartCalendarInterval` entries, reinstalled + reloaded (`launchctl print` shows 8 Hour intervals). Swept all "4×/day"/slot refs across ARCHITECTURE/research-prompt/data-notes/build_data/memory. merge.py compiles, buckets unit-tested.
+- Earlier this session (Jun 21–23): opening **splash** (brand + GPU-`scaleX` loading bar; "tap to enter" + the briefing line both removed at his call), **Compare** moved from the Overview ★ → a "⇄ Compare" button on Current, **iOS emoji glyphs** (↗ ▶) replaced with inline SVGs, **News** condensed to 4 buckets (All/Models/Business/Society, no scroll), **tabs** darkened + redesigned (editorial underline), **Sources** opens downward.
+- **NEXT (offered, his pick pending): the "what-changed" timeline** — surface what each sweep changes (the app shows state, not motion); my #1 recommended gap. Also on the table: global search, price–performance view, dad onboarding, watchlist+notifications.
 
 ### ✓ DONE (Jun 21, session 29) — Pulse state-brief → CHANGE-brief · schedule 2×/day → 4×/day (3AM/9AM/3PM/9PM ET) — SHIPPED
 Two asks, both built + verified + pushed live. The schedule change is also live on his Mac (launchd reloaded).
@@ -771,7 +777,7 @@ search, model-detail pages, dad onboarding, share.
 
 ## Decided (Jun 19)
 - Name **Robots**; repo `robots` → **polishcow31.github.io/robots, unlisted**; updates
-  **3AM/9AM/3PM/9PM ET (4×/day, changed from 6am/6pm Jun 21)**; forecasts **calibrated** + **market-based** (Polymarket/Metaculus/Epoch).
+  **every 3h, 8×/day ET (12AM/3AM/6AM/9AM/12PM/3PM/6PM/9PM; 6am/6pm → 4× Jun 21 → 8× Jun 26)**; forecasts **calibrated** + **market-based** (Polymarket/Metaculus/Epoch).
 - **Deploy (P2) is pending HIS GO** — he chose "look it over first." Don't deploy until
   he says "deploy Robots."
 

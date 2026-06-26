@@ -560,7 +560,7 @@ let PRICES={}, LB=[], LBMETA={source:'LLM-Stats'}, UPCOMING=[], KILLED=[], SOURC
 let DATA = {models:[],trends:[],predictions:[],meta:{}};
 
 async function boot(){
-  const J = f => fetch('data/'+f+'.json',{cache:'no-store'}).then(r=>r.json());   // network-fresh: data updates 4×/day
+  const J = f => fetch('data/'+f+'.json',{cache:'no-store'}).then(r=>r.json());   // network-fresh: data updates 8×/day
   try{
     const [m,t,p,meta] = await Promise.all([J('models'),J('trends'),J('predictions'),J('meta')]);
     DATA = {models:m.models||[], trends:t.trends||[], predictions:p.predictions||[], methodology:p.methodology||'', meta};
@@ -1143,8 +1143,8 @@ function sDayLabel(dateStr){ const d=sParseD(dateStr); return `${SDOW[d.getDay()
 function sSweepLabel(s){ const d=sParseD(s.date), r=s.routine||'Build'; return `${d.getMonth()+1}/${d.getDate()} ${r} Sources`; }
 function srcRow(s){ const url=s.url||('https://'+(''+(s.u||'')).replace(/\s*\(.*$/,'').split(/\s/)[0]); return `<div class="srcrow lnk" data-href="${he(url).replace(/"/g,'&quot;')}">${s.q?`<span class="sq ${s.q}">${he((''+s.q).slice(0,4).toUpperCase())}</span>`:''}<span class="srcu">${he(s.u||url)}</span><span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span></div>`; }
 function renderSources(){
-  if(!SWEEPS.length) return '<div class="empty">No source sweeps logged yet — they accrue as the research runs (4×/day).</div>';
-  const RORD={'9PM':4,'3PM':3,'9AM':2,'3AM':1,'PM':3,'AM':1};   // newest-first within a day; legacy AM/PM still sort
+  if(!SWEEPS.length) return '<div class="empty">No source sweeps logged yet — they accrue as the research runs (8×/day).</div>';
+  const RORD={'9PM':8,'6PM':7,'3PM':6,'12PM':5,'9AM':4,'6AM':3,'3AM':2,'12AM':1,'PM':6,'AM':2};   // newest-first within a day; legacy AM/PM still sort
   const rr=s=>RORD[s.routine]||0;
   const sw=[...SWEEPS].sort((a,b)=> b.date.localeCompare(a.date) || rr(b)-rr(a));
   const weeks=[];
@@ -1169,7 +1169,7 @@ function renderMore(){
     <input id="glossq" class="gsearch" type="search" placeholder="Search terms &amp; acronyms — MMLU, MoE, RLHF…" autocomplete="off" autocapitalize="off" spellcheck="false">
     <div id="glossres" class="glist">${glossResults('')}</div>
     <details class="acc more-sources"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
-      <div class="body"><div class="accsub">Every source the research consulted, logged per sweep (4×/day) — newest first. Sources roll up by sweep slot, then day, then week.</div>${renderSources()}</div></details>`;
+      <div class="body"><div class="accsub">Every source the research consulted, logged per sweep (8×/day) — newest first. Sources roll up by sweep slot, then day, then week.</div>${renderSources()}</div></details>`;
 }
 
 // ---------------- events ----------------

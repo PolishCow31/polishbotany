@@ -90,7 +90,7 @@ research breakthroughs, safety/governance, and AI in medicine.
     better than fake motion.
   Wrap ~4–6 of the most important facts in `**double asterisks**` (the app renders them bold), sparingly. No
   hype, no emoji, plain reporting voice. (AA-Index numbers stay on the **v4.1** scale per the pin above —
-  match the leaderboard.) The merge step stamps the time and which sweep slot (3AM/9AM/3PM/9PM ET) wrote it, so just provide the text.
+  match the leaderboard.) The merge step stamps the time and which 3-hour sweep slot wrote it, so just provide the text.
   Format: `"pulse": "<the paragraph>"`.
 
 ## Also refresh the frontier-release radar (`releases`) — the "Predict" tab
@@ -164,7 +164,7 @@ Merged by name (add/replace), so you only need to send briefs for models you're 
 ## Always log your sources (`sweepSources`) — the "Sources" tab in More
 List EVERY source you actually consulted or cited during this run as `sweepSources`, each
 `{ "u": "<short display label, e.g. anthropic.com/news>", "url": "<full https URL>", "q": "primary|secondary|blog" }`.
-The merge appends this list under today's date and sweep slot (3AM/9AM/3PM/9PM ET, by the hour it ran), building a
+The merge appends this list under today's date and 3-hour sweep slot (by the hour it ran), building a
 dated, per-sweep source log. Include real URLs you opened — primary vendor/model-card pages first, then
 aggregators/news. This runs every sweep, even when nothing else changed.
 

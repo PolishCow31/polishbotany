@@ -104,8 +104,8 @@ def main():
     et = timezone(timedelta(hours=-4))
     now_dt = datetime.now(et)
     now_iso = now_dt.replace(microsecond=0).isoformat()
-    # which of the 4 daily sweeps this is (3AM/9AM/3PM/9PM ET), bucketed by the hour it actually ran
-    def routine_of(h): return "3AM" if h < 6 else "9AM" if h < 12 else "3PM" if h < 18 else "9PM"
+    # which of the 8 daily sweeps this is (every 3h, 12AM…9PM ET), bucketed by the hour it actually ran
+    def routine_of(h): return ["12AM","3AM","6AM","9AM","12PM","3PM","6PM","9PM"][(h//3)%8]
     routine_now = routine_of(now_dt.hour)
 
     # 5. news — rolling refresh: validate, dedupe by url, newest-first, cap the window
@@ -143,7 +143,7 @@ def main():
         for key in ("leaderboard", "upcoming", "killed", "sources"):
             if ed_delta.get(key):
                 ed[key] = ed_delta[key]; ed_changed += 1
-        # pulse — the Home "what's up" paragraph; replace each run, stamp time + which sweep slot (3AM/9AM/3PM/9PM)
+        # pulse — the Home "what's up" paragraph; replace each run, stamp time + which 3-hour sweep slot
         pulse_in = ed_delta.get("pulse")
         pulse_text = pulse_in.get("text") if isinstance(pulse_in, dict) else (pulse_in if isinstance(pulse_in, str) else None)
         if pulse_text and pulse_text.strip():
@@ -200,7 +200,7 @@ def main():
             bf["updated"] = now_iso
             save("briefs.json", bf)
 
-    # 6e. sources — log this sweep's consulted sources under today's sweep slot (3AM/9AM/3PM/9PM)
+    # 6e. sources — log this sweep's consulted sources under today's 3-hour sweep slot
     src_logged = 0
     if delta.get("sweepSources"):
         try:
