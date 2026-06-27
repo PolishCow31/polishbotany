@@ -1,7 +1,18 @@
 {
-  "updated": "2026-06-26T21:03:05-04:00",
+  "updated": "2026-06-27T00:04:38-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
+    {
+      "model": "Gemini 3.5 Pro (next Gemini Pro)",
+      "lab": "Google",
+      "expectedWindow": "by Jun 30 (~52%, 3 days out)",
+      "expectedDate": "2026-06",
+      "prob": 52,
+      "frontier": true,
+      "status": "expected",
+      "basis": "2M-token context + Deep Think; still Vertex-only preview, not in the consumer app or AI Studio as of Jun 27 (3 days to its self-imposed Jun 30 GA deadline). Polymarket prices ~52% for a pre-Jun 30 public release. Gemini 3.5 Flash already GA.",
+      "source": "https://polymarket.com/event/gemini-3pt5-released-by-june-30"
+    },
     {
       "model": "GPT-5.6 (broad public release)",
       "lab": "OpenAI",
@@ -14,25 +25,14 @@
       "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
-      "model": "Gemini 3.5 Pro (next Gemini Pro)",
-      "lab": "Google",
-      "expectedWindow": "by Jun 30 (~52%)",
-      "expectedDate": "2026-06",
-      "prob": 52,
-      "frontier": true,
-      "status": "expected",
-      "basis": "2M-token context + Deep Think; still Vertex-only preview, not yet in the consumer app or AI Studio as of Jun 26 (4 days to its self-imposed Jun 30 GA deadline). Polymarket prices ~50-55% for a pre-Jun 30 public release. Gemini 3.5 Flash already GA.",
-      "source": "https://polymarket.com/event/gemini-3pt5-released-by-june-30"
-    },
-    {
       "model": "Fable 5 / Mythos 5 (reinstatement)",
       "lab": "Anthropic",
-      "expectedWindow": "by Jul 1: ~45%",
+      "expectedWindow": "Mythos partly back; Fable by Jul 1: ~34%",
       "expectedDate": "2026-07",
-      "prob": 45,
+      "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Day 15 of the US export freeze, still offline worldwide. Polymarket firmed to 45% by Jul 1, 88.8% by Jul 31, 97.5% by year-end. ID-verification policy lands Jul 8; 60-day EO framework deadline ~Aug 1.",
+      "basis": "Jun 26: US Commerce cleared Mythos 5 for ~100 trusted US critical-infra orgs — first crack in the Jun 12 freeze. Consumer Fable 5 still fully offline, its restrictions untouched. Polymarket Fable-restoration: 34% by Jul 1, 89% by Jul 31, 97% by year-end.",
       "source": "https://polymarket.com/event/claude-fable-5-restored-for-us-customers-by-20260613193753196"
     },
     {
