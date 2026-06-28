@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-28T03:03:28-04:00",
+  "updated": "2026-06-28T17:59:56-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2261,6 +2261,16 @@
       ]
     },
     {
+      "term": "Intelligence per dollar",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Efficiency metric capturing capability delivered per unit of inference spend; emerging in 2026 as a primary AI procurement criterion over raw leaderboard rank.",
+      "aka": [
+        "cost-per-capability",
+        "intelligence per cost"
+      ]
+    },
+    {
       "term": "Inter-Token Latency",
       "acronym": "ITL",
       "category": "Inference & serving",
@@ -2986,6 +2996,17 @@
       "aka": [
         "model organisms",
         "misalignment model organisms"
+      ]
+    },
+    {
+      "term": "Model routing",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Directing each query to the cheapest model capable of handling it, rather than defaulting all traffic to the most powerful frontier model, to cut inference cost.",
+      "aka": [
+        "LLM router",
+        "query routing",
+        "model cascade"
       ]
     },
     {
