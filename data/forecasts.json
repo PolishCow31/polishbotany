@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-30T00:04:06-04:00",
+  "updated": "2026-06-30T03:03:30-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -23,7 +23,7 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 85.5% (Google ~11%, OpenAI ~3%)",
+      "forecast": "Anthropic 84% (Google ~10%, OpenAI ~3%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -39,9 +39,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by?",
+      "question": "GPT-6 released by…?",
       "platform": "Polymarket",
-      "forecast": "65% — by Dec 31 (14% by Sep 30, 3% by Jul 31)",
+      "forecast": "66% — by Dec 31 (~3% by Jul 31)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -437,7 +437,7 @@
     {
       "question": "Which companies will have a #1 AI model by June 30?",
       "platform": "Polymarket",
-      "forecast": "Anthropic ~99% — resolves today (Jun 30) on the leaderboard",
+      "forecast": "Anthropic ~99% — resolves today (Jun 30) on the Chatbot Arena leaderboard",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-06-30",
@@ -1384,20 +1384,20 @@
   ],
   "marketsStory": [
     {
-      "h": "Anthropic still owns the lead —",
-      "t": "Polymarket's July best-model market has Anthropic at 85.5%, firming from ~82% a day earlier, with Google near 11% and OpenAI just ~3%. The June companion market resolves today (Jun 30) with Anthropic pinned near 99%, settling on the leaderboard. Claude Opus 4.8 holds the AA Index at 56 (v4.1) over GPT-5.5's 55, and with only weeks to the July resolution rivals have little room to ship and validate a stronger system."
+      "h": "Anthropic still owns the present —",
+      "t": "Polymarket's June best-model markets resolve today (Jun 30) on the Chatbot Arena leaderboard with Anthropic near ~99%, and the July race barely moved overnight: Anthropic ~84%, Google ~10%, OpenAI ~3%. Year-end conviction is softer but still Anthropic-led — ~67% on Polymarket, ~64% on Kalshi — leaving real room for a challenger to ship a topper in H2."
     },
     {
-      "h": "Gemini 3.5 Pro is the ship to watch —",
-      "t": "The likeliest frontier release this month is Google's: Gemini 3.5 Pro is cleared for July at ~94% by Jul 31 but remains a Vertex-only enterprise preview after missing its June GA target. GPT-5.6 already shipped Jun 26 but gated to ~20 government-approved partners, so its broad-access market sits at ~88% by Jul 31. Anthropic's consumer Fable 5 stays offline — restoration by Jul 1 is only ~34%, though eventual return prices near 96% by year-end."
+      "h": "The next ships are dated, not delivered —",
+      "t": "Gemini 3.5 Pro is the month's likeliest frontier release at ~94% by Jul 31 after confirming a slip out of June; it stays a Vertex-only enterprise preview. GPT-5.6 trades ~88% for a broad public release by Jul 31 but is currently gated to ~20 government-approved partners. GPT-6 remains a Q4 bet — ~66% by Dec 31, only ~3% by Jul 31."
     },
     {
-      "h": "Benchmarks are pinned near their ceilings —",
-      "t": "GPQA Diamond is effectively saturated — Gemini 3.1 Pro 94.3, Opus 4.7 94.2 — so markets see only ~1 point of frontier headroom left this year. The action has migrated to harder, far-from-solved evals: SWE-bench Pro (vendor-frontier ~80% on the pulled Fable 5/Mythos 5, ~69% Opus 4.8), Humanity's Last Exam, and Terminal-Bench, where the next release cycle still has room to move."
+      "h": "Benchmarks keep saturating —",
+      "t": "SWE-bench Verified is effectively topped out (frontier ~88–95%), GPQA Diamond sits ~94% past the human-expert baseline, and FrontierMath ≥90% before 2027 prices ~82% YES. The exception with real headroom is Humanity's Last Exam, where leaders still sit ~35–45% against a ~90% human bar — the benchmark to watch into 2027."
     },
     {
-      "h": "The long game points to Q4 and beyond —",
-      "t": "GPT-6's odds stay concentrated in Q4 — ~65% by Dec 31, with September softening to ~14% — as traders bet OpenAI already folded GPT-6-class gains into GPT-5.5. Grok 5 is still training on Colossus 2 and prices near 1% for any near-term window. AGI-horizon and automation markets remain the quiet long bet, but the near-term tape is all about who ships a validated frontier model before the next monthly resolution."
+      "h": "The long game stays a 2030s story —",
+      "t": "Metaculus aggregates put AGI at ~25% by 2029 and ~50% by 2033, far more aggressive than the academic expert-survey median near 2047. Near-term AGI bets stay cold: Polymarket gives ~13% that OpenAI announces AGI before 2027, and AGI-before-2027 markets on Manifold sit in the low single digits. The next 12 months are a release-and-benchmark race, not a finish line."
     }
   ]
 }
