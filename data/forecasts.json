@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T21:02:57-04:00",
+  "updated": "2026-06-30T00:04:06-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -23,7 +23,7 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 82% (Google 11%, OpenAI 2.5%)",
+      "forecast": "Anthropic 85.5% (Google ~11%, OpenAI ~3%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -39,9 +39,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by…?",
+      "question": "GPT-6 released by?",
       "platform": "Polymarket",
-      "forecast": "66% by Dec 31 (27% by Sep 30, 3% by Jul)",
+      "forecast": "65% — by Dec 31 (14% by Sep 30, 3% by Jul 31)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -174,9 +174,9 @@
       "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
     },
     {
-      "question": "GPT-5.6 released (broadly) by…?",
+      "question": "GPT-5.6 released (broadly) by?",
       "platform": "Polymarket",
-      "forecast": "88% by Jul 31",
+      "forecast": "88% — by Jul 31",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -426,15 +426,6 @@
       "url": "https://polymarket.com/event/new-gemini-reasoning-flagship-released-by"
     },
     {
-      "question": "Which company has second best AI model end of June?",
-      "platform": "Polymarket",
-      "forecast": "Anthropic 91% — market sees Anthropic holding #1 and #2",
-      "category": "ranking",
-      "relevantBenchmark": "LMArena",
-      "resolveDate": "2026-06-29",
-      "url": "https://polymarket.com/event/which-company-has-second-best-ai-model-end-of-june"
-    },
-    {
       "question": "Which company has best AI model end of June 2026? (Chatbot Arena)",
       "platform": "Polymarket",
       "forecast": "Anthropic 94.6% (Google 3.8%, OpenAI 1.9%, rest <1%)",
@@ -446,7 +437,7 @@
     {
       "question": "Which companies will have a #1 AI model by June 30?",
       "platform": "Polymarket",
-      "forecast": "99% — Anthropic; resolves tomorrow with Claude on top",
+      "forecast": "Anthropic ~99% — resolves today (Jun 30) on the leaderboard",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-06-30",
@@ -462,9 +453,9 @@
       "url": "https://polymarket.com/event/which-company-has-top-ai-model-end-of-june-style-control-on"
     },
     {
-      "question": "Claude Fable 5 restored for US customers by…?",
+      "question": "Claude Fable 5 restored for US customers by Jul 1?",
       "platform": "Polymarket",
-      "forecast": "34% by Jul 1 (Aug 31 ~96%, Dec 31 ~97%)",
+      "forecast": "34% — by Jul 1 (eventual restoration ~96% by Dec)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-01",
@@ -516,9 +507,9 @@
       "url": "https://manifold.markets/CalibratedGhosts/will-google-deepmind-release-gemini"
     },
     {
-      "question": "Next Google Gemini Pro model released by…?",
+      "question": "Next Google Gemini Pro model released by?",
       "platform": "Polymarket",
-      "forecast": "94% by Jul 31 (3% by Jun 30)",
+      "forecast": "94% — by Jul 31 (only ~3% by Jun 30)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -1393,20 +1384,20 @@
   ],
   "marketsStory": [
     {
-      "h": "Anthropic still owns the present —",
-      "t": "Polymarket's end-of-July best-model market holds Anthropic at ~82% (Google ~11%, OpenAI ~2.5%), and the end-of-June question — resolving tomorrow on the Chatbot Arena leaderboard — sits near ~99% Anthropic. Claude Opus 4.8's AA-Index lead (56 on v4.1, over GPT-5.5's 55 and Gemini 3.1 Pro's 46) underpins both, and with weeks left to July's resolution rivals have little room to ship and validate a clear winner."
+      "h": "Anthropic still owns the lead —",
+      "t": "Polymarket's July best-model market has Anthropic at 85.5%, firming from ~82% a day earlier, with Google near 11% and OpenAI just ~3%. The June companion market resolves today (Jun 30) with Anthropic pinned near 99%, settling on the leaderboard. Claude Opus 4.8 holds the AA Index at 56 (v4.1) over GPT-5.5's 55, and with only weeks to the July resolution rivals have little room to ship and validate a stronger system."
     },
     {
-      "h": "The release clock dominates the next month —",
-      "t": "Gemini 3.5 Pro is the most likely frontier ship: Jun 29 reporting says it's cleared for a July launch, and Polymarket prices the next Gemini Pro at ~94% by Jul 31 (only ~3% by Jun 30). GPT-5.6 stays government-gated after its Jun 26 preview to ~20 approved partners, with broad public access at ~88% by Jul 31. Fable 5's consumer return is the wildcard — just ~34% by Jul 1 after a volatile June, though eventual restoration prices ~96-97% by August/December."
+      "h": "Gemini 3.5 Pro is the ship to watch —",
+      "t": "The likeliest frontier release this month is Google's: Gemini 3.5 Pro is cleared for July at ~94% by Jul 31 but remains a Vertex-only enterprise preview after missing its June GA target. GPT-5.6 already shipped Jun 26 but gated to ~20 government-approved partners, so its broad-access market sits at ~88% by Jul 31. Anthropic's consumer Fable 5 stays offline — restoration by Jul 1 is only ~34%, though eventual return prices near 96% by year-end."
     },
     {
-      "h": "Benchmarks keep grinding toward their ceilings —",
-      "t": "GPQA Diamond is effectively saturated (~94% frontier, well above the 69.7% human-expert line), so the action has moved to deliberately-hard evals — Humanity's Last Exam (Opus 4.8 ~57.9 with tools), SWE-bench Pro, Terminal-Bench and FrontierMath. A Jun 25 Nature-covered 'First Proof' research-math benchmark still had every top model fall short of expert humans, a reminder the hardest reasoning headroom is real."
+      "h": "Benchmarks are pinned near their ceilings —",
+      "t": "GPQA Diamond is effectively saturated — Gemini 3.1 Pro 94.3, Opus 4.7 94.2 — so markets see only ~1 point of frontier headroom left this year. The action has migrated to harder, far-from-solved evals: SWE-bench Pro (vendor-frontier ~80% on the pulled Fable 5/Mythos 5, ~69% Opus 4.8), Humanity's Last Exam, and Terminal-Bench, where the next release cycle still has room to move."
     },
     {
-      "h": "The long game stays a Q4 story —",
-      "t": "GPT-6 conviction is concentrated in Q4 (~66% by Dec 31, ~27% by Sep 30, ~3% by July), with the next Opus and a long-slipped Grok 5 expected in H2 but undated by markets. AGI-horizon markets remain years out; the binding constraints traders are pricing now are policy and compute — government access reviews and the data-center/power buildout — more than raw capability."
+      "h": "The long game points to Q4 and beyond —",
+      "t": "GPT-6's odds stay concentrated in Q4 — ~65% by Dec 31, with September softening to ~14% — as traders bet OpenAI already folded GPT-6-class gains into GPT-5.5. Grok 5 is still training on Colossus 2 and prices near 1% for any near-term window. AGI-horizon and automation markets remain the quiet long bet, but the near-term tape is all about who ships a validated frontier model before the next monthly resolution."
     }
   ]
 }
