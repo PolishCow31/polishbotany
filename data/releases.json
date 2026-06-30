@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-29T18:03:43-04:00",
+  "updated": "2026-06-29T21:02:57-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 94,
       "frontier": true,
       "status": "expected",
-      "basis": "Announced at I/O May 19, slipped past Google's self-imposed Jun-30 GA target; still Vertex-only preview. Polymarket prices the next Gemini Pro at ~94% by Jul 31, ~3% by Jun 30.",
+      "basis": "Jun 29 reporting: cleared for a July launch but still Vertex-only preview after slipping its self-imposed Jun-30 GA target. Polymarket ~94% by Jul 31, ~3% by Jun 30.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 88,
       "frontier": false,
       "status": "expected",
-      "basis": "Sol/Terra/Luna shipped Jun 26 as a limited preview to ~20 govt-approved partners; OpenAI promises broader access 'in coming weeks'. Polymarket eased to ~88% by Jul 31.",
+      "basis": "Sol/Terra/Luna shipped Jun 26 as a limited preview to ~20 govt-approved partners; OpenAI promises broader access 'in coming weeks'. Polymarket ~88% by Jul 31.",
       "source": "https://polymarket.com/event/gpt-5pt6-released-by"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Jun 26-27: US Commerce cleared Mythos 5 for ~100 trusted US critical-infra orgs. Consumer Fable 5 still offline 17+ days. Polymarket Fable-restoration: 34% by Jul 1.",
+      "basis": "Jun 26-27: US Commerce cleared Mythos 5 for ~100 trusted US critical-infra orgs. Consumer Fable 5 still offline; Polymarket Fable-by-Jul-1 ~34% (volatile, 41-73% earlier in June), but eventual restoration ~96-97% by Aug/Dec.",
       "source": "https://polymarket.com/event/claude-fable-5-restored-for-us-customers-by-20260613193753196"
     },
     {
@@ -78,72 +78,6 @@
       "status": "rumored",
       "basis": "Musk-floated next-gen flagship; repeatedly slipped. Market odds near 1% for any near-term window.",
       "source": "https://docs.x.ai/developers/models"
-    },
-    {
-      "model": "Qwen 4 (next-gen)",
-      "lab": "Alibaba",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Qwen3.5 shipped Feb; a next-gen Qwen 4 line is the expected H2 step. No dated market.",
-      "source": "https://huggingface.co/Qwen"
-    },
-    {
-      "model": "GLM-6 (next-gen)",
-      "lab": "Zhipu",
-      "expectedWindow": "late 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "GLM-5.2 shipped Jun 13; a next-gen GLM-6 is the expected late-2026 step. No dated market.",
-      "source": "https://huggingface.co/zai-org"
-    },
-    {
-      "model": "Mistral Large 3 — Reasoning",
-      "lab": "Mistral",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "A reasoning variant of Large 3 was flagged 'coming soon' on Mistral's page; still unshipped. No dated market.",
-      "source": "https://mistral.ai/news"
-    },
-    {
-      "model": "Gemini 4.0",
-      "lab": "Google",
-      "expectedWindow": "late 2026 / early 2027",
-      "expectedDate": "2026-12",
-      "prob": 1,
-      "frontier": true,
-      "status": "rumored",
-      "basis": "Full 4.0 flagship is a late-2026/2027 step; the nearer event is 3.5 Pro. No near-term dated market.",
-      "source": "https://deepmind.google/models"
-    },
-    {
-      "model": "Llama 6 (next Llama)",
-      "lab": "Meta",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Post-Muse-Spark (Apr), a next Llama generation is the expected H2 step under the Superintelligence Labs reorg. No dated market.",
-      "source": "https://about.fb.com/news/"
-    },
-    {
-      "model": "DeepSeek V5",
-      "lab": "DeepSeek",
-      "expectedWindow": "late 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "V4-Pro/Flash shipped Apr; a V5 generation is the expected late-2026 step. No dated market.",
-      "source": "https://api-docs.deepseek.com"
     }
   ]
 }
