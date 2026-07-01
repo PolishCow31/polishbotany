@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T00:03:32-04:00",
+  "updated": "2026-07-01T03:03:36-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -12,9 +12,9 @@
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
-      "question": "Which company has the best AI model at the end of July?",
+      "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 82% — Polymarket, resolves Jul 31; leads over OpenAI and Google",
+      "forecast": "Anthropic 85.5% (Google 11%, OpenAI 3.3%)",
       "category": "ranking",
       "relevantBenchmark": "AA-Index",
       "resolveDate": "2026-07-31",
@@ -30,9 +30,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "Will GPT-6 be released by December 31, 2026?",
+      "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "67% — Polymarket by Dec 31 (25% by Sep 30, 3% by Jul 31)",
+      "forecast": "66% by Dec 31 (25% by Sep 30, 3% by Jul 31)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -410,7 +410,7 @@
     {
       "question": "Will Google DeepMind release Gemini 3.5 by July 31, 2026?",
       "platform": "Manifold",
-      "forecast": "~99% by Jul 31 — Vertex-only preview, reportedly slipped from Jun-30 to July",
+      "forecast": "98.6% — usable by external devs/users by Jul 31",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -1295,19 +1295,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic holds the front. The 'best AI model end of July' market prices Anthropic at ~82%, ahead of OpenAI and Google, mirroring the leaderboard where Claude Opus 4.8 still leads the Artificial Analysis Index at 56 (v4.1) over GPT-5.5 (55) and Gemini 3.1 Pro (46). The restoration of Fable 5 on July 1 removes the one wildcard that could have dented Anthropic's standing this month."
+      "t": "Anthropic remains the runaway favorite for best model at the July 31 resolution, priced at ~85.5% on Polymarket, up a few points on the week, with Google a distant second near 11% and OpenAI around 3%. That tracks the leaderboard: Claude Opus 4.8 leads the Artificial Analysis Index at 56 (v4.1 scale) over GPT-5.5 at 55 and Gemini 3.1 Pro at 46. With only weeks to the resolution, traders see little runway for a rival to ship and validate a clear #1."
     },
     {
       "h": "What ships next —",
-      "t": "July is crowded. Google's next Gemini Pro (3.5) sits at ~94% to ship by July 31, and a broad public rollout of OpenAI's GPT-5.6 line — Sol/Terra/Luna, already live in limited preview — is ~88% for the same window. Both are odds-on, so the open question is sequencing, not whether they land."
+      "t": "The two imminent launches are both due this month. Gemini 3.5 Pro is cleared for a July GA after slipping its June target — Manifold prices any Gemini 3.5 external release by July 31 at ~99%. OpenAI's GPT-5.6 (Sol/Terra/Luna) shipped June 26 as a limited preview to ~20 government-approved partners; a broad public rollout is rated ~88% for July, with Cerebras set to serve Sol at up to 750 tok/s."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The top end keeps compressing. SWE-bench Verified is brushing the mid-90s (Fable 5 ~95%), and Humanity's Last Exam has climbed into the high-50s with tools (Opus 4.8 at 57.9). Headroom on the classic coding and reasoning suites is thinning, pushing the real contest toward long-horizon agentic and terminal benchmarks."
+      "t": "The frontier cluster is packed tight at the top of the AA Index (56/55/46 across Anthropic, OpenAI, Google), and coding benches are where the separation now shows: Opus 4.8 leads SWE-bench Pro at 69.2 with open-weight GLM-5.2 (62.1) and Kimi K2.7 pressing at a fraction of the cost. Humanity's Last Exam, where Opus 4.8 posts 57.9 with tools, is the headline reasoning frontier as scores climb into the high 50s."
     },
     {
       "h": "The long game —",
-      "t": "GPT-6 is the horizon bet: ~67% by December 31 (up from 65%), 25% by September, just 3% by July. Traders keep the conviction concentrated in Q4, treating the 5.x line's April memory/agentic gains as the near-term substitute while the true successor trains."
+      "t": "GPT-6 is the next true generational question, and the market has settled into a Q4 base case — ~66% by December 31, ~25% by September, near-zero before then — after GPT-5.5 absorbed much of the GPT-6-class memory and agentic feature set back in April. Beyond it, the field's cadence (a fresh frontier or near-frontier model roughly every two days) means the AGI-horizon markets stay noisy while the near-term ship-date bets carry the signal."
     }
   ]
 }
