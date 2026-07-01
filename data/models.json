@@ -1662,11 +1662,12 @@
       "open": false,
       "benchmarks": {
         "SWE-bench Pro": 63.2,
-        "Terminal-Bench 2.1": 80.4
+        "Terminal-Bench 2.1": 80.4,
+        "AA-Index": 53
       },
       "milestone": false,
       "status": "live",
-      "notable": "Anthropic's most agentic Sonnet yet, built to plan, run terminals and drive browsers autonomously. SWE-bench Pro 63.2% (up from Sonnet 4.6's 58.1%) closes most of the gap to Opus 4.8 (69.2%) at a fraction of the cost; Terminal-Bench 2.1 80.4%. Deliberately NOT trained on offensive-cyber tasks (0% on Firefox exploit development by design) and ships with cyber safeguards on by default. A retuned tokenizer counts ~1.0-1.35x more tokens per task. Intro $2/$10 through Aug 31 2026, then $3/$15. Landed the same day Fable 5 and Mythos 5 came back online.",
+      "notable": "Anthropic's most agentic Sonnet yet, built to plan, run terminals and drive browsers autonomously. Posted 53 on the Artificial Analysis Intelligence Index (v4.1, Max Effort) — #5 overall, only 2-3 pts behind GPT-5.5 (55) and Opus 4.8 (56), and it edges Opus 4.8 on the GDPval-AA and AA-Briefcase agentic evals. SWE-bench Pro 63.2% (up from Sonnet 4.6's 58.1%) closes most of the gap to Opus 4.8 (69.2%) at a fraction of the cost; Terminal-Bench 2.1 80.4%. Deliberately NOT trained on offensive-cyber tasks (0% on Firefox exploit development by design) and ships with cyber safeguards on by default. A retuned tokenizer counts ~1.0-1.35x more tokens per task. Intro $2/$10 through Aug 31 2026, then $3/$15. Landed the same day Fable 5 and Mythos 5 came back online.",
       "pricing": "$2 in / $10 out per 1M intro (through Aug 31 2026), then $3/$15",
       "sources": [
         "https://www.anthropic.com/news/claude-sonnet-5",
