@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T00:05:26-04:00",
+  "updated": "2026-07-02T03:04:33-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,7 +14,7 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "82% — Anthropic, firm into the Jul 31 resolution (Google and OpenAI in single-to-low double digits)",
+      "forecast": "82% — Anthropic, firm into the Jul 31 resolution as rivals run out of runway to ship and validate a topper",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -30,9 +30,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by...?",
+      "question": "GPT-6 released by…?",
       "platform": "Polymarket",
-      "forecast": "66% — by Dec 31, 2026 (Sep 30 ~27%; near-term low)",
+      "forecast": "66% — by Dec 31, 2026 (Sep 30 ~27%; near-term dates low)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -1277,19 +1277,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Prediction markets still frame this as Anthropic's to lose. Polymarket's end-July 'best AI model' market holds Anthropic firmly favored (~82%), with Google and OpenAI stuck in single-to-low-double digits, and Kalshi's year-end top-LLM market echoes it at ~64% Anthropic. That conviction tracks the leaderboard: Claude Opus 4.8 sits #1 on the Artificial Analysis Intelligence Index (v4.1) at 56, ahead of GPT-5.5 (55) and Gemini 3.1 Pro (46), with the fresh Claude Sonnet 5 already #5 at 53."
+      "t": "Anthropic still owns the front of the pack. Claude Opus 4.8 leads the Artificial Analysis Intelligence Index at 56, with the freshly-added Sonnet 5 at 53 slotting in behind GPT-5.5 (55) and ahead of Gemini 3.1 Pro (46). Polymarket gives Anthropic roughly 82% to hold the best model at end-July, and its year-end lead is softer but intact — Kalshi and Polymarket price Anthropic around 64-67% for the top model by Dec 31, with Google and OpenAI splitting most of the remainder."
     },
     {
       "h": "What ships next —",
-      "t": "Two imminent releases dominate the release markets. Gemini 3.5 Pro is priced ~94% to reach GA by Jul 31 after slipping its June target — still a Vertex-only enterprise preview polishing coding and token efficiency. GPT-5.6's broad public rollout is ~93% by Jul 31, gated for now to ~20 government-approved partners pending a White House security review. The numbered flagship stays further out: GPT-6 centers on Dec 31 (~66%), with Sep 30 at ~27%."
+      "t": "Two catalysts are gated and on the clock. Google's Gemini 3.5 Pro is cleared for July general availability (~94%) but remains a Vertex-only enterprise preview, while OpenAI's GPT-5.6 (Sol/Terra/Luna) trades at ~93% for a broad public release by Jul 31 despite still being limited to ~20 government-approved partners. The numbered flagships stay further out: GPT-6 centers on Dec 31 (~66%, Sep 30 ~27%), and xAI's Grok 5 keeps slipping — still in training with no launch in sight."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The reasoning benchmarks that once separated the frontier are pinning. GPQA Diamond is effectively saturated near 94-95%, above the ~70% human-expert ceiling. Polymarket gives ~82% to an AI scoring 90% on FrontierMath, and Metaculus's ARC-AGI-2 community median for 2026 sits at ~93.4. Agentic coding (SWE-bench Pro, Terminal-Bench) remains the live differentiator, deliberately far from ceiling."
+      "t": "The top of the coding table is running out of headroom: SWE-bench Verified now sits in the high-80s across the frontier (Opus 4.8 at 88.6), with Anthropic's Fable 5 posting ~95. Metaculus community medians for hardest-benchmark milestones keep climbing (SWE-bench-style questions near 93% by year-end), and Humanity's Last Exam has pushed past 57 (Opus 4.8 with tools), leaving the classic knowledge and math suites largely maxed."
     },
     {
       "h": "The long game —",
-      "t": "AGI-horizon markets stay skeptical of near-term arrival. Polymarket prices 'OpenAI announces AGI before 2027' at ~13% and generic 'AGI before 2027' markets at ~3-8%. Metaculus's weak-AGI community median lands around 2028-2030, and METR's task-time-horizon trend keeps doubling roughly twice a year — steady exponential progress, but nothing markets read as an imminent step-change."
+      "t": "The AGI-horizon questions haven't moved. Metaculus 'transformative/AGI' style markets still center years out — community medians land in the 2030-2033 range depending on the definition — and near-term 'AGI in 2026' contracts sit in the low single digits (~3-8%). The market's real 2026 story remains incremental: cheaper tokens, agentic reliability, and who holds a leaderboard that now turns over in weeks, not quarters."
     }
   ]
 }
