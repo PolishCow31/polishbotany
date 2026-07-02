@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T09:03:39-04:00",
+  "updated": "2026-07-02T12:06:50-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,9 +14,9 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 86% (Google 11%, OpenAI 3%)",
+      "forecast": "Anthropic 86% (Google 11%, OpenAI 3%) — Polymarket, resolves Jul 30",
       "category": "ranking",
-      "relevantBenchmark": "AA-Index",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -401,7 +401,7 @@
     {
       "question": "Next Google Gemini Pro model released by...?",
       "platform": "Polymarket",
-      "forecast": "94% — by Jul 31 (only ~3% by Jun 30; still a Vertex-only enterprise preview)",
+      "forecast": "94% — by Jul 31 (only ~3% had it by Jun 30; still a Vertex-only preview)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -1277,19 +1277,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Prediction markets still see one clear front-runner. Polymarket's 'best AI model end of July' has Anthropic at ~86%, well ahead of Google (~11%) and OpenAI (~3%), and the number ticked up a few points this sweep as the July 31 resolution nears and rivals run out of runway to ship something better. On the leaderboard that conviction tracks reality: Claude Opus 4.8 leads the AA Index at 56, with GPT-5.5 (55) and the fresh Claude Sonnet 5 (53) close behind."
+      "t": "Anthropic remains the runaway favorite. Polymarket's 'best AI model end of July' holds at ~86% Anthropic against ~11% Google and ~3% OpenAI, and the year-end version sits near 67%; Kalshi's year-end top-LLM market echoes it at ~64%. The leaderboard justifies the odds: Claude Opus 4.8 still tops the Artificial Analysis Index (v4.1) at 56, with GPT-5.5 at 55 and the three-day-old Claude Sonnet 5 at 53 slotting in at #5, while Gemini 3.1 Pro trails at 46."
     },
     {
       "h": "What ships next —",
-      "t": "Two catalysts are on the clock. Google's Gemini 3.5 Pro carries a ~94% implied chance of a July general-availability release but remains a Vertex-only enterprise preview after its June target slipped. OpenAI's GPT-5.6 (Sol/Terra/Luna) shipped June 26 to roughly 20 vetted partners under a government-requested access restriction, with broad public availability (~93% for July) promised 'in the coming weeks.' Either broad launch is the likeliest near-term threat to Anthropic's leaderboard lead."
+      "t": "Two catalysts dominate the July clock. Gemini 3.5 Pro's broad release prices around 94% on Polymarket (99% on Manifold for a Jul 31 launch) but remains a Vertex-only enterprise preview after slipping from June. GPT-5.6's broad public release sits near 93%, still gated to ~20 government-vetted partners with OpenAI promising general availability 'in the coming weeks.' Further out, GPT-6 holds 66% for Dec 31 and just 27% by Sep 30, keeping it firmly an H2 story."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The frontier cluster is bunched tight on the v4.1 AA Index — Opus 4.8 (56), GPT-5.5 (55), Sonnet 5 (53), Gemini 3.1 Pro (46) — with coding benches like SWE-bench Pro now the sharper separator (Opus 4.8 at 69.2%). Open-weight models keep closing the gap: GLM-5.2 and Kimi K2.7 sit in the high-40s to low-50s at a fraction of frontier price, and math/agentic evals (AIME, Terminal-Bench 2.1) are approaching ceilings."
+      "t": "The measurement frontier keeps moving as the old yardsticks pin. GPQA Diamond is effectively saturated near 94%, and SWE-bench Verified has flattened into its noise ceiling. Markets have shifted to harder targets: Polymarket puts ~82% on some model hitting 90% on FrontierMath before 2027, while Metaculus's ARC-AGI-2 community median for 2026 sits at 93.4%. Humanity's Last Exam is now the live frontier gauge, where Opus 4.8 (57.9 with tools) leads."
     },
     {
       "h": "The long game —",
-      "t": "GPT-6 is the market's headline unknown: Polymarket puts it at ~66% by Dec 31 and just ~27% by Sep 30, framing it as an H2-2026 event after GPT-5.5 absorbed features once teased for the next number. Beyond it, a next Opus, Gemini 4, Grok 5 and DeepSeek V5 are all rumored for the second half but carry no dated markets yet — the AGI-horizon questions stay speculative while the near-term race is decided by who ships a broad frontier release first."
+      "t": "AGI stays a distant bet. Polymarket gives just ~13% that OpenAI declares AGI before 2027, and Metaculus's aggregate holds roughly 25% by 2029 and 50% by 2033. The nearer-term money is on corporate structure and compute: Polymarket favors Anthropic (~73%) to IPO before OpenAI, and Epoch's trend work still points to frontier training compute growing ~4-5x per year — the buildout, not a capability cliff, remains the defining constraint."
     }
   ]
 }

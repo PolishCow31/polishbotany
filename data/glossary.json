@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-02T06:03:54-04:00",
+  "updated": "2026-07-02T12:06:50-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -51,6 +51,16 @@
         "activation engineering",
         "representation steering",
         "steering vectors"
+      ]
+    },
+    {
+      "term": "Active parameters",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "In a Mixture-of-Experts model, the subset of weights actually used per token (e.g. LongCat-2.0 routes ~48B of its 1.6T total), setting inference cost.",
+      "aka": [
+        "activated parameters",
+        "active params"
       ]
     },
     {

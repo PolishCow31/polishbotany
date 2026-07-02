@@ -1674,6 +1674,29 @@
         "https://www.axios.com/2026/06/30/anthropic-sonnet-5-agents-mythos-fable",
         "https://llm-stats.com/models/claude-sonnet-5"
       ]
+    },
+    {
+      "name": "LongCat-2.0",
+      "lab": "Meituan",
+      "released": "2026-06-30",
+      "params": "1.6T total / ~48B active (33-56B dynamic, MoE)",
+      "context": "1M",
+      "modality": "text + code, text out (agentic coding)",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Pro": 59.5,
+        "Terminal-Bench 2.1": 70.8,
+        "SWE-bench Multilingual": 77.3
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "Meituan's 1.6T sparse-MoE agentic coding flagship, open-sourced under MIT — and the largest model China claims to have trained END-TO-END on ~50,000 domestic Chinese ASICs, with none of the US-restricted hardware. Revealed as 'Owl Alpha,' the stealth model that spent two months topping OpenRouter. SWE-bench Pro 59.5 edges GPT-5.5 (58.6); Terminal-Bench 2.1 70.8, SWE-bench Multilingual 77.3. Native 1M context, ~48B avg active params. Caveat: weights were 'coming soon' at announcement (GitHub/HF placeholders), so it's open-in-intent but not yet downloadable.",
+      "pricing": "open weights (MIT)",
+      "sources": [
+        "https://venturebeat.com/technology/meituan-open-sources-longcat-2-0-the-1-6t-near-frontier-agentic-coding-model-thats-been-leading-openrouter-trained-entirely-on-chinese-chips",
+        "https://www.longcatai.org/benchmarks/",
+        "https://www.scmp.com/tech/tech-trends/article/3358854/china-debuts-biggest-ai-model-trained-local-chips-meituan-releases-longcat-20"
+      ]
     }
   ]
 }
