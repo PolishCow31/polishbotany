@@ -1,72 +1,94 @@
 {
-  "updated": "2026-07-02T03:04:33-04:00",
+  "updated": "2026-07-02T06:03:54-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
-      "model": "Gemini 3.5 Pro (next Gemini Pro)",
-      "lab": "Google",
-      "expectedWindow": "by Jul 2026: ~94%",
+      "model": "Gemini 3.5 Pro",
+      "lab": "Google DeepMind",
+      "expectedWindow": "by Jul 2026",
       "expectedDate": "2026-07",
       "prob": 94,
       "frontier": true,
-      "status": "expected",
-      "basis": "Cleared for July GA after slipping its June target; still a Vertex-only enterprise preview refining coding, token efficiency and long-task performance. 2M-token context, Deep Think mode. Sibling 3.5 Flash already shipped.",
+      "status": "confirmed",
+      "basis": "Announced at I/O May 19; June GA target slipped to July; still Vertex-only enterprise preview as of late June.",
       "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"
     },
     {
       "model": "GPT-5.6 (broad public release)",
       "lab": "OpenAI",
-      "expectedWindow": "by Jul 2026: ~93%",
+      "expectedWindow": "by Jul 2026",
       "expectedDate": "2026-07",
       "prob": 93,
       "frontier": false,
-      "status": "expected",
-      "basis": "Sol/Terra/Luna shipped Jun 26 as a limited preview to ~20 govt-approved partners; broad access targeted 'in the coming weeks,' pending a White House-driven security review.",
-      "source": "https://polymarket.com/event/gpt-5pt6-released-by"
+      "status": "confirmed",
+      "basis": "Sol/Terra/Luna shipped Jun 26 as a limited preview to ~20 vetted orgs; broad release promised 'in the coming weeks.'",
+      "source": "https://openai.com/index/previewing-gpt-5-6-sol/"
     },
     {
       "model": "GPT-6",
       "lab": "OpenAI",
-      "expectedWindow": "Q4 2026 (Sep-Dec)",
-      "expectedDate": "2026-11",
+      "expectedWindow": "by Dec 2026",
+      "expectedDate": "2026-12",
       "prob": 66,
       "frontier": true,
-      "status": "rumored",
-      "basis": "Polymarket 'GPT-6 released by' centers on Dec 31 (~66%), Sep 30 ~27%, Jul 31 low. GPT-5.5/5.6 absorbed many teased GPT-6 features, pushing the numbered flagship to H2.",
+      "status": "expected",
+      "basis": "Polymarket leads Dec 31 at 66%, Sep 30 at 27%; GPT-5.5 absorbed features once teased for GPT-6, pushing it to H2.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
-      "model": "Grok 4.4",
-      "lab": "xAI",
-      "expectedWindow": "Q3 2026 (weeks)",
-      "expectedDate": "2026-08",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "xAI's rapid point-release cadence (4.3 in early May) points to another incremental Grok this summer; no dated market.",
-      "source": "https://docs.x.ai/developers/models"
-    },
-    {
-      "model": "Next Opus (post-4.8 / 4.9)",
+      "model": "Claude Opus 5 (next Opus)",
       "lab": "Anthropic",
       "expectedWindow": "H2 2026",
       "expectedDate": "2026-09",
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Opus 4.x cadence (~6-8 weeks) suggests a successor to 4.8 (May 28) later in H2; Sonnet 5 just shipped Jun 30. No dated market.",
-      "source": "https://www.anthropic.com/news"
+      "basis": "Analysts flag a Q3-Q4 next-Opus among the heavy late-2026 frontier slate; no dated market.",
+      "source": "https://www.digitalapplied.com/blog/frontier-model-q3-2026-release-forecast-roadmap-analysis"
+    },
+    {
+      "model": "Gemini 4",
+      "lab": "Google DeepMind",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": true,
+      "status": "rumored",
+      "basis": "Named among five candidate H2-2026 frontier launches; no confirmed date or dated market.",
+      "source": "https://www.digitalapplied.com/blog/frontier-model-q3-2026-release-forecast-roadmap-analysis"
     },
     {
       "model": "Grok 5",
       "lab": "xAI",
-      "expectedWindow": "H2 2026 (slipped from Q2)",
-      "expectedDate": "2026-10",
-      "prob": 1,
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Musk-teased next-gen Grok (rumored ~6T-param MoE on Colossus 2); repeatedly slipped past late-2025/Q1/Q2 targets. Still in training, no launch in sight late June.",
-      "source": "https://docs.x.ai/developers/models"
+      "basis": "Expected among the mid-Aug-to-late-Sep frontier cluster; xAI still iterating Grok 4.3/4.20 lines. No dated market.",
+      "source": "https://www.digitalapplied.com/blog/frontier-model-q3-2026-release-forecast-roadmap-analysis"
+    },
+    {
+      "model": "DeepSeek V5",
+      "lab": "DeepSeek",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": true,
+      "status": "rumored",
+      "basis": "Flagged as a candidate H2-2026 open frontier release after V4-Pro/Flash; no confirmed date.",
+      "source": "https://www.digitalapplied.com/blog/frontier-model-q3-2026-release-forecast-roadmap-analysis"
+    },
+    {
+      "model": "Mistral Large 3 — Reasoning",
+      "lab": "Mistral AI",
+      "expectedWindow": "2026",
+      "expectedDate": "2026-08",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "A reasoning variant of Large 3 was flagged 'coming soon' on Mistral's page; still unshipped. No dated market.",
+      "source": "https://mistral.ai/news/mistral-3"
     }
   ]
 }
