@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-01T18:03:46-04:00",
+  "updated": "2026-07-01T21:03:06-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,10 +14,10 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "85.5% — Anthropic (Google ~11%, OpenAI ~3%), by Jul 31",
+      "forecast": "82% — Anthropic (down from ~85.5% this afternoon); Google and OpenAI trail as July 31 nears",
       "category": "ranking",
-      "relevantBenchmark": "AA-Index",
-      "resolveDate": "2026-07-31",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-07-30",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
     {
@@ -30,9 +30,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by…?",
+      "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "66% — by Dec 31 (Sep 30 ~27%, Jul 31 ~3%)",
+      "forecast": "66% — by Dec 31, 2026 (Sep 30 ~27%; near-term low)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -149,7 +149,7 @@
     {
       "question": "GPT-5.6 released by...?",
       "platform": "Polymarket",
-      "forecast": "93% — by Jul 31 (broad public release; closed beta doesn't count)",
+      "forecast": "93% — broad public release by Jul 31 (Altman targeting mid-July, pending govt review)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -1295,19 +1295,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the frontier heading into July, but the lead is easing at the margin: Polymarket's end-July 'best AI model' market prices Anthropic at ~85.5%, down from ~87% earlier, with Google ticking up to ~11% and OpenAI around 3%. That tracks the leaderboard — Opus 4.8 leads the Artificial Analysis Index at 56 over GPT-5.5 (55) and Gemini 3.1 Pro (46) — and yesterday's Claude Sonnet 5 (AA 53, #5) deepens Anthropic's bench without changing the top."
+      "t": "Polymarket's end-July \"best AI model\" market sits at ~82% Anthropic, easing from ~85.5% earlier today as the July 31 resolution approaches and rivals' windows compress. The pricing tracks the leaderboard: Opus 4.8 holds #1 on the AA Intelligence Index at 56, ahead of GPT-5.5 (55) and Gemini 3.1 Pro (46), with yesterday's Claude Sonnet 5 (53) landing #5. Anthropic's edge is real but the drift downward reflects two credible near-term catalysts for Google and OpenAI."
     },
     {
       "h": "What ships next —",
-      "t": "Two dated releases dominate the July radar. Gemini 3.5 Pro is ~94% to reach general availability by July 31 after slipping its June target, still a Vertex-only enterprise preview with a 2M-token context. OpenAI's GPT-5.6 sits at ~93% for a broad public release by month-end — it shipped Jun 26 as a limited preview to ~20 government-approved partners and awaits a White House-driven security review before wider access."
+      "t": "Two frontier releases are on the clock and both remain unshipped. Gemini 3.5 Pro is cleared for a July GA (~94% by month-end) but is still a Vertex-only enterprise preview while Google refines coding and token efficiency; its 2M-token context is the largest in production. GPT-5.6's broad public release prices ~93% by July 31 — Sol/Terra/Luna already reached ~20 government-approved partners on Jun 26, with Altman targeting broad access mid-July pending the White House security review."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The measurement frontier keeps climbing: Polymarket gives ~82% that a model scores 90+ on FrontierMath before 2027, and Metaculus's community median for the top ARC-AGI-2 score in 2026 sits near 93. GPQA and older knowledge benchmarks are effectively saturated, pushing evaluators toward agentic and long-horizon coding suites like SWE-bench Pro and Terminal-Bench, where Opus 4.8 (69.2 SWE-bench Pro) still leads."
+      "t": "The AA Intelligence Index (v4.1 scale) has compressed the frontier into a tight band — Opus 4.8 at 56, GPT-5.5 at 55, Sonnet 5 at 53 — where fractions of a point now separate the top tier. Coding is where the gaps still show: Opus 4.8 leads SWE-bench Pro at 69.2, with open-weight GLM-5.2 (62.1) and Sonnet 5 (63.2) closing on it at a fraction of the cost. HLE and agentic evals (GDPval, Terminal-Bench) are the new battlegrounds as classic benchmarks near ceiling."
     },
     {
       "h": "The long game —",
-      "t": "AGI timelines remain far out and roughly stable: Metaculus community medians land around 2033 for full AGI and mid-2028 for 'weakly general' AI, and Polymarket gives only ~13% that OpenAI declares AGI before 2027. The nearer-term structural bet is the compute buildout — Stargate-scale data centers and record AI-linked equity issuance — funding the release cadence that keeps the leaderboard turning over every few weeks."
+      "t": "The numbered flagships have slipped to the second half. Polymarket centers GPT-6 on Dec 31 (~66%), with Sep 30 at ~27% and near-term odds low — GPT-5.5 and 5.6 absorbed many features once teased for GPT-6. Grok 5 remains repeatedly slipped and unpriced for the near term. The medium-term story is diffusion: open-weight models (Kimi K2.7, GLM-5.2, DeepSeek-V4, Qwen3.5) now sit only a few index points behind the closed frontier."
     }
   ]
 }
