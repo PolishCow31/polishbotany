@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T00:04:45-04:00",
+  "updated": "2026-07-03T06:04:13-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,7 +14,7 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "91% — Anthropic (Google 8%, OpenAI 2%), resolves Jul 31",
+      "forecast": "91% — Anthropic (Google 8%, OpenAI 2%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -147,7 +147,7 @@
       "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
     },
     {
-      "question": "GPT-5.6 released by...?",
+      "question": "GPT-5.6 released by...? (publicly accessible)",
       "platform": "Polymarket",
       "forecast": "95% — by Jul 31 (broad public GA)",
       "category": "release",
@@ -1286,19 +1286,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Prediction markets still treat Anthropic as the clear front-runner: Polymarket's 'best AI model end of July' sits at roughly 91% Anthropic, against 8% Google and 2% OpenAI. That tracks the leaderboard, where Claude Opus 4.8 (AA Index 56, v4.1) leads GPT-5.5 (55), the new Claude Sonnet 5 (53) and Gemini 3.1 Pro (46). With only weeks left before the July 31 resolution, the compressed window is itself part of the bull case — rivals have little time to ship and validate something better."
+      "t": "Anthropic remains the clear front-runner for best model in July at ~91% on Polymarket, with Google a distant ~8% and OpenAI ~2%. The year-end 2026 picture is far looser: Polymarket's which-company market puts Anthropic around 67%, and Kalshi's year-end top-LLM sits near 64% Anthropic (Google ~13%, OpenAI ~12%). On coding specifically, Kalshi has Anthropic ~58% ahead of OpenAI ~31%. The standings themselves haven't moved — Claude Opus 4.8 still tops the AA Index (v4.1) at 56, with GPT-5.5 (55), Claude Sonnet 5 (53) and Gemini 3.1 Pro (46) behind."
     },
     {
       "h": "What ships next —",
-      "t": "Two frontier releases are on the clock. OpenAI's GPT-5.6 (Sol/Terra/Luna) already exists but is gated to ~20 vetted partners under a US government process; Polymarket puts a broad public open at 95% by July 31, with the modal ship date landing around July 7. Google's Gemini 3.5 Pro sits at 94% for a by-July-31 GA after slipping from June, still a Vertex-only enterprise preview. Either could dent Anthropic's July lead if it lands and benchmarks well."
+      "t": "The near-term action is all about release dates, not rankings. GPT-5.6's broad public GA carries a modal ~July 7 ship date and a ~95% by-Jul-31 line on Polymarket, after its Jun 26 gated preview to ~20 vetted orgs. Google's next Gemini Pro (3.5 Pro GA) holds ~94% by Jul 31, still stuck in Vertex-only preview. xAI's Grok 4.5 surfaced Jun 28 in private beta at SpaceX and Tesla but carries no dated market and no independent benchmark. GPT-6 is a longer bet at ~66% by year-end."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The action has moved from knowledge quizzes to agentic coding and tool-use. Google's just-tracked Gemini 3.5 Flash posts 76.2% on Terminal-Bench 2.1 and 55.1% on SWE-bench Pro while running roughly 3x faster than the Pro tier — a sign that the cheap/fast lane is closing on flagship quality. Classic single-shot benchmarks (MMLU, GPQA) are effectively saturated at the top; long-horizon agent benchmarks are where separation now shows up."
+      "t": "The frontier is running into walls on the older evals. GPQA Diamond is effectively pinned near its ~94-95% noise ceiling, and SWE-bench Verified is saturated. The live headroom is on the hard benchmarks: Polymarket puts a 90% FrontierMath score before 2027 at ~82% YES, while Metaculus's community median for the top 2026 ARC-AGI-2 score sits at 93.4%. Humanity's Last Exam remains the least-saturated composite, with the frontier still gaining ground."
     },
     {
       "h": "The long game —",
-      "t": "On the horizon question, markets stay measured: Polymarket's 'GPT-6 released by' sits at 66% for December 31 and 27% for September 30, reflecting a view that OpenAI's point-release cadence (5.4, 5.5, 5.6) has absorbed much of what a numbered GPT-6 would have carried. No dated market yet exists for Grok 5 or a next flagship Claude Opus, so the back half of 2026 is priced as more incremental frontier steps than a single step-change."
+      "t": "AGI odds stay low and stable. Polymarket's 'OpenAI announces AGI before 2027' holds ~13% YES, and Manifold's before-2027 AGI markets price it far lower still (~3-8%). Metaculus's community median for a full four-condition AGI lands around 2033, with weakly-general AI nearer 2028. The compute buildout is the real live story underneath — data-center capex commitments keep climbing even as the model leaderboard sits quiet."
     }
   ]
 }

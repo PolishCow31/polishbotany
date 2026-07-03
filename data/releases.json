@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03T00:04:45-04:00",
+  "updated": "2026-07-03T06:04:13-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,8 @@
       "prob": 95,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Shipped Jun 26 to ~20 vetted orgs under US gov process; Polymarket 'released by Jul 31' 95%, modal open date ~Jul 7.",
-      "source": "https://polymarket.com/event/gpt-5pt6-released-by"
+      "basis": "Shipped Jun 26 to ~20 vetted orgs under a US-gov access process; broad GA promised 'in the coming weeks.' Polymarket 'released by Jul 31' ~95%, modal open date ~Jul 7.",
+      "source": "https://openai.com/index/previewing-gpt-5-6-sol/"
     },
     {
       "model": "Gemini 3.5 Pro (GA)",
@@ -21,8 +21,19 @@
       "prob": 94,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Announced May 19, GA slipped from June to July; still Vertex-only enterprise preview. Polymarket next-Gemini-Pro-by-Jul-31 94%.",
+      "basis": "Announced May 19, GA slipped from June to July; still Vertex-only enterprise preview. Polymarket next-Gemini-Pro-by-Jul-31 ~94%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
+    },
+    {
+      "model": "Grok 4.5 (V9 foundation)",
+      "lab": "xAI",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-08",
+      "prob": -1,
+      "frontier": true,
+      "status": "rumored",
+      "basis": "In private beta at SpaceX/Tesla since Jun 28; new ~1.5T-param 'V9' base, Cursor-augmented coding, internal Opus-level claims. No public date, no independent benchmark yet. No dated market.",
+      "source": "https://x.ai/news"
     },
     {
       "model": "GPT-6",
@@ -32,18 +43,18 @@
       "prob": 66,
       "frontier": true,
       "status": "rumored",
-      "basis": "Point releases absorbed GPT-6 features; Polymarket 'GPT-6 released by Dec 31' 66%, Sep 30 27%.",
+      "basis": "Point releases absorbed GPT-6 features; Polymarket 'GPT-6 released by Dec 31' ~66%, Sep 30 ~27%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
-      "model": "Grok 5",
+      "model": "Grok 5 (next from-scratch flagship)",
       "lab": "xAI",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "xAI docs reference heavier Grok tiers; next major flagship unconfirmed and undated. No dated market.",
+      "basis": "xAI says it will ship new from-scratch foundation models monthly through end-2026; a true Grok 5 flagship is expected but unconfirmed/undated. No dated market.",
       "source": "https://docs.x.ai/developers/models"
     },
     {
