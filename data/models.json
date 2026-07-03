@@ -1697,6 +1697,28 @@
         "https://www.longcatai.org/benchmarks/",
         "https://www.scmp.com/tech/tech-trends/article/3358854/china-debuts-biggest-ai-model-trained-local-chips-meituan-releases-longcat-20"
       ]
+    },
+    {
+      "name": "Gemini 3.5 Flash",
+      "lab": "Google DeepMind",
+      "released": "2026-05-19",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "multimodal (text, image, audio, video in; text out)",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 2.1": 76.2,
+        "SWE-bench Pro": 55.1,
+        "MCP Atlas": 83.6,
+        "CharXiv Reasoning": 84.2
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Fast, cheap Flash-tier model that beats Gemini 3.1 Pro on several agentic/coding benchmarks while running ~3x faster; 1M context, natively multimodal, GA across the Gemini app, AI Studio and Gemini API.",
+      "sources": [
+        "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"
+      ]
     }
   ]
 }
