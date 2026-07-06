@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T03:04:22-04:00",
+  "updated": "2026-07-06T06:03:51-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -1286,19 +1286,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic remains the runaway favorite for the best AI model at the end of July, trading around 90% on Polymarket with Google a distant second near 8% and OpenAI in single digits. The bet reflects the standings: Claude Opus 4.8 still tops the Artificial Analysis Intelligence Index (v4.1) at 56, ahead of GPT-5.5 (55), Claude Sonnet 5 (53) and Gemini 3.1 Pro (46). With only weeks to the July 31 resolution, traders see little room for a rival to ship and validate a clear leader."
+      "t": "The frontier stays a three-way huddle at the top: Claude Opus 4.8 leads the Artificial Analysis Intelligence Index (v4.1) at 56, GPT-5.5 sits one point back at 55, and Anthropic's own Sonnet 5 (53) plus Gemini 3.1 Pro (46) round out the leaders — a spread tight enough that best-model markets keep swinging on single releases rather than any durable moat. No model has shipped in the last six hours, so the standings are static heading into the week."
     },
     {
       "h": "What ships next —",
-      "t": "The imminent-release bets dominate the board. GPT-5.6's broad public GA reads roughly 99% by July 31 on Polymarket even though it is still gated to about 20 US-government-vetted organizations, with OpenAI promising wider access 'in the coming weeks.' Google's next Gemini Pro (3.5) sits near 82% for a July arrival after its June window lapsed; it remains a Vertex-only enterprise preview. GPT-6 stays a year-end story at about 71% by December."
+      "t": "The imminent catalyst is OpenAI's GPT-5.6 (Sol/Terra/Luna), live since Jun 26 but gated to ~20 US-government-vetted orgs; Polymarket prices a broad public GA at roughly 99% by Jul 31, with Cerebras set to serve Sol at up to 750 tok/s this month. Google's Gemini 3.5 Pro is the other near-term wildcard — 'cleared for July' but still a Vertex-only enterprise preview, with next-Gemini-Pro-by-Jul-31 markets around 82%."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The frontier cluster is bunched tight on classic evals — GPQA Diamond is effectively saturated in the low-to-mid 90s across Opus 4.8, Gemini 3.1 Pro and GPT-5.5 — so market attention has migrated to agentic and long-horizon coding tests (SWE-bench Pro, Terminal-Bench 2.1) and to Humanity's Last Exam, where Opus 4.8's ~57.9% with tools leads. Those harder benchmarks are where the next SOTA claims will be contested."
+      "t": "The classic yardsticks are largely maxed: GPQA sits in the low-90s across the frontier cluster and SWE-bench Verified has pushed into the high-80s (Fable 5 reportedly ~95%). Attention has shifted to harder agentic and long-horizon suites — SWE-bench Pro, Terminal-Bench 2.1, and Humanity's Last Exam, where Opus 4.8 leads at 57.9% with tools — as the benchmarks that still separate the top models."
     },
     {
       "h": "The long game —",
-      "t": "AGI-horizon and capability markets stay measured relative to the release frenzy: dated 'AGI by year' bets remain low for the near term, and the loudest capability questions now center on autonomous coding, cyber, and biology gains — exactly the capabilities that put GPT-5.6 and Anthropic's Mythos 5 under US access review in the first place. The near-term money is on shipping cadence; the far-term money is still cautious."
+      "t": "Further out, GPT-6 markets price a release at about 71% by Dec 31 (only ~2% for July), and true from-scratch flagships — xAI's Grok 5, the next Claude Opus — remain in training with no dated markets. AGI-timeline questions stay measured; the near-term story is diffusion and cheaper inference, not a capability cliff, as labs race to monetize compute rather than chase one decisive leap."
     }
   ]
 }
