@@ -1,22 +1,22 @@
 {
-  "updated": "2026-07-06T06:03:51-04:00",
+  "updated": "2026-07-06T10:00:34-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
-      "question": "Which company has best AI model end of 2026?",
+      "question": "Which company has the best AI model end of 2026?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 64% (Google 14%, OpenAI ~12%)",
+      "forecast": "Anthropic 64% (Google 14%)",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "AA-Index",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
-      "question": "Which company has best AI model end of July?",
+      "question": "Which company has the best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 88% (Google 8%, OpenAI ~2%) — Polymarket, eased from 91%",
+      "forecast": "Anthropic 91% (Google 8%)",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "AA-Index",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -149,7 +149,7 @@
     {
       "question": "GPT-5.6 released by...?",
       "platform": "Polymarket",
-      "forecast": "~99% by Jul 31 (broad public GA still pending)",
+      "forecast": "96% — by Jul 31 ($2.8M traded)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -1286,19 +1286,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "The frontier stays a three-way huddle at the top: Claude Opus 4.8 leads the Artificial Analysis Intelligence Index (v4.1) at 56, GPT-5.5 sits one point back at 55, and Anthropic's own Sonnet 5 (53) plus Gemini 3.1 Pro (46) round out the leaders — a spread tight enough that best-model markets keep swinging on single releases rather than any durable moat. No model has shipped in the last six hours, so the standings are static heading into the week."
+      "t": "Anthropic still owns trader sentiment by a wide margin: Polymarket prices it at 91% to hold the best AI model at end-of-July and 64% for end-of-2026, with Google a distant second (8% July, 14% year-end) and OpenAI barely registering in the headline race. The edge traces to Claude Opus 4.8 leading the Artificial Analysis Index (v4.1) at 56, with Sonnet 5 (53) reinforcing the lineup just behind GPT-5.5 (55)."
     },
     {
       "h": "What ships next —",
-      "t": "The imminent catalyst is OpenAI's GPT-5.6 (Sol/Terra/Luna), live since Jun 26 but gated to ~20 US-government-vetted orgs; Polymarket prices a broad public GA at roughly 99% by Jul 31, with Cerebras set to serve Sol at up to 750 tok/s this month. Google's Gemini 3.5 Pro is the other near-term wildcard — 'cleared for July' but still a Vertex-only enterprise preview, with next-Gemini-Pro-by-Jul-31 markets around 82%."
+      "t": "The imminent catalyst is OpenAI's GPT-5.6, still gated to ~20 US-government-vetted orgs; the 'released by Jul 31' market eased slightly to 96% (from ~99%), so a broad public GA this month is nearly priced-in but no longer a lock. Google's Gemini 3.5 Pro GA sits around 82% for July after slipping its June window, and GPT-6 holds ~71% for a release by year-end."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The classic yardsticks are largely maxed: GPQA sits in the low-90s across the frontier cluster and SWE-bench Verified has pushed into the high-80s (Fable 5 reportedly ~95%). Attention has shifted to harder agentic and long-horizon suites — SWE-bench Pro, Terminal-Bench 2.1, and Humanity's Last Exam, where Opus 4.8 leads at 57.9% with tools — as the benchmarks that still separate the top models."
+      "t": "The top of the leaderboard has compressed to a 3-point band (Opus 4.8 56, GPT-5.5 55, Sonnet 5 53), and SWE-bench Pro is now a ~69% frontier with open models like GLM-5.2 and LongCat-2.0 within striking distance. Raw knowledge benches (GPQA, MMLU) are effectively saturated, pushing the real contest onto agentic and long-horizon coding evals."
     },
     {
       "h": "The long game —",
-      "t": "Further out, GPT-6 markets price a release at about 71% by Dec 31 (only ~2% for July), and true from-scratch flagships — xAI's Grok 5, the next Claude Opus — remain in training with no dated markets. AGI-timeline questions stay measured; the near-term story is diffusion and cheaper inference, not a capability cliff, as labs race to monetize compute rather than chase one decisive leap."
+      "t": "Markets stay skeptical of a near-term AGI break: the frontier is advancing in incremental point releases rather than step-changes, and the biggest money is flowing into compute, not capability claims — Microsoft's new $2.5B deployment unit and a chip-led equity rally that pushed the Dow past 53,000 underline that the buildout, not a single model, is the story of mid-2026."
     }
   ]
 }
