@@ -1,39 +1,17 @@
 {
-  "updated": "2026-07-06T15:49:51-04:00",
+  "updated": "2026-07-06T21:04:51-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
-      "model": "GPT-5.6 (Sol / Terra / Luna, broad public GA)",
+      "model": "GPT-5.6 (public GA)",
       "lab": "OpenAI",
       "expectedWindow": "by Jul 2026",
       "expectedDate": "2026-07",
-      "prob": 96,
+      "prob": 67,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Shipped to ~20 govt-vetted orgs Jun 26; daily market now centers the public flip on ~Jul 9 (was Jul 7); 'by Jul 31' ~96%.",
-      "source": "https://polymarket.com/event/gpt-5pt6-released-by"
-    },
-    {
-      "model": "Gemini 3.5 Pro (GA)",
-      "lab": "Google DeepMind",
-      "expectedWindow": "by Jul 2026",
-      "expectedDate": "2026-07",
-      "prob": 82,
-      "frontier": true,
-      "status": "confirmed",
-      "basis": "In Vertex AI preview for select enterprises; missed June I/O and June 30 GA targets; 'next Gemini Pro by Jul 31' ~82%.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-by"
-    },
-    {
-      "model": "Grok 4.5 (V9 foundation)",
-      "lab": "xAI",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": true,
-      "status": "rumored",
-      "basis": "xAI expected to ship a V9-foundation Grok 4.5 in the second half; no dated market.",
-      "source": "https://x.ai"
+      "basis": "In limited gov-vetted preview since Jun 26; public GA promised 'in the coming weeks.' Polymarket centers the public flip on Jul 9.",
+      "source": "https://polymarket.com/event/gpt-5pt6-released-onptptpt-20260623051439980"
     },
     {
       "model": "GPT-6",
@@ -43,41 +21,63 @@
       "prob": 68,
       "frontier": true,
       "status": "rumored",
-      "basis": "Polymarket 'GPT-6 released by Dec 31' eased to ~68% (Sep 30 ~21%); GPT-5.5/5.6 absorbed many GPT-6 features.",
+      "basis": "Polymarket 'GPT-6 released by Dec 31' at 68%; Sep 30 window ~21%. GPT-5.5 absorbed features once teased for GPT-6.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
-      "model": "Grok 5 (next from-scratch flagship)",
+      "model": "Gemini 3.5 Pro",
+      "lab": "Google DeepMind",
+      "expectedWindow": "by Jul 2026",
+      "expectedDate": "2026-07",
+      "prob": -1,
+      "frontier": true,
+      "status": "confirmed",
+      "basis": "Announced May 19 at I/O with 2M context; GA slipped from June, still in Vertex preview past its June 30 target.",
+      "source": "https://deepmind.google/models"
+    },
+    {
+      "model": "Grok 5",
       "lab": "xAI",
-      "expectedWindow": "Q4 2026",
+      "expectedWindow": "by Dec 2026",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "frontier": true,
+      "status": "rumored",
+      "basis": "Musk has repeatedly teased Grok 5 for 2026; xAI shipping fast (Grok 4.3 in May). No dated market.",
+      "source": "https://docs.x.ai/developers/models"
+    },
+    {
+      "model": "Next Claude Opus (4.9 / 5)",
+      "lab": "Anthropic",
+      "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-11",
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Musk has teased a from-scratch Grok 5 late in the year; no dated market.",
-      "source": "https://x.ai"
-    },
-    {
-      "model": "Next Claude Opus (flagship successor to Opus 4.8)",
-      "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": true,
-      "status": "rumored",
-      "basis": "Opus 4.8 shipped May 28; Sonnet 5 landed Jun 30; a next-gen Opus is the expected H2 flagship. No dated market.",
+      "basis": "Anthropic's Opus cadence has run ~6-10 weeks; Opus 4.8 shipped May 28, Sonnet 5 Jun 30. No dated market.",
       "source": "https://www.anthropic.com/news"
     },
     {
       "model": "Mistral Large 3 — Reasoning",
       "lab": "Mistral AI",
-      "expectedWindow": "2026",
+      "expectedWindow": "by 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "A reasoning variant of Large 3 was flagged 'coming soon' on Mistral's own page; still unshipped.",
+      "source": "https://mistral.ai/news"
+    },
+    {
+      "model": "DeepSeek-V4 (stable GA)",
+      "lab": "DeepSeek",
+      "expectedWindow": "by 2026",
       "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Mistral Large 3 shipped Dec 2025; a dedicated reasoning variant is expected but undated.",
-      "source": "https://mistral.ai/news"
+      "basis": "V4-Pro/Flash shipped Apr 24 as preview; no stable GA yet. DeepSeek historically follows a preview with a refresh.",
+      "source": "https://api-docs.deepseek.com"
     }
   ]
 }
