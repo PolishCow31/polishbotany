@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-07T06:04:25-04:00",
+  "updated": "2026-07-07T09:59:25-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
       "question": "Which company has best AI model end of 2026?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 64% (Google 14%)",
+      "forecast": "Anthropic 63.5% (Google 14%, OpenAI 10.5%, xAI 4%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -14,7 +14,7 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 91% (Google 8%)",
+      "forecast": "Anthropic 84.5% (Google 12%, OpenAI 3%, xAI 0.2%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -23,7 +23,7 @@
     {
       "question": "Which companies will have a #1 AI model by December 31?",
       "platform": "Polymarket",
-      "forecast": "OpenAI 32% (Google 29%, xAI 15%) — Polymarket",
+      "forecast": "Google 43.5% (OpenAI 27.5%, xAI 12.5%, ByteDance 9.5%, DeepSeek 8.5%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -32,7 +32,7 @@
     {
       "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "68% — by Dec 31 (Sep 30 ~21%)",
+      "forecast": "by Dec 31 = 70% (by Sep 30 44%, by Jul 31 2%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -147,9 +147,9 @@
       "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
     },
     {
-      "question": "GPT-5.6 released by...?",
+      "question": "GPT-5.6 released by July 31?",
       "platform": "Polymarket",
-      "forecast": "98% — by July 31 (July 24 at 94%)",
+      "forecast": "98.75% — Polymarket (by Jul 17 94%, by Jul 10 88%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -203,7 +203,7 @@
     {
       "question": "GPT-6 released in 2026?",
       "platform": "Manifold",
-      "forecast": "69% — tracks Polymarket's Dec-31 line",
+      "forecast": "65% — Manifold",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -408,9 +408,9 @@
       "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
-      "question": "GPT-5.6 released on...?",
+      "question": "GPT-5.6 released on which day?",
       "platform": "Polymarket",
-      "forecast": "64% — July 9 frontrunner (July 10 at 7%)",
+      "forecast": "July 9 = 68% (Jul 7 9%, Jul 8 6%, Jul 14 5%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -424,6 +424,105 @@
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-12",
       "url": "https://manifold.markets/Web3ICP/will-gemini-35-pro-be-released-on-t"
+    },
+    {
+      "question": "Which companies will top Chatbot Arena leaderboard in 2026?",
+      "platform": "Manifold",
+      "forecast": "OpenAI 64% (xAI 48%, DeepSeek 18%, Meta 18%); Google & Anthropic already topped",
+      "category": "ranking",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-12-31",
+      "url": "https://manifold.markets/jim/which-companies-will-top-chatbot-ar-RQp5CdN0uE"
+    },
+    {
+      "question": "Who will ever rank #1 in LMSYS Chatbot Arena text leaderboard in 2026?",
+      "platform": "Manifold",
+      "forecast": "OpenAI 70% (xAI 45%, DeepSeek 32%, Mistral 26%)",
+      "category": "ranking",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-12-31",
+      "url": "https://manifold.markets/HenriThunberg/who-will-ever-rank-1-in-lmsys-chatb-zUZLSEsSNN"
+    },
+    {
+      "question": "New Gemini reasoning flagship released by July 31?",
+      "platform": "Polymarket",
+      "forecast": "81% — Polymarket",
+      "category": "release",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-07-31",
+      "url": "https://polymarket.com/event/new-gemini-reasoning-flagship-released-by"
+    },
+    {
+      "question": "Next Google Gemini Pro model: Arena debut Elo?",
+      "platform": "Polymarket",
+      "forecast": "1480+ = 93% (1490+ 73%, 1500+ 22%, 1510+ 7%)",
+      "category": "benchmark",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-12-31",
+      "url": "https://polymarket.com/event/next-google-gemini-pro-model-arena-debut"
+    },
+    {
+      "question": "Best FrontierMath Tier 4 score by Dec 31, 2026?",
+      "platform": "Manifold",
+      "forecast": "90%+ = 93% (80-90% 3%)",
+      "category": "benchmark",
+      "relevantBenchmark": "FrontierMath",
+      "resolveDate": "2026-12-31",
+      "url": "https://manifold.markets/Bayesian/what-will-be-the-best-frontiermath"
+    },
+    {
+      "question": "Will Claude Sonnet 5 exceed 85% on SWE-bench Verified?",
+      "platform": "Manifold",
+      "forecast": "94% — Manifold",
+      "category": "benchmark",
+      "relevantBenchmark": "SWE-bench",
+      "resolveDate": "2026-12-31",
+      "url": "https://manifold.markets/JaundicedBaboon/will-claude-5-sonnet-exceed-85-on-s"
+    },
+    {
+      "question": "Will an autonomous agent resolve 90% of tasks on SWE-bench by 2027?",
+      "platform": "Manifold",
+      "forecast": "85% — Manifold",
+      "category": "benchmark",
+      "relevantBenchmark": "SWE-bench",
+      "resolveDate": "2027-01-01",
+      "url": "https://manifold.markets/RationalHippy/will-an-autonomous-agent-resolve-90-97377876242a"
+    },
+    {
+      "question": "METR time-horizon doubling time in 2026?",
+      "platform": "Manifold",
+      "forecast": "3-3.5 mo = 32% (3.5-4mo 18%, 4-4.5mo 16%)",
+      "category": "capability",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-12-31",
+      "url": "https://manifold.markets/Bayesian/what-will-be-the-metr-time-horizon"
+    },
+    {
+      "question": "Will we get AGI before 2027?",
+      "platform": "Manifold",
+      "forecast": "3% — Manifold",
+      "category": "capability",
+      "relevantBenchmark": "other",
+      "resolveDate": "2027-01-01",
+      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2027-d7b5f2b00ace"
+    },
+    {
+      "question": "Will we get AGI before 2028?",
+      "platform": "Manifold",
+      "forecast": "17% — Manifold",
+      "category": "capability",
+      "relevantBenchmark": "other",
+      "resolveDate": "2028-01-01",
+      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346"
+    },
+    {
+      "question": "Will we get AGI before 2030?",
+      "platform": "Manifold",
+      "forecast": "38% — Manifold",
+      "category": "capability",
+      "relevantBenchmark": "other",
+      "resolveDate": "2030-01-01",
+      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2030"
     }
   ],
   "historics": [
@@ -1295,19 +1394,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the standings. Polymarket gives it 91% for best AI model at end-July against Google's 8%, with OpenAI barely registering in that short-dated market. Claude Opus 4.8 leads the AA Index (v4.1) at 56 over GPT-5.5 (55) and Sonnet 5 (53). Stretch the horizon to end-2026 and the lead compresses — Anthropic 64%, Google 14% — as traders price in a full year of competitor releases."
+      "t": "Anthropic still owns the near-term crown but the margin is thinning. Polymarket has Anthropic at 84.5% for best model end of July, down from ~91% a week ago, with Google up to 12% and OpenAI a distant 3%. That drift lines up with the leaderboard: Claude Fable 5 just took #1 on the Artificial Analysis Index at 60 (v4.1), ahead of Opus 4.8 (56) and GPT-5.5 (55). Longer out, the field opens up — end-of-2026 best-model sits Anthropic 64%, Google 14%, OpenAI 11%."
     },
     {
       "h": "What ships next —",
-      "t": "GPT-5.6 is the imminent catalyst. It's already in gov-vetted preview to ~20 partners; the open question is public access. Polymarket firmed the July 9 flip to 64% (up from ~59%) and pushed the 'public on July 7' contract up 26 points in a day to 64%, while 'released by July 31' sits at 98%. Gemini 3.5 Pro trails — Manifold gives it just 14% on the API by July 12 but 99% by July 31, reflecting a delayed ~July 17 GA target after Google's architectural rebuild."
+      "t": "GPT-5.6's public release is the imminent catalyst, but today's flip missed: Polymarket's 'public July 7' contract collapsed to 9% and the modal ship date slid to July 9 (68%), with 'by July 31' locked at 98.75%. Google's next reasoning flagship (Gemini 3.5 Pro) is priced 81% to land by month-end after an architectural rebuild, GA targeted around July 17. GPT-6 remains a year-end story at best — 70% by Dec 31, just 44% by September."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "No benchmark SOTA moved this sweep. Gemini 3.5 Flash's reported AA score (~50) sits below the Opus 4.8 frontier at 56, and Gemini 3.5 Pro's numbers stay unpublished until GA. The action is in agentic evals — Terminal-Bench, GDPval, MCP Atlas — where coding and tool-use reliability, not raw knowledge, now separate the flagships."
+      "t": "Coding evals are nearly maxed in the market's eyes. Manifold puts a 94% chance Claude Sonnet 5 clears 85% on SWE-bench Verified, and 85% that an autonomous agent resolves 90% of SWE-bench tasks by 2027. FrontierMath Tier 4 — once thought a hard wall — is priced 93% to see a 90%+ score by year-end. The next Gemini Pro is favored to debut at 1480+ Elo (93%) on the arena."
     },
     {
       "h": "The long game —",
-      "t": "AGI-timeline markets remain the slow story: Metaculus community forecasts still cluster around a 25% chance by 2027 and 50% by the early 2030s, little changed sweep-to-sweep. The nearer-term signal is consolidation — a handful of labs shipping near-monthly, the open frontier a step behind, and export-control politics (this month's Fable 5 / Mythos 5 freeze and thaw) now a live variable in who can ship what, when."
+      "t": "AGI timelines stay sober despite the capability sprint. Manifold prices AGI before 2027 at just 3%, before 2028 at 17%, and before 2030 at 38% — a market that expects steady, compounding progress rather than a near-term discontinuity. METR's task time-horizon is seen doubling every 3-3.5 months this year (32%), the quiet metric worth watching as agents stretch from minutes to hours of autonomous work."
     }
   ]
 }
