@@ -1,9 +1,9 @@
 {
-  "updated": "2026-07-07T03:06:54-04:00",
+  "updated": "2026-07-07T06:04:25-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
-      "question": "Which company has the best AI model end of 2026?",
+      "question": "Which company has best AI model end of 2026?",
       "platform": "Polymarket",
       "forecast": "Anthropic 64% (Google 14%)",
       "category": "ranking",
@@ -149,7 +149,7 @@
     {
       "question": "GPT-5.6 released by...?",
       "platform": "Polymarket",
-      "forecast": "98% — released by Jul 31",
+      "forecast": "98% — by July 31 (July 24 at 94%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -392,7 +392,7 @@
     {
       "question": "Will Google DeepMind release Gemini 3.5 by July 31, 2026?",
       "platform": "Manifold",
-      "forecast": "99% — YES, by Jul 31 (Flash already out; Pro GA still in preview)",
+      "forecast": "99% — by July 31",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -410,7 +410,7 @@
     {
       "question": "GPT-5.6 released on...?",
       "platform": "Polymarket",
-      "forecast": "59% — Polymarket, Jul 9 the central date (softened from ~67%)",
+      "forecast": "64% — July 9 frontrunner (July 10 at 7%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -419,7 +419,7 @@
     {
       "question": "Will Gemini 3.5 Pro be released on the Gemini API by July 12?",
       "platform": "Manifold",
-      "forecast": "13% — Manifold, by Jul 12",
+      "forecast": "14% — by July 12",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-12",
@@ -1295,19 +1295,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the frontier: Polymarket gives it ~91% for the best AI model at end-July, with Google a distant ~8% and OpenAI/xAI in the low single digits. That tracks the leaderboard — Claude Opus 4.8 leads the Artificial Analysis Intelligence Index (v4.1) at 56, ahead of GPT-5.5 (55), Sonnet 5 (53) and Gemini 3.1 Pro (46). The compressed timeline to July 31 leaves rivals little room to ship and validate something better."
+      "t": "Anthropic still owns the standings. Polymarket gives it 91% for best AI model at end-July against Google's 8%, with OpenAI barely registering in that short-dated market. Claude Opus 4.8 leads the AA Index (v4.1) at 56 over GPT-5.5 (55) and Sonnet 5 (53). Stretch the horizon to end-2026 and the lead compresses — Anthropic 64%, Google 14% — as traders price in a full year of competitor releases."
     },
     {
       "h": "What ships next —",
-      "t": "Two imminent releases dominate the release markets, and both drifted this sweep. GPT-5.6's most-watched ship date, July 9, softened to 59% (from ~67%) as OpenAI's Sol/Terra/Luna suite stays gated to ~20 government-vetted orgs; 'released by July 31' is near-certain at 98%. Google's Gemini 3.5 Pro slipped again after a full rebuild (2M context, Deep Think), now eyeing ~July 17 — the 'on the API by July 12' market sits at just 13%."
+      "t": "GPT-5.6 is the imminent catalyst. It's already in gov-vetted preview to ~20 partners; the open question is public access. Polymarket firmed the July 9 flip to 64% (up from ~59%) and pushed the 'public on July 7' contract up 26 points in a day to 64%, while 'released by July 31' sits at 98%. Gemini 3.5 Pro trails — Manifold gives it just 14% on the API by July 12 but 99% by July 31, reflecting a delayed ~July 17 GA target after Google's architectural rebuild."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "GPQA Diamond is effectively pinned near its ~95-96% noise ceiling, so the live frontier fight is on agentic coding: SWE-bench Pro, where Opus 4.8 leads the vendor frame at 69.2% and the standardized SEAL track sits far lower (~59%). No new benchmark SOTA landed this sweep; the next real move waits on GPT-5.6 going public or Gemini 3.5 Pro's GA numbers."
+      "t": "No benchmark SOTA moved this sweep. Gemini 3.5 Flash's reported AA score (~50) sits below the Opus 4.8 frontier at 56, and Gemini 3.5 Pro's numbers stay unpublished until GA. The action is in agentic evals — Terminal-Bench, GDPval, MCP Atlas — where coding and tool-use reliability, not raw knowledge, now separate the flagships."
     },
     {
       "h": "The long game —",
-      "t": "Conviction on a 2026 GPT-6 holds steady at 68% by December 31 (21% by September 30), consistent with OpenAI's shorter post-GPT-5 cadence and Stargate-scale compute builds. Grok 5 and the next Claude Opus are both teased for 2026 but carry no dated markets yet. The through-line: capability, not access, is the scarce thing — and the export/gating regime around GPT-5.6 and Fable 5 is the wildcard on when the public actually gets the frontier."
+      "t": "AGI-timeline markets remain the slow story: Metaculus community forecasts still cluster around a 25% chance by 2027 and 50% by the early 2030s, little changed sweep-to-sweep. The nearer-term signal is consolidation — a handful of labs shipping near-monthly, the open frontier a step behind, and export-control politics (this month's Fable 5 / Mythos 5 freeze and thaw) now a live variable in who can ship what, when."
     }
   ]
 }
