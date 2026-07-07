@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T09:59:25-04:00",
+  "updated": "2026-07-07T12:04:36-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -1394,19 +1394,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the near-term crown but the margin is thinning. Polymarket has Anthropic at 84.5% for best model end of July, down from ~91% a week ago, with Google up to 12% and OpenAI a distant 3%. That drift lines up with the leaderboard: Claude Fable 5 just took #1 on the Artificial Analysis Index at 60 (v4.1), ahead of Opus 4.8 (56) and GPT-5.5 (55). Longer out, the field opens up — end-of-2026 best-model sits Anthropic 64%, Google 14%, OpenAI 11%."
+      "t": "Anthropic remains the clear favorite for best model at month's end, priced around 85% on Polymarket with Google a distant second near 12% and OpenAI trailing. That reflects the leaderboard: Claude Fable 5 sits #1 on the Artificial Analysis Intelligence Index at 60 (v4.1), ahead of its own Opus 4.8 (56) and OpenAI's GPT-5.5 (55), with Sonnet 5 close behind at 53."
     },
     {
       "h": "What ships next —",
-      "t": "GPT-5.6's public release is the imminent catalyst, but today's flip missed: Polymarket's 'public July 7' contract collapsed to 9% and the modal ship date slid to July 9 (68%), with 'by July 31' locked at 98.75%. Google's next reasoning flagship (Gemini 3.5 Pro) is priced 81% to land by month-end after an architectural rebuild, GA targeted around July 17. GPT-6 remains a year-end story at best — 70% by Dec 31, just 44% by September."
+      "t": "GPT-5.6's public launch is the imminent story: 'released by July 31' holds near-certain (~99%), but the modal date has slid to about July 9 after the July-7 leg missed, and it stays gated to ~20 government-vetted partners. Google's Gemini 3.5 Pro is priced ~81% to land by July 31, with a rebuilt architecture (2M context, Deep Think) targeting a ~July 17 GA."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "Coding evals are nearly maxed in the market's eyes. Manifold puts a 94% chance Claude Sonnet 5 clears 85% on SWE-bench Verified, and 85% that an autonomous agent resolves 90% of SWE-bench tasks by 2027. FrontierMath Tier 4 — once thought a hard wall — is priced 93% to see a 90%+ score by year-end. The next Gemini Pro is favored to debut at 1480+ Elo (93%) on the arena."
+      "t": "The coding and reasoning frontier is compressing near the ceiling: Fable 5 reports ~95% SWE-bench Verified and ~80% SWE-bench Pro, Opus 4.8 leads Humanity's Last Exam at ~58% with tools, and GPQA Diamond now clusters in the low-90s across flagships. Gains are increasingly agentic and long-horizon rather than raw knowledge."
     },
     {
       "h": "The long game —",
-      "t": "AGI timelines stay sober despite the capability sprint. Manifold prices AGI before 2027 at just 3%, before 2028 at 17%, and before 2030 at 38% — a market that expects steady, compounding progress rather than a near-term discontinuity. METR's task time-horizon is seen doubling every 3-3.5 months this year (32%), the quiet metric worth watching as agents stretch from minutes to hours of autonomous work."
+      "t": "Further out, Polymarket puts GPT-6 by December at ~70% (Sep 30 window ~44%), while Grok 5 and the next Claude Opus have no dated markets yet. AGI-timeline questions stay far off, and the near-term contest is efficiency and cost — underscored by cost-conscious US firms migrating toward 60-90%-cheaper Chinese open-weight models."
     }
   ]
 }
