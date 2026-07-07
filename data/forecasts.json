@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T00:03:30-04:00",
+  "updated": "2026-07-07T03:06:54-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,9 +14,9 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 91% (Google 8%, OpenAI ~1%)",
+      "forecast": "Anthropic 91% (Google 8%)",
       "category": "ranking",
-      "relevantBenchmark": "AA-Index",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -149,7 +149,7 @@
     {
       "question": "GPT-5.6 released by...?",
       "platform": "Polymarket",
-      "forecast": "96% — by July 31",
+      "forecast": "98% — released by Jul 31",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -410,11 +410,20 @@
     {
       "question": "GPT-5.6 released on...?",
       "platform": "Polymarket",
-      "forecast": "67% — July 9 (July 7 ~12%, July 10 ~5%)",
+      "forecast": "59% — Polymarket, Jul 9 the central date (softened from ~67%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/gpt-5pt6-released-onptptpt-20260623051439980"
+    },
+    {
+      "question": "Will Gemini 3.5 Pro be released on the Gemini API by July 12?",
+      "platform": "Manifold",
+      "forecast": "13% — Manifold, by Jul 12",
+      "category": "release",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-07-12",
+      "url": "https://manifold.markets/Web3ICP/will-gemini-35-pro-be-released-on-t"
     }
   ],
   "historics": [
@@ -1286,19 +1295,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic remains the runaway favorite for the best model at end-July, holding ~91% on Polymarket against Google's ~8% and low-single-digits for everyone else. That tracks the leaderboard: Claude Opus 4.8 leads the Artificial Analysis Index (v4.1) at 56, with GPT-5.5 at 55, Claude Sonnet 5 at 53 and Gemini 3.1 Pro at 46. With three weeks to resolution, traders see little runway for a rival to ship and validate a clear number-one."
+      "t": "Anthropic still owns the frontier: Polymarket gives it ~91% for the best AI model at end-July, with Google a distant ~8% and OpenAI/xAI in the low single digits. That tracks the leaderboard — Claude Opus 4.8 leads the Artificial Analysis Intelligence Index (v4.1) at 56, ahead of GPT-5.5 (55), Sonnet 5 (53) and Gemini 3.1 Pro (46). The compressed timeline to July 31 leaves rivals little room to ship and validate something better."
     },
     {
       "h": "What ships next —",
-      "t": "All eyes are on OpenAI's GPT-5.6, live since June 26 but gated to ~20 US-government-vetted partners. The market centers the broad public flip on July 9 (~67%), with July 7 faded to ~12%, and prices a public release 'by July 31' at ~96%. Beyond that, Google's Gemini 3.5 Pro (2M context) is past its June GA target and still in preview, while Grok 5 and the next Claude Opus remain undated."
+      "t": "Two imminent releases dominate the release markets, and both drifted this sweep. GPT-5.6's most-watched ship date, July 9, softened to 59% (from ~67%) as OpenAI's Sol/Terra/Luna suite stays gated to ~20 government-vetted orgs; 'released by July 31' is near-certain at 98%. Google's Gemini 3.5 Pro slipped again after a full rebuild (2M context, Deep Think), now eyeing ~July 17 — the 'on the API by July 12' market sits at just 13%."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The intelligence-index cluster has compressed to a 10-point band at the top, and coding is where separation still shows: Opus 4.8 leads SWE-bench Pro at 69.2%, with open-weight models like GLM-5.2 (62.1%) and Meituan's LongCat-2.0 (59.5%) now edging GPT-5.5. Frontier math and agentic terminal benches are the live battleground as classic tests like MMLU and GPQA flatten near their ceilings."
+      "t": "GPQA Diamond is effectively pinned near its ~95-96% noise ceiling, so the live frontier fight is on agentic coding: SWE-bench Pro, where Opus 4.8 leads the vendor frame at 69.2% and the standardized SEAL track sits far lower (~59%). No new benchmark SOTA landed this sweep; the next real move waits on GPT-5.6 going public or Gemini 3.5 Pro's GA numbers."
     },
     {
       "h": "The long game —",
-      "t": "GPT-6 anchors the horizon: Polymarket puts it at 68% by December 31 and ~21% by September 30, reflecting a view that GPT-5.5 already absorbed much of what was teased for a full numbered jump. The bigger story off the model race is structural — OpenAI's proposed ~5% US-government equity stake and a tightening White House export regime are reshaping who gets to ship the frontier, and when."
+      "t": "Conviction on a 2026 GPT-6 holds steady at 68% by December 31 (21% by September 30), consistent with OpenAI's shorter post-GPT-5 cadence and Stargate-scale compute builds. Grok 5 and the next Claude Opus are both teased for 2026 but carry no dated markets yet. The through-line: capability, not access, is the scarce thing — and the export/gating regime around GPT-5.6 and Fable 5 is the wildcard on when the public actually gets the frontier."
     }
   ]
 }

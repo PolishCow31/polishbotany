@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-06T00:04:08-04:00",
+  "updated": "2026-07-07T03:06:54-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -888,6 +888,16 @@
       "aka": [
         "CommonCrawl",
         "CC"
+      ]
+    },
+    {
+      "term": "Compressed Sparse Attention",
+      "acronym": "CSA",
+      "category": "Model architecture",
+      "def": "DeepSeek-V4's hybrid attention stack (paired with Heavily Compressed Attention) needing ~27% of prior per-token FLOPs and ~10% of the KV cache at 1M-token context.",
+      "aka": [
+        "CSA",
+        "Heavily Compressed Attention"
       ]
     },
     {
@@ -2222,6 +2232,15 @@
         "ICL",
         "in context learning",
         "learning from examples in the prompt"
+      ]
+    },
+    {
+      "term": "IndexShare Attention",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Attention mechanism introduced in Zhipu's GLM-5.2 that shares index structure across tokens to cut per-token FLOPs roughly 2.9x at 1M-token context.",
+      "aka": [
+        "IndexShare"
       ]
     },
     {
