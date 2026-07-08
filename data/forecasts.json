@@ -1,23 +1,23 @@
 {
-  "updated": "2026-07-08T15:03:54-04:00",
+  "updated": "2026-07-08T18:05:45-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
       "question": "Which company has best AI model end of 2026?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 63% (Google 15%) — Anthropic keeps a wide year-end lead over the field",
+      "forecast": "Anthropic 63% (Google 15%, OpenAI ~10%, xAI ~8%)",
       "category": "ranking",
-      "relevantBenchmark": "Artificial Analysis Intelligence Index",
+      "relevantBenchmark": "AA-Index",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 89% — firmed as Fable 5/Opus 4.8 hold the AA Index and SWE-bench lead into the Jul 30 resolution",
+      "forecast": "87% Anthropic (others in low single digits)",
       "category": "ranking",
-      "relevantBenchmark": "Artificial Analysis Intelligence Index",
-      "resolveDate": "2026-07-30",
+      "relevantBenchmark": "AA-Index",
+      "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
     {
@@ -32,7 +32,7 @@
     {
       "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "71% by Dec 31 (Sep 30 window ~41%) — conviction steady for a Q4 launch",
+      "forecast": "71% by Dec 31 (Sep 30 ~41%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -93,12 +93,12 @@
       "url": "https://www.metaculus.com/questions/41131/top-arc-agi-2-score-in-2026/"
     },
     {
-      "question": "When will weakly general AI arrive?",
+      "question": "When will weakly general AI be publicly known?",
       "platform": "Metaculus",
-      "forecast": "Median Jun 20 2028 — Metaculus (range Nov 2026 – Mar 2032)",
+      "forecast": "Median ~Jun 2028 (CI Nov 2026 – Mar 2032)",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2028-06-20",
+      "resolveDate": "2032-12-31",
       "url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/"
     },
     {
@@ -372,12 +372,12 @@
       "url": "https://polymarket.com/event/will-anthropic-or-openai-ipo-first"
     },
     {
-      "question": "When will the first general AI (AGI) be devised, tested and publicly announced?",
+      "question": "When will the first general AI system be devised, tested, and publicly announced?",
       "platform": "Metaculus",
-      "forecast": "Median Jan 2033 — community estimate (CI 2029–2040)",
+      "forecast": "Median ~Feb 2028 (1,700+ forecasters)",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2033-01-01",
+      "resolveDate": "2033-12-31",
       "url": "https://www.metaculus.com/questions/5121/when-will-the-first-general-ai-system-be-devised-tested-and-publicly-announced/"
     },
     {
@@ -401,7 +401,7 @@
     {
       "question": "Next Google Gemini Pro Model released by...?",
       "platform": "Polymarket",
-      "forecast": "91% by Jul 31 (Jul 31 outcome 82%, Jul 17 ~62%) — traders converge on a mid-July Gemini 3.5 Pro landing",
+      "forecast": "95% by Jul 31 (Jul 17 date ~60%)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -527,10 +527,10 @@
     {
       "question": "Which company has second best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "91% — Anthropic (OpenAI 6%), Polymarket",
+      "forecast": "91% Anthropic — traders see it holding both top spots",
       "category": "ranking",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-07-30",
+      "relevantBenchmark": "AA-Index",
+      "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-second-best-ai-model-end-of-july"
     },
     {
@@ -1438,20 +1438,20 @@
   ],
   "marketsStory": [
     {
-      "h": "The race right now —",
-      "t": "Anthropic still owns the frontier. Polymarket's 'best AI model end of July' firmed to ~89% for Anthropic, with Fable 5 (AA Index 60, v4.1) and Opus 4.8 (56) topping the leaderboard and SWE-bench coding. The year-end market echoes it at Anthropic 63%, Google a distant 15%, and OpenAI, xAI and the rest splitting the remainder."
+      "h": "Anthropic still owns the race —",
+      "t": "Anthropic's Fable 5 leads the Artificial Analysis Intelligence Index at 60 (v4.1), and prediction markets are near-unanimous: Polymarket's 'best AI model end of July' sits at ~87% Anthropic, and traders even give Anthropic the second spot at 91%, implying it holds both. The year-end market is looser but still Anthropic-first at 63%, with Google 15% and OpenAI and xAI in single digits."
     },
     {
-      "h": "What ships next —",
-      "t": "Two clocks dominate. OpenAI's GPT-5.6 (Sol/Terra/Luna) goes broadly public July 9 after Commerce lifted its safety hold — cleared and dated, not a bet. Google's Gemini 3.5 Pro now targets July 17: the by-July-31 market reads 91%, the July 17 date itself ~62%. Further out, GPT-6 by December holds at 71%."
+      "h": "The ship queue is crowded this week —",
+      "t": "Today xAI dropped Grok 4.5, a cheaper 'Opus-class' model that debuts #4 on the index (54). OpenAI's GPT-5.6 (Sol/Terra/Luna) goes broadly public tomorrow, Jul 9, after Commerce lifted its safety hold — effectively a ~98% lock. Next is Google's Gemini 3.5 Pro, pegged for Jul 17 with a 95% Polymarket chance of shipping by Jul 31; GPT-6 remains a Q4 story at ~71% by December."
     },
     {
-      "h": "Benchmarks saturating —",
-      "t": "GPQA Diamond is effectively pinned near its ~95-96% noise ceiling (Gemini 3.1 Pro 94.3, Opus 4.7 94.2), so it no longer ranks the frontier. The live contest is SWE-bench Pro and Terminal-Bench, where vendor-reported scores sit in the 60s-80s and the standardized SEAL frame runs ~10 points cooler — leaving real headroom to move."
+      "h": "Benchmarks keep saturating at the top —",
+      "t": "Raw SWE-bench is near its ceiling (Fable 5 ~95%), so the fight has moved to agentic and long-horizon evals: Terminal-Bench 2.1 (Grok 4.5 83.3, GLM-5.2 82.7), SWE-bench Pro (Opus 4.8 69.2), and Humanity's Last Exam (Opus 4.8 57.9). Token efficiency is now a headline metric — Grok 4.5 resolves tasks with ~4x fewer output tokens than Opus 4.8."
     },
     {
-      "h": "The long game —",
-      "t": "The AA Intelligence Index, rebased in January onto a harder v4.1 mix, sits around 56-60 at the frontier; forecasts put the best public model near ~62 by year-end, with the hardest evals (HLE, CritPt) as the binding constraint. AGI-timeline and automation markets remain the wildcard, but nothing this sweep moved the multi-year horizon."
+      "h": "The long game stays years out —",
+      "t": "Despite the sprint of releases, forecasters keep AGI on a multi-year horizon: Metaculus's community median for the first publicly-announced general AI system sits around February 2028, and 'weakly general AI' near mid-2028. The near-term action is consolidation — cheaper, faster, more agentic models — not a step-change to general intelligence."
     }
   ]
 }

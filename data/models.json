@@ -1720,6 +1720,30 @@
         "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"
       ]
+    },
+    {
+      "name": "Grok 4.5",
+      "lab": "xAI",
+      "released": "2026-07-08",
+      "params": "~1.5T (V9 foundation, MoE)",
+      "context": "500K",
+      "modality": "multimodal (text + vision), text out, reasoning",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 54,
+        "SWE-bench Pro": 64.7,
+        "Terminal-Bench 2.1": 83.3,
+        "DeepSWE 1.0": 62.0
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "xAI's 'cheap frontier' flagship (the lab now branded SpaceXAI after the SpaceX tie-up and the ~$60B Cursor acquisition), co-trained with the Cursor coding editor. Musk calls it 'Opus-class but faster, more token-efficient and lower cost.' Artificial Analysis Intelligence Index 54 (v4.1) — #4 behind Fable 5 (60), Opus 4.8 (56) and GPT-5.5 (55), and on par with GPT-5.5 on the AA Coding Agent Index at far lower cost. Standout token efficiency: ~16K output tokens per SWE-bench Pro task vs ~67K for Opus 4.8 (4.2x fewer); ~1.9M avg tokens/task vs Fable 5's 7.2M in Claude Code. Terminal-Bench 2.1 83.3%, GDPval-AA #4 (Elo 1543). Default in Grok Build, ~80 tok/s. Context cut to 500K from Grok 4.3's 1M. $2/$6.",
+      "pricing": "$2 in / $6 out per 1M",
+      "sources": [
+        "https://x.ai/news/grok-4-5",
+        "https://www.axios.com/2026/07/08/spacexai-grok-new-model",
+        "https://x.com/ArtificialAnlys/status/2074956932289282087"
+      ]
     }
   ]
 }
