@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T03:06:54-04:00",
+  "updated": "2026-07-07T21:04:23-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -394,6 +394,16 @@
       "aka": [
         "Abstraction and Reasoning Corpus v2",
         "ARC AGI 2"
+      ]
+    },
+    {
+      "term": "ARC-AGI-3",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Third-generation Abstraction and Reasoning Corpus benchmark, an interactive/agentic successor to ARC-AGI-2 designed to resist memorization and test fluid, few-shot reasoning where frontier models still score far below humans.",
+      "aka": [
+        "Abstraction and Reasoning Corpus 3",
+        "ARC-AGI-3 interactive"
       ]
     },
     {
@@ -1328,6 +1338,17 @@
         "prefill-decode disaggregation",
         "PD disaggregation",
         "disaggregated serving"
+      ]
+    },
+    {
+      "term": "Discrete diffusion language model",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A text model that generates by iteratively denoising blocks of tokens in parallel rather than left-to-right autoregression, trading some quality for large throughput gains; used by open text-diffusion LLMs like DiffusionGemma.",
+      "aka": [
+        "text diffusion LLM",
+        "diffusion language model",
+        "parallel token denoising"
       ]
     },
     {
