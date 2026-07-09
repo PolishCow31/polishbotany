@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T00:04:18-04:00",
+  "updated": "2026-07-09T03:03:58-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,7 +14,7 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "84.5% — Anthropic (Google 10.4%, OpenAI 5.9%, xAI 0.4%)",
+      "forecast": "87% — Anthropic (Google ~10%, OpenAI ~6%, xAI <1%), resolves Jul 31",
       "category": "ranking",
       "relevantBenchmark": "LMArena",
       "resolveDate": "2026-07-31",
@@ -32,7 +32,7 @@
     {
       "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "85.5% — by Dec 31 2026 (65% by Sep 30, 60.5% by Aug 31)",
+      "forecast": "67.5% — by Dec 31 2026 (39.5% by Sep 30)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -59,7 +59,7 @@
     {
       "question": "AI model scores >=90% on FrontierMath before 2027?",
       "platform": "Polymarket",
-      "forecast": "45% — Yes, Polymarket",
+      "forecast": "45% — Yes",
       "category": "benchmark",
       "relevantBenchmark": "FrontierMath",
       "resolveDate": "2026-12-31",
@@ -68,7 +68,7 @@
     {
       "question": "OpenAI announces it has achieved AGI before 2027?",
       "platform": "Polymarket",
-      "forecast": "13% — Yes, Polymarket",
+      "forecast": "13% — Yes",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -120,7 +120,7 @@
       "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
     },
     {
-      "question": "Top ARC-AGI-2 score in 2026?",
+      "question": "Top ARC-AGI-2 score achieved by any AI in 2026",
       "platform": "Metaculus",
       "forecast": "93.4% — community median (50% CI 89.3-96.7)",
       "category": "benchmark",
@@ -140,7 +140,7 @@
     {
       "question": "When will the first general AI system be devised, tested, and publicly announced? (strong AGI)",
       "platform": "Metaculus",
-      "forecast": "Community median Mar 2033. 1.9k forecasters — Metaculus's flagship strong-AGI question.",
+      "forecast": "Median Mar 2033 — 1.9k forecasters",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2033-12-31",
@@ -399,9 +399,9 @@
       "url": "https://manifold.markets/CalibratedGhosts/will-google-deepmind-release-gemini"
     },
     {
-      "question": "Next Google Gemini Pro model released by...?",
+      "question": "Next Google Gemini Pro Model released by...?",
       "platform": "Polymarket",
-      "forecast": "88.5% — by Jul 31 (by Jul 24: 29.5%, by Jul 17: 18.5%)",
+      "forecast": "82% — by Jul 31 2026",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -604,6 +604,15 @@
       "relevantBenchmark": "IMO",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/ai-wins-imo-gold-medal-in-2026"
+    },
+    {
+      "question": "Next Google Gemini Pro Model released on...?",
+      "platform": "Polymarket",
+      "forecast": "55% — Jul 17 2026 (22% no release by Jul 31)",
+      "category": "release",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-07-31",
+      "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-onptptpt-20260626213101460"
     }
   ],
   "historics": [
@@ -1475,19 +1484,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the top of every ranking market. Polymarket's 'best model end of July' holds at 84.5% Anthropic, with Google a distant 10.4% and OpenAI under 6%; the end-of-2026 book has Anthropic at 62.5% over Google's 15.5% and OpenAI's 11%. That lines up with the leaderboard, where Fable 5 (AA Index 60) leads its own Opus 4.8 (56) and GPT-5.5 (55). Traders price contest, not a coronation, but Anthropic is clearly ahead."
+      "t": "Anthropic still owns the top of every ranking market, and traders leaned into it this week. Polymarket's 'best model end of July' climbed to 87% Anthropic (up from ~84.5%), with Google a distant ~10% and OpenAI under 6%; the end-of-2026 book holds Anthropic at 62.5% over Google's 15.5% and OpenAI's 11%. That matches the leaderboard, where Fable 5 (AA Index 60) leads its own Opus 4.8 (56), GPT-5.5 (55) and Grok 4.5 (54)."
     },
     {
       "h": "What ships next —",
-      "t": "OpenAI's GPT-5.6 is the imminent catalyst: Polymarket prices a July 9 public launch at 96% after Commerce cleared the safety hold, though OpenAI itself hasn't committed to a hard GA date. Google's Gemini 3.5 Pro is the softer bet — 'by Jul 31' sits at 88.5% (rumored Jul 17 target) with its June window already lapsed. A next-gen Anthropic Opus before October reads 99% on Manifold given the near-monthly cadence."
+      "t": "OpenAI's GPT-5.6 stops being a forecast today: Sol, Terra and Luna go broadly public Jul 9 across API, Codex and ChatGPT after Commerce cleared the safety hold, so the imminent catalyst is now live and awaiting independent benchmarks. Google's Gemini 3.5 Pro is the next dated bet — 'by Jul 31' sits at 82% with a Jul 17 specific date at 55%. A next-gen Anthropic Opus before October reads ~99% on Manifold given the near-monthly cadence."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "Capability milestones keep the tension. Polymarket gives an AI IMO gold medal in 2026 a 60.5% shot and a >=90% FrontierMath score before 2027 about 45%. Metaculus's ARC-AGI-2 community median sits at 93.4% for the year — aggressive against sub-20% real 2025 scores, so the resolution scale is worth checking. The open frontier keeps closing: Tencent's Hy3 posts GPQA 90.4 and SWE-bench Verified 78 as an open-weight 295B/21B-active MoE."
+      "t": "Capability milestones keep the tension. Polymarket gives a >=90% FrontierMath score before 2027 about 45%, and Metaculus's ARC-AGI-2 community median sits at 93.4% for the year — aggressive against sub-20% real 2025 scores, so the resolution scale is worth checking. The open frontier keeps closing: Tencent's Hy3 posts GPQA Diamond 90.4 and SWE-bench Verified 78 as an open-weight 295B/21B-active MoE."
     },
     {
       "h": "The long game —",
-      "t": "AGI timelines stay far out relative to the release churn. Polymarket puts OpenAI declaring AGI before 2027 at just 13%, and Metaculus community medians sit around 2028 for weakly-general AI and March 2033 for a full general system. The gap between fast, near-monthly incremental gains and the strict AGI bar remains the defining tension heading into late 2026."
+      "t": "AGI timelines stay far out relative to the release churn. Polymarket puts OpenAI declaring AGI before 2027 at just 13%, and Metaculus community medians sit around June 2028 for weakly-general AI and March 2033 for a full general system. The gap between fast, near-monthly incremental gains and the strict AGI bar remains the defining tension heading into late 2026."
     }
   ]
 }
