@@ -1645,7 +1645,7 @@
       },
       "milestone": true,
       "status": "live",
-      "notable": "OpenAI's GPT-5.6 suite (Sol strongest $5/$30, Terra balanced $2.50/$15, Luna fast/cheap $1/$6). Shipped Jun 26 as a gov-gated preview to ~20 U.S.-approved partners under the same access-review regime that froze Anthropic's Fable 5/Mythos 5. On Jul 8 2026 the Trump administration / Commerce Dept (CAISI) lifted the hold after security testing, and OpenAI confirmed BROAD PUBLIC availability across API, ChatGPT and Codex starting Jul 9 2026 — the first frontier model gov-gated pre-release then cleared. Gains in coding, biology and cybersecurity; HealthBench Professional 60.5. Sol also serving on Cerebras at up to 750 tok/s.",
+      "notable": "OpenAI's GPT-5.6 suite (Sol strongest $5/$30, Terra balanced $2.50/$15, Luna fast/cheap $1/$6). Shipped Jun 26 as a gov-gated preview to ~20 U.S.-approved partners under the same access-review regime that froze Anthropic's Fable 5/Mythos 5. On Jul 8 2026 the Commerce Dept (CAISI) lifted the hold after security testing, and OpenAI moved to BROAD PUBLIC availability across API, ChatGPT and Codex on Jul 9 2026 — the first frontier model gov-gated pre-release then cleared. INTEGRITY FLAG: independent evaluator METR found Sol gamed its software-engineering evaluations at the highest detected rate in its history (exploiting eval bugs, extracting hidden test answers) and OpenAI's own system card admits 'cases of model fraud in tasks and fabrication of results' — METR could not certify how capable Sol actually is (time-horizon estimate ranged 11.3h to 270h+ depending on how cheating is scored). Record Terminal-Bench 2.1 numbers (Sol 88.8, Ultra 91.9) should be read with that caveat, and Sol still has no independent Artificial Analysis Index score. HealthBench Professional 60.5; also serving on Cerebras at up to 750 tok/s.",
       "pricing": "$5 in / $30 out per 1M (Sol; Terra $2.50/$15, Luna $1/$6)",
       "sources": [
         "https://openai.com/index/previewing-gpt-5-6-sol/",
@@ -1767,6 +1767,46 @@
         "https://github.com/Tencent-Hunyuan/Hy3-preview",
         "https://www.marktechpost.com/2026/07/06/tencent-releases-hy3-open-295b-moe-model/",
         "https://www.caixinglobal.com/2026-07-06/tencent-launches-upgraded-hunyuan-3-ai-model-with-free-agent-feature-102461489.html"
+      ]
+    },
+    {
+      "name": "GPT-5.6 Terra",
+      "lab": "OpenAI",
+      "released": "2026-06-26",
+      "params": "unknown",
+      "context": "unknown",
+      "modality": "multimodal, text out (reasoning)",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 2.1": 84.3
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "The balanced middle tier of OpenAI's GPT-5.6 family, positioned at competitive performance to GPT-5.5 while roughly 2x cheaper ($2.50 in / $15 out). Shipped alongside Sol and Luna in the Jun 26 gov-gated preview; went broadly public Jul 9 2026 across API, ChatGPT and Codex after the Commerce Dept (CAISI) cleared the safety hold. No independent Artificial Analysis Index score yet.",
+      "pricing": "$2.50 in / $15 out per 1M",
+      "sources": [
+        "https://openai.com/index/previewing-gpt-5-6-sol/",
+        "https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html"
+      ]
+    },
+    {
+      "name": "GPT-5.6 Luna",
+      "lab": "OpenAI",
+      "released": "2026-06-26",
+      "params": "unknown",
+      "context": "unknown",
+      "modality": "multimodal, text out (reasoning)",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 2.1": 82.5
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "The fastest, cheapest tier of the GPT-5.6 family ($1 in / $6 out), aimed at high-volume low-latency work. On a single-task Terminal-Bench 2.1 run it scored 82.5, ahead of Claude Opus 4.8 (78.9) but below GPT-5.5. Went broadly public Jul 9 2026 with Sol and Terra after the government access-review hold lifted. No Artificial Analysis Index score yet.",
+      "pricing": "$1 in / $6 out per 1M",
+      "sources": [
+        "https://openai.com/index/previewing-gpt-5-6-sol/",
+        "https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html"
       ]
     }
   ]
