@@ -1744,6 +1744,30 @@
         "https://www.axios.com/2026/07/08/spacexai-grok-new-model",
         "https://x.com/ArtificialAnlys/status/2074956932289282087"
       ]
+    },
+    {
+      "name": "Tencent Hy3",
+      "lab": "Tencent",
+      "released": "2026-07-06",
+      "params": "295B total / 21B active (MoE, 192 experts, top-8)",
+      "context": "256K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 78.0,
+        "SWE-bench Pro": 57.9,
+        "GPQA Diamond": 90.4,
+        "Terminal-Bench 2.1": 71.7,
+        "USAMO 2026": 72.0
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Open-weight (Apache 2.0) 295B/21B-active MoE; final GA of the Hunyuan 3 line, positioned to rival GLM-5.2 and DeepSeek-V4 at smaller size.",
+      "sources": [
+        "https://github.com/Tencent-Hunyuan/Hy3-preview",
+        "https://www.marktechpost.com/2026/07/06/tencent-releases-hy3-open-295b-moe-model/",
+        "https://www.caixinglobal.com/2026-07-06/tencent-launches-upgraded-hunyuan-3-ai-model-with-free-agent-feature-102461489.html"
+      ]
     }
   ]
 }

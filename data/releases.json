@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-08T18:05:45-04:00",
+  "updated": "2026-07-08T21:08:44-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,21 +7,21 @@
       "lab": "OpenAI",
       "expectedWindow": "Jul 9 2026",
       "expectedDate": "2026-07",
-      "prob": 98,
+      "prob": 96,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Commerce lifted the export/safety hold Jul 8; OpenAI confirmed broad public availability (API/ChatGPT/Codex) starting Jul 9. Sol/Terra/Luna all launch. Dated and cleared, not a market bet.",
-      "source": "https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html"
+      "basis": "Preview live to ~20 gov-vetted partners; broad public launch slated Jul 9 after Commerce lifted the safety hold. Polymarket prices Jul 9 at 96%.",
+      "source": "https://polymarket.com/event/gpt-5pt6-released-onptptpt-20260623051439980"
     },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
-      "expectedWindow": "~Jul 17 2026",
+      "expectedWindow": "by Jul 31 2026",
       "expectedDate": "2026-07",
-      "prob": 60,
+      "prob": 89,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Still in limited preview entering week two of July. Polymarket 'next Gemini Pro by Jul 31' at 95%; the Jul 17 date specifically ~60%. Google retrained the base model for math, SVG, image and coding.",
+      "basis": "3.5 Flash + 3.1 Pro are GA; 3.5 Pro still in enterprise/Vertex preview. Rumored Jul 17 target; Polymarket 88.5% it ships by Jul 31.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -29,11 +29,22 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 71,
+      "prob": 86,
       "frontier": true,
       "status": "rumored",
-      "basis": "Polymarket 'GPT-6 released by Dec 31' holds at ~71% (Sep 30 window ~41%). GPT-5.5/5.6 absorbed features once teased for GPT-6, so the label likely needs a bigger product moment.",
+      "basis": "No confirmed date; Polymarket cumulative 85.5% by Dec 31 (65% by Sep 30), heavily late-2026 weighted.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "Next Claude Opus (4.9 / 5)",
+      "lab": "Anthropic",
+      "expectedWindow": "by Oct 2026",
+      "expectedDate": "2026-10",
+      "prob": 99,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Manifold prices a next-gen Anthropic flagship before Oct 1 at 99.2%, given Anthropic's near-monthly cadence.",
+      "source": "https://manifold.markets/CalibratedGhosts/will-anthropic-release-claude-5-opu"
     },
     {
       "model": "Grok 5",
@@ -43,41 +54,19 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "xAI shipping fast — Grok 4.5 landed Jul 8 as an 'Opus-class' #4-index model. Musk has teased Grok 5 for 2026; no dated market yet.",
-      "source": "https://docs.x.ai/developers/grok-4-5"
-    },
-    {
-      "model": "Next Claude Opus (4.9 / 5)",
-      "lab": "Anthropic",
-      "expectedWindow": "by Dec 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": true,
-      "status": "rumored",
-      "basis": "Anthropic's Opus cadence has run ~6-10 weeks; Opus 4.8 shipped May 28, Sonnet 5 Jun 30. No dated market.",
-      "source": "https://www.anthropic.com/news"
+      "basis": "No live dated market; Grok 4.5 just shipped, so Grok 5 is a later-2026 story with no firm date.",
+      "source": "https://www.axios.com/2026/07/08/spacexai-grok-new-model"
     },
     {
       "model": "Mistral open-weight MoE",
       "lab": "Mistral AI",
       "expectedWindow": "by 2026",
-      "expectedDate": "2026-08",
+      "expectedDate": "2026-12",
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "CEO Mensch confirmed a new open-weight model family entering early access in July 2026 with research/government/industry partners; no name, params, or benchmarks published yet.",
-      "source": "https://mistral.ai/news"
-    },
-    {
-      "model": "DeepSeek-V4 (stable GA)",
-      "lab": "DeepSeek",
-      "expectedWindow": "by 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "V4-Pro/Flash shipped Apr 24 as preview; no stable GA yet. DeepSeek historically follows a preview with a refresh.",
-      "source": "https://api-docs.deepseek.com"
+      "basis": "Mistral's page flagged a reasoning/MoE follow-up to Large 3 as coming; no dated market.",
+      "source": "https://mistral.ai/news/mistral-3"
     }
   ]
 }
