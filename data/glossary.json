@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-07T21:04:23-04:00",
+  "updated": "2026-07-09T00:04:18-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -10,6 +10,16 @@
       "aka": [
         "Artificial Analysis Briefcase",
         "AA Briefcase"
+      ]
+    },
+    {
+      "term": "AA-LCR (Artificial Analysis Long Context Reasoning)",
+      "acronym": "AA-LCR",
+      "category": "Benchmarks & evals",
+      "def": "Artificial Analysis's eval measuring multi-step reasoning over long inputs, requiring a model to combine facts scattered across a large context rather than retrieve one span. A component of the AA Intelligence Index.",
+      "aka": [
+        "Artificial Analysis Long Context Reasoning",
+        "AA Long Context Reasoning"
       ]
     },
     {
@@ -2235,6 +2245,16 @@
       ]
     },
     {
+      "term": "IFBench (Instruction-Following Benchmark)",
+      "acronym": "IFBench",
+      "category": "Benchmarks & evals",
+      "def": "A benchmark testing precise adherence to explicit, verifiable instructions and constraints (format, length, inclusion/exclusion rules), scoring how reliably a model follows exactly what was asked. A component of the AA Intelligence Index.",
+      "aka": [
+        "Instruction Following Bench",
+        "Instruction-Following Benchmark"
+      ]
+    },
+    {
       "term": "IFEval",
       "acronym": "IFEval",
       "category": "Benchmarks & evals",
@@ -4374,6 +4394,15 @@
         "neural scaling laws",
         "scaling law",
         "compute scaling"
+      ]
+    },
+    {
+      "term": "SciCode",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A benchmark where models write code to solve research-level scientific problems across physics, chemistry, biology and math, graded by whether the generated code produces correct numerical results. Used in the AA Intelligence Index.",
+      "aka": [
+        "Scientific coding benchmark"
       ]
     },
     {
