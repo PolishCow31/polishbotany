@@ -1827,6 +1827,29 @@
         "https://www.axios.com/2026/07/08/openai-bets-voice-will-become-ais-primary-interface-with-new-models",
         "https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html"
       ]
+    },
+    {
+      "name": "Meta Muse Spark 1.1",
+      "lab": "Meta (Superintelligence Labs)",
+      "released": "2026-07-09",
+      "params": "unknown",
+      "context": "1M",
+      "modality": "multimodal (text/image/video in), text out (agentic reasoning)",
+      "open": false,
+      "benchmarks": {
+        "HLE": 62.1,
+        "SWE-bench Pro": 61.5,
+        "MCP Atlas": 88.1
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Meta's FIRST paid model — a pivot from the free-at-meta.ai original Muse Spark to charging on the new Meta Model API ($1.25 in / $4.25 out, $20 free credits to start). Multimodal reasoning built for agentic work: trained to orchestrate multi-agent systems for low end-to-end latency, zero-shot generalizes to new tools/MCP servers/skills, and actively compacts its 1M-token context. Meta's OWN reported numbers lead on tool-use benches (MCP Atlas 88.1, JobBench 54.7, HLE 62.1 — all above Opus 4.8/GPT-5.5 on Meta's card) but trail on pure coding (SWE-bench Pro 61.5 vs Opus 4.8's 69.2) and multimodal (BabyVision 76.3). Available in the Meta AI app's 'Thinking' mode; closed weights, US-only developer preview. No independent Artificial Analysis Index score yet.",
+      "pricing": "$1.25 in / $4.25 out per 1M",
+      "sources": [
+        "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/",
+        "https://www.axios.com/2026/07/09/meta-ai-spark-model-update-developer",
+        "https://www.digitalapplied.com/blog/meta-muse-spark-1-1-agentic-model-api-2026"
+      ]
     }
   ]
 }
