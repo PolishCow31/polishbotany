@@ -1808,6 +1808,25 @@
         "https://openai.com/index/previewing-gpt-5-6-sol/",
         "https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html"
       ]
+    },
+    {
+      "name": "GPT-Live-1",
+      "lab": "OpenAI",
+      "released": "2026-07-08",
+      "params": "unknown",
+      "context": "unknown",
+      "modality": "audio+text in, audio+text out (full-duplex real-time voice)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": true,
+      "status": "live",
+      "notable": "OpenAI's first full-duplex voice model — it keeps processing incoming audio while it speaks, so users can interrupt, pause to think, or hear natural backchannels ('mhmm', 'yeah') without it cutting out. Decouples the voice layer from reasoning: it handles simple turns itself and delegates web search / harder queries to GPT-5.5 running asynchronously in the background, talking to the user while that computation happens. Ships with a lighter GPT-Live-1 mini tier; GPT-Live-1 is the default voice for Go/Plus/Pro users, mini for Free, rolling out globally on iOS, Android and web from Jul 8 2026. OpenAI reports GPQA 84.2% at its highest reasoning setting (up from Advanced Voice Mode's 45.3%). API access for developers is planned but not yet priced.",
+      "pricing": "",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-live/",
+        "https://www.axios.com/2026/07/08/openai-bets-voice-will-become-ais-primary-interface-with-new-models",
+        "https://www.cnbc.com/2026/07/08/openai-expanding-gpt-5point6-ai-model-release-ending-government-limits.html"
+      ]
     }
   ]
 }

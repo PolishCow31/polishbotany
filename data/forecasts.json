@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T09:05:10-04:00",
+  "updated": "2026-07-09T12:05:37-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -12,11 +12,11 @@
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
-      "question": "Which company has best AI model end of July?",
+      "question": "Which company has the best AI model at the end of July 2026?",
       "platform": "Polymarket",
-      "forecast": "87% — Anthropic (Google ~10%, OpenAI ~6%)",
+      "forecast": "82% — Anthropic to have the best model by Jul 31 (Google, OpenAI trailing far behind)",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "AA-Index",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -399,9 +399,9 @@
       "url": "https://manifold.markets/CalibratedGhosts/will-google-deepmind-release-gemini"
     },
     {
-      "question": "Next Google Gemini Pro Model released by...?",
+      "question": "Will Google release its next Gemini Pro model by July 31, 2026?",
       "platform": "Polymarket",
-      "forecast": "82% — by Jul 31 2026",
+      "forecast": "82% — by Jul 31; DeepMind targeting a Jul 17 launch after an architectural rebuild",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -1483,20 +1483,20 @@
   ],
   "marketsStory": [
     {
-      "h": "The race right now —",
-      "t": "Polymarket keeps Anthropic firmly on top: 87% to hold the single best model at end-of-July (Google ~10%, OpenAI ~6%), and a striking 91% for the second-best slot too — the crowd effectively pricing Anthropic to own both of the top two spots. Zoom out to year-end and the lead narrows to 63%, with Google the clear challenger at 15%. Kalshi's separate year-end and weekly top-LLM markets echo the same shape, Anthropic in the low-to-mid 60s."
+      "h": "Anthropic still owns the top —",
+      "t": "Polymarket gives Anthropic about 82% odds of holding the best AI model at the end of July, with Google and OpenAI trailing well behind. The read matches the leaderboard: Fable 5 leads the Artificial Analysis Intelligence Index at 60, ahead of Opus 4.8 (56), and the compressed timeline to July 31 leaves rivals little room to ship and validate something better."
     },
     {
-      "h": "What ships next —",
-      "t": "GPT-5.6's ship question is now effectively resolved — Sol, Terra and Luna go public today (Jul 9), matching the ~96% Polymarket had on that date. Attention shifts to Google's Gemini 3.5 Pro: 82% to release by Jul 31 with a targeted Jul 17 launch after a full architectural rebuild. Further out, Manifold prices a next-gen Claude Opus/5 at 99% before Oct 1, while GPT-6 sits at ~68% by Dec 31."
+      "h": "The next ships are dated —",
+      "t": "Google's Gemini 3.5 Pro is the imminent release, market-priced near 82% to land by July 31 after DeepMind pushed the target to July 17 for a full architectural rebuild. OpenAI just shipped GPT-5.6 broadly plus the new GPT-Live voice models, so GPT-6 odds sit lower — about 40% by September, 68% by year-end — while a next-gen Anthropic Opus is near-certain (~99%) before October."
     },
     {
-      "h": "Benchmarks saturating —",
-      "t": "The hard evals are the live action. Polymarket gives 82% that some model tops 90% on FrontierMath before 2027; SWE-bench Verified is treated as effectively saturated near the ceiling. ARC-AGI-2 remains the holdout — community medians cluster around 93 for the year's best score, and the ARC-AGI Grand Prize sits around 45% to be claimed before January. An AI IMO gold in 2026 trades near 60%."
+      "h": "Benchmarks are saturating —",
+      "t": "GPQA Diamond is effectively pinned near its ~95% noise ceiling, with the frontier already ~24 points above human PhD experts, so it no longer separates the top models. The live races have moved to harder evals — SWE-bench Pro, Terminal-Bench, Humanity's Last Exam — where headroom remains and this month's Grok 4.5, GPT-5.6 and GLM-5.2 all made their claims."
     },
     {
-      "h": "The long game —",
-      "t": "AGI horizons stayed put. Near-term AGI is priced as unlikely — Manifold shows ~3% before 2027, ~17% before 2028, ~38% before 2030 — while Kalshi gives OpenAI-specific AGI 46% before 2030. Metaculus's general-AI median still sits around 2033, with METR's software task-time-horizon doubling every few months the metric most watched for whether that timeline compresses."
+      "h": "The long game stays hazy —",
+      "t": "End-of-2026 frontier forecasts cluster around an AA Index of ~62 on the rebased v4.1 scale, roughly 5-7 points above today's best, with a wide band because the composite's hardest components move slowly and another rebasing is plausible. AGI-timeline markets remain long-dated and unmoved; capability, not access, is again the scarce thing now that every major lab is publicly shipping."
     }
   ]
 }
