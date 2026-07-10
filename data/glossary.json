@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-09T15:05:09-04:00",
+  "updated": "2026-07-10T12:05:26-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -5131,6 +5131,17 @@
       "aka": [
         "dropped tokens",
         "token overflow"
+      ]
+    },
+    {
+      "term": "Token efficiency",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "How many tokens a model burns to finish a task; at equal quality, fewer tokens means lower cost and latency — a headline competitive axis in 2026 (e.g. Grok 4.5 using ~4x fewer tokens per SWE-bench task than Opus 4.8).",
+      "aka": [
+        "tokens per task",
+        "token-efficient",
+        "output token cost"
       ]
     },
     {
