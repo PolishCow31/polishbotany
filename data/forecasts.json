@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10T18:06:17-04:00",
+  "updated": "2026-07-10T21:03:40-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,9 +14,9 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "88% — Anthropic (Google 9%, OpenAI ~4%, xAI <1%), resolves via Chatbot Arena",
+      "forecast": "92% — Anthropic (Google 11%, OpenAI 4%)",
       "category": "ranking",
-      "relevantBenchmark": "LMArena",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -30,9 +30,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by...?",
+      "question": "GPT-6 released by December 31, 2026?",
       "platform": "Polymarket",
-      "forecast": "92% — by Dec 31 (73% by Sep 30)",
+      "forecast": "92% — by Dec 31, 2026",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -525,11 +525,11 @@
       "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2030"
     },
     {
-      "question": "Which company has second-best AI model end of July?",
+      "question": "Which company has second best AI model end of July?",
       "platform": "Polymarket",
       "forecast": "91% — Anthropic (OpenAI 6%)",
       "category": "ranking",
-      "relevantBenchmark": "LMArena",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-second-best-ai-model-end-of-july"
     },
@@ -599,10 +599,10 @@
     {
       "question": "AI wins IMO gold medal in 2026?",
       "platform": "Polymarket",
-      "forecast": "83% — Yes",
+      "forecast": "82% — for 2026",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2026-12-30",
+      "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/ai-wins-imo-gold-medal-in-2026"
     },
     {
@@ -640,6 +640,15 @@
       "relevantBenchmark": "LMArena",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/will-any-ai-model-reach-math-arena-score-by-december-31"
+    },
+    {
+      "question": "When will AI win gold at the Math Olympiad?",
+      "platform": "Metaculus",
+      "forecast": "78% — in 2026 (13% 2027)",
+      "category": "benchmark",
+      "relevantBenchmark": "other",
+      "resolveDate": "2026-12-31",
+      "url": "https://www.metaculus.com/questions/6728/ai-wins-imo-gold-medal/"
     }
   ],
   "historics": [
@@ -1511,19 +1520,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the top of every 'best model' market. Polymarket has it at 88% for best model end-of-July (Google a distant 9%) and 63% for end-of-2026; Kalshi's year-end LLM market agrees at 64%. That dominance is powered by the Jun 9 Fable 5 launch (AA Index 60) sitting above GPT-5.6 Sol (59) and its own Opus 4.8 (56). Nothing in this sweep dented it."
+      "t": "Anthropic sits unusually far ahead of the field. Polymarket gives it ~92% to hold the best AI model at end of July (Google ~11%, OpenAI ~4%) and ~91% to hold the second-best slot too. That reflects the leaderboard: Fable 5 leads the Artificial Analysis Index at 60, GPT-5.6 Sol is #2 at 59, and Claude Opus 4.8 (56) sits ahead of GPT-5.5 (55), Grok 4.5 (54) and Sonnet 5 (53)."
     },
     {
       "h": "What ships next —",
-      "t": "The live clock is Google's Gemini 3.5 Pro: Polymarket prices ~71% for a release by Jul 31 and ~55% on the reported Jul 17 target, a rebuilt 2M-context flagship now about a week out. Further out, GPT-6 holds ~92% to ship by Dec 31 (~73% by Sep 30), and a next-gen Claude Opus / Claude 5 is priced near-certain before October (Manifold 99%, Polymarket ~85% by Oct 31)."
+      "t": "The imminent clock is Google's Gemini 3.5 Pro, still targeted for a Jul 17 launch after an architectural rebuild; Polymarket prices ~71% for release by Jul 31. Further out, GPT-6 holds ~92% by Dec 31 (and ~73% by Sep 30), while Manifold prices a next-gen Claude Opus/Claude 5 at ~99% before October. xAI's numbered Grok 5 has no clean dated market yet after Grok 4.5 shipped Jul 8."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "Arena-score ladders are the cleaner capability read now that GPQA is pinned near its noise ceiling. Polymarket puts a 1500+ overall Chatbot Arena score at ~100% by year-end but only 57% for 1550+, and a 1550+ Math Arena score at a coin-flip 50%. The AI-wins-IMO-gold-2026 market firmed to ~83% this cycle as the July contest approaches."
+      "t": "The top coding and reasoning benches are compressing near their ceilings — Fable 5's reported ~95% SWE-bench Verified leaves little headroom, and the frontier now separates on agentic and long-horizon tasks like Terminal-Bench and SWE-bench Pro rather than knowledge tests. Markets put AI winning IMO gold in 2026 at ~82% on Polymarket (78% on Metaculus) as the July contest nears."
     },
     {
       "h": "The long game —",
-      "t": "The AGI horizon stayed put. Kalshi holds OpenAI-achieves-AGI at 14% before 2027 and 42% before 2030; Metaculus's community median for a first general AI system sits around January 2033. The consensus remains a multi-year horizon even as the monthly release cadence stays frantic at the frontier."
+      "t": "The AGI-horizon questions stay the quiet anchor beneath the release churn: GPT-6 is the next numbered milestone the market is watching (late-2026 base case), and capability markets like IMO gold and automation forecasts are the near-term proxies for how fast the frontier is actually moving. For now the story is consolidation — a handful of labs shipping near-monthly, with Anthropic holding a demonstrated edge that the markets are pricing more confidently than a sweep ago."
     }
   ]
 }
