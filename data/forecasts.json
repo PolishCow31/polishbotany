@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-13T21:04:39-04:00",
+  "updated": "2026-07-14T00:04:08-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,7 +14,7 @@
     {
       "question": "Which company has the best AI model at the end of July 2026?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 85.5% (Google 10.85%, OpenAI 3.6%) — down from 94.5% last sweep as Gemini 3.5 Pro nears",
+      "forecast": "92% — Anthropic, recovered from the 85.5% export-standoff low (Google ~5%, OpenAI ~2%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -30,9 +30,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by...?",
+      "question": "When will GPT-6 be released?",
       "platform": "Polymarket",
-      "forecast": "92% by Dec 31 (73% by Sep 30, ~2% by Jul 31)",
+      "forecast": "92% — by Dec 31 2026 (73% by Sep 30)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -1555,20 +1555,20 @@
   ],
   "marketsStory": [
     {
-      "h": "The race right now —",
-      "t": "Anthropic still leads the best-model-July market but its grip loosened this sweep: Polymarket has it at 85.5%, down from 94.5% a few hours ago, with Google up to ~10.85% and OpenAI a distant 3.6%. The move is anticipatory, not earned — Fable 5 (AA-Index 60) and Opus 4.8 (56) still top every public leaderboard, and no rival has shipped anything to close the gap. Traders are simply pricing in Google risk before Jul 31."
+      "h": "The race snapped back to Anthropic —",
+      "t": "With Fable 5 reinstated after the export standoff and sitting #1 on the Artificial Analysis Index (60, v4.1), Polymarket's best-model-July market has recovered to ~92% Anthropic, up from the 85.5% low it hit while the models were sidelined. Google and OpenAI trail in the low single digits. The 'second best model' contest is nearly as lopsided, a sign traders expect Anthropic to hold both top slots into month-end."
     },
     {
-      "h": "What ships next —",
-      "t": "The clock everyone is watching is Gemini 3.5 Pro, reported for Jul 17 — about four days out — as a ground-up rebuild with a 2M-token context and a Deep Think reasoning layer. Every spec, including the date, remains third-party reporting: no model card, API listing or pricing page exists yet. Anthropic's next Opus sits ~84% to ship by Jul 31 on Polymarket, and OpenAI's GPT-5.6 family (Sol/Terra/Luna) just went broadly public Jul 9, keeping the next-gen clock ticking toward GPT-6."
+      "h": "What ships next is a July 17 coin-flip —",
+      "t": "Gemini 3.5 Pro carries a reported Jul 17 GA target and a ground-up rebuild (2M context, Deep Think layer), but Google has confirmed no model card, price, or API listing, so markets keep it a real maybe rather than a lock. Anthropic's next Opus sits ~84.5% to land by Jul 31, and GPT-6 holds ~92% to ship by year-end (73% by Sep 30). Grok 5 remains undated after Grok 4.5's Jul 8 launch."
     },
     {
-      "h": "Benchmarks saturating —",
-      "t": "GPQA Diamond is effectively pinned near its ~95-96% noise ceiling (Gemini 3.1 Pro 94.3, Opus 4.8 93.6), so it no longer separates the frontier. The live battleground is agentic coding — SWE-bench Pro (Opus 4.8 vendor-reported 69.2, GLM-5.2 62.1, Grok 4.5 64.7) and Terminal-Bench 2.1 — where standardized frames run ~10 points cooler than vendor numbers and the top of the field is still far from solved."
+      "h": "Benchmarks keep saturating at the top —",
+      "t": "GPQA Diamond is effectively pinned near its ~95% noise ceiling across the frontier cluster, so it no longer separates leaders. The live contest is on hard agentic evals — SWE-bench Pro (vendor-reported ~80% for Fable 5, ~69% for Opus 4.8) and Terminal-Bench 2.1 — where a few points still move standings. The AA Index itself, rebased to a harder v4.1 mix, tops out at 60."
     },
     {
-      "h": "The long game —",
-      "t": "End-of-2026 markets keep Anthropic ahead at 66% with Google second at 15%, a far wider field than the near-term July contract. GPT-6 holds ~92% to ship by year-end (73% by Sep 30), and the open-weight frontier — DeepSeek-V4, GLM-5.2, Kimi K2.7, Meituan's LongCat-2.0 — keeps closing on the closed labs, now reportedly 30-46% of US enterprise API traffic. Capability, not access, stays the scarce thing."
+      "h": "The long game still points at year-end —",
+      "t": "The next true generational jump is priced for late 2026: GPT-6 by December, a rebuilt Gemini flagship, and the next Claude Opus all cluster in the back half. AGI-timeline markets remain years out and barely moved this sweep. For now the story is consolidation — a handful of labs trading the lead in near-monthly point releases rather than any single breakaway."
     }
   ]
 }
