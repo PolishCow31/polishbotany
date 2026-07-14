@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-13T18:03:28-04:00",
+  "updated": "2026-07-13T21:04:39-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
       "question": "Which company has the best AI model at the end of 2026?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 66% (Google 15%, OpenAI ~10%)",
+      "forecast": "Anthropic 66% (Google 15%) — the long game stays Anthropic's despite the July cooling",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -14,7 +14,7 @@
     {
       "question": "Which company has the best AI model at the end of July 2026?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 94.5% (Google ~5%, OpenAI ~2%)",
+      "forecast": "Anthropic 85.5% (Google 10.85%, OpenAI 3.6%) — down from 94.5% last sweep as Gemini 3.5 Pro nears",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
@@ -1555,20 +1555,20 @@
   ],
   "marketsStory": [
     {
-      "h": "The race is all but locked for July —",
-      "t": "Polymarket keeps Anthropic at 94.5% to hold the best-model crown at the Jul 31 resolution, with Google near 5% and OpenAI under 2%. With Fable 5 (AA-Index 60) atop the leaderboard ahead of GPT-5.6 Sol (59) and Opus 4.8 (56), and only weeks of runway left, the compressed timeline gives rivals almost no room to ship and validate a superior system. The year-end market is looser — Anthropic 66%, Google 15% — reflecting more time for the field to shift."
+      "h": "The race right now —",
+      "t": "Anthropic still leads the best-model-July market but its grip loosened this sweep: Polymarket has it at 85.5%, down from 94.5% a few hours ago, with Google up to ~10.85% and OpenAI a distant 3.6%. The move is anticipatory, not earned — Fable 5 (AA-Index 60) and Opus 4.8 (56) still top every public leaderboard, and no rival has shipped anything to close the gap. Traders are simply pricing in Google risk before Jul 31."
     },
     {
-      "h": "What ships next is a Google clock —",
-      "t": "The single live release is Gemini 3.5 Pro, reportedly targeting Jul 17 after a ground-up base-model rebuild (2M context, a Deep Think reasoning layer). Broader Polymarket 'next Gemini Pro / reasoning flagship by Jul 31' markets sit 71-81%, but every spec stays unconfirmed with no model card, API listing or price. Further out, GPT-6 holds ~92% to ship by year-end (73% by Sep 30) and the next Claude Opus ~84.5% by Jul 31."
+      "h": "What ships next —",
+      "t": "The clock everyone is watching is Gemini 3.5 Pro, reported for Jul 17 — about four days out — as a ground-up rebuild with a 2M-token context and a Deep Think reasoning layer. Every spec, including the date, remains third-party reporting: no model card, API listing or pricing page exists yet. Anthropic's next Opus sits ~84% to ship by Jul 31 on Polymarket, and OpenAI's GPT-5.6 family (Sol/Terra/Luna) just went broadly public Jul 9, keeping the next-gen clock ticking toward GPT-6."
     },
     {
-      "h": "Benchmarks are saturating at the top —",
-      "t": "GPQA Diamond is effectively pinned near its ~95-96% noise ceiling, so the frontier has migrated to deliberately-hard evals — Humanity's Last Exam (Opus 4.8 leads at 57.9 with tools), Terminal-Bench 2.1 and SWE-bench Pro, where vendor-reported scores near 80% still leave a long tail of genuinely hard, multi-file tasks. The AA-Index's v4.1 rebase onto that harder mix is exactly what keeps headline gains incremental sweep to sweep."
+      "h": "Benchmarks saturating —",
+      "t": "GPQA Diamond is effectively pinned near its ~95-96% noise ceiling (Gemini 3.1 Pro 94.3, Opus 4.8 93.6), so it no longer separates the frontier. The live battleground is agentic coding — SWE-bench Pro (Opus 4.8 vendor-reported 69.2, GLM-5.2 62.1, Grok 4.5 64.7) and Terminal-Bench 2.1 — where standardized frames run ~10 points cooler than vendor numbers and the top of the field is still far from solved."
     },
     {
-      "h": "The long game keeps stretching out —",
-      "t": "Metaculus community medians still cluster in the early 2030s — roughly 25% odds of AGI by 2029 and 50% by 2033 — with weakly-general systems forecast around 2028. Near-term, the story off the leaderboard is compute and capital: AI execs tell CNBC demand is 'almost unlimited' even through chip-stock volatility, while Meta moves to sell excess capacity — a market testing whether the buildout has outrun near-term demand."
+      "h": "The long game —",
+      "t": "End-of-2026 markets keep Anthropic ahead at 66% with Google second at 15%, a far wider field than the near-term July contract. GPT-6 holds ~92% to ship by year-end (73% by Sep 30), and the open-weight frontier — DeepSeek-V4, GLM-5.2, Kimi K2.7, Meituan's LongCat-2.0 — keeps closing on the closed labs, now reportedly 30-46% of US enterprise API traffic. Capability, not access, stays the scarce thing."
     }
   ]
 }
