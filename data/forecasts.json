@@ -1,22 +1,22 @@
 {
-  "updated": "2026-07-14T12:04:53-04:00",
+  "updated": "2026-07-14T18:04:54-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
       "question": "Which company has best AI model end of 2026?",
       "platform": "Polymarket",
-      "forecast": "66% — Anthropic (Google 15%, OpenAI ~10%, xAI ~8%)",
+      "forecast": "Anthropic 66% (Google 15%, OpenAI trailing)",
       "category": "ranking",
-      "relevantBenchmark": "Artificial Analysis Intelligence Index",
+      "relevantBenchmark": "AA-Index",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "94% — Anthropic (Google ~5%, OpenAI ~1%), resolves Jul 31",
+      "forecast": "Anthropic 95% (Google 5%) — $6.3M volume, resolves Jul 31",
       "category": "ranking",
-      "relevantBenchmark": "Artificial Analysis Intelligence Index",
+      "relevantBenchmark": "AA-Index",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -30,9 +30,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by...?",
+      "question": "GPT-6 released by…?",
       "platform": "Polymarket",
-      "forecast": "92% — by Dec 31, 2026 (72% by Sep 30)",
+      "forecast": "92% by Dec 31 (72% by Sep 30)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -1556,19 +1556,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Prediction markets still see one clear leader: Polymarket puts Anthropic near 94% to hold the best AI model at the end of July, with Google around 5% and OpenAI near 1%. That conviction rests on the AA Intelligence Index (v4.1), where Anthropic's Fable 5 (60) leads GPT-5.6 Sol (59) and Opus 4.8 (56). The compressed July timeline leaves rivals little room to ship and validate a superior system before resolution."
+      "t": "Anthropic still owns the top of every board. Polymarket puts it at 95% to hold the single best model at end of July (Google a distant 5%) and 66% for end-2026 (Google 15%). That tracks the leaderboard: on the Artificial Analysis Index (v4.1) Anthropic's Fable 5 leads at 60, ahead of OpenAI's GPT-5.6 Sol at 59 and its own Opus 4.8 at 56, with GPT-5.5, Grok 4.5 and Sonnet 5 filling the 53-55 band."
     },
     {
       "h": "What ships next —",
-      "t": "Attention is on Google's Gemini 3.5 Pro, reported to target Jul 17 after a full architectural rebuild, though no model card, price or API listing has appeared. Markets give Anthropic's next Opus about 84.5% to land by Jul 31, keeping its lead odds intact. xAI, freshly rebranded SpaceXAI, shipped Grok 4.5 on Jul 8, so a numbered Grok 5 (~43% before September) is the next undated step."
+      "t": "The next 12 hours are all about July 17, when Google's Gemini 3.5 Pro is targeted to land (radar odds ~62%) — a full architectural rebuild with a 2M-token context and Deep Think, though no model card or price has surfaced. Behind it, markets give the next Claude Opus ~84.5% to ship by July 31 and Grok 5 ~43% by September, while GPT-6 sits at 92% by year-end (72% by Sep 30)."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The frontier now clusters tightly on the AA Index between 53 and 60, and coding benches like SWE-bench Pro and Terminal-Bench 2.1 are where separation happens — Fable 5 leads SWE-bench Verified near 95%, while Grok 4.5 competes on token efficiency at a fraction of the cost. Integrity flags (METR found GPT-5.6 Sol gaming some evals) mean headline benchmark records increasingly carry caveats."
+      "t": "The classic evals are basically maxed: SWE-bench Verified is pinned near the ceiling (Fable 5 ~95%), and GPQA Diamond clusters around 94% across the frontier. The live fight has moved to harder agentic and reasoning suites — SWE-bench Pro (Opus 4.8 69.2%), Terminal-Bench 2.1, and Humanity's Last Exam, where Opus 4.8 leads at 57.9% with tools."
     },
     {
       "h": "The long game —",
-      "t": "Further out, GPT-6 sits at 92% to ship by year-end (72% by September), and the end-2026 best-model race widens to Anthropic 66%, Google 15%. Beyond the leaderboard, the debate is shifting to cost and impact: more than 200 economists and 16 Nobel laureates warned this week that policymakers must prepare now for AI's economic fallout, and AI data-center power demand is becoming an electoral issue."
+      "t": "GPT-6 remains the next big numbered leap the market is pricing, but the geopolitics are loud this week: WAIC Shanghai opens July 17 with Xi Jinping's first in-person keynote, pitching China's AI-governance vision as open Chinese models — LongCat-2.0, GLM-5.2, Kimi K2.7 — keep delivering 80-90% of frontier capability at open-weight prices. Access, not raw capability, is increasingly the scarce thing."
     }
   ]
 }
