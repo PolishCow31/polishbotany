@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T00:04:47-04:00",
+  "updated": "2026-07-15T03:04:21-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -7,16 +7,16 @@
       "platform": "Polymarket",
       "forecast": "66% — Anthropic (Google 15%), by Dec 30",
       "category": "ranking",
-      "relevantBenchmark": "AA-Index",
+      "relevantBenchmark": "Artificial Analysis Intelligence Index",
       "resolveDate": "2026-12-30",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "94.5% — Anthropic (Google ~4.85%, OpenAI ~1.55%), by Jul 31",
+      "forecast": "95% — Anthropic (Google 3%, OpenAI 2%), by Jul 31",
       "category": "ranking",
-      "relevantBenchmark": "AA-Index",
+      "relevantBenchmark": "Artificial Analysis Intelligence Index",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -32,7 +32,7 @@
     {
       "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "92% — by Dec 31, 2026 (72% by Sep 30)",
+      "forecast": "92% — by Dec 31 (72% by Sep 30)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -1565,19 +1565,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the top of the board and the betting: Fable 5 leads the Artificial Analysis Index at 60 (v4.1) over GPT-5.6 Sol at 59, and Polymarket keeps Anthropic near 94.5% to hold best-model at the end of July, with Google around 4.85% and OpenAI 1.55%. That lead is about lineup depth as much as any single model — Fable 5, Opus 4.8, Sonnet 5 and the returned Mythos 5 all sit near the frontier."
+      "t": "Anthropic still owns the frontier by every measure the markets track. Fable 5 leads the Artificial Analysis Intelligence Index at 60 (v4.1), ahead of GPT-5.6 Sol (59), its own Opus 4.8 (56), GPT-5.5/Terra (55), Grok 4.5 (54) and Sonnet 5 (53). Polymarket gives Anthropic ~95% to hold the best-model crown at end of July, with Google (3%) and OpenAI (2%) as afterthoughts on $6M-plus of volume."
     },
     {
       "h": "What ships next —",
-      "t": "Two clocks dominate. Gemini 3.5 Pro is reportedly ~2 days from a Jul 17 GA — a ground-up rebuild with a rumored 2M context and Deep Think, though no model card, price or API listing has appeared. And multiple outlets say Anthropic is prepping a Claude Opus 5 (codename Honeycomb) 'this week' to answer GPT-5.6; the next-Opus market reads 96% by Oct 31 and 99% by Dec 31. Further out, Polymarket holds GPT-6 at ~92% by year-end."
+      "t": "The imminent card is Google's: Gemini 3.5 Pro is reportedly ~2 days from a Jul 17 GA after a ground-up rebuild (2M context, Deep Think), though every spec is still unconfirmed. Behind it, an unreleased 'Honeycomb' model surfaced in Cursor and Anthropic extended Fable 5 free through Jul 19, feeding Opus 5 'this week' speculation. Further out, Polymarket puts GPT-6 at ~92% by year-end (72% by Sep 30) and Grok 5 near 43% before September."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The classic leaderboards are pinned near the ceiling — SWE-bench Verified sits in the high-80s to mid-90s across the frontier (Fable 5 ~95%), so the real separation has moved to agentic and long-horizon suites like SWE-bench Pro, Terminal-Bench 2.1 and GDPval. HLE remains the hardest open frontier, with the top models now in the 50s-60s and still climbing."
+      "t": "GPQA Diamond is effectively pinned at its ~94-95% noise ceiling — the frontier cluster sits within a couple points and models already run ~24 points above human PhD experts, so it no longer ranks the top. The live coding frontier is SWE-bench Pro, where vendor-reported Opus 4.8 leads at 69.2% (standardized frames run ~10 points cooler), while Humanity's Last Exam (Opus 4.8 ~57.9% with tools) is the hard target with real headroom."
     },
     {
       "h": "The long game —",
-      "t": "For end-2026 the market still favors Anthropic at 66%, but Google's 15% is the widest challenger gap on the board and a strong Gemini 3.5 Pro on Jul 17 is exactly the kind of result that would move it. OpenAI's path back to the top runs through GPT-6, priced near 92% to land by December. The AGI-horizon markets remain unmoved this sweep — no capability claim this cycle reset the long-term clock."
+      "t": "For end-2026, Polymarket keeps Anthropic at 66% for best model with Google a distant 15%, implying the market expects the next Gemini and Opus generations to contest but not clearly dethrone Anthropic. GPT-6, a rebuilt Gemini line and a numbered Grok 5 are all in the pipeline, but the AGI-horizon markets remain far out — the near-term action is who ships a genuine reasoning step-change first, not whether anyone crosses a capability finish line this year."
     }
   ]
 }
