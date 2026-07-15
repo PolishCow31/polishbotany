@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-15T12:06:04-04:00",
+  "updated": "2026-07-15T18:05:50-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1552,6 +1552,16 @@
         "emergence",
         "emergent abilities",
         "emergent capabilities"
+      ]
+    },
+    {
+      "term": "Encoder-free multimodal architecture",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A design that feeds images and audio directly into the main transformer as token patches or spectrogram frames, with no separate vision or audio encoder module.",
+      "aka": [
+        "encoder-free",
+        "native multimodal input"
       ]
     },
     {
@@ -4175,6 +4185,17 @@
         "thinking budget",
         "reasoning level",
         "effort setting"
+      ]
+    },
+    {
+      "term": "Reasoning effort level",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A tunable knob (low/high or a 0-1 dial) that trades how many internal thinking tokens a reasoning model spends against latency and cost per query.",
+      "aka": [
+        "thinking effort",
+        "effort dial",
+        "controllable thinking"
       ]
     },
     {

@@ -1853,6 +1853,31 @@
         "https://www.axios.com/2026/07/09/meta-ai-spark-model-update-developer",
         "https://www.digitalapplied.com/blog/meta-muse-spark-1-1-agentic-model-api-2026"
       ]
+    },
+    {
+      "name": "Inkling",
+      "lab": "Thinking Machines Lab",
+      "released": "2026-07-15",
+      "params": "975B total / 41B active (MoE, 256 routed experts, 6 active + 2 shared)",
+      "context": "1M",
+      "modality": "natively multimodal (text, image, audio, video in; text out)",
+      "open": true,
+      "benchmarks": {
+        "GPQA": 87.2,
+        "AIME 2026": 97.1,
+        "SWE-bench": 77.6,
+        "HLE": 46.0,
+        "Terminal-Bench 2.1": 63.8,
+        "SimpleQA Verified": 43.9
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "The FIRST model from Thinking Machines Lab, the startup founded by ex-OpenAI CTO Mira Murati (record $2B seed at $12B post). Open-weight 975B/41B-active MoE with a 1M-token context, pretrained on 45T tokens and post-trained with 30M+ RL rollouts; encoder-free multimodal (images as 40x40 patches, audio as discrete dMel spectrograms). Ships with 'controllable thinking effort.' Vendor numbers (GPQA 87.2, AIME 2026 97.1, SWE-bench Verified 77.6, HLE-with-tools 46.0) sit a notch below the closed frontier but lead on token efficiency — Thinking Machines claims it matches NVIDIA Nemotron 3 Ultra's coding level using ~1/3 the tokens. Full weights on Hugging Face, live for fine-tuning on the company's Tinker platform (50% intro discount). A preview Inkling-Small (276B/12B active) shipped alongside, weights to follow after testing. No independent Artificial Analysis Index score yet.",
+      "sources": [
+        "https://thinkingmachines.ai/news/introducing-inkling/",
+        "https://www.axios.com/2026/07/15/mira-murati-thinking-machines-open-weight-model-inkling",
+        "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/"
+      ]
     }
   ]
 }
