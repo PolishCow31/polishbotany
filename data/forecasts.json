@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-16T18:05:47-04:00",
+  "updated": "2026-07-16T21:05:18-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -12,11 +12,11 @@
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
-      "question": "Which company has the best AI model at end of July 2026?",
+      "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "95% — Anthropic (Google 4%, OpenAI 1%), $6.5M volume, resolves ~Jul 30",
+      "forecast": "97% — Anthropic (Google 2%) on $6.5M volume, up from ~95% at the prior sweep; resolves ~Jul 30",
       "category": "ranking",
-      "relevantBenchmark": "AA-Index",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -1565,19 +1565,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic's lead has hardened, not softened. Polymarket now prices it at ~95% to hold the best AI model at end-of-July (up from ~85% at midday), with Google a distant 4% and OpenAI near 1%; the year-end version is calmer at Anthropic 67% / Google 14%. The v4.1 leaderboard backs the money: Claude Fable 5 (60) leads GPT-5.6 Sol (59) and Opus 4.8 (56), so the betting and the benchmarks agree for once."
+      "t": "Anthropic's grip on the top spot firmed again: Polymarket puts it at 97% to hold the best AI model at end-of-July (Google 2%) on $6.5M of volume, up from ~95% a few hours earlier. The end-of-2026 version is looser but still Anthropic-led at ~67% (Google 14%), and Kalshi's year-end LMArena #1 market echoes it at ~64% Claude (Gemini ~14%). The standings behind the odds are unchanged — Fable 5 leads the v4.1 index at 60, over GPT-5.6 Sol (59), Opus 4.8 (56) and Grok 4.5 (54)."
     },
     {
       "h": "What ships next —",
-      "t": "The imminent event is Google's: Gemini 3.5 Pro's rumored Jul 17 GA is hours out, a reported ground-up rebuild with a rumored 2M-token context — but the market still prices the next Gemini Pro at only ~51% by Jul 30, reflecting the absent model card and pricing. GPT-6 sits at ~68% by Dec 31 (just ~40% by Sep 30), and DeepSeek's V4 stable GA is expected by August. No frontier flagship has a near-certain near-term ship date."
+      "t": "The imminent clock is Google's: Gemini 3.5 Pro's rumored GA is now tomorrow (Jul 17), with Polymarket's next-Gemini-Pro market at ~51% for a Jul 30 window and a modal Jul 17 ship. Further out, GPT-6 sits at ~68% by Dec 31 (only ~2% by Jul 31), and a next Claude Opus is priced at ~96% by Oct 31. GPT-5.6 has already shipped, so that market has effectively resolved yes."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The classic evals are largely tapped out: SWE-bench Verified is effectively saturated in the low 80s and GPQA Diamond forecasters sit near 97% by year-end. The live action is on the hard frontier — an AI hitting ≥90% on FrontierMath before 2027 trades around 45%, and ARC-AGI-2's 2026 community median is ~93%, with the ARC-AGI Grand Prize still only ~45% to be claimed by January."
+      "t": "The hard evals keep climbing: markets give ~82% to some AI hitting 90%+ on FrontierMath before 2027, ~82% to an AI winning IMO gold in 2026, and community medians near 93% for the top ARC-AGI-2 score this year. SWE-bench Verified is effectively saturated at the frontier, pushing attention to agentic suites like Terminal-Bench and SWE-bench Pro."
     },
     {
       "h": "The long game —",
-      "t": "AGI odds stay sober. OpenAI announcing AGI before 2027 trades near 13%; Metaculus pegs 'weakly general' AI around mid-2028 and the full four-condition AGI at ~25% by 2029, ~50% by 2033. The near-term signal is compute and capital, not a step-change — record data-center spend and enterprise-deployment bets (Microsoft Frontier Co., Anthropic-backed Ode) rather than a declared threshold."
+      "t": "AGI horizons are steady and distant relative to the model churn: Polymarket holds OpenAI-declares-AGI-before-2027 near 13%, Metaculus's 'first general AI system' median sits around 2033, and Manifold's before-2030 AGI market is ~38%. The near-term signal is corporate, not capability — CNBC reports Anthropic lining up banks for a mega-IPO, and Polymarket favors it (73%) to reach public markets before OpenAI."
     }
   ]
 }
