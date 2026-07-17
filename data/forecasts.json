@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T15:06:38-04:00",
+  "updated": "2026-07-17T18:04:10-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -14,9 +14,9 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 95.5% (Google 4.35%, OpenAI 0.65%) — $6.8M volume",
+      "forecast": "Anthropic 95.5% (Google 4.35%, OpenAI 0.65%)",
       "category": "ranking",
-      "relevantBenchmark": "Artificial Analysis Intelligence Index",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -32,7 +32,7 @@
     {
       "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "90% — by Dec 31 (Sep 75%, Jul 1.7%)",
+      "forecast": "90% by Dec 31 (75% by Sep 30, ~2% by Jul 31)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -1565,19 +1565,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic's Fable 5 still leads the Artificial Analysis Intelligence Index at 60 (v4.1), with OpenAI's GPT-5.6 Sol (59) and Moonshot's open Kimi K3 (57) close behind and Claude Opus 4.8 at 56. Polymarket gives Anthropic 95.5% for July's best model and 68% for year-end, but the story this sweep is Kimi K3 grabbing #1 on Arena's Frontend Code leaderboard (1,679) over Fable 5 — proof that open models can now win specific coding arenas outright, even while trailing on the composite."
+      "t": "Anthropic remains the overwhelming favorite for best AI model at July's end, holding 95.5% on Polymarket against Google (4.35%) and OpenAI (0.65%) on over $6.8M of volume. That conviction rests on Claude Fable 5 leading the Artificial Analysis Intelligence Index at 60 (v4.1), ahead of GPT-5.6 Sol (59), Moonshot's new Kimi K3 (57) and Anthropic's own Opus 4.8 (56). With resolution just two weeks out, the compressed window leaves rivals little room to ship and validate anything that could overtake it."
     },
     {
       "h": "What ships next —",
-      "t": "Gemini 3.5 Pro's leaked July 17 date arrived with no GA; DeepMind's own page still reads 'coming soon,' yet Polymarket holds 78% for a July release. GPT-6's odds firmed to 90% by Dec 31 (75% by September, just 1.7% by July), pinning OpenAI's numbered flagship to Q4. A next Claude Opus prices near 96% for H2, and xAI's Grok 5 sits around 43% before September after Grok 4.5 shipped July 8."
+      "t": "The near-term action is release timing. GPT-6 sits at 90% to arrive by Dec 31 and 75% by Sep 30, but under ~2% for July — OpenAI's cadence still runs through the GPT-5.6 family (Sol/Terra/Luna went broadly public Jul 9). Google's Gemini 3.5 Pro, priced around 78% for a July launch, instead slipped: CNBC reported it delayed and Alphabet shares fell, with DeepMind's page still reading 'coming soon.' Anthropic's next Opus is priced near-certain (~96%) for the second half."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "GPQA Diamond is effectively pinned at its ~94-95% noise ceiling, with the frontier already ~24 points above human PhD experts. Vendor-reported SWE-bench Pro tops out near 80% (Fable 5) but standardized frames run ~10 points lower, and the AA Index — deliberately rebuilt around hard evals like Humanity's Last Exam and Terminal-Bench — remains the live battleground where a 3-point gap separates the top four labs."
+      "t": "The frontier now clusters tightly at the top of the AA Index (56-60), and coding arenas are where separation shows: Kimi K3 took #1 on Arena's Frontend Code leaderboard over Fable 5, the first open-lineage model to top a major coding arena. Classic tests (MMLU, GPQA, AIME) are effectively saturated near the ceiling, pushing attention to agentic and long-horizon suites — Terminal-Bench, SWE-bench Pro and tool-use benches — where the gaps between labs are still real."
     },
     {
       "h": "The long game —",
-      "t": "Forecasts put the end-2026 frontier around 62 on the AA v4.1 scale, a slow grind as the hardest sub-benchmarks resist fast gains. The clearer trend is consolidation: Anthropic stays favored, but Chinese open-weight models — Kimi K3, GLM-5.2, Qwen3.5, plus Meituan's LongCat — keep closing to within a few points at a fraction of the price, making access, not raw capability, the scarce thing."
+      "t": "The structural story this week is diffusion: Kimi K3 (2.8T params, weights due Jul 27) and Thinking Machines' Inkling put frontier-class capability into open weights, and markets increasingly treat the closed-vs-open gap as months, not years. AGI-timeline and automation markets stay long-dated and cautious, but the compute buildout — Anthropic sourcing capacity from Meta, TeraWulf and SpaceX — signals every major lab now expects the scaling race to run hard through 2027 and beyond."
     }
   ]
 }
