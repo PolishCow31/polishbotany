@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-17T00:05:48-04:00",
+  "updated": "2026-07-17T03:06:08-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -1564,20 +1564,20 @@
   ],
   "marketsStory": [
     {
-      "h": "Anthropic still runs the table —",
-      "t": "Prediction markets keep Anthropic firmly ahead: Polymarket gives it **~96%** to own the single best AI model at the end of July on $6.5M of volume, with every rival lab in the low single digits. That tracks the leaderboard, where Anthropic's Fable 5 tops the v4.1 AA Intelligence Index at 60 — roughly five points clear of any other lab's best (GPT-5.6 Sol 59, Opus 4.8 56, GPT-5.5/Terra 55, Grok 4.5 54)."
+      "h": "Anthropic still owns the top —",
+      "t": "Polymarket prices Anthropic at ~96% to have the best AI model at end of July (Google ~4%, OpenAI <1%, $6.5M volume) and ~95% for second-best too, mirrored by Kalshi's LMArena year-end market at ~64% Anthropic. Fable 5 leads the v4.1 Artificial Analysis Index at 60 over GPT-5.6 Sol (59) and Opus 4.8 (56). Moonshot's fresh Kimi K3 is the strongest open model on vendor benchmarks but carries no independent AA score yet, and markets still give any Chinese lab only ~14% to hold the year-end crown."
     },
     {
-      "h": "What ships next is Google's move —",
-      "t": "The imminent question is Gemini 3.5 Pro, whose rumored GA window is literally today (Jul 17). Markets are only ~52% convinced it lands within July and price a 23% chance it slips past the 31st entirely — no model card has surfaced. Further out, a next Claude Opus sits at ~96% by end of October, GPT-6 at ~68% by December (just ~2% within July), and Grok 5 near ~43% before September."
+      "h": "The next ship is Google's, and it's today —",
+      "t": "Gemini 3.5 Pro's rumored Jul 17 GA has arrived with no model card: Polymarket sits ~62% for the specific day, ~52% for a July window and 78% for a July reasoning flagship, while Manifold prices Gemini 3.5 by Jul 31 at 99%. Behind it, a next Claude Opus is ~96% by Oct 31, GPT-6 ~68% by Dec (40% by Sep, ~2% by Jul), and Grok 5 ~43% before September after xAI shipped Grok 4.5 on Jul 8."
     },
     {
-      "h": "Benchmarks split into saturated and live —",
-      "t": "GPQA Diamond is effectively pinned near its ~94-95% noise ceiling and no longer separates the frontier. The live battleground is agentic coding: SWE-bench Pro reads ~69% for Opus 4.8 in the vendor frame (~59% standardized), leaving real headroom, while the composite AA v4.1 Index tops out at 60. Those are the numbers still moving release to release."
+      "h": "Benchmarks are saturating at the top —",
+      "t": "GPQA Diamond now clusters in the low-90s across the frontier (Gemini 3.1 Pro 94.3, Kimi K3 93.5, Opus 4.8 93.6) and SWE-bench Verified is effectively topping out near 95%, so the discriminators have moved to Humanity's Last Exam (Fable 5 / Opus 4.8 ~58% with tools vs Kimi K3's 43.5% without) and agentic yardsticks like Terminal-Bench 2.1 and BrowseComp. Raw knowledge benchmarks no longer separate the leaders."
     },
     {
-      "h": "The long game stays hazy —",
-      "t": "Metaculus's community still centers weakly-general AI around 2031, with an 80% interval spanning 2027-2044 — years, not months. And the governance backdrop is tightening: the Future of Life Institute's 2026 Safety Index graded every major lab poorly, topping Anthropic at just a C+, and flagged existential safety as the weakest category across the board."
+      "h": "The long game stays a 2027-28 story —",
+      "t": "Metaculus's 60-forecaster panel still puts GPT-6's median release at January 2028, and year-end 'best model' markets keep Anthropic favored (~64-67%) over Google (~14%) and OpenAI (~10-14%). Even with Kimi K3's splash and WAIC 2026 opening in Shanghai, traders price only ~14% odds that a Chinese lab holds the outright best model by December — the open frontier is closing the gap on capability, not yet on the crown."
     }
   ]
 }
