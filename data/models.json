@@ -1913,11 +1913,12 @@
         "Terminal-Bench 2.1": 88.3,
         "HLE": 43.5,
         "SWE-bench (DeepSWE)": 67.5,
-        "BrowseComp": 91.2
+        "BrowseComp": 91.2,
+        "AA-Index": 57
       },
       "milestone": true,
       "status": "live",
-      "notable": "Moonshot's 2.8T-parameter Mixture-of-Experts flagship, billed as the world's first 'open 3T-class' model — 16 of 896 experts active per token, native vision, 1M context, built on two new attention tricks (Kimi Delta Attention + Attention Residuals). Live via web/API now at $3/$15 (cache-hit inputs $0.30); open weights promised by Jul 27 2026. All benchmarks are Moonshot's OWN self-reported numbers: GPQA Diamond 93.5, Terminal-Bench 2.1 88.3, BrowseComp 91.2, HLE-Full 43.5 (56.0 with tools), SWE-bench via DeepSWE 67.5 — beating Opus 4.8 and GPT-5.5 on Moonshot's suite while trailing Fable 5 and GPT-5.6 Sol. No independent Artificial Analysis Index score yet. Landed the day before WAIC 2026 opened in Shanghai and stoked fresh alarm about China's open-weight frontier.",
+      "notable": "Moonshot's 2.8T-parameter Mixture-of-Experts flagship, billed as the world's first 'open 3T-class' model — 16 of 896 experts active per token, native vision, 1M context, built on two new attention tricks (Kimi Delta Attention + Attention Residuals). Live via web/API at $3/$15 (cache-hit inputs $0.30); open weights promised by Jul 27 2026. UPDATE (Jul 17): Artificial Analysis published its FIRST independent score — 57 on the AA Intelligence Index v4.1, ranked #4/189 — slotting between GPT-5.6 Sol (59) and Claude Opus 4.8 (56), i.e. the strongest open-lineage model measured so far and edging Opus 4.8. AA currently labels it 'proprietary' because weights aren't public until Jul 27. Vendor self-reported figures (GPQA Diamond 93.5, Terminal-Bench 2.1 88.3, BrowseComp 91.2, HLE-Full 43.5) beat Opus 4.8/GPT-5.5 on Moonshot's own suite while trailing Fable 5 and GPT-5.6 Sol. Landed the day before WAIC 2026 opened in Shanghai.",
       "sources": [
         "https://www.marktechpost.com/2026/07/16/moonshot-ai-releases-kimi-k3-a-2-8-trillion-parameter-open-moe-model-with-kimi-delta-attention-and-1m-context/",
         "https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic",
