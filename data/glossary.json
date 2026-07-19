@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T12:04:38-04:00",
+  "updated": "2026-07-19T15:06:57-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1097,6 +1097,18 @@
       "def": "A decoding method that balances picking likely words against keeping each new word distinct from prior context, reducing repetition while staying coherent in long generations.",
       "aka": [
         "contrastive decoding search"
+      ]
+    },
+    {
+      "term": "Controllable thinking effort",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "An inference control that lets a user dial how many reasoning tokens a model spends per query, trading latency and cost against accuracy on harder problems.",
+      "aka": [
+        "reasoning effort",
+        "thinking budget",
+        "effort level",
+        "adaptive thinking"
       ]
     },
     {
