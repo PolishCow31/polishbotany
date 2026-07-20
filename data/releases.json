@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-19T21:04:38-04:00",
+  "updated": "2026-07-20T00:03:09-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
-      "expectedWindow": "H2 2026 (slipped again)",
-      "expectedDate": "2026-09",
-      "prob": -1,
+      "expectedWindow": "by Aug 2026",
+      "expectedDate": "2026-08",
+      "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Re-verified NOT shipped this sweep (Jul 19, 9PM): absent from the Artificial Analysis leaderboard (top Google model is Gemini 3.5 Flash at #20, score 50). A fresh wave of 'launched Jul 17' third-party posts stays unsourced SEO churn; one report says it slipped again on weak coding.",
-      "source": "https://artificialanalysis.ai/leaderboards/models"
+      "basis": "Missed a third internal deadline (DeepMind reportedly rebuilt the base model over weak coding/hallucination). Still absent from the AA leaderboard (top Google entry is Gemini 3.5 Flash). Polymarket now leans Aug 7 (~73%), July 30 (~71%).",
+      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "GPT-6",
@@ -21,7 +21,7 @@
       "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket's dated GPT-6 market prices the numbered flagship a late-2026 story (~68% by Dec 31, well under near-term); OpenAI's line still flows through the GPT-5.6 family (Sol/Terra/Luna) and GPT-Live voice.",
+      "basis": "Polymarket prices GPT-6 a late-2026 story (~68% by Dec 31, ~40% by Sep 30, ~2% near-term); OpenAI's line still flows through the GPT-5.6 family (Sol/Terra/Luna) and GPT-Live voice.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,8 +32,8 @@
       "prob": 98,
       "frontier": true,
       "status": "rumored",
-      "basis": "Anthropic's ~6-week Opus cadence (4.6 Feb, 4.7 Apr, 4.8 May) points to a next Opus; Polymarket prices a next Claude Opus at ~98-99% by Oct 31, version unannounced.",
-      "source": "https://polymarket.com/event/next-claude-opus-released-onptptpt-20260714203533730"
+      "basis": "Anthropic's ~6-week Opus cadence (4.6 Feb, 4.7 Apr, 4.8 May) points to a next Opus; Polymarket prices a next Claude Opus ~95% by Aug 31, ~98% by Oct 31, version unannounced.",
+      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
     },
     {
       "model": "Grok 5",
@@ -43,7 +43,7 @@
       "prob": 16,
       "frontier": true,
       "status": "rumored",
-      "basis": "xAI (now SpaceXAI) shipped Grok 4.5 on Jul 8; markets price Grok 5 single-digit near-term. The 6T V9-foundation model is reportedly still training on Colossus 2, with public access likely slipping to Q3+.",
+      "basis": "xAI (now SpaceXAI) shipped Grok 4.5 on Jul 8; markets price Grok 5 single-digit near-term. The 6T V9-foundation model is reportedly still training on Colossus 2, public access likely slipping to Q3+.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -54,7 +54,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "V4-Pro/Flash shipped Apr 24 as previews; a stable GA is reportedly targeted for Jul 24 2026 per DeepSeek's developer notes — now five days out.",
+      "basis": "V4-Pro/Flash shipped Apr 24 as previews; a stable GA is reportedly targeted for Jul 24 2026 per DeepSeek's developer notes — now four days out.",
       "source": "https://api-docs.deepseek.com/news/news260424"
     }
   ]
