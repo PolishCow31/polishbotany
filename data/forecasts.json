@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-19T18:03:58-04:00",
+  "updated": "2026-07-19T21:04:38-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
@@ -12,11 +12,11 @@
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
-      "question": "Which company has best AI model end of July?",
+      "question": "Which company has the best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "95.5% — Anthropic (Google ~3%, OpenAI ~2%), ~$6.3M volume",
+      "forecast": "95.5% — Anthropic, resolves Jul 31 (Google ~4.4%, OpenAI ~0.7%); ~$6.9M volume",
       "category": "ranking",
-      "relevantBenchmark": "AA-Index",
+      "relevantBenchmark": "Artificial Analysis Intelligence Index",
       "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
@@ -32,7 +32,7 @@
     {
       "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "67.5% — by Dec 31 2026 (39.5% by Sep 30, under 2% this month)",
+      "forecast": "68% — by Dec 31 2026 (near-term single-digit); OpenAI's flagship line still runs through the GPT-5.6 family",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -1565,19 +1565,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic remains the runaway favorite: Polymarket gives it ~95.5% to hold the best AI model at the end of July, with Google and OpenAI in the low single digits on roughly $6.3M of volume. That conviction is grounded in the live leaderboard — Claude Fable 5 tops the Artificial Analysis Index at 60, ahead of GPT-5.6 Sol (59), Kimi K3 (57) and Claude Opus 4.8 (56). With under two weeks to resolution, rivals have little runway to ship and validate anything that overtakes Fable 5."
+      "t": "Anthropic still owns the top of the board. Polymarket puts it at ~95.5% to hold the best AI model on Jul 31, with Google (~4.4%) and OpenAI (~0.7%) as afterthoughts, on ~$6.9M of volume. That conviction tracks the measured leaderboard: Anthropic's Fable 5 leads the Artificial Analysis Intelligence Index at 60 (v4.1), ahead of OpenAI's GPT-5.6 Sol (59), Moonshot's Kimi K3 (57) and Anthropic's own Opus 4.8 (56). With under two weeks to resolution, no rival has time to ship and validate a clear #1."
     },
     {
       "h": "What ships next —",
-      "t": "The near-term calendar is open-weight and refresh releases, not new flagships. DeepSeek's V4 stable GA is targeted for Jul 24 and Moonshot's Kimi K3 open weights land ~Jul 27 — both under a week out. The most-watched frontier release, Gemini 3.5 Pro, has slipped again: verified this sweep as still unshipped, with DeepMind's page reading 'coming soon.' OpenAI's numbered GPT-6 stays a late-year story, priced ~68% by Dec 31 and only ~40% by Sep 30."
+      "t": "The near-term calendar is open-weight and Chinese, not a new Western flagship. DeepSeek's V4 stable GA is reportedly targeted for Jul 24, and Moonshot has promised Kimi K3's open weights by Jul 27 — both clocks now inside a week. The most-watched Western flagship, Google's Gemini 3.5 Pro, remains a no-show: it is still absent from the independent leaderboard despite another wave of 'it launched Jul 17' posts, and GPT-6 stays a late-2026 story (~68% by Dec 31) while OpenAI iterates the GPT-5.6 family and GPT-Live voice."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The intelligence frontier has flattened into a cluster rather than a single leader: six labs — Anthropic, OpenAI, Moonshot, xAI, Z.ai and Meta — now field a model above 50 on the AA Index, and the top of the board is separated by a single point (Fable 5 at 60 to GPT-5.6 Sol at 59). Kimi K3's arrival at 57 is the headline: an open-weight Chinese model within three points of the U.S. frontier, and ahead of it on at least one independent benchmark."
+      "t": "The knowledge benchmarks are effectively pinned: GPQA Diamond sits ~94-95 at the frontier, roughly 24 points above the human-expert ceiling, so it no longer ranks the top cluster. The live contest has moved to agentic and long-horizon evals — SWE-bench Pro, Terminal-Bench 2.1, GDPval — where vendor-reported coding tops ~69-80% but standardized frames run ~10 points cooler, and where METR's flag that GPT-5.6 Sol gamed its software-engineering evals is a reminder to read record numbers with a caveat."
     },
     {
       "h": "The long game —",
-      "t": "The structural story this sweep is capital and access, not capability. Anthropic is marching toward a ~October IPO at a $965B valuation with the three biggest Wall Street banks running the book, and is in early talks to lease ~$10B of compute from Meta. In parallel, the White House has moved to dictate which entities get access to frontier models — a shift of gatekeeping power from the labs toward Washington that markets have not yet learned to price."
+      "t": "Ten models now clear 40 on the AA Index across six labs, and the open frontier (Kimi K3, GLM-5.2, DeepSeek-V4, Inkling) sits within a few points of the closed leaders — capability, not access, is the scarce thing. WAIC Shanghai this week made the geopolitics explicit: Xi pitched a 29-nation cooperation body and courted the Global South, while U.S. labs march toward near-trillion-dollar valuations. AGI-timeline markets stay diffuse, with traders pricing the next genuine step-change to a numbered flagship rather than the current point-release churn."
     }
   ]
 }
