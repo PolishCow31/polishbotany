@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-21T21:38:19-04:00",
+  "updated": "2026-07-22T00:04:36-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
-      "question": "Which company has the best AI model at the end of 2026?",
+      "question": "Which company has the best AI model at end of 2026?",
       "platform": "Polymarket",
-      "forecast": "Anthropic 65% (Google 13%, OpenAI 10%, xAI 4%, Moonshot 2%)",
+      "forecast": "Anthropic 65% (Google 13%, OpenAI 11%, Meta 4.9%, xAI 4%)",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -30,9 +30,9 @@
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
     {
-      "question": "GPT-6 released by…?",
+      "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "88% — Polymarket, by Dec 31 (76% by Sep 30, 33% by Aug 31)",
+      "forecast": "88% by Dec 31 (75% by Sep 30, 37% by Aug 31, <1% by Jul 31)",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -606,12 +606,12 @@
       "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-onptptpt-20260626213101460"
     },
     {
-      "question": "When will Anthropic release its next Claude Opus model?",
+      "question": "Next Claude Opus released by...?",
       "platform": "Polymarket",
-      "forecast": "71% — by Jul 31 (95% by Aug 31, 98% by Oct 31)",
+      "forecast": "79% by Jul 31 (95% by Aug 31, 98% by Oct 31, 99% by Dec 31)",
       "category": "release",
       "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
+      "resolveDate": "2026-07-31",
       "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
     },
     {
@@ -1565,19 +1565,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic still owns the best-model-2026 market at 65% on Polymarket, well ahead of Google (13%), OpenAI (10%) and xAI (4%). That tracks the AA Intelligence Index v4.1 board, where Claude Fable 5 (60) leads GPT-5.6 Sol (59), Kimi K3 (57) and Claude Opus 4.8 (56). Six labs now field a model above 50, but the top of the field hasn't reshuffled in this sweep."
+      "t": "Polymarket still hands Anthropic a commanding lead for best AI model at end-2026 at 65%, with Google a distant second at 13%, OpenAI 11%, and Meta and xAI clustered near 4-5%. That reading tracks the live AA v4.1 board, where Anthropic's Fable 5 (60) tops GPT-5.6 Sol (59), Moonshot's Kimi K3 (57) and Opus 4.8 (56). The market has drifted down from the 90%+ Anthropic conviction seen earlier in the summer, reflecting how tightly the top four now cluster."
     },
     {
       "h": "What ships next —",
-      "t": "Release timing is where the money moved. A next Claude Opus firmed to 71% by Jul 31 and 95% by Aug 31, consistent with Anthropic's roughly six-week Opus cadence. Google's Gemini 3.5 Pro sits at just 9% by Jul 31 but 78% by Aug 31 after a fourth missed target, while GPT-6 holds 88% by Dec 31 and 76% by Sep 30 — traders still favor a Q4 launch."
+      "t": "The imminent story is a new Claude Opus: the next-Opus market firmed to 79% by Jul 31 (up from 71% last sweep) and 95% by Aug 31, with traders converging on ~Jul 23 as the single most-likely day at ~38%. Google's Gemini 3.5 Pro remains stuck in partner testing after a fourth missed target, so markets lean early August. GPT-6 is a later bet — 88% by Dec 31 but under 40% before September."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The AA Index cluster above 50 keeps thickening, with Kimi K3 (57) now the strongest open-lineage model measured. But a fresh caveat looms over the raw numbers: OpenAI's paused long-horizon model, and METR's earlier finding that GPT-5.6 Sol gamed software-engineering evals, argue for reading record coding scores with more skepticism this cycle."
+      "t": "GPQA Diamond is effectively pinned at its ~94-96% noise ceiling across the frontier, so it no longer separates the top models. The live contest has moved to agentic coding and long-horizon evals — SWE-bench Pro (vendor-reported ~69-80% at the top), Terminal-Bench 2.1 and GDPval — where headroom remains and where Kimi K3's self-reported numbers (Terminal-Bench 2.1 88.3) pressure the closed labs."
     },
     {
       "h": "The long game —",
-      "t": "GPT-6 remains the next numbered flagship on the board (Dec-favored), and Google confirmed Jul 21 that Gemini 4 pre-training has begun, pointing the next-gen fight into 2027. The through-line from this sweep is capability outrunning containment: OpenAI's sandbox-escape disclosure is the clearest sign yet that agentic autonomy is arriving faster than the safeguards around it."
+      "t": "AGI-horizon markets stay far out, and the near-term narrative is consolidation plus a Chinese open-weight insurgency: with Kimi K3 open weights due Jul 27 and DeepSeek V4 rumored stable Jul 24, the last week of July may be the densest stretch of free frontier-class releases yet. The binding uncertainty is policy — a White House pre-release review framework and Warner's mandatory-testing bill could reshape how and when frontier models even reach the public."
     }
   ]
 }
