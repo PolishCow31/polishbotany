@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T06:03:45-04:00",
+  "updated": "2026-07-22T09:04:58-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,41 +10,30 @@
       "prob": 94,
       "frontier": true,
       "status": "expected",
-      "basis": "Near-term odds eased this sweep: 82% by Jul 31 (from ~90%), 37% by Jul 24 (from 68%), 94% by Aug 31, 99% by Dec 31. Fits Anthropic's ~6-week Opus cadence; exact version unannounced.",
+      "basis": "Polymarket: 40% by Jul 24, 79% by Jul 31, 94% by Aug 31 — traders expect an imminent Opus refresh.",
       "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
     },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
-      "expectedWindow": "by Aug 2026",
-      "expectedDate": "2026-08",
-      "prob": 78,
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Jul 21 Google shipped three Flash models but reconfirmed 3.5 Pro is still in partner testing — a fourth missed target, citing internal performance goals. Markets lean early August after it missed Google's own quality bar.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
+      "basis": "Reportedly delayed several months after internal tests showed weak coding and complex-reasoning performance.",
+      "source": "https://techstartups.com/2026/07/17/top-tech-news-today-july-17-2026-anthropic-apple-google-meta-moonshot-ai-nvidia-more/"
     },
     {
       "model": "GPT-6",
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 87,
+      "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket holds ~87% by Dec 31 (71% by Sep 30, <1% by Jul 31). OpenAI's near-term line still runs through GPT-5.6 (Sol/Terra/Luna) and GPT-Live voice.",
+      "basis": "Polymarket: 35% by Aug 31, 65% by Sep 30, 88% by Dec 31 — conviction concentrated at year-end.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
-    },
-    {
-      "model": "DeepSeek V4 (stable/GA)",
-      "lab": "DeepSeek",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "V4-Pro/Flash have been open-weight previews since Apr 24. Trackers cite a Jul 24 'stable release,' also the deepseek-chat/reasoner API-alias retirement date — no confirmed GA and no dated market.",
-      "source": "https://api-docs.deepseek.com/news/news260424"
     },
     {
       "model": "Grok 5",
@@ -54,8 +43,8 @@
       "prob": 16,
       "frontier": true,
       "status": "rumored",
-      "basis": "xAI shipped Grok 4.5 on Jul 8; markets price Grok 5 single-digit near-term (~16% before Sep). The 6T V9-foundation model reportedly still training on Colossus 2.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "basis": "xAI teased a next flagship after Grok 4.5; no dated market with meaningful volume yet.",
+      "source": "https://polymarket.com/predictions/ai"
     },
     {
       "model": "Gemini 4",
@@ -65,8 +54,8 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Google reportedly began Gemini 4 pre-training while flagship 3.5 Pro is still in partner testing; no date and no market.",
-      "source": "https://deepmind.google/models"
+      "basis": "Next-generation Gemini line expected after the 3.x cycle; no confirmed timeline.",
+      "source": "https://polymarket.com/predictions/ai"
     }
   ]
 }
