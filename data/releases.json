@@ -1,16 +1,27 @@
 {
-  "updated": "2026-07-21T18:05:50-04:00",
+  "updated": "2026-07-21T21:38:19-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
+    {
+      "model": "Claude Opus 4.9",
+      "lab": "Anthropic",
+      "expectedWindow": "by Aug 2026",
+      "expectedDate": "2026-08",
+      "prob": 95,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Next-Opus market firmed sharply: 71% by Jul 31, 95% by Aug 31, 98% by Oct 31. Fits Anthropic's ~6-week Opus cadence (4.6 Feb, 4.7 Apr, 4.8 May); exact version unannounced.",
+      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
+    },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 2026",
       "expectedDate": "2026-08",
-      "prob": 77,
+      "prob": 78,
       "frontier": true,
       "status": "expected",
-      "basis": "Jul 21 Google shipped three Flash models but NOT 3.5 Pro — another missed target (after May and Jul 17); DeepMind rebuilt the base model and is 'missing internal performance goals' (Bloomberg). Now 'testing with partners, land soon.' Polymarket ~41% by Aug 7, 77% by Aug 31.",
+      "basis": "Jul 21 Google shipped three Flash models but confirmed 3.5 Pro is still in partner testing — a fourth missed target; DeepMind cited internal performance goals. Polymarket 9% by Jul 31, 55% by Aug 7, 78% by Aug 31.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -18,22 +29,22 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 87,
+      "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket steady: 87% by Dec 31, 71% by Sep 30, 27% by Aug 31, ~1% by Jul 31. OpenAI's near-term line still flows through GPT-5.6 (Sol/Terra/Luna) and GPT-Live voice.",
+      "basis": "Polymarket steady: 88% by Dec 31, 76% by Sep 30, 33% by Aug 31, <1% by Jul 31. OpenAI's near-term line still runs through GPT-5.6 (Sol/Terra/Luna) and GPT-Live voice.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
-      "model": "Claude Opus 4.9",
-      "lab": "Anthropic",
-      "expectedWindow": "by Oct 2026",
+      "model": "DeepSeek V4 (stable/GA)",
+      "lab": "DeepSeek",
+      "expectedWindow": "H2 2026",
       "expectedDate": "2026-09",
-      "prob": 98,
-      "frontier": true,
+      "prob": -1,
+      "frontier": false,
       "status": "rumored",
-      "basis": "Anthropic's ~6-week Opus cadence (4.6 Feb, 4.7 Apr, 4.8 May) points to a next Opus; markets price a next Claude Opus ~95% by Aug 31, ~98% by Oct 31, version unannounced.",
-      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
+      "basis": "V4-Pro/Flash have been open-weight previews since Apr 24; no confirmed GA date. The Jul 24 date is only the deepseek-chat/reasoner API-alias retirement, NOT a release. No dated market.",
+      "source": "https://api-docs.deepseek.com/news/news260424"
     },
     {
       "model": "Grok 5",
@@ -54,7 +65,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Google confirmed Jul 21 it has 'started its most ambitious pre-training run yet' for Gemini 4 — the next-gen flagship after 3.5 Pro. No date or dated market yet.",
+      "basis": "Google confirmed Jul 21 it has begun pre-training Gemini 4, the next-gen flagship after 3.5 Pro. No date or dated market yet.",
       "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/"
     }
   ]
