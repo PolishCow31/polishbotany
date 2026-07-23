@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T21:04:04-04:00",
+  "updated": "2026-07-23T00:05:22-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,11 +7,11 @@
       "lab": "Anthropic",
       "expectedWindow": "by Jul 2026",
       "expectedDate": "2026-07",
-      "prob": 99,
+      "prob": 97,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 'next Claude Opus by Jul 31' firmed to 99% (from 91%); the day-by-day market now makes Jul 23 (tomorrow) the modal ship day at 76% (up from 38% last sweep). Still unshipped as of Jul 22 9PM ET.",
-      "source": "https://polymarket.com/event/next-claude-opus-released-onptptpt-20260714203533730"
+      "basis": "Polymarket 'next Claude Opus by Jul 31' at 97% (by Jul 24 88%); Jul 23 is the modal daily ship day. Still unshipped as of Jul 23 midnight ET.",
+      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -21,7 +21,7 @@
       "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Reasoning flagship still in partner testing (a fourth missed target, per Google Jul 21). Polymarket 'next Gemini Pro' ~84% by Aug 31, only ~6% by Jul 31.",
+      "basis": "Google confirmed Jul 21 the reasoning flagship is still in partner testing (a fourth missed target). Polymarket 'next Gemini Pro' ~84% by Aug 31, only ~6% by Jul 31.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,8 +32,19 @@
       "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 88% by Dec 31 (35% by Aug, 69% by Sep). GPT-5.6 family already GA.",
+      "basis": "Polymarket 88% by Dec 31 (70% by Sep 30, 41% by Aug 31). GPT-5.6 family already GA.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "DeepSeek-V4 (stable GA)",
+      "lab": "DeepSeek",
+      "expectedWindow": "by Jul 2026",
+      "expectedDate": "2026-07",
+      "prob": -1,
+      "frontier": false,
+      "status": "expected",
+      "basis": "Aggregators report a stable GA of the current V4-Pro/Flash 'preview' around Jul 24; no dated market to price it.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Grok 5",
