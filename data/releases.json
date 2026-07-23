@@ -1,17 +1,17 @@
 {
-  "updated": "2026-07-23T09:06:03-04:00",
+  "updated": "2026-07-23T12:05:59-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
-      "model": "Claude Opus 4.9",
+      "model": "Claude Opus 4.9 / Opus 5",
       "lab": "Anthropic",
       "expectedWindow": "by Jul 2026",
       "expectedDate": "2026-07",
-      "prob": 96,
+      "prob": 91,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket surged: ~90% it ships TODAY Jul 23 (up from 59% at 6AM), ~96% by Jul 31, only 3.4% 'no ship this month'. Unshipped as of this sweep.",
-      "source": "https://polymarket.com/event/next-claude-opus-released-onptptpt-20260714203533730"
+      "basis": "Softened this sweep: Polymarket 'ships Jul 23' now ~83% (was ~90% at 9AM), 'by Jul 31' 91% (was 96%), 68% by Thu Jul 24, 95% by Aug 31. Rumors point to 'Opus 5' naming. Still unshipped; Anthropic news shows no Opus post-4.8.",
+      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -21,7 +21,7 @@
       "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Google confirmed Jul 21 the reasoning flagship is still in partner testing (a fourth missed target). Polymarket 'next Gemini Pro' ~84% by Aug 31, only ~6% by Jul 31.",
+      "basis": "Google reconfirmed Jul 21 the reasoning flagship is still in partner testing (fourth missed target). Polymarket 'next Gemini Pro' prices only ~4% by Jul 31 (96% no-ship this month), consistent with an August slip.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 88,
+      "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 87-88% by Dec 31 (71% by Sep 30, 41% by Aug 31). GPT-5.6 family already GA.",
+      "basis": "Repriced DOWN: Polymarket now 1.7% by Jul 31, 39.5% by Sep 30, 67.5% by Dec 31 (was ~88% by Dec, 71% by Sep). GPT-5.6 family already GA absorbed near-term demand.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -42,9 +42,9 @@
       "expectedDate": "2026-07",
       "prob": -1,
       "frontier": false,
-      "status": "expected",
-      "basis": "Aggregators report a stable GA of the current V4-Pro/Flash 'preview' arriving ~Jul 24; no dated market to price it.",
-      "source": "https://llm-stats.com/llm-updates"
+      "status": "confirmed",
+      "basis": "DeepSeek confirmed a mid-July formal GA of the V4-Pro/Flash preview; legacy deepseek-chat/deepseek-reasoner aliases retire Jul 24, routing to V4-Flash. Adds peak-hour (2x) pricing. No dated market.",
+      "source": "https://api-docs.deepseek.com/news/news260424"
     },
     {
       "model": "Grok 5",
@@ -54,7 +54,7 @@
       "prob": 16,
       "frontier": true,
       "status": "rumored",
-      "basis": "Manifold 16% before Sep 2026; V9 foundation reportedly still training on Colossus 2.",
+      "basis": "Manifold ~16% before Sep 2026; V9 foundation reportedly still training on Colossus 2 after the Jul 8 Grok 4.5 release.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
