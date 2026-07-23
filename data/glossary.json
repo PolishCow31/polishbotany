@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-22T09:04:58-04:00",
+  "updated": "2026-07-23T06:05:19-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -491,6 +491,15 @@
       "def": "One of the parallel sub-units inside an attention layer that learns to focus on a particular kind of relationship between tokens, with their outputs combined together.",
       "aka": [
         "head"
+      ]
+    },
+    {
+      "term": "Attention Residuals",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Technique that adds residual connections across attention layers so signal from earlier attention outputs is reinjected downstream, stabilizing very deep sparse-MoE stacks; introduced with Kimi K3.",
+      "aka": [
+        "attention residual connections"
       ]
     },
     {
