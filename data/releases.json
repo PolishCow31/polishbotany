@@ -1,72 +1,83 @@
 {
-  "updated": "2026-07-23T21:05:32-04:00",
+  "updated": "2026-07-24T00:03:47-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
-      "model": "Claude Opus 4.9 / Opus 5",
+      "model": "Next Claude Opus (4.9 / 5)",
       "lab": "Anthropic",
-      "expectedWindow": "by Jul 2026",
+      "expectedWindow": "by Jul 31 2026",
       "expectedDate": "2026-07",
-      "prob": 82,
+      "prob": 91,
       "frontier": true,
       "status": "expected",
-      "basis": "Opus did NOT ship on its heavily-rumored Jul 23 date; docs still list Opus 4.8. Polymarket 'next Opus by' eased to 82% by Jul 31 (95% by Aug 31, 98% by Oct 31). No Opus post on Anthropic news since Sonnet 5.",
+      "basis": "Polymarket 'next Claude Opus by Jul 31' ~91% (68% by Jul 24); leaks pointed to Jul 20-23 but nothing shipped. Name unconfirmed.",
       "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
-    },
-    {
-      "model": "Gemini 3.5 Pro",
-      "lab": "Google DeepMind",
-      "expectedWindow": "by Aug 2026",
-      "expectedDate": "2026-08",
-      "prob": 84,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Google reconfirmed Jul 21 the reasoning flagship is still in partner testing (fourth missed target). Polymarket 'next Gemini Pro' prices only ~4% by Jul 31, consistent with an August slip.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "GPT-6",
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 89,
+      "prob": 87,
       "frontier": true,
       "status": "expected",
-      "basis": "Steady: Polymarket ~1% by Jul 31, 35% by Aug 31, 74% by Sep 30, 89% by Dec 31 (flat this sweep). Near-term ship priced out; conviction concentrated in a late-year launch.",
+      "basis": "Polymarket 'GPT-6 released by Dec 31 2026' ~87% (71% by Sep 30). GPT-5.6 shipping cadence pushes the numbered flagship to H2.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
-      "model": "DeepSeek-V4 (stable GA)",
-      "lab": "DeepSeek",
-      "expectedWindow": "by Jul 2026",
+      "model": "Gemini 3.5 Pro",
+      "lab": "Google DeepMind",
+      "expectedWindow": "by Aug 2026",
+      "expectedDate": "2026-08",
+      "prob": -1,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Google confirmed Jul 21 the flagship is still in partner testing — a fourth missed target; Gemini 4 pre-training has begun.",
+      "source": "https://www.cnbc.com/2026/07/21/google-gemini-flash-ai-mythos-rival.html"
+    },
+    {
+      "model": "Kimi K3 open weights",
+      "lab": "Moonshot AI",
+      "expectedWindow": "by Jul 27 2026",
       "expectedDate": "2026-07",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "V4-Pro/Flash GA began rolling Jul 19; legacy deepseek-chat/deepseek-reasoner aliases retire TOMORROW, Jul 24 15:59 UTC, routing to V4-Flash. Adds peak-hour (2x) pricing. No dated market.",
-      "source": "https://api-docs.deepseek.com/news/news260424"
+      "basis": "Moonshot promised full open weights for the already-live 2.8T Kimi K3 by Jul 27, amid White House distillation accusations.",
+      "source": "https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic"
+    },
+    {
+      "model": "DeepSeek-V4 (stable GA)",
+      "lab": "DeepSeek",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "expected",
+      "basis": "V4-Pro/Flash preview live since Apr 24; no confirmed GA date. Jul 24 is only the legacy chat/reasoner API alias retirement.",
+      "source": "https://api-docs.deepseek.com/news/news260424/"
     },
     {
       "model": "Grok 5",
       "lab": "xAI",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": 16,
+      "expectedWindow": "late 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Manifold ~16% before Sep 2026; V9 foundation reportedly still training on Colossus 2 after the Jul 8 Grok 4.5 release.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "basis": "xAI (now SpaceXAI) shipped Grok 4.5 Jul 8; a next-gen Grok 5 is rumored but undated with no live market.",
+      "source": "https://x.ai/news/grok-4-5"
     },
     {
       "model": "Gemini 4",
       "lab": "Google DeepMind",
-      "expectedWindow": "2027",
+      "expectedWindow": "early 2027",
       "expectedDate": "2027-01",
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Google reconfirmed Jul 21 it has begun Gemini 4 pre-training ('most ambitious run yet'); no dated market.",
-      "source": "https://blog.google"
+      "basis": "Google said Jul 21 that Gemini 4 pre-training has begun; no timeline or market yet.",
+      "source": "https://www.cnbc.com/2026/07/21/google-gemini-flash-ai-mythos-rival.html"
     }
   ]
 }
