@@ -1988,6 +1988,27 @@
         "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/",
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/"
       ]
+    },
+    {
+      "name": "Claude Opus 5",
+      "lab": "Anthropic",
+      "released": "2026-07-24",
+      "params": "",
+      "context": "1M",
+      "modality": "Text + vision",
+      "open": false,
+      "benchmarks": {
+        "SWE-bench Pro": 79.2,
+        "AA-Index": 60
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "New frontier flagship succeeding Opus 4.8; adds a user-set low/medium/high effort control, reaches near-Fable-5 quality at ~half the cost, keeps flat $5/$25 pricing and a 1M-token context. Strong at agentic coding, debugging, and scientific research (biology/organic chemistry/protein).",
+      "sources": [
+        "https://www.anthropic.com/news/claude-opus-5",
+        "https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/",
+        "https://benchlm.ai/benchmarks/swePro"
+      ]
     }
   ]
 }
