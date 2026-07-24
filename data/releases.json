@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T09:03:39-04:00",
+  "updated": "2026-07-24T12:05:18-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Jul 31 2026",
       "expectedDate": "2026-07",
-      "prob": 81,
+      "prob": 91,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 'next Claude Opus released by' eased to 81% for Jul 31 (94% Aug 31, 98% Oct 31); no card or claude-opus-5 API string yet.",
+      "basis": "Polymarket 'next Claude Opus released by' firmed to 91% for Jul 31 (98% Aug 31, 99% Oct 31); still no card or claude-opus-5 API string. Per-date market leads Jul 24 (~32%), Jul 27 (~19%).",
       "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 'GPT-6 released by' 89% for Dec 31 (75% Sep 30, 36% Aug 31).",
+      "basis": "Polymarket 'GPT-6 released by' 89% for Dec 31 (75% Sep 30, 36% Aug 31); OpenAI's most recent flagship work is the GPT-5.6 suite.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Flagship keeps slipping; Polymarket 'next Gemini Pro model released by Aug 7' ~73%, 'reasoning flagship by Jul 31' ~71%. Google shipped cheaper Flash tiers instead.",
+      "basis": "Google confirmed Jul 21 that flagship 3.5 Pro is still in partner testing (a fourth missed target) and that Gemini 4 pre-training has begun; it shipped cheaper 3.6 Flash tiers instead. Polymarket 'next Gemini Pro by Aug 7' ~73%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-onptptpt"
     },
     {
@@ -43,19 +43,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Moonshot promised open weights for its 2.8T-param K3 by Jul 27, amid White House distillation accusations and sanctions threats.",
-      "source": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation"
-    },
-    {
-      "model": "DeepSeek-V4 (stable GA)",
-      "lab": "DeepSeek",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "V4-Pro/Flash still preview; legacy deepseek-chat/reasoner aliases retire Jul 24. Leaked GA build IDs point to an imminent stable release, no official date.",
-      "source": "https://api-docs.deepseek.com"
+      "basis": "Moonshot promised full open weights for its 2.8T-param K3 (Modified MIT) by Jul 27, amid US 'industrial distillation' accusations; model is already live via API and independently scored AA 57.",
+      "source": "https://www.digitalapplied.com/blog/kimi-k3-open-weights-july-27-adoption-readiness-checklist"
     },
     {
       "model": "Grok 5",
@@ -65,7 +54,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Manifold 'Grok 5 before Sep 2026' ~16%; V9 foundation reportedly still training on Colossus 2.",
+      "basis": "Manifold 'Grok 5 before Sep 2026' ~16%; V9 foundation (now under SpaceXAI) reportedly still training on Colossus 2 after the Jul 8 Grok 4.5 launch.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -76,7 +65,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Next-generation Gemini line; no dated market.",
+      "basis": "Google confirmed Jul 21 that Gemini 4 pre-training has begun; no dated market yet.",
       "source": "https://deepmind.google/models"
     }
   ]

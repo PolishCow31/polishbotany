@@ -1591,7 +1591,7 @@
       },
       "milestone": true,
       "status": "live",
-      "notable": "DeepSeek's return to the open frontier after V3.1: a 1.6T-param MoE (49B active) with a 1M-token default context via a new hybrid attention stack (Compressed Sparse + Heavily Compressed Attention) that needs only ~27% of V3.2's per-token FLOPs and ~10% of its KV cache at 1M context. Open weights. AA Intelligence Index 52 (live v4.0 scale) — the #2 open-weights model behind Moonshot's Kimi K2.6 (54), ahead of GLM-5 (50) and NVIDIA Nemotron 3 Ultra (48). Shipped as a 'preview'; no stable GA as of mid-June 2026.",
+      "notable": "DeepSeek's return to the open frontier after V3.1: a 1.6T-param MoE (49B active) with a 1M-token default context via a new hybrid attention stack (Compressed Sparse + Heavily Compressed Attention) needing ~27% of V3.2's per-token FLOPs and ~10% of its KV cache at 1M context. Open weights. Went STABLE GA on Jul 19 2026 (with V4-Flash), exiting the Apr 24 preview — early testers put it near Opus 4.8 on general tasks and closing on GPT-5.6 Sol on coding, at pricing that undercuts Fable 5 by roughly 57x. AA Intelligence Index 52. The legacy deepseek-chat / deepseek-reasoner aliases retire Jul 24 2026, routing to V4.",
       "sources": [
         "https://api-docs.deepseek.com/news/news260424",
         "https://artificialanalysis.ai/models/deepseek-v4-pro"
@@ -1608,7 +1608,7 @@
       "benchmarks": {},
       "milestone": false,
       "status": "live",
-      "notable": "Small, fast sibling to V4-Pro launched the same day: 284B total / 13B active MoE, 1M-token default context, 384K max output. Same Compressed-Sparse/Heavily-Compressed attention for cheap long-context inference. Open weights, preview status. Positioned as DeepSeek's high-volume budget tier against Gemini 3 Flash and Qwen small models.",
+      "notable": "Small, fast sibling to V4-Pro: 284B total / 13B active MoE, 1M-token default context, 384K max output, same Compressed-Sparse/Heavily-Compressed attention for cheap long-context inference. Open weights. Reached stable GA Jul 19 2026 alongside V4-Pro (exiting preview); the retiring deepseek-chat/deepseek-reasoner aliases resolved here during the preview window. Positioned as DeepSeek's high-volume budget tier against Gemini 3.x Flash and Qwen small models.",
       "sources": [
         "https://api-docs.deepseek.com/news/news260424"
       ]
