@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T06:05:12-04:00",
+  "updated": "2026-07-24T09:03:39-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Jul 31 2026",
       "expectedDate": "2026-07",
-      "prob": 82,
+      "prob": 81,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 'next Opus by Jul 31' eased to ~82% (from 84%) as the rumored Jul 23 launch stayed empty; Aug 31 at 95%, Oct 31 at 98%. Name unconfirmed.",
+      "basis": "Polymarket 'next Claude Opus released by' eased to 81% for Jul 31 (94% Aug 31, 98% Oct 31); no card or claude-opus-5 API string yet.",
       "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260701204710232"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 'GPT-6 released by Dec 31 2026' ~89% (75% by Sep 30, 36% by Aug 31). GPT-5.6 cadence pushes the numbered flagship to H2.",
+      "basis": "Polymarket 'GPT-6 released by' 89% for Dec 31 (75% Sep 30, 36% Aug 31).",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -29,11 +29,11 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 2026",
       "expectedDate": "2026-08",
-      "prob": -1,
+      "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Google confirmed Jul 21 the flagship is still in partner testing — a fourth missed target; the delay keeps widening the frontier race.",
-      "source": "https://www.cnbc.com/2026/07/21/google-gemini-flash-ai-mythos-rival.html"
+      "basis": "Flagship keeps slipping; Polymarket 'next Gemini Pro model released by Aug 7' ~73%, 'reasoning flagship by Jul 31' ~71%. Google shipped cheaper Flash tiers instead.",
+      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-onptptpt"
     },
     {
       "model": "Kimi K3 open weights",
@@ -43,8 +43,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Moonshot promised full open weights for the already-live 2.8T Kimi K3 by Jul 27, amid White House 'industrial distillation' accusations.",
-      "source": "https://www.axios.com/2026/07/16/moonshot-kimi-ai-china-model-openai-anthropic"
+      "basis": "Moonshot promised open weights for its 2.8T-param K3 by Jul 27, amid White House distillation accusations and sanctions threats.",
+      "source": "https://www.interconnects.ai/p/kimi-k3-the-open-weights-escalation"
     },
     {
       "model": "DeepSeek-V4 (stable GA)",
@@ -54,8 +54,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "V4-Pro/Flash preview live since Apr 24; no confirmed GA date. Legacy chat/reasoner API aliases retire Jul 24.",
-      "source": "https://api-docs.deepseek.com/news/news260424/"
+      "basis": "V4-Pro/Flash still preview; legacy deepseek-chat/reasoner aliases retire Jul 24. Leaked GA build IDs point to an imminent stable release, no official date.",
+      "source": "https://api-docs.deepseek.com"
     },
     {
       "model": "Grok 5",
@@ -65,8 +65,8 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "xAI (now SpaceXAI) shipped Grok 4.5 Jul 8; a next-gen Grok 5 is rumored but undated with no live market.",
-      "source": "https://x.ai/news/grok-4-5"
+      "basis": "Manifold 'Grok 5 before Sep 2026' ~16%; V9 foundation reportedly still training on Colossus 2.",
+      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
       "model": "Gemini 4",
@@ -76,8 +76,8 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Google said Jul 21 that Gemini 4 pre-training has begun; no timeline or market yet.",
-      "source": "https://www.cnbc.com/2026/07/21/google-gemini-flash-ai-mythos-rival.html"
+      "basis": "Next-generation Gemini line; no dated market.",
+      "source": "https://deepmind.google/models"
     }
   ]
 }
