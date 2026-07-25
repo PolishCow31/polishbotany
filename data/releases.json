@@ -1,16 +1,27 @@
 {
-  "updated": "2026-07-24T21:05:08-04:00",
+  "updated": "2026-07-25T00:05:29-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
+    {
+      "model": "Kimi K3 open weights",
+      "lab": "Moonshot AI",
+      "expectedWindow": "by Jul 27 2026",
+      "expectedDate": "2026-07",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Moonshot promised full open weights (Modified MIT) for its 2.8T-param K3 by Jul 27; already live via API at AA 57. ~1.4TB even at 4-bit MXFP4, so hosts are clouds, not workstations.",
+      "source": "https://www.techi.com/kimi-k3-open-weights-inference-economics/"
+    },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 2026",
       "expectedDate": "2026-08",
-      "prob": 73,
+      "prob": 86,
       "frontier": true,
       "status": "expected",
-      "basis": "A widely-reported Jul 17 target passed (a fourth slip) after Google scrapped the base architecture for a ground-up rebuild; still in limited Vertex preview. Polymarket 'next Gemini Pro by Aug 7' ~73%.",
+      "basis": "Fourth slip after Google rebuilt the base architecture; still limited Vertex preview. Polymarket now 3% by Jul 31, 27% by Aug 7, 86% by Aug 31.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -21,19 +32,8 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 'GPT-6 released by' 89% for Dec 31 (75% Sep 30, 36% Aug 31). OpenAI's newest flagship work is the GPT-5.6 Sol/Terra/Luna suite (shipped Jul 9); no GPT-6 yet.",
+      "basis": "Polymarket 89% by Dec 31, easing to 71% by Sep 30 and 29% by Aug 31. OpenAI's newest flagship work is the GPT-5.6 Sol/Terra/Luna suite; no GPT-6 yet.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
-    },
-    {
-      "model": "Kimi K3 open weights",
-      "lab": "Moonshot AI",
-      "expectedWindow": "by Jul 27 2026",
-      "expectedDate": "2026-07",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Moonshot promised full open weights (Modified MIT) for its 2.8T-param K3 by Jul 27; already live via API at AA 57. Weights run ~1.4TB even at 4-bit MXFP4, so realistic hosts are clouds, not workstations.",
-      "source": "https://www.techi.com/kimi-k3-open-weights-inference-economics/"
     },
     {
       "model": "Grok 5",
@@ -43,7 +43,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Manifold 'Grok 5 before Sep 2026' ~16%; V9 foundation reportedly still training on Colossus 2 after the Jul 8 Grok 4.5 launch.",
+      "basis": "Manifold 'Grok 5 before Sep 2026' down to 5% (2% before Aug); V9 foundation reportedly still training on Colossus 2 after the Jul 8 Grok 4.5 launch.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {

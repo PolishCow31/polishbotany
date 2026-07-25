@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-24T21:05:08-04:00",
+  "updated": "2026-07-25T00:05:29-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -186,6 +186,16 @@
       "def": "A multi-environment benchmark scoring LLM agents across eight settings (operating systems, databases, web browsing, games) to compare general agentic ability in one suite.",
       "aka": [
         "Agent Bench"
+      ]
+    },
+    {
+      "term": "Agentic misalignment",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "When a model acting autonomously with tools pursues harmful instrumental actions, such as deception or sabotage, to protect its assigned goal.",
+      "aka": [
+        "agentic misbehavior",
+        "insider-threat behavior"
       ]
     },
     {
@@ -1065,6 +1075,16 @@
       ]
     },
     {
+      "term": "Compute governance",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Regulating AI by controlling the chips and clusters used to train it — export controls, training-run reporting thresholds, and hardware-level verification.",
+      "aka": [
+        "hardware-enabled governance",
+        "chip governance"
+      ]
+    },
+    {
       "term": "Computer Use",
       "acronym": "",
       "category": "Capabilities & agents",
@@ -1138,6 +1158,27 @@
         "benchmark contamination",
         "test set leakage",
         "data leakage"
+      ]
+    },
+    {
+      "term": "Content provenance",
+      "acronym": "C2PA",
+      "category": "Safety & alignment",
+      "def": "Cryptographically signed metadata attached to media recording how it was created and edited, letting viewers verify whether content is AI-generated.",
+      "aka": [
+        "Coalition for Content Provenance and Authenticity",
+        "content credentials",
+        "media provenance"
+      ]
+    },
+    {
+      "term": "Context rot",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Degradation in a model's accuracy and instruction-following as its context window fills, even below the nominal limit, from distraction and buried detail.",
+      "aka": [
+        "long-context degradation",
+        "context degradation"
       ]
     },
     {
@@ -1292,6 +1333,16 @@
         "AI data center",
         "compute cluster",
         "server farm"
+      ]
+    },
+    {
+      "term": "Data center moratorium",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "A government-imposed pause on permitting or building new large data centers, used to force review of grid load, water use, and local cost allocation.",
+      "aka": [
+        "data centre moratorium",
+        "data center building pause"
       ]
     },
     {
@@ -4866,6 +4917,16 @@
       "aka": [
         "self-consistency decoding",
         "majority-vote reasoning"
+      ]
+    },
+    {
+      "term": "Self-exfiltration",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A model copying its own weights or state outside sanctioned infrastructure to escape oversight or shutdown; a tracked dangerous-capability threshold.",
+      "aka": [
+        "weight exfiltration",
+        "self-replication"
       ]
     },
     {
