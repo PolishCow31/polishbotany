@@ -1999,15 +1999,17 @@
       "open": false,
       "benchmarks": {
         "SWE-bench Pro": 79.2,
-        "AA-Index": 60
+        "AA-Index": 61,
+        "Terminal-Bench 2.1": 89
       },
       "milestone": true,
       "status": "live",
-      "notable": "New frontier flagship succeeding Opus 4.8; adds a user-set low/medium/high effort control, reaches near-Fable-5 quality at ~half the cost, keeps flat $5/$25 pricing and a 1M-token context. Strong at agentic coding, debugging, and scientific research (biology/organic chemistry/protein).",
+      "notable": "New frontier flagship succeeding Opus 4.8; adds a user-set low/medium/high effort control, keeps flat $5/$25 pricing and a 1M-token context. UPDATE (Jul 25): Artificial Analysis finished its independent run and scored it 61 on the Intelligence Index v4.1 — sole #1 of 190 models, ahead of Claude Fable 5 (60) and GPT-5.6 Sol (59). It jointly leads AA's Coding Agent Index, hits 89% on Terminal-Bench v2.1, and posts 1861 Elo on GDPval-AA v2 (>100 ahead of Fable 5) and 1720 on AA-Briefcase (+146). Cost per Intelligence Index task is $2.03 vs $2.75 for Fable 5 — the cheapest frontier-tier intelligence measured. Weak spot: factual knowledge, with a ~50% hallucination rate, still behind Fable 5. Very verbose (100M output tokens across AA's eval suite). No LMArena Elo yet — new models need 1-2 weeks of votes.",
       "sources": [
         "https://www.anthropic.com/news/claude-opus-5",
-        "https://fortune.com/2026/07/24/anthropic-debuts-claude-opus-5-with-feature-that-lets-users-toggle-between-cost-and-capability/",
-        "https://benchlm.ai/benchmarks/swePro"
+        "https://artificialanalysis.ai/articles/opus-5",
+        "https://artificialanalysis.ai/models/claude-opus-5",
+        "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5"
       ]
     }
   ]
