@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-25T18:04:48-04:00",
+  "updated": "2026-07-26T00:05:08-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -962,6 +962,16 @@
       ]
     },
     {
+      "term": "Chunked prefill",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Splitting a long prompt's prefill into smaller chunks interleaved with decode steps, so one large request cannot stall other users' token generation.",
+      "aka": [
+        "piecewise prefill",
+        "prefill chunking"
+      ]
+    },
+    {
       "term": "Chunking",
       "acronym": "",
       "category": "Capabilities & agents",
@@ -1202,6 +1212,16 @@
         "context extension",
         "long-context extension",
         "context window extension"
+      ]
+    },
+    {
+      "term": "Continuous batching",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Serving technique that admits and retires requests mid-batch instead of waiting for a whole batch to finish, sharply raising GPU utilization and throughput.",
+      "aka": [
+        "iteration-level scheduling",
+        "dynamic batching"
       ]
     },
     {
@@ -2020,6 +2040,16 @@
       ]
     },
     {
+      "term": "Frontend Code Arena",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Human-preference leaderboard scoring models on generated web front-end code, rated by side-by-side votes on rendered output rather than unit tests.",
+      "aka": [
+        "Frontend Arena",
+        "WebDev Arena"
+      ]
+    },
+    {
       "term": "Frontier lab",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -2270,6 +2300,16 @@
       "aka": [
         "GPU hours",
         "accelerator-hours"
+      ]
+    },
+    {
+      "term": "Gradient checkpointing",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Memory-saving trick that discards intermediate activations during the forward pass and recomputes them in the backward pass, trading extra compute for larger batches.",
+      "aka": [
+        "activation checkpointing",
+        "rematerialization"
       ]
     },
     {
@@ -3724,6 +3764,16 @@
         "vision-language model",
         "VLM",
         "omni model"
+      ]
+    },
+    {
+      "term": "Muon optimizer",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Optimizer that orthogonalizes momentum updates for weight matrices, improving token-efficiency over AdamW; adopted in several large Chinese open-weight pretraining runs.",
+      "aka": [
+        "Muon",
+        "MomentUm Orthogonalized by Newton-Schulz"
       ]
     },
     {
