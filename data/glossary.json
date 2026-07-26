@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T03:10:49-04:00",
+  "updated": "2026-07-26T06:05:57-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -999,6 +999,16 @@
       "aka": [
         "circuits",
         "neural circuit"
+      ]
+    },
+    {
+      "term": "Classifier-free guidance",
+      "acronym": "CFG",
+      "category": "Inference & serving",
+      "def": "An image-generation sampling trick that blends conditional and unconditional model predictions, trading diversity for tighter prompt adherence via a single guidance-scale knob.",
+      "aka": [
+        "CFG scale",
+        "guidance scale"
       ]
     },
     {
@@ -2974,6 +2984,16 @@
         "inference latency",
         "delay",
         "response time"
+      ]
+    },
+    {
+      "term": "Latent diffusion model",
+      "acronym": "LDM",
+      "category": "Model architecture",
+      "def": "A diffusion model that denoises in a compressed autoencoder latent space rather than pixel space, cutting compute enormously while preserving image quality.",
+      "aka": [
+        "latent diffusion",
+        "Stable Diffusion architecture"
       ]
     },
     {
@@ -6058,6 +6078,17 @@
       "aka": [
         "vector DB",
         "vector store"
+      ]
+    },
+    {
+      "term": "Vector-Quantized Variational Autoencoder",
+      "acronym": "VQ-VAE",
+      "category": "Model architecture",
+      "def": "An autoencoder that maps images to a discrete codebook of tokens, letting transformers generate pictures autoregressively the same way they generate text.",
+      "aka": [
+        "image tokenizer",
+        "discrete visual tokens",
+        "VQ-GAN"
       ]
     },
     {

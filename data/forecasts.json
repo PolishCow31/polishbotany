@@ -1,11 +1,11 @@
 {
-  "updated": "2026-07-26T03:10:49-04:00",
+  "updated": "2026-07-26T06:05:57-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
       "question": "Which company has best AI model end of 2026?",
       "platform": "Polymarket",
-      "forecast": "63% — Anthropic (Google 11%, OpenAI 9%, xAI 3.7%, Moonshot 3%); $395K volume",
+      "forecast": "63% — Anthropic (Google 11%, OpenAI 9%, xAI 3.7%, Moonshot 3%, Meta 2%, DeepSeek 2%); $396K volume",
       "category": "ranking",
       "relevantBenchmark": "LMArena Elo",
       "resolveDate": "2026-12-31",
@@ -14,7 +14,7 @@
     {
       "question": "Which company has best AI model end of July?",
       "platform": "Polymarket",
-      "forecast": "99.4% — Anthropic (every other lab <1%); $7.89M volume, resolves on LMArena Text Overall rank",
+      "forecast": "99.4% — Anthropic (every other lab <1%); $7.90M volume, resolves on the Chatbot Arena LLM leaderboard Jul 31",
       "category": "ranking",
       "relevantBenchmark": "LMArena Elo",
       "resolveDate": "2026-07-31",
@@ -32,7 +32,7 @@
     {
       "question": "GPT-6 released by...?",
       "platform": "Polymarket",
-      "forecast": "89% — by Dec 31 (74% by Sep 30, 28% by Aug 31, 21% by Aug 21, 1% by Jul 31); $697K volume",
+      "forecast": "89% — by Dec 31 (74% by Sep 30, 26% by Aug 31, 21% by Aug 21, 3% by Aug 14, 1% by Jul 31); $698K volume",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -59,7 +59,7 @@
     {
       "question": "AI model scores >=90% on FrontierMath benchmark before 2027?",
       "platform": "Polymarket",
-      "forecast": "85% — Yes; $109K volume",
+      "forecast": "85% — Yes; $109K volume, open until Dec 30",
       "category": "benchmark",
       "relevantBenchmark": "FrontierMath",
       "resolveDate": "2026-12-30",
@@ -68,7 +68,7 @@
     {
       "question": "OpenAI announces it has achieved AGI before 2027?",
       "platform": "Polymarket",
-      "forecast": "11% — Yes; $90.5K volume",
+      "forecast": "11% — Yes; $90.5K volume, open until Dec 30",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-30",
@@ -401,7 +401,7 @@
     {
       "question": "Next Google Gemini Pro model released by...?",
       "platform": "Polymarket",
-      "forecast": "85% — by Aug 31 (31% by Aug 7, up from 22%; only 3% by Jul 31); $324K volume",
+      "forecast": "85% — by Aug 31 (27% by Aug 7, 3% by Jul 31, 1% by Jul 30); $324K volume",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-08-31",
@@ -671,10 +671,10 @@
     {
       "question": "When will xAI release Grok 5?",
       "platform": "Manifold",
-      "forecast": "5% — before September 2026 (2% before August); companion market prices an xAI rebrand away from 'Grok' at 3%",
+      "forecast": "5% — before September 2026 (2% before August 2026); resolution requires public access without vetting or invitation",
       "category": "release",
       "relevantBenchmark": "other",
-      "resolveDate": "2026-09-30",
+      "resolveDate": "2026-12-31",
       "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -1592,19 +1592,19 @@
   "marketsStory": [
     {
       "h": "The race right now —",
-      "t": "Anthropic is priced not just as the leader but as the whole podium. Polymarket's end-of-July best-model market sits at 99.4% Anthropic on $7.89M of volume, and the companion second-best market is 97.9% Anthropic — traders expect one lab to hold both the #1 and #2 slots on the LMArena leaderboard when the month locks. That reflects the current standings, where Claude Opus 5 (61 on the Artificial Analysis Intelligence Index v4.1) leads Fable 5 (60), GPT-5.6 Sol (59) and Kimi K3 (57). The year-end picture is far less settled: Polymarket has Anthropic at 63% for Dec 31 and Kalshi at 63.9%, a rare cross-venue agreement with no arbitrage, with Google at 11% and OpenAI at 9%. Coding is the most contestable frontier — Kalshi's LiveBench-resolved coding market gives Anthropic only 58% while OpenAI runs 29%, double its 14.3% in the general race."
+      "t": "Nothing in the standings moved this sweep, and the markets reflect it. Polymarket's end-of-July best-model question is stuck at 99.4% Anthropic on $7.90M of volume, with every other lab priced under 1% — traders have effectively closed the book on July, five days out. That tracks the leaderboard, where Claude Opus 5 (61 on the Artificial Analysis Intelligence Index v4.1) leads Fable 5 (60), GPT-5.6 Sol (59) and Kimi K3 (57). December is the market worth watching: Anthropic sits at 63% for year-end, unchanged, with Google at 11% and OpenAI at 9% — a 36-point gap between near-certainty this month and a genuinely contested finish in five months."
     },
     {
       "h": "What ships next —",
-      "t": "The nearest dated event is not a frontier launch but a weights drop: Moonshot's Kimi K3 open weights are scheduled for Jul 27 00:00 UTC. After that the calendar belongs to Google, whose next Gemini Pro is priced at 85% by Aug 31 with the Aug 7 leg firming from 22% to 31% this sweep — the only meaningful release-side move on the board. Only 3% expects it before Jul 31, after a base-model rebuild pushed it past a fifth internal date. GPT-6 is unchanged at 89% by Dec 31, 74% by Sep 30 and 28% by Aug 31, with Manifold's independent ladder landing on 88% before 2027 — close enough to Polymarket's 89% to count as consensus. Grok 5 stays cold at 5% before September. The live near-term wildcard is Manifold's July-releases market, which prices any new DeepSeek model at 63% with five days left."
+      "t": "The nearest event is a weights drop, not a launch: Moonshot's Kimi K3 open weights are due Jul 27 00:00 UTC, tonight at 8pm ET, and the moonshotai Hugging Face org still tops out at Kimi-K2.7-Code. Beyond that, the month's release board just thinned dramatically — Manifold repriced 'any DeepSeek model in July' from 63% to 6%, promoting Zhipu's GLM-5.x (25%) to the highest-priced model still unshipped, ahead of MiniMax M3.x at 15% and Claude Haiku 5.x at 11%. August belongs to Google, whose next Gemini Pro holds 85% by Aug 31 though the Aug 7 leg eased from 31% to 27%. GPT-6 is unchanged in aggregate at 89% by Dec 31 and 74% by Sep 30, with its August 31 leg slipping to 26%; Grok 5 stays a late-2026 story at 5% before September."
     },
     {
       "h": "Benchmarks saturating —",
-      "t": "The clearest evidence that frontier capability actually advanced this month came from the Arena ladder, which shifted a full rung: 1500+ by Dec 31 has locked at 100%, and the 89% that used to sit on 1500 has migrated up to the 1510 threshold. Above that the distribution thins fast — 1520+ at 69%, 1530+ at 34%, 1600+ at 11%, 1700+ at 3% — so traders see roughly one more rung of headroom this year, not a step change. Math is the other saturating front: FrontierMath at 90% or better before 2027 holds steady at 85%. The exception is IMO gold in 2026, which slipped from 77% to 71% with the Shanghai results still pending, though on $8.1K of volume that move is barely distinguishable from noise."
+      "t": "The benchmark markets are the quietest part of the board, which is itself the signal: the questions traders still find interesting are the ones with headroom. FrontierMath at ≥90% before 2027 holds at 85% on $109K — a benchmark built two years ago to be unbeatable, now priced as a near-lock inside eighteen months. SWE-bench Verified has already lost most of its discriminating power at the top, with frontier scores in the mid-90s, which is why attention has shifted to agentic and long-horizon variants. Humanity's Last Exam remains the real holdout inside the AA Index, with frontier models in the 40s against a ~90% human-expert baseline — the single largest gap left on any major eval."
     },
     {
       "h": "The long game —",
-      "t": "None of the near-term momentum has moved the AGI horizon. Polymarket still gives OpenAI only 11% to announce AGI before 2027, unchanged across the sweep and priced on $90.5K. Metaculus remains far more conservative, with a community median around 2033 for a full general system and roughly 25% by 2029, while Manifold's ladders cluster near 3% before 2027 and 38% by 2030. The gap between what markets expect from the leaderboard and what they expect from general intelligence keeps widening: traders are confident a specific lab will top a specific Elo table on a specific date, and no more confident than a year ago that anyone crosses the general-capability line. Chinese labs illustrate the same split — 97% to land a top-10 model by Dec 31, but only 11% to take #1."
+      "t": "Near-term AGI claims stay cheap. Polymarket prices an OpenAI AGI announcement before 2027 at 11% on $90.5K, essentially flat for weeks, and the Metaculus community still centers strong AGI in the early 2030s. The tension in the board is that capability markets keep pulling forward while declaration markets do not: traders expect models to clear specific hard benchmarks fast, and expect no lab to claim the word. That gap — saturating evals alongside an 11% chance anyone says the thing out loud — is the most consistent structural feature of the 2026 market set, and it has survived every frontier release this year."
     }
   ]
 }

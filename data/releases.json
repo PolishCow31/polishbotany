@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T03:10:49-04:00",
+  "updated": "2026-07-26T06:05:57-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Drop set for Jul 27 00:00 UTC (8pm ET Jul 26), ~594GB BF16, modified MIT. No K3 repo on moonshotai HF at 3am ET.",
+      "basis": "Drop set for Jul 27 00:00 UTC (8pm ET tonight), ~2.8T params, modified MIT. moonshotai HF org still tops out at Kimi-K2.7-Code as of 6am ET.",
       "source": "https://huggingface.co/moonshotai"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket holds 85% by Aug 31; the Aug 7 leg firmed 22% to 31%, Jul 31 still 3%. Base model was rebuilt after coding and hallucination misses.",
+      "basis": "Polymarket holds 85% by Aug 31; the Aug 7 leg eased 31% to 27% and Jul 31 sits at 3% on $324K total volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,19 +32,41 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket flat at 89% by Dec 31, 74% by Sep 30, 28% by Aug 31 on $697K; Manifold unchanged at 60% before October, 88% before 2027.",
+      "basis": "Polymarket flat at 89% by Dec 31 and 74% by Sep 30 on $698K; the Aug 31 leg slipped 28% to 26%, Aug 21 at 21%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "GLM-5.x",
+      "lab": "Zhipu / Z.ai",
+      "expectedWindow": "by Jul 31 2026",
+      "expectedDate": "2026-07",
+      "prob": 25,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Now the highest-priced unshipped model in Manifold's July-releases market at 25%, ahead of MiniMax M3.x (15%) and Claude Haiku 5.x (11%).",
+      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
       "model": "Next DeepSeek model",
       "lab": "DeepSeek",
       "expectedWindow": "by Jul 31 2026",
       "expectedDate": "2026-07",
-      "prob": 63,
+      "prob": 6,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold's July-releases market prices any DeepSeek model at 63% with five days left; GLM-5.x sits at 25% in the same market.",
+      "basis": "Manifold's July-releases market repriced any DeepSeek model from 63% to 6% with five days left; no shipping signal from the lab.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+    },
+    {
+      "model": "Meta Avocado",
+      "lab": "Meta (Superintelligence Labs)",
+      "expectedWindow": "2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Text-and-coding sibling of the 'Mango' project, which shipped Jul 7 as Muse Image; no dated market exists.",
+      "source": "https://www.digit.in/news/general/meta-plans-new-image-and-video-ai-model-codenamed-mango-targets-2026-release-report.html"
     },
     {
       "model": "Grok 5",
@@ -54,7 +76,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Manifold still 5% before Sep 2026 and 2% before Aug; base model reportedly training on Colossus 2 since the Jul 8 Grok 4.5 launch.",
+      "basis": "Manifold still prices 5% before Sep 2026 and 2% before Aug; base model reportedly training since the Jul 8 Grok 4.5 launch.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
