@@ -1623,7 +1623,7 @@
       "open": false,
       "benchmarks": {},
       "milestone": false,
-      "status": "preview",
+      "status": "live",
       "notable": "ByteDance Seed team's coding-focused flagship, unveiled at the Volcano Engine 2026 conference (Jun 23) as an early-access preview alongside Seedance 2.5 and Seedream 5.0. Debuts #8 on Code Arena: Frontend (1539 Elo), on par with Claude Opus 4.6, and top-10 in five of seven subcategories. ByteDance has kept the spec sheet quiet — no confirmed params, context, pricing, or whether weights will be open.",
       "sources": [
         "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
@@ -2004,12 +2004,32 @@
       },
       "milestone": true,
       "status": "live",
-      "notable": "New frontier flagship succeeding Opus 4.8; adds a user-set low/medium/high effort control, keeps flat $5/$25 pricing and a 1M-token context. UPDATE (Jul 25): Artificial Analysis finished its independent run and scored it 61 on the Intelligence Index v4.1 — sole #1 of 190 models, ahead of Claude Fable 5 (60) and GPT-5.6 Sol (59). It jointly leads AA's Coding Agent Index, hits 89% on Terminal-Bench v2.1, and posts 1861 Elo on GDPval-AA v2 (>100 ahead of Fable 5) and 1720 on AA-Briefcase (+146). Cost per Intelligence Index task is $2.03 vs $2.75 for Fable 5 — the cheapest frontier-tier intelligence measured. Weak spot: factual knowledge, with a ~50% hallucination rate, still behind Fable 5. Very verbose (100M output tokens across AA's eval suite). No LMArena Elo yet — new models need 1-2 weeks of votes.",
+      "notable": "New frontier flagship succeeding Opus 4.8; adds a user-set low/medium/high effort control, keeps flat $5/$25 pricing and a 1M-token context. UPDATE (Jul 25): Artificial Analysis finished its independent run and scored it 61 on the Intelligence Index v4.1 — sole #1 of 190 models, ahead of Claude Fable 5 (60) and GPT-5.6 Sol (59). It jointly leads AA's Coding Agent Index, hits 89% on Terminal-Bench v2.1, and posts 1861 Elo on GDPval-AA v2 (>100 ahead of Fable 5) and 1720 on AA-Briefcase (+146). Cost per Intelligence Index task is $2.03 vs $2.75 for Fable 5 — the cheapest frontier-tier intelligence measured. Weak spot: factual knowledge, with a ~50% hallucination rate, still behind Fable 5. Very verbose (100M output tokens across AA's eval suite). No LMArena Elo yet — new models need 1-2 weeks of votes. DISTRIBUTION (Jul 24-26): now live on the Anthropic API, Claude.ai (default for Max, top tier for Pro), Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry, and GitHub Copilot (gradual rollout). A 'Fast mode' runs at roughly 2.5x speed for $10 in / $50 out.",
       "sources": [
         "https://www.anthropic.com/news/claude-opus-5",
         "https://artificialanalysis.ai/articles/opus-5",
         "https://artificialanalysis.ai/models/claude-opus-5",
         "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5"
+      ]
+    },
+    {
+      "name": "Fugu-Cyber",
+      "lab": "Sakana AI",
+      "released": "2026-07-21",
+      "params": "undisclosed",
+      "context": "undisclosed",
+      "modality": "text (multi-agent cybersecurity orchestration)",
+      "open": false,
+      "benchmarks": {
+        "CyberGym": 86.9,
+        "CTI-REALM": 72.1
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Sakana AI's cybersecurity endpoint on its Fugu orchestrator — described as a multi-agent system that behaves like a single model rather than a single set of weights. Closed, API-only at sakana.ai/fugu, gated behind an application review with a stated use case and verified contact; billed on Sakana's Token Plan with rates unpublished. Self-reported CyberGym 86.9% and CTI-REALM 72.1%, which Sakana calls comparable to GPT-5.5-Cyber and Claude Mythos 5 Preview. Parameters, context window and modality are all undisclosed, and Sakana published neither the benchmark methodology nor the agent configurations behind those scores — treat both numbers as vendor-claimed and unreplicated.",
+      "sources": [
+        "https://sakana.ai/fugu-cyber-release/",
+        "https://www.marktechpost.com/2026/07/25/sakana-ai-releases-fugu-cyber-orchestration-model-cybergym-cti-realm/"
       ]
     }
   ]

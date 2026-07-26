@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-26T00:05:08-04:00",
+  "updated": "2026-07-26T03:10:49-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Weights still unpublished as of Jul 26; Moonshot committed to full open weights for the 2.8T-param K3 on Jul 27. API-live since Jul 16.",
-      "source": "https://huggingface.co/blog/ResterChed/kimi-k3-model-overview-mxfp4-quantization-open-wei"
+      "basis": "Drop set for Jul 27 00:00 UTC (8pm ET Jul 26), ~594GB BF16, modified MIT. No K3 repo on moonshotai HF at 3am ET.",
+      "source": "https://huggingface.co/moonshotai"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -21,19 +21,30 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket now 85% by Aug 31 (up from 84%), 22% by Aug 7, only 3% by Jul 31, on $323K volume. Fifth slip after a base-architecture rebuild.",
+      "basis": "Polymarket holds 85% by Aug 31; the Aug 7 leg firmed 22% to 31%, Jul 31 still 3%. Base model was rebuilt after coding and hallucination misses.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "GPT-6",
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
-      "expectedDate": "2026-12",
+      "expectedDate": "2026-11",
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket flat at 89% by Dec 31, 74% by Sep 30, 28% by Aug 31, 1% by Jul 31 on $692K; Manifold holds 60% before October, 88% before 2027.",
+      "basis": "Polymarket flat at 89% by Dec 31, 74% by Sep 30, 28% by Aug 31 on $697K; Manifold unchanged at 60% before October, 88% before 2027.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "Next DeepSeek model",
+      "lab": "DeepSeek",
+      "expectedWindow": "by Jul 31 2026",
+      "expectedDate": "2026-07",
+      "prob": 63,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Manifold's July-releases market prices any DeepSeek model at 63% with five days left; GLM-5.x sits at 25% in the same market.",
+      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
       "model": "Grok 5",
@@ -50,12 +61,12 @@
       "model": "Gemini 4",
       "lab": "Google DeepMind",
       "expectedWindow": "early 2027",
-      "expectedDate": "2027-01",
+      "expectedDate": "2027-02",
       "prob": -1,
       "frontier": true,
       "status": "rumored",
       "basis": "Google confirmed Jul 21 that Gemini 4 pre-training has begun; still no dated market.",
-      "source": "https://deepmind.google/models"
+      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     }
   ]
 }
