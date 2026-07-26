@@ -1591,7 +1591,7 @@
       },
       "milestone": true,
       "status": "live",
-      "notable": "DeepSeek's return to the open frontier after V3.1: a 1.6T-param MoE (49B active) with a 1M-token default context via a new hybrid attention stack (Compressed Sparse + Heavily Compressed Attention) needing ~27% of V3.2's per-token FLOPs and ~10% of its KV cache at 1M context. Open weights. Went STABLE GA on Jul 19 2026 (with V4-Flash), exiting the Apr 24 preview — early testers put it near Opus 4.8 on general tasks and closing on GPT-5.6 Sol on coding, at pricing that undercuts Fable 5 by roughly 57x. AA Intelligence Index 52. The legacy deepseek-chat / deepseek-reasoner aliases retire Jul 24 2026, routing to V4.",
+      "notable": "DeepSeek's return to the open frontier after V3.1: a 1.6T-param MoE (49B active) with a 1M-token default context via a new hybrid attention stack (Compressed Sparse + Heavily Compressed Attention) needing ~27% of V3.2's per-token FLOPs and ~10% of its KV cache at 1M context. Open weights. Went STABLE GA on Jul 19 2026 (with V4-Flash), exiting the Apr 24 preview — early testers put it near Opus 4.8 on general tasks and closing on GPT-5.6 Sol on coding, at pricing that undercuts Fable 5 by roughly 57x. AA Intelligence Index 52. CONFIRMED Jul 24 2026: the legacy deepseek-chat and deepseek-reasoner aliases were retired on schedule after the three-month notice given Apr 24 — callers must now name deepseek-v4-pro or deepseek-v4-flash directly. The announced peak-hour 2x pricing is not yet live.",
       "sources": [
         "https://api-docs.deepseek.com/news/news260424",
         "https://artificialanalysis.ai/models/deepseek-v4-pro"
@@ -2047,6 +2047,79 @@
       "sources": [
         "https://techcrunch.com/2026/07/07/meta-rolls-out-muse-a-new-ai-image-generator/",
         "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      ]
+    },
+    {
+      "name": "FLUX 3",
+      "lab": "Black Forest Labs",
+      "released": "2026-07-23",
+      "params": "undisclosed",
+      "context": "n/a (generative visual model)",
+      "modality": "text/image in; image, video with synchronized audio, and robot action out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": true,
+      "status": "live",
+      "notable": "Black Forest Labs' first move off pure image generation into a unified multimodal frontier model: one set of weights, built on a 'Self-Flow' approach that aligns multimodal generation and understanding in the same architecture, generating image, video with native synchronized audio (dialogue, SFX and score produced in the same inference pass rather than stitched), and robot action prediction. Four variants: FLUX 3 Video and FLUX 3 Action are in partner-gated early access now (Canva, Burda, Magnific, Krea, Picsart, plus mimic robotics with Audi); FLUX 3 Image rolls out 'in coming weeks'; FLUX 3 Dev, the open-weight backbone, is promised later in 2026. No published benchmarks — BFL claims only that FLUX 3 Video 'leads in early evaluations against frontier video models' and defers full methodology to broader availability. The FLUX-mimic robotics variant claims fine-tuning to new manipulation tasks on as little as 30 minutes of robot data where prior approaches needed 30+ hours. Pricing not announced.",
+      "sources": [
+        "https://www.globenewswire.com/news-release/2026/07/23/3332364/0/en/black-forest-labs-unveils-flux-3-a-new-multimodal-frontier-model-for-visual-intelligence.html",
+        "https://venturebeat.com/technology/black-forest-labs-launches-flux-3-capable-of-generating-images-and-20-second-video-with-audio-but-in-limited-release-to-start"
+      ]
+    },
+    {
+      "name": "poolside Laguna S 2.1",
+      "lab": "poolside",
+      "released": "2026-07-21",
+      "params": "118B total / 8B active (MoE)",
+      "context": "undisclosed",
+      "modality": "Text (agentic coding)",
+      "open": true,
+      "benchmarks": {
+        "Terminal-Bench 2.1": 70.2,
+        "SWE-bench Multilingual": 78.5,
+        "SWE-bench Pro": 59.4,
+        "DeepSWE v1.1": 40.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "An open-weight agentic-coding model poolside bills as 'the West's most capable open-weight model' — 118B total / 8B active MoE released under the Linux Foundation's OpenMDW-1.1 license on Hugging Face, plus poolside's own API and OpenRouter. The pitch is size-for-capability: it posts 70.2% on Terminal-Bench 2.1 and 78.5% on SWE-bench Multilingual while being small enough to run on a single NVIDIA DGX Spark, which poolside frames as a way to move high-volume agentic work off metered APIs onto owned hardware. Trained end to end in under four weeks on 4,000 H200 GPUs. Vendor-reported numbers; no independent run yet.",
+      "sources": [
+        "https://www.globenewswire.com/news-release/2026/07/21/3330818/0/en/Poolside-releases-Laguna-S-2-1-the-West-s-most-capable-open-weight-model.html"
+      ]
+    },
+    {
+      "name": "Ling-3.0-flash",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-07-23",
+      "params": "124B total / ~5.1B active (MoE, 1/64 expert activation)",
+      "context": "262K",
+      "modality": "Text",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Ant Group's efficiency play from its inclusionAI lab — a hybrid-reasoning MoE with a thinking/non-thinking toggle, 124B total but only ~5.1B active per token, built on a hybrid-linear attention stack mixing Kimi Delta Attention and Multi-head Latent Attention layers at a 5:1 ratio. 262K native context with 1M stated as the scaling target. Ant claims it matches or beats its own ~1T Ling-2.6 flagship on most benchmarks at 1/8 the total and 1/12 the active parameters, but published no benchmark table or technical report. Announced as Apache 2.0, yet no weights were posted to the inclusionAI Hugging Face org as of Jul 26 — so it is endpoint-only today, free through Aug 3 2026 via OpenRouter (hosted by Novita), Vercel AI Gateway and ZenMux. Surfaced on inference endpoints before Ant announced it.",
+      "sources": [
+        "https://x.com/AntLingAGI/status/2080351022028095681",
+        "https://openrouter.ai/inclusionai/ling-3.0-flash",
+        "https://www.digitalapplied.com/blog/ling-3-0-flash-ant-group-efficiency-moe"
+      ]
+    },
+    {
+      "name": "Qwen3.8-Max-Preview",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-07-19",
+      "params": "2.4T total (sparse MoE; active count undisclosed)",
+      "context": "1M",
+      "modality": "multimodal (text, image, video, documents in), text out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Alibaba's preview of its next flagship, announced Jul 19 days after Moonshot's Kimi K3 — a 2.4T-parameter sparse-MoE multimodal model with a 1M-token context inherited from Qwen3.7-Max, aimed at coding, agentic workflows and long-horizon 'professional cowork' tasks. Live only as a preview on the Alibaba Cloud Token Plan, Qoder and QoderWork at roughly 10% of standard pricing; API pricing unpublished. Alibaba claims it is 'compatible to leading frontier AI models, second only to Fable 5,' but has released no benchmark numbers and no independent evaluation exists. Open weights are promised for the full Qwen3.8 release with no date or license named.",
+      "sources": [
+        "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/",
+        "https://www.buildfastwithai.com/blogs/qwen3-8-preview-2-4t-params-open-weights-release"
       ]
     }
   ]
