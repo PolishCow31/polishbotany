@@ -1,27 +1,16 @@
 {
-  "updated": "2026-07-26T12:07:35-04:00",
+  "updated": "2026-07-28T12:19:08-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
-    {
-      "model": "Kimi K3 open weights",
-      "lab": "Moonshot AI",
-      "expectedWindow": "by Jul 27 2026",
-      "expectedDate": "2026-07",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Drop still set for Jul 27 00:00 UTC (8pm ET tonight), ~2.8T params. Re-verified: no K3 repo on the moonshotai HF org yet.",
-      "source": "https://huggingface.co/moonshotai"
-    },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 2026",
       "expectedDate": "2026-08",
-      "prob": 82,
+      "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket held flat this read after two slips: 82% by Aug 31, 24% by Aug 7, 3% by Jul 31 on $327K. Manifold prices any July Gemini Pro at 9%.",
+      "basis": "Polymarket firmed hard this read: 89% by Aug 31 (from 82%), 2% by Jul 31, on $349K volume. Manifold's July bucket still prices any Gemini Pro at 13%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,29 +21,29 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket firmed to 28% by Aug 31 (from 26%), 21% by Aug 21, 74% by Sep 30, 89% by Dec 31 on $699K volume.",
+      "basis": "Polymarket flat at 89% by Dec 31 but the near legs cooled: 66% by Sep 30 (from 74%), 29% by Aug 31, 15% by Aug 21. $755K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
       "model": "Next OpenAI model family (unnamed)",
       "lab": "OpenAI",
-      "expectedWindow": "by Aug 2026",
+      "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-08",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Altman briefs the Trump administration and lawmakers this coming week on a new model family, pitched around work and scaling work. No dated market.",
-      "source": "https://www.axios.com/2026/07/22/openai-anthropic-open-models-trump-china"
+      "basis": "Altman is in Washington this week previewing a forthcoming OpenAI model family to White House officials, lawmakers and economists. Still unnamed, still undated.",
+      "source": "https://www.cnbc.com/2026/07/27/altman-trump-china-open-weight-ai.html"
     },
     {
       "model": "Next Mythos-class model",
       "lab": "Anthropic",
       "expectedWindow": "by Aug 2026",
       "expectedDate": "2026-08",
-      "prob": 46,
+      "prob": 45,
       "frontier": false,
       "status": "expected",
-      "basis": "Polymarket steady at 46% by Aug 31, 80% by Sep 30 (from 81%), 3% by Jul 31 on $75K volume.",
+      "basis": "Polymarket eased slightly to 45% by Aug 31 (from 46%) and 77% by Sep 30 (from 80%); 1% by Jul 31. $79K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +54,7 @@
       "prob": 43,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi last read 43.5% before Oct 1, 67.5% before 2027; Manifold re-read today at 5% before Sep and 2% before Aug — a persistent cross-platform split.",
+      "basis": "Manifold re-read today at 5% before Sep, 2% before Aug. Kalshi's 43.5%-before-Oct is carried from the last sweep — Kalshi rate-limited this run. Cross-platform split persists.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -76,7 +65,7 @@
       "prob": 45,
       "frontier": false,
       "status": "expected",
-      "basis": "Manifold prices the next Fable-tier model at 45.4% before Sep 2026, 65.2% before Oct, 8.1% before Aug (last read prior sweep).",
+      "basis": "Manifold last priced the next Fable-tier model at 45.4% before Sep, 65.2% before Oct; not re-read this sweep. Manifold's July bucket has a new Fable variant at 2%.",
       "source": "https://manifold.markets/PhilipDowdell/when-will-the-next-claude-fable-be-gE88lEucIh"
     },
     {
@@ -87,7 +76,7 @@
       "prob": 25,
       "frontier": false,
       "status": "rumored",
-      "basis": "Still the highest-priced unshipped option in Manifold's July-releases market at 25%, with five days left in the month.",
+      "basis": "Still the highest-priced unshipped option in Manifold's July-releases market, holding at 25% with three days left in the month.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -98,7 +87,7 @@
       "prob": 15,
       "frontier": false,
       "status": "rumored",
-      "basis": "Second-highest unshipped option in Manifold's July-releases market at 15%; M3 itself landed Jun 1.",
+      "basis": "Second-highest unshipped option in Manifold's July-releases market, flat at 15%; M3 itself landed Jun 1.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -106,10 +95,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Jul 31 2026",
       "expectedDate": "2026-07",
-      "prob": 11,
+      "prob": 14,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold holds a Haiku 5.x at 11%; the tier has not been refreshed since Haiku 4.5 in Oct 2025.",
+      "basis": "Manifold nudged a Haiku 5.x up to 14% (from 11%); the tier has not been refreshed since Haiku 4.5 in Oct 2025.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -117,10 +106,10 @@
       "lab": "DeepSeek",
       "expectedWindow": "by Jul 31 2026",
       "expectedDate": "2026-07",
-      "prob": 6,
+      "prob": 5,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold prices any DeepSeek July model at 6% after last week's collapse from 63%; the lab's changelog still has no July entries.",
+      "basis": "Manifold prices any DeepSeek July model at 5%, down again from 6%; the lab has shipped nothing since V4 in April.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
