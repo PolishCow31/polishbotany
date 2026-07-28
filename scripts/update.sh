@@ -20,9 +20,19 @@ echo "=== $(ts) update start ===" >> "$LOG"
 #    Non-zero exit (incl. the watchdog kill) does NOT abort — step 2 still merges whatever delta
 #    was written before the cutoff, and logs if none was.
 rm -f data/_delta.json
+RUNOUT=$(mktemp -t ai-tracker-run)
 perl -e 'alarm shift @ARGV; exec @ARGV' 1500 \
-  "$CLAUDE" -p --dangerously-skip-permissions "$(cat scripts/research-prompt.md)" >> "$LOG" 2>&1 \
+  "$CLAUDE" -p --dangerously-skip-permissions "$(cat scripts/research-prompt.md)" > "$RUNOUT" 2>&1 \
   || echo "$(ts) claude -p exited non-zero / hit the 25-min watchdog — merging any delta it wrote" >> "$LOG"
+cat "$RUNOUT" >> "$LOG"
+# AUTH DEATH DETECTOR: the Max OAuth cred expires ~monthly (Jun 27, Jul 26) and every claude -p
+# consumer on this Mac dies SILENTLY (Botany, Plate relay, CyMCAT engine). Match only the CLI's
+# exact error strings (news prose won't contain these verbatim + a real run always writes a delta).
+if [ ! -f data/_delta.json ] && grep -qiE "not logged in|please run /login|invalid authentication credentials" "$RUNOUT"; then
+  echo "$(ts) AUTH EXPIRED — claude -p signed out; EVERY claude-p daemon is down. Fix: claude → /login" >> "$LOG"
+  osascript -e 'display notification "claude -p signed out — Botany, Plate + all claude-p daemons are DOWN. Fix: run claude, then /login" with title "Botany updater: AUTH EXPIRED" sound name "Basso"' 2>/dev/null || true
+fi
+rm -f "$RUNOUT"
 
 # 2. deterministic, authoritative merge
 if [ -f data/_delta.json ]; then
