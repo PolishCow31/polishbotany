@@ -3,7 +3,26 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## State — Jul 28 2026
+
+### ✓ DONE (Jul 28) — PREDICT ▸ TIMELINE (honest release calendar) — SHIPPED v34
+Built Jul 17 (inspired by aireleasetracker.com's calendar, minus its fake-exact-date sin), reworked same day after "visually difficult" feedback (v1's cards/bands/spine → compact two-column agenda; an Opus agent did the labor per his Fable-orchestrates rule), shipped Jul 28. **New default sub-tab on Predict** (Radar + Markets unchanged behind it).
+- **The honesty trick is the left time column's GRANULARITY:** future rows show a coarse month ("JUL"), shipped rows an exact date ("Jul 16") — window vs fact, no bands or pills needed. Future rows: name + market odds right-aligned (`~78%` / `—`), muted "window-phrase · lab" sub-line; tap → the existing release modal (basis/source/prob bar live there). NOW divider between sections; Shipped = last 14 live models, labs ellipsized.
+- Code: `timelineBody()` + `tlMonth`/`tlDate` helpers (+ `.tl-*` CSS block) in index.html; runs off RELSORTED + DATA.models, zero new data deps. Verified @375px AND vs the fatter 14-item radar (Jul 28 data), 0 console errors.
+- **Still open on the timeline: per-lab cadence windows** ("Anthropic: next ~4-8 wks, 55-day median") — the honest version of aireleasetracker's headline countdown. Designed, not built.
+- Same push also ships the Jun-26 fox HANDOFF block (was sitting uncommitted 11 days — the Jul 17 session ended before the ship call).
+
+### ✓ DONE (Jul 28) — updater AUTH-DEATH DETECTOR (commit f82ff0c, shipped separately)
+The Max OAuth cred dies ~MONTHLY (Jun 27 → Jul 26, both took every claude -p daemon down silently; Jul 26 outage sat 2 days). `update.sh` now tees the claude run to a temp file, greps for the CLI's exact auth-error strings (`Not logged in` / `Please run /login` / `Invalid authentication credentials`, only when no delta was written) → fires a macOS notification ("Botany updater: AUTH EXPIRED", Basso) naming the fix. Live-tested. The /login itself stays HIS hand. Next expected death ~Aug 26.
+
 ## State — Jun 26 2026
+
+### ✓ DONE (Jun 26) — FOX, 4th attempt: real Elthen pixel-art sprite (the saga is over) — SHIPPED v32
+The hand-authored pixel fox (`build_fox_walk.py`) was rejected — "dachshund proportions" (this time the STATIC art was bad, not just the motion). His call: drop in a **real pro sprite**. Went with **Elthen's 2D Pixel Art Fox** (elthen.itch.io/2d-pixel-art-fox-sprites; free commercial/non-commercial license, tip/comment requested — pulled via Chrome's itch download flow). 448×224 RGBA sheet, 14×7 grid of 32×32 cells.
+- **Sliced** rows → **8 walk (movement row) + 5 standing-idle + 6 curled-sleep** frames via new `scripts/slice_fox.py`. Source sheet `scripts/fox-sheet-elthen.png` kept **LOCAL-only (gitignored)** — only the used frames ship (minimal redistribution); re-slice = re-download from itch + run the script.
+- **Controller** (`index.html` fox IIFE, fully reworked): WALK = distance-locked trot (faces right, flips left — engine unchanged); new **rest state** — on stop it randomly **idles** (standing tail-wag) or, ~38% and longer/rarer, **curls up to sleep** (breathing). Idle/sleep animate time-based (IDLE_FPS 3.5 / SLEEP_FPS 2); SPEED 50, STEP_PX 5. `fox-sit.png` retired.
+- **Credit buried** in More ▸ Sources — static HTML at the drawer bottom (the cron-maintained sweep log can't clobber it): *"Hero fox: pixel-art sprite by Elthen's Pixel Art Shop…"*. Display height 58px, `image-rendering:pixelated`.
+- **Verified** @375px: frames load crisp + sized right on the hero, idle+walk cycling live, 0 console errors, badge → v32, credit readable. **NOT motion-verified by me** (headless rAF pause) → awaiting Christian's eyes on the live trot/nap. Retired `build_fox_walk.py` + stale `docs/fox-walk-frames.png`. Supersedes ALL prior fox blocks (paw-dance, drawnlegs IK, hand-pixel) — the real-sprite path won, exactly as [[reference_nanobanana_no_gait]] predicted.
 
 ### ✓ DONE (Jun 26) — PUSH NOTIFICATIONS (Web Push) — SHIPPED v31
 Botany's on GitHub Pages (no backend), so push runs on a standalone **Cloudflare Worker** + KV (mirrors CyMCAT's pattern, but KV not D1, and cross-origin since the PWA can't host a Pages Function).

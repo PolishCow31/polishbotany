@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=33"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=34"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -420,6 +420,31 @@
   /* charts/predict bodies inside a panel don't need their own card chrome */
   .ftab-panel .chartcard{border:none;background:none;padding:0;margin:0 0 6px;box-shadow:none}
   .ftab-panel .chartcard+.chartcard{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+  /* Predict ▸ Timeline — compact two-column agenda. Honesty trick: the LEFT time-cell's granularity signals certainty.
+     Future = coarse month (JUL, uppercased) → a market-odds WINDOW; past = exact date (Jul 16) → a known ship day.
+     No probability bands / status pills / fake spine — the "why" lives in the release modal. All text on --ink vars. */
+  .tl-head{font:650 10.5px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin:14px 0 8px}
+  .tl-head:first-child{margin-top:2px}
+  .tl-cap{font-size:12px;line-height:1.45;color:var(--ink3);margin:0 0 10px}
+  /* Expected row — line A [50px month | name | odds], line B (sub) spans cols 2-3. Whole row taps into the modal. */
+  .tl-frow{display:grid;grid-template-columns:50px 1fr auto;align-items:baseline;column-gap:8px;
+    width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--line);
+    padding:9px 2px;cursor:pointer;font:inherit;transition:background .12s}
+  .tl-frow:hover{background:var(--bg2)}
+  .tl-t{font:600 11px var(--mono);letter-spacing:.06em;color:var(--ink3);white-space:nowrap}
+  .tl-frow .tl-t{text-transform:uppercase}                                    /* coarse month only — Shipped's "Jul 16" stays title-case */
+  .tl-nm2{display:flex;align-items:baseline;gap:7px;min-width:0;font:600 15.5px var(--display);color:var(--ink)}
+  .tl-odds{font:600 11.5px var(--mono);letter-spacing:.02em;color:var(--ink2);text-align:right;white-space:nowrap}
+  .tl-sub{grid-column:2/4;padding-left:16px;margin-top:2px;font-size:12px;color:var(--ink3)}   /* indent past the dot → sits under the name */
+  /* Shipped row — same 50px time-cell, single line: name left, lab right (ellipsized, never wraps) */
+  .tl-prow{display:grid;grid-template-columns:50px auto minmax(0,1fr);align-items:baseline;column-gap:8px;
+    border-bottom:1px solid var(--line);padding:9px 2px}
+  .tl-pnm{display:flex;align-items:baseline;gap:7px;min-width:0;font-weight:600;font-size:14px;color:var(--ink)}
+  .tl-plab{font-size:12px;color:var(--ink3);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  /* NOW divider — v1 visuals kept (green dot + label + fade line), de-spined margins for the flat agenda */
+  .tl-now{display:flex;align-items:center;gap:9px;margin:14px 0;font:700 11.5px var(--mono);letter-spacing:.11em;color:#15732f}
+  .tl-now::after{content:"";flex:1;height:2px;margin-left:2px;background:linear-gradient(90deg,rgba(21,115,47,.4),transparent);border-radius:2px}
+  .tl-nowdot{width:13px;height:13px;border-radius:50%;flex:none;background:#15732f;box-shadow:0 0 0 4px var(--panel),0 0 0 6px rgba(21,115,47,.16)}
   /* ── Home "Pulse" — one dense living paragraph the two daily routines rewrite ── */
   .hero.pulse{padding:14px 16px}
   .pulse-txt{font-size:16.9px;line-height:1.64;color:var(--ink2)}
@@ -964,7 +989,7 @@ function renderCharts(){
 }
 
 // ---------------- PREDICT (frontier release radar + prediction markets) ----------------
-let RELSORTED=[]; let predictTab='radar'; let radarFilter='all';
+let RELSORTED=[]; let predictTab='timeline'; let radarFilter='all';
 const OPEN_REL_LABS=new Set(['DeepSeek','Alibaba','Zhipu','Moonshot','NVIDIA','Meta']);   // open-weight labs → "Open source" radar filter
 const isOpenRel=r=>OPEN_REL_LABS.has(r.lab);
 const firstPct = s => { const m=(s||'').match(/(\d{1,3}(?:\.\d)?)\s*%/); return m?Math.max(0,Math.min(100,+m[1])):null; };
@@ -995,6 +1020,45 @@ function nextFrontier(){
   const fr=RELEASES.filter(r=>r.frontier).slice().sort((a,b)=>(a.expectedDate||'9999').localeCompare(b.expectedDate||'9999'));
   return fr.find(r=>r.prob==null||r.prob<0||r.prob>=25) || fr[0];
 }
+const TL_MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+// The honesty trick lives in the LEFT time-cell's granularity: future = coarse MONTH (a market-odds window),
+// past = EXACT date (a day we can verify). Two formatters, one for each certainty level.
+function tlMonth(s){ if(!s)return'TBA'; const p=(''+s).split('-'), mi=+p[1]-1; if(!(mi>=0&&mi<12))return'TBA';   // "2026-07"→"JUL"; off-year→"JAN ’27"; missing/bad→"TBA"
+  const mo=TL_MO[mi].toUpperCase(), y=+p[0], cy=new Date().getFullYear(); return (y&&y!==cy)?mo+' ’'+(''+y).slice(-2):mo; }
+function tlDate(s){ if(!s)return''; const p=(''+s).split('-'); if(p.length>=3)return TL_MO[+p[1]-1]+' '+(+p[2]);   // "2026-07-16"→"Jul 16" (title-case, exact day)
+  if(p.length===2)return TL_MO[+p[1]-1]+' '+p[0]; return ''+s; }
+// PREDICT ▸ Timeline — compact two-column agenda. Expected rows are coarse-month windows (tap → the "why" modal);
+// Shipped rows are exact-dated. No probability bands / status pills / fake spine here — that noise lives in the modal.
+function timelineBody(){
+  const past=DATA.models.filter(m=>m.released && m.status==='live')                    // shipped + live only
+    .slice().sort((a,b)=>(''+b.released).localeCompare(''+a.released)).slice(0,14);     // newest first, cap 14
+  const n=new Date(), nowStr=TL_MO[n.getMonth()]+' '+n.getDate()+' '+n.getFullYear();   // "Jul 17 2026"
+  // Expected: RELSORTED is already asc by expectedDate → soonest first. Whole row carries data-rel-info (app-wide modal hook).
+  const futHTML=RELSORTED.length?RELSORTED.map(r=>{
+    const col=labHex(r.lab), i=RELSORTED.indexOf(r);
+    const odds=(r.prob!=null&&r.prob>=0)?'~'+r.prob+'%':'—';                            // right-aligned market odds, or em-dash when undated
+    return `<button class="tl-frow" data-rel-info="${i}">`+
+      `<span class="tl-t">${he(tlMonth(r.expectedDate))}</span>`+                        // line A: coarse month (uppercased via CSS)
+      `<span class="tl-nm2"><span class="rel-dot" style="background:${col}"></span>${he(r.model)}</span>`+
+      `<span class="tl-odds">${he(odds)}</span>`+
+      `<span class="tl-sub">${he(r.expectedWindow||'expected')} · ${he(r.lab)}</span>`+  // line B: window phrase · lab
+      `</button>`;
+  }).join(''):'<div class="empty">No expected releases on the radar yet.</div>';
+  // Shipped: exact date left, name (with lab dot), lab right-aligned + ellipsized so long labs never wrap.
+  const pastHTML=past.map(m=>{const col=labHex(m.lab);
+    return `<div class="tl-prow">`+
+      `<span class="tl-t">${he(tlDate(m.released))}</span>`+
+      `<span class="tl-pnm"><span class="rel-dot" style="background:${col}"></span>${he(m.name)}</span>`+
+      `<span class="tl-plab">${he(m.lab)}</span>`+
+      `</div>`;
+  }).join('');
+  return `<div class="tl-head">Expected</div>`+
+    `<div class="tl-cap">Months are windows backed by market odds — never exact dates. Tap a row for the why.</div>`+
+    futHTML+
+    `<div class="tl-now"><span class="tl-nowdot"></span>NOW · ${nowStr}</div>`+           // divider: separates the two sections
+    `<div class="tl-head">Shipped</div>`+                                                 // head ABOVE the past rows (v1 put it below — a bug)
+    pastHTML;
+}
 function renderPredict(){
   RELSORTED=[...RELEASES].sort((a,b)=>(a.expectedDate||'9999-99').localeCompare(b.expectedDate||'9999-99'));
   let radarPanel='';
@@ -1015,9 +1079,9 @@ function renderPredict(){
   } else {
     radarPanel = '<div class="empty">The release radar is being researched — it lands on the next data sync.</div>';
   }
-  const panel = predictTab==='markets' ? marketsBody() : radarPanel;
+  const panel = predictTab==='timeline' ? timelineBody() : predictTab==='markets' ? marketsBody() : radarPanel;
   $('#v-predict').innerHTML = `<div class="vh">Predict</div>
-    ${fileTabs('predict',predictTab,[['radar','Radar',RELSORTED.length||''],['markets','Markets',MARKETS.length||'']])}
+    ${fileTabs('predict',predictTab,[['timeline','Timeline',''],['radar','Radar',RELSORTED.length||''],['markets','Markets',MARKETS.length||'']])}
     <div class="ftab-panel">${panel}</div>`;
 }
 
