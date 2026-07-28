@@ -2178,6 +2178,41 @@
         "https://the-decoder.com/sakana-claims-its-ai-model-router-fugu-ultra-v1-1-now-beats-fable-5-without-even-including-it-in-the-pool/",
         "https://sakana.ai/fugu-release/"
       ]
+    },
+    {
+      "name": "MAI-Image-2.5-Pro",
+      "lab": "Microsoft AI",
+      "released": "2026-07-23",
+      "params": "undisclosed",
+      "context": "undisclosed",
+      "modality": "text + image in, image out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Microsoft AI's highest-fidelity in-house image model, in public preview on Microsoft Foundry alongside MAI-Voice-2-Flash. The pitch is accurate in-image text rendering and reliable natural-language image editing, and the strategic point is vertical integration: Microsoft says its MAI models already power Bing, PowerPoint, OneDrive and Dynamics 365, cutting its reliance on OpenAI for first-party features. Priced at $5 per 1M text input tokens, $8 per 1M image input tokens and $106 per 1M image output tokens; Microsoft claims the new in-house models cut costs up to 89% versus comparable OpenAI endpoints. No independent benchmark comparison published.",
+      "sources": [
+        "https://microsoft.ai/news/introducing-mai-image-2-5-pro-and-mai-voice-2-flash/",
+        "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-image-2-5-pro-and-mai-voice-2-flash-in-microsoft-foundry/4539446",
+        "https://venturebeat.com/infrastructure/microsoft-launches-new-in-house-ai-models-it-says-cut-costs-up-to-89-versus-openai"
+      ]
+    },
+    {
+      "name": "MAI-Voice-2-Flash",
+      "lab": "Microsoft AI",
+      "released": "2026-07-23",
+      "params": "undisclosed",
+      "context": "undisclosed",
+      "modality": "text in, speech out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "A latency-tuned text-to-speech model in public preview on Microsoft Foundry, aimed at high-volume conversational workloads such as customer-service voice agents. Microsoft says it holds MAI-Voice-2's speech quality while running 2x faster and costing 32% less, priced at $15 per 1M characters. Shipped the same day as MAI-Image-2.5-Pro as part of Microsoft AI's push to run first-party experiences on its own models rather than OpenAI endpoints. No third-party quality or latency evaluation exists yet.",
+      "sources": [
+        "https://microsoft.ai/news/introducing-mai-image-2-5-pro-and-mai-voice-2-flash/",
+        "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-image-2-5-pro-and-mai-voice-2-flash-in-microsoft-foundry/4539446"
+      ]
     }
   ]
 }
