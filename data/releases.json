@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T06:05:38-04:00",
+  "updated": "2026-07-29T09:05:05-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Gemini-Pro book: 88% by Aug 31, only 2% by Jul 31 after repeated slips.",
+      "basis": "Polymarket next-Gemini-Pro book: 88% by Aug 31, 5% by Aug 7, 2% by Jul 31 on $353K volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -21,8 +21,19 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 89% by Dec 31, 70% by Sep 30, 31% by Aug 31 on $771K volume.",
+      "basis": "Polymarket: 89% by Dec 31, 71% by Sep 30, 32% by Aug 31, under 1% by Jul 31. $773K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "Next Mythos-class model",
+      "lab": "Anthropic",
+      "expectedWindow": "by Sep 2026",
+      "expectedDate": "2026-09",
+      "prob": 73,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Polymarket: 73% by Sep 30, 43% by Aug 31, 1% by Jul 31 on $81K volume.",
+      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
       "model": "Next OpenAI model family (unnamed)",
@@ -32,19 +43,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "OpenAI preparing a new model preview; an unreleased model featured in the Hugging Face red-team incident.",
-      "source": "https://www.axios.com/2026/07/28/openai-hugging-face-modal-labs-hack"
-    },
-    {
-      "model": "Next Mythos-class model",
-      "lab": "Anthropic",
-      "expectedWindow": "by Sep 2026",
-      "expectedDate": "2026-09",
-      "prob": 72,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Polymarket Claude-5 book Sep 30 leg; per-date odds not re-read cleanly this sweep, carried from prior read.",
-      "source": "https://polymarket.com/event/claude-5-released-by"
+      "basis": "Altman is previewing an unreleased model to the White House; it featured in the Hugging Face red-team incident.",
+      "source": "https://www.axios.com/2026/07/26/sam-altman-openai-trump-white-house-visit"
     },
     {
       "model": "Grok 5",
@@ -54,8 +54,8 @@
       "prob": 40,
       "frontier": true,
       "status": "expected",
-      "basis": "Musk has repeatedly signalled a Grok 5 training run; no dated market with fresh volume this sweep.",
-      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
+      "basis": "Kalshi last read 40% before Oct 1; not re-fetched this sweep (rate-limited), carried forward.",
+      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
       "model": "Next Claude Fable",
@@ -76,8 +76,8 @@
       "prob": 19,
       "frontier": false,
       "status": "rumored",
-      "basis": "Z.ai priced under 1% to lead end-July; GLM-5.2 shipped Jun 13 and a point release is expected.",
-      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
+      "basis": "Manifold's July-releases basket has GLM-5.x as the top unshipped option; Z.ai under 1% to lead end-July.",
+      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
       "model": "MiniMax M3.x",

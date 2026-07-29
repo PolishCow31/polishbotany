@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T06:05:38-04:00",
+  "updated": "2026-07-29T09:05:05-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -256,6 +256,16 @@
         "agentic scientist",
         "autonomous research agent",
         "Biomni"
+      ]
+    },
+    {
+      "term": "AI Cyber Challenge",
+      "acronym": "AIxCC",
+      "category": "Benchmarks & evals",
+      "def": "DARPA competition in which autonomous systems find and patch real vulnerabilities in open-source code, now a talent and capability benchmark for security-focused models.",
+      "aka": [
+        "DARPA AI Cyber Challenge",
+        "AIxCC"
       ]
     },
     {
@@ -601,6 +611,17 @@
       "def": "Using AI models themselves to generate and test natural-language explanations of other models' neurons or features at scale, since manual interpretation can't keep up with model size.",
       "aka": [
         "auto-interp"
+      ]
+    },
+    {
+      "term": "Autoregressive decoding",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Standard LLM generation that emits one token at a time, each conditioned on all previous tokens, making latency scale linearly with output length.",
+      "aka": [
+        "autoregressive generation",
+        "token-by-token decoding",
+        "left-to-right decoding"
       ]
     },
     {
@@ -3768,6 +3789,17 @@
       "def": "A short standardized document describing a model's intended uses, training data, performance, and limitations, meant to improve transparency and responsible use.",
       "aka": [
         "model cards"
+      ]
+    },
+    {
+      "term": "Model containment",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Infrastructure and policy controls meant to keep a model's actions inside an approved sandbox during testing, so agentic behavior cannot reach live external systems.",
+      "aka": [
+        "containment boundary",
+        "containment breach",
+        "test-environment isolation"
       ]
     },
     {
