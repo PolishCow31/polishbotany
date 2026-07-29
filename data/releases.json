@@ -1,39 +1,39 @@
 {
-  "updated": "2026-07-29T03:06:08-04:00",
+  "updated": "2026-07-29T06:05:38-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
-      "expectedWindow": "by Aug 2026",
+      "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
       "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Gemini-Pro: 88% by Aug 31, 3% by Aug 7, 2% by Jul 31. $352K volume.",
+      "basis": "Polymarket next-Gemini-Pro book: 88% by Aug 31, only 2% by Jul 31 after repeated slips.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "GPT-6",
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
-      "expectedDate": "2026-11",
+      "expectedDate": "2026-12",
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket ladder: 89% by Dec 31, 65% by Sep 30, 35% by Aug 31 (up from 28%). $768K volume.",
+      "basis": "Polymarket: 89% by Dec 31, 70% by Sep 30, 31% by Aug 31 on $771K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
       "model": "Next OpenAI model family (unnamed)",
       "lab": "OpenAI",
       "expectedWindow": "by Sep 2026",
-      "expectedDate": "2026-08",
+      "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "OpenAI preparing a new model preview; no dated market for this specific unnamed family.",
-      "source": "https://www.cnbc.com/ai-artificial-intelligence/"
+      "basis": "OpenAI preparing a new model preview; an unreleased model featured in the Hugging Face red-team incident.",
+      "source": "https://www.axios.com/2026/07/28/openai-hugging-face-modal-labs-hack"
     },
     {
       "model": "Next Mythos-class model",
@@ -41,10 +41,10 @@
       "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-09",
       "prob": 72,
-      "frontier": false,
+      "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 72% by Sep 30 (down from 77%), 42% by Aug 31, 1% by Jul 31. $80K volume.",
-      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
+      "basis": "Polymarket Claude-5 book Sep 30 leg; per-date odds not re-read cleanly this sweep, carried from prior read.",
+      "source": "https://polymarket.com/event/claude-5-released-by"
     },
     {
       "model": "Grok 5",
@@ -54,19 +54,19 @@
       "prob": 40,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi: 40% before Oct 1, 64% before 2027 (not re-readable this sweep); Manifold far colder at 5% before Sep.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
+      "basis": "Musk has repeatedly signalled a Grok 5 training run; no dated market with fresh volume this sweep.",
+      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "model": "Next Claude Fable",
       "lab": "Anthropic",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
+      "expectedDate": "2026-11",
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Manifold prices a new Fable 5.x variant at 2% before Aug 1; no dated market beyond July.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "Fable 5 shipped Jun 9; Anthropic's cadence implies a refresh in H2, no dated market exists.",
+      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "model": "GLM-5.x",
@@ -76,41 +76,41 @@
       "prob": 19,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases market: GLM is the highest-priced unshipped option at 19% before Aug 1.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "Z.ai priced under 1% to lead end-July; GLM-5.2 shipped Jun 13 and a point release is expected.",
+      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-july-299"
     },
     {
       "model": "MiniMax M3.x",
       "lab": "MiniMax",
-      "expectedWindow": "by Jul 31 2026",
-      "expectedDate": "2026-07",
+      "expectedWindow": "by Aug 2026",
+      "expectedDate": "2026-08",
       "prob": 15,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases market: any MiniMax model at 15% before Aug 1, unchanged.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "M3 shipped Jun 1; MiniMax ships point releases on a roughly two-month cadence. No dated market.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Claude Haiku 5",
       "lab": "Anthropic",
-      "expectedWindow": "by Jul 31 2026",
-      "expectedDate": "2026-07",
+      "expectedWindow": "by Sep 2026",
+      "expectedDate": "2026-09",
       "prob": 14,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases market: Claude Haiku 5.x at 14% before Aug 1, unchanged.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "Haiku 4.5 dates to Oct 2025 and is the oldest tier in the line; no dated market.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Next DeepSeek model",
       "lab": "DeepSeek",
-      "expectedWindow": "by Jul 31 2026",
-      "expectedDate": "2026-07",
+      "expectedWindow": "by Sep 2026",
+      "expectedDate": "2026-09",
       "prob": 9,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases market: any DeepSeek model at 9% before Aug 1, unchanged.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "V4-Pro/Flash shipped Apr 24; DeepSeek priced at 2% for best model at year-end.",
+      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "model": "Qwen3.8 (full release, open weights)",
@@ -120,40 +120,40 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Qwen3.8-Max preview shipped Jul 19; Alibaba promises open weights for the full release, no date named.",
+      "basis": "Qwen3.8-Max-Preview shipped Jul 19; Alibaba's pattern is a preview followed by open weights.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
       "lab": "Black Forest Labs",
       "expectedWindow": "2026",
-      "expectedDate": "2026-09",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Black Forest Labs has committed to open-weight FLUX 3 Dev following the FLUX 3 launch; no date.",
+      "basis": "BFL shipped FLUX 3 on Jul 23 and has committed to an open-weight Dev variant to follow.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Meta Avocado",
       "lab": "Meta (Superintelligence Labs)",
       "expectedWindow": "2026",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-11",
       "prob": -1,
-      "frontier": false,
+      "frontier": true,
       "status": "rumored",
-      "basis": "Reported next Meta Superintelligence Labs model after the Muse line; unannounced, no dated market.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "Reported next-generation Meta frontier model following the Muse Spark line; no official date.",
+      "source": "https://seekingalpha.com/news/4529623-meta-could-release-new-ai-avocado-model-in-q1-report"
     },
     {
       "model": "Gemini 4",
       "lab": "Google DeepMind",
       "expectedWindow": "early 2027",
-      "expectedDate": "2027-01",
+      "expectedDate": "2027-02",
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Next full Gemini generation after the 3.x line; no dated market currently priced.",
+      "basis": "Next major generation after the Gemini 3.x line; no announcement or dated market yet.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     }
   ]
