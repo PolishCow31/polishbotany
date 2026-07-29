@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T09:05:05-04:00",
+  "updated": "2026-07-29T12:07:39-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -5941,6 +5941,17 @@
       ]
     },
     {
+      "term": "Thinking budget",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A caller-set cap on reasoning tokens a model may spend before answering, trading accuracy against latency and cost on a per-request basis.",
+      "aka": [
+        "reasoning token budget",
+        "max thinking tokens",
+        "effort budget"
+      ]
+    },
+    {
       "term": "Throughput",
       "acronym": "",
       "category": "Inference & serving",
@@ -6511,6 +6522,17 @@
       "def": "A benchmark for vision-capable agents that browse live, real websites end-to-end using screenshots, scoring task completion on sites like Amazon, Google Maps, and GitHub.",
       "aka": [
         "Web Voyager"
+      ]
+    },
+    {
+      "term": "Weight irrevocability",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "The property that once model weights are publicly released they cannot be recalled, patched, or revoked, so any capability or flaw is permanent.",
+      "aka": [
+        "irrevocable weights",
+        "weight revocation problem",
+        "you can't unpublish weights"
       ]
     },
     {
