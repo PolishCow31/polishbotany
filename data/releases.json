@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T00:07:04-04:00",
+  "updated": "2026-07-30T06:07:21-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 80,
+      "prob": 63,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket by-Aug-31 leg fell to 80% from 87%; Aug 21 leg 47%, Aug 14 30%. $365K volume.",
+      "basis": "Polymarket by-Aug-31 leg collapsed to 63% from 80%; Aug 21 40%, Aug 14 21%, Aug 7 7%. $385K volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 89% by Dec 31, 70% by Sep 30, 32% by Aug 31, 13% by Aug 21. $785K volume.",
+      "basis": "Polymarket: 89% by Dec 31, 70% by Sep 30, 31% by Aug 31, 13% by Aug 21. $788K volume, flat.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-09",
-      "prob": 73,
+      "prob": 72,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg 73%, flat; Aug 31 leg 39%, Jul 31 under 1%. $85K volume.",
+      "basis": "Polymarket Sep 30 leg 72%; Aug 31 leg 39%, Jul 31 under 1%. $85K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 40,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi before-Oct-1 leg last read at 40%; page rate-limited this sweep, so number is carried, not refreshed.",
+      "basis": "Kalshi before-Oct-1 leg last read at 40%; Kalshi returned HTTP 429 this sweep, so the number is carried, not refreshed.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -73,10 +73,10 @@
       "lab": "Zhipu / Z.ai",
       "expectedWindow": "by Aug 1 2026",
       "expectedDate": "2026-08",
-      "prob": 9,
+      "prob": 8,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases market: GLM is the highest-priced unshipped option at 9%, down from 19%.",
+      "basis": "Manifold July-releases market: GLM is still the highest-priced unshipped option at 8%, down from 9%.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -98,7 +98,7 @@
       "prob": 4,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases market prices Claude Haiku 5.x at 4%, down from 14%.",
+      "basis": "Manifold July-releases market prices Claude Haiku 5.x at 4%, flat on the prior sweep.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -109,7 +109,7 @@
       "prob": 7,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases market prices any DeepSeek model at 7%, down from 9%.",
+      "basis": "Manifold July-releases market prices any DeepSeek model at 7%, flat.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -153,7 +153,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "No dated market; follows the 3.5 Pro cycle, which markets now put at 80% for August.",
+      "basis": "No dated market; follows the 3.5 Pro cycle, which markets now put at only 63% for August after a third markdown.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     }
   ]
