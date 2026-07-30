@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T09:09:12-04:00",
+  "updated": "2026-07-30T15:06:36-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1766,6 +1766,16 @@
       ]
     },
     {
+      "term": "Double descent",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Test error falls, rises near the interpolation threshold where the model just fits the data, then falls again as capacity or training grows further.",
+      "aka": [
+        "deep double descent",
+        "model-wise double descent"
+      ]
+    },
+    {
       "term": "Draft model",
       "acronym": "",
       "category": "Inference & serving",
@@ -2589,6 +2599,16 @@
       ]
     },
     {
+      "term": "Grokking",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "A delayed-generalization phenomenon where a model long past memorizing its training set suddenly jumps to near-perfect test accuracy after continued training.",
+      "aka": [
+        "delayed generalization",
+        "grokking phenomenon"
+      ]
+    },
+    {
       "term": "Groq",
       "acronym": "",
       "category": "Inference & serving",
@@ -3194,6 +3214,17 @@
         "inference latency",
         "delay",
         "response time"
+      ]
+    },
+    {
+      "term": "Latent chain-of-thought",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Reasoning carried in continuous hidden states fed back as inputs instead of emitted tokens, trading legibility and monitorability for compute efficiency.",
+      "aka": [
+        "continuous chain-of-thought",
+        "Coconut",
+        "latent reasoning"
       ]
     },
     {
@@ -6038,6 +6069,16 @@
         "test-time scaling",
         "inference-time scaling",
         "test time compute"
+      ]
+    },
+    {
+      "term": "Test-time training",
+      "acronym": "TTT",
+      "category": "Inference & serving",
+      "def": "Updating a model's weights on the fly from the test input itself, adapting per example or per task rather than only spending extra inference compute.",
+      "aka": [
+        "TTT",
+        "test-time adaptation"
       ]
     },
     {

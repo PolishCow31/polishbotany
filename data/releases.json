@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T12:07:11-04:00",
+  "updated": "2026-07-30T15:06:36-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 62,
+      "prob": 71,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 62% by Aug 31, 53% by Aug 21 (was 39%), 43% by Aug 14 (was 20.5%) — near legs repriced sharply up.",
+      "basis": "Polymarket: 71% by Aug 31 (was 62%), 58% by Aug 21, 44% by Aug 14, 8% by Aug 7 — second straight sweep repricing up.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 89% by Dec 31, 69% by Sep 30, 29% by Aug 31, 10% by Aug 21; $794K traded. Flat this sweep.",
+      "basis": "Polymarket 89% by Dec 31, 70% by Sep 30, 28% by Aug 31, 10% by Aug 21; $794K traded. Flat again this sweep.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 72,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 72% by Sep 30, 37% by Aug 31 (down from 39%), under 1% by Jul 31; $85K volume.",
+      "basis": "Polymarket 72% by Sep 30, unchanged; Aug 31 leg eased to 36% and the Jul 31 leg is under 1%. $85K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -43,7 +43,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "CNBC reported Jul 28 that OpenAI is preparing a new model preview amid lawmaker cybersecurity scrutiny.",
+      "basis": "CNBC reported Jul 29 that Altman briefed the White House on a coming model ahead of the AI framework deadline.",
       "source": "https://www.cnbc.com/2026/07/29/altman-white-house-wiles-ai-framework.html"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 40,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi before-Oct-1 40% at last read (venue rate-limited this sweep); Manifold ladder far colder at 5.1% before Sep.",
+      "basis": "Kalshi last read 40% before Oct 1; venue rate-limited again this sweep. Manifold's ladder far colder at 5.1% before Sep.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -69,6 +69,17 @@
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
+      "model": "Next DeepSeek model",
+      "lab": "DeepSeek",
+      "expectedWindow": "by Aug 1 2026",
+      "expectedDate": "2026-09",
+      "prob": 9,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Manifold now prices 'any DeepSeek model' at 9% before Aug 1, up from 5% and the book's top unshipped option.",
+      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+    },
+    {
       "model": "GLM-5.x",
       "lab": "Zhipu / Z.ai",
       "expectedWindow": "by Aug 1 2026",
@@ -76,7 +87,7 @@
       "prob": 8,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases book: GLM-5.x is still the highest-priced unshipped option at 8%; market closes Aug 1.",
+      "basis": "Manifold July-releases book holds GLM-5.x at 8% with roughly a day left before the market closes Aug 1.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -99,17 +110,6 @@
       "frontier": false,
       "status": "rumored",
       "basis": "Manifold prices Claude Haiku 5.x at 4% to ship before Aug 1; Anthropic has not dated a Haiku refresh.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
-    },
-    {
-      "model": "Next DeepSeek model",
-      "lab": "DeepSeek",
-      "expectedWindow": "by Aug 1 2026",
-      "expectedDate": "2026-09",
-      "prob": 5,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Manifold prices 'any DeepSeek model' at 5% to ship before Aug 1; the V4 line last refreshed in April.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -154,7 +154,7 @@
       "frontier": true,
       "status": "rumored",
       "basis": "No dated market; Gemini 3.5 Pro's August timing pushes any Gemini 4 discussion into 2027.",
-      "source": "https://kalshi.com/markets/kxgemini/gemini-release-date/kxgemini-gemi35p"
+      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     }
   ]
 }
