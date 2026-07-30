@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T12:07:39-04:00",
+  "updated": "2026-07-29T21:08:42-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 88,
+      "prob": 87,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Gemini-Pro book: 88% by Aug 31, 6% by Aug 7, 2% by Jul 31 on $353K. Third slip; partner testing only.",
+      "basis": "Polymarket next-Gemini-Pro ladder: 87% by Aug 31, 61% by Aug 21, 5% by Aug 7, 3% by Jul 31.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 89% by Dec 31, 70% by Sep 30, 33% by Aug 31 (up from 32%), under 1% by Jul 31. $775K volume.",
+      "basis": "Polymarket: 89% by Dec 31, 71% by Sep 30, 32% by Aug 31, under 1% by Jul 31 on $779K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 73% by Sep 30, and the Aug 31 leg jumped to 47% from 43% this morning. $81K volume.",
+      "basis": "Polymarket: 73% by Sep 30; Aug 31 leg dropped to 40% from 47% this morning, Jul 31 under 1%.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -43,8 +43,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Altman is previewing an unreleased model to the White House; it featured in the Hugging Face red-team incident.",
-      "source": "https://www.axios.com/2026/07/26/sam-altman-openai-trump-white-house-visit"
+      "basis": "Altman previewing upcoming models to lawmakers and White House officials ahead of the Aug 1 framework deadline.",
+      "source": "https://www.cnbc.com/2026/07/29/altman-white-house-wiles-ai-framework.html"
     },
     {
       "model": "Grok 5",
@@ -54,7 +54,7 @@
       "prob": 40,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi last read 40% before Oct 1; Kalshi rate-limited this sweep, so the number is carried forward unverified.",
+      "basis": "Kalshi 40% before Oct 1 (64% before 2027); Kalshi rate-limited this sweep, number carried from prior read.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -65,30 +65,30 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Fable 5 shipped Jun 9; Anthropic's cadence implies a refresh in H2, no dated market exists.",
-      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
+      "basis": "Fable 5 shipped Jun 9 2026; no dated market for a successor.",
+      "source": "https://www.anthropic.com/news"
     },
     {
       "model": "GLM-5.x",
       "lab": "Zhipu / Z.ai",
-      "expectedWindow": "by Jul 31 2026",
-      "expectedDate": "2026-07",
+      "expectedWindow": "by Aug 2026",
+      "expectedDate": "2026-08",
       "prob": 19,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold's July-releases basket still has GLM-5.x as the top unshipped option at 19% with two days left.",
+      "basis": "Top unshipped option on Manifold's July-releases market at 19%; window rolled forward as July closes unshipped.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
-      "model": "MiniMax M3.x",
+      "model": "MiniMax M3 Pro (2.7T, open weights)",
       "lab": "MiniMax",
-      "expectedWindow": "by Aug 2026",
-      "expectedDate": "2026-08",
-      "prob": 15,
+      "expectedWindow": "Q3 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold puts any MiniMax model at 15% for July; MiniMax is also reported to be training a 2.7T open-source model.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "Single-sourced report (The Information, Jul 8): 2.7T-param open-source model, internal codename M3 Pro, Q3 target.",
+      "source": "https://the-decoder.com/chinese-ai-startup-minimax-plans-to-open-source-a-2-7-trillion-parameter-model-later-this-year/"
     },
     {
       "model": "Claude Haiku 5",
@@ -98,7 +98,7 @@
       "prob": 14,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold's July basket prices Claude Haiku 5.x at 14%; Haiku 4.5 is nine months old.",
+      "basis": "Manifold July-releases market priced Claude Haiku 5.x at 14%; no standalone dated book.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -109,7 +109,7 @@
       "prob": 9,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold prices any DeepSeek model at 9% for July; V4 shipped Apr 24, so a point release is due.",
+      "basis": "Manifold priced any DeepSeek release in July at 9%; V4 line shipped Apr 24, no dated successor market.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -120,8 +120,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Qwen3.8-Max-Preview launched Jul 19; Alibaba promised open weights for the full release with no date or license.",
-      "source": "https://llm-stats.com/llm-updates"
+      "basis": "Qwen3.8-Max preview live Jul 19; Alibaba promises open weights for the full release with no date or license named.",
+      "source": "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/"
     },
     {
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
@@ -131,8 +131,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "FLUX 3 shipped Jul 23; Black Forest Labs has committed to an open-weight Dev variant.",
-      "source": "https://llm-stats.com/llm-updates"
+      "basis": "FLUX 3 announced Jul 23 as BFL's first multimodal frontier model; open-weight Dev variant promised, undated.",
+      "source": "https://bfl.ai/"
     },
     {
       "model": "Meta Avocado",
@@ -142,8 +142,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Reported next Meta model after the Muse line; no announcement, no dated market.",
-      "source": "https://seekingalpha.com/news/4529623-meta-could-release-new-ai-avocado-model-in-q1-report"
+      "basis": "Reported next Meta Superintelligence Labs model after Muse Spark 1.1 (Jul 9); no confirmation or dated market.",
+      "source": "https://www.axios.com/2026/07/29/meta-microsoft-earnings-reports-ai"
     },
     {
       "model": "Gemini 4",
@@ -153,7 +153,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Reporting says Google began Gemini 4 training after three Gemini 3.5 Pro delays; no dated market exists.",
+      "basis": "No dated market; inferred from Google's roughly annual major-version cadence after Gemini 3 in Nov 2025.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     }
   ]

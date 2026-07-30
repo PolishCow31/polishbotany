@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-29T12:07:39-04:00",
+  "updated": "2026-07-29T21:08:42-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -4068,6 +4068,17 @@
       ]
     },
     {
+      "term": "MXFP8 (Microscaling FP8)",
+      "acronym": "MXFP8",
+      "category": "Inference & serving",
+      "def": "An 8-bit microscaling float format sharing one exponent scale across a small block of values; often paired with MXFP4 weights to keep activations accurate.",
+      "aka": [
+        "Microscaling FP8",
+        "MX FP8",
+        "block-scaled FP8"
+      ]
+    },
+    {
       "term": "N-gram blocking",
       "acronym": "",
       "category": "Inference & serving",
@@ -5447,6 +5458,17 @@
       "aka": []
     },
     {
+      "term": "Sharded checkpoint",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A model's weights split across many files so they can be downloaded and loaded in parallel; trillion-parameter open releases ship dozens to hundreds of shards.",
+      "aka": [
+        "weight shards",
+        "split checkpoint",
+        "safetensors shards"
+      ]
+    },
+    {
       "term": "Shared expert",
       "acronym": "",
       "category": "Model architecture",
@@ -5563,6 +5585,17 @@
         "sparse model",
         "sparse activation",
         "sparsity ratio"
+      ]
+    },
+    {
+      "term": "Spatial intelligence",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A vision model's grasp of layout, depth, relative position and physical plausibility in a scene, as distinct from naming the objects it contains.",
+      "aka": [
+        "spatial reasoning",
+        "spatial understanding",
+        "3D grounding"
       ]
     },
     {
@@ -6456,6 +6489,18 @@
       "aka": [
         "vocab size",
         "vocabulary"
+      ]
+    },
+    {
+      "term": "Voice activity detection",
+      "acronym": "VAD",
+      "category": "Inference & serving",
+      "def": "Gating that decides which audio segments contain speech before transcription; a lower threshold captures quiet or noisy input at the cost of false triggers.",
+      "aka": [
+        "VAD",
+        "voice-activity gating",
+        "speech gating",
+        "vad_threshold"
       ]
     },
     {

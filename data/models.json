@@ -2213,6 +2213,24 @@
         "https://microsoft.ai/news/introducing-mai-image-2-5-pro-and-mai-voice-2-flash/",
         "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-image-2-5-pro-and-mai-voice-2-flash-in-microsoft-foundry/4539446"
       ]
+    },
+    {
+      "name": "Qwen3.7 Flash",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-07-27",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "multimodal (text, image, video in), text out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "The cheap, high-volume tier of Alibaba's Qwen3.7 native vision-language series, reaching OpenRouter and international developers on Jul 27 (vendor snapshot qwen3.7-flash-2026-07-15). 1M-token context, up to 65,536 output tokens, and text/image/video input with text output. Priced at roughly $0.03 per 1M input and $0.13 per 1M output tokens under 32K context, tiering up to $0.20/$0.80 in the 256K-1M band -- among the cheapest 1M-context multimodal endpoints available. Alibaba's own docs claim stronger multimodal grounding, object recognition and spatial reasoning than Qwen3.6-Flash plus more stable agent execution, but publish no benchmark table; no independent evaluation exists yet and weights are not released, unlike the open Qwen3.5 line.",
+      "sources": [
+        "https://help.aliyun.com/en/model-studio/qwen3-7-flash",
+        "https://benchlm.ai/models/qwen3-7-flash",
+        "https://llmgateway.io/timeline"
+      ]
     }
   ]
 }
