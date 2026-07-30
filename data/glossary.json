@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T06:07:21-04:00",
+  "updated": "2026-07-30T09:09:12-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2374,6 +2374,17 @@
       ]
     },
     {
+      "term": "Genie Coefficient",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Proposed metric for the gap between what a user asked an AI agent to do and what it actually did, penalizing technically-compliant but intent-violating behavior.",
+      "aka": [
+        "genie problem",
+        "intent gap metric",
+        "Raghavan-Schneier coefficient"
+      ]
+    },
+    {
       "term": "GGML",
       "acronym": "GGML",
       "category": "Inference & serving",
@@ -4099,6 +4110,18 @@
       ]
     },
     {
+      "term": "MXFP4",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Open Compute Project microscaling 4-bit float format: blocks of 32 FP4 values share one 8-bit exponent scale, cutting weight size about 4x versus FP16.",
+      "aka": [
+        "microscaling FP4",
+        "MX FP4",
+        "OCP MXFP4",
+        "MXFP8"
+      ]
+    },
+    {
       "term": "MXFP4 (Microscaling FP4)",
       "acronym": "MXFP4",
       "category": "Inference & serving",
@@ -5413,6 +5436,17 @@
       "aka": [
         "weight exfiltration",
         "self-replication"
+      ]
+    },
+    {
+      "term": "Self-Flow",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Black Forest Labs' training approach for FLUX 3 that aligns multimodal generation and understanding inside one set of weights, enabling image, video-with-audio and action output.",
+      "aka": [
+        "SelfFlow",
+        "self flow",
+        "FLUX 3 Self-Flow"
       ]
     },
     {
