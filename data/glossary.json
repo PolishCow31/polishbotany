@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T00:06:54-04:00",
+  "updated": "2026-07-31T03:06:05-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1291,6 +1291,17 @@
         "Coalition for Content Provenance and Authenticity",
         "content credentials",
         "media provenance"
+      ]
+    },
+    {
+      "term": "Context parallelism",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Splitting one long sequence's tokens across several devices so attention and activations for very long contexts fit in aggregate memory.",
+      "aka": [
+        "sequence parallelism",
+        "ring attention",
+        "long-context parallelism"
       ]
     },
     {
@@ -3583,6 +3594,17 @@
       ]
     },
     {
+      "term": "maj@k",
+      "acronym": "maj@k",
+      "category": "Benchmarks & evals",
+      "def": "A scoring rule that samples k answers and takes the majority vote, measuring self-consistency rather than a single greedy attempt.",
+      "aka": [
+        "majority@k",
+        "cons@k",
+        "self-consistency voting"
+      ]
+    },
+    {
       "term": "Managed-release regime",
       "acronym": "",
       "category": "Safety & alignment",
@@ -3643,6 +3665,18 @@
         "max_tokens",
         "output limit",
         "generation limit"
+      ]
+    },
+    {
+      "term": "Maximal update parametrization",
+      "acronym": "muP",
+      "category": "Training & post-training",
+      "def": "A parametrization keeping optimal hyperparameters stable as model width grows, letting labs tune small proxies and transfer settings to huge runs.",
+      "aka": [
+        "muP",
+        "mu-parametrization",
+        "muTransfer",
+        "maximal update parameterization"
       ]
     },
     {
@@ -4054,6 +4088,17 @@
         "LLM router",
         "query routing",
         "model cascade"
+      ]
+    },
+    {
+      "term": "Model soup",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Averaging weights from several fine-tuned checkpoints of one base model, often improving accuracy and robustness at no extra inference cost.",
+      "aka": [
+        "weight averaging",
+        "checkpoint averaging",
+        "model merging"
       ]
     },
     {
@@ -5690,6 +5735,17 @@
       ]
     },
     {
+      "term": "Sim-to-real transfer",
+      "acronym": "sim2real",
+      "category": "Capabilities & agents",
+      "def": "Training a robot policy in simulation then deploying it on physical hardware, using randomized physics and visuals to survive the reality gap.",
+      "aka": [
+        "sim2real",
+        "reality gap",
+        "domain randomization"
+      ]
+    },
+    {
       "term": "SimpleQA",
       "acronym": "",
       "category": "Benchmarks & evals",
@@ -6916,6 +6972,18 @@
         "xAI",
         "Grok maker",
         "x.ai"
+      ]
+    },
+    {
+      "term": "YaRN",
+      "acronym": "YaRN",
+      "category": "Model architecture",
+      "def": "A context-extension method that rescales rotary position embeddings by frequency band, stretching a model's usable context length with only brief fine-tuning.",
+      "aka": [
+        "Yet another RoPE extensioN",
+        "RoPE scaling",
+        "NTK-aware scaling",
+        "context extension"
       ]
     },
     {
