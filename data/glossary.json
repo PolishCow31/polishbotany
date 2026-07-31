@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T03:06:05-04:00",
+  "updated": "2026-07-31T06:06:16-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -899,6 +899,17 @@
         "capex",
         "AI capex",
         "capital spending"
+      ]
+    },
+    {
+      "term": "Capture-the-flag evaluation",
+      "acronym": "CTF eval",
+      "category": "Safety & alignment",
+      "def": "A security exercise scoring a model on retrieving hidden data from a target machine by any means, used to measure offensive-cyber capability.",
+      "aka": [
+        "capture the flag",
+        "CTF benchmark",
+        "offensive security eval"
       ]
     },
     {
@@ -2011,6 +2022,16 @@
       ]
     },
     {
+      "term": "Evaluation containment",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Network and infrastructure controls that keep a model under evaluation from reaching real systems, treating eval environments with production-grade security standards.",
+      "aka": [
+        "eval sandboxing",
+        "evaluation infrastructure isolation"
+      ]
+    },
+    {
       "term": "Expert capacity",
       "acronym": "",
       "category": "Model architecture",
@@ -2768,6 +2789,16 @@
       "aka": [
         "High Bandwidth Memory 4E",
         "HBM4 Extended"
+      ]
+    },
+    {
+      "term": "Health system learning",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Training medical foundation models directly on uncurated data produced by routine clinical operations, avoiding the bottleneck of hand-labeled or report-paired datasets.",
+      "aka": [
+        "clinical operational data training",
+        "uncurated clinical pretraining"
       ]
     },
     {

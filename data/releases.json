@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T03:06:05-04:00",
+  "updated": "2026-07-31T06:06:16-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 88,
+      "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket repriced hard: 88% by Aug 31 (from 76%), 80% by Aug 21, 64% by Aug 14 (from 49%), 16% by Aug 7. $418K.",
+      "basis": "Polymarket gave back last sweep's surge: 84% by Aug 31 (from 88%), 69% Aug 21, 57% Aug 14, 5% Aug 7. $426K.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 90% by Dec 31, up a point (Sep 30 66%, Aug 31 27%); Manifold colder, 56% before Oct from 70%. $799K.",
+      "basis": "Polymarket 90% by Dec 31, flat; Sep 30 eased to 63% from 66%, Aug 31 26%. Manifold agrees at 56% before Oct. $805K.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 73% by Sep 30, up two points; the Aug 31 leg holds at 33% and Jul 31 is under 1%. $85K.",
+      "basis": "Polymarket 73% by Sep 30, flat; Aug 31 holds 33%, Jul 31 under 1%. Mythos 5 was named in Anthropic's cyber-eval disclosure. $85K.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -51,10 +51,10 @@
       "lab": "xAI",
       "expectedWindow": "by Oct 2026",
       "expectedDate": "2026-10",
-      "prob": 40,
+      "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi last read 40% before Oct 1; the venue returned HTTP 429 for a third straight sweep. Manifold far colder at 5% before Sep.",
+      "basis": "Kalshi returned HTTP 429 again, so no by-Oct number is claimed this sweep; Manifold's ladder prices Grok 5 at 5% before September.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -65,7 +65,7 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "No dated market. Manifold's July book, closing Aug 1, still prices a new Claude Fable 5.x variant at 1%.",
+      "basis": "No dated market. Manifold's July book, closing today, still prices a new Claude Fable 5.x variant at 1%.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -82,12 +82,12 @@
     {
       "model": "GLM-5.x",
       "lab": "Zhipu / Z.ai",
-      "expectedWindow": "by Aug 1 2026",
-      "expectedDate": "2026-08",
-      "prob": 8,
+      "expectedWindow": "Q3 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold July-releases book holds GLM-5.x at 8%, still the top unshipped option, with the market closing in under a day.",
+      "basis": "Manifold's July book holds GLM-5.x at 8%, still the top unshipped option, but that market closes today; no dated Q3 market exists.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -95,18 +95,18 @@
       "lab": "MiniMax",
       "expectedWindow": "Q3 2026",
       "expectedDate": "2026-09",
-      "prob": 7,
+      "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Manifold prices any new MiniMax model at 7% to ship before Aug 1; no vendor date announced.",
+      "basis": "Manifold priced any new MiniMax model at 6% to ship before Aug 1, down a point; no vendor date announced.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
       "model": "Claude Haiku 5",
       "lab": "Anthropic",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": 1,
+      "expectedDate": "2026-10",
+      "prob": -1,
       "frontier": false,
       "status": "rumored",
       "basis": "Manifold holds Claude Haiku 5.x at 1% to ship before Aug 1; Anthropic has announced no Haiku refresh.",
@@ -116,18 +116,18 @@
       "model": "Qwen3.8 (full release, open weights)",
       "lab": "Alibaba (Qwen)",
       "expectedWindow": "2026",
-      "expectedDate": "2026-09",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": false,
       "status": "expected",
       "basis": "Qwen3.8-Max-Preview shipped Jul 19 as a preview only; full release and any open-weight drop remain undated.",
-      "source": "https://llm-stats.com/llm-updates"
+      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
       "lab": "Black Forest Labs",
       "expectedWindow": "2026",
-      "expectedDate": "2026-09",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
@@ -138,12 +138,12 @@
       "model": "Meta Avocado",
       "lab": "Meta (Superintelligence Labs)",
       "expectedWindow": "2026",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-11",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
       "basis": "Codename reported for Meta's next model after the Muse line; no announced window or market.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Gemini 4",
@@ -154,7 +154,7 @@
       "frontier": true,
       "status": "expected",
       "basis": "Google said on Jul 21 it has begun pretraining a new flagship called Gemini 4 after 3.5 Pro missed internal quality bars.",
-      "source": "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/"
+      "source": "https://llm-stats.com/llm-updates"
     }
   ]
 }
