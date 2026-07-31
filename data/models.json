@@ -2231,6 +2231,23 @@
         "https://benchlm.ai/models/qwen3-7-flash",
         "https://llmgateway.io/timeline"
       ]
+    },
+    {
+      "name": "Gemini Robotics 2",
+      "lab": "Google DeepMind",
+      "released": "2026-07-30",
+      "params": "undisclosed",
+      "context": "undisclosed",
+      "modality": "vision + language in, robot motor control (and text) out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Google DeepMind's July 30 robotics release, shipped as three models built on Gemini: Gemini Robotics 2, a vision-language-action (VLA) model that converts camera and language input directly into motor commands; Gemini Robotics ER 2, an embodied-reasoning VLM that plans multi-step jobs, talks to humans and now coordinates multiple robots; and Gemini Robotics On-Device 2, a compact VLA that runs locally on the robot and adapts to a new robot body from a few hours of data. The headline change is whole-body control -- earlier Gemini Robotics models drove only the upper body, while this generation reasons over legs, torso, arms and fingers under one policy, letting a humanoid walk, crouch and manipulate through a single model. DeepMind reports whole-body manipulation success rates of roughly 46-76% on shelf, table and floor picking with an Apollo humanoid on Inspire hands, and 74-90% on insertion and tool tasks with a Franka dual-arm gripper setup; multi-finger dexterity remains uneven, spanning about 32-92% by task. Access is staged: ER 2 is in Google AI Studio and private preview on the Gemini Enterprise Agent Platform, while the VLA and on-device models go only to early-access partners through the Trusted Tester program.",
+      "sources": [
+        "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/",
+        "https://deepmind.google/models/gemini-robotics/"
+      ]
     }
   ]
 }
