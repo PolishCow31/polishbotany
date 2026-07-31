@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-30T21:06:51-04:00",
+  "updated": "2026-07-31T00:06:54-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -92,6 +92,15 @@
         "active parameters",
         "total parameters",
         "activated parameters"
+      ]
+    },
+    {
+      "term": "AdamW",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Adam optimizer variant that decouples weight decay from the adaptive gradient update; the default optimizer for most large language model pretraining.",
+      "aka": [
+        "Adam with decoupled weight decay"
       ]
     },
     {
@@ -1400,6 +1409,16 @@
       ]
     },
     {
+      "term": "Cross-entropy loss",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Standard language-model training objective: the negative log-probability the model assigns to each correct next token, averaged over the sequence.",
+      "aka": [
+        "log loss",
+        "negative log-likelihood"
+      ]
+    },
+    {
       "term": "Crosscoder",
       "acronym": "",
       "category": "Safety & alignment",
@@ -1530,6 +1549,16 @@
         "data mix",
         "training data composition",
         "data blend"
+      ]
+    },
+    {
+      "term": "Data parallelism",
+      "acronym": "DP",
+      "category": "Training & post-training",
+      "def": "Replicating the full model across devices, feeding each a different data shard and averaging gradients; the simplest axis of distributed training.",
+      "aka": [
+        "DP",
+        "data-parallel training"
       ]
     },
     {
@@ -2306,6 +2335,16 @@
       ]
     },
     {
+      "term": "Fully Sharded Data Parallel",
+      "acronym": "FSDP",
+      "category": "Training & post-training",
+      "def": "Distributed training strategy that shards parameters, gradients and optimizer states across devices, gathering them only when a layer is computed.",
+      "aka": [
+        "FSDP",
+        "fully sharded data parallelism"
+      ]
+    },
+    {
       "term": "Function Calling",
       "acronym": "",
       "category": "Capabilities & agents",
@@ -2509,6 +2548,16 @@
       "aka": [
         "GPU hours",
         "accelerator-hours"
+      ]
+    },
+    {
+      "term": "Gradient accumulation",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Summing gradients over several small forward-backward passes before an optimizer step, simulating a large batch size on limited accelerator memory.",
+      "aka": [
+        "accumulated gradients",
+        "micro-batching"
       ]
     },
     {
@@ -4536,6 +4585,16 @@
       ]
     },
     {
+      "term": "Perplexity",
+      "acronym": "PPL",
+      "category": "Training & post-training",
+      "def": "Exponential of average cross-entropy loss; measures how surprised a language model is by held-out text, with lower values indicating better prediction.",
+      "aka": [
+        "PPL",
+        "perplexity score"
+      ]
+    },
+    {
       "term": "Perplexity AI",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -6066,6 +6125,15 @@
       ]
     },
     {
+      "term": "Teacher forcing",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Training technique feeding the ground-truth previous token rather than the model's own prediction, enabling parallel training but creating train-inference mismatch.",
+      "aka": [
+        "ground-truth conditioning"
+      ]
+    },
+    {
       "term": "Temperature",
       "acronym": "",
       "category": "Inference & serving",
@@ -6756,6 +6824,15 @@
       ]
     },
     {
+      "term": "Weight decay",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Regularization that shrinks parameters toward zero each optimizer step, discouraging large weights and improving generalization in large-scale training.",
+      "aka": [
+        "L2 regularization"
+      ]
+    },
+    {
       "term": "Weight irrevocability",
       "acronym": "",
       "category": "Safety & alignment",
@@ -6849,6 +6926,16 @@
       "aka": [
         "Zebra Logic",
         "ZebraLogicBench"
+      ]
+    },
+    {
+      "term": "Zero Redundancy Optimizer",
+      "acronym": "ZeRO",
+      "category": "Training & post-training",
+      "def": "DeepSpeed memory-optimization family that partitions optimizer states, gradients and parameters across data-parallel workers to eliminate redundant copies.",
+      "aka": [
+        "ZeRO",
+        "DeepSpeed ZeRO"
       ]
     },
     {
