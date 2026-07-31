@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-31T09:06:13-04:00",
+  "updated": "2026-07-31T12:07:06-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 95,
+      "prob": 92,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg jumped to 95% from 84%; Aug 14 59%, Aug 7 21%. Jul 31 leg down to 3%.",
+      "basis": "Polymarket Aug 31 leg eased to 92% from 95%; Aug 21 70%, Aug 14 60%, Aug 7 17%. Jul 31 down to 1%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 89,
+      "prob": 91,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 leg 89%, Sep 30 62%, Aug 31 23%; $810K volume. Manifold ladder 56% before Oct.",
+      "basis": "Polymarket Dec 31 leg up to 91% from 89%; Sep 30 63%, Aug 31 20%. $815K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -29,11 +29,22 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-09",
-      "prob": 71,
+      "prob": 72,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg 71%, Aug 31 35%, Jul 31 under 1%; $85K volume.",
+      "basis": "Polymarket Sep 30 leg 72%, up from 71%; Aug 31 35%, Jul 31 under 1%. $86K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
+    },
+    {
+      "model": "DeepSeek V4-Pro (official release)",
+      "lab": "DeepSeek",
+      "expectedWindow": "Q3 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "DeepSeek said on Jul 31, shipping V4-Flash-0731, that an official V4-Pro release is coming; no dated market.",
+      "source": "https://technode.com/2026/07/31/deepseek-puts-v4-flash-api-into-public-beta/"
     },
     {
       "model": "Next OpenAI model family (unnamed)",
@@ -43,8 +54,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "GPT-5.6 line already fanned into Sol/Terra/Luna and just got repriced; no dated market for the next family.",
-      "source": "https://openai.com/index/gpt-5-6/"
+      "basis": "GPT-5.6 line already fanned into Sol/Terra/Luna and was repriced Jul 30; no dated market for the next family.",
+      "source": "https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html"
     },
     {
       "model": "Grok 5",
@@ -54,7 +65,7 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold ladder prices only 5% before Sep 2026 and 2% before Aug; no clean market on the Oct window.",
+      "basis": "Manifold ladder still prices only 5% before Sep 2026 and 2% before Aug; no clean market on the Oct window.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -67,17 +78,6 @@
       "status": "expected",
       "basis": "Fable 5 shipped Jun 9 2026; Anthropic's cadence implies a refresh in H2, but no dated market exists.",
       "source": "https://www.anthropic.com/news"
-    },
-    {
-      "model": "Next DeepSeek model",
-      "lab": "DeepSeek",
-      "expectedWindow": "Q3 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "V4-Pro/Flash landed Apr 24 2026; DeepSeek ships roughly twice a year. No dated market.",
-      "source": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "model": "GLM-5.x",
