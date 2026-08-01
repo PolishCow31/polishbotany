@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T09:05:23-04:00",
+  "updated": "2026-08-01T12:06:52-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -853,6 +853,17 @@
       ]
     },
     {
+      "term": "Blended price",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "A single cost-per-million-tokens figure combining input and output prices at a fixed ratio, usually 3:1, so models with different pricing structures compare directly.",
+      "aka": [
+        "blended cost per million tokens",
+        "blended token price",
+        "3:1 blended price"
+      ]
+    },
+    {
       "term": "Blue-team agent",
       "acronym": "",
       "category": "Safety & alignment",
@@ -922,6 +933,17 @@
         "BPE",
         "byte pair encoding",
         "subword tokenization"
+      ]
+    },
+    {
+      "term": "Cache-hit price",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "The reduced input-token rate charged when a prompt prefix is already in the provider's KV cache, often an order of magnitude below the standard input price.",
+      "aka": [
+        "cached input price",
+        "cache read pricing",
+        "prompt cache hit rate"
       ]
     },
     {
