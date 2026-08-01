@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T00:05:31-04:00",
+  "updated": "2026-08-01T03:06:02-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1712,6 +1712,17 @@
       ]
     },
     {
+      "term": "Deep research mode",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "An agentic product mode that runs many minutes of autonomous search, reading and synthesis to return a cited report instead of a chat reply.",
+      "aka": [
+        "deep research",
+        "research agent",
+        "agentic research mode"
+      ]
+    },
+    {
       "term": "Deep Think",
       "acronym": "",
       "category": "Capabilities & agents",
@@ -3263,6 +3274,16 @@
       ]
     },
     {
+      "term": "Interleaved thinking",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Reasoning mode where a model alternates internal thought and tool calls within one turn, letting each tool result reshape the remaining plan.",
+      "aka": [
+        "interleaved reasoning",
+        "thinking between tool calls"
+      ]
+    },
+    {
       "term": "Interpretability",
       "acronym": "",
       "category": "Safety & alignment",
@@ -4220,6 +4241,17 @@
       ]
     },
     {
+      "term": "Model router",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A dispatch layer that sends each request to a cheap or expensive model based on predicted difficulty, cutting cost without a single-model quality drop.",
+      "aka": [
+        "router model",
+        "query routing",
+        "LLM routing"
+      ]
+    },
+    {
       "term": "Model routing",
       "acronym": "",
       "category": "Inference & serving",
@@ -4787,6 +4819,17 @@
       "aka": [
         "parametric knowledge",
         "internal knowledge"
+      ]
+    },
+    {
+      "term": "Pareto frontier (intelligence vs cost)",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "The set of models no other model beats on both quality and price; used by Artificial Analysis to flag genuinely efficient releases.",
+      "aka": [
+        "Pareto front",
+        "cost-intelligence frontier",
+        "Pareto-optimal model"
       ]
     },
     {
