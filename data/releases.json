@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T06:05:58-04:00",
+  "updated": "2026-08-01T09:05:23-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 89,
+      "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 eased again to 89% from 90%; Aug 14 nudged up to 52%, Aug 21 78%, Aug 7 10%. $449K volume.",
+      "basis": "Polymarket Aug 31 eased to 88%; Aug 14 dropped hard to 45% from 52%, Aug 21 77%, Aug 7 6%. $457K volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 91,
+      "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 flat at 91% but Sep 30 slid to 60% from 63%; Aug 31 10%. Manifold before-October flat at 49%.",
+      "basis": "Polymarket Dec 31 eased to 90% from 91%, but Aug 31 firmed to 14% from 10% and Sep 30 to 61%. $823K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,8 +32,19 @@
       "prob": 71,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg flat at 71%, Aug 31 eased to 38% from 39%. $86K volume.",
+      "basis": "Polymarket Sep 30 leg flat at 71%; Aug 31 nudged up to 39% from 38%. $86K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
+    },
+    {
+      "model": "Gemini 4",
+      "lab": "Google DeepMind",
+      "expectedWindow": "early 2027",
+      "expectedDate": "2027-02",
+      "prob": -1,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Google has said pretraining started on a new flagship after the Jul 21 Flash-only launch; no dated market.",
+      "source": "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/"
     },
     {
       "model": "DeepSeek V4-Pro (official release)",
@@ -144,17 +155,6 @@
       "status": "rumored",
       "basis": "Successor to the Muse Spark line rumored inside Meta Superintelligence Labs; no announcement or dated market.",
       "source": "https://ai.meta.com/blog/"
-    },
-    {
-      "model": "Gemini 4",
-      "lab": "Google DeepMind",
-      "expectedWindow": "early 2027",
-      "expectedDate": "2027-02",
-      "prob": -1,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Google's roughly annual Pro-generation cadence points at early 2027 once 3.5 Pro ships; no dated market.",
-      "source": "https://deepmind.google/models/gemini/"
     }
   ]
 }
