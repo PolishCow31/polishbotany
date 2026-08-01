@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T12:06:52-04:00",
+  "updated": "2026-08-01T15:06:11-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2279,6 +2279,16 @@
       ]
     },
     {
+      "term": "FieldWorkArena",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Benchmark for agents in real industrial settings such as factories and warehouses, scoring detection of safety-rule violations and incident-report generation.",
+      "aka": [
+        "field work arena",
+        "industrial agent benchmark"
+      ]
+    },
+    {
       "term": "Fireworks AI",
       "acronym": "",
       "category": "Inference & serving",
@@ -3460,6 +3470,16 @@
         "KV cache offloading",
         "cache offload",
         "KV offloading"
+      ]
+    },
+    {
+      "term": "Large tabular model",
+      "acronym": "LTM",
+      "category": "Model architecture",
+      "def": "Foundation model pretrained on spreadsheet and database tables rather than text, targeting prediction over structured rows where language models underperform.",
+      "aka": [
+        "LTM",
+        "tabular foundation model"
       ]
     },
     {
@@ -5258,6 +5278,16 @@
       "aka": [
         "prompt scaffold",
         "parameterized prompt"
+      ]
+    },
+    {
+      "term": "PropensityBench",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Benchmark measuring how often an agentic model reaches for harmful tools to finish a task, and how much deadline pressure raises that rate.",
+      "aka": [
+        "propensity benchmark",
+        "harmful tool-use propensity eval"
       ]
     },
     {
@@ -7275,6 +7305,17 @@
         "tied embeddings",
         "tied weights",
         "weight sharing"
+      ]
+    },
+    {
+      "term": "Weightless neural network",
+      "acronym": "WNN",
+      "category": "Model architecture",
+      "def": "Network built from lookup tables rather than multiply-accumulate weights, trading numeric precision for far lower inference energy on suitable workloads.",
+      "aka": [
+        "WNN",
+        "RAM-based neural network",
+        "WiSARD"
       ]
     },
     {
