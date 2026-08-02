@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T10:04:10-04:00",
+  "updated": "2026-08-02T12:47:53-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,19 @@
       "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 90.5%; Aug 21 81%, Aug 14 61.5%, Aug 7 down to 5.4%. Kalshi before-Aug-16 up to 69% from 58%.",
+      "basis": "Polymarket 90.5% by Aug 31; Kalshi before-Aug-31 leg up to 88% from 82%; Aug 7 leg only 8%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
+    },
+    {
+      "model": "Astra (next OpenAI model family)",
+      "lab": "OpenAI",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": true,
+      "status": "confirmed",
+      "basis": "Announced Aug 1: multi-agent, long-running; solved ten open math problems. May ship as GPT-6 or a GPT-5 variant.",
+      "source": "https://the-decoder.com/openai-announces-its-next-major-model-astra-by-dropping-ten-previously-unsolved-math-solutions/"
     },
     {
       "model": "GPT-6",
@@ -21,7 +32,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 89%, Sep 30 up to 62%, Aug 31 18.5%. Kalshi before-2027 jumped to 84% from 76%.",
+      "basis": "Polymarket 89% by Dec 31, 63.5% by Sep 30; Kalshi before-2027 84%, before-Sep-1 down to 13%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -29,10 +40,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-09",
-      "prob": 65,
+      "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg fell hard to 65% from 77%; Aug 31 32.5%. $88K volume; Jul 31 leg resolved No.",
+      "basis": "Polymarket 64.5% by Sep 30, 33% by Aug 31, on $88K traded.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -43,7 +54,18 @@
       "prob": 71,
       "frontier": false,
       "status": "expected",
-      "basis": "New Kalshi ladder: 71% before Aug 10, 55% before Aug 7, 17% before Aug 6. Books are thin (~$2K each).",
+      "basis": "Thin Kalshi book: 71% before Aug 10, 77% before Aug 9, 60% before Aug 7. Low volume, wide spreads.",
+      "source": "https://kalshi.com/markets/kxgrok/grok"
+    },
+    {
+      "model": "Grok 4.7",
+      "lab": "xAI",
+      "expectedWindow": "by Sep 2026",
+      "expectedDate": "2026-09",
+      "prob": 37,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Kalshi 37% before Sep 4, 21% before Aug 31, 12% before Aug 21. Very thin.",
       "source": "https://kalshi.com/markets/kxgrok/grok"
     },
     {
@@ -54,30 +76,8 @@
       "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi before-Oct-1 eased to 34% from 40%; before-2027 up to 68% from 65%; before Sep 11%.",
+      "basis": "Kalshi 34% before Oct 1, 68% before 2027, just 5% before Sep 1; Manifold 5.1% before Sep 2026.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
-    },
-    {
-      "model": "Grok 4.7",
-      "lab": "xAI",
-      "expectedWindow": "by Sep 2026",
-      "expectedDate": "2026-09",
-      "prob": 37,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Kalshi prices 37% before Sep 4, 21% before Aug 31, 12% before Aug 21. Very thin volume.",
-      "source": "https://kalshi.com/markets/kxgrok/grok"
-    },
-    {
-      "model": "Gemini 4",
-      "lab": "Google DeepMind",
-      "expectedWindow": "early 2027",
-      "expectedDate": "2027-02",
-      "prob": -1,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Google has said pretraining started on a new flagship after the Jul 21 Flash-only launch; no dated market.",
-      "source": "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/"
     },
     {
       "model": "DeepSeek V4-Pro (official release)",
@@ -87,30 +87,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "DeepSeek flagged an official V4-Pro release when it shipped V4-Flash-0731 on Jul 31; no dated market.",
+      "basis": "V4-Flash-0731 shipped Jul 31; the full Pro tier remains staged behind it. No dated market.",
       "source": "https://artificialanalysis.ai/models/deepseek-v4-flash"
-    },
-    {
-      "model": "Next OpenAI model family (unnamed)",
-      "lab": "OpenAI",
-      "expectedWindow": "by Sep 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "GPT-5.6 line already fanned into Sol/Terra/Luna; OpenAI says July ARR topped all of Q2 on that launch.",
-      "source": "https://www.cnbc.com/2026/07/29/openai-cfo-sarah-friar-tells-employees-arr-in-july-topped-all-of-q2.html"
-    },
-    {
-      "model": "Next Claude Fable",
-      "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "Fable 5 shipped Jun 9 2026; Anthropic's cadence implies a refresh in H2, but no dated market exists.",
-      "source": "https://www.anthropic.com/news"
     },
     {
       "model": "GLM-5.x",
@@ -120,18 +98,18 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Zhipu has shipped GLM-5 and 5.2 within four months; no dated market.",
+      "basis": "Zhipu has shipped a GLM-5 point release roughly every quarter; no dated market exists.",
       "source": "https://spectrum.ieee.org/ai-coding-assistant-china-anthropic"
     },
     {
-      "model": "MiniMax M3 Pro (2.7T, open weights)",
+      "model": "MiniMax M3 Pro (open weights)",
       "lab": "MiniMax",
       "expectedWindow": "Q3 2026",
       "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Flagged alongside the M3 release; open-weight Pro tier expected but undated.",
+      "basis": "Larger open-weight sibling to M3, flagged in community release trackers; unconfirmed by the lab.",
       "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
     },
     {
@@ -142,7 +120,18 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Haiku 4.5 dates to Oct 2025 and the 5-series now spans Sonnet, Opus and Fable; small tier is the gap.",
+      "basis": "Opus 5 and Sonnet 5 have shipped; the small tier is the outstanding gap in the Claude 5 line.",
+      "source": "https://www.anthropic.com/news"
+    },
+    {
+      "model": "Next Claude Fable",
+      "lab": "Anthropic",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": false,
+      "status": "expected",
+      "basis": "Fable 5 launched Jun 9; no successor dated or marketed yet.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -153,7 +142,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Qwen3.8-Max-Preview shipped Jul 19; Alibaba has followed every Max preview with open weights.",
+      "basis": "Qwen3.8-Max previewed Jul 19 as API-only; open weights promised but not delivered.",
       "source": "https://dataconomy.com/2026/07/20/qwen3-8-24t-parameters-alibaba-ai-model-launch/"
     },
     {
@@ -164,7 +153,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "BFL shipped FLUX 3 on Jul 23 and has committed to an open-weight Dev variant.",
+      "basis": "FLUX 3 shipped Jul 23; BFL has committed to open-weight Dev variants as it did for FLUX 1 and 2.",
       "source": "https://bfl.ai/"
     },
     {
@@ -175,8 +164,19 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Successor codename reported after Muse Spark 1.1; no confirmation or dated market.",
+      "basis": "Successor codename circulating after Muse Spark 1.1; nothing confirmed by Meta.",
       "source": "https://ai.meta.com/blog/"
+    },
+    {
+      "model": "Gemini 4",
+      "lab": "Google DeepMind",
+      "expectedWindow": "early 2027",
+      "expectedDate": "2027-02",
+      "prob": -1,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Google's roughly annual Pro-generation cadence puts the next full number after 3.5 Pro; no dated market.",
+      "source": "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/"
     }
   ]
 }

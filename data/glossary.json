@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T10:04:10-04:00",
+  "updated": "2026-08-02T12:47:53-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -665,6 +665,16 @@
       "def": "A diagram tracing how interpretable features influence one another to produce a specific model output, used by Anthropic to map the steps behind a given response.",
       "aka": [
         "attribution graphs"
+      ]
+    },
+    {
+      "term": "Autoformalization",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Automatically translating informal mathematical statements or proofs into a machine-checkable formal language, letting a proof assistant verify model-generated reasoning.",
+      "aka": [
+        "auto-formalization",
+        "formalization of proofs"
       ]
     },
     {
@@ -3571,6 +3581,17 @@
       ]
     },
     {
+      "term": "Lean (proof assistant)",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "An open-source theorem prover and programming language used to encode mathematics so a computer can check each step; increasingly used to verify AI-generated proofs.",
+      "aka": [
+        "Lean 4",
+        "theorem prover",
+        "proof assistant"
+      ]
+    },
+    {
       "term": "Learning rate",
       "acronym": "",
       "category": "Training & post-training",
@@ -5312,6 +5333,16 @@
       "aka": [
         "prompt scaffold",
         "parameterized prompt"
+      ]
+    },
+    {
+      "term": "Proof certificate",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A machine-checkable artifact accompanying a claimed result, letting any third party verify correctness mechanically instead of trusting the system that produced it.",
+      "aka": [
+        "machine-checkable certificate",
+        "verifiable proof artifact"
       ]
     },
     {
