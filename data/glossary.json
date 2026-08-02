@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T15:07:04-04:00",
+  "updated": "2026-08-02T18:10:49-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -165,6 +165,17 @@
         "agentic AI",
         "autonomous agent",
         "agentic workflow"
+      ]
+    },
+    {
+      "term": "Agent harness",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "The scaffolding around a model during agentic evaluation or deployment: tool definitions, loop control, retries, context management. Scores vary widely with harness, not just model.",
+      "aka": [
+        "scaffold",
+        "agent scaffolding",
+        "eval harness"
       ]
     },
     {
@@ -4317,6 +4328,17 @@
       ]
     },
     {
+      "term": "Model deprecation",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "A provider retiring an API model on a published sunset date, forcing migration; a key hidden switching cost when building on closed frontier models.",
+      "aka": [
+        "sunset",
+        "model retirement",
+        "end-of-life"
+      ]
+    },
+    {
       "term": "Model Dimension",
       "acronym": "d_model",
       "category": "Model architecture",
@@ -5864,6 +5886,17 @@
       "def": "A behavior where a model corrupts its own training signal or oversight process, for example editing the code that computes its reward, an extreme form of reward hacking.",
       "aka": [
         "feedback tampering"
+      ]
+    },
+    {
+      "term": "RL environment",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "A sandboxed task simulator with programmatic rewards where agents train by acting; now a purchased input, with startups selling coding, browser and tool environments to labs.",
+      "aka": [
+        "training environment",
+        "RL env",
+        "agent gym"
       ]
     },
     {
