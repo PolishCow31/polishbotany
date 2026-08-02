@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-01T18:05:27-04:00",
+  "updated": "2026-08-02T10:04:10-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 92,
+      "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 flat at 92%; Aug 21 up to 80%, Aug 14 up to 65% from 55%, Aug 7 flat at 10%. $463K volume.",
+      "basis": "Polymarket Aug 31 90.5%; Aug 21 81%, Aug 14 61.5%, Aug 7 down to 5.4%. Kalshi before-Aug-16 up to 69% from 58%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 90,
+      "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 up to 90%; Sep 30 eased to 59% from 62%; Aug 31 17%. $832K volume.",
+      "basis": "Polymarket Dec 31 89%, Sep 30 up to 62%, Aug 31 18.5%. Kalshi before-2027 jumped to 84% from 76%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -29,11 +29,44 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-09",
-      "prob": 77,
+      "prob": 65,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg flat at 77%; Aug 31 down to 33% from 37%. $87K volume.",
+      "basis": "Polymarket Sep 30 leg fell hard to 65% from 77%; Aug 31 32.5%. $88K volume; Jul 31 leg resolved No.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
+    },
+    {
+      "model": "Grok 4.6",
+      "lab": "xAI",
+      "expectedWindow": "by Aug 2026",
+      "expectedDate": "2026-08",
+      "prob": 71,
+      "frontier": false,
+      "status": "expected",
+      "basis": "New Kalshi ladder: 71% before Aug 10, 55% before Aug 7, 17% before Aug 6. Books are thin (~$2K each).",
+      "source": "https://kalshi.com/markets/kxgrok/grok"
+    },
+    {
+      "model": "Grok 5",
+      "lab": "xAI",
+      "expectedWindow": "by Oct 2026",
+      "expectedDate": "2026-10",
+      "prob": 34,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Kalshi before-Oct-1 eased to 34% from 40%; before-2027 up to 68% from 65%; before Sep 11%.",
+      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
+    },
+    {
+      "model": "Grok 4.7",
+      "lab": "xAI",
+      "expectedWindow": "by Sep 2026",
+      "expectedDate": "2026-09",
+      "prob": 37,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Kalshi prices 37% before Sep 4, 21% before Aug 31, 12% before Aug 21. Very thin volume.",
+      "source": "https://kalshi.com/markets/kxgrok/grok"
     },
     {
       "model": "Gemini 4",
@@ -67,17 +100,6 @@
       "status": "expected",
       "basis": "GPT-5.6 line already fanned into Sol/Terra/Luna; OpenAI says July ARR topped all of Q2 on that launch.",
       "source": "https://www.cnbc.com/2026/07/29/openai-cfo-sarah-friar-tells-employees-arr-in-july-topped-all-of-q2.html"
-    },
-    {
-      "model": "Grok 5",
-      "lab": "xAI",
-      "expectedWindow": "by Oct 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Manifold ladder still prices only 5.1% before Sep 2026 and 1% before Aug; no clean market on the Oct window.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
       "model": "Next Claude Fable",
