@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T21:05:57-04:00",
+  "updated": "2026-08-03T00:05:33-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -708,6 +708,17 @@
       ]
     },
     {
+      "term": "Autonomous Replication and Adaptation",
+      "acronym": "ARA",
+      "category": "Safety & alignment",
+      "def": "A dangerous-capability threshold: whether a model can acquire resources, copy itself onto new machines, and survive shutdown attempts without human help.",
+      "aka": [
+        "autonomous replication",
+        "self-replication capability",
+        "ARA evaluation"
+      ]
+    },
+    {
       "term": "Autoregressive decoding",
       "acronym": "",
       "category": "Inference & serving",
@@ -1017,6 +1028,17 @@
       "aka": [
         "Center for AI Standards and Innovation",
         "US AI Safety Institute successor"
+      ]
+    },
+    {
+      "term": "Capability elicitation",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "The effort of drawing out a model's true ability through prompting, scaffolding and fine-tuning; weak elicitation makes evaluations understate real capability.",
+      "aka": [
+        "elicitation",
+        "elicitation gap",
+        "capability elicitation gap"
       ]
     },
     {
@@ -1858,6 +1880,16 @@
       "def": "Long-horizon software-engineering benchmark that scores a model on sustained, multi-hour autonomous coding tasks rather than single isolated bug fixes.",
       "aka": [
         "long-horizon coding benchmark"
+      ]
+    },
+    {
+      "term": "Deliberative alignment",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Post-training method that teaches a reasoning model to explicitly recall and reason over written safety rules in its chain of thought before answering.",
+      "aka": [
+        "deliberative safety training",
+        "spec-reasoning alignment"
       ]
     },
     {
@@ -5233,6 +5265,16 @@
         "prefill phase",
         "decode phase",
         "prefill and decode"
+      ]
+    },
+    {
+      "term": "Preparedness Framework",
+      "acronym": "PF",
+      "category": "Safety & alignment",
+      "def": "OpenAI's risk policy assigning models capability levels in tracked categories, requiring mitigations before deployment once a threshold is crossed.",
+      "aka": [
+        "OpenAI Preparedness Framework",
+        "preparedness levels"
       ]
     },
     {
