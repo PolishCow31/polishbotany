@@ -2272,6 +2272,30 @@
         "https://artificialanalysis.ai/models/deepseek-v4-flash",
         "https://officechai.com/ai/deepseek-releases-deepseek-v4-flash-0731-gives-opus-4-8-level-performance-at-a-fraction-of-the-price/"
       ]
+    },
+    {
+      "name": "K-EXAONE 2.0",
+      "lab": "LG AI Research",
+      "released": "2026-07-31",
+      "params": "750B total / 37B active (MoE)",
+      "context": "262K",
+      "modality": "text in, text out",
+      "open": true,
+      "benchmarks": {
+        "MMLU-Pro": 83.5,
+        "AIME 2026": 92.3,
+        "GPQA Diamond": 82.2,
+        "SWE-bench Verified": 68.2,
+        "OpenAI-MRCR": 94.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "South Korea's largest open-weight model, published to Hugging Face on Jul 31 under an unrestricted Apache 2.0 license. Hybrid-attention mixture-of-experts with 750B total and roughly 37B active parameters per token -- 78 layers (2 dense, 76 sparse), 256 total experts with 8 activated plus 1 shared expert, 6,144 hidden dimension -- more than triple the size of K-EXAONE 1.0. Context window of 262,144 tokens and support for 10 languages: Korean, English, Spanish, German, Japanese, Vietnamese, French, Italian, Polish and Portuguese. LG reports an average of 70.1 across 24 benchmark evaluations versus 63.3 for version 1.0, with roughly a 30% gain on three coding and agentic-coding benchmarks. The model is LG's submission to the Korean government's National AI Foundation Model project, which funds foundation models built from scratch on domestic technology.",
+      "sources": [
+        "https://huggingface.co/LGAI-EXAONE/K-EXAONE-2.0-750B-A37B",
+        "https://www.koreatimes.co.kr/business/tech-science/20260731/lg-unveils-750-bil-parameter-frontier-ai-model-k-exaone-20",
+        "https://www.koreajoongangdaily.com/business/lg-unveils-kexaone-20-koreas-largest-opensource-ai-model/12802076"
+      ]
     }
   ]
 }
