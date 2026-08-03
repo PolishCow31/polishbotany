@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02T18:10:49-04:00",
+  "updated": "2026-08-02T21:05:57-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 91,
+      "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 91% by Aug 31 on $484K; Aug 14 jumped to 73% from 64%, Aug 21 85%, Aug 7 down to 6%.",
+      "basis": "Polymarket 90% by Aug 31 on $487K; Aug 14 slipped back to 69% from 73%, Aug 21 80%, Aug 7 9%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 90% by Dec 31 flat; Sep 30 leg recovered to 64% from 61%, Aug 31 22%, on $845K traded.",
+      "basis": "Polymarket 90% by Dec 31, flat; Sep 30 leg steady at 64%, Aug 31 22%, Aug 21 10%, on $846K traded.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -43,7 +43,7 @@
       "prob": 65,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 65% by Sep 30 flat, 32% by Aug 31, on $88K traded.",
+      "basis": "Polymarket 65% by Sep 30, flat; 32% by Aug 31, on $88K traded.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 71,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi 71% before Aug 10 at last successful read; book rate-limited again this sweep. Thin, wide spreads.",
+      "basis": "Kalshi 71% before Aug 10 at last successful read; book returned HTTP 429 again this sweep, so no fresh number.",
       "source": "https://kalshi.com/markets/kxgrok/grok"
     },
     {
@@ -76,7 +76,7 @@
       "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi 34% before Oct 1, 68% before 2027 at last read; Manifold 5.1% before Sep 2026.",
+      "basis": "Kalshi 34% before Oct 1, 68% before 2027 at last read; Manifold 5.1% before Sep 2026. Kalshi rate-limited this sweep.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -109,8 +109,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Larger open-weight sibling to M3, flagged in community release trackers; unconfirmed by the lab.",
-      "source": "https://manifold.markets/prismatic/july-2026-ai-model-releases"
+      "basis": "MiniMax is reported to be preparing a 2.7T-parameter model for as early as Q3 2026, plus a multimodal H3.",
+      "source": "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/"
     },
     {
       "model": "Claude Haiku 5",
@@ -142,8 +142,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Qwen3.8-Max previewed Jul 19 as API-only; open weights promised but not delivered.",
-      "source": "https://dataconomy.com/2026/07/20/qwen3-8-24t-parameters-alibaba-ai-model-launch/"
+      "basis": "Qwen3.8-Max previewed Jul 19 as API-only at a claimed 2.4T parameters; open weights promised but not delivered.",
+      "source": "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/"
     },
     {
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
