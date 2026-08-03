@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T12:07:43-04:00",
+  "updated": "2026-08-03T18:46:57-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1508,6 +1508,17 @@
         "Coalition for Content Provenance and Authenticity",
         "content credentials",
         "media provenance"
+      ]
+    },
+    {
+      "term": "Context compaction",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Agent-harness technique that summarizes or prunes earlier conversation turns when the context window fills, preserving task state while discarding raw transcript.",
+      "aka": [
+        "compaction",
+        "context compression",
+        "conversation summarization"
       ]
     },
     {
@@ -4825,6 +4836,16 @@
       ]
     },
     {
+      "term": "Nested learning",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Framing a model as nested optimization problems updating at different frequencies, enabling continual learning without catastrophic forgetting; demonstrated in Google's Hope architecture.",
+      "aka": [
+        "Hope architecture",
+        "multi-timescale learning"
+      ]
+    },
+    {
       "term": "Neural operator",
       "acronym": "",
       "category": "Model architecture",
@@ -6600,6 +6621,16 @@
       ]
     },
     {
+      "term": "Speculative cascades",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Serving method combining cascades and speculative decoding: a small model answers alone when confident, otherwise a large model verifies or takes over, cutting cost per token.",
+      "aka": [
+        "cascade decoding",
+        "deferral cascade"
+      ]
+    },
+    {
       "term": "Speculative decoding",
       "acronym": "",
       "category": "Inference & serving",
@@ -7555,6 +7586,16 @@
         "voice-activity gating",
         "speech gating",
         "vad_threshold"
+      ]
+    },
+    {
+      "term": "Voluntary model-testing framework",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Opt-in government scheme where labs submit frontier models for pre-release security review; the 2026 US version allows agencies up to 30 days before public deployment.",
+      "aka": [
+        "voluntary safety testing",
+        "opt-in frontier review"
       ]
     },
     {
