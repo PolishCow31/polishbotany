@@ -2117,8 +2117,8 @@
       "open": false,
       "benchmarks": {},
       "milestone": false,
-      "status": "preview",
-      "notable": "Alibaba's preview of its next flagship, announced Jul 19 days after Moonshot's Kimi K3 — a 2.4T-parameter sparse-MoE multimodal model with a 1M-token context inherited from Qwen3.7-Max, aimed at coding, agentic workflows and long-horizon 'professional cowork' tasks. Live only as a preview on the Alibaba Cloud Token Plan, Qoder and QoderWork at roughly 10% of standard pricing; API pricing unpublished. Alibaba claims it is 'compatible to leading frontier AI models, second only to Fable 5,' but has released no benchmark numbers and no independent evaluation exists. Open weights are promised for the full Qwen3.8 release with no date or license named.",
+      "status": "superseded",
+      "notable": "Alibaba's preview of its next flagship, announced Jul 19 at WAIC in Shanghai days after Moonshot's Kimi K3 -- a 2.4T-parameter sparse-MoE multimodal model with a 1M-token context inherited from Qwen3.7-Max, aimed at coding, agentic workflows and long-horizon 'professional cowork' tasks. Ran only as a preview on the Alibaba Cloud Token Plan, Qoder and QoderWork at roughly 10% of standard pricing, with no published benchmarks -- Alibaba claimed only that it was 'second only to Fable 5.' Superseded on Aug 3 2026 by the full Qwen3.8-Max release, which published benchmark numbers, set API pricing at $2/$6 per 1M tokens and committed to open weights.",
       "sources": [
         "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/",
         "https://www.buildfastwithai.com/blogs/qwen3-8-preview-2-4t-params-open-weights-release"
@@ -2295,6 +2295,31 @@
         "https://huggingface.co/LGAI-EXAONE/K-EXAONE-2.0-750B-A37B",
         "https://www.koreatimes.co.kr/business/tech-science/20260731/lg-unveils-750-bil-parameter-frontier-ai-model-k-exaone-20",
         "https://www.koreajoongangdaily.com/business/lg-unveils-kexaone-20-koreas-largest-opensource-ai-model/12802076"
+      ]
+    },
+    {
+      "name": "Qwen3.8-Max",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-08-03",
+      "params": "2.4T total (sparse MoE; active count undisclosed)",
+      "context": "1M",
+      "modality": "multimodal (text, image, video in), text out",
+      "open": false,
+      "benchmarks": {
+        "GPQA Diamond": 92.6,
+        "Terminal-Bench 2.1": 86.6,
+        "OSWorld-Verified": 86.1,
+        "SWE-bench Pro": 67.7,
+        "DeepSWE v1.1": 56.6
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Alibaba's full flagship release behind July 19's Qwen3.8-Max-Preview, announced Aug 2-3 with published benchmarks for the first time. A 2.4-trillion-parameter sparse mixture-of-experts multimodal model taking text, image and video, with a 1M-token context (991K max input, 983K with thinking on, 131K max output). Priced at $2.00 per 1M input and $6.00 per 1M output, with cached input at $0.25 -- roughly a third of frontier-flagship pricing. Alibaba reports wins over both Claude Fable 5 and GPT-5.6 Sol across seven coding/agentic/general evaluations and 36 multimodal and vision tests, including 82.8 on IFBench (vs GPT-5.6 Sol 72.7 and Fable 5 63.5), 93.0 PaperBench, 91.5 Parametric CAD Bench and 92.1 OmniDocBench. Fable 5 still leads the hard coding suite: SWE-bench Pro 80.0 vs 67.7, DeepSWE 1.1 70.0 vs 56.6 and FrontierSWE 88.8 vs 73.5. Open weights for Qwen3.8-Max and a smaller Qwen3.8-27B are promised on Hugging Face and ModelScope the following week; no license named yet, and no independent evaluation exists. Alibaba's U.S.-listed shares rose roughly 5% in premarket trading on the announcement.",
+      "sources": [
+        "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/",
+        "https://www.neowin.net/news/alibaba-releases-qwen38-max-challenging-gpt-56-sol-and-claude-fable-5-on-ai-benchmarks/",
+        "https://officechai.com/ai/alibaba-releases-qwen-3-8-max-beats-gpt-5-6-sol-and-fable-on-many-benchmarks/",
+        "https://www.cnbc.com/2026/08/02/stock-market-today-live-updates.html"
       ]
     }
   ]

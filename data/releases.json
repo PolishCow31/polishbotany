@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-03T03:06:24-04:00",
+  "updated": "2026-08-03T06:08:00-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 89% by Aug 31, up from 88% on $501K; Aug 7 leg rebounded to 22% from 8%, Aug 14 70%, Aug 21 72%.",
+      "basis": "Polymarket 89% by Aug 31, flat on $505K; Aug 7 leg fell back to 13% from 22%, Aug 14 69%, Aug 21 up to 77%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 90% by Dec 31, flat; Sep 30 leg 65%, Aug 31 22%, Aug 21 10%, on $847K traded.",
+      "basis": "Polymarket 90% by Dec 31, flat; Sep 30 leg 64%, Aug 31 23%, Aug 21 10%, on $847K traded.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -40,11 +40,22 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-09",
-      "prob": 65,
+      "prob": 66,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 65% by Sep 30, flat; 32% by Aug 31, on $89K traded.",
+      "basis": "Polymarket 66% by Sep 30, up a point; 32% by Aug 31, on $89K traded.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
+    },
+    {
+      "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
+      "lab": "Alibaba (Qwen)",
+      "expectedWindow": "by mid-Aug 2026",
+      "expectedDate": "2026-08",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Alibaba said at the Aug 3 Qwen3.8-Max launch that weights ship to Hugging Face and ModelScope next week; no license named.",
+      "source": "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/"
     },
     {
       "model": "Grok 4.6",
@@ -65,7 +76,7 @@
       "prob": 37,
       "frontier": false,
       "status": "rumored",
-      "basis": "Kalshi 37% before Sep 4, 21% before Aug 31 at last read; very thin book, not refreshed this sweep.",
+      "basis": "Kalshi 37% before Sep 4, 21% before Aug 31 at last read; very thin book, rate-limited again this sweep.",
       "source": "https://kalshi.com/markets/kxgrok/grok"
     },
     {
@@ -76,7 +87,7 @@
       "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi 34% before Oct 1, 68% before 2027 at last read; Manifold 5.1% before Sep 2026. Kalshi rate-limited again this sweep.",
+      "basis": "Kalshi 34% before Oct 1, 68% before 2027 at last read; Manifold 5.1% before Sep 2026. Kalshi rate-limited again.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -133,17 +144,6 @@
       "status": "expected",
       "basis": "Fable 5 launched Jun 9 and sits at AA 60; Anthropic has refreshed each named line within roughly two quarters.",
       "source": "https://www.anthropic.com/news"
-    },
-    {
-      "model": "Qwen3.8 (full release, open weights)",
-      "lab": "Alibaba (Qwen)",
-      "expectedWindow": "2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "Qwen3.8-Max-Preview posted Jul 19; Qwen has always followed a Max preview with open weights.",
-      "source": "https://qwenlm.github.io/blog/"
     },
     {
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
