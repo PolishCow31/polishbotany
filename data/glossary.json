@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T15:05:42-04:00",
+  "updated": "2026-08-04T18:06:04-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -4941,6 +4941,16 @@
       ]
     },
     {
+      "term": "NVFP4",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "NVIDIA's 4-bit floating-point format with fine-grained block scaling, used on Blackwell GPUs to cut model memory roughly fourfold versus BF16 with modest quality loss.",
+      "aka": [
+        "NVIDIA FP4",
+        "FP4 block-scaled"
+      ]
+    },
+    {
       "term": "NVIDIA NIM",
       "acronym": "NIM",
       "category": "Inference & serving",
@@ -5013,6 +5023,16 @@
       "aka": [
         "Omni Doc Bench",
         "document parsing benchmark"
+      ]
+    },
+    {
+      "term": "On-policy distillation",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Distillation where the student generates its own rollouts and a teacher model scores or corrects them, matching training distribution to deployment distribution.",
+      "aka": [
+        "on-policy knowledge distillation",
+        "student-generated distillation"
       ]
     },
     {

@@ -1785,7 +1785,7 @@
       "milestone": false,
       "status": "live",
       "notable": "The balanced middle tier of OpenAI's GPT-5.6 family. Shipped alongside Sol and Luna in the Jun 26 gov-gated preview; went broadly public Jul 9 2026 across API, ChatGPT and Codex after the Commerce Dept (CAISI) cleared the safety hold. Carries its own independent Artificial Analysis Intelligence Index score: 55 (v4.1, max effort) — tying GPT-5.5 and sitting one tier below Sol (59). PRICE CUT (Jul 30 2026): OpenAI dropped Terra roughly 20% to $2 in / $12 out per million tokens, down from $2.50 / $15, about three weeks after the public launch. OpenAI credits efficiency gains found while building GPT-5.6 — including the model rewriting and optimizing its own production inference code — rather than any change to the weights.",
-      "pricing": "$2.50 in / $15 out per 1M",
+      "pricing": "$2 in / $12 out per 1M",
       "sources": [
         "https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html",
         "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/"
@@ -1806,7 +1806,7 @@
       "milestone": false,
       "status": "live",
       "notable": "The fastest, cheapest tier of the GPT-5.6 family, aimed at high-volume low-latency work. Went broadly public Jul 9 2026 with Sol and Terra after the government access-review hold lifted. Carries its own independent Artificial Analysis Intelligence Index score: 51 (v4.1, max effort) — the entry point of OpenAI's GPT-5.6 lineup behind Terra (55) and Sol (59). PRICE CUT (Jul 30 2026): OpenAI cut Luna by 80% to $0.20 in / $1.20 out per million tokens, down from $1 / $6 — the steepest single price move in the GPT-5.6 line and the deepest discount OpenAI has taken on a current-generation model this year. Same weights, same benchmarks; the reduction is attributed to inference-stack efficiency gains from GPT-5.6's own code optimization work.",
-      "pricing": "$1 in / $6 out per 1M",
+      "pricing": "$0.20 in / $1.20 out per 1M",
       "sources": [
         "https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html",
         "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6/"
@@ -2320,6 +2320,34 @@
         "https://www.neowin.net/news/alibaba-releases-qwen38-max-challenging-gpt-56-sol-and-claude-fable-5-on-ai-benchmarks/",
         "https://officechai.com/ai/alibaba-releases-qwen-3-8-max-beats-gpt-5-6-sol-and-fable-on-many-benchmarks/",
         "https://www.cnbc.com/2026/08/02/stock-market-today-live-updates.html"
+      ]
+    },
+    {
+      "name": "Inkling-Small",
+      "lab": "Thinking Machines Lab",
+      "released": "2026-07-31",
+      "params": "276B total / 12B active (MoE)",
+      "context": "1M",
+      "modality": "natively multimodal (text, image, audio in; text out)",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 40,
+        "GPQA Diamond": 89.5,
+        "AIME 2026": 95.5,
+        "SWE-bench Verified": 80.2,
+        "HLE": 31.6,
+        "ARC-AGI-2": 40.1,
+        "MMMU-Pro": 74.0,
+        "SimpleQA Verified": 20.6
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Thinking Machines Lab's second open-weights release, shipped roughly two weeks after Inkling and now out of preview with full Apache 2.0 weights on Hugging Face. A 276B-total / 12B-active mixture-of-experts model with a 1M-token context and native text, image and audio input, it lands at 40 on the Artificial Analysis Intelligence Index (v4.1) -- one point behind the 975B/41B-active Inkling (41) at roughly a quarter the active size, and well above the ~25 median for comparable open models. Trained with an improved pre-training mix, on-policy distillation using Inkling as the teacher, and two extra weeks of agentic-coding RL; it beats its larger sibling on SWE-bench Verified (80.2 vs 77.6) while trailing on HLE (31.6 vs 46.0) and SimpleQA Verified (20.6 vs 43.9). Priced at $0.30 in / $1.20 out per 1M on the company's Tinker platform, serving ~130 output tok/s. Runs on 4x B300 or 8x H200 in BF16 (600GB VRAM), 180GB in NVFP4, and a single B300 at W4A4.",
+      "sources": [
+        "https://thinkingmachines.ai/news/introducing-inkling/",
+        "https://artificialanalysis.ai/models/inkling-small",
+        "https://www.marktechpost.com/2026/08/02/thinking-machines-lab-releases-inkling-small-276b-open-weights-multimodal-moe-model/",
+        "https://venturebeat.com/technology/thinking-machines-debuts-inkling-small-open-source-ai-model-nearing-performance-of-predecessor-at-about-1-4-size"
       ]
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T15:05:42-04:00",
+  "updated": "2026-08-04T18:06:04-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,44 +7,22 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 83,
+      "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg down to 83% from 96%; Aug 21 64%, Aug 14 collapsed to 55% from 88%, Aug 7 2%.",
+      "basis": "Polymarket Aug 31 leg up to 85%; Aug 14 rebounded to 74% from 55% on a leaked Aug 12 date. Aug 7 leg 2%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
-      "model": "Astra (next OpenAI model family)",
-      "lab": "OpenAI",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
+      "model": "Grok 4.6",
+      "lab": "xAI",
+      "expectedWindow": "by Aug 2026",
+      "expectedDate": "2026-08",
       "prob": -1,
-      "frontier": true,
-      "status": "confirmed",
-      "basis": "Named Aug 1 alongside ten solved open math problems; to be first model through US government pre-release review.",
-      "source": "https://openai.com/index/ten-advances-in-mathematics/"
-    },
-    {
-      "model": "GPT-6",
-      "lab": "OpenAI",
-      "expectedWindow": "by Dec 2026",
-      "expectedDate": "2026-12",
-      "prob": 91,
-      "frontier": true,
+      "frontier": false,
       "status": "expected",
-      "basis": "Polymarket Dec 31 leg 91%, Sep 30 up to 71% from 67%, Aug 31 24%; Manifold ladder 69% before October.",
-      "source": "https://polymarket.com/event/gpt-6-released-by"
-    },
-    {
-      "model": "Next Mythos-class model",
-      "lab": "Anthropic",
-      "expectedWindow": "by Sep 2026",
-      "expectedDate": "2026-09",
-      "prob": 73,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Polymarket Sep 30 leg holds at 73%; Aug 31 leg 34% on a $90K book.",
-      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
+      "basis": "Musk now points at roughly Aug 7; 1.5T parameters, gains from post-training. No official specs or benchmarks yet.",
+      "source": "https://www.roic.ai/news/musk-signals-rapid-grok-rollout-46-in-two-weeks-47-a-month-later-07-28-2026"
     },
     {
       "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
@@ -58,15 +36,15 @@
       "source": "https://www.cnbc.com/2026/08/03/alibaba-ai-model-qwen-rival-anthropic.html"
     },
     {
-      "model": "Grok 4.6",
-      "lab": "xAI",
-      "expectedWindow": "by Aug 2026",
-      "expectedDate": "2026-08",
-      "prob": -1,
-      "frontier": false,
+      "model": "Next Mythos-class model",
+      "lab": "Anthropic",
+      "expectedWindow": "by Sep 2026",
+      "expectedDate": "2026-09",
+      "prob": 74,
+      "frontier": true,
       "status": "expected",
-      "basis": "Musk said in late July it was weeks away; 1.5T V9 base reused, gains from post-training. Kalshi unreadable this sweep.",
-      "source": "https://americanbazaaronline.com/2026/07/28/elon-musk-says-grok-4-6-is-weeks-away-grok-4-7-to-follow-soon-485356/"
+      "basis": "Polymarket Sep 30 leg 74%, up a point; Aug 31 leg 33% on a $90K book.",
+      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
       "model": "Grok 4.7",
@@ -76,19 +54,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Musk flagged a larger ~2.1T follow-up a few weeks behind Grok 4.6; no dated market readable this sweep.",
-      "source": "https://americanbazaaronline.com/2026/07/28/elon-musk-says-grok-4-6-is-weeks-away-grok-4-7-to-follow-soon-485356/"
-    },
-    {
-      "model": "Grok 5",
-      "lab": "xAI",
-      "expectedWindow": "by Oct 2026",
-      "expectedDate": "2026-10",
-      "prob": 34,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Kalshi 34% before Oct 1 at last clean reading (rate-limited this sweep); Manifold prices 5.1% before September.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "basis": "Musk flagged a larger ~2.1T follow-up roughly a month behind Grok 4.6; no dated market readable.",
+      "source": "https://www.roic.ai/news/musk-signals-rapid-grok-rollout-46-in-two-weeks-47-a-month-later-07-28-2026"
     },
     {
       "model": "DeepSeek V4-Pro (official release)",
@@ -124,6 +91,28 @@
       "source": "https://www.minimax.io/news"
     },
     {
+      "model": "Astra (next OpenAI model family)",
+      "lab": "OpenAI",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": true,
+      "status": "confirmed",
+      "basis": "Named Aug 1 alongside ten solved open math problems; to be first model through US government pre-release review.",
+      "source": "https://openai.com/index/ten-advances-in-mathematics/"
+    },
+    {
+      "model": "Grok 5",
+      "lab": "xAI",
+      "expectedWindow": "by Oct 2026",
+      "expectedDate": "2026-10",
+      "prob": 34,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Kalshi 34% before Oct 1 at last clean reading (rate-limited again this sweep); Manifold prices 5.1% before September.",
+      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+    },
+    {
       "model": "Claude Haiku 5",
       "lab": "Anthropic",
       "expectedWindow": "H2 2026",
@@ -132,17 +121,6 @@
       "frontier": false,
       "status": "rumored",
       "basis": "Haiku tier last refreshed October 2025; Sonnet 5 and Opus 5 have both shipped since.",
-      "source": "https://www.anthropic.com/news"
-    },
-    {
-      "model": "Next Claude Fable",
-      "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Fable 5 shipped June 9; Anthropic's cadence implies a refresh before year-end. No dated market.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -157,6 +135,17 @@
       "source": "https://bfl.ai/announcements"
     },
     {
+      "model": "Next Claude Fable",
+      "lab": "Anthropic",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Fable 5 shipped June 9; Anthropic's cadence implies a refresh before year-end. No dated market.",
+      "source": "https://www.anthropic.com/news"
+    },
+    {
       "model": "Meta Avocado",
       "lab": "Meta (Superintelligence Labs)",
       "expectedWindow": "2026",
@@ -168,15 +157,15 @@
       "source": "https://www.cnbc.com/2026/07/09/meta-jumps-into-ai-coding-market-to-chase-anthropic-and-openai.html"
     },
     {
-      "model": "K-EXAONE 3 / EXAONE next",
-      "lab": "LG AI Research",
-      "expectedWindow": "2027",
-      "expectedDate": "2027-03",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "K-EXAONE 2.0 landed July 31; LG's release cadence has run roughly annually.",
-      "source": "https://huggingface.co/LGAI-EXAONE"
+      "model": "GPT-6",
+      "lab": "OpenAI",
+      "expectedWindow": "by Dec 2026",
+      "expectedDate": "2026-12",
+      "prob": 91,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Polymarket Dec 31 leg 91%; Sep 30 eased to 67% from 71%, Aug 31 23%. Manifold ladder 69% before October.",
+      "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
       "model": "Gemini 4",
@@ -188,6 +177,17 @@
       "status": "expected",
       "basis": "Google confirmed in July it had begun pretraining a new flagship while 3.5 Pro slipped.",
       "source": "https://blog.google/technology/google-deepmind/"
+    },
+    {
+      "model": "K-EXAONE 3 / EXAONE next",
+      "lab": "LG AI Research",
+      "expectedWindow": "2027",
+      "expectedDate": "2027-03",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "K-EXAONE 2.0 landed July 31; LG's release cadence has run roughly annually.",
+      "source": "https://huggingface.co/LGAI-EXAONE"
     }
   ]
 }
