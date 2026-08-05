@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T00:06:05-04:00",
+  "updated": "2026-08-05T03:05:38-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,18 +10,18 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg 89%, up a point; Aug 21 86%, Aug 14 75%, Aug 7 still just 2%.",
+      "basis": "Polymarket dated legs: 89% by Aug 31, 85% by Aug 21, 77% by Aug 14; still partner-testing only.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "Grok 4.6",
       "lab": "xAI",
-      "expectedWindow": "by Aug 2026",
+      "expectedWindow": "by mid-Aug 2026",
       "expectedDate": "2026-08",
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Musk points at roughly Aug 7; 1.5T parameters on the same V9 base, gains from SFT and RL. No specs published.",
+      "basis": "Musk signalled a two-week window on Jul 28, pointing at roughly Aug 7; not yet in xAI's API catalog.",
       "source": "https://americanbazaaronline.com/2026/07/28/elon-musk-says-grok-4-6-is-weeks-away-grok-4-7-to-follow-soon-485356/"
     },
     {
@@ -32,7 +32,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Alibaba promised Hugging Face and ModelScope weights the week after the Aug 3 launch; no license named yet.",
+      "basis": "Alibaba said open-weight variants follow the Aug 3 Qwen3.8-Max launch.",
       "source": "https://www.cnbc.com/2026/08/03/alibaba-ai-model-qwen-rival-anthropic.html"
     },
     {
@@ -43,7 +43,7 @@
       "prob": 76,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg 76%; the Aug 31 leg recovered to 30% from 28% on a $93K book.",
+      "basis": "Polymarket: 76% by Sep 30, 30% by Aug 31; Mythos 5 Preview remains limited-access.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -54,7 +54,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Musk flagged a larger ~2.1T follow-up roughly a month behind Grok 4.6; no dated market readable.",
+      "basis": "Musk: 4.7 follows 4.6 by about a month, reportedly at 2.1T parameters.",
       "source": "https://americanbazaaronline.com/2026/07/28/elon-musk-says-grok-4-6-is-weeks-away-grok-4-7-to-follow-soon-485356/"
     },
     {
@@ -65,7 +65,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "V4-Flash entered public beta July 31; Pro tier still awaiting full general availability.",
+      "basis": "V4-Flash entered public beta Jul 31; the Pro tier's full release still pending.",
       "source": "https://technode.com/2026/07/31/deepseek-puts-v4-flash-api-into-public-beta/"
     },
     {
@@ -76,7 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Zhipu has shipped a GLM-5 point release roughly every four months; no dated market exists.",
+      "basis": "Zhipu has shipped a GLM-5 point release roughly quarterly; GLM-5.2 landed Jun 13.",
       "source": "https://z.ai/blog"
     },
     {
@@ -87,7 +87,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "M3 shipped June 1 with a larger Pro variant signalled; no confirmed date or market.",
+      "basis": "MiniMax has signalled a larger M3 tier following the June M3 release.",
       "source": "https://www.minimax.io/news"
     },
     {
@@ -98,7 +98,7 @@
       "prob": -1,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Named Aug 1 alongside ten solved open math problems; to be first model through US government pre-release review.",
+      "basis": "OpenAI has referenced a next-generation family beyond the GPT-5.6 line in research posts.",
       "source": "https://openai.com/index/ten-advances-in-mathematics/"
     },
     {
@@ -109,7 +109,7 @@
       "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi 34% before Oct 1 at last clean reading (rate-limited again this sweep); Manifold prices 5% before September, 1% before August.",
+      "basis": "Manifold and Kalshi both price roughly 34% before Oct 1; only ~5% before Sep 1.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -120,7 +120,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Haiku tier last refreshed October 2025; Sonnet 5 and Opus 5 have both shipped since.",
+      "basis": "Haiku 4.5 dates to Oct 2025; a small-tier refresh is overdue against the Claude 5 line.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -131,7 +131,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "BFL committed to an open-weight Dev variant following the July 23 FLUX 3 launch.",
+      "basis": "BFL announced open-weight variants alongside the Jul 23 FLUX 3 launch.",
       "source": "https://bfl.ai/announcements"
     },
     {
@@ -140,9 +140,9 @@
       "expectedWindow": "H2 2026",
       "expectedDate": "2026-11",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "expected",
-      "basis": "Fable 5 shipped June 9; Anthropic's cadence implies a refresh before year-end. No dated market.",
+      "basis": "Fable 5 shipped Jun 9; Anthropic's cadence implies a successor inside two quarters.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -153,7 +153,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Reported internal coding-model effort aimed at Anthropic and OpenAI; unannounced publicly.",
+      "basis": "Reported Meta coding-focused model aimed at Anthropic and OpenAI's developer share.",
       "source": "https://www.cnbc.com/2026/07/09/meta-jumps-into-ai-coding-market-to-chase-anthropic-and-openai.html"
     },
     {
@@ -164,7 +164,7 @@
       "prob": 91,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 leg 91% flat, but Sep 30 slipped to 63% from 67%; Aug 31 24%, Aug 21 15%. Manifold before-Oct 72%.",
+      "basis": "Polymarket: 91% by Dec 31, 67% by Sep 30 (recovered from 63%), 23% by Aug 31.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -175,7 +175,7 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Google confirmed in July it had begun pretraining a new flagship while 3.5 Pro slipped.",
+      "basis": "No dated market; Google's major-version cadence has run roughly annually since Gemini 1.",
       "source": "https://blog.google/technology/google-deepmind/"
     },
     {
@@ -186,7 +186,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "K-EXAONE 2.0 landed July 31; LG's release cadence has run roughly annually.",
+      "basis": "K-EXAONE 2.0 shipped Jul 31; LG's prior major versions arrived roughly a year apart.",
       "source": "https://huggingface.co/LGAI-EXAONE"
     }
   ]
