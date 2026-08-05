@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T12:07:01-04:00",
+  "updated": "2026-08-05T15:06:18-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Musk said Aug 4 it is \"likely next week\"; trackers now report an Aug 7 target, 1.5T V9 base with post-training-only gains.",
+      "basis": "Musk said Aug 4 it is \"likely next week\"; trackers still report an Aug 7 target, 1.5T base with post-training-only gains.",
       "source": "https://www.roic.ai/news/musk-grok-46-coming-out-likely-next-week-08-04-2026"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 93,
+      "prob": 79,
       "frontier": true,
       "status": "expected",
-      "basis": "Announced at I/O May 19; slipped three times. Polymarket Aug 31 leg firmed to 93% and the Aug 7 leg revived from 2% to 11%.",
+      "basis": "Polymarket's Aug 31 leg fell from 93% to 79% this sweep (Aug 21 75%, Aug 14 58%, Aug 7 10%); still in limited partner testing.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 2026",
       "expectedDate": "2026-09",
-      "prob": 75,
+      "prob": 74,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket holds 75% by Sep 30 and 24% by Aug 31, both flat again this sweep on $94K volume.",
+      "basis": "Polymarket eased to 74% by Sep 30 from 75%; the Aug 31 leg holds at 24% on $94K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,8 +65,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "V4-Flash entered public API beta Jul 31; Pro tier still pending a full public release.",
-      "source": "https://technode.com/2026/07/31/deepseek-puts-v4-flash-api-into-public-beta/"
+      "basis": "V4-Flash exited preview Jul 31 at $0.14/$0.28 per M; the Pro tier still lacks a full public release.",
+      "source": "https://www.axios.com/2026/08/01/deepseek-model-cheap-ai-price-war"
     },
     {
       "model": "GLM-5.x",
@@ -98,8 +98,8 @@
       "prob": -1,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Named Aug 1 alongside ten claimed math results; explicitly not branded GPT-6 and still unreleased pending federal review.",
-      "source": "https://openai.com/index/ten-advances-in-mathematics/"
+      "basis": "Named Aug 1 alongside ten Lean-verified math results for ~$2,000 of compute; explicitly not branded GPT-6 and still unreleased.",
+      "source": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/"
     },
     {
       "model": "Grok 5",
@@ -109,8 +109,8 @@
       "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi priced 34% before Oct 1 and 68% before 2027 at last read; Kalshi returned 429 this sweep, so odds are carried forward.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
+      "basis": "Kalshi priced 34% before Oct 1 and 68% before 2027 at last read; Manifold puts just 5% before September.",
+      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
       "model": "Claude Haiku 5",
@@ -161,10 +161,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 88,
+      "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket eased to 88% by Dec 31 and 65% by Sep 30; Aug 31 leg down to 22% on $984K volume.",
+      "basis": "Polymarket firmed to 89% by Dec 31 while Sep 30 eased to 64% and Aug 31 sits at 22%; $990K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
