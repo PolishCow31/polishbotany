@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T21:06:21-04:00",
+  "updated": "2026-08-05T00:06:05-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1527,6 +1527,16 @@
         "Constitutional AI",
         "CAI",
         "constitution-based alignment"
+      ]
+    },
+    {
+      "term": "Constitutional classifiers",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Input and output filters trained on synthetic data generated from an explicit rule set, used to block jailbreaks without retraining the underlying model.",
+      "aka": [
+        "constitutional classifier",
+        "safeguard classifiers"
       ]
     },
     {
@@ -4808,6 +4818,16 @@
       ]
     },
     {
+      "term": "Multi-token prediction",
+      "acronym": "MTP",
+      "category": "Training & post-training",
+      "def": "Training objective where a model predicts several future tokens per position instead of one, improving sample efficiency and enabling faster speculative decoding at inference.",
+      "aka": [
+        "MTP",
+        "multi token prediction objective"
+      ]
+    },
+    {
       "term": "Multimodal",
       "acronym": "",
       "category": "Capabilities & agents",
@@ -4988,6 +5008,18 @@
       "aka": [
         "NVIDIA FP4",
         "FP4 block-scaled"
+      ]
+    },
+    {
+      "term": "NVIDIA Blackwell",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "NVIDIA's 2024-2026 datacenter GPU architecture (B100/B200/GB200), built around FP4 inference, dual-die packaging and NVLink rack-scale systems; predecessor to Vera Rubin.",
+      "aka": [
+        "Blackwell",
+        "B200",
+        "GB200",
+        "GB300"
       ]
     },
     {
@@ -6205,6 +6237,16 @@
       "def": "A behavior where a model corrupts its own training signal or oversight process, for example editing the code that computes its reward, an extreme form of reward hacking.",
       "aka": [
         "feedback tampering"
+      ]
+    },
+    {
+      "term": "Ring attention",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Distributes a long sequence across devices in a ring, overlapping block-wise attention with key-value communication so context length scales with device count.",
+      "aka": [
+        "ring attention with blockwise transformers",
+        "blockwise ring attention"
       ]
     },
     {
