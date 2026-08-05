@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-04T18:06:04-04:00",
+  "updated": "2026-08-04T21:06:21-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -196,6 +196,16 @@
       "aka": [
         "task planning",
         "task decomposition"
+      ]
+    },
+    {
+      "term": "Agent skills",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Packaged instruction files plus optional scripts that an agent loads on demand to perform a specific task, extending behavior without retraining or new tools.",
+      "aka": [
+        "skills",
+        "skill packages"
       ]
     },
     {
@@ -1555,6 +1565,16 @@
       ]
     },
     {
+      "term": "Context engineering",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Designing what occupies a model's context window at each step — instructions, retrieved documents, tool results, memory, history — treating context budget as the scarce resource.",
+      "aka": [
+        "context design",
+        "context management"
+      ]
+    },
+    {
       "term": "Context parallelism",
       "acronym": "",
       "category": "Inference & serving",
@@ -1596,6 +1616,16 @@
         "context extension",
         "long-context extension",
         "context window extension"
+      ]
+    },
+    {
+      "term": "Continual pretraining",
+      "acronym": "CPT",
+      "category": "Training & post-training",
+      "def": "Resuming pretraining of an existing base model on new corpora, typically to add a language, domain, or recency, without retraining from scratch.",
+      "aka": [
+        "continued pretraining",
+        "domain-adaptive pretraining"
       ]
     },
     {
@@ -4321,6 +4351,16 @@
         "micro datacenter",
         "modular data center",
         "substation data center"
+      ]
+    },
+    {
+      "term": "Mid-training",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "A stage between pretraining and post-training that continues large-scale training on curated, higher-quality or domain-targeted data to reshape capabilities before alignment.",
+      "aka": [
+        "mid training",
+        "continued pretraining stage"
       ]
     },
     {
