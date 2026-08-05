@@ -1,18 +1,7 @@
 {
-  "updated": "2026-08-05T09:06:10-04:00",
+  "updated": "2026-08-05T12:07:01-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
-    {
-      "model": "Gemini 3.5 Pro",
-      "lab": "Google DeepMind",
-      "expectedWindow": "by Aug 31 2026",
-      "expectedDate": "2026-08",
-      "prob": 91,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Announced at I/O May 19; slipped three times. Polymarket Aug 31 leg firmed to 91%; Aug 7 leg dead at 2%.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
-    },
     {
       "model": "Grok 4.6",
       "lab": "xAI",
@@ -21,8 +10,19 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Musk said Aug 4 that Grok 4.6 is \"likely next week\"; reported ~1.5-2T parameters, X Premium first.",
+      "basis": "Musk said Aug 4 it is \"likely next week\"; trackers now report an Aug 7 target, 1.5T V9 base with post-training-only gains.",
       "source": "https://www.roic.ai/news/musk-grok-46-coming-out-likely-next-week-08-04-2026"
+    },
+    {
+      "model": "Gemini 3.5 Pro",
+      "lab": "Google DeepMind",
+      "expectedWindow": "by Aug 31 2026",
+      "expectedDate": "2026-08",
+      "prob": 93,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Announced at I/O May 19; slipped three times. Polymarket Aug 31 leg firmed to 93% and the Aug 7 leg revived from 2% to 11%.",
+      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
@@ -43,7 +43,7 @@
       "prob": 75,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket holds 75% by Sep 30 and 24% by Aug 31, both flat this sweep on $94K volume.",
+      "basis": "Polymarket holds 75% by Sep 30 and 24% by Aug 31, both flat again this sweep on $94K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -98,7 +98,7 @@
       "prob": -1,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Named Aug 1 alongside ten claimed math/quantum results with Lean 4 proof certificates; unreleased, first through federal review.",
+      "basis": "Named Aug 1 alongside ten claimed math results; explicitly not branded GPT-6 and still unreleased pending federal review.",
       "source": "https://openai.com/index/ten-advances-in-mathematics/"
     },
     {
@@ -109,8 +109,8 @@
       "prob": 34,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi prices 34% before Oct 1, 68% before 2027; Manifold has just 5% before Sep 2026.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "basis": "Kalshi priced 34% before Oct 1 and 68% before 2027 at last read; Kalshi returned 429 this sweep, so odds are carried forward.",
+      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
       "model": "Claude Haiku 5",
@@ -161,10 +161,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 89,
+      "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket eased to 89% by Dec 31 and 68% by Sep 30; Aug 31 leg still 24% on $979K volume.",
+      "basis": "Polymarket eased to 88% by Dec 31 and 65% by Sep 30; Aug 31 leg down to 22% on $984K volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {

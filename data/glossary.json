@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-05T09:06:10-04:00",
+  "updated": "2026-08-05T12:07:01-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -789,6 +789,18 @@
       "aka": [
         "Amazon Bedrock",
         "Bedrock"
+      ]
+    },
+    {
+      "term": "AWS Trainium",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Amazon's in-house training accelerator family, used in large Trn clusters to reduce dependence on NVIDIA GPUs for frontier-scale model training and fine-tuning.",
+      "aka": [
+        "Trainium2",
+        "Trainium3",
+        "Trn1",
+        "Trn2"
       ]
     },
     {
@@ -3622,6 +3634,17 @@
       ]
     },
     {
+      "term": "Ironwood (TPU v7)",
+      "acronym": "TPU v7",
+      "category": "Economics & compute",
+      "def": "Google's seventh-generation Tensor Processing Unit, its first designed primarily for inference at scale, deployed in pods of thousands of chips for serving frontier models.",
+      "aka": [
+        "TPU v7",
+        "Google Ironwood",
+        "seventh-generation TPU"
+      ]
+    },
+    {
       "term": "J-space",
       "acronym": "",
       "category": "Safety & alignment",
@@ -5051,6 +5074,17 @@
       "aka": [
         "NIM",
         "NVIDIA Inference Microservices"
+      ]
+    },
+    {
+      "term": "NVIDIA Rubin CPX",
+      "acronym": "CPX",
+      "category": "Economics & compute",
+      "def": "An NVIDIA GPU specialized for the compute-heavy prefill phase of long-context inference, pairing large GDDR7 memory with disaggregated serving to cut cost per token.",
+      "aka": [
+        "Rubin CPX",
+        "context-phase GPU",
+        "prefill accelerator"
       ]
     },
     {
