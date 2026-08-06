@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T00:22:57-04:00",
+  "updated": "2026-08-06T03:17:25-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -832,6 +832,17 @@
         "trojan attack",
         "neural backdoor",
         "trojaned model"
+      ]
+    },
+    {
+      "term": "Background agent",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Coding or task agent that runs asynchronously for hours without a live session, persisting state through a crash-safe event log so work survives interruption.",
+      "aka": [
+        "async agent",
+        "persistent agent",
+        "background coding agent"
       ]
     },
     {
@@ -3713,6 +3724,18 @@
       "def": "Agentic evaluation measuring how well models complete realistic, multi-step white-collar job tasks end-to-end, used to gauge tool-use and workflow-orchestration ability rather than single-turn answers.",
       "aka": [
         "Job Bench"
+      ]
+    },
+    {
+      "term": "Joint-Embedding Predictive Architecture",
+      "acronym": "JEPA",
+      "category": "Model architecture",
+      "def": "Self-supervised design that predicts an input's representation in latent space rather than reconstructing pixels or tokens, discarding unpredictable detail.",
+      "aka": [
+        "JEPA",
+        "joint embedding predictive architecture",
+        "I-JEPA",
+        "V-JEPA"
       ]
     },
     {
@@ -7882,6 +7905,16 @@
       ]
     },
     {
+      "term": "Volumetric Joint-Embedding Predictive Architecture",
+      "acronym": "Vol-JEPA",
+      "category": "Model architecture",
+      "def": "JEPA variant for 3D medical volumes; trains vision-only on uncurated MRI and CT stacks without annotations or report supervision. Used by NeuroVFM.",
+      "aka": [
+        "Vol-JEPA",
+        "volumetric JEPA"
+      ]
+    },
+    {
       "term": "Voluntary model-testing framework",
       "acronym": "",
       "category": "Safety & alignment",
@@ -8115,6 +8148,17 @@
       "aka": [
         "Zebra Logic",
         "ZebraLogicBench"
+      ]
+    },
+    {
+      "term": "Zero data retention",
+      "acronym": "ZDR",
+      "category": "Inference & serving",
+      "def": "API mode where the provider stores no prompts or completions after a request returns, and never trains on them; common enterprise procurement requirement.",
+      "aka": [
+        "ZDR",
+        "zero-data-retention",
+        "no-training tier"
       ]
     },
     {

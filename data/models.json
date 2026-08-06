@@ -2349,6 +2349,29 @@
         "https://www.marktechpost.com/2026/08/02/thinking-machines-lab-releases-inkling-small-276b-open-weights-multimodal-moe-model/",
         "https://venturebeat.com/technology/thinking-machines-debuts-inkling-small-open-source-ai-model-nearing-performance-of-predecessor-at-about-1-4-size"
       ]
+    },
+    {
+      "name": "Meta Muse Spark 1.2",
+      "lab": "Meta (Superintelligence Labs)",
+      "released": "2026-08-05",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "multimodal (text, image, video, audio, PDF in; text out)",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 54,
+        "Terminal-Bench 2.1": 82.9,
+        "DeepSWE v1.1": 59.3
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Meta's flagship reasoning model refresh, shipped Aug 5 alongside Muse Code -- Meta's first coding agent -- and explicitly co-trained with it. Muse Code is a terminal agent that installs with a single command, runs parallel sub-agents (implementers plus concurrent reviewers) with git-worktree isolation and a crash-safe event log, and is aimed at long-running background workstreams; it is in beta and the Meta Model API is in public preview, with distribution also via OpenRouter. Muse Spark 1.2 keeps the 1M-token context and takes text, image, video, audio and PDF input. Artificial Analysis scores it 54 on the Intelligence Index (v4.1), tying Grok 4.5 and Claude Opus 4.7 and sitting seven points behind Claude Opus 5. On Meta's own published comparison it is second-best behind Claude Opus 5 on both Terminal-Bench 2.1 (82.9) and DeepSWE 1.1 (59.3); Meta also published Meta Internal Coding Bench and GDPval results as images without a methodology write-up. Pricing is unchanged from Muse Spark 1.1 at $1.25 per 1M input and $4.25 per 1M output, with cached input at $0.15 and a no-training guarantee; a 'contributor' tier drops that to $0.10/$0.20 in exchange for letting Meta train on prompts and completions. Weights are not open.",
+      "sources": [
+        "https://www.cnbc.com/2026/08/05/meta-debuts-muse-code-to-take-on-anthropic-and-openai-.html",
+        "https://artificialanalysis.ai/models/muse-spark-1-2",
+        "https://www.unite.ai/meta-ships-muse-code-coding-agent-with-co-trained-muse-spark-1-2-model/",
+        "https://openrouter.ai/meta/muse-spark-1.2"
+      ]
     }
   ]
 }
