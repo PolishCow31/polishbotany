@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-06T09:07:10-04:00",
+  "updated": "2026-08-06T12:08:58-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Musk said Aug 4 that Grok 4.6 is likely out the following week; X Premium first, API about a week later.",
+      "basis": "Musk said Aug 4 it is likely out this week; reports cite ~1.5T params, X Premium first, API about a week later.",
       "source": "https://www.roic.ai/news/musk-grok-46-coming-out-likely-next-week-08-04-2026"
     },
     {
@@ -21,8 +21,19 @@
       "prob": 86,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg 86%, down from 88%; Aug 21 firmed to 70%, Aug 14 55%, Aug 7 only 5%. $699K volume.",
+      "basis": "Polymarket Aug 31 leg 86% flat, but near rungs slipped: Aug 21 70% to 61%, Aug 14 55% to 38%. $728K volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
+    },
+    {
+      "model": "Astra (next OpenAI model family)",
+      "lab": "OpenAI",
+      "expectedWindow": "by Aug 31 2026",
+      "expectedDate": "2026-08",
+      "prob": 56,
+      "frontier": true,
+      "status": "confirmed",
+      "basis": "New Polymarket market: 56% public release by Aug 31, 73% Sep 15, 87% Sep 30. Must clear a US government review.",
+      "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
       "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
@@ -43,7 +54,7 @@
       "prob": 75,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg 75%, flat; the Aug 31 leg firmed to 25% from 24% on $94K total volume.",
+      "basis": "Polymarket Sep 30 leg 75% flat; the Aug 31 leg jumped to 32% from 25% on $95K total volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -54,7 +65,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Musk signalled 4.6 in two weeks and 4.7 roughly a month after; no dated market exists.",
+      "basis": "Musk signalled 4.7 roughly a month after 4.6; reports cite ~2.1T params. No dated market exists.",
       "source": "https://www.roic.ai/news/musk-signals-rapid-grok-rollout-46-in-two-weeks-47-a-month-later-07-28-2026"
     },
     {
@@ -89,17 +100,6 @@
       "status": "rumored",
       "basis": "M3 shipped Jun 1; a larger open-weight Pro variant is trailed but undated.",
       "source": "https://llm-stats.com/ai-news"
-    },
-    {
-      "model": "Astra (next OpenAI model family)",
-      "lab": "OpenAI",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": true,
-      "status": "confirmed",
-      "basis": "Announced Aug 1 with a disproved discrete-geometry conjecture, but not branded GPT-6 and carrying no public release date.",
-      "source": "https://openai.com/index/model-disproves-discrete-geometry-conjecture/"
     },
     {
       "model": "Grok 5",
@@ -150,10 +150,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 2026",
       "expectedDate": "2026-12",
-      "prob": 88,
+      "prob": 90,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 leg 88%, up from 87%, on $1.01M; Sep 30 64%, Aug 31 21%. Manifold prices 65% before Oct.",
+      "basis": "Polymarket Dec 31 leg 90%, up from 88%; Sep 30 72% (from 64%) and Aug 31 40% (from 21%) after the Astra briefings.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
