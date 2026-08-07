@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T12:06:05-04:00",
+  "updated": "2026-08-07T15:07:22-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi ladder read live: 43% last before Aug 9 (bid/ask mid 35%), 13% before Aug 8; thin book",
+      "basis": "Kalshi ladder 43% before Aug 9 (last readable Aug 7 12:06 ET; page rate-limited this sweep). Not on x.ai/news yet",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
     },
     {
@@ -18,22 +18,11 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 51,
+      "prob": 57,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg 51% (from 58%); Kalshi same window 49% (from 70%); Aug 21 33%/20%",
+      "basis": "Polymarket read live: Aug 31 leg 57%, up from 51%; Aug 21 32%, Aug 14 12%, Aug 7 under 1%",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
-    },
-    {
-      "model": "Astra (next OpenAI model family)",
-      "lab": "OpenAI",
-      "expectedWindow": "by Aug 31 2026",
-      "expectedDate": "2026-08",
-      "prob": 78,
-      "frontier": true,
-      "status": "confirmed",
-      "basis": "Polymarket 77.5% by Aug 31; Aug 15 leg fell to 32.5% from 45%; Kalshi 76% before Sep 1, 95% before Oct 1",
-      "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
       "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
@@ -47,6 +36,17 @@
       "source": "https://llm-stats.com/llm-updates"
     },
     {
+      "model": "Astra (next OpenAI model family)",
+      "lab": "OpenAI",
+      "expectedWindow": "by Sep 30 2026",
+      "expectedDate": "2026-09",
+      "prob": 90,
+      "frontier": true,
+      "status": "confirmed",
+      "basis": "Slipped: OpenAI slowing Astra over critical cyber risk (Axios Aug 7). Polymarket Aug 31 leg 36% from 77.5%; Sep 30 90%",
+      "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
+    },
+    {
       "model": "Next Mythos-class model",
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
@@ -54,7 +54,7 @@
       "prob": 75,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket read live: 75% by Sep 30, 47.5% by Sep 15, 22.5% by Aug 31",
+      "basis": "Polymarket read live: 75% by Sep 30, 50% by Sep 15 (up from 47.5%), 23% by Aug 31",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 37,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi read live: 37% before Sep 4, 31% before Aug 31, 24.5% before Aug 28",
+      "basis": "Kalshi 37% before Sep 4 (last readable Aug 7 12:06 ET; page rate-limited this sweep)",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -142,7 +142,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 89.5% by Dec 31, 69% by Sep 30, 30.5% by Aug 31; Kalshi 84% before 2027; Manifold 88.8%",
+      "basis": "Polymarket read live: 89% by Dec 31, 67% by Sep 30, 29% by Aug 31; Manifold 87% before 2027",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -153,7 +153,7 @@
       "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi read live: 67% before 2027, only 3.5% before Oct 1 and 3% before Sep 1",
+      "basis": "Kalshi 67% before 2027, 3.5% before Oct 1 (last readable Aug 7 12:06 ET; page rate-limited this sweep)",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
