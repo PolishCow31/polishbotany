@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T15:07:22-04:00",
+  "updated": "2026-08-07T18:07:03-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2288,6 +2288,16 @@
       ]
     },
     {
+      "term": "Doubao",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "ByteDance's consumer AI assistant app and the main distribution surface for its Seed model family in China, including chat, voice and full-duplex audio-video modes.",
+      "aka": [
+        "Doubao app",
+        "ByteDance Doubao"
+      ]
+    },
+    {
       "term": "Double descent",
       "acronym": "",
       "category": "Training & post-training",
@@ -4134,6 +4144,18 @@
       ]
     },
     {
+      "term": "Liquid Foundation Model",
+      "acronym": "LFM",
+      "category": "Orgs, models & ecosystem",
+      "def": "Liquid AI's model family built on hybrid convolution-and-attention backbones rather than pure transformers, targeting on-device inference with small memory footprints.",
+      "aka": [
+        "LFM",
+        "LFM2",
+        "LFM2.5",
+        "Liquid AI models"
+      ]
+    },
+    {
       "term": "LiveBench",
       "acronym": "",
       "category": "Benchmarks & evals",
@@ -5104,6 +5126,16 @@
       "def": "DeepSeek's attention method that compresses keys and values into a small shared latent vector, drastically reducing memory use during generation while keeping quality high.",
       "aka": [
         "latent attention"
+      ]
+    },
+    {
+      "term": "Multi-IF",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Multi-turn, multilingual instruction-following benchmark that tests whether a model keeps obeying accumulated constraints across successive conversational turns.",
+      "aka": [
+        "Multi-turn Instruction Following",
+        "Multi IF benchmark"
       ]
     },
     {
@@ -7011,6 +7043,17 @@
       ]
     },
     {
+      "term": "Short convolution block",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A gated, small-kernel 1D convolution layer used in place of attention in hybrid models; gives linear-time token mixing and a tiny cache, favouring edge deployment.",
+      "aka": [
+        "short conv",
+        "gated convolution block",
+        "conv block"
+      ]
+    },
+    {
       "term": "Sim-to-real transfer",
       "acronym": "sim2real",
       "category": "Capabilities & agents",
@@ -7838,6 +7881,16 @@
       "def": "A benchmark and dataset for evaluating how well language models can use large numbers of real-world APIs and tools to complete tasks.",
       "aka": [
         "ToolLLM benchmark"
+      ]
+    },
+    {
+      "term": "ToolSandbox",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Stateful, conversational tool-use benchmark where an LLM agent must call interdependent tools across multiple turns, with a simulated user and execution state.",
+      "aka": [
+        "Tool Sandbox",
+        "stateful tool-use benchmark"
       ]
     },
     {

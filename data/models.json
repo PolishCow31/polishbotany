@@ -2392,6 +2392,44 @@
         "https://vercel.com/changelog/ling-3-0-tiny-is-now-available-on-ai-gateway",
         "https://x.com/vercel_dev/status/2085421871122862478"
       ]
+    },
+    {
+      "name": "LFM2.5-2.6B",
+      "lab": "Liquid AI",
+      "released": "2026-08-04",
+      "params": "2.69B dense (30 layers: 22 short-convolution + 8 grouped-query attention blocks)",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "ToolSandbox": 77.83,
+        "Multi-IF": 80.07,
+        "IFStruct": 85.49
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Liquid AI's on-device agentic model, announced Aug 4 2026 as 'Deploy Agents Everywhere' and pushed to Hugging Face in two checkpoints (LFM2.5-2.6B-Base for fine-tuning, plus the post-trained agentic build). 2.69B parameters across a hybrid stack of 22 short-convolution blocks and 8 grouped-query attention blocks, a 131,072-token context, and roughly 34T training tokens, trained via knowledge distillation followed by multi-turn agentic reinforcement learning inside real agent harnesses. Runs entirely locally in under 2.5 GB: 220 tokens/sec on an Apple M5 Max, 113 tok/s on an AMD Ryzen AI Max+ 395 CPU, and about 30 tok/s on a phone, down to Raspberry Pi-class hardware. Beats Gemma-4-E4B and Qwen3.5-9B on tool use and instruction following despite being up to four times smaller (ToolSandbox 77.83, Multi-IF 80.07, IFStruct 85.49). Released under Liquid's lfm1.0 license; Liquid explicitly does not recommend it for coding or knowledge-heavy work.",
+      "sources": [
+        "https://www.liquid.ai/blog",
+        "https://www.marktechpost.com/2026/08/06/liquid-ai-lfm2-5-2-6b-on-device-agentic-model/"
+      ]
+    },
+    {
+      "name": "SeedRealtime",
+      "lab": "ByteDance",
+      "released": "2026-08-05",
+      "params": "undisclosed",
+      "context": "undisclosed",
+      "modality": "natively multimodal full-duplex (audio, video, text in; speech and text out)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "ByteDance Seed's Aug 5 2026 release: a native audio-video full-duplex large model that processes audio, video and text streams continuously while it is still listening, rather than waiting for the user to finish a turn. Instead of chaining separate speech-recognition, vision, language and text-to-speech modules, it uses a unified end-to-end architecture that natively fuses the three streams, deciding moment to moment when to speak, when to stay quiet, and what on-screen object the user means. ByteDance reports roughly 12% better conversational fluency than its predecessors, crediting improved listening and interference suppression - filtering background noise and avoiding self-interruption. Now shipping at consumer scale inside the Doubao and Douyin apps, with automotive integration flagged as a target, marking one of the first large-scale deployments of full-duplex audio-video interaction. No parameter count, context length or benchmark suite has been published.",
+      "sources": [
+        "https://technode.com/2026/08/05/bytedance-launches-seedrealtime-full-duplex-audio-video-model/",
+        "https://seed.bytedance.com/en/blog"
+      ]
     }
   ]
 }
