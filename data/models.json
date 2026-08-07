@@ -2372,6 +2372,24 @@
         "https://www.unite.ai/meta-ships-muse-code-coding-agent-with-co-trained-muse-spark-1-2-model/",
         "https://openrouter.ai/meta/muse-spark-1.2"
       ]
+    },
+    {
+      "name": "Ling-3.0-tiny",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-08-06",
+      "params": "7.9B total / ~1.3B active (MoE)",
+      "context": "256K",
+      "modality": "Text",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "The small sibling to July's Ling-3.0-flash, and the second model Ant Group's inclusionAI lab has pushed straight onto inference endpoints rather than a model page. A hybrid-reasoning mixture-of-experts with 7.9B total parameters but only ~1.3B active per token, a 256K context and up to 32K output tokens, carrying the same switchable thinking/instant modes as the flash tier plus native function calling and prompt caching. Positioned for responsive agents, instruction following and multi-turn conversation at resource-sensitive deployment sizes. Available via OpenRouter (hosted by Novita) and Vercel AI Gateway, free through Aug 13-14 2026; after that it falls back to provider pricing with no gateway markup. inclusionAI says weights will be open-sourced but has posted none yet and named no license -- the same pattern that left Ling-3.0-flash endpoint-only for weeks despite an Apache 2.0 announcement. No benchmark table, technical report or independent evaluation exists.",
+      "sources": [
+        "https://openrouter.ai/inclusionai/ling-3.0-tiny:free",
+        "https://vercel.com/changelog/ling-3-0-tiny-is-now-available-on-ai-gateway",
+        "https://x.com/vercel_dev/status/2085421871122862478"
+      ]
     }
   ]
 }
