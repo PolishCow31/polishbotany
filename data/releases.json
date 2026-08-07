@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T09:05:40-04:00",
+  "updated": "2026-08-07T12:06:05-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi ladder thin and non-monotonic; no fresh read this sweep (rate-limited), prior number carried",
+      "basis": "Kalshi ladder read live: 43% last before Aug 9 (bid/ask mid 35%), 13% before Aug 8; thin book",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 58,
+      "prob": 51,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg fell to 58% from 71%; Aug 21 37%, Aug 14 12%, Aug 7 expired at 1%",
+      "basis": "Polymarket Aug 31 leg 51% (from 58%); Kalshi same window 49% (from 70%); Aug 21 33%/20%",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 79,
+      "prob": 78,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket: 45% by Aug 15 (up from 37%), 79% by Aug 31, 97% by Sep 30; OpenAI briefed Washington",
+      "basis": "Polymarket 77.5% by Aug 31; Aug 15 leg fell to 32.5% from 45%; Kalshi 76% before Sep 1, 95% before Oct 1",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -43,7 +43,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Alibaba stated open-weight release follows the Aug 3 API launch; no dated market exists",
+      "basis": "Alibaba stated an open-weight release follows the Aug 3 API launch; no dated market exists",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 75,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 75% by Sep 30, 46% by Sep 15, 23% by Aug 31 (up from 21%)",
+      "basis": "Polymarket read live: 75% by Sep 30, 47.5% by Sep 15, 22.5% by Aug 31",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 37,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi Grok release ladder; no fresh read this sweep (rate-limited), prior number carried",
+      "basis": "Kalshi read live: 37% before Sep 4, 31% before Aug 31, 24.5% before Aug 28",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -142,7 +142,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 89% by Dec 31, 72% by Sep 30, 29% by Aug 31; Manifold agrees at 89%",
+      "basis": "Polymarket 89.5% by Dec 31, 69% by Sep 30, 30.5% by Aug 31; Kalshi 84% before 2027; Manifold 88.8%",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -153,7 +153,7 @@
       "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi 67% before 2027, only 6% before Oct 1; no fresh read this sweep (rate-limited)",
+      "basis": "Kalshi read live: 67% before 2027, only 3.5% before Oct 1 and 3% before Sep 1",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
