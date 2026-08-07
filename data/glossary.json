@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T03:06:55-04:00",
+  "updated": "2026-08-07T06:06:42-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1797,6 +1797,17 @@
         "cost per task",
         "AA cost per task",
         "intelligence per dollar (task-normalized)"
+      ]
+    },
+    {
+      "term": "Cost to run Intelligence Index",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Artificial Analysis metric reporting total API dollars spent running one model through its full Intelligence Index suite, exposing verbosity and reasoning-token cost alongside raw score.",
+      "aka": [
+        "cost per eval",
+        "cost to run evaluation",
+        "AA cost to run"
       ]
     },
     {
@@ -4852,6 +4863,17 @@
       ]
     },
     {
+      "term": "Model fallback routing",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Serving pattern where a request that a primary model refuses, times out on, or fails is automatically re-issued to a secondary model, changing measured benchmark scores.",
+      "aka": [
+        "fallback model",
+        "router fallback",
+        "with fallback"
+      ]
+    },
+    {
       "term": "Model FLOPs Utilization",
       "acronym": "MFU",
       "category": "Economics & compute",
@@ -5616,6 +5638,16 @@
         "model weights",
         "parameter count",
         "B parameters"
+      ]
+    },
+    {
+      "term": "Parametric CAD Bench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Evaluation testing whether a model can generate valid parametric CAD models from specifications, scoring geometric correctness and constraint satisfaction rather than image similarity.",
+      "aka": [
+        "Parametric CAD Benchmark",
+        "CAD Bench"
       ]
     },
     {

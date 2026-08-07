@@ -2311,16 +2311,17 @@
         "Terminal-Bench 2.1": 86.6,
         "OSWorld-Verified": 86.1,
         "SWE-bench Pro": 67.7,
-        "DeepSWE v1.1": 56.6
+        "DeepSWE v1.1": 56.6,
+        "AA-Index": 58
       },
       "milestone": false,
       "status": "live",
-      "notable": "Alibaba's full flagship release behind July 19's Qwen3.8-Max-Preview, announced Aug 2-3 with published benchmarks for the first time. A 2.4-trillion-parameter sparse mixture-of-experts multimodal model taking text, image and video, with a 1M-token context (991K max input, 983K with thinking on, 131K max output). Priced at $2.00 per 1M input and $6.00 per 1M output, with cached input at $0.25 -- roughly a third of frontier-flagship pricing. Alibaba reports wins over both Claude Fable 5 and GPT-5.6 Sol across seven coding/agentic/general evaluations and 36 multimodal and vision tests, including 82.8 on IFBench (vs GPT-5.6 Sol 72.7 and Fable 5 63.5), 93.0 PaperBench, 91.5 Parametric CAD Bench and 92.1 OmniDocBench. Fable 5 still leads the hard coding suite: SWE-bench Pro 80.0 vs 67.7, DeepSWE 1.1 70.0 vs 56.6 and FrontierSWE 88.8 vs 73.5. Open weights for Qwen3.8-Max and a smaller Qwen3.8-27B are promised on Hugging Face and ModelScope the following week; no license named yet, and no independent evaluation exists. Alibaba's U.S.-listed shares rose roughly 5% in premarket trading on the announcement.",
+      "notable": "Alibaba's full flagship release behind July 19's Qwen3.8-Max-Preview, announced Aug 2-3 with published benchmarks for the first time. A 2.4-trillion-parameter sparse mixture-of-experts multimodal model taking text, image and video, with a 1M-token context (991K max input, 983K with thinking on, 131K max output). Priced at $2.00 per 1M input and $6.00 per 1M output, with cached input at $0.25 -- roughly a third of frontier-flagship pricing. Artificial Analysis has now run it independently: it scores 58 on the Intelligence Index (v4.1), placing it fourth overall behind Claude Opus 5 (61), Claude Fable 5 (60) and GPT-5.6 Sol (59), and ahead of Kimi K3 (57), Claude Opus 4.8 (56) and every current model from Google, Meta and xAI. The number was volatile: AA first published 53, withdrew it after intermittent endpoint failures, re-ran on Alibaba's public API for 56, and the live page now reads 58. Cost per Intelligence Index run more than doubled versus the prior Qwen Max at roughly $1.14 per task, and the model emitted 150M output tokens over the eval -- verbose relative to peers. Alibaba's own numbers still show Fable 5 ahead on the hard coding suite: SWE-bench Pro 80.0 vs 67.7, DeepSWE 1.1 70.0 vs 56.6 and FrontierSWE 88.8 vs 73.5. Open weights for Qwen3.8-Max and a smaller Qwen3.8-27B remain promised on Hugging Face and ModelScope but have not shipped.",
       "sources": [
-        "https://www.marktechpost.com/2026/08/03/alibaba-qwen-releases-qwen3-8-max/",
-        "https://www.neowin.net/news/alibaba-releases-qwen38-max-challenging-gpt-56-sol-and-claude-fable-5-on-ai-benchmarks/",
-        "https://officechai.com/ai/alibaba-releases-qwen-3-8-max-beats-gpt-5-6-sol-and-fable-on-many-benchmarks/",
-        "https://www.cnbc.com/2026/08/02/stock-market-today-live-updates.html"
+        "https://artificialanalysis.ai/models/qwen3-8-max",
+        "https://the-decoder.com/qwen3-8-max-catches-claude-opus-4-8-but-kimi-k3-still-scores-higher-for-25-percent-less/",
+        "https://officechai.com/ai/qwen-3-8-max-scores-56-on-artificial-analysis-intelligence-index-ahead-of-all-us-companies-except-anthropic-and-openai/",
+        "https://venturebeat.com/technology/qwen3-8-max-arrives-with-a-bold-claim-it-outperforms-gpt-5-6-sol-max-and-fable-5-on-agentic-computer-use"
       ]
     },
     {
