@@ -1296,7 +1296,7 @@
       "benchmarks": {
         "SWE-bench": 95,
         "SWE-bench Pro": 80.3,
-        "AA-Index": 60
+        "AA-Index": 62
       },
       "milestone": true,
       "notable": "Mythos-class GA model, top reported SWE-bench Verified of the cycle (~95%). PULLED worldwide Jun 12 2026 by a US Commerce export-control order, then fully cleared Jun 30 and reinstated Jul 1. Now #1 on the Artificial Analysis Intelligence Index at 60 (v4.1), ahead of its own Opus 4.8 (56) and GPT-5.5 (55) — AA calls Anthropic 'nearly 5 points ahead of any other lab's best model.' $10/$50.",
@@ -1642,7 +1642,7 @@
       "benchmarks": {
         "HealthBench": 57.0,
         "HealthBench Hard": 33.1,
-        "AA-Index": 59
+        "AA-Index": 61
       },
       "milestone": true,
       "status": "live",
@@ -1916,7 +1916,7 @@
         "HLE": 43.5,
         "SWE-bench (DeepSWE)": 67.5,
         "BrowseComp": 91.2,
-        "AA-Index": 57
+        "AA-Index": 60
       },
       "milestone": true,
       "status": "live",
@@ -2002,17 +2002,17 @@
       "open": false,
       "benchmarks": {
         "SWE-bench Pro": 79.2,
-        "AA-Index": 61,
+        "AA-Index": 63,
         "Terminal-Bench 2.1": 89
       },
       "milestone": true,
       "status": "live",
-      "notable": "New frontier flagship succeeding Opus 4.8; adds a user-set low/medium/high effort control, keeps flat $5/$25 pricing and a 1M-token context. UPDATE (Jul 25): Artificial Analysis finished its independent run and scored it 61 on the Intelligence Index v4.1 — sole #1 of 190 models, ahead of Claude Fable 5 (60) and GPT-5.6 Sol (59). It jointly leads AA's Coding Agent Index, hits 89% on Terminal-Bench v2.1, and posts 1861 Elo on GDPval-AA v2 (>100 ahead of Fable 5) and 1720 on AA-Briefcase (+146). Cost per Intelligence Index task is $2.03 vs $2.75 for Fable 5 — the cheapest frontier-tier intelligence measured. Weak spot: factual knowledge, with a ~50% hallucination rate, still behind Fable 5. Very verbose (100M output tokens across AA's eval suite). No LMArena Elo yet — new models need 1-2 weeks of votes. DISTRIBUTION (Jul 24-26): now live on the Anthropic API, Claude.ai (default for Max, top tier for Pro), Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry, and GitHub Copilot (gradual rollout). A 'Fast mode' runs at roughly 2.5x speed for $10 in / $50 out.",
+      "notable": "New frontier flagship succeeding Opus 4.8; adds a user-set low/medium/high effort control, keeps flat $5/$25 pricing and a 1M-token context. UPDATE (Aug 8): Artificial Analysis's Intelligence Index v4.1.1 patch - graders upgraded to GPT-5.6 Luna (medium) and the tau-cubed-Banking eval moved to upstream v1.0.1 - re-scored the model at 63 at max and xhigh effort, up from 61, and it stays sole #1 on the leaderboard; the high-effort tier now reads 61 and medium 59. Claude Fable 5 (with fallback) sits second at 62, GPT-5.6 Sol (max) at 61, Kimi K3 (max) at 60 and Qwen3.8-Max at 58. It jointly leads AA's Coding Agent Index, hits 89% on Terminal-Bench v2.1, scores 79.2 on SWE-bench Pro, and posts 1861 Elo on GDPval-AA v2 and 1720 on AA-Briefcase. Cost per Intelligence Index task is $2.03 vs $2.75 for Fable 5 - the cheapest frontier-tier intelligence measured. Weak spot: factual knowledge, with a ~50% hallucination rate. Very verbose. DISTRIBUTION: live on the Anthropic API, Claude.ai, Amazon Bedrock, Google Cloud Vertex AI, Microsoft Foundry and GitHub Copilot; a 'Fast mode' runs at roughly 2.5x speed for $10 in / $50 out.",
       "sources": [
         "https://www.anthropic.com/news/claude-opus-5",
-        "https://artificialanalysis.ai/articles/opus-5",
         "https://artificialanalysis.ai/models/claude-opus-5",
-        "https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5"
+        "https://artificialanalysis.ai/leaderboards/models",
+        "https://artificialanalysis.ai/changelog"
       ]
     },
     {
@@ -2099,7 +2099,9 @@
       "context": "262K",
       "modality": "Text",
       "open": false,
-      "benchmarks": {},
+      "benchmarks": {
+        "AA-Index": 38
+      },
       "milestone": false,
       "status": "preview",
       "notable": "Ant Group's efficiency play from its inclusionAI lab — a hybrid-reasoning MoE with a thinking/non-thinking toggle, 124B total but only ~5.1B active per token, built on a hybrid-linear attention stack mixing Kimi Delta Attention and Multi-head Latent Attention layers at a 5:1 ratio. 262K native context with 1M stated as the scaling target. Ant claims it matches or beats its own ~1T Ling-2.6 flagship on most benchmarks at 1/8 the total and 1/12 the active parameters, but published no benchmark table or technical report. Announced as Apache 2.0, yet no weights were posted to the inclusionAI Hugging Face org as of Jul 26 — so it is endpoint-only today, free through Aug 3 2026 via OpenRouter (hosted by Novita), Vercel AI Gateway and ZenMux. Surfaced on inference endpoints before Ant announced it.",
@@ -2384,7 +2386,9 @@
       "context": "256K",
       "modality": "Text",
       "open": false,
-      "benchmarks": {},
+      "benchmarks": {
+        "AA-Index": 25
+      },
       "milestone": false,
       "status": "preview",
       "notable": "The small sibling to July's Ling-3.0-flash, and the second model Ant Group's inclusionAI lab has pushed straight onto inference endpoints rather than a model page. A hybrid-reasoning mixture-of-experts with 7.9B total parameters but only ~1.3B active per token, a 256K context and up to 32K output tokens, carrying the same switchable thinking/instant modes as the flash tier plus native function calling and prompt caching. Positioned for responsive agents, instruction following and multi-turn conversation at resource-sensitive deployment sizes. Available via OpenRouter (hosted by Novita) and Vercel AI Gateway, free through Aug 13-14 2026; after that it falls back to provider pricing with no gateway markup. inclusionAI says weights will be open-sourced but has posted none yet and named no license -- the same pattern that left Ling-3.0-flash endpoint-only for weeks despite an Apache 2.0 announcement. No benchmark table, technical report or independent evaluation exists.",

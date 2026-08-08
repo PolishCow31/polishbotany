@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T12:07:29-04:00",
+  "updated": "2026-08-08T15:09:09-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2475,6 +2475,16 @@
       ]
     },
     {
+      "term": "Endpoint Accuracy Index",
+      "acronym": "EAI",
+      "category": "Inference & serving",
+      "def": "Artificial Analysis metric measuring how much of an open-weight model's benchmark accuracy each serverless API endpoint preserves, exposing quantization and serving-config degradation across hosts.",
+      "aka": [
+        "AA Endpoint Accuracy Index",
+        "endpoint accuracy preservation"
+      ]
+    },
+    {
       "term": "Entity List",
       "acronym": "",
       "category": "Economics & compute",
@@ -3191,6 +3201,17 @@
       "aka": [
         "GPU hours",
         "accelerator-hours"
+      ]
+    },
+    {
+      "term": "Grader model",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "The LLM used to score free-form benchmark answers; upgrading it can shift reported scores across an entire leaderboard without any change to the models being evaluated.",
+      "aka": [
+        "autograder",
+        "LLM grader",
+        "judge model"
       ]
     },
     {
