@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T21:06:43-04:00",
+  "updated": "2026-08-08T00:06:04-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,18 +10,18 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "NOT shipped: x.ai docs and release notes still top out at grok-4.5 despite blogs claiming an Aug 7 launch. Kalshi 43% (last readable Aug 7 12:06 ET; rate-limited since)",
-      "source": "https://docs.x.ai/developers/release-notes"
+      "basis": "Re-verified NOT shipped: x.ai model list and release notes still top out at grok-4.5. Kalshi 43% (last readable Aug 7; page 429s)",
+      "source": "https://docs.x.ai/docs/models"
     },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 62,
+      "prob": 61,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket read live: Aug 31 leg 62%, up from 56%; Aug 21 25%, Aug 14 11%, Aug 7 under 1%. $849K volume",
+      "basis": "Polymarket read live: Aug 31 leg 61%, easing from 62%; Aug 21 25%, Aug 14 10%, Aug 7 leg expired under 1%. $851K volume",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,7 +32,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Alibaba stated an open-weight release follows the Aug 3 API launch; no dated market exists",
+      "basis": "Alibaba stated an open-weight release follows the Aug 3 API launch; license still undisclosed, no dated market",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 87,
+      "prob": 88,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Mid-September footing lost: Polymarket Sep 15 leg 50% (was 66%); Aug 31 25%, Sep 30 87%, Oct 31 93%. Cyber-capability review ongoing",
+      "basis": "Polymarket live: Sep 30 firmed to 88% (was 87%); Aug 31 23% (was 25%), Sep 15 51%, Oct 31 93%. Cyber-capability review ongoing",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Slipped hard this sweep: Polymarket 64% by Sep 30 (was 74%), 42% by Sep 15, 17% by Aug 31. $101K volume",
+      "basis": "Polymarket live: 64% by Sep 30, flat after last sweep's drop; Aug 31 recovered to 20% from 17%, Sep 15 42%. $101K volume",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 37,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi 37% before Sep 4 (last readable Aug 7 12:06 ET; rate-limited this sweep). Musk says a 2.1T build follows 4.6",
+      "basis": "Kalshi 37% before Sep 4 (last readable Aug 7 12:06 ET; page rate-limited again this sweep). Musk says a 2.1T build follows 4.6",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -142,7 +142,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket read live: 89% by Dec 31, 65% by Sep 30, 18% by Aug 31 (down from 20%). $1.20M volume",
+      "basis": "Polymarket read live: 89% by Dec 31 (flat), 65% by Sep 30, 17% by Aug 31 (down from 18%). $1.20M volume",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
