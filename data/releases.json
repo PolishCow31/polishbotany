@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T00:06:04-04:00",
+  "updated": "2026-08-08T03:06:44-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,30 +10,30 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "Re-verified NOT shipped: x.ai model list and release notes still top out at grok-4.5. Kalshi 43% (last readable Aug 7; page 429s)",
+      "basis": "Re-verified NOT shipped: x.ai model list still tops out at grok-4.5. Kalshi 43% before Aug 9 (last readable Aug 7; page 429s again)",
       "source": "https://docs.x.ai/docs/models"
+    },
+    {
+      "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
+      "lab": "Alibaba (Qwen)",
+      "expectedWindow": "week of Aug 10 2026",
+      "expectedDate": "2026-08",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Qwen says weights land week of Aug 10 on Hugging Face and ModelScope; first Max-class open drop, license still undisclosed",
+      "source": "https://www.testingcatalog.com/qwen-released-qwen3-8-max-with-open-weights-coming-soon/"
     },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 61,
+      "prob": 58,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket read live: Aug 31 leg 61%, easing from 62%; Aug 21 25%, Aug 14 10%, Aug 7 leg expired under 1%. $851K volume",
+      "basis": "Polymarket read live: Aug 31 leg fell to 58% from 61%; Aug 21 23%, Aug 14 10%. $855K volume",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
-    },
-    {
-      "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
-      "lab": "Alibaba (Qwen)",
-      "expectedWindow": "by mid-Aug 2026",
-      "expectedDate": "2026-08",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Alibaba stated an open-weight release follows the Aug 3 API launch; license still undisclosed, no dated market",
-      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Astra (next OpenAI model family)",
@@ -43,7 +43,7 @@
       "prob": 88,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket live: Sep 30 firmed to 88% (was 87%); Aug 31 23% (was 25%), Sep 15 51%, Oct 31 93%. Cyber-capability review ongoing",
+      "basis": "Polymarket live: Sep 30 88% flat, Sep 15 firmed to 53% from 51%, Aug 31 23%, Oct 31 93%. Cyber-capability review ongoing",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket live: 64% by Sep 30, flat after last sweep's drop; Aug 31 recovered to 20% from 17%, Sep 15 42%. $101K volume",
+      "basis": "Polymarket live: 64% by Sep 30, flat; Sep 15 43%, Aug 31 eased to 19% from 20%. $101K volume",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 37,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi 37% before Sep 4 (last readable Aug 7 12:06 ET; page rate-limited again this sweep). Musk says a 2.1T build follows 4.6",
+      "basis": "Kalshi 37% before Sep 4 (last readable Aug 7; page rate-limited this sweep). Musk says a 2.1T build follows 4.6",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -116,12 +116,12 @@
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
       "lab": "Black Forest Labs",
       "expectedWindow": "2026",
-      "expectedDate": "2026-11",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Both still unreleased with no announced dates after FLUX 3 Video reached GA Aug 4; no dated market",
-      "source": "https://bfl.ai/blog"
+      "basis": "FLUX 3 Video reached GA Aug 4; the image tier and the open-weight Dev variant are still outstanding, no dated market",
+      "source": "https://bfl.ai/blog/flux-3-video"
     },
     {
       "model": "Next Claude Fable",
@@ -129,9 +129,9 @@
       "expectedWindow": "H2 2026",
       "expectedDate": "2026-11",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "expected",
-      "basis": "Fable 5 shipped Jun 9; Anthropic's cadence implies a refresh before year-end, no dated market",
+      "basis": "Fable 5 shipped Jun 9 2026; Anthropic's cadence points to a refresh before year-end, no dated market",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -142,7 +142,7 @@
       "prob": 89,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket read live: 89% by Dec 31 (flat), 65% by Sep 30, 17% by Aug 31 (down from 18%). $1.20M volume",
+      "basis": "Polymarket live: Dec 31 89% flat, Sep 30 64%, Aug 31 18%. Manifold agrees at 89% for 2026; strict GPT-6 naming is the crux",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -153,7 +153,7 @@
       "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi 67% before 2027, 3.5% before Oct 1 (last readable Aug 7 12:06 ET; page rate-limited this sweep)",
+      "basis": "Kalshi 67% before 2027, only 3.5% before Oct 1 (last readable Aug 7; page rate-limited this sweep)",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -164,18 +164,18 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Successor generation after the 3.x line; no dated market",
+      "basis": "Follows the 3.x line; Google's major-version cadence has run roughly annually. No dated market",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "K-EXAONE 3 / EXAONE next",
       "lab": "LG AI Research",
       "expectedWindow": "2027",
-      "expectedDate": "2027-03",
+      "expectedDate": "2027-06",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "K-EXAONE 2.0 shipped Jul 31 2026; annual cadence implies 2027, no dated market",
+      "basis": "K-EXAONE 2.0 shipped Jul 31 2026 under Korea's sovereign-AI program; successor unannounced",
       "source": "https://llm-stats.com/llm-updates"
     }
   ]

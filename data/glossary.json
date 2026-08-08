@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T21:06:43-04:00",
+  "updated": "2026-08-08T03:06:44-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -3648,6 +3648,17 @@
       ]
     },
     {
+      "term": "Image-to-video",
+      "acronym": "I2V",
+      "category": "Capabilities & agents",
+      "def": "Generating video that animates a supplied still image, using it as the first frame or style anchor so the output preserves the original subject and composition.",
+      "aka": [
+        "I2V",
+        "image to video generation",
+        "still-to-video"
+      ]
+    },
+    {
       "term": "In-Context Learning",
       "acronym": "ICL",
       "category": "Capabilities & agents",
@@ -3949,6 +3960,17 @@
       "aka": [
         "Kalshi exchange",
         "event contract exchange"
+      ]
+    },
+    {
+      "term": "Keyframe conditioning",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Steering a video generator by supplying specific frames it must hit at chosen timestamps, so the model interpolates motion between fixed anchor images.",
+      "aka": [
+        "keyframing",
+        "frame conditioning",
+        "first-last frame conditioning"
       ]
     },
     {
@@ -7675,6 +7697,17 @@
       "aka": [
         "discrete diffusion LLM",
         "diffusion LLM"
+      ]
+    },
+    {
+      "term": "Text-to-video",
+      "acronym": "T2V",
+      "category": "Capabilities & agents",
+      "def": "Generating a video clip directly from a text prompt, with the model inventing subjects, motion, camera work and increasingly the accompanying audio.",
+      "aka": [
+        "T2V",
+        "text to video generation",
+        "prompt-to-video"
       ]
     },
     {

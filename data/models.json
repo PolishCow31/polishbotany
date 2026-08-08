@@ -2431,6 +2431,23 @@
         "https://technode.com/2026/08/05/bytedance-launches-seedrealtime-full-duplex-audio-video-model/",
         "https://seed.bytedance.com/en/blog"
       ]
+    },
+    {
+      "name": "FLUX 3 Video",
+      "lab": "Black Forest Labs",
+      "released": "2026-08-04",
+      "params": "undisclosed",
+      "context": "n/a (up to 20-second clips)",
+      "modality": "text-to-video, image-to-video and video-to-video, with natively generated synchronized audio",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "The video half of Black Forest Labs' FLUX 3 family, split out of July's limited early-access launch and made generally available on the BFL API and select partners on Aug 4 2026. Generates clips up to 20 seconds in HD (720p) with Full HD (1080p) available via upscaling, and unlike most video models it produces the audio natively in the same pass -- dialogue, sound effects and ambient noise, with precise lip-sync across English, Chinese, Spanish, French, German, Japanese, Portuguese, Russian, Italian, Indonesian, Turkish, Hindi, Punjabi and more. Supports text-to-video, image-to-video, keyframe conditioning, continuation of an existing clip, and multiple coherent shots or camera angles inside one generation, plus a cheap draft mode for iteration. BFL's own all-vs-all Elo puts FLUX 3 first in text-to-video at 1135 and ties Seedance 2.0 in image-to-video at 1051, ahead of Gemini Omni Flash and MiniMax H3 -- self-reported, with no independent arena result yet. Pricing is per second of output with audio included: $0.06/s draft HD, $0.17/s full-quality HD and $0.29/s Full HD for text- or image-to-video, rising to $0.12-$0.53/s for video-to-video. Parameter count, architecture and training data are undisclosed, and no open weights have been released for the video model.",
+      "sources": [
+        "https://bfl.ai/blog/flux-3-video",
+        "https://the-decoder.com/black-forest-labs-makes-flux-3-video-generally-available-and-claims-it-beats-seedance-2-0/"
+      ]
     }
   ]
 }
