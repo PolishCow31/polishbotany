@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07T18:07:03-04:00",
+  "updated": "2026-08-07T21:06:43-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2318,6 +2318,17 @@
       ]
     },
     {
+      "term": "Draft render tier",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A cheaper, lower-fidelity generation setting for image or video models, used to preview composition before paying for a full-quality render.",
+      "aka": [
+        "draft mode",
+        "draft tier",
+        "preview render"
+      ]
+    },
+    {
       "term": "Drone-Bench",
       "acronym": "",
       "category": "Benchmarks & evals",
@@ -3061,6 +3072,17 @@
       "def": "A single-file format for storing quantized models popularized by llama.cpp, bundling weights and metadata so models run efficiently on consumer CPUs and GPUs across many devices.",
       "aka": [
         "GGML Universal Format"
+      ]
+    },
+    {
+      "term": "Git worktree isolation",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Giving each parallel coding sub-agent its own checked-out git working tree, so concurrent edits cannot collide in a shared directory.",
+      "aka": [
+        "worktree isolation",
+        "git worktree",
+        "per-agent worktree"
       ]
     },
     {
@@ -8182,6 +8204,17 @@
       "aka": [
         "Google Vertex AI",
         "Vertex"
+      ]
+    },
+    {
+      "term": "Video continuation",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Generative video mode that extends existing footage forward from its final frames, preserving subject, motion and style rather than starting a new clip.",
+      "aka": [
+        "video extension",
+        "clip continuation",
+        "extend video"
       ]
     },
     {
