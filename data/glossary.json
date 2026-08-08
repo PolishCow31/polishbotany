@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T03:06:44-04:00",
+  "updated": "2026-08-08T06:06:59-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -3339,6 +3339,19 @@
       ]
     },
     {
+      "term": "Guard model",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A small classifier run alongside a main model to score prompts or outputs for policy violations, refusals or toxicity before delivery.",
+      "aka": [
+        "safety classifier",
+        "guardrail model",
+        "moderation model",
+        "LlamaGuard",
+        "Shieldstral"
+      ]
+    },
+    {
       "term": "Guardrails",
       "acronym": "",
       "category": "Safety & alignment",
@@ -3645,6 +3658,17 @@
       "def": "A benchmark that checks whether a model follows explicit formatting instructions (word counts, required keywords, JSON output) using rules a program can verify automatically.",
       "aka": [
         "Instruction-Following Eval"
+      ]
+    },
+    {
+      "term": "Image Edit Arena",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A blind head-to-head leaderboard scoring image models on instructed edits of an existing image, ranked by Elo from human preference votes.",
+      "aka": [
+        "image editing arena",
+        "edit arena",
+        "LMArena image edit"
       ]
     },
     {
@@ -5859,6 +5883,17 @@
       "aka": [
         "the policy",
         "actor"
+      ]
+    },
+    {
+      "term": "Policy-adaptive classifier",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A moderation model that takes the rule itself as a natural-language question at inference time, letting policies change without retraining or relabeling.",
+      "aka": [
+        "prompted moderation",
+        "zero-shot policy classifier",
+        "natural-language policy"
       ]
     },
     {

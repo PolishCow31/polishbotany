@@ -2448,6 +2448,44 @@
         "https://bfl.ai/blog/flux-3-video",
         "https://the-decoder.com/black-forest-labs-makes-flux-3-video-generally-available-and-claims-it-beats-seedance-2-0/"
       ]
+    },
+    {
+      "name": "Grok Imagine Image 2.0",
+      "lab": "xAI",
+      "released": "2026-08-07",
+      "params": "undisclosed",
+      "context": "n/a (image generation and editing)",
+      "modality": "text and image in, image out",
+      "open": false,
+      "benchmarks": {
+        "Image Edit Arena (Elo)": 1439,
+        "Text-to-Image Arena (Elo)": 1320
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "xAI's next-generation image model, shipped Aug 7 2026 as the new Quality Mode on grok.com/imagine and in the iOS and Android apps, with API access said to follow. It is xAI's first new model of any kind since Grok 4.5 in July. The pitch is editing as a first-class capability rather than a bolt-on: a magic-wand tool that alters only the region the user points at, segmentation for precise area selection, and background removal that exports a subject with transparency. xAI also claims stronger typography and layout planning so dense, multi-part visuals hold together and small text renders sharp. On the Arena leaderboards as of Aug 7, the faster 'low' variant places second in the world in both categories -- 1439 Elo on Image Edit and 1320 on text-to-image -- trailing OpenAI's gpt-image-2 (1463 and 1380) in each.",
+      "sources": [
+        "https://x.ai/news/grok-imagine-image-2",
+        "https://the-decoder.com/xais-imagine-image-2-0-lands-just-behind-openais-gpt-image-2-in-arena-benchmarks/",
+        "https://www.testingcatalog.com/"
+      ]
+    },
+    {
+      "name": "Shieldstral",
+      "lab": "Mistral AI",
+      "released": "2026-08-04",
+      "params": "3B",
+      "context": "undisclosed",
+      "modality": "text and image in, calibrated safety scores out",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Mistral's open-weight multimodal safety classifier, published to Hugging Face on Aug 4 2026 under an unrestricted Apache 2.0 license. Three billion parameters, small enough to run on a single 16GB NVIDIA GPU. Rather than emitting fixed category labels, it is policy-adaptive: moderation rules are posed as plain-language yes/no questions at inference time and the model returns calibrated probabilities, so a team can change its policy without retraining. It covers prompt classification, response moderation, refusal detection and toxicity, over text, images and mixed text-image content through one interface. Mistral says it matches or outperforms open guard models up to 7x its size across text safety, refusal detection, policy adaptability and multimodal benchmarks, and claims state-of-the-art multimodal results on held-out evaluation samples.",
+      "sources": [
+        "https://mistral.ai/news/shieldstral",
+        "https://www.testingcatalog.com/mistral-releases-shieldstral-for-multimodal-moderation/"
+      ]
     }
   ]
 }
