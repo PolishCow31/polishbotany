@@ -1569,7 +1569,7 @@
         "HLE": 54.7,
         "Terminal-Bench 2.1": 82.7,
         "AIME": 99.2,
-        "AA-Index": 51,
+        "AA-Index": 53,
         "SWE-bench": 79
       },
       "milestone": false,
@@ -1665,7 +1665,7 @@
       "benchmarks": {
         "SWE-bench Pro": 63.2,
         "Terminal-Bench 2.1": 80.4,
-        "AA-Index": 53
+        "AA-Index": 55
       },
       "milestone": false,
       "status": "live",
@@ -1731,14 +1731,14 @@
       "modality": "multimodal (text + vision), text out, reasoning",
       "open": false,
       "benchmarks": {
-        "AA-Index": 54,
+        "AA-Index": 56,
         "SWE-bench Pro": 64.7,
         "Terminal-Bench 2.1": 83.3,
         "DeepSWE 1.0": 62.0
       },
       "milestone": false,
       "status": "live",
-      "notable": "xAI's 'cheap frontier' flagship (the lab now branded SpaceXAI after the SpaceX tie-up and the ~$60B Cursor acquisition), co-trained with the Cursor coding editor. Musk calls it 'Opus-class but faster, more token-efficient and lower cost.' Artificial Analysis Intelligence Index 54 (v4.1) — #4 behind Fable 5 (60), Opus 4.8 (56) and GPT-5.5 (55), and on par with GPT-5.5 on the AA Coding Agent Index at far lower cost. Standout token efficiency: ~16K output tokens per SWE-bench Pro task vs ~67K for Opus 4.8 (4.2x fewer); ~1.9M avg tokens/task vs Fable 5's 7.2M in Claude Code. Terminal-Bench 2.1 83.3%, GDPval-AA #4 (Elo 1543). Default in Grok Build, ~80 tok/s. Context cut to 500K from Grok 4.3's 1M. $2/$6.",
+      "notable": "xAI's 'cheap frontier' flagship (the lab now branded SpaceXAI after the SpaceX tie-up and the ~$60B Cursor acquisition), co-trained with the Cursor coding editor. Musk calls it 'Opus-class but faster, more token-efficient and lower cost.' UPDATE (Aug 8): under Artificial Analysis's v4.1.1 patch the high-effort tier re-scores to 56 from 54, seventh overall behind Claude Opus 5 (63), Claude Fable 5 (62), GPT-5.6 Sol (61), Kimi K3 (60), Qwen3.8-Max (58) and the 57s (Muse Spark 1.2, GPT-5.6 Terra). Standout token efficiency: ~16K output tokens per SWE-bench Pro task vs ~67K for Opus 4.8 (4.2x fewer); ~1.9M avg tokens/task vs Fable 5's 7.2M in Claude Code. Terminal-Bench 2.1 83.3%, SWE-bench Pro 64.7, GDPval-AA #4 (Elo 1543). Default in Grok Build, ~80 tok/s. Context cut to 500K from Grok 4.3's 1M. $2/$6. x.ai's model docs still top out at grok-4.5 -- no grok-4.6 endpoint has appeared.",
       "pricing": "$2 in / $6 out per 1M",
       "sources": [
         "https://x.ai/news/grok-4-5",
@@ -1780,7 +1780,7 @@
       "open": false,
       "benchmarks": {
         "Terminal-Bench 2.1": 84.3,
-        "AA-Index": 55
+        "AA-Index": 57
       },
       "milestone": false,
       "status": "live",
@@ -1801,7 +1801,7 @@
       "open": false,
       "benchmarks": {
         "Terminal-Bench 2.1": 82.5,
-        "AA-Index": 51
+        "AA-Index": 52
       },
       "milestone": false,
       "status": "live",
@@ -1940,7 +1940,7 @@
         "OSWorld-Verified": 83.0,
         "MLE-bench": 63.9,
         "GDPval-AA v2": 1421,
-        "AA-Index": 50
+        "AA-Index": 52
       },
       "milestone": false,
       "status": "live",
@@ -2263,7 +2263,7 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 50,
+        "AA-Index": 52,
         "Terminal-Bench 2.1": 82.7,
         "DeepSWE": 54.4,
         "CyberGym": 76.7
@@ -2364,13 +2364,13 @@
       "modality": "multimodal (text, image, video, audio, PDF in; text out)",
       "open": false,
       "benchmarks": {
-        "AA-Index": 54,
+        "AA-Index": 57,
         "Terminal-Bench 2.1": 82.9,
         "DeepSWE v1.1": 59.3
       },
       "milestone": false,
       "status": "live",
-      "notable": "Meta's flagship reasoning model refresh, shipped Aug 5 alongside Muse Code -- Meta's first coding agent -- and explicitly co-trained with it. Muse Code is a terminal agent that installs with a single command, runs parallel sub-agents (implementers plus concurrent reviewers) with git-worktree isolation and a crash-safe event log, and is aimed at long-running background workstreams; it is in beta and the Meta Model API is in public preview, with distribution also via OpenRouter. Muse Spark 1.2 keeps the 1M-token context and takes text, image, video, audio and PDF input. Artificial Analysis scores it 54 on the Intelligence Index (v4.1), tying Grok 4.5 and Claude Opus 4.7 and sitting seven points behind Claude Opus 5. On Meta's own published comparison it is second-best behind Claude Opus 5 on both Terminal-Bench 2.1 (82.9) and DeepSWE 1.1 (59.3); Meta also published Meta Internal Coding Bench and GDPval results as images without a methodology write-up. Pricing is unchanged from Muse Spark 1.1 at $1.25 per 1M input and $4.25 per 1M output, with cached input at $0.15 and a no-training guarantee; a 'contributor' tier drops that to $0.10/$0.20 in exchange for letting Meta train on prompts and completions. Weights are not open.",
+      "notable": "Meta's flagship reasoning model refresh, shipped Aug 5 alongside Muse Code -- Meta's first coding agent -- and explicitly co-trained with it. Muse Code is a terminal agent that installs with a single command, runs parallel sub-agents (implementers plus concurrent reviewers) with git-worktree isolation and a crash-safe event log, and is aimed at long-running background workstreams; it is in beta and the Meta Model API is in public preview, with distribution also via OpenRouter. Muse Spark 1.2 keeps the 1M-token context and takes text, image, video, audio and PDF input. UPDATE (Aug 8): Artificial Analysis's Intelligence Index v4.1.1 patch has now propagated down the board and the model's xhigh tier reads 57, up from 54 -- Meta's best placing to date, sixth overall, ahead of Grok 4.5 (56) and level with GPT-5.6 Terra (57), six points behind Claude Opus 5 (63). On Meta's own published comparison it is second-best behind Claude Opus 5 on both Terminal-Bench 2.1 (82.9) and DeepSWE 1.1 (59.3); Meta also published Meta Internal Coding Bench and GDPval results as images without a methodology write-up. Pricing is unchanged from Muse Spark 1.1 at $1.25 per 1M input and $4.25 per 1M output, with cached input at $0.15 and a no-training guarantee; a 'contributor' tier drops that to $0.10/$0.20 in exchange for letting Meta train on prompts and completions. Weights are not open.",
       "sources": [
         "https://www.cnbc.com/2026/08/05/meta-debuts-muse-code-to-take-on-anthropic-and-openai-.html",
         "https://artificialanalysis.ai/models/muse-spark-1-2",

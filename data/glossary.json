@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T15:09:09-04:00",
+  "updated": "2026-08-08T18:07:43-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2399,6 +2399,16 @@
       ]
     },
     {
+      "term": "Effective context length",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The context length over which a model actually retains and uses information reliably, typically far shorter than the advertised maximum window.",
+      "aka": [
+        "usable context",
+        "effective context window"
+      ]
+    },
+    {
       "term": "Eliciting Latent Knowledge",
       "acronym": "ELK",
       "category": "Safety & alignment",
@@ -2721,6 +2731,17 @@
       "aka": [
         "field work arena",
         "industrial agent benchmark"
+      ]
+    },
+    {
+      "term": "Fill-in-the-middle",
+      "acronym": "FIM",
+      "category": "Training & post-training",
+      "def": "A training objective that shows a model a prefix and suffix and asks it to generate the span between, enabling code completion inside existing files.",
+      "aka": [
+        "fill in the middle",
+        "infilling",
+        "FIM"
       ]
     },
     {
@@ -3843,6 +3864,16 @@
       ]
     },
     {
+      "term": "Instruction hierarchy",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A trained priority ordering over instruction sources — platform, developer, user, then tool output — so lower-trust text cannot override higher-trust rules.",
+      "aka": [
+        "instruction priority",
+        "message hierarchy"
+      ]
+    },
+    {
       "term": "Instruction Tuning",
       "acronym": "",
       "category": "Training & post-training",
@@ -4069,6 +4100,16 @@
       "aka": [
         "KL divergence penalty",
         "KL regularization"
+      ]
+    },
+    {
+      "term": "Knowledge cutoff",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "The latest date represented in a model's pretraining corpus; events after it are unknown unless supplied via retrieval, tools, or the prompt.",
+      "aka": [
+        "training cutoff",
+        "data cutoff"
       ]
     },
     {
@@ -6412,6 +6453,16 @@
         "low-precision inference",
         "8-bit",
         "FP8"
+      ]
+    },
+    {
+      "term": "Quantization-aware training",
+      "acronym": "QAT",
+      "category": "Inference & serving",
+      "def": "Training or fine-tuning a model while simulating low-precision arithmetic, so the weights adapt to quantization instead of losing accuracy when compressed afterward.",
+      "aka": [
+        "quantization aware training",
+        "QAT"
       ]
     },
     {
