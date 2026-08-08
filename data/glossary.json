@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T06:06:59-04:00",
+  "updated": "2026-08-08T09:08:38-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1745,6 +1745,17 @@
         "context extension",
         "long-context extension",
         "context window extension"
+      ]
+    },
+    {
+      "term": "Continual learning",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Updating a deployed model on new data over time without retraining from scratch, whose central failure mode is catastrophic forgetting of earlier capabilities.",
+      "aka": [
+        "lifelong learning",
+        "incremental learning",
+        "online adaptation"
       ]
     },
     {
@@ -3777,6 +3788,17 @@
       ]
     },
     {
+      "term": "Inpainting",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Regenerating only a masked region of an image while keeping the rest pixel-identical, letting a model edit objects without redrawing the whole frame.",
+      "aka": [
+        "masked image editing",
+        "region-level editing",
+        "local edit"
+      ]
+    },
+    {
       "term": "Input vs output token pricing",
       "acronym": "",
       "category": "Economics & compute",
@@ -4817,6 +4839,17 @@
       ]
     },
     {
+      "term": "Mixture-of-Depths",
+      "acronym": "MoD",
+      "category": "Model architecture",
+      "def": "Routing only a subset of tokens through each transformer layer, so easy tokens skip compute and the model spends depth where it is needed.",
+      "aka": [
+        "MoD",
+        "token-level depth routing",
+        "conditional depth"
+      ]
+    },
+    {
       "term": "Mixture-of-Experts",
       "acronym": "MoE",
       "category": "Model architecture",
@@ -5679,6 +5712,17 @@
       "aka": [
         "outcome supervision",
         "outcome-based reward"
+      ]
+    },
+    {
+      "term": "Outpainting",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Extending an image beyond its original borders, with the model inventing plausible surrounding content that matches the existing lighting, style and geometry.",
+      "aka": [
+        "image extension",
+        "canvas expansion",
+        "uncrop"
       ]
     },
     {
@@ -7071,6 +7115,17 @@
       "aka": [
         "dense retrieval",
         "vector search"
+      ]
+    },
+    {
+      "term": "Semantic segmentation",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Labelling every pixel of an image with the object class it belongs to, producing masks that downstream tools use for selection, background removal or targeted edits.",
+      "aka": [
+        "pixel-level classification",
+        "segmentation mask",
+        "instance mask"
       ]
     },
     {
