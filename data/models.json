@@ -2511,6 +2511,24 @@
         "https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/",
         "https://explainx.ai/blog/minimax-h3-open-video-model-hailuo-july-2026"
       ]
+    },
+    {
+      "name": "Seedance 2.5",
+      "lab": "ByteDance",
+      "released": "2026-07-31",
+      "params": "undisclosed",
+      "context": "up to 30 reference images, 10 video clips and 10 audio clips per generation",
+      "modality": "text/image/video/audio in; video out with jointly generated audio -- 30-second clips in a single pass, extendable to several minutes via multi-round extension",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "ByteDance's video-generation flagship, previewed at the Volcano Engine FORCE conference on Jun 23 and officially launched Jul 31 2026. Its headline change is single-run length: 30 seconds of high-quality video in one pass, double Seedance 2.0's 15-second ceiling, with multi-round extension for longer sequences. Audio is generated jointly with the video rather than dubbed afterward, and a single supplied voice, music or sound-effect track can drive pacing, beat-matching and lip-sync on its own. It accepts unusually heavy reference conditioning -- up to 30 images, 10 videos and 10 audio clips in one input. ByteDance published no resolution claim (pre-launch reports circulating 4K were expectation, not specification) and no pricing. Rollout is China-first on Jimeng AI and the Pro tier of Doubao; API access is listed as coming soon on BytePlus ModelArk and was still not live as of Aug 9. Seedance 2.5 has no Artificial Analysis entry yet; the shipping Seedance 2.0 720p sits third on the text-to-video Elo board at 1224, behind Gemini Omni Flash (1244) and MiniMax H3 (1240).",
+      "sources": [
+        "https://technode.com/2026/07/31/bytedance-launches-seedance-2-5-video-generation-model/",
+        "https://www.digitalapplied.com/blog/seedance-2-5-official-launch-one-take-video",
+        "https://artificialanalysis.ai/video/leaderboard/text-to-video"
+      ]
     }
   ]
 }

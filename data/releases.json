@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T12:07:53-04:00",
+  "updated": "2026-08-09T18:06:12-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,8 @@
       "prob": 90,
       "frontier": false,
       "status": "expected",
-      "basis": "Not shipped: x.ai model list and developer release notes both still top out at grok-4.5 on Aug 9, contradicting blog claims of an Aug 7 launch. Kalshi rate-limited this sweep; last read Aug 8 was 90% before Aug 15",
-      "source": "https://docs.x.ai/developers/release-notes"
+      "basis": "Still not shipped: x.ai's model list re-checked Aug 9 evening still tops out at grok-4.5. Kalshi rate-limited again this sweep; last clean read Aug 8 was 90% before Aug 15",
+      "source": "https://docs.x.ai/docs/models"
     },
     {
       "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
@@ -21,7 +21,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Qwen says weights land the week of Aug 10 on Hugging Face and ModelScope; first Max-class open drop, license still undisclosed. AA holds Qwen3.8-Max at 58",
+      "basis": "Weights still pending as of Aug 9; Qwen says they land the week of Aug 10 on Hugging Face and ModelScope. First Max-class open drop, license still undisclosed",
       "source": "https://qwen.ai/blog?id=qwen3.8"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 47,
+      "prob": 53,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket live Aug 9 noon: Aug 31 slid again to 47% from 51%, Aug 21 16%, Aug 14 7%. Announced at I/O in May with an internal June target that slipped",
+      "basis": "Polymarket live Aug 9 evening: Aug 31 jumped to 53% from 47%, Aug 21 to 23% from 16%, Aug 14 to 14% from 7%. $899K volume. Announced at I/O in May, internal June target slipped",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 77,
+      "prob": 79,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket live Aug 9 noon: Sep 30 holds at 77%, Sep 15 recovered to 53% from 45%, Aug 31 26%, Oct 31 93%. OpenAI says it cannot rule out critical cyber capabilities",
+      "basis": "Polymarket live Aug 9 evening: Sep 30 firmed to 79% from 77%, Aug 31 to 32% from 26%, Sep 15 54%, Oct 31 93%. OpenAI says it cannot rule out critical cyber capabilities",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -51,10 +51,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 69,
+      "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket live Aug 9 noon: Sep 30 firmed to 69% from 63%, Aug 31 up to 25% from 20%, Sep 15 eased to 38%",
+      "basis": "Polymarket live Aug 9 evening: Sep 30 eased to 67% from 69%, Aug 31 up to 28% from 25%. The Sep 15 leg is untradeable at $21 of volume",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,8 +65,19 @@
       "prob": 37,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi rate-limited this sweep; last read Aug 8 was 37% before Sep 4, 31% before Aug 31. Musk has signalled a 2.1T-parameter build a few weeks after 4.6",
+      "basis": "Kalshi rate-limited this sweep; last clean read Aug 8 was 37% before Sep 4. Musk has signalled a 2.1T-parameter build a few weeks after 4.6",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
+    },
+    {
+      "model": "Seedance 2.5 API (BytePlus ModelArk)",
+      "lab": "ByteDance",
+      "expectedWindow": "Q3 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Model shipped Jul 31 on Jimeng AI and Doubao Pro; ByteDance lists API access as coming soon and no ModelArk listing existed as of Aug 9. No dated market",
+      "source": "https://technode.com/2026/07/31/bytedance-launches-seedance-2-5-video-generation-model/"
     },
     {
       "model": "DeepSeek V4-Pro (official release)",
@@ -131,7 +142,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Image 2.0 shipped Aug 7 in Grok's Quality Mode; x.ai's model list still shows only grok-imagine-image and grok-imagine-image-quality, with no 2.0 endpoint as of Aug 9",
+      "basis": "Image 2.0 shipped Aug 7 in Grok's Quality Mode; x.ai's model list re-checked Aug 9 still shows only grok-imagine-image and grok-imagine-image-quality, with no 2.0 endpoint",
       "source": "https://docs.x.ai/docs/models"
     },
     {
@@ -150,10 +161,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 87,
+      "prob": 88,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket live Aug 9 noon: Dec 31 eased to 87% from 91% and Sep 30 collapsed to 54% from 69%; Aug 31 16%, Aug 21 7%. Manifold's ladder reads 52% before October",
+      "basis": "Polymarket live Aug 9 evening: Dec 31 88%, Sep 30 recovered to 55%, Aug 31 up to 22% from 16%. $1.24M volume. Manifold's 2026 market eased to 86%",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -164,7 +175,7 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi rate-limited this sweep; last read Aug 8 was 69% before 2027, 3% before Oct 1. Manifold's ladder prices 5.1% before September",
+      "basis": "Kalshi rate-limited this sweep; last clean read Aug 8 was 69% before 2027, 3% before Oct 1. Manifold's ladder prices 5.1% before September",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {

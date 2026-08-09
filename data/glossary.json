@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T12:07:53-04:00",
+  "updated": "2026-08-09T18:06:12-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1169,6 +1169,16 @@
         "BPE",
         "byte pair encoding",
         "subword tokenization"
+      ]
+    },
+    {
+      "term": "ByteDance Seed",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "ByteDance's foundation-model research group, which ships the Seed language models, the Seedance video line and the Seedream image models.",
+      "aka": [
+        "Seed Team",
+        "ByteDance Seed Team"
       ]
     },
     {
@@ -4052,12 +4062,32 @@
       ]
     },
     {
+      "term": "Jimeng AI",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "ByteDance's consumer image and video generation app, distributed internationally as Dreamina, and the usual first launch surface for Seedance models.",
+      "aka": [
+        "Dreamina",
+        "Jimeng"
+      ]
+    },
+    {
       "term": "JobBench",
       "acronym": "",
       "category": "Capabilities & agents",
       "def": "Agentic evaluation measuring how well models complete realistic, multi-step white-collar job tasks end-to-end, used to gauge tool-use and workflow-orchestration ability rather than single-turn answers.",
       "aka": [
         "Job Bench"
+      ]
+    },
+    {
+      "term": "Joint audio-video generation",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Producing a video's picture and soundtrack in one pass from a shared representation, rather than generating video first and dubbing audio on afterward.",
+      "aka": [
+        "native audio video",
+        "synchronized AV generation"
       ]
     },
     {
@@ -5382,6 +5412,17 @@
       "def": "An attention variant where all query heads share a single key/value head, shrinking the memory needed during generation at some cost to model quality.",
       "aka": [
         "multi query attention"
+      ]
+    },
+    {
+      "term": "Multi-round video extension",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Generating a long video as a chain of shorter passes, each conditioned on the previous clip's final frames, to exceed a model's single-run length ceiling.",
+      "aka": [
+        "video extension",
+        "multi-turn extension",
+        "shot chaining"
       ]
     },
     {
