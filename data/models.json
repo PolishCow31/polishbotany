@@ -2490,6 +2490,27 @@
         "https://mistral.ai/news/shieldstral",
         "https://www.testingcatalog.com/mistral-releases-shieldstral-for-multimodal-moderation/"
       ]
+    },
+    {
+      "name": "MiniMax H3",
+      "lab": "MiniMax",
+      "released": "2026-07-31",
+      "params": "33B dense (H3-Omni Transformer)",
+      "context": "prompts up to ~7,000 characters, plus up to 9 reference images, 3 video clips and 3 audio clips per generation",
+      "modality": "omni-modal video generation -- text, image, video and audio in; 4-15 second clips out at up to 2K (1440px short edge) / 24fps with natively generated stereo audio",
+      "open": true,
+      "benchmarks": {
+        "AA Text-to-Video Elo": 1306
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "MiniMax's omni-modal video model, also branded Hailuo 3.0, launched on the MiniMax API and the Hailuo app on Jul 31 2026, with the 33B H3-Base weights published to Hugging Face on Aug 3. It is a single 33B dense transformer that ingests text, images, video and audio in one shared token space and returns video with native stereo sound -- consolidating work usually split across separate generation, upscaling and audio models. MiniMax cites four components: Contextual Omni Representation (condensing roughly 100K tokens to ~4K), an H3-VAE tokenizer claimed to give a 4x gain in effective sequence length, the H3-Omni Transformer that separates understanding from generation compute, and in-context regeneration for native 2K output without a separate upscaler pass. On Artificial Analysis it ranks #1 in Video Editing, #2 in Text-to-Video and #3 in Image-to-Video, and it leads the open-weight text-to-video arena at 1306 Elo (1240 in the with-audio category, second to Gemini Omni Flash) -- the first open-weight model to top an Artificial Analysis video arena. Features include voice transfer, instruction-based editing and multi-reference synthesis in a single generation. API pricing is $0.13 per second of 2K output with a $0.09/s 768p tier in closed beta; the first five reference images per generation are free, then $0.04 each. The weights ship under the MiniMax Community License, which permits commercial use for organisations under $20M revenue with attribution but, per multiple independent reports, excludes local deployment in the US, EU, UK and South Korea, and the public checkpoint reportedly tops out at 768p with parts of the 2K pipeline undisclosed.",
+      "sources": [
+        "https://huggingface.co/MiniMaxAI",
+        "https://artificialanalysis.ai/video/leaderboard/text-to-video",
+        "https://the-decoder.com/chinas-minimax-h3-is-the-first-open-model-to-top-an-ai-video-ranking/",
+        "https://explainx.ai/blog/minimax-h3-open-video-model-hailuo-july-2026"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08T21:05:45-04:00",
+  "updated": "2026-08-09T12:07:53-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,8 @@
       "prob": 90,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi last read Aug 8 3pm: 90% before Aug 15, 81% before Aug 13. Kalshi rate-limited again this sweep. x.ai docs still top out at grok-4.5",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
+      "basis": "Not shipped: x.ai model list and developer release notes both still top out at grok-4.5 on Aug 9, contradicting blog claims of an Aug 7 launch. Kalshi rate-limited this sweep; last read Aug 8 was 90% before Aug 15",
+      "source": "https://docs.x.ai/developers/release-notes"
     },
     {
       "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
@@ -21,18 +21,18 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Qwen says weights land week of Aug 10 on Hugging Face and ModelScope; first Max-class open drop, license still undisclosed. AA holds it at 58",
-      "source": "https://artificialanalysis.ai/leaderboards/models"
+      "basis": "Qwen says weights land the week of Aug 10 on Hugging Face and ModelScope; first Max-class open drop, license still undisclosed. AA holds Qwen3.8-Max at 58",
+      "source": "https://qwen.ai/blog?id=qwen3.8"
     },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 51,
+      "prob": 47,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket live Aug 8 9pm: Aug 31 slid to 51% from 56%, Aug 21 26%, Aug 14 9%. Announced at I/O in May with an internal June target that slipped",
+      "basis": "Polymarket live Aug 9 noon: Aug 31 slid again to 47% from 51%, Aug 21 16%, Aug 14 7%. Announced at I/O in May with an internal June target that slipped",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,7 +43,7 @@
       "prob": 77,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket live Aug 8 9pm: Sep 30 77%, but Sep 15 fell to 45% from 54% and Aug 31 to 24% from 30%; Oct 31 93%. OpenAI cannot rule out critical cyber capabilities",
+      "basis": "Polymarket live Aug 9 noon: Sep 30 holds at 77%, Sep 15 recovered to 53% from 45%, Aug 31 26%, Oct 31 93%. OpenAI says it cannot rule out critical cyber capabilities",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -51,10 +51,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 63,
+      "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket live Aug 8 9pm: 63% by Sep 30, flat, but Sep 15 firmed to 40% from 32%; Aug 31 holds at 20%",
+      "basis": "Polymarket live Aug 9 noon: Sep 30 firmed to 69% from 63%, Aug 31 up to 25% from 20%, Sep 15 eased to 38%",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 37,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi last read Aug 8 3pm: 37% before Sep 4 on a wide book, 31% before Aug 31. Musk has signalled a 2.1T-parameter build a month after 4.6",
+      "basis": "Kalshi rate-limited this sweep; last read Aug 8 was 37% before Sep 4, 31% before Aug 31. Musk has signalled a 2.1T-parameter build a few weeks after 4.6",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
     },
     {
@@ -76,7 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "V4-Pro shipped Apr 24 in limited form; full release still pending, no dated market. V4-Flash-0731 reads 52 under AA v4.1.1",
+      "basis": "V4-Pro shipped Apr 24 in limited form; full release still pending, no dated market. V4-Flash-0731 reads 52 on AA v4.1",
       "source": "https://artificialanalysis.ai/leaderboards/models"
     },
     {
@@ -87,7 +87,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Zhipu has shipped roughly quarterly since GLM-5 in February; GLM-5.2 reads 53 on AA v4.1.1. No dated market",
+      "basis": "Zhipu has shipped roughly quarterly since GLM-5 in February; GLM-5.2 reads 53 on AA v4.1. No dated market",
       "source": "https://artificialanalysis.ai/leaderboards/models"
     },
     {
@@ -98,8 +98,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Follow-on to M3 signalled by MiniMax; MiniMax endpoints keep appearing in AA's provider runs through Aug 9. No dated market",
-      "source": "https://artificialanalysis.ai/changelog"
+      "basis": "Follow-on to M3 signalled by MiniMax, whose attention this month went to the H3 video launch and its Aug 3 open weights. No dated market",
+      "source": "https://huggingface.co/MiniMaxAI"
     },
     {
       "model": "Claude Haiku 5",
@@ -131,7 +131,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Image 2.0 shipped Aug 7 in Grok's Quality Mode; x.ai's model list still shows only grok-imagine-image and grok-imagine-image-quality, no 2.0 endpoint",
+      "basis": "Image 2.0 shipped Aug 7 in Grok's Quality Mode; x.ai's model list still shows only grok-imagine-image and grok-imagine-image-quality, with no 2.0 endpoint as of Aug 9",
       "source": "https://docs.x.ai/docs/models"
     },
     {
@@ -142,7 +142,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Fable 5 shipped Jun 9 2026 and holds 62 on AA v4.1.1; Anthropic's cadence points to a refresh before year-end, no dated market",
+      "basis": "Fable 5 shipped Jun 9 2026 and holds 62 on AA v4.1; Anthropic's cadence points to a refresh before year-end, no dated market",
       "source": "https://artificialanalysis.ai/leaderboards/models"
     },
     {
@@ -150,10 +150,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 91,
+      "prob": 87,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket live Aug 8 9pm: Dec 31 holds at 91%, Sep 30 eased to 69%, Aug 31 17%, Aug 21 10%. Manifold's ladder reads 47% before October",
+      "basis": "Polymarket live Aug 9 noon: Dec 31 eased to 87% from 91% and Sep 30 collapsed to 54% from 69%; Aug 31 16%, Aug 21 7%. Manifold's ladder reads 52% before October",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -164,7 +164,7 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi last read Aug 8 3pm: 69% before 2027; before-Oct-1 3%. Musk says a 2.1T-parameter build follows 4.6",
+      "basis": "Kalshi rate-limited this sweep; last read Aug 8 was 69% before 2027, 3% before Oct 1. Manifold's ladder prices 5.1% before September",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
