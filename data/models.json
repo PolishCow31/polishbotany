@@ -2529,6 +2529,32 @@
         "https://www.digitalapplied.com/blog/seedance-2-5-official-launch-one-take-video",
         "https://artificialanalysis.ai/video/leaderboard/text-to-video"
       ]
+    },
+    {
+      "name": "Meta Muse Glimmer",
+      "lab": "Meta (Superintelligence Labs)",
+      "released": "2026-08-10",
+      "params": "~29.6B dense, including a 1.8B-parameter vision encoder",
+      "context": "131,072 tokens",
+      "modality": "text and image in, text out (max 4,096 visual tokens per image)",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 76.0,
+        "SWE-bench Pro": 51.2,
+        "AIME 2026": 94.7,
+        "GPQA Diamond": 83.5,
+        "MMMU-Pro": 74,
+        "MCP Atlas": 75.5,
+        "DeepSearch QA": 74.6
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Meta Superintelligence Labs' laptop-class agentic model, announced Aug 10 2026 and open-sourced under a permissive Apache 2.0 license. It is a dense causal transformer of roughly 29.6B parameters with an integrated 1.8B perception encoder, distilled from the larger Muse Spark, and it is small enough to run on a Mac or PC with a single consumer GPU under 20GB. The design goal is a single model that does multi-step reasoning, reliable tool calling, multimodal understanding and failure recovery locally, with no cloud or network access -- targeted at local agents, function calling, local coding and LLM-as-a-judge evaluation. Meta ships speculative-decoding optimizations it says raise decode speed 3.1x on an RTX 5090, 1.8x on an M5 Max and 1.5x on an M4 Max, and the model supports more than 100 languages. Meta benchmarks it against Gemma4-31B and Qwen3.6-27B across agentic, coding, multimodal, safety and reasoning suites; the published card reports 76.0% on SWE-bench Verified, 51.2% on SWE-bench Pro, 94.7% on AIME 2026, 83.5% on GPQA Diamond, 74% MMMU-Pro, 75.5% MCP Atlas and 74.6% DeepSearch QA. Artificial Analysis tracks it but has not yet published an overall Intelligence Index score for it.",
+      "sources": [
+        "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
+        "https://huggingface.co/meta-models/Muse-Glimmer-30B",
+        "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html"
+      ]
     }
   ]
 }
