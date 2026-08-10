@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09T18:06:12-04:00",
+  "updated": "2026-08-09T21:06:17-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -6475,6 +6475,16 @@
       ]
     },
     {
+      "term": "Prompt-cache TTL",
+      "acronym": "TTL",
+      "category": "Inference & serving",
+      "def": "How long a provider retains a cached prompt prefix before eviction; longer time-to-live cuts repeated-prefix cost but usually carries a storage surcharge.",
+      "aka": [
+        "cache time-to-live",
+        "prompt cache lifetime"
+      ]
+    },
+    {
       "term": "Proof certificate",
       "acronym": "",
       "category": "Safety & alignment",
@@ -6765,6 +6775,16 @@
         "red teaming",
         "adversarial testing",
         "AI red team"
+      ]
+    },
+    {
+      "term": "Reference conditioning",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Supplying images, video or audio clips as explicit references at generation time so a model preserves identity, style, motion or voice in its output.",
+      "aka": [
+        "multi-reference synthesis",
+        "reference-guided generation"
       ]
     },
     {
