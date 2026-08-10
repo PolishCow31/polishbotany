@@ -2555,6 +2555,27 @@
         "https://huggingface.co/meta-models/Muse-Glimmer-30B",
         "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html"
       ]
+    },
+    {
+      "name": "GPT-5.6-Cyber",
+      "lab": "OpenAI",
+      "released": "2026-08-10",
+      "params": "undisclosed",
+      "context": "undisclosed",
+      "modality": "text + code, text out (offensive-security specialist built on GPT-5.6 Sol)",
+      "open": false,
+      "benchmarks": {
+        "Advanced Cybersecurity Completion Rate": 95.0
+      },
+      "milestone": true,
+      "status": "preview",
+      "notable": "A cyber-permissive variant of GPT-5.6 Sol, released Aug 10 2026 and trained for zero-day discovery and exploit-chain development. Unlike every prior OpenAI release, it was deliberately trained to refuse LESS: OpenAI reports a 95.0% Advanced Cybersecurity Completion Rate on high-risk dual-use requests (exploit-chain development, authentication bypass, privilege escalation) versus 57.3% for its predecessor and roughly 1.5-2.0% for plain Sol served through the restricted tier. It is the first OpenAI model classified at the 'High' cyber capability threshold under the company's Preparedness Framework, meaning it can remove bottlenecks to scaling cyber operations and automate discovery and exploitation of operationally relevant vulnerabilities. Access runs only through an expanded, two-tier Daybreak program -- Blue serves Sol without system-level cyber guardrails, Red serves GPT-5.6-Cyber -- gated behind identity verification, monitoring, approved-use restrictions and legal attestations, with hardware security keys mandatory from Sep 1 2026. Named early partners include SpecterOps, SentinelOne, Palo Alto Networks, CrowdStrike, Cisco, IBM and Accenture. Notably it is NOT uniformly stronger: reporting on the launch says it performs worse than plain Sol on vulnerability discovery and report writing, and on ExploitBench at 300 turns Sol via Daybreak Blue beat it while burning fewer tokens. No context window or pricing disclosed. Ships days after OpenAI paused parts of Astra's development over cyber capabilities.",
+      "pricing": "",
+      "sources": [
+        "https://www.axios.com/2026/08/10/openai-gpt-astra-restrictions-safety-hacking-defenders",
+        "https://thenextweb.com/news/openai-gpt-5-6-cyber-daybreak-expansion-refusal-rate",
+        "https://glitchwire.com/news/openai-expands-daybreak-with-gpt-56-cyber-its-most-permissive-cybersecurity-mode/"
+      ]
     }
   ]
 }

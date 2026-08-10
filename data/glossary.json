@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T09:33:41-04:00",
+  "updated": "2026-08-10T15:06:51-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -132,6 +132,16 @@
       "def": "An AI startup focused on agent models that take actions in software by clicking and typing, building toward AI that operates computer interfaces.",
       "aka": [
         "Adept"
+      ]
+    },
+    {
+      "term": "Advanced Cybersecurity Completion Rate",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Share of high-risk dual-use cyber requests a model actually answers rather than refuses; a compliance measure, not a capability score, used to characterize guardrail-relaxed security models.",
+      "aka": [
+        "cyber completion rate",
+        "cybersecurity compliance rate"
       ]
     },
     {
@@ -2076,6 +2086,17 @@
       ]
     },
     {
+      "term": "Daybreak",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "OpenAI's vetted cybersecurity access program, split into Blue (guardrail-relaxed general models) and Red (purpose-trained offensive-security models like GPT-5.6-Cyber).",
+      "aka": [
+        "Daybreak Blue",
+        "Daybreak Red",
+        "OpenAI Daybreak program"
+      ]
+    },
+    {
       "term": "Deceptive alignment",
       "acronym": "",
       "category": "Safety & alignment",
@@ -2634,6 +2655,27 @@
       "aka": [
         "MoE parallelism",
         "expert sharding"
+      ]
+    },
+    {
+      "term": "Exploit chain",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A sequence of individually limited vulnerabilities strung together to reach a high-value outcome, such as chaining authentication bypass into privilege escalation into code execution.",
+      "aka": [
+        "exploit chaining",
+        "attack chain",
+        "kill chain"
+      ]
+    },
+    {
+      "term": "ExploitBench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "An agentic cybersecurity evaluation measuring whether a model can validate and weaponize a vulnerability over long multi-turn runs, scored at fixed turn budgets such as 300 turns.",
+      "aka": [
+        "exploit benchmark",
+        "exploit validation benchmark"
       ]
     },
     {
