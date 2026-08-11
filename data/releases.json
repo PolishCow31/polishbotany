@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T15:07:41-04:00",
+  "updated": "2026-08-11T18:06:03-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,19 @@
       "prob": 74,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi live again after three sweeps: Aug 15 leg 74%, down from a carried 86%; Aug 13 leg collapsed to 18%. Still no model card or API.",
+      "basis": "Kalshi rate-limited this sweep, so 74% is the afternoon read carried forward. Still no model card, API identifier or xAI post; window closes in four days.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
+    },
+    {
+      "model": "Gemini 3.5 Pro",
+      "lab": "Google DeepMind",
+      "expectedWindow": "by Aug 31 2026",
+      "expectedDate": "2026-08",
+      "prob": 37,
+      "frontier": true,
+      "status": "expected",
+      "basis": "First uptick after seven straight markdowns: Polymarket Aug 31 leg 37%, Aug 21 leg up to 26% from 20%, Aug 14 at 8%. Aug 12 rumor still unconfirmed.",
+      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
@@ -25,17 +36,6 @@
       "source": "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new"
     },
     {
-      "model": "Gemini 3.5 Pro",
-      "lab": "Google DeepMind",
-      "expectedWindow": "by Aug 31 2026",
-      "expectedDate": "2026-08",
-      "prob": 36,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Seventh straight Polymarket markdown (37 to 36). Kalshi cut its Aug 31 leg to 41% from 50% and Aug 16 to 8%; an Aug 12 rumor is unconfirmed.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
-    },
-    {
       "model": "Astra (next OpenAI model family)",
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
@@ -43,7 +43,7 @@
       "prob": 74,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket Sep 30 leg 73.7%, Oct 31 90%, Sep 15 53.5%. Kalshi's before-Oct-1 leg jumped to 81% from 75% this sweep.",
+      "basis": "Polymarket Sep 30 leg 74%, Oct 31 90%, Sep 15 54%, Aug 31 up to 25%. Sentiment still marked down by the Aug 7 critical-cyber-capability disclosure.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -51,10 +51,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 75,
+      "prob": 76,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 leg firmed to 74.5% from 73% while the Aug 31 leg fell hard to 22.5% from 28%; Mythos 5 Preview live since June.",
+      "basis": "Sep 30 leg firmed again to 76% from 74.5%; Sep 15 at 46%, Aug 31 at 23%. Mythos 5 Preview has been live since June.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 44,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi re-read live at 44%; Aug 31 leg 29%, Aug 21 7%. Musk frames 4.7 (2.1T params) as roughly a month behind 4.6, so it slips if 4.6 slips.",
+      "basis": "Kalshi unreadable this sweep; 44% carried from the afternoon read. Musk frames 4.7 (2.1T params) as roughly a month behind 4.6, so it slips if 4.6 slips.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -175,7 +175,7 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Dec 31 leg cut to 84.5% from 87% on a $1.28M book; Sep 30 56%, Aug 31 23%. Kalshi's before-Sep-1 leg rose to 25% from 17%.",
+      "basis": "Dec 31 leg back to 85% on a $1.28M book; Sep 30 56%, Aug 31 up to 26% from 23%. Astra branding remains the main resolution risk.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -186,7 +186,7 @@
       "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi re-read live at 67% before 2027, with only 8% before October and 7% before September; Manifold prices 64.4% before 2027.",
+      "basis": "Kalshi's 67%-before-2027 leg carried from the afternoon read; Manifold's ladder prices 64.4% before 2027 and only 15.9% before October.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
