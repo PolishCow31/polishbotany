@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11T00:04:37-04:00",
+  "updated": "2026-08-11T03:06:22-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 86,
       "frontier": false,
       "status": "expected",
-      "basis": "Musk said Aug 4 it lands 'likely next week'; four days from the deadline xAI docs still list Grok 4.5 with no 4.6 model card.",
+      "basis": "Musk said 4.6 was due around Aug 7; window closes Aug 15 with no model card, API or post. Kalshi odds not refreshable this sweep.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
     },
     {
@@ -21,7 +21,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Alibaba promised weights on Hugging Face and ModelScope this week; hub search still returns no official repo and no license.",
+      "basis": "Qwen promised open weights alongside the 3.8-Max launch; still absent from Hugging Face with the week half gone.",
       "source": "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 46,
+      "prob": 44,
       "frontier": true,
       "status": "expected",
-      "basis": "Announced at I/O in May, slipped repeatedly over coding shortfalls. August leg fell below even odds to 46%; Aug 21 22%, Aug 14 7%, $930K volume.",
+      "basis": "Third straight slide on Polymarket (50 to 46 to 44). Reported still in partner testing after missing internal performance targets.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 78,
+      "prob": 76,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Introduced Aug 1, not publicly released. Sep 30 eased to 78% while Oct 31 firmed to 91%; Sep 15 54%, Aug 31 24%, Aug 15 2%.",
+      "basis": "OpenAI publicly slowed Astra over cyber capability it cannot rule out as Critical; Oct 31 leg holds 91%, Sep 15 at 54%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -51,10 +51,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 74,
+      "prob": 75,
       "frontier": true,
       "status": "expected",
-      "basis": "Mythos 5 Preview shipped Jun 9; general-availability odds hold at 74% by Sep 30, with the Aug 31 leg up to 30% and Sep 15 at 37%.",
+      "basis": "Sep 30 leg firmed to 75% while the Aug 31 leg eased to 27%; Mythos 5 Preview has been live since June.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 44,
       "frontier": false,
       "status": "expected",
-      "basis": "Musk describes a follow-up shipping roughly two weeks after 4.6; back-to-back cadence unmatched by other labs.",
+      "basis": "Musk framed 4.7 (2.1T params) as roughly a month behind 4.6; slips if 4.6 slips. Kalshi odds not refreshable this sweep.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
@@ -76,7 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Meta has committed to publishing Spark 1.2 weights after the hosted launch; no date given.",
+      "basis": "Zuckerberg committed to opening Muse Spark 1.2 weights alongside the laptop-scale Muse Glimmer family.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -87,7 +87,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Seedance 2.5 shipped in-app Jul 31; ByteDance says API access follows on BytePlus ModelArk this quarter.",
+      "basis": "Video model shipped Jul 31; public API access promised on BytePlus ModelArk in Q3.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -98,7 +98,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "V4-Pro remains a limited release alongside shipped V4-Flash variants; full release still pending.",
+      "basis": "V4-Flash-0731 shipped as the cheap tier; the full V4-Pro release remains outstanding.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -109,7 +109,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Zhipu has shipped GLM-5 and 5.2 within four months; a further point release is expected on that cadence.",
+      "basis": "GLM-5.2 landed in June; Zhipu has kept a roughly quarterly cadence on the GLM-5 line.",
       "source": "https://aireleasetracker.com/"
     },
     {
@@ -120,7 +120,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "MiniMax published H3 base weights days after launch; a larger M3-class open release is anticipated on the same pattern.",
+      "basis": "M3 shipped June and H3 video July; an open-weight Pro tier is expected but undated.",
       "source": "https://aireleasetracker.com/"
     },
     {
@@ -131,7 +131,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Haiku 4.5 dates to Oct 2025 and is the only Claude tier not refreshed into the 5 generation.",
+      "basis": "Opus 5, Sonnet 5 and Fable 5 have all shipped; the small tier is still on Haiku 4.5 from Oct 2025.",
       "source": "https://aireleasetracker.com/"
     },
     {
@@ -142,7 +142,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "BFL has committed to an open-weight Dev variant following the hosted FLUX 3 and FLUX 3 Video launches.",
+      "basis": "FLUX 3 and FLUX 3 Video are live; BFL has committed to an open-weight Dev variant as with prior generations.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -153,7 +153,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Shipped in-app Aug 7; xAI says developer API access follows, without a date.",
+      "basis": "Image model shipped Aug 7 inside the Grok app; programmatic API access still pending.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -164,7 +164,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Fable 5 shipped Jun 9 and sits at AA-Index 62; no dated market exists for its successor.",
+      "basis": "Fable 5 shipped June at AA-Index 62; no dated market exists for a successor.",
       "source": "https://aireleasetracker.com/"
     },
     {
@@ -175,7 +175,7 @@
       "prob": 87,
       "frontier": true,
       "status": "expected",
-      "basis": "No GPT-6-branded model exists; Astra is the next family and is explicitly not branded GPT-6. Sep 30 leg rose to 54%, Aug 31 to 26%, Aug 21 5%.",
+      "basis": "Polymarket Dec 31 leg flat at 87%; Sep 30 firmed to 55%, Aug 31 holds 26%. Manifold's name-strict market sits at 86%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -186,7 +186,7 @@
       "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Musk has repeatedly pointed to Grok 5 after the 4.x line; no dated xAI confirmation.",
+      "basis": "Kalshi prices 68% before 2027 but only ~11% before Oct; the 4.6/4.7 point releases come first.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -197,7 +197,7 @@
       "prob": -1,
       "frontier": true,
       "status": "expected",
-      "basis": "Pre-training reportedly began in late July while 3.5 Pro slipped; no announced window.",
+      "basis": "Follows 3.5 Pro, which is already months late; no dated market exists for the next full generation.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -208,8 +208,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "K-EXAONE 2.0 shipped Jul 31 2026 as Korea's sovereign-model entry; LG has signalled a successor generation.",
-      "source": "https://aireleasetracker.com/"
+      "basis": "K-EXAONE 2.0 shipped Jul 31 2026; LG has kept roughly an annual cadence on the EXAONE line.",
+      "source": "https://aireleasetracker.com/latest"
     }
   ]
 }
