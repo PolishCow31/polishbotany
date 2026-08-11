@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-10T18:04:50-04:00",
+  "updated": "2026-08-10T21:05:27-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -745,6 +745,16 @@
       "aka": [
         "OpenAI Astra",
         "Astra model family"
+      ]
+    },
+    {
+      "term": "Attention entropy collapse",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Training instability where attention distributions sharpen onto a single token, entropy falls toward zero and loss spikes; mitigated by QK normalization or logit capping.",
+      "aka": [
+        "entropy collapse",
+        "attention logit blowup"
       ]
     },
     {
@@ -2665,6 +2675,16 @@
       "aka": [
         "MoE parallelism",
         "expert sharding"
+      ]
+    },
+    {
+      "term": "Expert-choice routing",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Mixture-of-experts scheme where each expert selects its top tokens instead of each token selecting experts, guaranteeing balanced load without an auxiliary balancing loss.",
+      "aka": [
+        "expert choice",
+        "EC routing"
       ]
     },
     {
@@ -7191,6 +7211,17 @@
         "gating network",
         "gate",
         "routing function"
+      ]
+    },
+    {
+      "term": "Router collapse",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Mixture-of-experts failure where the gating network routes nearly all tokens to a few experts, wasting capacity and degrading quality; countered by load-balancing losses.",
+      "aka": [
+        "expert collapse",
+        "MoE routing collapse",
+        "gate collapse"
       ]
     },
     {
