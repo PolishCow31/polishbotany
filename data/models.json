@@ -2305,26 +2305,29 @@
       "name": "Qwen3.8-Max",
       "lab": "Alibaba (Qwen)",
       "released": "2026-08-03",
-      "params": "2.4T total (sparse MoE; active count undisclosed)",
-      "context": "1M",
+      "params": "2.4T total / 95B active (sparse MoE, 512 experts, 10 routed + 1 shared per token; 92 layers)",
+      "context": "1M via API (262,144 native in the open checkpoint, extensible to ~1.01M)",
       "modality": "multimodal (text, image, video in), text out",
-      "open": false,
+      "open": true,
       "benchmarks": {
         "GPQA Diamond": 92.6,
         "Terminal-Bench 2.1": 86.6,
         "OSWorld-Verified": 86.1,
         "SWE-bench Pro": 67.7,
         "DeepSWE v1.1": 56.6,
-        "AA-Index": 58
+        "AA-Index": 58,
+        "PaperBench": 93.0,
+        "HLE": 43.6
       },
       "milestone": false,
       "status": "live",
-      "notable": "Alibaba's full flagship release behind July 19's Qwen3.8-Max-Preview, announced Aug 2-3 with published benchmarks for the first time. A 2.4-trillion-parameter sparse mixture-of-experts multimodal model taking text, image and video, with a 1M-token context (991K max input, 983K with thinking on, 131K max output). Priced at $2.00 per 1M input and $6.00 per 1M output, with cached input at $0.25 -- roughly a third of frontier-flagship pricing. Artificial Analysis has now run it independently: it scores 58 on the Intelligence Index (v4.1), placing it fourth overall behind Claude Opus 5 (61), Claude Fable 5 (60) and GPT-5.6 Sol (59), and ahead of Kimi K3 (57), Claude Opus 4.8 (56) and every current model from Google, Meta and xAI. The number was volatile: AA first published 53, withdrew it after intermittent endpoint failures, re-ran on Alibaba's public API for 56, and the live page now reads 58. Cost per Intelligence Index run more than doubled versus the prior Qwen Max at roughly $1.14 per task, and the model emitted 150M output tokens over the eval -- verbose relative to peers. Alibaba's own numbers still show Fable 5 ahead on the hard coding suite: SWE-bench Pro 80.0 vs 67.7, DeepSWE 1.1 70.0 vs 56.6 and FrontierSWE 88.8 vs 73.5. Open weights for Qwen3.8-Max and a smaller Qwen3.8-27B remain promised on Hugging Face and ModelScope but have not shipped.",
+      "notable": "Alibaba's flagship, released Aug 3 2026 behind the July 19 preview and OPEN-WEIGHTED on Aug 12 2026 -- the first time Qwen has published the weights of a Max-class model. Two checkpoints landed on Hugging Face, Qwen3.8-2.4T-A95B and an FP8 variant: 2.4 trillion total parameters with roughly 95B active per token, 92 layers at hidden dimension 8,192, and a hybrid attention stack combining Gated DeltaNet linear attention with gated full attention, trained with multi-token prediction. The open card lists 262,144 tokens of native context extensible to about 1.01M, and the model is text-only and reasoning-first, requiring thinking mode with three reasoning-effort levels (low, medium, xhigh default) versus the multimodal API build. The license is bespoke rather than Apache 2.0: free commercial use with a copyright notice, but products above 100M monthly active users or $20M monthly revenue must name the model in their UI, and model-as-a-service businesses above $50M of trailing-twelve-month revenue need a separate commercial agreement. Artificial Analysis scores it 58 on the Intelligence Index (v4.1), which makes it the second-strongest downloadable model behind Kimi K3 at 60 and puts open weights within five points of Claude Opus 5's leading 63. Published card numbers include GPQA Diamond 92.6, Terminal-Bench 2.1 86.6, SWE-bench Pro 67.7, PaperBench 93.0 and HLE 43.6; API pricing is unchanged at $2.00/$6.00 per 1M tokens. The promised smaller Qwen3.8-27B has still not shipped.",
       "sources": [
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8",
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/main/LICENSE",
         "https://artificialanalysis.ai/models/qwen3-8-max",
-        "https://the-decoder.com/qwen3-8-max-catches-claude-opus-4-8-but-kimi-k3-still-scores-higher-for-25-percent-less/",
-        "https://officechai.com/ai/qwen-3-8-max-scores-56-on-artificial-analysis-intelligence-index-ahead-of-all-us-companies-except-anthropic-and-openai/",
-        "https://venturebeat.com/technology/qwen3-8-max-arrives-with-a-bold-claim-it-outperforms-gpt-5-6-sol-max-and-fable-5-on-agentic-computer-use"
+        "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new"
       ]
     },
     {

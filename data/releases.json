@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T09:07:13-04:00",
+  "updated": "2026-08-12T12:07:36-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 95,
       "frontier": false,
       "status": "expected",
-      "basis": "Still no model card, API identifier or xAI announcement. Kalshi rate-limited a fourth straight sweep, so 95% is carried.",
+      "basis": "Now inside Musk's stated window with no model card, API id or xAI post. Kalshi rate-limited a fifth sweep, so 95% is carried.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
     },
     {
@@ -18,21 +18,21 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 42,
+      "prob": 44,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket's Aug 31 leg recovered to 42% from 40%; Aug 21 at 22%, a new Aug 14 leg at 6%. Still partner-testing only.",
+      "basis": "Polymarket's Aug 31 leg firmed to 44% from 42%; Aug 21 20%, Aug 14 6%. Leak accounts claimed today; blog.google shows nothing.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
-      "model": "Qwen3.8-Max open weights + Qwen3.8-27B",
+      "model": "Qwen3.8-27B (open weights)",
       "lab": "Alibaba (Qwen)",
-      "expectedWindow": "week of Aug 10 2026",
+      "expectedWindow": "Aug 2026",
       "expectedDate": "2026-08",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Re-checked Qwen's Hugging Face org today: no Qwen3.8 checkpoints published, with the promised week more than half gone.",
+      "basis": "The 2.4T Max weights landed on Hugging Face Aug 12; the promised smaller 27B sibling is still absent from the Qwen org.",
       "source": "https://huggingface.co/Qwen"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 78,
+      "prob": 77,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket firmed slightly: Sep 30 78%, Oct 31 93%, Sep 15 54%, Aug 31 21%. Release paused for cyber-capability testing.",
+      "basis": "Polymarket softened: Sep 30 77% from 78%, Oct 31 91% from 93%, Aug 31 16% from 21%. Release paused for cyber-capability testing.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 74,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 flat at 74%, Sep 15 48%, Aug 31 21% on a thin $105K book. No Anthropic signal beyond release cadence.",
+      "basis": "Sep 30 flat at 74%, Sep 15 44%, Aug 31 21% on a thin $105K book. No Anthropic signal beyond release cadence.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 49,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi rate-limited; 49% carried. Musk frames 4.7 as a 2.1T-parameter follow-up weeks after 4.6.",
+      "basis": "Kalshi rate-limited again; 49% carried. Musk frames 4.7 as a follow-up three to four weeks after 4.6.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -173,10 +173,10 @@
       "expectedWindow": "H2 2026",
       "expectedDate": "2026-11",
       "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "Fable 5 launched Jun 9 as the first public Mythos-class model; a successor is expected but undated.",
-      "source": "https://aireleasetracker.com/"
+      "frontier": true,
+      "status": "rumored",
+      "basis": "Fable 5 shipped Jun 9 and got a biology-safeguards update Aug 7; no successor is dated or marketed.",
+      "source": "https://www.anthropic.com/news"
     },
     {
       "model": "GPT-6",
@@ -186,7 +186,7 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: Dec 31 85% flat, Sep 30 eased to 56%, Aug 31 12%, Aug 21 4%. Literal GPT-6 branding is the resolution risk.",
+      "basis": "Polymarket flat at 85% by year-end; Sep 30 56%, Aug 31 13%, Aug 21 4%. Manifold's ladder has 52% before October.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -194,11 +194,11 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 67,
+      "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi rate-limited a fourth sweep; 67% before 2027 carried. Manifold's ladder prices 64% before 2027.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
+      "basis": "Manifold's ladder reads 64% before 2027, 58% before December, 4% before September. Kalshi's 67% could not be re-read this sweep.",
+      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
       "model": "Gemini 4",
@@ -207,9 +207,9 @@
       "expectedDate": "2027-02",
       "prob": -1,
       "frontier": true,
-      "status": "expected",
-      "basis": "No dated market; Google's 3.x point releases are consuming 2026 and 3.5 Pro has not shipped yet.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
+      "status": "rumored",
+      "basis": "Google has not shipped 3.5 Pro yet; a major-version successor is inferred from cadence only, with no market.",
+      "source": "https://blog.google/technology/ai/"
     },
     {
       "model": "K-EXAONE 3 / EXAONE next",
@@ -219,8 +219,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "K-EXAONE 2.0 shipped Jul 31; LG's annual cadence implies a 2027 successor. No announcement.",
-      "source": "https://aireleasetracker.com/latest"
+      "basis": "K-EXAONE 2.0 shipped Jul 31 under Korea's sovereign-AI program; a successor is implied by the program, not dated.",
+      "source": "https://aireleasetracker.com/"
     }
   ]
 }
