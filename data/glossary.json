@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T06:05:41-04:00",
+  "updated": "2026-08-12T09:07:13-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2246,6 +2246,16 @@
       ]
     },
     {
+      "term": "DeepSearch QA",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "An agentic question-answering benchmark measuring whether a model can plan and execute multi-step web research, then synthesize a correct sourced answer.",
+      "aka": [
+        "DeepSearchQA",
+        "deep research QA benchmark"
+      ]
+    },
+    {
       "term": "DeepSeek",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -3942,6 +3952,15 @@
       "def": "A benchmark that checks whether a model follows explicit formatting instructions (word counts, required keywords, JSON output) using rules a program can verify automatically.",
       "aka": [
         "Instruction-Following Eval"
+      ]
+    },
+    {
+      "term": "IFStruct",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "An instruction-following benchmark scoring whether a model's output conforms to a demanded structure, such as strict JSON, schemas, or formatting constraints.",
+      "aka": [
+        "structured instruction following benchmark"
       ]
     },
     {
@@ -8360,6 +8379,17 @@
       "aka": [
         "TTT",
         "test-time adaptation"
+      ]
+    },
+    {
+      "term": "Text watermarking",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Embedding a statistically detectable signal in a model's token choices so generated text can later be identified as machine-produced without altering its readability.",
+      "aka": [
+        "statistical watermark",
+        "LLM watermarking",
+        "token-level watermark"
       ]
     },
     {

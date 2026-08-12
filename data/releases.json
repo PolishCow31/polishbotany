@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T06:05:41-04:00",
+  "updated": "2026-08-12T09:07:13-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 95,
       "frontier": false,
       "status": "expected",
-      "basis": "Still no model card, API identifier or xAI announcement. Kalshi rate-limited a third straight sweep, so 95% is the Aug 12 00:05 read.",
+      "basis": "Still no model card, API identifier or xAI announcement. Kalshi rate-limited a fourth straight sweep, so 95% is carried.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 40,
+      "prob": 42,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket's Aug 31 leg eased to 40% from 42%, but Aug 21 firmed to 21% from 17%. Still unreleased, partner-testing only.",
+      "basis": "Polymarket's Aug 31 leg recovered to 42% from 40%; Aug 21 at 22%, a new Aug 14 leg at 6%. Still partner-testing only.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,18 +32,18 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Qwen promised open weights alongside the 3.8-Max launch; still absent from Hugging Face with the stated week almost gone.",
-      "source": "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new"
+      "basis": "Re-checked Qwen's Hugging Face org today: no Qwen3.8 checkpoints published, with the promised week more than half gone.",
+      "source": "https://huggingface.co/Qwen"
     },
     {
       "model": "Astra (next OpenAI model family)",
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 77,
+      "prob": 78,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket flat at the back end (Sep 30 77%, Oct 31 93%, Sep 15 54%) while Aug 31 slipped to 20%. Release paused for cyber testing.",
+      "basis": "Polymarket firmed slightly: Sep 30 78%, Oct 31 93%, Sep 15 54%, Aug 31 21%. Release paused for cyber-capability testing.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 74,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 flat at 74%, Sep 15 48%, Aug 31 22% on a thin $105K book. No Anthropic signal beyond release cadence.",
+      "basis": "Sep 30 flat at 74%, Sep 15 48%, Aug 31 21% on a thin $105K book. No Anthropic signal beyond release cadence.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 49,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi rate-limited; 49% carried from Aug 12 00:05. Musk frames 4.7 as a 2.1T-parameter follow-up weeks after 4.6.",
+      "basis": "Kalshi rate-limited; 49% carried. Musk frames 4.7 as a 2.1T-parameter follow-up weeks after 4.6.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -77,7 +77,7 @@
       "frontier": false,
       "status": "rumored",
       "basis": "NVIDIA signalled a bigger Nemotron 4 alongside the Aug 11 Lightning launch; no date, specs or market.",
-      "source": "https://seekingalpha.com/news/4630702-nvidia-launches-open-model-nemotron-35-lightning-working-on-bigger-nemotron-4"
+      "source": "https://www.cnbc.com/2026/08/11/nvidia-releases-nemotron-3point5-lightning-open-source-ai-model-.html"
     },
     {
       "model": "Muse Spark 1.2 open weights",
@@ -87,8 +87,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Zuckerberg committed to opening Muse Spark 1.2 weights; the laptop-scale Muse Glimmer shipped open Aug 10, Spark 1.2 has not.",
-      "source": "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html"
+      "basis": "Zuckerberg committed to opening Muse Spark 1.2 weights; laptop-scale Muse Glimmer shipped open Aug 10, Spark 1.2 has not.",
+      "source": "https://www.cnbc.com/2026/08/12/meta-nvidia-open-weight-ai-race-china.html"
     },
     {
       "model": "Seedance 2.5 API (BytePlus ModelArk)",
@@ -186,7 +186,7 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket flat: Dec 31 85%, Sep 30 57%, Aug 31 13%. Traders flag the literal GPT-6 branding as the main resolution risk.",
+      "basis": "Polymarket: Dec 31 85% flat, Sep 30 eased to 56%, Aug 31 12%, Aug 21 4%. Literal GPT-6 branding is the resolution risk.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -197,7 +197,7 @@
       "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi rate-limited; 67% before 2027 carried from the Aug 12 00:05 read. Manifold's ladder prices 64% before 2027.",
+      "basis": "Kalshi rate-limited a fourth sweep; 67% before 2027 carried. Manifold's ladder prices 64% before 2027.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
