@@ -1737,8 +1737,8 @@
         "DeepSWE 1.0": 62.0
       },
       "milestone": false,
-      "status": "live",
-      "notable": "xAI's 'cheap frontier' flagship (the lab now branded SpaceXAI after the SpaceX tie-up and the ~$60B Cursor acquisition), co-trained with the Cursor coding editor. Musk calls it 'Opus-class but faster, more token-efficient and lower cost.' UPDATE (Aug 8): under Artificial Analysis's v4.1.1 patch the high-effort tier re-scores to 56 from 54, seventh overall behind Claude Opus 5 (63), Claude Fable 5 (62), GPT-5.6 Sol (61), Kimi K3 (60), Qwen3.8-Max (58) and the 57s (Muse Spark 1.2, GPT-5.6 Terra). Standout token efficiency: ~16K output tokens per SWE-bench Pro task vs ~67K for Opus 4.8 (4.2x fewer); ~1.9M avg tokens/task vs Fable 5's 7.2M in Claude Code. Terminal-Bench 2.1 83.3%, SWE-bench Pro 64.7, GDPval-AA #4 (Elo 1543). Default in Grok Build, ~80 tok/s. Context cut to 500K from Grok 4.3's 1M. $2/$6. x.ai's model docs still top out at grok-4.5 -- no grok-4.6 endpoint has appeared.",
+      "status": "superseded",
+      "notable": "xAI's 'cheap frontier' flagship (the lab now branded SpaceXAI after the SpaceX tie-up and the ~$60B Cursor acquisition), co-trained with the Cursor coding editor. Musk calls it 'Opus-class but faster, more token-efficient and lower cost.' Under Artificial Analysis's v4.1.1 patch the high-effort tier re-scores to 56 from 54. Standout token efficiency: ~16K output tokens per SWE-bench Pro task vs ~67K for Opus 4.8 (4.2x fewer); ~1.9M avg tokens/task vs Fable 5's 7.2M in Claude Code. Terminal-Bench 2.1 83.3%, SWE-bench Pro 64.7, GDPval-AA #4 (Elo 1543). Default in Grok Build, ~80 tok/s. Context cut to 500K from Grok 4.3's 1M. $2/$6. SUPERSEDED Aug 12 2026 by Grok 4.6, which reuses the same 1.5T V9 foundation and lifts the Intelligence Index to 61.",
       "pricing": "$2 in / $6 out per 1M",
       "sources": [
         "https://x.ai/news/grok-4-5",
@@ -2615,6 +2615,30 @@
         "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/",
         "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/",
         "https://www.cnbc.com/2026/08/11/nvidia-releases-nemotron-3point5-lightning-open-source-ai-model-.html"
+      ]
+    },
+    {
+      "name": "Grok 4.6",
+      "lab": "xAI",
+      "released": "2026-08-12",
+      "params": "~1.5T (same V9 MoE foundation as Grok 4.5; reported, not officially disclosed)",
+      "context": "500K",
+      "modality": "multimodal (text + image in), text out, reasoning",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 61,
+        "DeepSWE v1.1": 65.9,
+        "Terminal-Bench v3.0": 26.0
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "xAI's new flagship, shipped Aug 12 2026 inside Musk's stated window and pitched at long-running agents and interactive/visual work. It is a post-training release rather than a scale-up: the same ~1.5T V9 foundation as Grok 4.5, with heavier supervised fine-tuning on curated reasoning and engineering data plus more reinforcement learning in agentic environments. Artificial Analysis scores it 61 on the Intelligence Index (v4.1), tying GPT-5.6 Sol and placing it third on the board behind Claude Opus 5 (63) and Claude Fable 5 (62) -- a five-point jump from Grok 4.5's 56. DeepSWE v1.1 rises to 65.9 from Grok 4.5's 54.0 and Terminal-Bench v3.0 to 26.0 from 15.7, and xAI claims the lead on the GDPval-AA knowledge-work evaluation. Context stays at 500K and pricing stays at $2/$6 per 1M (cache hits $0.50, a faster variant at 2x), keeping it roughly half the sticker price of comparable frontier models. Available via the xAI API as grok-4.6, Grok Build, Cursor, OpenRouter, Vercel and Cloudflare, with double included usage in Grok Build and Cursor for launch week. AA measures 77.6 output tokens/sec and flags it as verbose (72M output tokens across the eval suite). No model card or technical report has been published, so architecture, training data and safety testing remain undocumented.",
+      "pricing": "$2 in / $6 out per 1M",
+      "sources": [
+        "https://x.ai/news/grok-4-6",
+        "https://docs.x.ai/developers/grok-4-6",
+        "https://artificialanalysis.ai/models/grok-4-6",
+        "https://www.unite.ai/spacexai-launches-grok-4-6-for-long-running-agents/"
       ]
     }
   ]

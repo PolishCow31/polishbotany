@@ -1,27 +1,16 @@
 {
-  "updated": "2026-08-12T12:07:36-04:00",
+  "updated": "2026-08-12T18:07:16-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
-    {
-      "model": "Grok 4.6",
-      "lab": "xAI",
-      "expectedWindow": "by Aug 15 2026",
-      "expectedDate": "2026-08",
-      "prob": 95,
-      "frontier": false,
-      "status": "expected",
-      "basis": "Now inside Musk's stated window with no model card, API id or xAI post. Kalshi rate-limited a fifth sweep, so 95% is carried.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
-    },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 44,
+      "prob": 55,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket's Aug 31 leg firmed to 44% from 42%; Aug 21 20%, Aug 14 6%. Leak accounts claimed today; blog.google shows nothing.",
+      "basis": "Polymarket's Aug 31 leg jumped to 55% from 44% on $992K; Aug 21 flat at 20%, Aug 14 collapsed to 2%. Still no Google post.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -36,14 +25,25 @@
       "source": "https://huggingface.co/Qwen"
     },
     {
+      "model": "Grok 4.7",
+      "lab": "xAI",
+      "expectedWindow": "by Sep 4 2026",
+      "expectedDate": "2026-09",
+      "prob": 49,
+      "frontier": false,
+      "status": "expected",
+      "basis": "Grok 4.6 shipped Aug 12, starting Musk's stated three-to-four-week clock for a larger 2.1T 4.7. Kalshi rate-limited a sixth sweep; 49% carried.",
+      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
+    },
+    {
       "model": "Astra (next OpenAI model family)",
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 77,
+      "prob": 79,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket softened: Sep 30 77% from 78%, Oct 31 91% from 93%, Aug 31 16% from 21%. Release paused for cyber-capability testing.",
+      "basis": "Polymarket firmed back: Sep 30 78.8% from 77%, Oct 31 92%, Aug 31 19% from 16%. Release still paused for cyber-capability testing.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -54,19 +54,8 @@
       "prob": 74,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 flat at 74%, Sep 15 44%, Aug 31 21% on a thin $105K book. No Anthropic signal beyond release cadence.",
+      "basis": "Sep 30 flat at 74%, Sep 15 41%, Aug 31 eased to 19% on a thin $106K book. No Anthropic signal beyond release cadence.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
-    },
-    {
-      "model": "Grok 4.7",
-      "lab": "xAI",
-      "expectedWindow": "by Sep 4 2026",
-      "expectedDate": "2026-09",
-      "prob": 49,
-      "frontier": false,
-      "status": "expected",
-      "basis": "Kalshi rate-limited again; 49% carried. Musk frames 4.7 as a follow-up three to four weeks after 4.6.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
       "model": "Nemotron 4 (larger tier)",
@@ -186,7 +175,7 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket flat at 85% by year-end; Sep 30 56%, Aug 31 13%, Aug 21 4%. Manifold's ladder has 52% before October.",
+      "basis": "Polymarket flat at 85% by year-end on $1.31M; Sep 30 56%, Aug 31 13%, Aug 21 3%. Astra is not confirmed as GPT-6.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -197,7 +186,7 @@
       "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold's ladder reads 64% before 2027, 58% before December, 4% before September. Kalshi's 67% could not be re-read this sweep.",
+      "basis": "Manifold's ladder holds 64% before 2027 and 58% before December, but firmed mid-range: 34% before November, 6% before October.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
