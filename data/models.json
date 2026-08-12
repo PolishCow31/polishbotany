@@ -2594,6 +2594,25 @@
         "https://decrypt.co/374084/alibaba-qwen-image-3-ai-useful-not-just-pretty",
         "https://news.aibase.com/news/29753"
       ]
+    },
+    {
+      "name": "NVIDIA Nemotron 3.5 Lightning",
+      "lab": "NVIDIA",
+      "released": "2026-08-11",
+      "params": "30B MoE (3B active)",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "PinchBench": 86
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Open-weight 30B mixture-of-experts with 3B active parameters, built as the execution layer for always-on agents rather than a frontier reasoner. NVIDIA claims up to 4x the output speed of similar-sized models and 30% faster agentic task completion, hitting 86% on PinchBench while finishing 10,000 tasks 30% faster than Qwen3.6 35B at comparable accuracy. Runs on a single PC GPU; permissive OpenMDW-1.1 license, BF16 and NVFP4 checkpoints on Hugging Face, ModelScope, OpenRouter and build.nvidia.com. Shipped alongside NeMo Switchyard, an open-source router that dispatches agent requests to the cheapest capable model.",
+      "sources": [
+        "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/",
+        "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/",
+        "https://www.cnbc.com/2026/08/11/nvidia-releases-nemotron-3point5-lightning-open-source-ai-model-.html"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T00:05:56-04:00",
+  "updated": "2026-08-12T03:06:09-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 95,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi readable again and repriced sharply: 95% before Aug 15, up from a carried 74%; Aug 13 leg 65%. Still no model card or API identifier.",
+      "basis": "Still no model card, API identifier or announcement; xAI docs list Grok 4.5. Kalshi rate-limited this sweep, so 95% is the Aug 12 00:05 read.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok46"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 38,
+      "prob": 42,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg 38%, but Aug 21 slid to 21% from 26%; Kalshi's Aug 31 leg fell to 39% from 47%. Still partner-testing only.",
+      "basis": "Polymarket's Aug 31 leg rebounded to 42% from 38%, though Aug 21 slipped to 17% from 21%. Still unreleased and partner-testing only.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,7 +32,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Qwen promised open weights alongside the 3.8-Max launch; still absent from Hugging Face with two days left in the stated week.",
+      "basis": "Qwen promised open weights alongside the 3.8-Max launch; still absent from Hugging Face with the stated week nearly gone.",
       "source": "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 74,
+      "prob": 77,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket Sep 30 leg flat at 74%, Oct 31 up to 91%, but Kalshi marked it down: before Oct 1 to 70% from 75%, Sep 18 to 49% from 58%.",
+      "basis": "Polymarket firmed across the curve: Sep 30 to 77% from 74%, Oct 31 to 93% from 91%, Sep 15 at 55%; Aug 31 still only 22%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 74,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 leg rebounded to 74% from 71%, recovering last sweep's markdown; Sep 15 at 45%, Aug 31 flat at 23%.",
+      "basis": "Sep 30 leg flat at 74%, Sep 15 at 47% and Aug 31 at 22% on a thin $105K book. No Anthropic signal beyond cadence.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -65,8 +65,19 @@
       "prob": 49,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi readable again: Sep 4 leg up to 49% from 44%, Aug 31 to 36%, dragged along by Grok 4.6's repricing. Musk frames 4.7 as 2.1T params.",
+      "basis": "Kalshi rate-limited this sweep; 49% carried from Aug 12 00:05. Musk frames 4.7 as a 2.1T-parameter follow-up weeks after 4.6.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
+    },
+    {
+      "model": "Nemotron 4 (larger tier)",
+      "lab": "NVIDIA",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "NVIDIA signalled a bigger Nemotron 4 alongside the Aug 11 Lightning launch; no date, specs or market.",
+      "source": "https://seekingalpha.com/news/4630702-nvidia-launches-open-model-nemotron-35-lightning-working-on-bigger-nemotron-4"
     },
     {
       "model": "Muse Spark 1.2 open weights",
@@ -175,7 +186,7 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Dec 31 leg flat at 85%, but the near legs cracked: Kalshi before-Sep-1 fell to 13% from 29% and Polymarket's Aug 31 leg to 17%. Astra branding is the resolution risk.",
+      "basis": "Dec 31 flat at 85% and Sep 30 up to 57% from 56%, but the near legs stay dead: Aug 31 17%, Aug 21 3%. Astra branding is the resolution risk.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -186,7 +197,7 @@
       "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi's before-2027 leg flat at 67% even as 4.6 repriced upward; before-Oct-1 sits at 8% and before-Sep-1 at 7%.",
+      "basis": "Kalshi rate-limited this sweep; 67% before 2027 carried from Aug 12 00:05, with before-Oct-1 at 8% and before-Sep-1 at 7%.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {

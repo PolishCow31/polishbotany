@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T00:05:56-04:00",
+  "updated": "2026-08-12T03:06:09-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2741,6 +2741,17 @@
       "aka": [
         "eval sandboxing",
         "evaluation infrastructure isolation"
+      ]
+    },
+    {
+      "term": "Execution-layer model",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "A small, fast model that carries out the concrete tool calls in an agent stack while a larger reasoning model does the planning and orchestration.",
+      "aka": [
+        "executor model",
+        "worker model",
+        "orchestrator-executor split"
       ]
     },
     {
@@ -5763,6 +5774,17 @@
       ]
     },
     {
+      "term": "NeMo Switchyard",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "NVIDIA's open-source routing library that dispatches each agent request to the cheapest model capable of handling it, cutting multi-agent serving cost.",
+      "aka": [
+        "Switchyard",
+        "NVIDIA NeMo Switchyard",
+        "model router"
+      ]
+    },
+    {
       "term": "Neocloud",
       "acronym": "",
       "category": "Economics & compute",
@@ -6342,6 +6364,16 @@
       "aka": [
         "Embodied AI",
         "Robotics AI"
+      ]
+    },
+    {
+      "term": "PinchBench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Agentic benchmark measuring both accuracy and wall-clock throughput across long task runs, rewarding models that finish many tool-calling steps quickly.",
+      "aka": [
+        "Pinch Bench",
+        "PinchBench agentic benchmark"
       ]
     },
     {
