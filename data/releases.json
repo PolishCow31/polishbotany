@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T09:05:34-04:00",
+  "updated": "2026-08-13T12:06:33-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 32,
+      "prob": 35,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 collapsed to 32% from 44% on a $1.01M book; Aug 14 back to 3% from 6%, Aug 21 flat at 11%.",
+      "basis": "Polymarket Aug 31 recovered to 35% from 32% on a $1.01M book; Aug 14 flat at 3%, Aug 21 flat at 11%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 49,
       "frontier": false,
       "status": "expected",
-      "basis": "Grok 4.6 shipped Aug 12, starting Musk's stated three-to-four-week clock for a larger 2.1T 4.7. Kalshi returned 429 again; 49% carried, not refreshed.",
+      "basis": "Grok 4.6 shipped Aug 12, starting Musk's stated three-to-four-week clock for a larger 2.1T 4.7. Kalshi returned 429 a third sweep running; 49% carried, not refreshed.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 75,
+      "prob": 76,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket Sep 30 eased to 75% from 77% and Sep 15 fell hard to 38% from 52%; Oct 31 90%, Aug 31 16%, Aug 15 3%.",
+      "basis": "Polymarket Sep 30 ticked up to 76% from 75%; Sep 15 flat at 38%, Aug 31 17%, Aug 15 3%, Oct 31 90%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -51,10 +51,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 71,
+      "prob": 72,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 down to 71% from 77%, Sep 15 up to 47% from 44%, Aug 31 21% on a thin $107K book. No Anthropic signal beyond cadence.",
+      "basis": "Sep 30 up to 72% from 71% on a thin $107K book; Aug 31 flat at 21%. No Anthropic signal beyond cadence.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -91,17 +91,6 @@
       "source": "https://aireleasetracker.com/latest"
     },
     {
-      "model": "DeepSeek V4-Pro (official release)",
-      "lab": "DeepSeek",
-      "expectedWindow": "Q3 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "V4-Flash-0731 shipped as the cheap tier; the full V4-Pro release remains outstanding.",
-      "source": "https://aireleasetracker.com/latest"
-    },
-    {
       "model": "GLM-5.x",
       "lab": "Zhipu / Z.ai",
       "expectedWindow": "Q3 2026",
@@ -122,6 +111,17 @@
       "status": "rumored",
       "basis": "MiniMax has open-weighted prior M-series tiers; an M3 Pro is expected but unannounced and undated.",
       "source": "https://aireleasetracker.com/latest"
+    },
+    {
+      "model": "DeepSeek-V4-Pro-0813 open weights",
+      "lab": "DeepSeek",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "expected",
+      "basis": "V4-Pro went GA Aug 13; the April preview weights are MIT on Hugging Face but a separate 0813 checkpoint has not been posted.",
+      "source": "https://api-docs.deepseek.com/news/news260813"
     },
     {
       "model": "Claude Haiku 5",
@@ -175,7 +175,7 @@
       "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 flat at 84% on $1.32M; Sep 30 flat at 52%, Aug 31 up to 14%, Aug 21 2%. Naming risk still the main objection.",
+      "basis": "Polymarket Dec 31 flat at 84% on $1.32M; Sep 30 flat at 52%, Aug 31 flat at 14%, Aug 21 2%. Naming risk still the main objection.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -183,10 +183,10 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 64,
+      "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold ladder flat: 64% before 2027, 58% before December, 22% before November, 6% before October.",
+      "basis": "Manifold ladder repriced up: 70% before 2027 from 64%, 58% before December, 20% before November, 5% before October.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {

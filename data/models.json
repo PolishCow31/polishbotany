@@ -2640,6 +2640,37 @@
         "https://artificialanalysis.ai/models/grok-4-6",
         "https://www.unite.ai/spacexai-launches-grok-4-6-for-long-running-agents/"
       ]
+    },
+    {
+      "name": "DeepSeek-V4-Pro-0813",
+      "lab": "DeepSeek",
+      "released": "2026-08-13",
+      "params": "1.6T total / 49B active (MoE, unchanged from the April preview)",
+      "context": "1M (384K max output)",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 53,
+        "Terminal-Bench 2.1": 87.9,
+        "DeepSWE": 62.7,
+        "SWE-bench Verified": 80.6,
+        "GPQA Diamond": 90.1,
+        "LiveCodeBench": 93.5,
+        "HLE (no tools)": 42.7,
+        "HLE (with tools)": 60.0,
+        "CyberGym": 83.3,
+        "AutomationBench": 31.8,
+        "Toolathlon-Verified": 74.1
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "The general-availability build of DeepSeek's flagship, announced Aug 13 2026 and closing out the preview that opened Apr 24. Architecture is untouched - 1.6T total / 49B active MoE, 1M-token context, 384K max output - so this is a post-training release aimed at agents, the same pattern as V4-Flash-0731. Two functional changes: selectable reasoning effort (low for simple prompts, high for everyday agent work, max for hard tasks) replaces the old fixed thinking budget, and the model gains native OpenAI Responses API support with Codex adaptation. It ships in the app and on web behind an 'Expert Mode' toggle; API callers keep the deepseek-v4-pro name and need no code change. Artificial Analysis scores it 53 on the Intelligence Index (v4.1), one point above the April preview and the best open-weight score on the board, at $0.43 in / $0.87 out per 1M tokens ($0.0036 cache hit) - roughly 30x under the frontier tier. Vendor-reported agentic gains are large (Terminal-Bench 2.1 87.9, DeepSWE 62.7) and, as with the 0731 Flash build, are not yet independently replicated. DeepSeek also announced a peak/off-peak API price restructure effective Aug 16 2026 16:00 UTC, with off-peak set 50% below peak. The V4-Pro line's weights are MIT-licensed on Hugging Face; a separate 0813 checkpoint has not been confirmed posted.",
+      "sources": [
+        "https://api-docs.deepseek.com/news/news260813",
+        "https://artificialanalysis.ai/models/deepseek-v4-pro",
+        "https://www.unite.ai/deepseek-ships-v4-pro-as-its-flagship-model-leaves-preview/",
+        "https://www.techtimes.com/articles/324241/20260813/deepseek-v4-pro-0813-goes-ga-benchmark-claims-await-independent-proof.htm"
+      ]
     }
   ]
 }
