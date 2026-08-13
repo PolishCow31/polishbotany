@@ -2671,6 +2671,33 @@
         "https://www.unite.ai/deepseek-ships-v4-pro-as-its-flagship-model-leaves-preview/",
         "https://www.techtimes.com/articles/324241/20260813/deepseek-v4-pro-0813-goes-ga-benchmark-claims-await-independent-proof.htm"
       ]
+    },
+    {
+      "name": "Gemini 3.7 Flash",
+      "lab": "Google DeepMind",
+      "released": "2026-08-13",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "natively multimodal (text/image/audio/video/PDF in), text out",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 56,
+        "DeepSWE v1.1": 65.3,
+        "FrontierCode 1.1 Main": 43.6,
+        "WebDev Arena (Elo)": 1588,
+        "AutomationBench": 30.4,
+        "GDP.pdf": 34.0
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$0.75 in / $3.75 out per 1M (introductory through Dec 31 2026; $1.50 / $7.50 from Jan 1 2027)",
+      "notable": "Google's new workhorse Flash model, shipped Aug 13 2026 just three weeks after Gemini 3.6 Flash and pitched at coding and agents. Google frames it as an algorithmic refinement of the 3.6 Flash reasoning stack rather than a new pretraining run. Artificial Analysis scores it 56 on the Intelligence Index (v4.1) - up from 3.6 Flash's 52 and now the highest score of any Google model on the board, ahead of Gemini 3.1 Pro at 46 - while measuring 340.1 output tokens/sec, the fastest of any model AA tracks, and $0.40 per Intelligence Index task. Google-reported gains vs 3.6 Flash: DeepSWE v1.1 65.3% (from 49.0), FrontierCode 1.1 Main 43.6% (from 34.4), WebDev Arena 1588 Elo (from 1538), AutomationBench 30.4% (from 17.0) and 34.0% on GDP.pdf, an expert PDF-comprehension eval (from 22.0). Introductory pricing is $0.75/$3.75 per 1M - half of 3.6 Flash - reverting to $1.50/$7.50 on Jan 1 2027. Context stays at 1M. Available in Google AI Studio, Android Studio, Antigravity, the Gemini Enterprise Agent Platform, and for consumers only through Gemini Spark for AI Pro/Ultra subscribers in 160+ countries. Google says safeguards against CBRN and cyber-offense misuse were strengthened. The launch lands with flagship Gemini 3.5 Pro still delayed and unreleased.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+        "https://artificialanalysis.ai/models/gemini-3-7-flash",
+        "https://www.axios.com/2026/08/13/google-gemini-37-flash",
+        "https://9to5google.com/2026/08/13/gemini-3-7-flash-launch/"
+      ]
     }
   ]
 }
