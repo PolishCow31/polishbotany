@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-12T21:04:32-04:00",
+  "updated": "2026-08-13T00:05:17-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 52,
+      "prob": 46,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket's Aug 31 leg eased to 52% from 55% on $994K; Aug 21 halved to 10%, Aug 14 at 4%. Still no Google post.",
+      "basis": "Polymarket's Aug 31 leg slid to 46% from 52% on $998K; Aug 21 at 11%, Aug 14 down to 3%. Still no Google post.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,7 +43,7 @@
       "prob": 75,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket softened: Sep 30 to 75% from 79%, Sep 15 53%, Aug 31 14% from 19%, Oct 31 91%. Release still paused for cyber testing.",
+      "basis": "Polymarket holds Sep 30 at 75%; Oct 31 firmed to 93% from 91%, Sep 15 52%, Aug 31 14%. Release still paused for cyber testing.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 75,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 firmed a point to 75%, Sep 15 41%, Aug 31 back up to 21% on a thin $107K book. No Anthropic signal beyond cadence.",
+      "basis": "Sep 30 flat at 75%, Sep 15 up a point to 42%, Aug 31 down to 20% on a thin $107K book. No Anthropic signal beyond cadence.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -120,8 +120,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "MiniMax has shipped M3 and H3 this quarter; a larger open-weight Pro tier is expected but unannounced.",
-      "source": "https://aireleasetracker.com/"
+      "basis": "MiniMax shipped M3 in June and H3 on Jul 31; a larger open-weight Pro tier is expected but undated.",
+      "source": "https://aireleasetracker.com/latest"
     },
     {
       "model": "Claude Haiku 5",
@@ -131,8 +131,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Opus 5 and Sonnet 5 have shipped; the small tier still sits at Haiku 4.5 from Oct 2025. No date.",
-      "source": "https://aireleasetracker.com/"
+      "basis": "Haiku 4.5 dates to Oct 2025 and the 5-series now covers Opus, Sonnet and Fable; the small tier is the obvious gap.",
+      "source": "https://www.anthropic.com/news"
     },
     {
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
@@ -142,18 +142,18 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "BFL shipped FLUX 3 and FLUX 3 Video; open-weight Dev variants are promised without a date.",
+      "basis": "BFL shipped FLUX 3 in July and FLUX 3 Video on Aug 4, with open-weight Dev variants promised as with prior generations.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
       "model": "Grok Imagine Image 2.0 API",
       "lab": "xAI",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Image model shipped Aug 7 in-product; API availability promised but not scheduled.",
+      "basis": "Image model launched Aug 7 in the Grok app; developer API access announced as coming but not dated.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -162,9 +162,9 @@
       "expectedWindow": "H2 2026",
       "expectedDate": "2026-11",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "rumored",
-      "basis": "Fable 5 shipped Jun 9 and got a biology-safeguards update Aug 7; no successor is dated or marketed.",
+      "basis": "Fable 5 shipped Jun 9 and sits second on the AA Index at 62; no successor announced or dated.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -172,10 +172,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 84,
+      "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket eased to 84% by year-end on $1.31M; Sep 30 flat at 56%, Aug 31 13%, Aug 21 3%. Astra is not confirmed as GPT-6.",
+      "basis": "Polymarket's Dec 31 leg firmed to 85% on $1.31M; Sep 30 flat at 56%, Aug 31 13%. Manifold's ladder reads 52% before October.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -186,7 +186,7 @@
       "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold holds 64% before 2027 and 58% before December, but the mid-range cracked: 22% before November, down from 34%.",
+      "basis": "Manifold flat at 64% before 2027 and 58% before December, but only 22% before November and 6% before October.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -197,19 +197,19 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Google has not shipped 3.5 Pro yet; a major-version successor is inferred from cadence only, with no market.",
-      "source": "https://blog.google/technology/ai/"
+      "basis": "Google's roughly annual major-version cadence (Gemini 3 in Nov 2025) points to early 2027; nothing announced.",
+      "source": "https://blog.google/technology/google-deepmind/"
     },
     {
       "model": "K-EXAONE 3 / EXAONE next",
       "lab": "LG AI Research",
       "expectedWindow": "2027",
-      "expectedDate": "2027-03",
+      "expectedDate": "2027-01",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "K-EXAONE 2.0 shipped Jul 31 under Korea's sovereign-AI program; a successor is implied by the program, not dated.",
-      "source": "https://aireleasetracker.com/"
+      "basis": "K-EXAONE 2.0 shipped Jul 31 under Korea's sovereign-AI program; a successor is implied by the funded roadmap, not dated.",
+      "source": "https://aireleasetracker.com/latest"
     }
   ]
 }
