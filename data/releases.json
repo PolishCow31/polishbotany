@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T06:06:47-04:00",
+  "updated": "2026-08-14T09:06:47-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Qwen stated a small open checkpoint of the 3.8 line targeting mid-August; no dated market exists.",
+      "basis": "Qwen stated a small open checkpoint of the 3.8 line targeting mid-August; still unshipped, no dated market.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -22,7 +22,7 @@
       "frontier": false,
       "status": "confirmed",
       "basis": "Z.ai shipped GLM-5.3 Aug 14 with weights held roughly two weeks for safety hardening.",
-      "source": "https://aireleasetracker.com/latest"
+      "source": "https://z.ai/blog/glm-5.3"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -32,7 +32,7 @@
       "prob": 27,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Gemini-Pro market: 27% by Aug 31, 5% by Aug 21, on $1.04M volume.",
+      "basis": "Polymarket next-Gemini-Pro market flat at 27% by Aug 31, 4% by Aug 21, on $1.04M volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,7 +43,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "OpenAI announced the Ultrafast serving tier; no dated market covers general availability.",
+      "basis": "OpenAI previewed Ultrafast mode for GPT-5.6 Sol on Aug 13 claiming up to 14x speedup; no GA date or market.",
       "source": "https://releasebot.io/updates/openai"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi Grok 4.7 leg last read at 43%; Musk promised three-to-four weeks after Grok 4.6.",
+      "basis": "Kalshi Grok 4.7 leg last read at 43%; Kalshi rate-limited this sweep, so the number is carried forward.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -62,10 +62,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 77,
+      "prob": 76,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket cut Astra to 77% by Sep 30 from 83%; Oct 31 leg 88%, Sep 15 leg 40%.",
+      "basis": "Polymarket eased Astra to 76% by Sep 30 from 77%; Oct 31 leg 88%, Sep 15 at 40%, Aug 31 at 13%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -73,10 +73,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 75,
+      "prob": 74,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Mythos market flat at 75% by Sep 30; Sep 15 at 46%, Aug 31 at 20%.",
+      "basis": "Polymarket next-Mythos market eased to 74% by Sep 30 from 75%; Sep 15 at 44%, Aug 31 at 20%.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -98,8 +98,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Meta committed to downloadable Muse Spark weights; no dated market exists.",
-      "source": "https://www.cnbc.com/2026/08/12/meta-nvidia-open-weight-ai-race-china.html"
+      "basis": "Zuckerberg said Aug 10 Meta will open Muse Spark 1.2 weights for public download; no date given.",
+      "source": "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html"
     },
     {
       "model": "Seedance 2.5 API (BytePlus ModelArk)",
@@ -186,7 +186,7 @@
       "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket GPT-6 flat at 84% by Dec 31; Sep 30 leg 42%, Aug 31 leg 10%, $1.33M volume.",
+      "basis": "Polymarket flat at 84% by Dec 31 but cut the Sep 30 leg to 36% from 42%; Aug 31 8%. $1.33M volume.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -197,7 +197,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold holds 70% before 2027 but cut the before-December leg to 47% from 58%.",
+      "basis": "Manifold holds 70% before 2027, 47% before December, 20% before November, 5% before October.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
