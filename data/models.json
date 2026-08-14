@@ -2698,6 +2698,38 @@
         "https://www.axios.com/2026/08/13/google-gemini-37-flash",
         "https://9to5google.com/2026/08/13/gemini-3-7-flash-launch/"
       ]
+    },
+    {
+      "name": "Qwen3.8-2.4T-A95B",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-08-12",
+      "params": "2.4T total / 95B active (sparse MoE: 92 layers, hidden dim 8192, 512 experts with 10 routed + 1 shared, hybrid Gated DeltaNet attention)",
+      "context": "262K native, extensible to ~1.01M",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "GPQA Diamond": 92.6,
+        "SWE-bench Pro": 67.7,
+        "Terminal-Bench 2.1": 86.6,
+        "DeepSWE 1.1": 56.6,
+        "PaperBench": 93.0,
+        "AndroidBench": 75.1,
+        "HLE": 43.6,
+        "IFBench": 82.8,
+        "HealthBench": 60.2,
+        "PLawBench": 73.2,
+        "MRCR v2 256K (8-needle)": 92.9,
+        "LongBench v2": 66.3
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "The downloadable half of Qwen3.8 and the first Max-class Qwen ever released with open weights, pushed to Hugging Face and ModelScope on Aug 12 2026 nine days after the hosted Qwen3.8-Max. Architecture is a 2.4-trillion-parameter sparse mixture-of-experts with 95B active per token across 92 layers, 512 experts (10 routed plus 1 shared) and a hybrid stack that pairs Gated DeltaNet linear attention with standard attention; context is 262,144 tokens natively, extensible to roughly 1.01M. It is not the same product as the API model: the open checkpoint is text-only, requires thinking mode for every interaction, and drops the hosted Max's vision input, non-thinking mode, default 1M context and built-in tools. The license is Alibaba's own qwen3.8-max terms rather than Apache 2.0, a step back from the permissive releases of Qwen-Image 1.0/2.0, and the model card drew immediate community pushback over the stripped features. An official FP8 quantization ships alongside with near-identical scores, community GGUF conversions followed, and NVIDIA published a serving recipe for GB300 NVL72. Reported scores include 92.6 on GPQA Diamond, 67.7 on SWE-bench Pro, 86.6 on Terminal-Bench 2.1 and 93.0 on PaperBench.",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B-FP8",
+        "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72/",
+        "https://www.mindstudio.ai/blog/qwen3-8-2-4t-a95b-release"
+      ]
     }
   ]
 }
