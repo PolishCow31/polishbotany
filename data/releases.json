@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T12:06:19-04:00",
+  "updated": "2026-08-14T15:06:13-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "ModelScope countdown now targets Aug 15 00:00 JST after the Aug 10 window lapsed; no repo or model card yet.",
-      "source": "https://aireleasetracker.com/latest"
+      "basis": "ModelScope countdown now inside 24 hours to Aug 15 00:00 JST; still no official Hugging Face repo or model card.",
+      "source": "https://huggingface.co/Qwen/Qwen3.8-27B"
     },
     {
       "model": "GLM-5.3 open weights",
@@ -21,18 +21,18 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "GLM-5.3 shipped Aug 14 as a closed API model; Z.ai's pattern is a weights drop shortly after.",
-      "source": "https://z.ai/blog/glm-5.3"
+      "basis": "Z.ai states weights will follow in about two weeks, once safety evaluation and hardening are complete.",
+      "source": "https://www.marktechpost.com/2026/08/14/z-ai-ships-glm-5-3-without-retraining-the-base-model-better-at-complex-coding-and-long-horizon-tasks/"
     },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 28,
+      "prob": 29,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 leg at 28%; Gemini 3.7 Flash shipped first, ahead of the Pro tier.",
+      "basis": "Polymarket Aug 31 leg 29%, Aug 21 at 6%; two Flash releases have now shipped ahead of the Pro tier.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "Musk promised Grok 4.7 in three to four weeks; Kalshi carried at 43% (rate-limited this sweep).",
+      "basis": "Musk promised Grok 4.7 in three to four weeks; Kalshi's 43% carried forward, rate-limited again this sweep.",
       "source": "https://www.axios.com/2026/08/13/grok-elon-musk-ai-zuckerberg-and-meta"
     },
     {
@@ -62,10 +62,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 75,
+      "prob": 74,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket Sep 30 leg 75%, Oct 31 at 88%; development partly paused over critical-risk cyber evals.",
+      "basis": "Polymarket Sep 30 leg eased to 74%, Oct 31 to 86%; added security reviews cited before broader availability.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -73,10 +73,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 72,
+      "prob": 76,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg 72%, down from 74%; Sep 15 at 45%, Aug 31 at 18%.",
+      "basis": "Polymarket Sep 30 leg climbed to 76% from 72%; Sep 15 at 45%, Aug 31 flat at 18%.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -175,7 +175,7 @@
       "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket year-end leg flat at 84%; the Sep 30 leg rebounded to 42% from 36% this sweep.",
+      "basis": "Polymarket year-end flat at 84%; Manifold's before-October leg collapsed to 41% from 52% this sweep.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -186,7 +186,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 at 70%, flat; only 5% before October and 47% before December.",
+      "basis": "Manifold before-2027 flat at 70%; only 5% before October, 21% before November, 47% before December.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
