@@ -2773,6 +2773,38 @@
         "https://developer.puter.com/ai/bytedance-seed/seed-2-1-turbo/",
         "https://llmgateway.io/timeline"
       ]
+    },
+    {
+      "name": "Qwen3.8-27B",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-08-14",
+      "params": "27.8B dense",
+      "context": "262K (extensible to 1M via YaRN)",
+      "modality": "text + image + video in, text out",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Pro": 61.7,
+        "Terminal-Bench 2.1": 73.0,
+        "GPQA Diamond": 89.2,
+        "LiveCodeBench v6": 90.3,
+        "OSWorld-Verified": 84.3,
+        "DeepSWE 1.1": 42.2,
+        "QwenSWEBench": 79.0,
+        "CoWorkBench": 70.7,
+        "IFBench": 79.5,
+        "MathVision": 94.6,
+        "SWE-MM": 38.6,
+        "Agents' Last Exam": 20.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "The self-hostable member of the Qwen3.8 generation, released under Apache 2.0 at 15:00 UTC on Aug 14 2026 after a ModelScope countdown, a day behind the 2.4T-A95B flagship weights. At 27.8B dense parameters it is sized to run on a single GPU while accepting text, images and video, with a 262K native context extensible to roughly 1M tokens via YaRN and an adjustable reasoning_effort control. Alibaba's own card reports 61.7 on SWE-bench Pro and 90.3 on LiveCodeBench v6 - above the Claude Opus 4.6 Max figures it cites (53.4 and 88.8) - plus 73.0 on Terminal-Bench 2.1 and 89.2 GPQA Diamond against Meta Muse Glimmer 30B's 51.7 and 83.5. Every launch number is vendor-reported and several benchmarks (QwenSWEBench, CoWorkBench) are in-house, so independent confirmation is still outstanding.",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "https://officechai.com/miscellaneous/alibaba-releases-qwen-3-8-27b-beats-muse-glimmer-30b-on-many-benchmarks/",
+        "https://aireleasetracker.com/model/qwen/qwen3.8-27b",
+        "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new"
+      ]
     }
   ]
 }
