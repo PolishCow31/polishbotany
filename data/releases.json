@@ -1,16 +1,16 @@
 {
-  "updated": "2026-08-14T09:06:47-04:00",
+  "updated": "2026-08-14T12:06:19-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "Qwen3.8-27B (open weights)",
       "lab": "Alibaba (Qwen)",
-      "expectedWindow": "by Aug 2026",
+      "expectedWindow": "by Aug 15 2026",
       "expectedDate": "2026-08",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Qwen stated a small open checkpoint of the 3.8 line targeting mid-August; still unshipped, no dated market.",
+      "basis": "ModelScope countdown now targets Aug 15 00:00 JST after the Aug 10 window lapsed; no repo or model card yet.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -21,7 +21,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Z.ai shipped GLM-5.3 Aug 14 with weights held roughly two weeks for safety hardening.",
+      "basis": "GLM-5.3 shipped Aug 14 as a closed API model; Z.ai's pattern is a weights drop shortly after.",
       "source": "https://z.ai/blog/glm-5.3"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
       "expectedDate": "2026-08",
-      "prob": 27,
+      "prob": 28,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Gemini-Pro market flat at 27% by Aug 31, 4% by Aug 21, on $1.04M volume.",
+      "basis": "Polymarket Aug 31 leg at 28%; Gemini 3.7 Flash shipped first, ahead of the Pro tier.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,7 +43,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "OpenAI previewed Ultrafast mode for GPT-5.6 Sol on Aug 13 claiming up to 14x speedup; no GA date or market.",
+      "basis": "OpenAI release notes list the Ultrafast tier as staged rollout with no dated market.",
       "source": "https://releasebot.io/updates/openai"
     },
     {
@@ -54,18 +54,18 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi Grok 4.7 leg last read at 43%; Kalshi rate-limited this sweep, so the number is carried forward.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
+      "basis": "Musk promised Grok 4.7 in three to four weeks; Kalshi carried at 43% (rate-limited this sweep).",
+      "source": "https://www.axios.com/2026/08/13/grok-elon-musk-ai-zuckerberg-and-meta"
     },
     {
       "model": "Astra (next OpenAI model family)",
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 76,
+      "prob": 75,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket eased Astra to 76% by Sep 30 from 77%; Oct 31 leg 88%, Sep 15 at 40%, Aug 31 at 13%.",
+      "basis": "Polymarket Sep 30 leg 75%, Oct 31 at 88%; development partly paused over critical-risk cyber evals.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -73,21 +73,21 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 74,
+      "prob": 72,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Mythos market eased to 74% by Sep 30 from 75%; Sep 15 at 44%, Aug 31 at 20%.",
+      "basis": "Polymarket Sep 30 leg 72%, down from 74%; Sep 15 at 45%, Aug 31 at 18%.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
       "model": "Nemotron 4 (larger tier)",
       "lab": "NVIDIA",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
+      "expectedDate": "2026-11",
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Follows Nemotron 3.5 Lightning; NVIDIA has signalled a larger open tier but set no date.",
+      "basis": "Follows Nemotron 3.5 Lightning; NVIDIA has signalled a larger open tier but given no date.",
       "source": "https://www.cnbc.com/2026/08/11/nvidia-releases-nemotron-3point5-lightning-open-source-ai-model-.html"
     },
     {
@@ -98,7 +98,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Zuckerberg said Aug 10 Meta will open Muse Spark 1.2 weights for public download; no date given.",
+      "basis": "Zuckerberg publicly committed to open-weighting Meta's latest model; no release date given.",
       "source": "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html"
     },
     {
@@ -109,7 +109,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "ByteDance said API access follows the app rollout; no dated market exists.",
+      "basis": "Seedance 2.5 shipped in-product Jul 31; the public API tier is still staged.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -120,19 +120,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Larger sibling to M3 discussed by MiniMax; no confirmed date or market.",
+      "basis": "Tracker chatter only; MiniMax has released M3 and H3 without a dated Pro-tier weights drop.",
       "source": "https://llmgateway.io/timeline"
-    },
-    {
-      "model": "DeepSeek-V4-Pro-0813 open weights",
-      "lab": "DeepSeek",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "V4-Pro line is MIT-licensed, but a separate 0813 checkpoint has not been confirmed posted.",
-      "source": "https://api-docs.deepseek.com/news/news260813"
     },
     {
       "model": "Claude Haiku 5",
@@ -142,7 +131,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Opus 5 and Sonnet 5 have shipped; the small tier has not been dated by Anthropic.",
+      "basis": "Opus 5 and Sonnet 5 have shipped; the small tier is the obvious gap with no announced date.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -153,18 +142,18 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Black Forest Labs committed to open Dev weights after the FLUX 3 launch; no date given.",
+      "basis": "BFL has committed to a Dev-tier open release following FLUX 3 and FLUX 3 Video.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
       "model": "Grok Imagine Image 2.0 API",
       "lab": "xAI",
       "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "xAI shipped Imagine Image 2.0 in-app Aug 7 and said API access follows; no date.",
+      "basis": "Image 2.0 shipped in-product Aug 7; API access announced but not yet generally available.",
       "source": "https://aireleasetracker.com/latest"
     },
     {
@@ -175,18 +164,18 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Fable 5 shipped Jun 9; no successor announced or dated by Anthropic.",
+      "basis": "Fable 5 launched Jun 9 and still sits second on AA-Index; no successor announced.",
       "source": "https://www.anthropic.com/news"
     },
     {
       "model": "GPT-6",
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
-      "expectedDate": "2026-12",
+      "expectedDate": "2026-11",
       "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket flat at 84% by Dec 31 but cut the Sep 30 leg to 36% from 42%; Aug 31 8%. $1.33M volume.",
+      "basis": "Polymarket year-end leg flat at 84%; the Sep 30 leg rebounded to 42% from 36% this sweep.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -197,7 +186,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold holds 70% before 2027, 47% before December, 20% before November, 5% before October.",
+      "basis": "Manifold before-2027 at 70%, flat; only 5% before October and 47% before December.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -208,7 +197,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Successor generation after the Gemini 3.x line; no announcement or dated market.",
+      "basis": "Tracker speculation following the Gemini 3.x cadence; no Google confirmation or dated market.",
       "source": "https://aitoolsrecap.com/Blog/upcoming-ai-models-2026-release-tracker"
     },
     {
@@ -219,7 +208,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "K-EXAONE 2.0 shipped Jul 31 2026; LG has not dated a successor.",
+      "basis": "K-EXAONE 2.0 shipped Jul 31; LG's cadence implies a 2027 successor with no announced date.",
       "source": "https://aireleasetracker.com/latest"
     }
   ]
