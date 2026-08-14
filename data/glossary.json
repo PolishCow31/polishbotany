@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-13T21:08:33-04:00",
+  "updated": "2026-08-14T03:06:39-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -298,6 +298,17 @@
         "agent harness",
         "agent framework",
         "scaffolding"
+      ]
+    },
+    {
+      "term": "Agents' Last Exam",
+      "acronym": "ALE",
+      "category": "Benchmarks & evals",
+      "def": "A hard long-horizon agent benchmark testing multi-step CLI and tool-use tasks; frontier and open models still score below 30 percent.",
+      "aka": [
+        "ALE",
+        "Agents Last Exam",
+        "Agents' Last Exam (CLI)"
       ]
     },
     {
@@ -6620,6 +6631,16 @@
       ]
     },
     {
+      "term": "Post-training-only release",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "A model update that reuses an existing pretrained base unchanged and derives all capability gains from scaled reinforcement learning and fine-tuning.",
+      "aka": [
+        "post-training scaling release",
+        "same-base refresh"
+      ]
+    },
+    {
       "term": "Post-transformer architecture",
       "acronym": "",
       "category": "Model architecture",
@@ -8157,6 +8178,16 @@
       "aka": [
         "Stability",
         "Stability.ai"
+      ]
+    },
+    {
+      "term": "Staged weight release",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Shipping an open-weight model via API first and withholding downloadable weights for a safety-evaluation period, delaying irreversible public distribution.",
+      "aka": [
+        "delayed open weights",
+        "safety-gated weight release"
       ]
     },
     {

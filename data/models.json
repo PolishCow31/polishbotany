@@ -2730,6 +2730,31 @@
         "https://developer.nvidia.com/blog/serve-qwen3-8-2-4t-a95b-a-2-4t-parameter-model-with-configurable-reasoning-on-nvidia-gb300-nvl72/",
         "https://www.mindstudio.ai/blog/qwen3-8-2-4t-a95b-release"
       ]
+    },
+    {
+      "name": "GLM-5.3",
+      "lab": "Zhipu / Z.ai",
+      "released": "2026-08-14",
+      "params": "~743B base (MoE) - unchanged base model from GLM-5.2; all gains from scaled post-training",
+      "context": "1M (base unchanged from GLM-5.2)",
+      "modality": "text",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 3.0": 28.3,
+        "DeepSWE v1.1": 66.9,
+        "Agents' Last Exam": 28.5,
+        "CyberGym": 84.5,
+        "ExploitBench": 54.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Z.ai shipped GLM-5.3 on Aug 14 2026 under the tagline 'Built to Code. Ready for Cyber Defense.' The base model is untouched from GLM-5.2 - roughly 743B parameters - and every capability gain comes from scaled-up post-training, the same post-training-only pattern DeepSeek used for V4-Pro-0813 a day earlier. Coding and agentic jumps are large on vendor numbers: Terminal-Bench 3.0 goes 4.6 to 28.3, DeepSWE v1.1 46.2 to 66.9, Agents' Last Exam 23.8 to 28.5, with Z.ai claiming roughly a 50% coding improvement over GLM-5.2 and capabilities 'approaching Claude Fable 5'. The louder story is cybersecurity, where Z.ai says capability compounded faster than expected as training scaled and the model began planning full exploitation chains rather than isolated bug-finding: CyberGym 84.5 (vs 77.2 for GLM-5.2) edges past Mythos 5 at 83.8 and GPT-5.6 Sol at 83.6, but ExploitBench 54.4 still trails both badly (78.0 and 76.5), and ExploitGym solve counts under a 2-hour budget are 105 tasks against Mythos 5's 181. Vision, the top community ask in Z.ai's July developer poll, did not ship. Availability is staged: live now via the GLM Coding Plan, ZCode and API, with open weights held back roughly two weeks pending safety evaluation and hardening - a deliberate break from GLM-5.2, whose weights went up on release day. No Artificial Analysis Intelligence Index score or public API price has been published yet, and none of the vendor benchmarks are independently replicated.",
+      "sources": [
+        "https://z.ai/blog/glm-5.3",
+        "https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/",
+        "https://finance.biggo.com/news/0b571a42-9531-433c-b81b-c8468d173989",
+        "https://kie.ai/blog/what-is-glm-5-3"
+      ]
     }
   ]
 }

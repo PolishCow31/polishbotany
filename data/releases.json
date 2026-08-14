@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-14T00:05:11-04:00",
+  "updated": "2026-08-14T03:06:39-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -14,6 +14,17 @@
       "source": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B"
     },
     {
+      "model": "GLM-5.3 open weights",
+      "lab": "Zhipu / Z.ai",
+      "expectedWindow": "by late Aug 2026",
+      "expectedDate": "2026-08",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Z.ai shipped GLM-5.3 Aug 14 API-only and says weights follow in about two weeks, after safety evaluation and hardening.",
+      "source": "https://z.ai/blog/glm-5.3"
+    },
+    {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Aug 31 2026",
@@ -21,7 +32,7 @@
       "prob": 27,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Aug 31 firmed slightly to 27% from 26.1%; the Aug 21 leg is 7% and Aug 14 is 1%. Kalshi unreachable this sweep.",
+      "basis": "Polymarket Aug 31 flat at 27%; Aug 21 at 6% and Aug 14 at 1%. Kalshi unreachable this sweep.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,18 +54,18 @@
       "prob": 43,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi Sep 4 at 43% carried from the last clean read; Kalshi rate-limited this sweep. Musk told Axios Aug 13 a larger 4.7 lands in three to four weeks.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
+      "basis": "Kalshi Sep 4 at 43% carried from the last clean read; Kalshi rate-limited again. Musk told Axios Aug 13 a larger 4.7 lands in three to four weeks.",
+      "source": "https://www.axios.com/2026/08/13/grok-elon-musk-ai-zuckerberg-and-meta"
     },
     {
       "model": "Astra (next OpenAI model family)",
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 79,
+      "prob": 83,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket Sep 30 at 79%; the Oct 31 leg rose to 90% from 88.5%, Sep 15 at 41%, Aug 31 at 17%.",
+      "basis": "Polymarket Sep 30 rose to 82.7% from 79%; Oct 31 at 91%, Sep 15 at 42%, Aug 31 at 16%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -62,10 +73,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 74,
+      "prob": 75,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 rose to 74% from 72.5%; Sep 15 at 47%, Aug 31 at 22%.",
+      "basis": "Polymarket Sep 30 up to 75% from 74%; Sep 15 at 47%, Aug 31 down to 20% from 22%.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -102,17 +113,6 @@
       "source": "https://seed.bytedance.com/"
     },
     {
-      "model": "GLM-5.x",
-      "lab": "Zhipu / Z.ai",
-      "expectedWindow": "Q3 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Zhipu has shipped a GLM-5 point release roughly every four months; GLM-5.2 landed Jun 13.",
-      "source": "https://z.ai/blog"
-    },
-    {
       "model": "MiniMax M3 Pro (open weights)",
       "lab": "MiniMax",
       "expectedWindow": "Q3 2026",
@@ -120,7 +120,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "MiniMax shipped M3 in June and H3 on Jul 31; a larger open M3 tier is expected but unannounced.",
+      "basis": "MiniMax has released open weights for prior M-series checkpoints; a larger M3 Pro tier is discussed but undated.",
       "source": "https://www.minimax.io/news"
     },
     {
@@ -131,8 +131,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "DeepSeek shipped the GA build Aug 13 and has open-weighted every prior flagship; a 0813 checkpoint is not yet on Hugging Face.",
-      "source": "https://huggingface.co/deepseek-ai"
+      "basis": "The V4-Pro line is MIT-licensed on Hugging Face, but a distinct 0813 checkpoint has not been confirmed posted.",
+      "source": "https://api-docs.deepseek.com/news/news260813"
     },
     {
       "model": "Claude Haiku 5",
@@ -142,7 +142,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Sonnet 5 shipped Jun 30 and Opus 5 Jul 24; the small tier is still on Haiku 4.5 from Oct 2025.",
+      "basis": "Opus 5, Sonnet 5 and Fable 5 have shipped; the small Haiku tier has not been refreshed since 4.5 in Oct 2025.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -153,7 +153,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Black Forest Labs committed to open Dev weights following the FLUX 3 and FLUX 3 Video launches.",
+      "basis": "Black Forest Labs has committed to an open-weight Dev checkpoint following the FLUX 3 and FLUX 3 Video launches.",
       "source": "https://bfl.ai/"
     },
     {
@@ -164,7 +164,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Shipped Aug 7 in the Grok app; xAI says API access follows, without a date.",
+      "basis": "Shipped Aug 7 inside Grok surfaces; xAI says standalone API access follows, without a date.",
       "source": "https://x.ai/news"
     },
     {
@@ -173,9 +173,9 @@
       "expectedWindow": "H2 2026",
       "expectedDate": "2026-11",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "rumored",
-      "basis": "Fable 5 shipped Jun 9 and still sits second on the index at 62; no successor announced.",
+      "basis": "Fable 5 launched Jun 9 and sits second on the index; no successor has been announced or dated.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -186,7 +186,7 @@
       "prob": 84,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 firmed to 84%, but the Sep 30 leg slid to 42% from 46.5% and Aug 31 to 11%. Manifold before-Oct at 52%.",
+      "basis": "Polymarket Dec 31 flat at 84%; Sep 30 flat at 42%, Aug 31 down to 9% from 11%, Aug 21 at 2%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -197,7 +197,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 flat at 70%; before-December 58%, before-November 20%, before-October 5%.",
+      "basis": "Manifold prices 70% before 2027 and 58% before December; Kalshi's 67% before-2027 leg was unreachable this sweep.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -208,7 +208,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "Kavukcuoglu now owns the next Gemini; with 3.5 Pro still unshipped, a Gemini 4 is a 2027 question.",
+      "basis": "No dated market or announcement; Google has not shipped 3.5 Pro yet, pushing a full-number successor into 2027.",
       "source": "https://blog.google/technology/google-deepmind/"
     },
     {
@@ -219,7 +219,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "K-EXAONE 2.0 shipped Jul 31 under Korea's sovereign-model program; the next tier is expected but undated.",
+      "basis": "K-EXAONE 2.0 shipped Jul 31 on a roughly annual cadence; no successor announced.",
       "source": "https://www.lgresearch.ai/"
     }
   ]
