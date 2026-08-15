@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T12:06:48-04:00",
+  "updated": "2026-08-15T15:05:58-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1850,6 +1850,17 @@
       ]
     },
     {
+      "term": "Confidential computing",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Hardware-enforced isolation, using trusted execution environments, that keeps model weights and user data encrypted in memory and unreadable to the host operator.",
+      "aka": [
+        "trusted execution environment",
+        "TEE",
+        "secure enclave"
+      ]
+    },
+    {
       "term": "Confidential S-1 filing",
       "acronym": "",
       "category": "Economics & compute",
@@ -2787,6 +2798,17 @@
       ]
     },
     {
+      "term": "Encrypted inference",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Serving a model so the provider cannot read user inputs, typically via homomorphic encryption or trusted hardware; costs large slowdowns versus plaintext serving.",
+      "aka": [
+        "private inference",
+        "privacy-preserving inference",
+        "blind inference"
+      ]
+    },
+    {
       "term": "Endpoint Accuracy Index",
       "acronym": "EAI",
       "category": "Inference & serving",
@@ -3336,6 +3358,17 @@
         "full duplex",
         "simultaneous listen-and-speak",
         "continuous voice"
+      ]
+    },
+    {
+      "term": "Fully homomorphic encryption",
+      "acronym": "FHE",
+      "category": "Inference & serving",
+      "def": "Encryption scheme allowing arbitrary computation directly on ciphertext, so a server can run model inference without ever seeing the plaintext input or output.",
+      "aka": [
+        "FHE",
+        "homomorphic encryption",
+        "encrypted computation"
       ]
     },
     {
