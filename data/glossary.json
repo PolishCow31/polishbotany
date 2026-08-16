@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15T15:05:58-04:00",
+  "updated": "2026-08-15T21:56:18-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -6875,6 +6875,17 @@
       ]
     },
     {
+      "term": "Power retention",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "An attention alternative that maintains a compressed recurrent state holding only task-relevant information, trading exact recall for linear-cost long-context processing.",
+      "aka": [
+        "power attention",
+        "retention layer",
+        "attention alternative"
+      ]
+    },
+    {
       "term": "Power Usage Effectiveness",
       "acronym": "PUE",
       "category": "Economics & compute",
@@ -7392,6 +7403,17 @@
         "thinking budget",
         "reasoning level",
         "effort setting"
+      ]
+    },
+    {
+      "term": "Reasoning effort control",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "An API parameter letting callers set how much internal reasoning a model spends per request, trading latency and token cost against accuracy on hard prompts.",
+      "aka": [
+        "reasoning_effort",
+        "thinking budget",
+        "effort level"
       ]
     },
     {
