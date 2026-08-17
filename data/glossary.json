@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-17T12:07:52-04:00",
+  "updated": "2026-08-17T18:05:40-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2722,6 +2722,18 @@
       ]
     },
     {
+      "term": "EAGLE",
+      "acronym": "EAGLE",
+      "category": "Inference & serving",
+      "def": "A speculative-decoding method that drafts tokens by predicting the target model's own feature vectors, raising accepted-draft length versus a separate draft model.",
+      "aka": [
+        "Extrapolation Algorithm for Greater Language-model Efficiency",
+        "feature-level speculative decoding",
+        "EAGLE-2",
+        "EAGLE-3"
+      ]
+    },
+    {
       "term": "Early exit",
       "acronym": "",
       "category": "Inference & serving",
@@ -5098,6 +5110,16 @@
       "aka": [
         "LongBench-v2",
         "LongBench 2"
+      ]
+    },
+    {
+      "term": "Lookahead decoding",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Parallel decoding that generates and verifies several n-gram continuations per step using Jacobi iteration, cutting latency without a separate draft model or quality loss.",
+      "aka": [
+        "Jacobi decoding",
+        "parallel n-gram decoding"
       ]
     },
     {
