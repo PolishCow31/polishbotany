@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T09:09:26-04:00",
+  "updated": "2026-08-18T12:07:34-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -14,6 +14,28 @@
       "source": "https://z.ai/blog/glm-5.3"
     },
     {
+      "model": "Next Mythos-class model",
+      "lab": "Anthropic",
+      "expectedWindow": "by Sep 30 2026",
+      "expectedDate": "2026-09",
+      "prob": 82,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Polymarket Sep 30 leg jumped to 82% from 74%; Sep 15 to 61% from 48%, Aug 31 to 34% from 12% on $126K volume.",
+      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
+    },
+    {
+      "model": "Astra (next OpenAI model family)",
+      "lab": "OpenAI",
+      "expectedWindow": "by Sep 30 2026",
+      "expectedDate": "2026-09",
+      "prob": 72,
+      "frontier": true,
+      "status": "confirmed",
+      "basis": "Polymarket Sep 30 leg sold off to 72% from 79%; Aug 31 17%, Sep 15 57%, Oct 31 down to 82%. Cyber-capability hold persists.",
+      "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
+    },
+    {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Sep 30 2026",
@@ -21,7 +43,7 @@
       "prob": 45,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 leg eased to 45% from 46%; Aug 21 at 2%, Aug 31 flat at 9%, Sep 15 28%, Oct 31 71%.",
+      "basis": "Polymarket Sep 30 leg flat at 45%, but Sep 15 slid to 21% from 28%; Aug 21 2%, Aug 31 8%, Oct 31 71%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -32,7 +54,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Announced as a serving tier alongside the Sol line; no dated market covers general availability.",
+      "basis": "Cerebras-served ~750 tok/s tier is in limited API preview; no dated market covers general availability.",
       "source": "https://openai.com/index/gpt-5-6/"
     },
     {
@@ -43,30 +65,8 @@
       "prob": 44,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi Grok 4.7 before-Sep-4 leg last read 44%; Kalshi returned rate limits again this sweep, so the number is carried forward.",
+      "basis": "Kalshi Grok 4.7 before-Sep-4 leg last read 44%; Kalshi rate-limited this sweep, so the number is carried forward.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
-    },
-    {
-      "model": "Astra (next OpenAI model family)",
-      "lab": "OpenAI",
-      "expectedWindow": "by Sep 30 2026",
-      "expectedDate": "2026-09",
-      "prob": 79,
-      "frontier": true,
-      "status": "confirmed",
-      "basis": "Polymarket Sep 30 leg firmed to 79% from 78%; Aug 31 flat at 18%, Sep 15 at 60%, Oct 31 at 87%.",
-      "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
-    },
-    {
-      "model": "Next Mythos-class model",
-      "lab": "Anthropic",
-      "expectedWindow": "by Sep 30 2026",
-      "expectedDate": "2026-09",
-      "prob": 74,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Polymarket Sep 30 leg flat at 74%; Sep 15 at 48%, Aug 31 flat at 12% on $121K volume.",
-      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
       "model": "Muse Spark 1.2 open weights",
@@ -164,7 +164,7 @@
       "prob": 83,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 flat at 83%; the Sep 30 leg rebounded to 32% from 29%, Oct 31 46%, Nov 30 60%, Aug 31 8%.",
+      "basis": "Polymarket Dec 31 flat at 83% on $1.41M; the Sep 30 leg firmed to 34% from 32%, Oct 31 46%, Nov 30 60%, Aug 31 7%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {

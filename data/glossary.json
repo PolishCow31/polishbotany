@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-18T09:09:26-04:00",
+  "updated": "2026-08-18T12:07:34-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1340,6 +1340,17 @@
       ]
     },
     {
+      "term": "Byte Latent Transformer",
+      "acronym": "BLT",
+      "category": "Model architecture",
+      "def": "Tokenizer-free architecture that groups raw bytes into dynamically sized patches by entropy, spending more compute on hard spans than easy ones.",
+      "aka": [
+        "BLT",
+        "byte-level patching",
+        "tokenizer-free transformer"
+      ]
+    },
+    {
       "term": "Byte-level BPE",
       "acronym": "",
       "category": "Training & post-training",
@@ -2437,6 +2448,17 @@
       ]
     },
     {
+      "term": "Decoupled Clip and Dynamic Sampling Policy Optimization",
+      "acronym": "DAPO",
+      "category": "Training & post-training",
+      "def": "Open reinforcement-learning recipe for reasoning models that decouples the PPO clipping bounds and resamples degenerate prompt groups to keep gradients informative.",
+      "aka": [
+        "DAPO",
+        "decoupled clip RL",
+        "dynamic sampling policy optimization"
+      ]
+    },
+    {
       "term": "Deduplication",
       "acronym": "",
       "category": "Training & post-training",
@@ -2559,6 +2581,16 @@
       "aka": [
         "deterministic decoding",
         "reproducibility"
+      ]
+    },
+    {
+      "term": "Diffusion forcing",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Training scheme that gives each frame or token its own independent noise level, letting one model do both autoregressive rollout and full-sequence diffusion.",
+      "aka": [
+        "per-token noise level",
+        "causal diffusion training"
       ]
     },
     {
