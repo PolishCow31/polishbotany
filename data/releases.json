@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-19T10:19:40-04:00",
+  "updated": "2026-08-19T12:07:24-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Z.ai delayed weights ~2 weeks post-launch, to roughly Aug 28, pending cyber-capability hardening after 84.5% CyberGym.",
+      "basis": "Z.ai said open weights follow the Aug 14 API launch; no dated market exists.",
       "source": "https://z.ai/blog/glm-5.3"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 77,
+      "prob": 79,
       "frontier": true,
       "status": "expected",
-      "basis": "Ended a three-sweep slide: Sep 30 up to 77% from 76%; Sep 15 eased to 54%, Aug 31 17%. Thin $127K book.",
+      "basis": "Polymarket Sep 30 leg firmed to 79% from 77%; Sep 15 at 54%, Aug 31 at 18%.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 71,
+      "prob": 72,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Flat across the curve: Sep 15 42%, Sep 30 71%, Oct 31 85%, Aug 31 10%, on $249K traded.",
+      "basis": "Polymarket Sep 30 at 72%, Oct 31 86%; Kalshi cut its before-Oct-1 leg to 66% from 74%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 71,
+      "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Biggest mover this sweep: Sep 15 jumped to 30% from 22%, Sep 30 back to 48%; Oct 31 71%, Aug 31 10%. $1.10M book.",
+      "basis": "Polymarket Oct 31 eased to 68% from 71%; Sep 30 down to 43%, Sep 15 29%, Aug 31 10%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -54,7 +54,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Cerebras-served ~750 tok/s tier is in limited API preview; no dated market covers general availability.",
+      "basis": "OpenAI announced a faster Sol serving tier alongside the Jun 26 launch; no dated market.",
       "source": "https://openai.com/index/gpt-5-6/"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 44,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi returned HTTP 429 again this sweep, so the 44% is carried forward, not re-read.",
+      "basis": "Kalshi before-Sep-4 flat at 44%; before-Aug-28 jumped to 26% from 13% on a thin book.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -76,7 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Meta has committed to open weights for the Spark line; no dated market exists for the 1.2 drop.",
+      "basis": "Meta committed to open weights for the Spark line; no dated market exists.",
       "source": "https://ai.meta.com/blog/muse-spark/"
     },
     {
@@ -87,7 +87,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Announced for BytePlus ModelArk after the consumer rollout; no dated market.",
+      "basis": "ByteDance listed API availability on ModelArk following the Jul 31 model launch.",
       "source": "https://www.byteplus.com/en/modelark"
     },
     {
@@ -98,7 +98,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Shipped in-app Aug 7; xAI says API access follows. No dated market.",
+      "basis": "xAI said API access follows the Aug 7 in-app rollout; no dated market.",
       "source": "https://x.ai/news"
     },
     {
@@ -109,7 +109,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Community reports of a larger M3 tier following the H3 video release; unconfirmed by MiniMax.",
+      "basis": "Company posts point to a larger M3 tier after H3; no confirmed date or market.",
       "source": "https://www.minimax.io/news"
     },
     {
@@ -120,7 +120,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Haiku tier has not been refreshed since 4.5 in Oct 2025; no announcement or dated market.",
+      "basis": "Haiku tier has lagged each Claude generation; no announcement or dated market.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -131,7 +131,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "BFL has said open-weight Dev variants follow the FLUX 3 flagship; no date given.",
+      "basis": "BFL announced open-weight FLUX 3 variants following the Jul 23 launch.",
       "source": "https://bfl.ai/announcements"
     },
     {
@@ -142,7 +142,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Follows the Nemotron 3.5 Lightning refresh; NVIDIA has not confirmed a next major generation.",
+      "basis": "Follows the Nemotron 3 line and Aug 11 Lightning refresh; no date announced.",
       "source": "https://developer.nvidia.com/blog"
     },
     {
@@ -153,7 +153,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Fable 5 shipped Jun 9; no successor announced and no dated market covers the Fable line specifically.",
+      "basis": "Fable 5 shipped Jun 9; no successor announced and no dated market.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -161,10 +161,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 79,
+      "prob": 81,
       "frontier": true,
       "status": "expected",
-      "basis": "Steady on $1.44M traded: Dec 31 79%, Nov 30 66%, Oct 31 56%, Sep 30 22%, Aug 31 3%.",
+      "basis": "Polymarket Dec 31 firmed to 81% from 79%; Oct 31 jumped to 61% from 56%. Kalshi 75% before 2027.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -172,11 +172,11 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 70,
+      "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 leg flat at 70%; 47% before December, 21% before November, 5% before October, 1% before September.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "basis": "Kalshi before-2027 flat at 68%; before-Oct at 9%, before-Sep at 4%.",
+      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
     },
     {
       "model": "K-EXAONE 3 / EXAONE next",
@@ -186,7 +186,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "LG ships roughly annual EXAONE generations; K-EXAONE 2.0 landed Jul 31 2026. No dated market.",
+      "basis": "K-EXAONE 2.0 shipped Jul 31 on a roughly annual cadence; no dated market.",
       "source": "https://www.lgresearch.ai/blog"
     },
     {
@@ -195,9 +195,9 @@
       "expectedWindow": "no release planned",
       "expectedDate": "2027-01",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "rumored",
-      "basis": "Referenced in reporting as an internal capability run, not a product; Anthropic has announced no release.",
+      "basis": "Referenced only as an internal system; Anthropic has announced no release plan.",
       "source": "https://www.anthropic.com/news"
     },
     {
@@ -208,7 +208,7 @@
       "prob": -1,
       "frontier": true,
       "status": "rumored",
-      "basis": "No announcement; the 3.5 Pro slip pushes any Gemini 4 generation into 2027. No dated market.",
+      "basis": "Next major generation after the delayed 3.5 Pro; no announced date or market.",
       "source": "https://blog.google/technology/google-deepmind/"
     }
   ]
