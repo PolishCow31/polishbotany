@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T09:15:11-04:00",
+  "updated": "2026-08-29T13:59:47-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -4482,6 +4482,16 @@
       ]
     },
     {
+      "term": "IndexPool compression",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Z.ai's key-value compression scheme that pools indexed cache entries, cutting attention compute and shrinking the KV cache roughly 4.4x versus the uncompressed baseline.",
+      "aka": [
+        "IndexPool",
+        "index pooling"
+      ]
+    },
+    {
       "term": "IndexShare Attention",
       "acronym": "",
       "category": "Model architecture",
@@ -4762,6 +4772,16 @@
       "aka": [
         "transferable jailbreak",
         "attack transferability"
+      ]
+    },
+    {
+      "term": "Jalapeno",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "OpenAI's first custom inference chip, announced August 2026, claiming 1.5-1.9x more AI work per watt and 1.7-3.6x lower end-to-end latency, deploying by year-end.",
+      "aka": [
+        "Jalapeño",
+        "OpenAI inference chip"
       ]
     },
     {
@@ -6362,6 +6382,16 @@
       ]
     },
     {
+      "term": "N-gram embedding layer",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A large lookup table mapping token sequences to learned vectors, adding model capacity through memory rather than active compute, so parameters grow without slowing inference.",
+      "aka": [
+        "N-gram lookup table",
+        "n-gram embeddings"
+      ]
+    },
+    {
       "term": "National AI Foundation Model project",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -7582,6 +7612,16 @@
       "aka": [
         "QKV",
         "query key value projections"
+      ]
+    },
+    {
+      "term": "Qwen Sparse Attention",
+      "acronym": "QSA",
+      "category": "Model architecture",
+      "def": "Alibaba's sparse attention variant, interleaved with linear-attention layers so only a minority of layers pay full quadratic cost over the sequence.",
+      "aka": [
+        "QSA",
+        "Qwen sparse attention layers"
       ]
     },
     {
@@ -10126,6 +10166,16 @@
       "aka": [
         "Winograd Schema",
         "Wino Grande"
+      ]
+    },
+    {
+      "term": "Word Error Rate",
+      "acronym": "WER",
+      "category": "Benchmarks & evals",
+      "def": "Standard speech-recognition metric: insertions plus deletions plus substitutions divided by reference words. Lower is better; frontier transcription models now sit near 2-4%.",
+      "aka": [
+        "word error rate",
+        "transcription error rate"
       ]
     },
     {

@@ -2805,6 +2805,95 @@
         "https://aireleasetracker.com/model/qwen/qwen3.8-27b",
         "https://www.latent.space/p/ainews-qwen-38-max24t-and-27b-new"
       ]
+    },
+    {
+      "name": "GLM-5.3-Flash",
+      "lab": "Zhipu / Z.ai",
+      "released": "2026-08-26",
+      "params": "320B total / 18B active (MoE) - hybrid attention mixing KDA linear-attention layers with NoPE sparse MLA layers",
+      "context": "1,048,576",
+      "modality": "natively multimodal (text + image + video in), text out",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 57,
+        "Terminal-Bench 2.1": 84.3,
+        "DeepSWE v1.1": 63.4,
+        "Z.ai Code Bench v1.0": 29.0
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$0.15 in / $0.03 cached in / $0.50 out per 1M (50% launch discount via ZAI through Sep 9 2026)",
+      "notable": "The first GLM-5 model Z.ai describes as natively multimodal, and the cheapest model yet to reach an Artificial Analysis Intelligence Index of 57 - a point above Claude Opus 4.8 and level-plus with Gemini 3.7 Flash, at roughly nine cents per Index task. It spent its first week running anonymously as 'Ox Alpha' on OpenCode and OpenRouter, served entirely on domestically produced Chinese AI chips, before Z.ai revealed the identity on Aug 26. Three architecture changes carry the efficiency: hybrid KDA linear-attention plus NoPE sparse MLA layers, an IndexPool compression scheme Z.ai credits with a 4.4x smaller KV cache, and Manifold-Constrained Hyper-Connections. Weights ship under MIT on Hugging Face, and the model gives 3x the usable quota of full GLM-5.3 across every GLM Coding Plan tier.",
+      "sources": [
+        "https://www.marktechpost.com/2026/08/26/z-ai-releases-glm-5-3-flash-a-320b-a18b-natively-multimodal-moe-with-a-1m-token-context/",
+        "https://artificialanalysis.ai/models/glm-5-3-flash",
+        "https://siliconangle.com/2026/08/26/z-ai-open-sources-ox-alpha-model-as-glm-5-3-flash/"
+      ]
+    },
+    {
+      "name": "Qwen3.8-Flash-Next",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-08-26",
+      "params": "125B backbone + 51B N-gram embedding table + 4B multi-token-prediction module (~180B on disk) / 6B active per token",
+      "context": "262,144 native, extensible to ~1M via YaRN",
+      "modality": "multimodal (text + image in), text out",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Pro": 62.5,
+        "DeepSWE 1.1": 58.7,
+        "GPQA Diamond": 91.7,
+        "LiveCodeBench v6": 91.9,
+        "IFBench": 81.3,
+        "AndroidWorld": 84.5,
+        "RealWorldQA": 88.5
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$0.16 in / $0.47 out per 1M",
+      "notable": "Not a flagship - Alibaba shipped it explicitly as an early preview of the architecture that will underpin Qwen4, open-sourcing weights and an FP8 build at 11pm Beijing time on Aug 26. Four changes debut here: hybrid attention mixing Gated DeltaNet across 75% of layers with Qwen Sparse Attention on the rest, a Gated Residual with four parallel branches, a 20-million-entry N-gram lookup table that adds deterministic capacity without adding active compute, and Muon paired with AdamW during training. Alibaba says it trained for roughly one-ninth the cost of Qwen3.7-Plus. Every benchmark above is vendor-reported and not yet independently reproduced. Licensed qwen-community-1.0, and at 172.78 GiB in FP8 it needs multi-GPU serving rather than a workstation.",
+      "sources": [
+        "https://www.marktechpost.com/2026/08/26/alibabas-qwen-team-releases-qwen3-8-flash-next-a-125b-multimodal-moe-with-6b-active-parameters-previewing-the-qwen4-architecture/",
+        "https://technode.com/2026/08/26/alibabas-qwen-to-open-source-qwen3-8-flash-next-previewing-qwen4-architecture/",
+        "https://www.orcarouter.ai/blog/qwen3-8-flash-next-release"
+      ]
+    },
+    {
+      "name": "DeepSeek-V4-Flash-Vision-Exp",
+      "lab": "DeepSeek",
+      "released": "2026-08-21",
+      "params": "284B total / 13B active (MoE, same foundation as DeepSeek-V4-Flash-0731)",
+      "context": "1,048,576 (up to 384K completion tokens)",
+      "modality": "text + image in, text out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "pricing": "$0.22 in / $0.007 cached in / $0.66 out per 1M (images billed at text-token rates, max 384 tokens per image)",
+      "notable": "An experimental vision build of the cheap V4-Flash line, adding native image input while DeepSeek says it matches V4-Flash exactly on text - agents, reasoning and world knowledge. The point is agent workflows that never leave the model: screenshots, charts and document images go in under the same token pricing, via base64, external URL, or the free Files API, which lets one uploaded image be reused across requests without re-upload. DeepSeek claims a major jump over V4-Flash on multimodal agent benchmarks, putting multimodal agent performance close to Claude Opus 4.8, but published the comparison as a chart without numbers. No model card, license, or weights have accompanied the experimental vision build.",
+      "sources": [
+        "https://api-docs.deepseek.com/news/news260821/",
+        "https://openrouter.ai/deepseek/deepseek-v4-flash-vision-exp"
+      ]
+    },
+    {
+      "name": "Gemini 3.5 Transcribe",
+      "lab": "Google DeepMind",
+      "released": "2026-08-26",
+      "params": "undisclosed",
+      "context": "undisclosed",
+      "modality": "audio in, formatted text out (speech-to-text; streaming and non-streaming endpoints)",
+      "open": false,
+      "benchmarks": {
+        "Word Error Rate - non-streaming": 2.6,
+        "Word Error Rate - streaming": 4.0
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "Google's speech-to-text model, unveiled at I/O in May and fully launched with a model card on Aug 26 2026. Artificial Analysis measures a 2.6% word error rate non-streaming and 4.0% streaming, and Google claims a 70% improvement in transcription time over 2025's Chirp 3. It does more than transcribe: it strips filler words, resolves the speaker's own self-corrections, auto-formats the output, honors custom vocabulary and jargon, auto-detects more than 85 languages, and diarizes up to three speakers with timestamps on pre-recorded audio. Shipping now in Gboard Rambler on Android, the Gemini macOS app and Google Antigravity, with Chrome to follow; developers get it in public preview through the Gemini API and AI Studio, enterprises through the Gemini Enterprise Agent Platform.",
+      "sources": [
+        "https://9to5google.com/2026/08/26/gemini-3-5-transcribe/",
+        "https://www.androidauthority.com/google-introduces-gemini-audio-3703443/"
+      ]
     }
   ]
 }

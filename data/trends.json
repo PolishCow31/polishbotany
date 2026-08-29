@@ -734,6 +734,12 @@
           "lab": "Anthropic",
           "value": 25,
           "input": 5
+        },
+        {
+          "date": "2026-08-21",
+          "model": "GPT-5.6 Sol (>20% promotional cut, ~3 months)",
+          "lab": "OpenAI",
+          "value": 20
         }
       ],
       "notes": "Benchmark is API LIST price, not a capability score — lower is better, and the story is the cost collapse as capability-per-dollar exploded. Primary `value` = output $/1M tokens (the headline metric requested); `input` field carries input $/1M where it adds signal.\n\nTRAJECTORY LOGIC: I traced the *leading/flagship* model of each period rather than a single vendor, because the frontier baton passed between labs. Two parallel families coexist: OpenAI's GPT line and Anthropic's Claude/Opus line. Anthropic's top-tier \"Opus\" models persistently sit at a premium ($75 output for 3 Opus / Opus 4, only recently $25 for Opus 4.8), while OpenAI's flagship trended sharply cheaper — so the \"frontier price\" depends on whether you index on the cheapest-frontier or the most-capable-frontier. I included both vendors' notable points to show this honestly rather than cherry-picking the falling line.\n\nKEY DATA POINTS (all sourced):\n- GPT-3 davinci (OpenAI, 2020): $60/1M (was quoted as $0.06/1K tokens). Cut to $20/1M (~$0.02/1K) in Sept 2022. This is the same headline output number as GPT-4 three years later — but GPT-4 was vastly more capable for the same price, the first big capability-per-dollar jump.\n- GPT-4 8K (OpenAI, Mar 14 2023): $30 in / $60 out. The canonical \"$60/Mtok output\" frontier anchor.\n- GPT-4 Turbo (OpenAI, Nov 6 2023): $10 in / $30 out, 128K context. 2x cheaper output, more capable.\n- Claude 3 Opus (Anthropic, Mar 4 2024): $15 in / $75 out — note this is ABOVE GPT-4's output price; Anthropic priced its frontier at a premium. (One source quoted $18.75 input; $15/$75 is the canonical Anthropic-stated rate.)\n- GPT-4o (OpenAI, May 13 2024): $5 in / $15 out. Big step down, multimodal, GPT-4-class.\n- Claude 3.5 Sonnet (Anthropic, Jun 20 2024): $3 in / $15 out — beat Claude 3 Opus on benchmarks at 1/5 the price; the clearest single intra-lab capability-per-dollar leap.\n- GPT-4o price cut (OpenAI, Oct 2024): $2.50 in / $10 out (50% cut, via gpt-4o-2024-08-06 snapshot).\n- GPT-4.1 (OpenAI, Apr 14 2025): $2 in / $8 out, frontier-class, cheaper than 4o.\n- GPT-5 (OpenAI, Aug 7 2025): $1.25 in / $10 out. Frontier reasoning model at near-commodity input price.\n- Claude Opus 4.8 (Anthropic, May 28 2026): $5 in / $25 out — Anthropic's flagship Opus tier finally dropped from the long-standing $75 output to $25.\n\nCAVEATS / CONFLICTS RESOLVED:\n- GPT-5 launch price: one aggregator (tokenmix.ai) listed $5/$20, but OpenRouter, OpenAI's own announcement, and pecollective all confirm $1.25 in / $10 out at the Aug 7 2025 launch. I used the corroborated $1.25/$10. (Search snippets also surfaced $0.625/$5 — that's the 50%-off Batch API rate, not list.)\n- NOT a monotone fall. Two upward outliers worth flagging: (a) GPT-4.5 (OpenAI, Feb 2025) launched at $75 in / $150 out — a deliberate premium research-preview, an outlier I excluded from the main flagship line; (b) the Anthropic Opus tier held $75 output from Mar 2024 (Claude 3 Opus) all the way through Opus 4/4.1 (2025) before dropping. So \"frontier price\" only collapses cleanly if you track the cheapest-frontier (OpenAI GPT line); the most-capable-frontier (Opus) collapsed much later and less.\n- Prices are standard real-time list rates. Batch API is ~50% off and prompt caching ~90% off on cached input across both vendors throughout — so effective costs ran well below these list numbers, especially 2024 onward.\n- Headline trend per a curated history source: frontier OUTPUT price fell ~4x on the GPT line ($60 GPT-4 2023 → $15 by 2025-26 flagships), while input price fell far more steeply (GPT-4 $30 → GPT-5 $1.25 = ~24x), because output tokens stayed relatively more expensive than input across the board.\n\nBeyond-2026 context surfaced but not included as frontier points (later/post-cutoff, vendor-specific): GPT-5.4 (~$2.50/$15) and GPT-5.5 (a price INCREASE to $5/$30, Apr 2026) — i.e., the collapse is not guaranteed to continue; OpenAI raised prices on the GPT-5.5 line. Treat any 2026+ figure as lightly sourced from pricing aggregators.",
@@ -831,6 +837,12 @@
           "model": "DeepSeek-V4-Pro-0813",
           "lab": "DeepSeek",
           "value": 53
+        },
+        {
+          "date": "2026-08-26",
+          "model": "GLM-5.3-Flash",
+          "lab": "Zhipu / Z.ai",
+          "value": 57
         }
       ],
       "predicted": [],

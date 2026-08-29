@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-20T09:15:11-04:00",
+  "updated": "2026-08-29T13:59:47-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,18 +10,18 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Z.ai holding weights roughly two weeks past the Aug 14 launch for cyber safety hardening; no dated market.",
-      "source": "https://www.explainx.ai/blog/glm-5-3-launch-cyber-defense-benchmarks-august-2026"
+      "basis": "Z.ai's Hugging Face placeholder named Aug 28; reporting says the license moves off MIT. Weights not confirmed live.",
+      "source": "https://thenewstack.io/zai-glm-weights-license/"
     },
     {
       "model": "Next Mythos-class model",
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 79,
+      "prob": 92,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Sep 30 eased to 79% from 80%; Sep 15 51%, Aug 31 24%. $137K volume.",
+      "basis": "Polymarket Sep 30 surged to 92% from 79%; Sep 15 78% from 51%, Oct 31 94%. Volume $542K, up from $137K.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 74,
+      "prob": 83,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket Sep 30 flat at 74%; Oct 31 firmed to 88% from 87%, Sep 15 37%, Aug 31 11%.",
+      "basis": "Polymarket Sep 30 firmed to 83% from 74%; Sep 15 57% from 37%, Oct 31 90%, Aug 31 2%. Volume $403K.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 67,
+      "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Oct 31 eased to 67% from 68%; Sep 30 cut to 36% from 41%, Sep 15 27%, Aug 31 8%.",
+      "basis": "Polymarket Oct 31 firmed to 73% from 67% while Sep 30 slid again to 27% from 36%. Volume $1.17M.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -65,8 +65,19 @@
       "prob": 44,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi before-Sep-4 last read 44%; Kalshi returned HTTP 429 again this sweep, so no fresh number.",
+      "basis": "Stale: Kalshi before-Sep-4 last read 44% and returned HTTP 429 for a third consecutive sweep. No fresh number.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
+    },
+    {
+      "model": "Qwen4",
+      "lab": "Alibaba (Qwen)",
+      "expectedWindow": "H2 2026 / H1 2027",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": true,
+      "status": "rumored",
+      "basis": "Qwen3.8-Flash-Next shipped Aug 26 as an explicit architecture preview of Qwen4; Alibaba named no date and no market exists.",
+      "source": "https://technode.com/2026/08/26/alibabas-qwen-to-open-source-qwen3-8-flash-next-previewing-qwen4-architecture/"
     },
     {
       "model": "Muse Spark 1.2 open weights",
@@ -161,10 +172,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 75,
+      "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Dec 31 cut to 75% from 81%; Nov 30 63%, Oct 31 56%, Sep 30 24%, Aug 31 2%.",
+      "basis": "Polymarket Dec 31 eased to 68% from 75% even as near legs rose - Sep 30 43%, Oct 31 45%, Nov 30 61%. Volume $1.65M.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -172,10 +183,10 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 68,
+      "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Kalshi before-2027 last read 68%; Kalshi rate-limited this sweep. Manifold prices 70% before 2027.",
+      "basis": "Manifold prices 70% before 2027; before Dec 47%, before Nov 27%, before Oct 4%. Kalshi rate-limited again.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
