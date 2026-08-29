@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-29T15:41:30-04:00",
+  "updated": "2026-08-29T19:23:18-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2107,6 +2107,18 @@
       ]
     },
     {
+      "term": "Contextual biasing",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Steering a speech-recognition model toward supplied names, jargon or phrases at decode time, lifting accuracy on domain vocabulary without retraining the model.",
+      "aka": [
+        "custom vocabulary",
+        "hotword boosting",
+        "phrase hints",
+        "keyword boosting"
+      ]
+    },
+    {
       "term": "Continual learning",
       "acronym": "",
       "category": "Training & post-training",
@@ -3976,6 +3988,16 @@
       "aka": [
         "graph RAG",
         "graph-based retrieval"
+      ]
+    },
+    {
+      "term": "Great American Artificial Intelligence Act",
+      "acronym": "GAAIA",
+      "category": "Orgs, models & ecosystem",
+      "def": "A 2026 bipartisan US House discussion draft from Reps. Obernolte and Trahan, organized into frontier AI governance, workforce, cybersecurity, and research and international cooperation.",
+      "aka": [
+        "Great American AI Act of 2026",
+        "Obernolte-Trahan AI draft"
       ]
     },
     {
@@ -8869,6 +8891,17 @@
         "token streaming",
         "streamed response",
         "stream mode"
+      ]
+    },
+    {
+      "term": "Streaming transcription",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Speech-to-text that emits partial results while audio is still arriving, accepting a higher word error rate in exchange for near-real-time latency versus batch decoding.",
+      "aka": [
+        "streaming ASR",
+        "online speech recognition",
+        "real-time transcription"
       ]
     },
     {
