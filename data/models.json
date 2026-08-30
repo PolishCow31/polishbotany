@@ -2848,7 +2848,8 @@
         "LiveCodeBench v6": 91.9,
         "IFBench": 81.3,
         "AndroidWorld": 84.5,
-        "RealWorldQA": 88.5
+        "RealWorldQA": 88.5,
+        "AA-Index": 56
       },
       "milestone": false,
       "status": "live",
@@ -2930,6 +2931,52 @@
       "sources": [
         "https://technode.global/2026/08/10/chinas-alibaba-releases-wan3-0-ai-video-model-in-public-beta-with-30s-clips-multimodal-inputs/",
         "https://winbuzzer.com/2026/08/25/alibaba-launches-wan3-0-for-30-second-ai-video-from-documents-xcxwbn/"
+      ]
+    },
+    {
+      "name": "IBM Granite 4.2 30B",
+      "lab": "IBM",
+      "released": "2026-08-25",
+      "params": "30B dense (reports as 29B on Hugging Face)",
+      "context": "131,072 native (128K); pre-training schedule extended to 512K",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 24,
+        "SWE-bench Verified": 57.0,
+        "Terminal-Bench 2.1": 29.24,
+        "MMLU-Pro": 77.6
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "The largest of IBM's Granite 4.2 family, released Aug 25 2026 under Apache 2.0 and IBM's first Granite generation with native reasoning. It is a plain decoder-only transformer - grouped-query attention with 8 KV heads, RoPE at theta 10,000,000, SwiGLU MLPs, RMSNorm - not a mixture-of-experts or hybrid-Mamba design, pre-trained from scratch on roughly 15 trillion tokens including about 1 trillion synthetic code tokens. Every size gets a switchable thinking mode; the 8B and 30B additionally go through agentic reinforcement learning inside real sandboxed environments, learning to edit code, drive a terminal and run web searches through harnesses such as OpenHands and SWE-agent. A speculative-decoding layer ships with the model, and FP8 and NVFP4 quantizations are supported under vLLM. Artificial Analysis scored it at 24 on the Intelligence Index on Aug 26 - far below the frontier, and positioned squarely as an enterprise model you can run yourself rather than a leaderboard contender.",
+      "sources": [
+        "https://research.ibm.com/blog/introducing-granite-4-2",
+        "https://www.marktechpost.com/2026/08/25/ibm-releases-granite-4-2-bringing-native-reasoning-and-agentic-rl-to-open-enterprise-models/",
+        "https://artificialanalysis.ai/changelog"
+      ]
+    },
+    {
+      "name": "IBM Granite 4.2 8B",
+      "lab": "IBM",
+      "released": "2026-08-25",
+      "params": "8B dense (reports as 9B on Hugging Face)",
+      "context": "131,072 native (128K); pre-training schedule extended to 512K",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 20,
+        "SWE-bench Verified": 47.67,
+        "Terminal-Bench 2.1": 20.56,
+        "MMLU-Pro": 74.04
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "The mid-size Granite 4.2 model, Apache 2.0 and the smallest of the family to receive agentic reinforcement-learning post-training alongside the 30B. Same decoder-only recipe as its larger sibling - grouped-query attention, RoPE, SwiGLU, RMSNorm, roughly 15 trillion pre-training tokens - with a switchable thinking mode and speculative decoding for cheaper inference. It scores 47.67 on SWE-bench Verified, within ten points of the 30B, which is the point of the release: IBM is aiming at enterprises that want a self-hosted agent model small enough to serve cheaply rather than a frontier score. Artificial Analysis rates it 20 on the Intelligence Index. Weights ship on Hugging Face with vLLM, FP8 and NVFP4 support; a 3B variant covers Ollama and LM Studio on local hardware.",
+      "sources": [
+        "https://research.ibm.com/blog/introducing-granite-4-2",
+        "https://www.marktechpost.com/2026/08/25/ibm-releases-granite-4-2-bringing-native-reasoning-and-agentic-rl-to-open-enterprise-models/",
+        "https://artificialanalysis.ai/changelog"
       ]
     }
   ]

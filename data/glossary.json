@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T12:08:09-04:00",
+  "updated": "2026-08-30T15:08:47-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -319,6 +319,17 @@
       "aka": [
         "agentic retrieval",
         "iterative RAG"
+      ]
+    },
+    {
+      "term": "Agentic reinforcement learning",
+      "acronym": "Agentic RL",
+      "category": "Training & post-training",
+      "def": "Post-training a model by rewarding it for outcomes inside real sandboxed environments - editing code, driving a terminal, running searches - rather than on static preference data.",
+      "aka": [
+        "agentic RL",
+        "environment RL",
+        "RL in environments"
       ]
     },
     {
@@ -2014,6 +2025,17 @@
       "def": "When an AI agent with legitimate permissions is tricked by injected instructions into misusing them on an attacker's behalf, a core danger of connecting agents to real tools.",
       "aka": [
         "confused deputy"
+      ]
+    },
+    {
+      "term": "Connectionist Temporal Classification",
+      "acronym": "CTC",
+      "category": "Model architecture",
+      "def": "Loss and decoding scheme that aligns an audio sequence to text without frame-level labels, making fast non-autoregressive speech recognition possible on edge hardware.",
+      "aka": [
+        "CTC",
+        "CTC loss",
+        "CTC decoding"
       ]
     },
     {
@@ -4130,6 +4152,17 @@
       ]
     },
     {
+      "term": "Grouped Query Attention",
+      "acronym": "GQA",
+      "category": "Model architecture",
+      "def": "Attention variant where several query heads share one key/value head, shrinking the KV cache and speeding long-context inference at near-full multi-head quality.",
+      "aka": [
+        "grouped-query attention",
+        "GQA",
+        "shared KV heads"
+      ]
+    },
+    {
       "term": "Grouped-Query Attention",
       "acronym": "GQA",
       "category": "Model architecture",
@@ -4472,6 +4505,17 @@
         "capital expenditure",
         "AI capex",
         "cloud capex"
+      ]
+    },
+    {
+      "term": "IBM Granite",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "IBM's family of Apache-2.0 open-weight enterprise models spanning roughly 3B to 30B parameters, aimed at self-hosted business agents rather than frontier leaderboard scores.",
+      "aka": [
+        "Granite",
+        "Granite 4",
+        "Granite 4.2"
       ]
     },
     {
@@ -6830,6 +6874,16 @@
       ]
     },
     {
+      "term": "OpenHands",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Open-source software-engineering agent harness that gives a model a shell, editor and browser; widely used to run and to train against SWE-bench-style tasks.",
+      "aka": [
+        "OpenDevin",
+        "OpenHands agent harness"
+      ]
+    },
+    {
       "term": "OpenMDW",
       "acronym": "OpenMDW",
       "category": "Orgs, models & ecosystem",
@@ -9083,6 +9137,16 @@
       "aka": [
         "SCRM designation",
         "procurement blacklist"
+      ]
+    },
+    {
+      "term": "SWE-agent",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Princeton-built agent scaffold that gives a language model a purpose-designed interface to a repository, the reference harness for many SWE-bench evaluations.",
+      "aka": [
+        "SWE agent",
+        "SWE-agent scaffold"
       ]
     },
     {

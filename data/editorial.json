@@ -1,9 +1,9 @@
 {
-  "updated": "2026-08-30T12:08:09-04:00",
+  "updated": "2026-08-30T15:08:47-04:00",
   "pulse": {
-    "text": "**Z.ai's GLM-5.3 weights are out.** Both full-model repositories became publicly downloadable by **Aug 28**, ending a two-week hold Z.ai imposed after post-training produced stronger exploit-chain reasoning than it expected, and they ship under a new custom license rather than the MIT terms GLM-5.2 and GLM-5.3-Flash carry. Artificial Analysis has now scored the model: **GLM-5.3 lands at an AA-Index of 60**, tying Kimi K3 for fifth behind Claude Opus 5 at 63, Fable 5 at 62, and GPT-5.6 Sol and Grok 4.6 at 61 - and three points clear of its own Flash sibling. Nothing new shipped otherwise; the board is unchanged since Aug 26, though this sweep adds **Alibaba's Wan 3.0**, the 30-second document-to-video model formally released Aug 24 with no open weights. Market moves partly unwound this morning's swing - **OpenAI's Astra eased to 85% by Sep 30** from 87% while a launch branded GPT-6 recovered to 68% by Dec 31 from 65% - and Anthropic's next Mythos-class model firmed on the near legs, Sep 15 rising to 80% from 78%. Anthropic's August best-model market prices 99.6% with hours to resolution; the question worth watching is whether September's 95% survives contact with an actual Mythos-class release.",
-    "updated": "2026-08-30T12:08:09-04:00",
-    "routine": "12PM"
+    "text": "**GPT-6's Polymarket odds jumped to 73% by Dec 31**, five points above this morning's 68%, with the Sep 30 leg at 50% and Oct 31 at 62% - the sharpest move of the sweep, and it lands alongside a flip in Polymarket's #1-model-by-December market, where **Z.ai now leads at 23% and OpenAI has slid to 21%** from 28%. Nothing shipped: the board is unchanged since Aug 26, with **Claude Opus 5 still first at an AA-Index of 63** ahead of Fable 5 at 62 and GPT-5.6 Sol and Grok 4.6 at 61. Two scoring updates did land - Artificial Analysis put **Qwen3.8-Flash-Next at 56**, and **IBM enters the tracker with Granite 4.2**, an Apache-2.0 3B/8B/30B reasoning family released Aug 25 whose 30B scores 24 on the index and 57.0 on SWE-bench Verified. Benchmark optimism resumed its slide: FrontierMath at 90%-or-better before 2027 eased to **81%** from 83%. Anthropic's August best-model market prices 99.6% with resolution at noon tomorrow, September holds at 95%, and the open question is still whether a Mythos-class release - 92% by Sep 30 - shows up to defend it.",
+    "updated": "2026-08-30T15:08:47-04:00",
+    "routine": "3PM"
   },
   "prices": {
     "gpt-5.5": "5/30",
@@ -47,9 +47,11 @@
     "deepseek-v4-flash": "0.44/1.32 peak, 0.22/0.66 off-peak (from Aug 16 2026)",
     "deepseek-v4-pro": "1.32/3.96 peak, 0.66/1.98 off-peak (from Aug 16 2026)",
     "glm-5.3-flash": "0.15/0.50 (0.03 cached in; 50% launch discount through Sep 9 2026)",
-    "qwen3.8-flash-next": "0.16/0.47",
+    "qwen3.8-flash-next": "$0.15 / $0.47 per 1M",
     "deepseek-v4-flash-vision-exp": "0.22/0.66 (0.007 cached in)",
-    "glm-5.3": "$1.40 in / $4.40 out per 1M"
+    "glm-5.3": "$1.40 in / $4.40 out per 1M",
+    "ibm granite 4.2 30b": "open weights (Apache 2.0) - no first-party API price",
+    "ibm granite 4.2 8b": "open weights (Apache 2.0) - no first-party API price"
   },
   "leaderboard": {
     "source": "LLM-Stats",
