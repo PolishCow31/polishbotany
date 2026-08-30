@@ -2719,7 +2719,8 @@
         "HealthBench": 60.2,
         "PLawBench": 73.2,
         "MRCR v2 256K (8-needle)": 92.9,
-        "LongBench v2": 66.3
+        "LongBench v2": 66.3,
+        "AA-Index": 58
       },
       "milestone": true,
       "status": "live",
@@ -2738,13 +2739,14 @@
       "params": "~743B base (MoE) - unchanged base model from GLM-5.2; all gains from scaled post-training",
       "context": "1M (base unchanged from GLM-5.2)",
       "modality": "text",
-      "open": false,
+      "open": true,
       "benchmarks": {
         "Terminal-Bench 3.0": 28.3,
         "DeepSWE v1.1": 66.9,
         "Agents' Last Exam": 28.5,
         "CyberGym": 84.5,
-        "ExploitBench": 54.4
+        "ExploitBench": 54.4,
+        "AA-Index": 60
       },
       "milestone": false,
       "status": "live",
@@ -2754,7 +2756,8 @@
         "https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/",
         "https://finance.biggo.com/news/0b571a42-9531-433c-b81b-c8468d173989",
         "https://kie.ai/blog/what-is-glm-5-3"
-      ]
+      ],
+      "pricing": "$1.40 in / $4.40 out per 1M"
     },
     {
       "name": "Seed 2.1 Turbo",
@@ -2909,6 +2912,24 @@
       "notable": "Thomson Reuters' first proprietary LLM, built by specializing a strong open-source base on the company's own legal, tax and news archive - less than 10% of its total content used so far. Roughly $40M spent on training and compute, which the company frames as a fraction of a comparable frontier run. The commercial version is closed and ships first inside CoCounsel Legal as a Tabular Analysis document-review feature; a small open-weight version is on Hugging Face for academic and non-commercial use. Thomson Reuters claims parity with 'the latest frontier models across a range of tasks' but published no benchmark scores, and no independent evaluation exists yet. Notable mainly as a vertical, fully-owned alternative to renting a general frontier model.",
       "sources": [
         "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model"
+      ]
+    },
+    {
+      "name": "Wan 3.0",
+      "lab": "Alibaba (Tongyi Lab)",
+      "released": "2026-08-24",
+      "params": "not disclosed",
+      "context": "not applicable (video model); accepts up to 10 images, 5 videos, 5 audio clips, documents up to 100MB, or one public webpage",
+      "modality": "text + image + video + audio + document/webpage in, video with synchronized audio out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "pricing": "$0.05 per second at 480p to $0.20 per second at 1080p - a full 30-second 1080p clip runs about $6",
+      "notable": "Alibaba's Tongyi Lab video model, in public beta from Aug 6 2026 and formally released Aug 24, a day after the company's $10B share sale. It generates clips of up to 30 seconds at 480p, 720p or 1080p - double the 15-second ceiling of Wan 2.7 - with audio generation on by default, multilingual voice output and synchronized micro-expressions. Its distinguishing feature is document-to-video: generation can be grounded directly in a structured source - a PDF, Word file, PowerPoint deck or public webpage - rather than requiring the user to convert that source into a text prompt first. It also adds intelligent duration recommendation and multi-round video extension. Access runs through Alibaba Cloud's Model Studio API (in preview) and Chinese consumer surfaces including the Qwen app and Qwen Creation. Unlike Wan 2.2, no weights had appeared on Wan's GitHub or Hugging Face as of Aug 25, making this a closed release; independent testing by Atlas Cloud reported repeated unwanted cuts mid-shot despite better visual fidelity and character consistency than Wan 2.7.",
+      "sources": [
+        "https://technode.global/2026/08/10/chinas-alibaba-releases-wan3-0-ai-video-model-in-public-beta-with-30s-clips-multimodal-inputs/",
+        "https://winbuzzer.com/2026/08/25/alibaba-launches-wan3-0-for-30-second-ai-video-from-documents-xcxwbn/"
       ]
     }
   ]

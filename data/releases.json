@@ -1,18 +1,7 @@
 {
-  "updated": "2026-08-30T09:54:36-04:00",
+  "updated": "2026-08-30T12:08:09-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
-    {
-      "model": "GLM-5.3 open weights",
-      "lab": "Zhipu / Z.ai",
-      "expectedWindow": "by early Sep 2026",
-      "expectedDate": "2026-08",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Z.ai committed to GLM-5.3 weights under its open license after the Flash variant's Aug 26 drop; still pending.",
-      "source": "https://llm-stats.com/llm-updates"
-    },
     {
       "model": "Next Mythos-class model",
       "lab": "Anthropic",
@@ -21,7 +10,7 @@
       "prob": 92,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 92% by Sep 30 on $628K volume, flat; Sep 15 78%, Sep 9 75%, Sep 4 70% (up from 68%), Aug 31 29%.",
+      "basis": "Polymarket 92% by Sep 30 on $633K volume, flat; near legs firmed - Sep 15 80% from 78%, Aug 31 31% from 29%.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -29,10 +18,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 87,
+      "prob": 85,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket 87% by Sep 30, up from 85%; Sep 15 leg 68% from 63%, Oct 31 93%. Still held for cyber-capability evaluations.",
+      "basis": "Polymarket 85% by Sep 30, easing from 87%; Sep 15 leg 66% from 68%, Oct 31 92%. Held for cyber-capability evaluations.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -65,7 +54,7 @@
       "prob": 44,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi 44% before Sep 4 at last successful read; Kalshi returned HTTP 429 across every market this sweep, so the number is carried forward.",
+      "basis": "Kalshi 44% before Sep 4 at last successful read; Kalshi returned HTTP 429 on every market again this sweep, so the number is carried forward.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -87,8 +76,19 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Zuckerberg and Wang said weights are coming after the Aug 10 Muse Glimmer open release; no date given.",
+      "basis": "Zuckerberg and Wang said weights are coming after the Aug 10 Muse Glimmer open release; no date given, none on Hugging Face yet.",
       "source": "https://www.cnbc.com/2026/08/10/meta-muse-glimmer-open-weight-ai.html"
+    },
+    {
+      "model": "Wan 3.0 open weights",
+      "lab": "Alibaba (Tongyi Lab)",
+      "expectedWindow": "unannounced",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Wan 2.2 shipped open; as of Aug 25 no Wan 3.0 weights exist on GitHub or Hugging Face and Alibaba has announced no release.",
+      "source": "https://winbuzzer.com/2026/08/25/alibaba-launches-wan3-0-for-30-second-ai-video-from-documents-xcxwbn/"
     },
     {
       "model": "Seedance 2.5 API (BytePlus ModelArk)",
@@ -164,7 +164,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Fable 5 shipped June 9 and still sits second on the AA-Index; no successor announced.",
+      "basis": "Fable 5 shipped June 9 and still sits second on the AA-Index at 62; no successor announced.",
       "source": "https://llmgateway.io/timeline"
     },
     {
@@ -172,10 +172,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 65,
+      "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 65% by Dec 31, down from 68%; Oct 31 65%, Sep 30 48%. Manifold's GPT-6-in-2026 market fell to 76% from 84% on naming risk.",
+      "basis": "Polymarket 68% by Dec 31, recovering from 65%; Oct 31 61%, Sep 30 48%. Manifold's GPT-6-in-2026 market flat at 76% on naming risk.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -186,7 +186,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold 70% before 2027 at last read; Kalshi's 68% companion market was unreachable (HTTP 429) this sweep.",
+      "basis": "Manifold 70% before 2027, flat; before December 47%, before November 29%, before October 4%. Kalshi's companion market unreachable (429).",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
