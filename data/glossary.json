@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T21:07:18-04:00",
+  "updated": "2026-08-31T00:07:12-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1320,6 +1320,16 @@
       ]
     },
     {
+      "term": "BLEU",
+      "acronym": "BLEU",
+      "category": "Benchmarks & evals",
+      "def": "Bilingual Evaluation Understudy: a machine-translation metric scoring n-gram overlap between output and reference texts, with a brevity penalty. Long superseded for open-ended generation.",
+      "aka": [
+        "Bilingual Evaluation Understudy",
+        "BLEU score"
+      ]
+    },
+    {
       "term": "Blue-team agent",
       "acronym": "",
       "category": "Safety & alignment",
@@ -1463,6 +1473,18 @@
       "aka": [
         "Center for AI Standards and Innovation",
         "US AI Safety Institute successor"
+      ]
+    },
+    {
+      "term": "Calibration",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "How well a model's stated confidence matches its actual accuracy; a calibrated model is right about 80% of the time when it claims 80% confidence.",
+      "aka": [
+        "model calibration",
+        "confidence calibration",
+        "expected calibration error",
+        "ECE"
       ]
     },
     {
@@ -3248,6 +3270,17 @@
       "aka": [
         "expert choice",
         "EC routing"
+      ]
+    },
+    {
+      "term": "Explainable AI",
+      "acronym": "XAI",
+      "category": "Safety & alignment",
+      "def": "Methods that make a model's outputs intelligible to humans, via feature attribution, saliency or surrogate models, usually without opening the network's internal mechanisms.",
+      "aka": [
+        "XAI",
+        "explainability",
+        "interpretable machine learning"
       ]
     },
     {
@@ -8369,6 +8402,17 @@
         "RoPE scaling",
         "NTK scaling",
         "frequency scaling"
+      ]
+    },
+    {
+      "term": "ROUGE",
+      "acronym": "ROUGE",
+      "category": "Benchmarks & evals",
+      "def": "Recall-Oriented Understudy for Gisting Evaluation: summarization metrics measuring n-gram or longest-common-subsequence recall against reference summaries. Rewards coverage rather than fluency.",
+      "aka": [
+        "Recall-Oriented Understudy for Gisting Evaluation",
+        "ROUGE-L",
+        "ROUGE-1"
       ]
     },
     {

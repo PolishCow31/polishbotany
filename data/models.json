@@ -3021,6 +3021,24 @@
         "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-cohere-parse-v5/4550955",
         "https://www.marktechpost.com/2026/08/27/cohere-releases-parse-5-parse-v5-0-a-2-3b-vision-language-model-that-turns-enterprise-documents-into-markdown/"
       ]
+    },
+    {
+      "name": "IBM Granite 4.2 3B",
+      "lab": "IBM",
+      "released": "2026-08-25",
+      "params": "3B dense",
+      "context": "131,072 native (128K); IBM claims a 512K long-context extension",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "The smallest member of the Apache 2.0 Granite 4.2 family, released alongside the 8B and 30B on Aug 25. Same dense decoder-only recipe as its siblings - grouped-query attention, RoPE, SwiGLU, RMSNorm, roughly 15 trillion pre-training tokens - with the switchable thinking mode that lets one checkpoint either reason step by step or answer directly. The key difference from the larger two: the 3B received foundational RL and alignment only and skipped the agentic reinforcement-learning stage, so IBM positions it for chat, summarization and on-device use rather than coding-agent work. Weights ship on Hugging Face, and it is the Granite 4.2 size targeted at Ollama and LM Studio on local hardware.",
+      "sources": [
+        "https://research.ibm.com/blog/introducing-granite-4-2",
+        "https://www.marktechpost.com/2026/08/25/ibm-releases-granite-4-2-bringing-native-reasoning-and-agentic-rl-to-open-enterprise-models/",
+        "https://global.techapple.com/2026/08/ibm-rolls-out-granite-4-2-open-weight-models-in-3b-8b-and-30b-sizes-for-local-deployment/"
+      ]
     }
   ]
 }
