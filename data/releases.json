@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T03:10:27-04:00",
+  "updated": "2026-08-31T06:06:18-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 91,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 91% by Sep 30 (up from 89%), Aug 31 holds at 36%, Sep 9 76%, Oct 31 eased to 94.9%. $693K volume.",
+      "basis": "Polymarket: 91% by Sep 30, flat. Ladder now Aug 31 36%, Sep 1 46%, Sep 2 55%, Sep 4 70%, Sep 9 76%, Oct 31 94.9%. $693K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 84,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket: 84% by Sep 30, Sep 15 flat at 69%, Oct 31 93%. Critical-level cyber eval still the cited source of slippage.",
+      "basis": "Polymarket: 84% by Sep 30, flat (Sep 15 69%, Oct 31 93%, today 1%). $417K volume; critical-level cyber eval still the cited drag.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -32,19 +32,30 @@
       "prob": 63,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Gemini-Pro: Oct 31 rebounded to 63% from 47%; Sep 30 18%, Sep 15 5%. $1.18M volume.",
+      "basis": "Polymarket next-Gemini-Pro: Oct 31 holds at 63% after this week's swing; Sep 30 18%, Sep 15 5%. $1.18M volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
-      "model": "GPT-5.6 Sol Ultrafast (general availability)",
+      "model": "GPT-6",
       "lab": "OpenAI",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Announced as a low-latency Sol tier; no dated market exists.",
-      "source": "https://openai.com/index/gpt-5-6/"
+      "expectedWindow": "by Dec 31 2026",
+      "expectedDate": "2026-12",
+      "prob": 71,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Polymarket: 71% by Dec 31, flat (Oct 31 64%, Sep 30 46%, Sep 15 42%). $1.70M volume, the deepest release book on the board.",
+      "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "Grok 5",
+      "lab": "xAI",
+      "expectedWindow": "by Dec 31 2026",
+      "expectedDate": "2026-12",
+      "prob": 70,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Manifold: 70% before 2027 (47% before December, 29% before November). Last confirmed read Aug 30; unchanged.",
+      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
       "model": "Grok 4.7",
@@ -58,6 +69,50 @@
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
+      "model": "GPT-5.6 Sol Ultrafast (general availability)",
+      "lab": "OpenAI",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Announced as a low-latency Sol tier; no dated market exists.",
+      "source": "https://openai.com/index/gpt-5-6/"
+    },
+    {
+      "model": "Claude Haiku 5",
+      "lab": "Anthropic",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Opus 5 and Sonnet 5 have shipped; a Haiku tier historically follows. No announcement or dated market.",
+      "source": "https://www.anthropic.com/news"
+    },
+    {
+      "model": "Next Claude Fable",
+      "lab": "Anthropic",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Fable 5 launched Jun 9; no successor announced and no dated market.",
+      "source": "https://www.anthropic.com/news"
+    },
+    {
+      "model": "Tencent Hy4 (general availability)",
+      "lab": "Tencent",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": false,
+      "status": "expected",
+      "basis": "Hy4 preview open-sourced Aug 28; a GA build is the implied next step. No dated market.",
+      "source": "https://llm-stats.com/llm-updates"
+    },
+    {
       "model": "Qwen4",
       "lab": "Alibaba (Qwen)",
       "expectedWindow": "H2 2026 / H1 2027",
@@ -65,7 +120,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Qwen3.8 line still iterating rapidly; no dated market or official Qwen4 announcement.",
+      "basis": "Qwen3.8-Flash-Next is explicitly billed as a preview of the Qwen4 architecture, but no Qwen4 date or dated market exists.",
       "source": "https://llmgateway.io/timeline"
     },
     {
@@ -124,17 +179,6 @@
       "source": "https://llmgateway.io/timeline"
     },
     {
-      "model": "Claude Haiku 5",
-      "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Opus 5 and Sonnet 5 have shipped; a Haiku tier historically follows. No announcement or dated market.",
-      "source": "https://www.anthropic.com/news"
-    },
-    {
       "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
       "lab": "Black Forest Labs",
       "expectedWindow": "2026",
@@ -155,39 +199,6 @@
       "status": "rumored",
       "basis": "Follows Nemotron 3.5 Lightning; NVIDIA has signalled continued open-model cadence but named no date.",
       "source": "https://www.cnbc.com/2026/08/11/nvidia-releases-nemotron-3point5-lightning-open-source-ai-model-.html"
-    },
-    {
-      "model": "Next Claude Fable",
-      "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Fable 5 launched Jun 9; no successor announced and no dated market.",
-      "source": "https://www.anthropic.com/news"
-    },
-    {
-      "model": "GPT-6",
-      "lab": "OpenAI",
-      "expectedWindow": "by Dec 31 2026",
-      "expectedDate": "2026-12",
-      "prob": 71,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Polymarket: 71% by Dec 31 (eased from 72%), Oct 31 64%, Sep 30 46%, Sep 15 42%. $1.70M volume.",
-      "source": "https://polymarket.com/event/gpt-6-released-by"
-    },
-    {
-      "model": "Grok 5",
-      "lab": "xAI",
-      "expectedWindow": "by Dec 31 2026",
-      "expectedDate": "2026-12",
-      "prob": 70,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Manifold: 70% before 2027, flat; 47% before December, 29% before November, 4% before October, 1% before September.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
       "model": "K-EXAONE 3 / EXAONE next",
@@ -221,17 +232,6 @@
       "status": "rumored",
       "basis": "Next full generation after the 3.x line; no announcement or dated market, and 3.5 Pro is still unshipped.",
       "source": "https://llmgateway.io/timeline"
-    },
-    {
-      "model": "Tencent Hy4 (general availability)",
-      "lab": "Tencent",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
-      "status": "expected",
-      "basis": "Hy4 preview open-sourced Aug 28; a GA build is the implied next step. No dated market.",
-      "source": "https://llm-stats.com/llm-updates"
     }
   ]
 }
