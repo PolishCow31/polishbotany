@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T00:07:12-04:00",
+  "updated": "2026-08-31T03:10:27-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -3546,6 +3546,18 @@
       ]
     },
     {
+      "term": "FP8",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "An 8-bit floating-point number format (E4M3 or E5M2) used for weights and activations, roughly halving memory and bandwidth versus BF16 with little quality loss on modern accelerators.",
+      "aka": [
+        "8-bit floating point",
+        "E4M3",
+        "E5M2",
+        "FP8 quantization"
+      ]
+    },
+    {
       "term": "Frequency penalty",
       "acronym": "",
       "category": "Inference & serving",
@@ -5564,6 +5576,17 @@
         "majority@k",
         "cons@k",
         "self-consistency voting"
+      ]
+    },
+    {
+      "term": "Mamba",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A selective state-space sequence model whose recurrent state scales linearly with sequence length, avoiding attention's quadratic cost; the basis of most hybrid attention-SSM designs.",
+      "aka": [
+        "selective state space model",
+        "S6",
+        "Mamba-2"
       ]
     },
     {
@@ -8402,6 +8425,17 @@
         "RoPE scaling",
         "NTK scaling",
         "frequency scaling"
+      ]
+    },
+    {
+      "term": "Rotary Position Embedding",
+      "acronym": "RoPE",
+      "category": "Model architecture",
+      "def": "Encodes token position by rotating query and key vectors by an angle proportional to their index, so attention depends on relative distance; extended to long contexts by raising the rotation base (theta).",
+      "aka": [
+        "rotary embeddings",
+        "RoPE theta",
+        "rotary positional encoding"
       ]
     },
     {
