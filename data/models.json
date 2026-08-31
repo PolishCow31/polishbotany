@@ -2978,6 +2978,49 @@
         "https://www.marktechpost.com/2026/08/25/ibm-releases-granite-4-2-bringing-native-reasoning-and-agentic-rl-to-open-enterprise-models/",
         "https://artificialanalysis.ai/changelog"
       ]
+    },
+    {
+      "name": "Tencent Hy4 preview",
+      "lab": "Tencent",
+      "released": "2026-08-28",
+      "params": "770B total, 49B active (mixture-of-experts; 78 layers, 256 routed experts + 1 shared, top-8 routing)",
+      "context": "1,000,000 tokens",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "GPQA Diamond": 92.3,
+        "SWE-bench Pro": 65.7,
+        "SWE-bench Multilingual": 82.9,
+        "DeepSWE": 64.3,
+        "Terminal-Bench 2.1": 85.4,
+        "HLE": 55.4
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "Tencent Hunyuan's next-generation flagship, released and open-sourced the same day under Apache 2.0 - a 770B-parameter mixture-of-experts model that activates 49B per token and carries a 1M-token context. It uses gated DeepSeek-style sparse attention with an IndexCache, and Tencent ships both BF16 and FP8 weights on Hugging Face. The pitch is practical engineering rather than a frontier score: it posts 85.4 on Terminal-Bench 2.1 and 82.9 on SWE-bench Multilingual, ahead of GLM-5.3 (81.3), Kimi K3 (80.8) and DeepSeek-V4-Pro (77.3), and jumps from 28.0 to 64.3 on DeepSWE against its predecessor. On SWE-bench Pro it reaches 65.7, above GLM-5.3 and Kimi K3 but well behind Claude Opus 5 at 79.2. Tencent says an internal panel of 163 experts scoring 203 engineering tasks rated it 2.99 of 4, above GLM-5.3 (2.92) and Kimi K3 (2.94), and that the model raised its own systems' throughput 31.8%. API access runs through Tencent Cloud TokenHub and OpenRouter at $0.834 in / $2.501 out per million tokens, with two weeks of free access via WorkBuddy and CodeBuddy.",
+      "sources": [
+        "https://huggingface.co/tencent/Hy4-preview",
+        "https://technode.com/2026/08/28/tencent-open-sources-hy4-preview-with-770b-parameters-and-a-1m-token-context/",
+        "https://benchlm.ai/models/hy4-preview"
+      ]
+    },
+    {
+      "name": "Cohere Parse 5",
+      "lab": "Cohere",
+      "released": "2026-08-27",
+      "params": "2.3B (vision-language)",
+      "context": "per-page document input (PDF, PPT or JPEG as base64 data URI)",
+      "modality": "multimodal",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "A narrow 2.3B-parameter vision-language model, parse-v5.0, that converts enterprise documents into clean Markdown for downstream AI pipelines. It returns text in reading order, tables rendered as HTML, lists, form key-value pairs, image descriptions and bounding-box coordinates for visual elements. Cohere positioned it explicitly on price-to-performance rather than raw accuracy - it does not top document-understanding leaderboards, but at $1.50 per 1,000 pages it is aimed at organizations parsing millions of pages. It is available through Cohere's API and Microsoft Foundry.",
+      "sources": [
+        "https://cohere.com/blog/parse",
+        "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-cohere-parse-v5/4550955",
+        "https://www.marktechpost.com/2026/08/27/cohere-releases-parse-5-parse-v5-0-a-2-3b-vision-language-model-that-turns-enterprise-documents-into-markdown/"
+      ]
     }
   ]
 }

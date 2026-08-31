@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-30T18:06:33-04:00",
+  "updated": "2026-08-30T21:07:18-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2619,6 +2619,16 @@
       ]
     },
     {
+      "term": "DeepSeek Sparse Attention",
+      "acronym": "DSA",
+      "category": "Model architecture",
+      "def": "Sparse attention scheme that scores and selects a subset of past tokens per query, cutting long-context attention cost from quadratic toward near-linear.",
+      "aka": [
+        "DSA",
+        "gated DeepSeek sparse attention"
+      ]
+    },
+    {
       "term": "DeepSWE",
       "acronym": "",
       "category": "Benchmarks & evals",
@@ -2814,6 +2824,17 @@
         "discrete Mel spectrogram",
         "discrete mel tokens",
         "dMel tokenization"
+      ]
+    },
+    {
+      "term": "Document intelligence model",
+      "acronym": "",
+      "category": "Capabilities & agents",
+      "def": "Vision-language model specialized for converting PDFs, slides and scans into structured text - reading order, tables, forms, figure captions - as input to retrieval or analysis pipelines.",
+      "aka": [
+        "document parsing model",
+        "document-to-Markdown model",
+        "OCR-plus model"
       ]
     },
     {
@@ -4607,6 +4628,16 @@
         "Ant Group AI",
         "Ling",
         "Ring"
+      ]
+    },
+    {
+      "term": "IndexCache",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Cached index of token-selection scores reused across decoding steps in sparse-attention models, avoiding recomputation of which past tokens each query attends to.",
+      "aka": [
+        "index cache",
+        "sparse attention index cache"
       ]
     },
     {
@@ -8754,6 +8785,15 @@
       ]
     },
     {
+      "term": "Skillsbench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Agentic evaluation measuring whether a model can acquire and apply a documented skill or tool procedure it was not explicitly trained on.",
+      "aka": [
+        "Skillsbench V1"
+      ]
+    },
+    {
       "term": "Sleeper agent model",
       "acronym": "",
       "category": "Safety & alignment",
@@ -9380,6 +9420,17 @@
       "aka": [
         "sampling temperature",
         "temp"
+      ]
+    },
+    {
+      "term": "Tencent Hunyuan",
+      "acronym": "",
+      "category": "Orgs, models & ecosystem",
+      "def": "Tencent's in-house foundation-model group, shipping the Hy line of large mixture-of-experts language models alongside image and video generators, increasingly under open licenses.",
+      "aka": [
+        "Hunyuan",
+        "Tencent Hy",
+        "混元"
       ]
     },
     {
