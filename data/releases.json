@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T12:05:15-04:00",
+  "updated": "2026-08-31T15:27:44-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 89,
+      "prob": 93,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 89% by Sep 30, down from 92%. Ladder reversed — Sep 1 fell to 38% (was 67%), Sep 2 54%, Sep 4 73%, Sep 9 78%, Oct 31 96%. $824K volume.",
+      "basis": "Polymarket: 93% by Sep 30, recovered from 89%. Ladder rebounded - Sep 1 40%, Sep 2 63%, Sep 4 77%, Sep 9 84%, Sep 15 88%, Oct 31 96%. $884K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 86,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket: 86% by Sep 30, flat (Sep 15 75%, Oct 31 93%, Aug 31 leg dead at 1%). $426K volume; critical-level cyber eval still the cited drag.",
+      "basis": "Polymarket: 86% by Sep 30, flat (Sep 15 up to 76%, Oct 31 eased to 92%). $428K volume; the critical-level cyber threshold is still the cited drag.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 66,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket next-Gemini-Pro: Oct 31 firmed to 66% from 64%; Sep 30 eased to 15%, Sep 15 6%. $1.18M volume; coding/agentic shortfalls cited for the delay.",
+      "basis": "Polymarket next-Gemini-Pro: Oct 31 flat at 66%; Sep 30 nudged to 16%, Sep 15 6%. $1.19M volume; coding and agentic shortfalls cited for the delay.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,7 +43,7 @@
       "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: 73% by Dec 31, up a point (Nov 30 67%, Oct 31 64%, Sep 30 45%, Sep 15 38%). $1.70M volume, the deepest release book on the board.",
+      "basis": "Polymarket: 73% by Dec 31, flat, but Oct 31 slipped to 61% from 64% while Sep 30 firmed to 49%. $1.70M volume, the deepest release book on the board.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -87,8 +87,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Opus 5 and Sonnet 5 have shipped; a Haiku tier historically follows. No announcement or dated market.",
-      "source": "https://www.anthropic.com/news"
+      "basis": "Opus 5 and Sonnet 5 have shipped; a Haiku tier historically follows. Still absent from Anthropic's published pricing table. No dated market.",
+      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
     },
     {
       "model": "Next Claude Fable",
@@ -109,129 +109,8 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Hy4 preview open-sourced Aug 28 and still the newest release anywhere; a GA build is the implied next step. No dated market.",
+      "basis": "Hy4 preview open-sourced Aug 28; a general-availability build is the expected follow-up. No dated market.",
       "source": "https://llm-stats.com/llm-updates"
-    },
-    {
-      "model": "Qwen4",
-      "lab": "Alibaba (Qwen)",
-      "expectedWindow": "H2 2026 / H1 2027",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Qwen3.8-Flash-Next is explicitly billed as a preview of the Qwen4 architecture, but no Qwen4 date or dated market exists.",
-      "source": "https://llmgateway.io/timeline"
-    },
-    {
-      "model": "Muse Spark 1.2 open weights",
-      "lab": "Meta (Superintelligence Labs)",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Meta committed to open-weight release after Muse Spark 1.2; no date set.",
-      "source": "https://www.cnbc.com/2026/08/12/meta-nvidia-open-weight-ai-race-china.html"
-    },
-    {
-      "model": "Wan 3.0 open weights",
-      "lab": "Alibaba (Tongyi Lab)",
-      "expectedWindow": "unannounced",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Prior Wan generations were open-sourced after an API window; Alibaba has not confirmed for 3.0.",
-      "source": "https://llmgateway.io/timeline"
-    },
-    {
-      "model": "Seedance 2.5 API (BytePlus ModelArk)",
-      "lab": "ByteDance",
-      "expectedWindow": "Q3 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Announced for BytePlus ModelArk following the Seedance 2.5 launch; no dated market.",
-      "source": "https://llm-stats.com/llm-updates"
-    },
-    {
-      "model": "Grok Imagine Image 2.0 API",
-      "lab": "xAI",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Shipped in-product Aug 7; xAI has said API access follows. No dated market.",
-      "source": "https://releasebot.io/updates/xai"
-    },
-    {
-      "model": "MiniMax M3 Pro (open weights)",
-      "lab": "MiniMax",
-      "expectedWindow": "Q3 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "MiniMax has open-weighted prior M-series flagships; M3 Pro not formally announced.",
-      "source": "https://llmgateway.io/timeline"
-    },
-    {
-      "model": "FLUX 3 Image + FLUX 3 Dev (open weights)",
-      "lab": "Black Forest Labs",
-      "expectedWindow": "2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "BFL has said open-weight Dev variants follow the hosted FLUX 3 launch; no date given.",
-      "source": "https://llmgateway.io/timeline"
-    },
-    {
-      "model": "Nemotron 4 (larger tier)",
-      "lab": "NVIDIA",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Follows Nemotron 3.5 Lightning; NVIDIA has signalled continued open-model cadence but named no date.",
-      "source": "https://www.cnbc.com/2026/08/11/nvidia-releases-nemotron-3point5-lightning-open-source-ai-model-.html"
-    },
-    {
-      "model": "K-EXAONE 3 / EXAONE next",
-      "lab": "LG AI Research",
-      "expectedWindow": "H1 2027",
-      "expectedDate": "2027-02",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "K-EXAONE 2.0 shipped Jul 31 under Korea's sovereign-AI program; successor cadence implied, not announced.",
-      "source": "https://llmgateway.io/timeline"
-    },
-    {
-      "model": "Anthropic \"Model 2\" (internal, unreleased)",
-      "lab": "Anthropic",
-      "expectedWindow": "no release planned",
-      "expectedDate": "2026-12",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Referenced in Anthropic materials as an internal system; no stated intent to release publicly.",
-      "source": "https://www.anthropic.com/news"
-    },
-    {
-      "model": "Gemini 4",
-      "lab": "Google DeepMind",
-      "expectedWindow": "H1 2027",
-      "expectedDate": "2027-03",
-      "prob": -1,
-      "frontier": true,
-      "status": "rumored",
-      "basis": "Next full generation after the 3.x line; no announcement or dated market, and 3.5 Pro is still unshipped.",
-      "source": "https://llmgateway.io/timeline"
     }
   ]
 }

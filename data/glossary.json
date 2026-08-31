@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-31T12:05:15-04:00",
+  "updated": "2026-08-31T15:27:44-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1779,6 +1779,16 @@
       ]
     },
     {
+      "term": "Claude Consumption Unit",
+      "acronym": "CCU",
+      "category": "Economics & compute",
+      "def": "Anthropic's marketplace billing unit worth $0.01, used so cloud marketplaces can invoice token and runtime usage as one metered line item rather than per-model token counts.",
+      "aka": [
+        "consumption unit",
+        "marketplace billing unit"
+      ]
+    },
+    {
       "term": "Clinical foundation model",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -3355,6 +3365,17 @@
       ]
     },
     {
+      "term": "Fast mode",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A premium serving tier that returns tokens substantially faster at a higher per-token price, trading cost for latency without changing the underlying model weights.",
+      "aka": [
+        "fast inference tier",
+        "speed: fast",
+        "premium latency tier"
+      ]
+    },
+    {
       "term": "Feature (interpretability)",
       "acronym": "",
       "category": "Safety & alignment",
@@ -4757,6 +4778,17 @@
       "aka": [
         "serving cost",
         "cost of inference"
+      ]
+    },
+    {
+      "term": "Inference geography",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A request-level setting pinning where inference physically runs, trading a pricing premium for guaranteed regional data routing; global routing is the cheaper default.",
+      "aka": [
+        "inference_geo",
+        "data residency routing",
+        "regional inference"
       ]
     },
     {
