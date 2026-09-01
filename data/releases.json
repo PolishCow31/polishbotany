@@ -1,39 +1,17 @@
 {
-  "updated": "2026-09-01T14:03:44-04:00",
+  "updated": "2026-09-01T15:07:47-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
-    {
-      "model": "Next Mythos-class model",
-      "lab": "Anthropic",
-      "expectedWindow": "by Sep 30 2026",
-      "expectedDate": "2026-09",
-      "prob": 95,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Sep 30 leg up to 95% on $1.07M volume; Sep 2 eased to 55%, Sep 9 at 88%, Oct 31 at 99.1%.",
-      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
-    },
     {
       "model": "Astra (next OpenAI model family)",
       "lab": "OpenAI",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 80,
+      "prob": 82,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket Sep 30 cut to 80% from 84%, but Kalshi's before-Oct-1 leg jumped to 82% from 66%.",
+      "basis": "Polymarket Sep 30 firmed to 81.6% from 80%; Oct 31 up to 96% from 94%, Sep 25 77%, Sep 15 56%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
-    },
-    {
-      "model": "Gemini 3.5 Pro",
-      "lab": "Google DeepMind",
-      "expectedWindow": "by Oct 31 2026",
-      "expectedDate": "2026-10",
-      "prob": 69,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Still in limited partner testing after repeated delays; Oct 31 flat at 69%, Sep 30 cut to 20% from 25%.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "GPT-6",
@@ -43,8 +21,19 @@
       "prob": 74,
       "frontier": true,
       "status": "expected",
-      "basis": "Dec 31 at 74% on $1.73M volume; Oct 31 fell to 57% from 64% even as Kalshi's before-Oct-1 leg jumped to 47%.",
+      "basis": "Dec 31 flat at 74% on $1.74M; Sep 30 rose to 47% from 45% and Oct 31 to 59%. DevDay falls Sep 29.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "Gemini 3.5 Pro",
+      "lab": "Google DeepMind",
+      "expectedWindow": "by Oct 31 2026",
+      "expectedDate": "2026-10",
+      "prob": 69,
+      "frontier": true,
+      "status": "expected",
+      "basis": "Still in partner testing after the teased June window slipped; Oct 31 flat at 69%, Sep 30 21%, Sep 15 5%.",
+      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
       "model": "Grok 5",
@@ -54,7 +43,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold flat at 70% before 2027 (47% before December, 3% before October); Kalshi eased to 64%.",
+      "basis": "Manifold flat at 70% before 2027; 47% before December, 29% before November, 3% before October.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -65,7 +54,7 @@
       "prob": 15,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi's before-Sep-4 leg collapsed to 15% from 44% as the window closed with no launch.",
+      "basis": "Kalshi's before-Sep-4 leg sat at 15%, down from 44%, at the last clean read; Kalshi rate-limited this sweep.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -87,18 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Small-tier refresh expected after the Opus 5 / Sonnet 5 line; no dated market.",
-      "source": "https://www.anthropic.com/news"
-    },
-    {
-      "model": "Next Claude Fable",
-      "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Fable line tracks Mythos releases publicly; no dated market for the successor.",
+      "basis": "Small-tier refresh still outstanding after the Opus 5, Sonnet 5 and Fable 5.1 releases; no dated market.",
       "source": "https://www.anthropic.com/news"
     },
     {

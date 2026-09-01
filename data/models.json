@@ -1299,9 +1299,9 @@
         "AA-Index": 62
       },
       "milestone": true,
-      "notable": "Mythos-class GA model, top reported SWE-bench Verified of the cycle (~95%). PULLED worldwide Jun 12 2026 by a US Commerce export-control order, then fully cleared Jun 30 and reinstated Jul 1. Now #1 on the Artificial Analysis Intelligence Index at 60 (v4.1), ahead of its own Opus 4.8 (56) and GPT-5.5 (55) — AA calls Anthropic 'nearly 5 points ahead of any other lab's best model.' $10/$50.",
+      "notable": "Mythos-class GA model, top reported SWE-bench Verified of the cycle (~95%). PULLED worldwide Jun 12 2026 by a US Commerce export-control order, then fully cleared Jun 30 and reinstated Jul 1. Held #1 on the Artificial Analysis Intelligence Index at 60-62 (v4.1) through the summer before Claude Opus 5 passed it at 63 on Aug 8. SUPERSEDED Sep 1 2026 by Claude Fable 5.1, which scores 66 at max effort and roughly doubles it on the newer agentic evals (Terminal-Bench 4.0 55.8% vs 42.0%, AutomationBench 31.4% vs 17.1%). Still available at $10/$50, but Fable 5.1 carries the same headline price with cache reads cut 75%.",
       "pricing": "$10 in / $50 out per 1M",
-      "status": "live"
+      "status": "superseded"
     },
     {
       "name": "Claude Mythos 5 (Preview)",
@@ -1318,7 +1318,7 @@
       "milestone": false,
       "notable": "Anthropic's strongest cybersecurity model, suspended Jun 12 2026 alongside Fable 5 under a US export-control order; Commerce lifted the controls entirely Jun 30 and access was restored Jul 1. On Jul 28 2026 Anthropic published cryptanalysis work in which Mythos 5 Preview, running semi-autonomously for roughly 60 hours, found a lattice automorphism that halves HAWK's effective key size — HAWK's authors confirmed the result and withdrew the scheme from NIST's additional-signatures round — plus a novel 7-round AES attack (the 'Mobius Bridge') reported 200-800x faster than prior methods. Benchmark figures are preview-grade.",
       "pricing": "$10 in / $50 out per 1M (preview)",
-      "status": "live"
+      "status": "superseded"
     },
     {
       "name": "Gemini 3.1 Pro",
@@ -3102,6 +3102,72 @@
         "https://artificialanalysis.ai/models/quasar-438b",
         "https://artificialanalysis.ai/changelog",
         "https://www.globenewswire.com/news-release/2026/08/05/3339052/0/en/multiverse-computing-and-qualcomm-collaborate-to-bring-efficient-ai-models-to-data-centers.html"
+      ]
+    },
+    {
+      "name": "Claude Fable 5.1",
+      "lab": "Anthropic",
+      "released": "2026-09-01",
+      "params": "unknown",
+      "context": "1M (unchanged from Fable 5; not restated at launch)",
+      "modality": "multimodal in, text out, adaptive reasoning with low/medium/high/xhigh/max effort",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 66,
+        "Terminal-Bench 4.0": 55.8,
+        "Terminal-Bench-Science 0.1": 52.6,
+        "CursorBench 3.2.0": 73.4,
+        "HLE (no tools)": 60.9,
+        "HLE (with tools)": 65.0,
+        "OSWorld 2.0 (partial)": 77.9,
+        "OSWorld 2.0 (strict)": 41.7,
+        "AutomationBench": 31.4,
+        "GDPval-AA v2": 1853
+      },
+      "milestone": true,
+      "status": "live",
+      "pricing": "$10 in / $50 out per 1M; cache reads $0.25 per 1M (down 75% from Fable 5's $1.00)",
+      "notable": "Anthropic's Sep 1 2026 refresh of the Mythos-class line and the new sole #1 on the Artificial Analysis Intelligence Index: v4.1 scores it 66 at max effort, three points clear of Claude Opus 5 at 63, with 65 at xhigh, 62 at high, 60 at medium and 58 at low. Headline pricing is unchanged at $10/$50, but cache reads were cut 75% to $0.25 per 1M, which Anthropic says works out to roughly 25% cheaper for typical workloads and up to 45% for highly agentic ones. The gains are concentrated in long-horizon agentic coding and research: Terminal-Bench 4.0 rises to 55.8% from Fable 5's 42.0% (Opus 5 is 52.3%), Humanity's Last Exam reaches 60.9% without tools and 65.0% with, and AutomationBench nearly doubles to 31.4% from 17.1%. It also posts 52.6% on Terminal-Bench-Science, 73.4% on CursorBench 3.2.0, 77.9% partial / 41.7% strict on OSWorld 2.0 and 1853 Elo on GDPval-AA v2, above Opus 5's 1824. Anthropic says production safeguards now intervene about 60% less often, and shipped Enterprise Frontier Safeguards alongside it. Available as claude-fable-5-1 on the Anthropic API, AWS, Google Cloud and Microsoft Azure.",
+      "sources": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+        "https://artificialanalysis.ai/changelog",
+        "https://venturebeat.com/technology/anthropics-claude-fable-5-1-and-mythos-5-1-arrive-with-a-75-cost-reduction-for-fable-cache-reads"
+      ]
+    },
+    {
+      "name": "Claude Mythos 5.1",
+      "lab": "Anthropic",
+      "released": "2026-09-01",
+      "params": "unknown",
+      "context": "1M (unchanged from Mythos 5; not restated at launch)",
+      "modality": "multimodal in, text out",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 60.9
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$10 in / $50 out per 1M (restricted access)",
+      "notable": "The restricted-access sibling shipped the same day as Fable 5.1. The two share the same underlying model; Fable 5.1 is the generally available build carrying Anthropic's production safeguards, while Mythos 5.1 runs with those safeguards relaxed and is gated behind verification for cybersecurity and life-sciences organizations. That difference shows up directly on agentic coding: Mythos 5.1 scores 60.9% on Terminal-Bench 4.0 against Fable 5.1's 55.8%, a five-point gap attributable to safeguard routing rather than a different set of weights. Anthropic frames the 5.1 generation around long-running computer-programming work and scientific tasks such as experiment design, simulation and reading dense diagrams and tables.",
+      "sources": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+        "https://www.anthropic.com/news"
+      ]
+    },
+    {
+      "name": "Solaris",
+      "lab": "Runway",
+      "released": "2026-08-31",
+      "params": "undisclosed (built on Runway Gen-4.5)",
+      "context": "n/a - interactive session, not a token context window",
+      "modality": "interactive interface generation (video-native); text prompt + mouse/keyboard input, rendered frames out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Runway's first 'Interface World Model' - an AI system that generates a working application or website frame by frame as you interact with it, rather than emitting HTML, CSS, JavaScript or a component tree. It is built on Runway's Gen-4.5 video model, which already handles temporal coherence between frames; Solaris adds a feedback loop so the next frame is conditioned on user clicks and drags instead of a text trajectory, pairs the world model with a language model that reasons about intent, and distills multi-step diffusion down to a few steps for real-time response. Runway reports a user study of 250 participants across 30 examples (~7,500 pairwise judgments) in which people preferred Solaris to coded interfaces 61% of the time on instruction-following and 71% on natural in-scene behaviour. There are no independent benchmarks. Runway names text rendering, factual trustworthiness, coherence over long sessions and accessibility as open problems. Early access is by application only.",
+      "sources": [
+        "https://runway.com/news/research/introducing-solaris"
       ]
     }
   ]
