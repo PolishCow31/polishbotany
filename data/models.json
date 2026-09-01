@@ -3062,6 +3062,47 @@
         "https://www.llm-releases.com/",
         "https://openrouter.ai/inclusionai/ling-3.0-flash-fin:free"
       ]
+    },
+    {
+      "name": "Apodex 1.1",
+      "lab": "Apodex",
+      "released": "2026-08-30",
+      "params": "",
+      "context": "256K",
+      "modality": "Text + vision",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 44
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Agentic reasoning model from a previously untracked lab, evaluated by Artificial Analysis on Aug 30 2026 at 44 on the Intelligence Index. Accompanying paper is titled 'Apodex 1.1: Scaling Agentic Intelligence for Complex Work' and frames the model around scaling executable training environments so agents can hold long-horizon work with state maintenance and recovery. 256K-token context, text and image input, text output, proprietary weights. Priced at $0.30 in / $3.00 out per 1M tokens with a 90% cache discount - cheap on input, expensive on output, which matters because the model is very verbose: it generated 180M output tokens across the Intelligence Index run versus a 67M median. A smaller Apodex-1.1-mini is published on Hugging Face.",
+      "sources": [
+        "https://artificialanalysis.ai/models/apodex-1-1",
+        "https://artificialanalysis.ai/changelog",
+        "https://huggingface.co/papers/2608.23283",
+        "https://huggingface.co/apodex/Apodex-1.1-mini"
+      ]
+    },
+    {
+      "name": "Quasar 438B",
+      "lab": "Multiverse Computing",
+      "released": "2026-08-10",
+      "params": "438B",
+      "context": "1M",
+      "modality": "Text",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 43
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "First frontier-scale model from Multiverse Computing, the San Sebastian quantum-inspired AI firm best known for CompactifAI, its tensor-network model-compression platform. Scored 43 on the Artificial Analysis Intelligence Index when AA added it on Aug 31 2026. Text-only in and out, 1M-token context, proprietary weights, priced at $0.60 in / $1.80 out per 1M tokens - unusually cheap output for its tier. Arrives alongside the company's August 2026 Qualcomm partnership to put efficient models in data centers and a Series C targeting up to $570M.",
+      "sources": [
+        "https://artificialanalysis.ai/models/quasar-438b",
+        "https://artificialanalysis.ai/changelog",
+        "https://www.globenewswire.com/news-release/2026/08/05/3339052/0/en/multiverse-computing-and-qualcomm-collaborate-to-bring-efficient-ai-models-to-data-centers.html"
+      ]
     }
   ]
 }
