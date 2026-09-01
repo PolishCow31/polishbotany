@@ -3039,6 +3039,29 @@
         "https://www.marktechpost.com/2026/08/25/ibm-releases-granite-4-2-bringing-native-reasoning-and-agentic-rl-to-open-enterprise-models/",
         "https://global.techapple.com/2026/08/ibm-rolls-out-granite-4-2-open-weight-models-in-3b-8b-and-30b-sizes-for-local-deployment/"
       ]
+    },
+    {
+      "name": "Ling-3.0-flash-Fin",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-08-28",
+      "params": "124B total, 5.1B active (mixture-of-experts; finance-tuned variant of Ling-3.0-flash)",
+      "context": "262,144 tokens (32,768-token max output)",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "Finance Agent v2": 59.8,
+        "APEX-Agents": 29.2,
+        "SpreadsheetBench 2": 21.8
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Ant Group's inclusionAI shipped a finance-domain build of Ling-3.0-flash, keeping the base model's 124B-total / 5.1B-active sparse mixture-of-experts architecture, its 262K-token context and 32K output limit, while post-training it for annual reports, financial workbooks and multi-document research. Ant pitches it at investment analysis, valuation modelling, information retrieval and banking workflows, and says it retains the base model's general reasoning, coding and math ability. Published agentic scores are 59.8 on Vals AI's Finance Agent v2, 29.2 on Mercor's APEX-Agents and 21.8 on SpreadsheetBench 2; trackers list it as not yet publicly ranked because coverage outside agentic evals is thin. Weights were announced for open release the following week, and Ant is running a one-month free API window through OpenRouter for finance professionals and developers.",
+      "sources": [
+        "https://technode.com/2026/08/28/ant-group-launches-finance-tuned-ling-model-plans-to-open-source-it-next-week/",
+        "https://benchlm.ai/models/ling-3-0-flash-fin",
+        "https://www.llm-releases.com/",
+        "https://openrouter.ai/inclusionai/ling-3.0-flash-fin:free"
+      ]
     }
   ]
 }
