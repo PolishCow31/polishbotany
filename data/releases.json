@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-01T03:04:49-04:00",
+  "updated": "2026-09-01T06:06:25-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 93,
+      "prob": 94,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: Sep 30 up to 93% from 92%, but the same-day Sep 1 leg cratered to 33% from 43%. Sep 2 59%, Sep 4 76%, Sep 9 84%, Sep 15 89%, Oct 31 96%. $959K volume.",
+      "basis": "Sep 1 leg expired with no launch; Sep 2 at 60%, Sep 30 firmed to 94% on ~$987K volume.",
       "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 84,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Polymarket: Sep 30 eased to 84% from 85% and the Sep 15 leg slid a fifth straight sweep to 62%. Oct 31 up to 92%. $435K volume; the Aug 7 cyber-capability pause is still the drag.",
+      "basis": "Sep 30 flat at 84%; the Sep 15 leg fell a sixth straight sweep to 58%, Oct 31 at 93%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket firmed a second consecutive sweep: Oct 31 69% from 68%, Sep 30 23% from 20%, Sep 15 6%. $1.20M volume, following a late-June training-data reset and extended partner testing.",
+      "basis": "Teased at I/O 2026 for June, still in partner testing; Sep 30 leg firmed to 25%, Oct 31 at 69%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,7 +43,7 @@
       "prob": 73,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket: Dec 31 flat at 73%, Nov 30 69%, Oct 31 down to 60% from 64%, Sep 30 down to 45% from 47%, Sep 15 43%. $1.71M total volume.",
+      "basis": "Dec 31 flat at 73% on $1.7M volume; Oct 31 leg rebounded to 64% from 60%, Sep 30 at 49%.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold: 70% before 2027, flat on a re-read this sweep (47% before December, 29% before November, 4% before October, 1% before September).",
+      "basis": "Manifold holds 70% before 2027, flat; 47% before December, only 4% before October.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -65,7 +65,7 @@
       "prob": 44,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi 44% before Sep 4 as of the Aug 30 read; the page has returned HTTP 429 for four consecutive sweeps, so no fresher number is claimed.",
+      "basis": "Kalshi priced 44% before Sep 4 at last read; platform unreachable this sweep, carried forward unchanged.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -76,8 +76,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Announced as a low-latency Sol tier; no dated market exists.",
-      "source": "https://openai.com/index/gpt-5-6/"
+      "basis": "Announced serving tier still limited; no dated market exists for general availability.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Claude Haiku 5",
@@ -87,8 +87,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Opus 5 and Sonnet 5 have shipped; a Haiku tier historically follows. Anthropic's pricing table still lists only Haiku 4.5. No dated market.",
-      "source": "https://platform.claude.com/docs/en/about-claude/pricing"
+      "basis": "Small-tier refresh expected after the Opus 5 / Sonnet 5 line; no dated market.",
+      "source": "https://www.anthropic.com/news/claude-fable-5-mythos-5"
     },
     {
       "model": "Next Claude Fable",
@@ -98,8 +98,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Fable 5 launched Jun 9 and remains current at $10/$50 on the pricing table; no successor announced and no dated market.",
-      "source": "https://www.anthropic.com/news"
+      "basis": "Fable line tracks Mythos releases publicly; no dated market for the successor.",
+      "source": "https://www.anthropic.com/claude/mythos"
     },
     {
       "model": "Tencent Hy4 (general availability)",
@@ -109,7 +109,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Hy4 preview open-sourced Aug 28; a general-availability build is the expected follow-up. No dated market.",
+      "basis": "Hy4 preview shipped Aug 28 2026; full release not dated and no market exists.",
       "source": "https://llm-stats.com/llm-updates"
     }
   ]
