@@ -3169,6 +3169,23 @@
       "sources": [
         "https://runway.com/news/research/introducing-solaris"
       ]
+    },
+    {
+      "name": "Gemini Omni 1.1 Flash",
+      "lab": "Google DeepMind",
+      "released": "2026-08-27",
+      "params": "undisclosed",
+      "context": "n/a - up to 10s of prior video as conditioning context; 40s cumulative output",
+      "modality": "text-, image- and video-to-video generation with native audio; text and image in, video out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Google's generative video model, moved to general availability on Aug 27 2026 as model ID gemini-omni-1.1-flash and pitched as the production-ready tier of the Omni line for media-editing and automated video workflows. The 1.1 update adds three things developers had been missing: scene extension in 10-second increments up to a 40-second cumulative clip (each extension conditioned on up to 10 seconds of prior context), explicit first-frame/last-frame control for clean transitions, and 4K upscaling on top of the existing 360p/720p/1080p tiers. A 360p draft tier generates up to 60% faster at roughly a third of the 720p cost, aimed at iteration before a full-quality render. Video reference conditioning is capped at three clips of up to three seconds each, and input videos must be 10 seconds or shorter unless extending the model's own output. Billing is token-based - $1.50 per 1M input, $9.00 per 1M text output and $17.50 per 1M video output tokens, with 720p video metering at 5,792 tokens per second, an effective ~$0.10 per second. It is live in Google AI Studio, the Gemini API and the Gemini Enterprise Agent Platform, in Google Flow and the Gemini app for AI Plus/Pro/Ultra subscribers, and already in production at Adobe Firefly, Figma Weave, GMI Cloud and Runway. Parameter count and architecture are undisclosed and there is no independent arena result.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+        "https://www.marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling/"
+      ]
     }
   ]
 }
