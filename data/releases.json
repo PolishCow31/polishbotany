@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T12:05:33-04:00",
+  "updated": "2026-09-02T15:21:22-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 99,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Sep 30 leg firmed to 98.7%; Sep 3 at 81%, Sep 4 at 86%. Weekly market 89% on Aug 31-Sep 6, up from 82%.",
+      "basis": "Near legs firmed again: Sep 3 to 86% from 81%, Sep 4 88%, Sep 15 97.8%, Sep 30 99.4%. Weekly book 88% on Aug 31-Sep 6.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -18,11 +18,11 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 67,
+      "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Slide continued: Polymarket Dec 31 67% (from 71%), Sep 30 28%, Oct 31 35%. Manifold before-2027 broke to 64% from 74%.",
-      "source": "https://polymarket.com/event/gpt-6-released-by"
+      "basis": "Manifold strict-branding book flat at 64% before 2027 (26% Oct, 36% Nov, 49% Dec). Polymarket read did not return cleanly this sweep.",
+      "source": "https://manifold.markets/JoshYou/when-will-openai-release-gpt6"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -32,7 +32,7 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Flat again: Sep 15 leg 5%, Sep 30 20%, Oct 31 69% on $1.20M volume. No frontier Gemini shipped since early 2026.",
+      "basis": "Flat a fourth sweep: Sep 15 4%, Sep 30 21%, Oct 31 69% on $1.21M. Google shipped 3.8 Flash instead; still no frontier Gemini in 2026.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,7 +43,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 leg 70%, flat; 47% before December, 29% before November, 3% before October.",
+      "basis": "Manifold before-2027 leg 70% at last clean read; not re-fetched this sweep, no news to move it.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -54,7 +54,7 @@
       "prob": 15,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi rate-limited a second straight sweep - no live read; last read 15% before Sep 4. Still no model card.",
+      "basis": "Kalshi returned HTTP 429 a third straight sweep - no live read. Last read 15% before Sep 4. Still no model card.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
     },
     {
@@ -76,7 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Small-model tier still on Haiku 4.5 while Fable, Mythos and Opus 5 all refreshed; no dated market.",
+      "basis": "Small-model tier still on Haiku 4.5 while Fable, Mythos and Opus 5 have all refreshed; no dated market.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {

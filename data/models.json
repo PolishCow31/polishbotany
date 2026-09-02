@@ -3186,6 +3186,53 @@
         "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
         "https://www.marktechpost.com/2026/08/29/google-ai-releases-gemini-omni-1-1-flash-40-second-scene-extension-first-last-frame-control-and-4k-upscaling/"
       ]
+    },
+    {
+      "name": "Gemini 3.8 Flash",
+      "lab": "Google DeepMind",
+      "released": "2026-09-02",
+      "params": "unknown",
+      "context": "not restated at launch",
+      "modality": "multimodal in, text out, configurable reasoning effort (low/medium/high)",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 59,
+        "DeepSWE v1.1": 73.7,
+        "HLE-Verified": 54.9,
+        "Tau-3 Banking (tool use)": 45
+      },
+      "milestone": true,
+      "status": "live",
+      "pricing": "$0.75 in / $3.75 out per 1M (introductory rate through Dec 31 2026); rises to $1.50 / $7.50 on Jan 1 2027",
+      "notable": "Google's fourth Flash model in under four months and its third budget-tier release in six weeks, shipped Sep 2 2026 while the frontier Gemini 3.5 Pro remains unreleased. It scores 59 on the Artificial Analysis Intelligence Index at high reasoning, up three points from Gemini 3.7 Flash's 56, which puts a $0.75/$3.75 model level with GPT-5.6 Sol at sub-maximum reasoning and Grok 4.6 at medium, and lands it on the intelligence-vs-cost-per-task Pareto frontier at $0.58 per task. The gains are concentrated in agentic work: DeepSWE v1.1 rises to 73.7% from 3.7 Flash's 65.3%, within striking distance of Claude Opus 5 at 74.0% and past GPT-5.6 Sol at 72.7%, while tau-3-Banking tool use jumps 12 points to 45%. It posts 54.9% on HLE-Verified. Google attributes the improvement to the model executing more reasoning steps and iteratively calling tools; Artificial Analysis measures roughly 30% more output tokens per task than 3.7 Flash and about 300 output tokens per second, with 2.5 minutes per task on high reasoning versus 0.8 minutes on low. Available via the Gemini API, Google AI Studio, Android Studio, Google Antigravity, Gemini Enterprise, and to AI Pro/Ultra subscribers in the Gemini app and Search.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "https://artificialanalysis.ai/articles/gemini-3-8-flash",
+        "https://the-decoder.com/gemini-3-8-flash-is-googles-third-budget-model-in-six-weeks-while-frontier-models-remain-mia/"
+      ]
+    },
+    {
+      "name": "Gemini 3.8 Flash Cyber",
+      "lab": "Google DeepMind",
+      "released": "2026-09-02",
+      "params": "unknown",
+      "context": "not restated at launch",
+      "modality": "multimodal in, text out; cybersecurity-specialized agentic variant",
+      "open": false,
+      "benchmarks": {
+        "CyberGym": 86.2,
+        "CWE-Bench (pass@1)": 47.2,
+        "Gray Swan IPI (attack success rate, lower is better)": 5.5
+      },
+      "milestone": false,
+      "status": "preview",
+      "pricing": "not published; access-gated through the Fairwind Program",
+      "notable": "The restricted sibling to Gemini 3.8 Flash, built to autonomously discover software vulnerabilities and write working patches, released the same day and available only to vetted defenders, government authorities and critical-infrastructure operators through Google's newly launched Fairwind Program. It reaches 86.2% on CyberGym, surpassing its predecessor 3.5 Flash Cyber and substantially larger frontier competitors, and Google reports an over-70% success rate on an internal vulnerability benchmark spanning twenty programming languages. On patching it posts 47.2% pass@1 on CWE-Bench. Google cites two external results: the Chrome Security team found it produced 2.6x more correct Chrome vulnerability patches than the best much-larger commercial models, and Wiz measured 7.5-9.7% higher recall on its internal penetration-testing benchmark at 2.3-5.2x lower cost than leading frontier models. Prompt-injection robustness also improved, with a 5.5% attack success rate on Gray Swan's indirect-prompt-injection suite. It lands one day after OpenAI disclosed that its unreleased Astra model is the first to cross 'Critical' on its cyber preparedness scale, making gated cyber-capable models the pattern across both labs.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "https://the-decoder.com/gemini-3-8-flash-is-googles-third-budget-model-in-six-weeks-while-frontier-models-remain-mia/",
+        "https://cybersecuritynews.com/gemini-3-8-flash-cyber/"
+      ]
     }
   ]
 }
