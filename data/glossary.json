@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T16:33:30-04:00",
+  "updated": "2026-09-03T19:01:01-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -8210,6 +8210,17 @@
       ]
     },
     {
+      "term": "Provider adapter harness",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "An ARC Prize evaluation mode that preserves a model's opaque reasoning state between requests and compacts long conversations, letting it reuse prior work across attempts.",
+      "aka": [
+        "provider adapter",
+        "stateful harness",
+        "ARC provider adapter"
+      ]
+    },
+    {
       "term": "Proximal Policy Optimization",
       "acronym": "PPO",
       "category": "Training & post-training",
@@ -9260,6 +9271,17 @@
         "pixel-level classification",
         "segmentation mask",
         "instance mask"
+      ]
+    },
+    {
+      "term": "Semi-private evaluation set",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A held-back benchmark split shared only with vetted evaluators, used to score frontier models while limiting training-data contamination and public leakage.",
+      "aka": [
+        "semi-private set",
+        "ARC-AGI Semi-Private",
+        "held-out eval set"
       ]
     },
     {

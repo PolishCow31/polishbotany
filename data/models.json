@@ -3325,20 +3325,21 @@
       "benchmarks": {
         "GPQA Diamond": 96.0,
         "FrontierMath T4": 97.6,
-        "ARC-AGI-3": 98.6,
+        "ARC-AGI-3": 62.7,
         "DeepSWE 1.1": 74.1,
-        "ExploitBench": 100.0
+        "ExploitBench": 100.0,
+        "AA-Index": 61,
+        "Coding Agent Index": 67,
+        "ARC-AGI-3 (provider adapter)": 99.9
       },
       "milestone": true,
       "status": "live",
       "pricing": "$10 / $50 per 1M tokens (standard); $20 / $100 for the Fast tier",
-      "notable": "OpenAI's first GPT-6-generation model, released Sep 3 2026 after a month of markets pricing it as imminent. It is the first model OpenAI has designated as crossing the Critical cybersecurity threshold of its Preparedness Framework, meaning it can find and exploit previously unknown vulnerabilities in hardened systems without step-by-step human direction; OpenAI reports a perfect 100% on its internal ExploitBench and two discovered zero-days. Rollout is phased: Daybreak cybersecurity-program customers first, then ChatGPT Plus, Pro, Business and Enterprise, the API and AWS over the following week, with the strongest cyber capabilities gated to vetted partners. President Greg Brockman framed the launch with 'Welcome to the AGI era.' Vendor-reported scores include 96% GPQA Diamond, 97.6% FrontierMath Tier 4 v2 and 74.1% DeepSWE v1.1 against 70.8% for GPT-5.6 Sol; OpenAI also claims ~57% lower cost per completed task than Sol despite the higher token price. Numbers vary by outlet (some report FrontierMath 98% and ARC-AGI-3 99.9%), and the ARC-AGI-3 result used a Responses API harness with reasoning retention and compaction that OpenAI has itself shown can lift scores without changing the model. Researchers have criticized its 'opaque recurrence' reasoning, which reduces chain-of-thought monitorability; OpenAI concedes monitorability 'is getting more challenging.' No Artificial Analysis Index score yet.",
+      "notable": "OpenAI's first GPT-6-generation model, released Sep 3 2026, and the first model OpenAI has designated Critical for cybersecurity under its Preparedness Framework: it can find and exploit previously unknown vulnerabilities in hardened systems without step-by-step human direction (100% on OpenAI's internal ExploitBench, two discovered zero-days). Rollout is phased from Daybreak security-program customers to ChatGPT Plus/Pro/Business/Enterprise, the API and AWS over the following week, with the strongest cyber capabilities gated to vetted partners; president Greg Brockman framed the launch with 'Welcome to the AGI era.' Independent measurement has since tempered the framing: Artificial Analysis scored it 61 on the Intelligence Index (max and xhigh effort; 60 high, 59 medium), level with GPT-5.6 Sol and Grok 4.6 and five points behind Claude Fable 5.1 at 66, while its Coding Agent Index of 67 is roughly equal to Claude Opus 5 and Fable 5 in Claude Code. AA also notes it uses ~10% fewer output tokens than Sol on the Index and is 70% more token-efficient on coding, but the price rise to $10/$50 from $4/$20 makes it ~75% more expensive per Index task than its predecessor. ARC Prize independently measured 62.7% on ARC-AGI-3 Semi-Private with the standard harness ($26,098 of compute) and 99.9% only with a stateful provider-adapter harness that preserves opaque reasoning state between requests — well short of the 98.6% headline OpenAI reported; ARC Prize calls it SOTA and notes Astra used fewer actions than the median tested human on 96% of levels, while cautioning that saturating the benchmark would not be proof of AGI. Vendor-reported scores remain 96% GPQA Diamond, 97.6% FrontierMath Tier 4 v2 and 74.1% DeepSWE v1.1 against 70.8% for GPT-5.6 Sol.",
       "sources": [
-        "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
-        "https://venturebeat.com/technology/welcome-to-the-agi-era-openai-launches-gpt-6-astra",
-        "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/",
-        "https://9to5mac.com/2026/09/03/openai-releasing-major-upgrade-to-chatgpt-and-codex-with-gpt-6-astra-details-here/",
-        "https://www.axios.com/2026/09/03/openai-astra-gpt-6-agi-brockman"
+        "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra",
+        "https://arcprize.org/blog/astra",
+        "https://arcprize.org/results/openai-gpt-6-astra"
       ]
     }
   ]
