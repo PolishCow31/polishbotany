@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T06:06:46-04:00",
+  "updated": "2026-09-03T09:05:18-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -6529,6 +6529,16 @@
       ]
     },
     {
+      "term": "Model forensics",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "Post-hoc investigation of a concerning model output to determine whether it reflects genuine misalignment, a prompt artifact, or an evaluation-specific quirk.",
+      "aka": [
+        "behavioral forensics",
+        "incident forensics"
+      ]
+    },
+    {
       "term": "Model Hardware Standard",
       "acronym": "MHS",
       "category": "Capabilities & agents",
@@ -7965,6 +7975,16 @@
       ]
     },
     {
+      "term": "Private Safety Processing",
+      "acronym": "PSP",
+      "category": "Safety & alignment",
+      "def": "OpenAI's approach to running safety monitoring on enterprise traffic without retaining customer data, contrasting with rivals that require stored logs for abuse review.",
+      "aka": [
+        "zero-retention safety monitoring",
+        "private safety processing"
+      ]
+    },
+    {
       "term": "Probing classifier",
       "acronym": "",
       "category": "Safety & alignment",
@@ -8909,6 +8929,17 @@
         "annualized run rate",
         "revenue run rate",
         "ARR"
+      ]
+    },
+    {
+      "term": "Runtime safety monitor",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A separate classifier or model that inspects a deployed system's reasoning and actions during inference, blocking or escalating samples showing misaligned or dangerous behavior.",
+      "aka": [
+        "runtime monitor",
+        "deployment monitor",
+        "inference-time monitor"
       ]
     },
     {
