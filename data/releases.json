@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-02T18:10:27-04:00",
+  "updated": "2026-09-02T21:23:44-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 99,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Sep 3 eased to 82% from 86%, Sep 4 88%, Sep 15 98%, Sep 30 99%. Weekly book flat at 88% for Aug 31-Sep 6.",
+      "basis": "Near legs softened: Sep 3 to 75% from 82%, Sep 4 87%, Sep 9 93%, Sep 15 97%, Sep 30 99%. Weekly book 87%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -18,10 +18,10 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 94,
+      "prob": 97.5,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket repriced hard: Dec 31 94% from 67%, Sep 30 88% from 28%, on $2.06M. Manifold's strict book still 64%.",
+      "basis": "Dec 31 firmed to 97.5% from 94% on $2.08M; Sep 30 92%, Sep 15 86%. Traders still expect Astra to be branded GPT-6.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Flat a fifth sweep: Sep 15 4%, Sep 30 21%, Oct 31 69% on $1.21M. Google shipped 3.8 Flash instead of the frontier tier.",
+      "basis": "Oct 31 flat at 69% but Sep 30 rose to 28% from 21% on $1.21M. Google keeps shipping Flash tiers instead of a Pro.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31 2026",
       "expectedDate": "2026-12",
-      "prob": 70,
+      "prob": 68,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 leg 70% at last clean read Sep 2; not re-fetched this sweep and no news to move it.",
+      "basis": "Manifold before-2027 eased to 68% from 70%, but before-November collapsed to 17% from 29%; before-December 45%.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
@@ -54,8 +54,30 @@
       "prob": 15,
       "frontier": false,
       "status": "expected",
-      "basis": "Kalshi returned HTTP 429 a fourth straight sweep. Last read 15% before Sep 4, a window now two days out with no model card.",
+      "basis": "Kalshi returned HTTP 429 a fifth straight sweep. Last clean read 15% before Sep 4, now two days out with no model card.",
       "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
+    },
+    {
+      "model": "Muse Spark open-weights release",
+      "lab": "Meta (Superintelligence Labs)",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Zuckerberg said at the Muse Spark 1.3 launch that open-weight versions are planned; no date and no dated market.",
+      "source": "https://research.meta.ai/blog/introducing-muse-spark-1-3"
+    },
+    {
+      "model": "Muse Spark 1.3 max reasoning mode",
+      "lab": "Meta (Superintelligence Labs)",
+      "expectedWindow": "Sep 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Meta says the max reasoning tier ships shortly after additional safety testing; no dated market exists.",
+      "source": "https://research.meta.ai/blog/introducing-muse-spark-1-3"
     },
     {
       "model": "GPT-5.6 Sol Ultrafast (general availability)",

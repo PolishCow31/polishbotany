@@ -3233,6 +3233,33 @@
         "https://the-decoder.com/gemini-3-8-flash-is-googles-third-budget-model-in-six-weeks-while-frontier-models-remain-mia/",
         "https://cybersecuritynews.com/gemini-3-8-flash-cyber/"
       ]
+    },
+    {
+      "name": "Meta Muse Spark 1.3",
+      "lab": "Meta (Superintelligence Labs)",
+      "released": "2026-09-02",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "multimodal (text, image, video, document in; text out)",
+      "open": false,
+      "benchmarks": {
+        "DeepSWE v1.1": 75.4,
+        "Terminal-Bench 2.1": 88.8,
+        "GDPval-AA v2": 1754,
+        "OSWorld 2.0 (partial)": 66.9,
+        "AutomationBench": 49.4,
+        "DeepSearch QA": 89.4,
+        "MRCR v2 256K (8-needle)": 98.5
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Meta's third Muse Spark refresh in five weeks, shipped Sep 2 2026 into Muse Code and the Meta Model API as model ID muse-spark-1.3, and pitched by Mark Zuckerberg as frontier performance at low cost. Meta calls it its largest single jump in coding and agentic work to date: on its own published scorecard DeepSWE v1.1 rises to 75.4 from Muse Spark 1.2's 55.0 (Claude Opus 5 74.0), Terminal-Bench 2.1 reaches 88.8, tying GPT-5.6 Sol and ahead of Opus 5 at 86.7, and SWEAtlas CodeBase QnA hits 59.4 against Sol's 53.5 and Opus 5's 52.7. The clearest gap is long context: MRCR 256K-512K goes to 98.5 from 66.3 and MRCR 512K-1M to 98.1 from 55.5, versus 91.5 and 73.8 for GPT-5.6 Sol. On broad knowledge work it still trails Anthropic - GDPval-AA v2 1754 against Opus 5's 1824 - and OpenAI leads it on DeepSearch QA (93.0 vs 89.4) and the Agentic IF Index (60.5 vs 57.8). Meta reports roughly 20% fewer tool calls and 25% fewer tokens than 1.2 on internal coding comparisons, plus stronger adversarial robustness and more caution on irreversible actions. The 1M-token context and pricing are unchanged from 1.1 and 1.2 at $1.25 per 1M input, $0.15 cached and $4.25 output, with a contributor tier at $0.10/$0.20 in exchange for training rights. A max-reasoning mode is held back pending further safety testing, and Zuckerberg says open-weights versions are planned. Every number above is Meta's own, run on Meta's harness; Artificial Analysis has not yet published an independent Intelligence Index score, so 1.2's 57 remains Meta's last third-party mark.",
+      "sources": [
+        "https://research.meta.ai/blog/introducing-muse-spark-1-3",
+        "https://developer.meta.com/ai/models/muse-spark/",
+        "https://www.axios.com/2026/09/02/meta-debuts-muse-spark-13-as-personal-agent-work-continues",
+        "https://officechai.com/ai/muse-spark-1-3-benchmarks/"
+      ]
     }
   ]
 }
