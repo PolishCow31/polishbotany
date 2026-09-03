@@ -1,28 +1,28 @@
 {
-  "updated": "2026-09-03T13:11:10-04:00",
+  "updated": "2026-09-03T16:33:30-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
-      "model": "Astra (next OpenAI model family)",
-      "lab": "OpenAI",
-      "expectedWindow": "by Sep 15 2026",
+      "model": "Grok 4.7",
+      "lab": "xAI",
+      "expectedWindow": "Sep 12 2026 (Musk-stated)",
       "expectedDate": "2026-09",
-      "prob": 99,
-      "frontier": true,
-      "status": "confirmed",
-      "basis": "Release-by-today leg jumped to 96% from 89%; Sep 4 99%, Sep 15 99%, Sep 30 100% on $923K volume.",
-      "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Musk said Sep 2 on X it ships in ten days as a 2.1T-parameter pre-train. No xAI model card; Kalshi's by-Sep-4 leg collapsed.",
+      "source": "https://finance.biggo.com/news/cdeb763e-3e82-4f0b-82bd-4f473881bf08"
     },
     {
-      "model": "GPT-6",
-      "lab": "OpenAI",
+      "model": "Next Mythos-class model",
+      "lab": "Anthropic",
       "expectedWindow": "by Sep 30 2026",
       "expectedDate": "2026-09",
-      "prob": 99,
+      "prob": 93,
       "frontier": true,
       "status": "expected",
-      "basis": "Sep 30 leg 99%, up from 96%; Sep 15 98% from 93%, Dec 31 100%, on $2.22M. Manifold 96% for 2026.",
-      "source": "https://polymarket.com/event/gpt-6-released-by"
+      "basis": "Polymarket Sep 30 leg 93%, Sep 15 77%, Oct 31 96% on $1.61M; book kept trading after Mythos 5.1 shipped Sep 1.",
+      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -32,30 +32,30 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Oct 31 flat at 69% an eleventh sweep; Sep 30 eased to 19.5%, Sep 15 4%, on $1.21M volume.",
+      "basis": "Oct 31 flat at 69% a twelfth sweep; Sep 30 20%, Sep 15 4%, on $1.21M volume. Repeated slips since the June I/O tease.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
-      "model": "Grok 5",
-      "lab": "xAI",
-      "expectedWindow": "by Dec 31 2026",
-      "expectedDate": "2026-12",
-      "prob": 66,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Manifold before-2027 flat at 66%; before-December 45%, before-November 10%, before-October 3%.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
-    },
-    {
-      "model": "Grok 4.7",
-      "lab": "xAI",
-      "expectedWindow": "Sep 12 2026 (Musk-stated)",
-      "expectedDate": "2026-09",
+      "model": "GPT-5.6 Sol Ultrafast (general availability)",
+      "lab": "OpenAI",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": false,
-      "status": "rumored",
-      "basis": "Musk said Sep 2 on X it ships in ten days as a 2.1T-parameter pre-train. No xAI model card; no dated market.",
-      "source": "https://finance.biggo.com/news/cdeb763e-3e82-4f0b-82bd-4f473881bf08"
+      "status": "confirmed",
+      "basis": "OpenAI has said the Ultrafast tier broadens beyond limited access; no date given and no dated market.",
+      "source": "https://openai.com/index/path-to-astra/"
+    },
+    {
+      "model": "Tencent Hy4 (general availability)",
+      "lab": "Tencent",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": false,
+      "status": "expected",
+      "basis": "Hy4 preview shipped Aug 28; Tencent has not dated the general-availability release and no market exists.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Muse Spark 1.3 max reasoning mode",
@@ -66,6 +66,17 @@
       "frontier": false,
       "status": "confirmed",
       "basis": "Meta says the max reasoning tier ships shortly after additional safety testing; no dated market exists.",
+      "source": "https://llm-stats.com/llm-updates"
+    },
+    {
+      "model": "Claude Haiku 5",
+      "lab": "Anthropic",
+      "expectedWindow": "H2 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": false,
+      "status": "rumored",
+      "basis": "Haiku tier has not been refreshed since 4.5 in Oct 2025; widely expected but unannounced, no dated market.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -80,37 +91,15 @@
       "source": "https://llm-stats.com/llm-updates"
     },
     {
-      "model": "GPT-5.6 Sol Ultrafast (general availability)",
-      "lab": "OpenAI",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "OpenAI has said the Ultrafast tier broadens beyond limited access; no date given and no dated market.",
-      "source": "https://openai.com/index/path-to-astra/"
-    },
-    {
-      "model": "Claude Haiku 5",
-      "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "frontier": false,
-      "status": "rumored",
-      "basis": "Haiku tier has not been refreshed since 4.5 in Oct 2025; widely expected but unannounced, no dated market.",
-      "source": "https://llm-stats.com/llm-updates"
-    },
-    {
-      "model": "Tencent Hy4 (general availability)",
-      "lab": "Tencent",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "frontier": false,
+      "model": "Grok 5",
+      "lab": "xAI",
+      "expectedWindow": "by Dec 31 2026",
+      "expectedDate": "2026-12",
+      "prob": 66,
+      "frontier": true,
       "status": "expected",
-      "basis": "Hy4 preview shipped Aug 28; Tencent has not dated the general-availability release and no market exists.",
-      "source": "https://llm-stats.com/llm-updates"
+      "basis": "Manifold before-2027 flat at 66%; before-December 45%, before-November 10%, before-October 3%, before-September 1%.",
+      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T13:11:10-04:00",
+  "updated": "2026-09-03T16:33:30-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1279,6 +1279,15 @@
         "BTM power",
         "on-site generation",
         "islanded data center"
+      ]
+    },
+    {
+      "term": "BenchCAD",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "Evaluation of a model's ability to produce and edit parametric computer-aided-design geometry from natural-language specifications, scored on constraint satisfaction and dimensional correctness.",
+      "aka": [
+        "CAD benchmark"
       ]
     },
     {
@@ -6711,6 +6720,16 @@
       ]
     },
     {
+      "term": "Monitorability",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "How readable a model's internal reasoning is to outside auditors; declines when reasoning moves into latent states, weakening chain-of-thought oversight as a safety control.",
+      "aka": [
+        "chain-of-thought monitorability",
+        "CoT monitorability"
+      ]
+    },
+    {
       "term": "Monosemanticity",
       "acronym": "",
       "category": "Safety & alignment",
@@ -7297,6 +7316,16 @@
       "aka": [
         "Open Neural Network Exchange",
         "ONNX format"
+      ]
+    },
+    {
+      "term": "Opaque recurrence",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "Reasoning that loops through hidden internal states rather than emitting readable intermediate tokens, improving efficiency while making chain-of-thought auditing substantially harder.",
+      "aka": [
+        "opaque recurrent reasoning",
+        "non-legible recurrence"
       ]
     },
     {
@@ -7971,6 +8000,16 @@
       "aka": [
         "training corpus",
         "pretraining dataset"
+      ]
+    },
+    {
+      "term": "Price per completed task",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "Cost framing that divides total spend by finished evaluation tasks rather than tokens, so a token-efficient model can be cheaper despite a higher per-token list price.",
+      "aka": [
+        "cost per completed task",
+        "task-level pricing"
       ]
     },
     {
