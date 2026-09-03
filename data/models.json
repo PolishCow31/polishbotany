@@ -3283,6 +3283,36 @@
         "https://9to5mac.com/2026/09/01/meta-launches-muse-voice-transcribe-for-real-time-voice-dictation-on-mac/",
         "https://dataconomy.com/2026/09/02/meta-muse-voice-transcribe-real-time-audio-model-20-speakers/"
       ]
+    },
+    {
+      "name": "Qwen3.8-Max-0902",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-09-02",
+      "params": "2.4T total (post-trained refresh of Qwen3.8-Max; base architecture unchanged)",
+      "context": "1M tokens",
+      "modality": "multimodal in, text out",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 3.0": 29.0,
+        "DeepSWE 1.1": 69.3,
+        "NL2Repo-Bench": 64.9,
+        "QwenSWEBench V2": 70.0,
+        "CoWorkBench": 76.1,
+        "AutomationBench": 50.8,
+        "JobBench": 64.0,
+        "Toolathlon-Verified": 73.3,
+        "MMMU-Pro": 82.7,
+        "Code Arena WebDev (Elo)": 1691
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$2.00 / $6.00 per 1M tokens (cache hits $0.17 explicit, $0.25 implicit)",
+      "notable": "A post-training-only refresh of August's Qwen3.8-Max: same 2.4-trillion-parameter architecture, same 1M-token context, same price, with the gains concentrated in coding and long-horizon agent work. Terminal-Bench 3.0 more than doubles from 11.3% to 29.0% and DeepSWE 1.1 rises from 56.6% to 69.3%, while NL2Repo-Bench goes 55.9% to 64.9%. On Code Arena WebDev it takes first outright at 1,691 Elo, three points above Claude Opus 5 Max at 1,687 and 22 above the previous Qwen3.8-Max checkpoint. Claude still leads it on Terminal-Bench 3.0, DeepSWE 1.1 and the agent-coordination evals, and Alibaba published no new base model or version bump alongside it.",
+      "sources": [
+        "https://aireleasetracker.com/model/qwen/qwen3.8-max-0902",
+        "https://datanorth.ai/news/alibaba-releases-qwen3-8-max-0902",
+        "https://cellcog.ai/blog/qwen3-8-max-0902/"
+      ]
     }
   ]
 }
