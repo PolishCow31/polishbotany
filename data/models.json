@@ -3260,6 +3260,29 @@
         "https://www.axios.com/2026/09/02/meta-debuts-muse-spark-13-as-personal-agent-work-continues",
         "https://officechai.com/ai/muse-spark-1-3-benchmarks/"
       ]
+    },
+    {
+      "name": "Meta Muse Voice Transcribe",
+      "lab": "Meta (Superintelligence Labs)",
+      "released": "2026-09-01",
+      "params": "undisclosed (autoregressive multimodal model from the Muse Spark family)",
+      "context": "streaming audio, processed in 80ms chunks; no fixed token context published",
+      "modality": "audio in, streaming text out (real-time speech recognition with speaker diarization)",
+      "open": false,
+      "benchmarks": {
+        "Artificial Analysis streaming speech-to-text (WER, lower is better)": 3.1,
+        "Diarization error rate (lower is better)": 17.5,
+        "Time to final transcript (seconds)": 0.16
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$3 per 1,000 audio minutes",
+      "notable": "Meta Superintelligence Labs' first real-time audio perception model, announced Sep 1 2026 and shipped the same day into the Meta AI Mac app, Muse Code and the Meta Model API. It is autoregressive rather than post-hoc: audio arrives in 80ms chunks, each converted to a soft token, and a reinforcement-learned 'adaptive delay' policy varies how long the model waits per word based on difficulty, so easy words emit immediately while ambiguous ones buy extra context. Meta reports a 3.1% word error rate on Artificial Analysis's streaming speech-to-text benchmark, which it claims is first place, a 17.5% diarization error rate across standard datasets, and a final transcript roughly 0.16 seconds after a speaker stops. It handles 20-plus simultaneous speakers, was trained across 70-plus languages with 25 extensively validated (including Hindi, Tamil, Telugu, Kannada and Malayalam), and follows code-switching within a single sentence. Meta says audio is processed but not stored.",
+      "sources": [
+        "https://research.meta.ai/blog/introducing-muse-voice-transcribe",
+        "https://9to5mac.com/2026/09/01/meta-launches-muse-voice-transcribe-for-real-time-voice-dictation-on-mac/",
+        "https://dataconomy.com/2026/09/02/meta-muse-voice-transcribe-real-time-audio-model-20-speakers/"
+      ]
     }
   ]
 }

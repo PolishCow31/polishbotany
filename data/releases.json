@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T00:06:35-04:00",
+  "updated": "2026-09-03T03:08:02-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,7 +10,7 @@
       "prob": 99,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Sep 3 leg firmed to 84% from 75%; Aug 31-Sep 6 week 90%; Sep 30 99%. Separate release-on market: 84.5% today.",
+      "basis": "Sep 3 leg 83%, Sep 4 89%, Sep 15 98%, Sep 30 99% on $680K. Release-on-today contract 82%; Aug 31-Sep 6 week 90%.",
       "source": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
     },
     {
@@ -21,7 +21,7 @@
       "prob": 96,
       "frontier": true,
       "status": "expected",
-      "basis": "Dec 31 eased to 96% from 97.5% on $2.11M; Sep 30 90%, Sep 15 87%. Manifold now 90% before October.",
+      "basis": "Dec 31 flat at 96% on $2.12M; Sep 30 eased to 89% from 90%, Sep 15 firmed to 88%. Manifold 91% before October.",
       "source": "https://polymarket.com/event/gpt-6-released-by"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Oct 31 flat at 69%; Sep 30 eased to 25% from 28%. Debut-Elo book repriced sharply upward: 1510+ now 59%.",
+      "basis": "Oct 31 flat at 69%; Sep 30 eased to 20% from 25%. Debut-Elo book retraced hard: 1510+ back to 37% from 59%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,19 +43,19 @@
       "prob": 66,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 eased to 66% from 68%; before-November slid again to 10% from 17%; before-December 45%.",
+      "basis": "Manifold before-2027 flat at 66%; before-December 45%, before-November 10%, before-October 3%.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     },
     {
       "model": "Grok 4.7",
       "lab": "xAI",
-      "expectedWindow": "early Sep 2026",
+      "expectedWindow": "Sep 12 2026 (Musk-stated)",
       "expectedDate": "2026-09",
-      "prob": 15,
+      "prob": -1,
       "frontier": false,
-      "status": "expected",
-      "basis": "Kalshi returned HTTP 429 a sixth straight sweep. Last clean read 15% before Sep 4, now one day out with no model card.",
-      "source": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok47"
+      "status": "rumored",
+      "basis": "Musk said Sep 2 on X it ships in ten days as a 2.1T-parameter pre-train. No xAI model card; Kalshi before-Sep-4 window now moot.",
+      "source": "https://finance.biggo.com/news/cdeb763e-3e82-4f0b-82bd-4f473881bf08"
     },
     {
       "model": "Muse Spark 1.3 max reasoning mode",
@@ -66,7 +66,7 @@
       "frontier": false,
       "status": "confirmed",
       "basis": "Meta says the max reasoning tier ships shortly after additional safety testing; no dated market exists.",
-      "source": "https://llm-stats.com/ai-news"
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Muse Spark open-weights release",
@@ -77,7 +77,7 @@
       "frontier": false,
       "status": "rumored",
       "basis": "Zuckerberg said at the Muse Spark 1.3 launch that open-weight versions are planned; no date and no dated market.",
-      "source": "https://llm-stats.com/ai-news"
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "GPT-5.6 Sol Ultrafast (general availability)",
@@ -88,7 +88,7 @@
       "frontier": false,
       "status": "confirmed",
       "basis": "Announced serving tier for Sol; no dated market exists.",
-      "source": "https://openai.com/index/path-to-astra/"
+      "source": "https://openai.com/index/pacing-model-development-cyber-capabilities/"
     },
     {
       "model": "Claude Haiku 5",
