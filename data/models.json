@@ -3344,6 +3344,27 @@
         "https://arcprize.org/blog/astra",
         "https://arcprize.org/results/openai-gpt-6-astra"
       ]
+    },
+    {
+      "name": "K2 Horizon 375B A23B",
+      "lab": "Institute of Foundation Models (MBZUAI)",
+      "released": "2026-09-03",
+      "params": "375B total / 23B active (sparse Mixture-of-Experts)",
+      "context": "524,288 tokens (512K native)",
+      "modality": "text in, text out; reasoning model with extended chain-of-thought",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 47
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "The flagship of K2 Horizon, a six-model fleet (0.9B, 3.7B, 7B, 32B, 36B-A4B and 375B-A23B) released Sep 3 2026 under Apache 2.0 by the Institute of Foundation Models at MBZUAI in Abu Dhabi, and billed as the largest fully open model release in history: weights, training code, training data and intermediate checkpoints are all published, not just the weights. Artificial Analysis scores it 47 on the v4.1 Intelligence Index, well above average for open-weight models near its size but sixteen points behind Claude Fable 5.1's 66 and fourteen behind GPT-6 Astra's 61. It runs 23B parameters per token in bfloat16 with a native 524,288-token context carried from midtraining, and IFM highlights a Mixture of Value Attention architecture, a diffusion-distillation step it credits with roughly 3x faster inference, and dynamic routing across the fleet. IFM says the three smallest models are state of the art at their scales in math, reasoning, software engineering and agentic use. Available immediately on Hugging Face, vLLM and SGLang, with hosted API access through Compass, Cerebras, AWS and Nebius.",
+      "sources": [
+        "https://huggingface.co/IFM/K2-Horizon-375B-A23B",
+        "https://artificialanalysis.ai/models/k2-horizon-375b-a23b",
+        "https://www.zawya.com/en/press-release/companies-news/mbzuais-institute-of-foundation-models-launches-k2-horizon-the-worlds-largest-fully-open-ai-models-in-history-477351",
+        "https://artificialanalysis.ai/changelog"
+      ]
     }
   ]
 }
