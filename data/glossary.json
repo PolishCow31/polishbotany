@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T03:05:33-04:00",
+  "updated": "2026-09-04T06:06:19-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2465,6 +2465,17 @@
       ]
     },
     {
+      "term": "Critical capability level",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "The highest tier in OpenAI's Preparedness Framework, meaning a model materially advances severe-harm capability; GPT-6 Astra is the first release designated Critical for cybersecurity.",
+      "aka": [
+        "Critical threshold",
+        "Preparedness Critical",
+        "critical risk tier"
+      ]
+    },
+    {
       "term": "Critical capability threshold",
       "acronym": "",
       "category": "Safety & alignment",
@@ -2915,6 +2926,17 @@
       "aka": [
         "deterministic decoding",
         "reproducibility"
+      ]
+    },
+    {
+      "term": "Diffusion distillation",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "Training a student to reproduce a diffusion model's multi-step output in far fewer steps, cutting inference cost; K2 Horizon credits it with roughly 3x faster serving.",
+      "aka": [
+        "step distillation",
+        "distilled diffusion",
+        "consistency distillation"
       ]
     },
     {
@@ -6379,6 +6401,16 @@
       ]
     },
     {
+      "term": "Mixture of Value Attention",
+      "acronym": "MoVA",
+      "category": "Model architecture",
+      "def": "Attention variant used in MBZUAI's K2 Horizon that routes among multiple learned value projections per head, adding capacity without widening the key or query paths.",
+      "aka": [
+        "MoVA",
+        "mixture-of-value attention"
+      ]
+    },
+    {
       "term": "Mixture-of-Depths",
       "acronym": "MoD",
       "category": "Model architecture",
@@ -9711,6 +9743,17 @@
       ]
     },
     {
+      "term": "SRE-Bench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "OpenAI evaluation of software reverse-engineering skill, scoring whether a model can recover a stripped binary's behaviour, typically reported as success within a fixed attempt budget.",
+      "aka": [
+        "Software Reverse Engineering Bench",
+        "SRE Bench",
+        "binary reverse engineering benchmark"
+      ]
+    },
+    {
       "term": "Stability AI",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -9741,6 +9784,17 @@
         "Mamba",
         "selective state-space model",
         "S4"
+      ]
+    },
+    {
+      "term": "Stateful provider adapter",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Evaluation harness that preserves a model's opaque reasoning state across API calls; ARC Prize measured Astra at 99.9% with one versus 62.7% on the standard stateless harness.",
+      "aka": [
+        "provider adapter",
+        "stateful harness",
+        "reasoning-state carryover"
       ]
     },
     {
