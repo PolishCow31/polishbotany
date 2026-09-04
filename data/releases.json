@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-03T19:01:01-04:00",
+  "updated": "2026-09-03T22:02:19-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,11 +7,22 @@
       "lab": "OpenAI",
       "expectedWindow": "week of Sep 7 2026",
       "expectedDate": "2026-09",
+      "prob": 99,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Astra shipped Sep 3 to Daybreak customers; Polymarket's GPT-6-by-Sep-30 leg firmed to 99% on the staged ChatGPT/API/AWS rollout.",
+      "source": "https://polymarket.com/event/gpt-6-released-by"
+    },
+    {
+      "model": "Muse Spark 1.3 (max) — general availability",
+      "lab": "Meta (Superintelligence Labs)",
+      "expectedWindow": "Sep 2026",
+      "expectedDate": "2026-09",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Astra shipped Sep 3 to Daybreak customers; OpenAI says ChatGPT tiers, the API and AWS follow over the week, cyber capabilities gated.",
-      "source": "https://artificialanalysis.ai/articles/benchmarking-gpt-6-astra"
+      "basis": "The 62-scoring max tier is in limited preview for Meta partners with pricing unannounced; a separate max-reasoning mode awaits safety testing.",
+      "source": "https://artificialanalysis.ai/articles/muse-spark-1-3"
     },
     {
       "model": "Grok 4.7",
@@ -21,30 +32,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Musk said Sep 2 on X it ships in ten days as a 2.1T-parameter pre-train. No xAI model card; Kalshi's by-Sep-4 leg collapsed.",
+      "basis": "Musk said Sep 2 on X it ships in ten days as a 2.1T-parameter pre-train. No xAI model card; Kalshi's by-Sep-4 leg collapsed to 15%.",
       "source": "https://finance.biggo.com/news/cdeb763e-3e82-4f0b-82bd-4f473881bf08"
-    },
-    {
-      "model": "Next Mythos-class model",
-      "lab": "Anthropic",
-      "expectedWindow": "by Sep 30 2026",
-      "expectedDate": "2026-09",
-      "prob": 93,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Polymarket Sep 30 leg 93% at last clean read; book still trading on $1.61M after Mythos 5.1 shipped Sep 1. Per-leg odds did not return this sweep.",
-      "source": "https://polymarket.com/event/next-mythos-class-model-released-by"
-    },
-    {
-      "model": "Muse Spark 1.3 max reasoning mode",
-      "lab": "Meta (Superintelligence Labs)",
-      "expectedWindow": "Sep 2026",
-      "expectedDate": "2026-09",
-      "prob": -1,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Meta says the max reasoning tier ships shortly after additional safety testing; no dated market exists.",
-      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -54,7 +43,7 @@
       "prob": 69,
       "frontier": true,
       "status": "expected",
-      "basis": "Oct 31 flat at 69% a thirteenth sweep; Sep 30 firmed to 21%, Sep 15 4%, on $1.21M volume. Repeated slips since the June I/O tease.",
+      "basis": "Oct 31 flat at 69% a fourteenth sweep; the Sep 30 leg slipped to 18% from 21%, Sep 15 at 4%, on $1.21M volume.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -98,8 +87,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Zuckerberg has said on X that open-weight Muse Spark versions are planned; still no date and no dated market.",
-      "source": "https://llm-stats.com/llm-updates"
+      "basis": "Zuckerberg says open-weight Muse Spark versions are planned; still no date and no dated market, now that 1.3 has an AA top-three score.",
+      "source": "https://artificialanalysis.ai/articles/muse-spark-1-3"
     },
     {
       "model": "Grok 5",
