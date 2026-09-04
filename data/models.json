@@ -3365,6 +3365,46 @@
         "https://www.zawya.com/en/press-release/companies-news/mbzuais-institute-of-foundation-models-launches-k2-horizon-the-worlds-largest-fully-open-ai-models-in-history-477351",
         "https://artificialanalysis.ai/changelog"
       ]
+    },
+    {
+      "name": "MAI-Transcribe-2",
+      "lab": "Microsoft AI",
+      "released": "2026-09-03",
+      "params": "not disclosed",
+      "context": "not disclosed (audio in, text out)",
+      "modality": "audio in, text out (speech recognition)",
+      "open": false,
+      "benchmarks": {
+        "FLEURS (avg word-error rate, 60 languages)": 5.2
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$0.10 per hour of audio (limited-time introductory rate through end of 2026)",
+      "notable": "Microsoft AI's second-generation speech-recognition model, released Sep 3 2026. Microsoft says it ranks first on the FLEURS benchmark across 60 languages with a 5.2% average word-error rate, beating Gemini 3.5 Transcribe, GPT-Transcribe, Whisper V3-Large and ElevenLabs Scribe v2, while running up to 10x faster than GPT-Transcribe, 7x faster than Scribe v2 and 5x faster than Gemini 3.5 Transcribe. Artificial Analysis places it on the accuracy-latency Pareto frontier and second on its word-error-rate leaderboard, a step below Microsoft's own first-place claim. Features include speaker diarization, word-level timestamps, keyword biasing, configurable transcription styles, code-switching and automatic language identification; it is served through Microsoft Foundry, MAI Playground and OpenRouter, with no parameter count or architecture disclosed.",
+      "sources": [
+        "https://microsoft.ai/news/mai-transcribe-2-is-the-fastest-most-accurate-and-cheapest-speech-recognition-model-in-the-world/",
+        "https://www.unite.ai/mai-transcribe-2-tops-fleurs-benchmark-across-60-languages-microsoft-says/",
+        "https://venturebeat.com/infrastructure/microsoft-ais-mai-transcribe-2-undercuts-openai-google-and-elevenlabs-on-price-and-speed"
+      ]
+    },
+    {
+      "name": "humain-m3",
+      "lab": "HUMAIN (Saudi PIF) / MiniMax",
+      "released": "2026-09-03",
+      "params": "428B total, 23B active per token (mixture-of-experts)",
+      "context": "not disclosed",
+      "modality": "natively multimodal mixture-of-experts (evaluated on Arabic text)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "pricing": "not disclosed (research and evaluation preview)",
+      "notable": "Saudi Arabia's national frontier Arabic model, unveiled Sep 3 2026 at LEAP in Riyadh by PIF-backed HUMAIN and built by China's MiniMax on the MiniMax-M3 lineage: a 428-billion-parameter mixture-of-experts activating 23B per token, further pre-trained on more than one trillion tokens of Arabic-native content. HUMAIN says it posted the highest average score among frontier models tested across seven public Arabic benchmarks, though it has not published the individual numbers. It is available only as a research and evaluation preview on HUMAIN Node; weights are expected under the MiniMax Community License after safety training completes, currently targeted for October. The launch is notable less for capability than for provenance - a sovereign Gulf AI program building its national model on Chinese weights.",
+      "sources": [
+        "http://www.prnewswire.com/news-releases/humain-unveils-humain-m3-a-frontier-arabic-language-model-developed-by-minimax-in-research-preview-on-humain-node-302869158.html",
+        "https://www.unite.ai/pif-backed-humain-launches-humain-m3-arabic-model-at-leap-riyadh/",
+        "https://startupfortune.com/saudi-arabia-built-its-national-ai-model-on-top-of-chinas-minimax/"
+      ]
     }
   ]
 }

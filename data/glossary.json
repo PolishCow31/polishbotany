@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T09:06:15-04:00",
+  "updated": "2026-09-04T13:44:20-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -3740,6 +3740,16 @@
       ]
     },
     {
+      "term": "FLEURS",
+      "acronym": "FLEURS",
+      "category": "Benchmarks & evals",
+      "def": "Google's multilingual speech benchmark covering 102 languages, used to compare automatic speech recognition systems by word-error rate on parallel read speech.",
+      "aka": [
+        "Few-shot Learning Evaluation of Universal Representations of Speech",
+        "FLEURS benchmark"
+      ]
+    },
+    {
       "term": "FLOPs",
       "acronym": "FLOPs",
       "category": "Economics & compute",
@@ -5454,6 +5464,17 @@
         "keyframing",
         "frame conditioning",
         "first-last frame conditioning"
+      ]
+    },
+    {
+      "term": "Keyword biasing",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Supplying a speech-recognition model a list of expected terms - names, jargon, product codes - at inference so it favours those spellings over acoustically similar alternatives.",
+      "aka": [
+        "hotword boosting",
+        "phrase hints",
+        "contextual biasing"
       ]
     },
     {
@@ -7696,6 +7717,17 @@
       "aka": [
         "parametric knowledge",
         "internal knowledge"
+      ]
+    },
+    {
+      "term": "Pareto frontier",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "The set of models where no other model is better on both axes at once, typically cost versus quality or latency versus accuracy; the efficient boundary of a leaderboard.",
+      "aka": [
+        "Pareto front",
+        "efficient frontier",
+        "cost-quality frontier"
       ]
     },
     {
