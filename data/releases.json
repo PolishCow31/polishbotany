@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-04T18:04:52-04:00",
+  "updated": "2026-09-04T21:06:13-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -8,10 +8,10 @@
       "expectedWindow": "week of Sep 7 2026",
       "expectedDate": "2026-09",
       "prob": 99,
-      "frontier": false,
+      "frontier": true,
       "status": "confirmed",
       "basis": "Staged rollout underway: cyber-program orgs first, then all ChatGPT paid tiers, API, Azure and AWS 'over the coming days' per OpenAI.",
-      "source": "https://openai.com/index/gpt-6-astra/"
+      "source": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
     },
     {
       "model": "Grok 4.7",
@@ -21,8 +21,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Musk's ten-day clock from Sep 2 now a week out; 2.1T-parameter new pre-train claimed, but docs.x.ai still tops out at grok-4.6 with no model ID or price.",
-      "source": "https://www.orcarouter.ai/blog/grok-4-7-release-date"
+      "basis": "Musk's Sep 11-12 target under a week out; 2.1T-parameter claim stands, but docs.x.ai re-checked this sweep still tops out at grok-4.6.",
+      "source": "https://docs.x.ai/docs/models"
     },
     {
       "model": "Muse Spark 1.3 (max) - general availability",
@@ -33,7 +33,7 @@
       "frontier": false,
       "status": "confirmed",
       "basis": "The 62-scoring max tier is in limited preview for Meta partners with pricing unannounced; a separate max-reasoning mode awaits safety testing.",
-      "source": "https://artificialanalysis.ai/changelog"
+      "source": "https://ai.meta.com"
     },
     {
       "model": "humain-m3 open-weights release",
@@ -44,17 +44,17 @@
       "frontier": false,
       "status": "confirmed",
       "basis": "HUMAIN says weights ship under the MiniMax Community License once safety training and alignment finish, targeted for next month. No dated market.",
-      "source": "http://www.prnewswire.com/news-releases/humain-unveils-humain-m3-a-frontier-arabic-language-model-developed-by-minimax-in-research-preview-on-humain-node-302869158.html"
+      "source": "https://humain.ai"
     },
     {
       "model": "Gemini 3.5 Pro",
       "lab": "Google DeepMind",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 65,
+      "prob": 64,
       "frontier": true,
       "status": "expected",
-      "basis": "Oct 31 leg holds 65%; Sep 30 ticked up to 14% from 13%, Sep 15 at 4%. Still in limited partner testing after the June and July slips.",
+      "basis": "Oct 31 leg eased to 64% from 65%; Sep 30 at 14%, Sep 15 3.6%. Still in limited partner testing after the June and July slips.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -66,7 +66,7 @@
       "frontier": false,
       "status": "confirmed",
       "basis": "OpenAI has said the Ultrafast tier broadens beyond limited access; no date given and no dated market.",
-      "source": "https://openai.com/index/path-to-astra/"
+      "source": "https://openai.com"
     },
     {
       "model": "Tencent Hy4 (general availability)",
@@ -77,7 +77,7 @@
       "frontier": false,
       "status": "expected",
       "basis": "Hy4 preview shipped Aug 28; Tencent has not dated the general-availability release and no market exists.",
-      "source": "https://llm-stats.com/llm-updates"
+      "source": "https://cloud.tencent.com"
     },
     {
       "model": "Claude Haiku 5",
@@ -88,7 +88,7 @@
       "frontier": false,
       "status": "rumored",
       "basis": "Haiku tier has not been refreshed since 4.5 in Oct 2025; widely expected but unannounced, no dated market.",
-      "source": "https://llm-stats.com/llm-updates"
+      "source": "https://anthropic.com"
     },
     {
       "model": "Muse Spark open-weights release",
@@ -99,7 +99,7 @@
       "frontier": false,
       "status": "rumored",
       "basis": "Zuckerberg says open-weight Muse Spark versions are planned; still no date and no dated market, now that 1.3 has an AA top-three score.",
-      "source": "https://artificialanalysis.ai/changelog"
+      "source": "https://ai.meta.com"
     },
     {
       "model": "Grok 5",
@@ -109,7 +109,7 @@
       "prob": 66,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 flat at 66% a ninth sweep; before-December 45%, before-November eased to 9%, before-October 3%.",
+      "basis": "Manifold before-2027 flat at 66% a tenth sweep; before-December 45%, before-November 9.4%, before-October 2.5%.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     }
   ]
