@@ -1,28 +1,28 @@
 {
-  "updated": "2026-09-05T06:18:09-04:00",
+  "updated": "2026-09-05T10:05:55-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
-      "model": "GPT-6 Astra (broad availability - ChatGPT paid tiers, API and AWS)",
+      "model": "GPT-6 Astra (broad availability - API, Azure and AWS Bedrock)",
       "lab": "OpenAI",
       "expectedWindow": "week of Sep 7 2026",
       "expectedDate": "2026-09",
       "prob": 99,
       "frontier": true,
       "status": "confirmed",
-      "basis": "Staged rollout underway toward ChatGPT paid tiers, API, Azure and AWS Bedrock 'over the coming days'; API is $10/$50 per million.",
+      "basis": "Reached ChatGPT Plus/Pro/Business/Enterprise Sep 4 in a cyber-restricted build; API, Azure and AWS Bedrock access continues 'over the coming days' at $10/$50 per million.",
       "source": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html"
     },
     {
       "model": "Grok 4.7",
       "lab": "xAI",
-      "expectedWindow": "Sep 11-12 2026 (Musk-stated)",
+      "expectedWindow": "by Sep 21 2026 (Musk targets ~Sep 12)",
       "expectedDate": "2026-09",
-      "prob": -1,
+      "prob": 69,
       "frontier": false,
-      "status": "rumored",
-      "basis": "Musk's Sep 11-12 target under a week out; 2.1T-parameter claim stands, but xAI has published no model page, price or API ID.",
-      "source": "https://docs.x.ai/docs/models"
+      "status": "expected",
+      "basis": "Manifold prices 22% before Sep 11, 69% before Sep 21, 90% before Oct 11. 2.1T-parameter claim stands; xAI still has no model page, price or API ID.",
+      "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
     },
     {
       "model": "Muse Spark 1.3 (max) - general availability",
@@ -51,10 +51,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 63,
+      "prob": 77,
       "frontier": true,
       "status": "expected",
-      "basis": "Oct 31 leg eased to 63% from 64%; Sep 30 at 14%, Sep 15 4%. Still in limited partner testing after the June and July slips.",
+      "basis": "Oct 31 leg jumped to 77% from 63%, Sep 30 to 27% from 14%, on $1.2M volume — traders now expect an imminent launch after the June and July slips.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -109,8 +109,8 @@
       "prob": 66,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 flat at 66% an eleventh sweep; before-December 45%, before-November 9%, before-October 3%.",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "basis": "Manifold's Grok 4.7+ book prices 93% for any ≥4.7 release before Dec 1, but a distinct Grok 5 flagship this year holds near 66%.",
+      "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
     }
   ]
 }
