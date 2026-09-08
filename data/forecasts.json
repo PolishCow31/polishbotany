@@ -1,22 +1,22 @@
 {
-  "updated": "2026-09-08T06:04:40-04:00",
+  "updated": "2026-09-08T09:04:17-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
       "question": "Which company has best AI model end of 2026?",
       "platform": "Polymarket",
-      "forecast": "64.5% — Anthropic, easing half a point; OpenAI 21.5%, Google 7.5%, xAI 4.9%, Meta 2%",
+      "forecast": "65% — Anthropic, firming half a point; OpenAI 22%, Google 8%, xAI 4.8%. $1.15M volume",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "question": "Which companies will have a #1 AI model by December 31?",
       "platform": "Polymarket",
-      "forecast": "36% — OpenAI, up from 31%; Google 22.5%, xAI 12.5%, Alibaba 11.5%, Z.ai 10.5%, Meta 10.5%",
+      "forecast": "37% — OpenAI, up from 36%; Google 23%, xAI 13%, Alibaba 12%, Z.ai 11%, Meta 11%",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
@@ -50,7 +50,7 @@
     {
       "question": "OpenAI announces it has achieved AGI before 2027?",
       "platform": "Polymarket",
-      "forecast": "21.5% — Yes, easing from 23%; traders still read Astra and Brockman's \"AGI era\" framing as short of a formal declaration",
+      "forecast": "22% — Yes, up from 21.5%; Astra's 'may represent AGI' framing keeps the leg bid",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
@@ -356,7 +356,7 @@
     {
       "question": "Next Google Gemini Pro model released by...?",
       "platform": "Polymarket",
-      "forecast": "70% — by Oct 31, flat; Sep 30 at 29.5%, Sep 15 just 3.6%",
+      "forecast": "70% — by Oct 31, flat; Sep 30 at 30% (up from 29.5), Sep 15 just 4%",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-10-31",
@@ -437,7 +437,7 @@
     {
       "question": "Will we get AGI before 2028?",
       "platform": "Manifold",
-      "forecast": "24% — Yes, up from 20% on the human-level-intelligence definition",
+      "forecast": "24% — Yes, holding after last week's climb from 20%",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2027-12-31",
@@ -446,7 +446,7 @@
     {
       "question": "Will we get AGI before 2030?",
       "platform": "Manifold",
-      "forecast": "47% — Yes, holding after last week's climb from 41%",
+      "forecast": "47% — Yes, flat on the human-level-intelligence definition",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2030-01-01",
@@ -455,9 +455,9 @@
     {
       "question": "Will a Chinese company have a top ___ AI model by December 31?",
       "platform": "Polymarket",
-      "forecast": "25.5% — top-3, flat; outright #1 steady at 8.5%",
+      "forecast": "26% — top-3, up half a point; outright #1 at 9%; top-5 and top-10 both priced at 100%",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/will-a-chinese-company-have-the-best-ai-model-by-december-31"
     },
@@ -518,9 +518,9 @@
     {
       "question": "Will any AI model reach ___ Overall Arena Score by December 31?",
       "platform": "Polymarket",
-      "forecast": "95% — 1520 Elo, holding; 1530 at 39%, 1540 up to 25%, 1550 at 15%.",
+      "forecast": "95% — 1520 Elo, holding; 1530 at 40% (up from 39), 1540 at 20%, 1550 at 18%",
       "category": "benchmark",
-      "relevantBenchmark": "LMArena",
+      "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/chatbot-arena-how-high-will-ai-score-by-december-31"
     },
@@ -590,9 +590,9 @@
     {
       "question": "Which company has the best AI model end of September?",
       "platform": "Polymarket",
-      "forecast": "88% — Anthropic, flat; OpenAI eased to 9.9%, Google 2.2%",
+      "forecast": "89% — Anthropic, up a point; OpenAI 10%, Google 2.1%",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-09-30",
       "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868"
     },
@@ -698,9 +698,9 @@
     {
       "question": "Which company has the best AI model end of October?",
       "platform": "Polymarket",
-      "forecast": "75% — Anthropic, up a point; OpenAI 16.8%, Google 7.6%",
+      "forecast": "75% — Anthropic, holding; OpenAI 16.9%, Google 7.3%",
       "category": "ranking",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-10-31",
       "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october"
     },
@@ -734,7 +734,7 @@
     {
       "question": "When will xAI release Grok 4.7 (or higher)?",
       "platform": "Manifold",
-      "forecast": "81% — before Sep 21, flat; 22% before Sep 11 (Musk's ~Sep 12 target is 4 days out), 90% before Oct 11",
+      "forecast": "81% — before Sep 21, flat; 22% before Sep 11 (Musk's ~Sep 12 target), 92% before Nov 1",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-01",
@@ -1609,20 +1609,20 @@
   ],
   "marketsStory": [
     {
-      "h": "Anthropic's lead holds, but the field is buying dethronement tickets —",
-      "t": "Polymarket still makes Anthropic the year-end favorite at 64.5% for best model (OpenAI 21.5%, Google 7.5%), and its September leg is a near-lock at 88% with Claude Fable 5.1 sitting at 66 on the AA-Index over Opus 5's 63. The fresh signal is in the companion who-gets-a-#1-model book: OpenAI's leg jumped to 36% from 31 this sweep, with Google at 22.5% and xAI, Alibaba, Z.ai and Meta all clustered near 10–12% — traders increasingly expect at least a moment of dethronement before New Year's even while Anthropic holds the crown on net."
+      "h": "Anthropic's lead firms even as dethronement tickets keep selling —",
+      "t": "Polymarket's best-model-end-of-2026 book edged Anthropic up to 65% (OpenAI 22%, Google 8%) on $1.15M of volume, and the end-of-September leg sits at 89%. But the who-touches-#1 market keeps drifting the other way: OpenAI is now 37%, Google 23%, and a crowded tail — xAI 13%, Alibaba 12%, Z.ai and Meta 11% — says traders expect somebody to take the top slot at least briefly before New Year's, even if Anthropic holds it when it counts."
     },
     {
-      "h": "The ship-date clocks: Grok 4.7 is the next test —",
-      "t": "Musk's ~Sep 12 target for Grok 4.7 is now four days out and xAI has still published no model card; Manifold prices just 22% before Sep 11 but 81% before Sep 21 and 90% before Oct 11 — a miss on Friday, a hit within the fortnight. Google's Gemini 3.5 Pro remains the biggest undated flagship: 70% by Oct 31 but only 29.5% by Sep 30. GPT-6 books are settled at 98% following Astra's Sep 3 launch, and the Mythos-class release market has resolved and closed on Mythos 5.1. Grok 5 holds at 64% before 2027."
+      "h": "The ship-date clocks: Grok 4.7 is four days out —",
+      "t": "Musk's Sep 2 'ten days' puts Grok 4.7 around this Friday, Sep 12, and xAI has still published no model card, benchmarks, or pricing for the claimed 2.1-trillion-parameter model. Manifold prices just 22% before Sep 11 but 81% before Sep 21 — traders expect a small slip, not a big one. Behind it, the next Gemini Pro holds 70% for October (the September leg crept to 30%), and Grok 5 sits at 64% before 2027."
     },
     {
       "h": "Benchmarks keep saturating on schedule —",
-      "t": "FrontierMath's 90%-before-2027 market has traded to 100% and Manifold's Tier-4 book puts 99% on the top bucket. ARC-AGI-2's Metaculus median sits at 93.4 for the year, with 91% odds on any model clearing 95%, while the ARC-AGI Grand Prize before January 2027 splits the room at 43%. Arena books price 95% for a 1520 Elo debut by December. The unsaturated frontier is increasingly just HLE, ARC-AGI-3 and METR's time-horizon curve — where the 3–3.5-month doubling bucket remains the modal bet."
+      "t": "The Arena-ceiling market has 1520 Elo at 95% for year-end with the frontier already in the 1500–1507 range after the Fable 5.1 / Opus 5 / GPT-6 Astra cluster; 1530 firmed to 40% while 1550 holds at 18%. The Chinese-labs book still prices top-5 presence as a certainty (100%) against just 9% for outright #1 — cost-efficient parity below the peak, not leadership at it."
     },
     {
-      "h": "The AGI horizon keeps creeping closer —",
-      "t": "The near-term books stay skeptical — roughly 3–6% for AGI before 2027 across Manifold definitions, and 21.5% that OpenAI formally announces AGI before 2027 even after Brockman's \"welcome to the AGI era\" framing. But the middle distance keeps firming: Manifold's before-2028 leg rose to 24% from 20 this sweep, before-2030 holds at 47% after climbing from 41%, and Metaculus still centers full AGI around 2033 (25% by 2029). The gap between trader timelines and lab rhetoric remains the widest spread in the data."
+      "h": "The AGI horizon holds its new, closer shape —",
+      "t": "The OpenAI-announces-AGI-before-2027 leg ticked to 22% — remarkable for a market that lived in the low teens before Astra's 'may represent AGI' launch framing. The broader books didn't follow the hype curve: Manifold holds 24% for AGI before 2028 and 47% before 2030, and Metaculus's full-definition medians still sit at roughly 25% by 2029 and 50% by 2033. Traders are pricing an announcement fight, not an arrival."
     }
   ]
 }
