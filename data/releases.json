@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-09T09:04:19-04:00",
+  "updated": "2026-09-09T13:35:17-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -10,8 +10,19 @@
       "prob": 81,
       "frontier": false,
       "status": "expected",
-      "basis": "~2 days from before-Sep-11 leg (22%); 81% before Sep 21 flat. Still no model card, benchmarks, or API ID.",
+      "basis": "Before-Sep-11 leg 22% with ~2 days left; 81% before Sep 21, 90% before Oct 11. Still no model card or API ID.",
       "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
+    },
+    {
+      "model": "DeepSeek V4.1 Flash (general release)",
+      "lab": "DeepSeek",
+      "expectedWindow": "Sep 2026",
+      "expectedDate": "2026-09",
+      "prob": -1,
+      "frontier": false,
+      "status": "expected",
+      "basis": "Two-day natively-multimodal public test endpoint opened Sep 8, expires Sep 10; positioned as replacement for the V4 line.",
+      "source": "https://news.ycombinator.com/item?id=49607094"
     },
     {
       "model": "Muse Spark 1.3 (max) - general availability",
