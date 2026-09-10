@@ -3443,6 +3443,40 @@
         "https://api-docs.deepseek.com/quick_start/pricing"
       ],
       "pricing": "$0.30 in / $1.20 out peak, $0.15/$0.60 off-peak per 1M ($0.006 cache hit peak, $0.003 off-peak)"
+    },
+    {
+      "name": "MiniCPM5-2B",
+      "lab": "OpenBMB",
+      "released": "2026-09-07",
+      "params": "2.52B (dense)",
+      "context": "128K",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Apache-2.0 on-device model: 2.52B dense, 42 layers, GQA, 131K context; averages 53.9 across OpenBMB's 34-benchmark table, beating Qwen3.5-4B (51.1) at half the parameters; runs in ~2GB via llama.cpp/Ollama/MLX.",
+      "sources": [
+        "https://huggingface.co/openbmb/MiniCPM5-2B",
+        "https://github.com/openbmb/minicpm",
+        "https://artificialanalysis.ai/articles/openbmb-releases-minicpm5-2b"
+      ]
+    },
+    {
+      "name": "Suno v6",
+      "lab": "Suno",
+      "released": "2026-09-09",
+      "params": "undisclosed",
+      "context": "n/a",
+      "modality": "music (text-to-music)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "First frontier music-gen family trained on licensed major-label catalogs (Warner, BMG, Believe) plus Suno user data, with label revenue sharing; three tiers (v6, v6-wild, free v6-mini); unlicensed prior versions retired.",
+      "sources": [
+        "https://www.axios.com/2026/09/09/suno-v6-ai-music-warner-bmg"
+      ]
     }
   ]
 }
