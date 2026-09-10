@@ -3433,10 +3433,14 @@
       "context": "1M (384K max output)",
       "modality": "text + image in, text out",
       "open": false,
-      "benchmarks": {},
+      "benchmarks": {
+        "GPQA": 90.9,
+        "Terminal-Bench 2.1": 90.6,
+        "Codeforces rating": 3471
+      },
       "milestone": false,
       "status": "live",
-      "notable": "GA Sep 10 2026, right on the announced date, after a two-day public API test. First of DeepSeek's V4.1 line on a new natively-multimodal base architecture: images are first-class input, KV cache is cut hard (DeepSeek cites HBM needs at 1/4 and SSD at 1/8 of the prior generation), and it keeps 1M context with 384K max output. Takes the new primary API name deepseek-flash; the retired deepseek-v4-flash and deepseek-v4-flash-vision-exp names now route here at Flash pricing. Priced at $0.30/$1.20 peak ($0.15/$0.60 off-peak) per 1M - roughly 30% below V4-Flash. DeepSeek says extensive testing shows it 'comprehensively surpassed V4 Pro across performance, cost, speed, and total time,' so from Sep 14 2026 all deepseek-v4-pro requests also route to V4.1 Flash at Flash prices until V4.1 Pro launches. No parameter count, model card, benchmarks, or open weights published yet.",
+      "notable": "GA Sep 10 2026, right on the announced date, after a two-day public API test. First of DeepSeek's V4.1 line on a new natively-multimodal base architecture: images are first-class input, KV cache is cut hard (DeepSeek cites HBM needs at 1/4 and SSD at 1/8 of the prior generation), and it keeps 1M context with 384K max output. Takes the new primary API name deepseek-flash; the retired deepseek-v4-flash and deepseek-v4-flash-vision-exp names now route here at Flash pricing. Priced at $0.30/$1.20 peak ($0.15/$0.60 off-peak) per 1M - roughly 30% below V4-Flash. DeepSeek says extensive testing shows it 'comprehensively surpassed V4 Pro across performance, cost, speed, and total time,' so from Sep 14 2026 all deepseek-v4-pro requests also route to V4.1 Flash at Flash prices until V4.1 Pro launches. First published numbers (changelog, Sep 10): GPQA Diamond 90.9, Codeforces rating 3471, Terminal-Bench 2.1 90.6. Still no parameter count or open weights.",
       "sources": [
         "https://api-docs.deepseek.com/updates/",
         "https://api-docs.deepseek.com/news/news260910",
@@ -3476,6 +3480,28 @@
       "notable": "First frontier music-gen family trained on licensed major-label catalogs (Warner, BMG, Believe) plus Suno user data, with label revenue sharing; three tiers (v6, v6-wild, free v6-mini); unlicensed prior versions retired.",
       "sources": [
         "https://www.axios.com/2026/09/09/suno-v6-ai-music-warner-bmg"
+      ]
+    },
+    {
+      "name": "SWE-2",
+      "lab": "Cognition",
+      "released": "2026-09-10",
+      "params": "post-trained from Kimi K3 (2.8T sparse MoE base)",
+      "context": "undisclosed",
+      "modality": "text in, text out (agentic coding)",
+      "open": false,
+      "benchmarks": {
+        "FrontierCode 1.1": 50.0,
+        "DeepSWE 1.1": 73.0,
+        "Terminal-Bench 2.1": 92.8,
+        "Terminal-Bench 4": 27.3
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Cognition's 'most advanced coding model yet', shipped Sep 10 2026 into Devin Desktop, CLI, Web and Fusion. Post-trained via RL from Moonshot's open Kimi K3 2.8T base ('5-6 points on many benchmarks' over the base) — a US agent lab building its frontier coding model on an open Chinese foundation. Vendor-reported: FrontierCode 1.1 Main 50.0 (within one point of Fable 5.1 while 64% cheaper), DeepSWE 1.1 73.0 (Fable 5.1 67.4, GPT-6 Astra 74.1), Terminal-Bench 2.1 92.8 edging Fable 5.1's 91.4 — but Terminal-Bench 4 27.3 vs Fable 5.1's 55.8. Pitched on the capability-per-cost Pareto frontier: median 18 steps to first edit vs 48 for its predecessor. Weights closed; no standalone API pricing published at launch.",
+      "sources": [
+        "https://cognition.com/blog/swe-2",
+        "https://cognition.com/blog"
       ]
     }
   ]
