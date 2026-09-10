@@ -1607,7 +1607,7 @@
       "open": true,
       "benchmarks": {},
       "milestone": false,
-      "status": "live",
+      "status": "superseded",
       "notable": "Small, fast sibling to V4-Pro: 284B total / 13B active MoE, 1M-token default context, 384K max output, same Compressed-Sparse/Heavily-Compressed attention for cheap long-context inference. Open weights. Reached stable GA Jul 19 2026 alongside V4-Pro (exiting preview); the retiring deepseek-chat/deepseek-reasoner aliases resolved here during the preview window. Positioned as DeepSeek's high-volume budget tier against Gemini 3.x Flash and Qwen small models.",
       "sources": [
         "https://api-docs.deepseek.com/news/news260424"
@@ -2269,7 +2269,7 @@
         "CyberGym": 76.7
       },
       "milestone": false,
-      "status": "live",
+      "status": "superseded",
       "notable": "The formal build of DeepSeek's V4-Flash API, pushed into public beta Jul 31 2026. Architecture and parameter count are identical to the April preview - this is a re-post-training aimed squarely at agent work, plus native Responses API support and Codex adaptation. The jump is large: Terminal-Bench 2.1 goes 61.8 to 82.7 (past GLM-5.2's 81.0, closing on Claude Opus 4.8's 85.0), DeepSWE 7.3 to 54.4, CyberGym 38.7 to 76.7. Artificial Analysis scores it 50 on the Intelligence Index - level with Gemini 3.6 Flash - at $0.14 in / $0.28 out per 1M ($0.0028 cache hit), roughly 35x cheaper than GPT-5.6 Sol. DeepSeek says the update applies to the V4-Flash API only; the V4-Pro API, app and web builds are unchanged, with an official V4-Pro release said to be coming. Separate open weights for the 0731 build were not announced alongside the API beta.",
       "sources": [
         "https://technode.com/2026/07/31/deepseek-puts-v4-flash-api-into-public-beta/",
@@ -2871,7 +2871,7 @@
       "open": false,
       "benchmarks": {},
       "milestone": false,
-      "status": "preview",
+      "status": "superseded",
       "pricing": "$0.22 in / $0.007 cached in / $0.66 out per 1M (images billed at text-token rates, max 384 tokens per image)",
       "notable": "An experimental vision build of the cheap V4-Flash line, adding native image input while DeepSeek says it matches V4-Flash exactly on text - agents, reasoning and world knowledge. The point is agent workflows that never leave the model: screenshots, charts and document images go in under the same token pricing, via base64, external URL, or the free Files API, which lets one uploaded image be reused across requests without re-upload. DeepSeek claims a major jump over V4-Flash on multimodal agent benchmarks, putting multimodal agent performance close to Claude Opus 4.8, but published the comparison as a chart without numbers. No model card, license, or weights have accompanied the experimental vision build.",
       "sources": [
@@ -3430,17 +3430,19 @@
       "lab": "DeepSeek",
       "released": "2026-09-08",
       "params": "undisclosed",
-      "context": "undisclosed",
-      "modality": "text+vision",
+      "context": "1M (384K max output)",
+      "modality": "text + image in, text out",
       "open": false,
       "benchmarks": {},
       "milestone": false,
-      "status": "preview",
-      "notable": "Two-day public API test (model ID deepseek-v4.1-flash-expires-on-0910, expires Sep 10): first of DeepSeek's V4.1 line, on a new natively-multimodal base architecture with images as first-class input; billed at V4-Flash rates, capped at 20 concurrent requests. No official benchmarks published.",
+      "status": "live",
+      "notable": "GA Sep 10 2026, right on the announced date, after a two-day public API test. First of DeepSeek's V4.1 line on a new natively-multimodal base architecture: images are first-class input, KV cache is cut hard (DeepSeek cites HBM needs at 1/4 and SSD at 1/8 of the prior generation), and it keeps 1M context with 384K max output. Takes the new primary API name deepseek-flash; the retired deepseek-v4-flash and deepseek-v4-flash-vision-exp names now route here at Flash pricing. Priced at $0.30/$1.20 peak ($0.15/$0.60 off-peak) per 1M - roughly 30% below V4-Flash. DeepSeek says extensive testing shows it 'comprehensively surpassed V4 Pro across performance, cost, speed, and total time,' so from Sep 14 2026 all deepseek-v4-pro requests also route to V4.1 Flash at Flash prices until V4.1 Pro launches. No parameter count, model card, benchmarks, or open weights published yet.",
       "sources": [
-        "https://ai-tldr.dev/releases/deepseek-v4-1-flash/",
-        "https://news.ycombinator.com/item?id=49607094"
-      ]
+        "https://api-docs.deepseek.com/updates/",
+        "https://api-docs.deepseek.com/news/news260910",
+        "https://api-docs.deepseek.com/quick_start/pricing"
+      ],
+      "pricing": "$0.30 in / $1.20 out peak, $0.15/$0.60 off-peak per 1M ($0.006 cache hit peak, $0.003 off-peak)"
     }
   ]
 }
