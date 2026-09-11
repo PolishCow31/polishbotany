@@ -1,17 +1,17 @@
 {
-  "updated": "2026-09-11T09:27:20-04:00",
+  "updated": "2026-09-11T12:22:37-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "Grok 4.7",
       "lab": "xAI",
-      "expectedWindow": "by Sep 21 2026 (Musk targeted ~Sep 12, tomorrow)",
+      "expectedWindow": "by Sep 30 2026 (Musk targeted ~Sep 12)",
       "expectedDate": "2026-09",
-      "prob": 81,
-      "frontier": false,
+      "prob": 95,
+      "frontier": true,
       "status": "expected",
-      "basis": "Manifold 81% before Sep 21, 90% before Oct 11; just 22% by end of Sep 11. Still no model card or API ID.",
-      "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
+      "basis": "Musk announced 2.1T params, ~Sep 12 target; Manifold 95% for release by end of September.",
+      "source": "https://manifold.markets/prismatic/will-grok-47-be-released-by-the-end-SCglESEnnL"
     },
     {
       "model": "DeepSeek V4.1 Pro",
@@ -19,10 +19,10 @@
       "expectedWindow": "H2 2026 (announced, undated)",
       "expectedDate": "2026-10",
       "prob": -1,
-      "frontier": false,
+      "frontier": true,
       "status": "confirmed",
-      "basis": "Changelog Sep 10: all V4-Pro requests route to V4.1 Flash from Sep 14 until V4.1 Pro launches - successor official but undated.",
-      "source": "https://api-docs.deepseek.com/updates/"
+      "basis": "V4.1-Flash shipped Sep 8 with Pro announced as following; no date or market yet.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Muse Spark 1.3 (max) - general availability",
@@ -32,8 +32,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Meta says the max reasoning tier of Spark 1.3 rolls out to general availability through September.",
-      "source": "https://ai.meta.com/blog/"
+      "basis": "Spark 1.3 shipped Sep 2 with max tier gated; Meta Connect this month is the expected venue.",
+      "source": "https://aiweekly.co/ai-news-today"
     },
     {
       "model": "humain-m3 open-weights release",
@@ -43,8 +43,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Preview live Sep 3; HUMAIN says open weights follow in October.",
-      "source": "https://humain.ai/"
+      "basis": "Preview live since Sep 3; open-weights drop committed for October.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -54,7 +54,7 @@
       "prob": 70,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 70% by Oct 31; Oct-15 leg jumped to 34% from 22, by-Sep-30 12%. Market still cites agentic-task shortfalls.",
+      "basis": "Polymarket: 70% by Oct 31, 32% by Oct 15, 14% by Sep 30; repeated delays since May announcement.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -65,8 +65,8 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "OpenAI's announced fast tier of the 5.6 line; no dated market.",
-      "source": "https://openai.com/index/"
+      "basis": "Announced alongside Sol; still no GA date or dated market.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Tencent Hy4 (general availability)",
@@ -76,19 +76,19 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Hy4 preview live since Aug 28; GA expected within months; no dated market.",
-      "source": "https://cloud.tencent.com/"
+      "basis": "Hy4 preview live since Aug 28; GA expected later in H2, no dated market.",
+      "source": "https://llm-stats.com/llm-updates"
     },
     {
       "model": "Claude Haiku 5",
       "lab": "Anthropic",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
+      "expectedWindow": "by Oct 31 2026",
+      "expectedDate": "2026-10",
+      "prob": 60,
       "frontier": false,
-      "status": "rumored",
-      "basis": "Small tier of the Claude 5 family still unshipped; Fable/Sonnet/Opus 5 all live.",
-      "source": "https://www.anthropic.com/news"
+      "status": "expected",
+      "basis": "Polymarket next-Claude-Haiku market prices 60% by Oct 31; no Anthropic confirmation.",
+      "source": "https://polymarket.com/event/claude-5-released-by"
     },
     {
       "model": "Muse Spark open-weights release",
@@ -98,8 +98,8 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Meta has repeatedly signaled an open-weights Spark variant; no date or market.",
-      "source": "https://ai.meta.com/blog/"
+      "basis": "Meta has floated opening an older Spark checkpoint; nothing dated.",
+      "source": "https://aiweekly.co/ai-news-today"
     },
     {
       "model": "Grok 5",
@@ -109,8 +109,8 @@
       "prob": 67,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold 67% before 2027 flat (21% before December, 8% before November, 3% before October).",
-      "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "basis": "Musk keeps Grok 5 on a year-end trajectory behind 4.7; market-implied ~67% for 2026.",
+      "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
     }
   ]
 }

@@ -2177,7 +2177,7 @@
       "open": false,
       "benchmarks": {},
       "milestone": false,
-      "status": "live",
+      "status": "superseded",
       "notable": "A refresh of Sakana's quality-first Fugu orchestrator rather than a new set of weights — the architecture, API and pricing are unchanged and the only substantive change is swapping newer frontier models into the underlying agent pool, which Sakana says takes about two weeks of training and evaluation per addition. Sakana claims up to +7.9 benchmark points over v1.0, concentrated on ProgramBench and Terminal-Bench 2.1, and says the router now beats Claude Fable 5 across most benchmarks despite not carrying Fable 5 in its pool. Adds a Claude Code-compatible endpoint for terminal use; the old fugu-ultra-20260615 ID is now formalized as fugu-ultra-v1.0. Pricing stays $5 in / $30 out per 1M tokens. Every number is Sakana's own with no independent verification, and the service is still unavailable in the EU/EEA.",
       "sources": [
         "https://the-decoder.com/sakana-claims-its-ai-model-router-fugu-ultra-v1-1-now-beats-fable-5-without-even-including-it-in-the-pool/",
@@ -3502,6 +3502,43 @@
       "sources": [
         "https://cognition.com/blog/swe-2",
         "https://cognition.com/blog"
+      ]
+    },
+    {
+      "name": "Fugu Max",
+      "lab": "Sakana AI",
+      "released": "2026-09-11",
+      "params": "n/a (multi-agent orchestrator over a pool of open-weights and specialized models)",
+      "context": "inherits from pooled models",
+      "modality": "text + visual + structured data in, text out (multi-agent orchestration)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Sakana's cost-first branch of the Fugu orchestration line, shipped Sep 11 2026 alongside Fugu Ultra v2 under the banner 'Orchestrating the Pareto Frontier'. Instead of routing to closed frontier models, Fugu Max orchestrates a wide pool of open-weights and specialized models — including NVIDIA's Nemotron family via a NVIDIA collaboration — and dynamically hands each task to the leanest model that can solve it. Sakana claims best overall score on six benchmarks including Terminal-Bench 2.1, GPQA Diamond, AA-LCR, GDP.pdf, AutomationBench and SWEFish. Priced at $2 in / $6 out per 1M tokens, undercutting Sonnet 5, GPT-5.6 Terra and Kimi K3 output pricing by 40-60%. GA today via an OpenAI-compatible API. All numbers are Sakana's own, no independent verification yet.",
+      "sources": [
+        "https://sakana.ai/fugu-max-release/",
+        "https://www.marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration/"
+      ]
+    },
+    {
+      "name": "Fugu-Ultra v2.0",
+      "lab": "Sakana AI",
+      "released": "2026-09-11",
+      "params": "n/a (multi-agent orchestrator over a pool of third-party models)",
+      "context": "inherits from pooled models",
+      "modality": "text + visual + structured data in, text out (multi-agent orchestration)",
+      "open": false,
+      "benchmarks": {
+        "Chartography": 48.3,
+        "DeepSWE": 74.3
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "The quality-first successor to Fugu-Ultra v1.1, shipped Sep 11 2026. Sakana claims best or joint-best results on five of eight benchmarks — Chartography 48.3, DeepSWE 74.3, plus GDP.pdf, SWEFish and Toolathon — and pointedly notes v2 achieves these scores WITHOUT Claude Fable 5, Fable 5.1 or GPT-6 Astra in its agent pool, i.e. the router now claims frontier-tier results from a pool of open-weights and specialized models alone. The vendor-reported DeepSWE 74.3 would edge GPT-6 Astra's 74.1 and Cognition's day-old SWE-2 at 73.0. Available GA via OpenAI-compatible API; single-line upgrade for existing Fugu users. All numbers are Sakana's own with no independent verification.",
+      "sources": [
+        "https://sakana.ai/fugu-max-release/",
+        "https://www.marktechpost.com/2026/09/10/sakana-ai-launches-fugu-max-and-fugu-ultra-v2-for-cheaper-stronger-multi-agent-orchestration/"
       ]
     }
   ]
