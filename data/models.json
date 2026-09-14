@@ -2664,7 +2664,7 @@
       },
       "milestone": false,
       "status": "live",
-      "notable": "The general-availability build of DeepSeek's flagship, announced Aug 13 2026 and closing out the preview that opened Apr 24. Architecture is untouched - 1.6T total / 49B active MoE, 1M-token context, 384K max output - so this is a post-training release aimed at agents, the same pattern as V4-Flash-0731. Two functional changes: selectable reasoning effort (low for simple prompts, high for everyday agent work, max for hard tasks) replaces the old fixed thinking budget, and the model gains native OpenAI Responses API support with Codex adaptation. It ships in the app and on web behind an 'Expert Mode' toggle; API callers keep the deepseek-v4-pro name and need no code change. Artificial Analysis scores it 53 on the Intelligence Index (v4.1), one point above the April preview and the best open-weight score on the board, at $0.43 in / $0.87 out per 1M tokens ($0.0036 cache hit) - roughly 30x under the frontier tier. Vendor-reported agentic gains are large (Terminal-Bench 2.1 87.9, DeepSWE 62.7) and, as with the 0731 Flash build, are not yet independently replicated. DeepSeek also announced a peak/off-peak API price restructure effective Aug 16 2026 16:00 UTC, with off-peak set 50% below peak. The V4-Pro line's weights are MIT-licensed on Hugging Face; a separate 0813 checkpoint has not been confirmed posted.",
+      "notable": "The general-availability build of DeepSeek's flagship, announced Aug 13 2026 and closing out the preview that opened Apr 24. Architecture is untouched - 1.6T total / 49B active MoE, 1M-token context, 384K max output - so this is a post-training release aimed at agents, the same pattern as V4-Flash-0731. Two functional changes: selectable reasoning effort (low for simple prompts, high for everyday agent work, max for hard tasks) replaces the old fixed thinking budget, and the model gains native OpenAI Responses API support with Codex adaptation. It ships in the app and on web behind an 'Expert Mode' toggle; API callers keep the deepseek-v4-pro name and need no code change. Artificial Analysis scores it 53 on the Intelligence Index (v4.1), one point above the April preview and the best open-weight score on the board, at $0.43 in / $0.87 out per 1M tokens ($0.0036 cache hit) - roughly 30x under the frontier tier. Vendor-reported agentic gains are large (Terminal-Bench 2.1 87.9, DeepSWE 62.7) and, as with the 0731 Flash build, are not yet independently replicated. DeepSeek also announced a peak/off-peak API price restructure effective Aug 16 2026 16:00 UTC, with off-peak set 50% below peak. The V4-Pro line's weights are MIT-licensed on Hugging Face; a separate 0813 checkpoint has not been confirmed posted. SUNSET REVERSED (Sep 14 2026): the planned same-day cutover routing all deepseek-v4-pro API traffic to V4.1-Flash at Flash rates was walked back - the API changelog now says V4 Pro service continues past Sep 14 'in response to user demand,' with billing unchanged.",
       "sources": [
         "https://api-docs.deepseek.com/news/news260813",
         "https://artificialanalysis.ai/models/deepseek-v4-pro",
@@ -3440,7 +3440,7 @@
       },
       "milestone": false,
       "status": "live",
-      "notable": "GA Sep 10 2026, right on the announced date, after a two-day public API test. First of DeepSeek's V4.1 line on a new natively-multimodal base architecture: images are first-class input, KV cache is cut hard (DeepSeek cites HBM needs at 1/4 and SSD at 1/8 of the prior generation), and it keeps 1M context with 384K max output. Takes the new primary API name deepseek-flash; the retired deepseek-v4-flash and deepseek-v4-flash-vision-exp names now route here at Flash pricing. Priced at $0.30/$1.20 peak ($0.15/$0.60 off-peak) per 1M - roughly 30% below V4-Flash. DeepSeek says extensive testing shows it 'comprehensively surpassed V4 Pro across performance, cost, speed, and total time,' so from Sep 14 2026 all deepseek-v4-pro requests also route to V4.1 Flash at Flash prices until V4.1 Pro launches. First published numbers (changelog, Sep 10): GPQA Diamond 90.9, Codeforces rating 3471, Terminal-Bench 2.1 90.6. Still no parameter count or open weights.",
+      "notable": "GA Sep 10 2026, right on the announced date, after a two-day public API test. First of DeepSeek's V4.1 line on a new natively-multimodal base architecture: images are first-class input, KV cache is cut hard (DeepSeek cites HBM needs at 1/4 and SSD at 1/8 of the prior generation), and it keeps 1M context with 384K max output. Takes the new primary API name deepseek-flash; the retired deepseek-v4-flash and deepseek-v4-flash-vision-exp names now route here at Flash pricing. Priced at $0.30/$1.20 peak ($0.15/$0.60 off-peak) per 1M - roughly 30% below V4-Flash. DeepSeek says extensive testing shows it 'comprehensively surpassed V4 Pro across performance, cost, speed, and total time,' and had scheduled all deepseek-v4-pro requests to route here at Flash prices from Sep 14 2026 - but reversed that on Sep 14, keeping V4 Pro API service alive 'in response to user demand' with billing unchanged until V4.1 Pro launches. First published numbers (changelog, Sep 10): GPQA Diamond 90.9, Codeforces rating 3471, Terminal-Bench 2.1 90.6. Still no parameter count or open weights.",
       "sources": [
         "https://api-docs.deepseek.com/updates/",
         "https://api-docs.deepseek.com/news/news260910",
@@ -3556,6 +3556,24 @@
       "sources": [
         "https://openai.com/index/introducing-chatgpt-images-2-5/",
         "https://openrouter.ai/openai/gpt-image-2.5-flare"
+      ]
+    },
+    {
+      "name": "Kimi K2.8 Preview",
+      "lab": "Moonshot AI",
+      "released": "2026-09-11",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "text",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Catch-up add (shipped Sep 11, surfaced this sweep): Moonshot fully rolled out K2.8 Preview across Kimi Code and Kimi Work, replacing K2.7 Code under the same kimi-for-coding model ID with no client changes needed. Moonshot says overall performance approaches K3 with higher thinking efficiency, and coding/agent capability is comprehensively improved over K2.7 Code. All membership tiers get the full 1M-token context window, and it adopts K3's three thinking-effort levels (low/high/max, default max). Product-embedded preview only so far - no separate API release, no parameter count, and no published benchmarks.",
+      "sources": [
+        "https://pandaily.com/moonshot-kimi-k28-preview-full-rollout-kimi-code",
+        "https://cctest.ai/en/articles/kimi-k2-8-preview-launches-with-1m-context-for-all-tiers",
+        "https://panews.io/articles/01a08fd0-31d0-77a4-9192-85b0fff4aed8"
       ]
     }
   ]
