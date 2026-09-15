@@ -3575,6 +3575,29 @@
         "https://cctest.ai/en/articles/kimi-k2-8-preview-launches-with-1m-context-for-all-tiers",
         "https://panews.io/articles/01a08fd0-31d0-77a4-9192-85b0fff4aed8"
       ]
+    },
+    {
+      "name": "Atria Dawn Preview",
+      "lab": "Shanghai AI Laboratory",
+      "released": "2026-09-11",
+      "params": "744B MoE (GLM-5.2 base)",
+      "context": "256K",
+      "modality": "text",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Pro": 59.6,
+        "Terminal-Bench 2.1": 78.3,
+        "BrowseComp": 92.5,
+        "MLE-Bench Lite": 86.2,
+        "BFCL v4": 77.0
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "State-lab agentic post-training of Zhipu's open GLM-5.2 744B base; posted to Hugging Face under MIT with no blog post or press release, free OpenAI-compatible preview API at api.atria-asi.ai.",
+      "sources": [
+        "https://huggingface.co/internlm/Atria-Dawn-Preview",
+        "https://benchlm.ai/models/atria-dawn-preview"
+      ]
     }
   ]
 }
