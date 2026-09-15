@@ -1,22 +1,22 @@
 {
-  "updated": "2026-09-14T18:03:30-04:00",
+  "updated": "2026-09-14T21:04:36-04:00",
   "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
   "markets": [
     {
       "question": "Which company has the best AI model at the end of 2026?",
       "platform": "Polymarket",
-      "forecast": "70% — Anthropic, flat; OpenAI 13%, Google 10%, xAI 4.3%, Meta 2%; $1.24M volume",
+      "forecast": "71% — Anthropic, up a point; OpenAI 12%, Google 10%, xAI 4.2%, Meta 2%; $1.25M volume",
       "category": "ranking",
-      "relevantBenchmark": "LMArena / Chatbot Arena",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
     },
     {
       "question": "Which companies will have a #1 AI model by December 31?",
       "platform": "Polymarket",
-      "forecast": "32.5% — Google still edges OpenAI (31.5%); xAI 12.5%, Meta and Z.ai 10.5% each.",
+      "forecast": "37% — Google, up from 32.5; OpenAI cut to 27% from 31.5, xAI 13%, Z.ai 11%, Meta 11%",
       "category": "ranking",
-      "relevantBenchmark": "Artificial Analysis Intelligence Index",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
     },
@@ -356,7 +356,7 @@
     {
       "question": "Next Google Gemini Pro Model released by...?",
       "platform": "Polymarket",
-      "forecast": "78% — by Oct 31, flat; but the Oct-15 leg jumped to 53% from 31%, Sep-30 18%, Sep-15 1%",
+      "forecast": "78% — by Oct 31, flat; Oct-15 leg 54%, Sep-30 18%; $1.29M volume",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-11-01",
@@ -509,9 +509,9 @@
     {
       "question": "AI wins IMO gold medal in 2026?",
       "platform": "Polymarket",
-      "forecast": "11.5% — Yes, still sagging after last week's halving; the 2026 window is nearly spent.",
+      "forecast": "20% — Yes, nearly doubled from 11.5% since the last read; $17K volume",
       "category": "benchmark",
-      "relevantBenchmark": "other",
+      "relevantBenchmark": "IMO",
       "resolveDate": "2026-12-31",
       "url": "https://polymarket.com/event/ai-wins-imo-gold-medal-in-2026"
     },
@@ -590,9 +590,9 @@
     {
       "question": "Which company has the best AI model at the end of September?",
       "platform": "Polymarket",
-      "forecast": "96.2% — Anthropic, flat from 96.3; Google 1.8%, OpenAI 1.3%; $3.29M volume",
+      "forecast": "96.1% — Anthropic, flat from 96.2; Google 2.2%, OpenAI 1.3%; $3.32M volume",
       "category": "ranking",
-      "relevantBenchmark": "LMArena / Chatbot Arena",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-09-30",
       "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868"
     },
@@ -698,9 +698,9 @@
     {
       "question": "Which company has the best AI model at the end of October 2026?",
       "platform": "Polymarket",
-      "forecast": "87% — Anthropic, flat; Google 6.5%, OpenAI 4.2%, Meta 1.8%",
+      "forecast": "87% — Anthropic, flat; Google 6.5%, OpenAI 4.3%, Meta 1.8%",
       "category": "ranking",
-      "relevantBenchmark": "LMArena / Chatbot Arena",
+      "relevantBenchmark": "other",
       "resolveDate": "2026-10-31",
       "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october"
     },
@@ -734,7 +734,7 @@
     {
       "question": "Grok 4.7+ (xAI) release date",
       "platform": "Manifold",
-      "forecast": "81% — by Sep 21, flat through Musk's 'few more days to cook'; 80% by Oct 1, 90% by Oct 11, 92% by Nov 1",
+      "forecast": "81% — by Sep 21, flat through the slipped targets; 80% by Oct 1, 90% by Oct 11, 92% by Nov 1",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-01",
@@ -770,7 +770,7 @@
     {
       "question": "Next Claude Haiku released by...?",
       "platform": "Polymarket",
-      "forecast": "57% — by Oct 31, drifting down from 60; Oct-15 leg 27%",
+      "forecast": "58% — by Oct 31, up from 57; Oct-15 leg 28%",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-10-31",
@@ -1654,20 +1654,20 @@
   ],
   "marketsStory": [
     {
-      "h": "The race is priced as settled —",
-      "t": "Anthropic's grip on the ranking books is unmoved: 96.2% to hold best-model through September on Polymarket ($3.29M traded), 87% for October, and 70% for year-end, where OpenAI (13%) and Google (10%) split most of the remainder. Nothing OpenAI or Google shipped this month has dented the Claude Fable 5.1 premium, and traders now treat the September book as a formality."
+      "h": "Anthropic's month is nearly banked —",
+      "t": "With sixteen days left in September, Polymarket prices Anthropic at 96.1% for best model at month-end on $3.3M of volume, with Google at 2.2% and OpenAI at 1.3%. The October book sits at 87% and end-of-year at 71%, up a point this sweep — traders see Claude Fable 5.1's leaderboard lead as safe through fall, with OpenAI (12%) and Google (10%) splitting most of the remainder."
     },
     {
-      "h": "What ships next —",
-      "t": "Grok 4.7 is still the imminent one and still not here: 81% by September 21 on Manifold, holding through Musk's September 11 admission that it 'needs a few more days to cook' after RL over-penalized response length. Behind it, the 2.5T Grok 4.8 reportedly finishes training this week. The real mover this sweep was Google: the next-Gemini-Pro Oct-15 leg jumped to 53% from 31%, with by-Oct-31 steady at 78%, as partner-testing chatter around Gemini 3.5 Pro firmed up. The next Claude Haiku drifted to 57% by October 31."
+      "h": "The ship queue is a waiting game —",
+      "t": "Grok 4.7 is still the next launch on the board: 81% by September 21 and 95% by month-end, unmoved through two slipped Musk targets, while the 2.5T Grok 4.8 finishes training and enters RL behind it. The next Gemini Pro holds at 78% by October 31 with the October-15 leg at 54%, and the next Claude Haiku firmed a point to 58% by Halloween. Grok 5 stays a December-or-later story at 68% before 2027."
     },
     {
-      "h": "Benchmarks keep saturating —",
-      "t": "The measurement layer keeps running out of road: FrontierMath ≥90% before 2027 sits pinned near certainty on Polymarket, ARC-AGI-2's 2026 community median is 93.4 on Metaculus, and traders give 99% odds any model clears 25% on ARC-AGI-3 this year with Claude Opus 5 already cited at 30.2%. The open question has shifted from whether the ceilings fall to which eval replaces them when they do."
+      "h": "Benchmark books moved where the models didn't —",
+      "t": "The sweep's biggest swing was AI-wins-IMO-gold-2026 nearly doubling to 20% from 11.5, a bet on a late-year formal-math push even as the 2026 window shrinks. The who-gets-a-#1-model-by-December book also reshuffled: Google rose to 37% from 32.5 while OpenAI fell to 27% from 31.5, traders reading the Gemini 3.5 Pro clock as the likeliest path to a new leader. FrontierMath-90% remains pinned at the ceiling and SWE-bench stays effectively saturated."
     },
     {
-      "h": "The long game —",
-      "t": "The AGI horizon held through another news-heavy weekend: Manifold sits at 51% for AGI before 2030 on the human-level definition, OpenAI-announces-AGI before 2027 holds at 23% on Polymarket, and Metaculus keeps its full-definition median out at 2033 with 25% by 2029. The slowdown politics dominating the tape — lab CEOs proposing restraint, Washington and Beijing both rejecting it — has so far moved zero basis points of timeline."
+      "h": "The long game now has a political variable —",
+      "t": "AGI-before-2030 holds at 51% on Manifold and OpenAI-announces-AGI-before-2027 at 23%, with Metaculus's strict-definition median still out at 2033. What's new is that pacing itself is now contested policy: the Amodei-Altman slowdown push, Microsoft's provisional frontier code of conduct, and Trump's direct rejection of it all landed within one week — the first time the release cadence these markets price has been openly fought over in Washington."
     }
   ]
 }
