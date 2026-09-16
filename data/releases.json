@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-16T00:05:26-04:00",
+  "updated": "2026-09-16T03:05:49-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -8,9 +8,9 @@
       "expectedWindow": "by Sep 21 2026 (past both slipped Musk targets)",
       "expectedDate": "2026-09",
       "prob": 81,
-      "frontier": true,
+      "frontier": false,
       "status": "confirmed",
-      "basis": "Five days to the Sep-21 line; Manifold flat at 81% (90% by Oct 11). Musk graded it \"on par with Opus 5.0, not 5.1\".",
+      "basis": "Manifold flat at 81% by Sep 21, 95% by end of Sep; Musk Sep 11 cited more RL tuning, Sep 14 graded it \"on par with Opus 5.0\".",
       "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
     },
     {
@@ -19,7 +19,7 @@
       "expectedWindow": "Q4 2026 (training finishing)",
       "expectedDate": "2026-11",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "confirmed",
       "basis": "Musk Sep 13: 2.5T model on xAI's new C++ stack \"will finish training this week and start RL\"; no ship date or market.",
       "source": "https://x.com/elonmusk/status/2099308197802631191"
@@ -29,10 +29,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 82,
+      "prob": 81,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket Oct-31 leg holds at 82; the Oct-15 leg gave back its evening climb, 48% from 54 — mid-October consensus, softer front half.",
+      "basis": "Polymarket Oct-31 leg 81.5, Oct-15 leg steady at 48, Sep-30 at 17.5; Manifold prices before-Oct-1 at just 12%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 55,
+      "prob": 60,
       "frontier": false,
       "status": "expected",
-      "basis": "Polymarket Oct-31 leg flat at 55; the Oct-15 leg holds near 38 after last week's leap from 26.",
+      "basis": "Polymarket Oct-31 leg firmed to 60 from 55 overnight; Oct-15 holds at 37.5, year-end at 67.5.",
       "source": "https://polymarket.com/event/next-claude-haiku-released-byptptpt-20260701205353326"
     },
     {
@@ -52,7 +52,7 @@
       "expectedWindow": "H2 2026 (announced, undated)",
       "expectedDate": "2026-10",
       "prob": -1,
-      "frontier": true,
+      "frontier": false,
       "status": "confirmed",
       "basis": "V4.1-Flash shipped Sep 8; Pro tier announced as following. V4-Pro keeps serving until V4.1-Pro lands after Sep 14 routing reversal.",
       "source": "https://api-docs.deepseek.com/updates"
@@ -120,7 +120,7 @@
       "prob": 43,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold before-2027 flat at 43% a fourth sweep (3% before Oct, 14% before Nov); Kalshi prices the same leg at 61, down from 70.",
+      "basis": "Manifold before-2027 flat at 43% a fifth sweep (2.5% before Oct, 14% before Nov, 22% before Dec).",
       "source": "https://manifold.markets/JoshYou/when-will-xai-release-grok-5"
     }
   ]
