@@ -3621,6 +3621,41 @@
         "https://9to5google.com/2026/09/15/gemini-3-8-live-announced/",
         "https://siliconangle.com/2026/09/15/googles-new-speech-model-gemini-3-8-live-supports-real-time-reasoning/"
       ]
+    },
+    {
+      "name": "Union Alpha",
+      "lab": "Stealth (OpenCode x OpenRouter)",
+      "released": "2026-09-16",
+      "params": "undisclosed",
+      "context": "262K",
+      "modality": "text + image in, text out (agentic coding)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Anonymous 'stealth' model posted to OpenRouter Sep 16 2026 in collaboration with OpenCode: multimodal, 262,144-token context, up to 131K completion tokens, tool calling, pitched at research, coding and agentic workflows with 'frontier-level general-purpose performance'. Free for a roughly one-week preview; the lab behind it is undisclosed and pricing after the preview is unannounced. Third-party coverage reports ~73% on DeepSWE agentic coding, about a point behind GPT-6 Astra and Claude Opus 5 (vendor-unconfirmed).",
+      "sources": [
+        "https://openrouter.ai/stealth/union-alpha",
+        "https://openrouter.ai/provider/stealth",
+        "https://cellcog.ai/blog/what-is-union-alpha/"
+      ]
+    },
+    {
+      "name": "Koa",
+      "lab": "Salesforce + NVIDIA",
+      "released": "2026-09-15",
+      "params": "undisclosed (post-trained from NVIDIA Nemotron 3 Super)",
+      "context": "undisclosed",
+      "modality": "text in, text out (CRM reasoning / agentic)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Salesforce's first CRM reasoning model, announced at Dreamforce Sep 15 2026 and built by post-training NVIDIA's open Nemotron 3 Super on a synthetic dataset drawn from 27 years of Salesforce CRM deployments. Salesforce keeps the weights and runs post-training and inference entirely on its own infrastructure. On Salesforce's internal CRM Benchmark (updating opportunities, routing cases, scheduling follow-ups) it matches or exceeds general frontier models with three times fewer errors. Pilot customers only in Agentforce now; general availability expected Winter 2026 in US regions.",
+      "sources": [
+        "https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/",
+        "https://techcrunch.com/2026/09/15/salesforce-and-nvidias-new-reasoning-model-is-everything-the-ai-labs-should-fear/"
+      ]
     }
   ]
 }
