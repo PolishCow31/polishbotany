@@ -3598,6 +3598,29 @@
         "https://huggingface.co/internlm/Atria-Dawn-Preview",
         "https://benchlm.ai/models/atria-dawn-preview"
       ]
+    },
+    {
+      "name": "Gemini 3.8 Live",
+      "lab": "Google DeepMind",
+      "released": "2026-09-15",
+      "params": "unknown",
+      "context": "128K",
+      "modality": "audio+vision+text in, audio out (full-duplex real-time voice)",
+      "open": false,
+      "benchmarks": {
+        "Speech-to-Speech Quality Index (Ext. Thinking)": 82.6,
+        "Big Bench Audio (Ext. Thinking)": 97.7,
+        "Tau-Voice (Ext. Thinking)": 68.6
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$0.005/min audio in / $0.018/min audio out (Live API)",
+      "notable": "Google's Sep 15 2026 voice pair — Gemini 3.8 Live for scale and cost, and Gemini 3.8 Live Extended Thinking for multi-step reasoning that runs in the background while the model keeps talking. Both auto-detect and switch between 97 languages mid-conversation, run function calls without pausing speech, ground responses in real-time visual input, and watermark every audio output with SynthID. Extended Thinking posts the #1 Speech-to-Speech Quality Index score at 82.6, 97.7% on Big Bench Audio reasoning and 68.6% on Tau-Voice task completion; the base model ranks #2 in the Speech Agent Arena human-preference eval. Live in the Gemini Live API and Google AI Studio at $0.005/min audio in and $0.018/min out, in Search Live for everyone, and in Gemini Live, Docs, Gmail and Keep for Google AI subscribers; private preview in Gemini Enterprise.",
+      "sources": [
+        "https://www.marktechpost.com/2026/09/15/google-releases-gemini-3-8-live-and-3-8-live-extended-thinking-for-production-grade-voice-agents/",
+        "https://9to5google.com/2026/09/15/gemini-3-8-live-announced/",
+        "https://siliconangle.com/2026/09/15/googles-new-speech-model-gemini-3-8-live-supports-real-time-reasoning/"
+      ]
     }
   ]
 }
