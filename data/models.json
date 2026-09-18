@@ -3665,10 +3665,16 @@
       "context": "262K",
       "modality": "text + image in, text out (agentic coding)",
       "open": false,
-      "benchmarks": {},
+      "benchmarks": {
+        "DeepSWE": 74,
+        "Terminal-Bench 4.0": 51,
+        "MMMU-Pro": 78,
+        "HLE (no tools)": 49,
+        "ArXivMath": 88
+      },
       "milestone": false,
       "status": "live",
-      "notable": "OpenRouter's stealth 'Union Alpha' revealed Sep 18 2026 as Pareto from Unbiased AI — a new lab entering the catalogue. A multimodal composite model pitched at research, coding and agentic workflows with frontier-level general-purpose performance: 262,144-token context, tool calling, priced $2.50/M in and $7.50/M out with $0.25/M cache reads on OpenRouter. During its anonymous week as Union Alpha, third-party coverage reported ~73% on DeepSWE agentic coding, about a point behind GPT-6 Astra and Claude Opus 5 (vendor-unconfirmed); no official benchmark card has been published under the Pareto name yet.",
+      "notable": "OpenRouter's stealth 'Union Alpha' revealed Sep 18 2026 as Pareto from Unbiased AI — a new lab entering the catalogue. Unbiased describes it as a 'composite model': every request fans out to multiple LLMs in parallel (frontier and open) and one synthesized answer comes back, with the composition free to change between releases; the current version is tagged Pareto 26.9. The official benchmark card landed the same day and confirms the anonymous-week rumor: DeepSWE 74 — tying GPT-6 Astra (74.1) and, per Unbiased's own comparison, beating Claude Fable 5.1 on the contamination-free agentic-coding benchmark — plus Terminal-Bench 4.0 at 51, MMMU-Pro 78, HLE 49 no-tools and ArXivMath 88. 262,144-token multimodal context with tool calling, priced $2.50/M in and $7.50/M out with $0.25/M cache reads on OpenRouter.",
       "sources": [
         "https://openrouter.ai/unbiased/pareto",
         "https://cellcog.ai/blog/what-is-union-alpha/"
