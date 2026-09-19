@@ -3696,6 +3696,27 @@
         "https://openai.com/index/astra-for-law/",
         "https://www.lawnext.com/2026/09/openai-releases-astra-for-law-a-gpt-6-model-configured-for-legal-work.html"
       ]
+    },
+    {
+      "name": "Step 5 Preview",
+      "lab": "StepFun",
+      "released": "2026-09-18",
+      "params": "600B",
+      "context": "1M",
+      "modality": "multimodal (text + image in), text out, reasoning",
+      "open": false,
+      "benchmarks": {
+        "SciCode": 58.9,
+        "AA-LCR": 88.3
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "StepFun's new 600B flagship preview, released Sep 18 2026 — the Shanghai lab's strongest model yet. Artificial Analysis measured it well above average among reasoning models in its price tier (ranked ~#25 of 644 tracked models), with a 1M-token context, text+image input, and aggressive $1/$2.70 per-1M pricing. Serves ~100 tokens/s from StepFun's own API. Weights are proprietary; a non-preview GA build has not been dated.",
+      "sources": [
+        "https://artificialanalysis.ai/models/step-5",
+        "https://artificialanalysis.ai/changelog",
+        "https://dataconomy.com/ai-models/step-5/"
+      ]
     }
   ]
 }
