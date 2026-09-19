@@ -3717,6 +3717,23 @@
         "https://artificialanalysis.ai/changelog",
         "https://dataconomy.com/ai-models/step-5/"
       ]
+    },
+    {
+      "name": "Qwen3.8-Omni-Flash",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-09-18",
+      "params": "undisclosed",
+      "context": "1M (991K in / 131K out)",
+      "modality": "omnimodal (text + image + audio + video in), text out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Catch-up add (shipped Sep 18, surfaced this sweep): Alibaba's native omnimodal flagship handles text, image, audio and video in a single 1M-token context, priced at $0.15/$0.47 per 1M tokens with audio input ~98% cheaper per hour than Qwen3.5-Omni-Plus. Qwen reports a >26% average gain over Omni-Plus across 30 evaluations, with focus shifted to agentic audio-video task delivery and tool use. Live on Alibaba Cloud Model Studio and Qwen Studio; no open weights at launch.",
+      "sources": [
+        "https://technode.com/2026/09/18/alibabas-qwen-releases-qwen3-8-omni-flash-with-1m-token-context/",
+        "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/"
+      ]
     }
   ]
 }
