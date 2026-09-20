@@ -1,16 +1,16 @@
 {
-  "updated": "2026-09-20T03:05:21-04:00",
+  "updated": "2026-09-20T06:05:00-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
       "model": "Grok 4.7",
       "lab": "xAI",
-      "expectedWindow": "by Sep 21 2026 (final day)",
+      "expectedWindow": "by Sep 21 2026 (final hours)",
       "expectedDate": "2026-09",
       "prob": 96,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Manifold Sep-21 leg 96%, 99% before Oct 1; docs.x.ai re-checked 3 AM Sep 20 still ends at grok-4.6.",
+      "basis": "Manifold Sep-21 leg holds 96%, 99% before Oct 1; docs.x.ai re-checked 6 AM Sep 20 still ends at grok-4.6.",
       "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
     },
     {
@@ -32,7 +32,7 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 85% by Oct 31; Oct-15 leg 41%, Sep-30 leg 13%. $1.3M volume, late October stays the central estimate.",
+      "basis": "Polymarket 85% by Oct 31; Oct-15 leg up to 44%, Sep-30 leg 13%. $1.3M volume, late October stays central.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -40,10 +40,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 57,
+      "prob": 56,
       "frontier": false,
       "status": "expected",
-      "basis": "Polymarket 57% by Oct 31, Oct-15 leg 48%, year-end 73%. Haiku 4.5 is eleven months old.",
+      "basis": "Polymarket 56% by Oct 31 (off a point); Oct-15 leg 46%, 72% by year-end.",
       "source": "https://polymarket.com/event/next-claude-haiku-released-byptptpt-20260701205353326"
     },
     {
@@ -52,20 +52,20 @@
       "expectedWindow": "by Oct 30 2026 (thin market)",
       "expectedDate": "2026-10",
       "prob": 54,
-      "frontier": false,
+      "frontier": true,
       "status": "rumored",
-      "basis": "Kalshi 'Astra 6.1' series last traded 54 before Oct 30, near-zero volume; Kalshi rate-limited (HTTP 429) again this sweep.",
+      "basis": "Kalshi thin next-release leg ~54% (unreachable this sweep, rate-limited; last read carried forward).",
       "source": "https://kalshi.com/markets/kxgpt/chatgpt-release-date"
     },
     {
       "model": "DeepSeek V4.1 Pro",
       "lab": "DeepSeek",
       "expectedWindow": "H2 2026 (announced, undated)",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-11",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "V4.1-Flash shipped Sep 8; Pro tier announced as following, no date or market. V4 Pro API stays up until it lands.",
+      "basis": "V4.1-Flash shipped Sep 8; Pro tier announced for H2 on the API updates page, still undated.",
       "source": "https://api-docs.deepseek.com/updates/"
     },
     {
@@ -76,7 +76,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Spark 1.3 shipped Sep 2 with the max tier gated; Meta says GA this month, ten days left.",
+      "basis": "Spark 1.3 live Sep 2; the max tier remains waitlisted with GA expected this month.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -87,7 +87,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Preview live since Sep 3; open-weights drop announced for October.",
+      "basis": "Preview live Sep 3; open-weights drop slated for October per launch materials.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -98,7 +98,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Announced tier still gated; no dated market.",
+      "basis": "Announced speed tier of the 5.6 line, still limited-access; GA expected in H2.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -109,7 +109,7 @@
       "prob": -1,
       "frontier": false,
       "status": "expected",
-      "basis": "Hy4 preview live since Aug 28; GA expected but undated.",
+      "basis": "Hy4 preview live since Aug 28; GA window unannounced.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -120,7 +120,7 @@
       "prob": -1,
       "frontier": false,
       "status": "rumored",
-      "basis": "Meta has floated an open-weights Spark variant; nothing dated or confirmed.",
+      "basis": "Repeated Meta signals about opening a Spark-line model; nothing dated.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -131,7 +131,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Koa preview live; Salesforce says GA this winter.",
+      "basis": "Koa preview shipped Sep 15 at Dreamforce; GA stated for winter.",
       "source": "https://llm-stats.com/llm-updates"
     },
     {
@@ -142,7 +142,7 @@
       "prob": 43,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold 43% before 2027, flat; 3% before October, 12% before November, 15% before December.",
+      "basis": "Manifold 43% before 2027 (3% before Oct, 15% before Dec); majority of odds now sit in 2027.",
       "source": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
     }
   ]
