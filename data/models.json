@@ -3909,18 +3909,37 @@
       "lab": "Xiaomi",
       "released": "2026-09-22",
       "params": "~1T (Xiaomi: 'trillion-parameter')",
-      "context": "unknown",
+      "context": "1M",
       "modality": "omnimodal in, text out, reasoning",
-      "open": false,
+      "open": true,
       "benchmarks": {
         "AA-Index": 46
       },
       "milestone": false,
       "status": "live",
-      "notable": "Xiaomi's Sep 22 2026 flagship, the top of a three-model MiMo-V2.6 release (Pro, Flash, and a Pro-UltraSpeed variant Xiaomi says runs up to 20x faster). Pitched as an omnimodal, trillion-parameter reasoning model for complex projects, research and cybersecurity. Xiaomi's update page gives no benchmarks, pricing, context or weights details yet.",
+      "notable": "Xiaomi's Sep 22 2026 flagship, the top of a three-model MiMo-V2.6 release (Pro, Flash, and a Pro-UltraSpeed tier Xiaomi says runs up to 20x faster). It is natively omnimodal (text, image, video, audio) with a 1M-token context and is open-sourced under MIT. Xiaomi claims it is the top open model on AA's Index and reports AutomationBench 53.1, Agents' Last Exam 31.6 and Terminal-Bench 2.1 89.9, all vendor-reported. API price is $0.435/$0.87 per million tokens.",
       "sources": [
-        "https://mimo.mi.com/docs/en-US/updates/model",
-        "https://llmgateway.io/timeline"
+        "https://mimo.mi.com/docs/en-US/news/latest/v2-6",
+        "https://siliconangle.com/2026/09/22/xiaomi-introduces-mimo-v2-6-series-open-source-ai-model-family/",
+        "https://alternativeto.net/news/2026/9/xiaomi-open-sources-mimo-v2-6-pro-and-flash-ai-models/"
+      ]
+    },
+    {
+      "name": "MiMo-V2.6-Flash",
+      "lab": "Xiaomi",
+      "released": "2026-09-22",
+      "params": "309B total / 15B active (MoE)",
+      "context": "1M",
+      "modality": "omnimodal in (text, image, video, audio), text out, reasoning",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "The efficient tier of Xiaomi's Sep 22 MiMo-V2.6 release, open-sourced under MIT with a technical report plus the RL training environments and code. Xiaomi says it beats the older MiMo-V2.5-Pro outright, and its DeepSWE v1.1 score rose from 48.8 to 65.7 during RL. API price is $0.14/$0.28 per million tokens.",
+      "sources": [
+        "https://mimo.mi.com/docs/en-US/news/latest/v2-6",
+        "https://siliconangle.com/2026/09/22/xiaomi-introduces-mimo-v2-6-series-open-source-ai-model-family/",
+        "https://alternativeto.net/news/2026/9/xiaomi-open-sources-mimo-v2-6-pro-and-flash-ai-models/"
       ]
     }
   ]
