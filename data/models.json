@@ -3734,6 +3734,121 @@
         "https://technode.com/2026/09/18/alibabas-qwen-releases-qwen3-8-omni-flash-with-1m-token-context/",
         "https://www.marktechpost.com/2026/09/18/alibaba-qwen-releases-qwen3-8-omni-flash/"
       ]
+    },
+    {
+      "name": "Claude Opus 5.5",
+      "lab": "Anthropic",
+      "released": "2026-09-22",
+      "params": "unknown",
+      "context": "1M in / 128K out",
+      "modality": "multimodal in, text out, reasoning (thinking always on)",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 66.4,
+        "FrontierCode v1.1": 54.4,
+        "CursorBench 4.0": 57.8,
+        "OSWorld 2.0 (partial)": 81.8,
+        "GDPval-AA v2.1": 1846,
+        "Terminal-Bench-Science 0.1": 58.7,
+        "AutomationBench": 40.0,
+        "HLE (with tools)": 67.7,
+        "Chartography": 89.0
+      },
+      "milestone": true,
+      "status": "live",
+      "pricing": "$4 in / $20 out per 1M; cache reads $0.20, cache writes $5; Fast mode $8/$40",
+      "notable": "Anthropic's Sep 22 2026 successor to Opus 5, API id claude-opus-5-5. Anthropic says it performs at the level of Claude Fable 5.1 on most work while costing ~40% less to run than Opus 5 and generating output 30%+ faster; list price drops to $4/$20 from $5/$25 and cache reads fall 60%. Beats Fable 5.1 on Anthropic's own table: Terminal-Bench 4.0 66.4 vs 55.8, CursorBench 4.0 57.8 vs 51.8, AutomationBench 40.0 vs 31.4, HLE with tools 67.7 vs 65.6. Artificial Analysis says it takes the top spot on its Intelligence Index 'by several points', though at ~119K output tokens per task, the heaviest of the frontier set. Thinking can no longer be disabled; Sonnet 5.5 and Haiku 5.5 promised 'in the coming weeks'. Live on Claude Platform, Bedrock, Vertex AI and Azure.",
+      "sources": [
+        "https://www.anthropic.com/news/claude-opus-5-5",
+        "https://artificialanalysis.ai/articles/claude-opus-5-5",
+        "https://www.marktechpost.com/2026/09/22/anthropic-claude-opus-5-5-release/",
+        "https://www.cnbc.com/2026/09/22/anthropic-openai-cheaper-ai-models.html"
+      ]
+    },
+    {
+      "name": "GPT-6 Sol",
+      "lab": "OpenAI",
+      "released": "2026-09-22",
+      "params": "not disclosed",
+      "context": "unknown",
+      "modality": "multimodal in, text out, reasoning",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "pricing": "$2 in / $10 out per 1M",
+      "notable": "The mid-tier of the GPT-6 family, shipped Sep 22 2026 alongside Luna and built with Astra's post-training methods. OpenAI says it makes about half as many mistakes as GPT-5.6 Sol and improves professional work, factuality, coding and computer use, at half the per-token price. Artificial Analysis reports its Intelligence Index and Coding Agent Index scores holding level with GPT-5.6 Sol, so the gain is cost efficiency, not a new ceiling. Rolling out to ChatGPT Plus/Pro/Business/Enterprise/Edu, Codex, the API and GitHub Copilot.",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+        "https://www.macrumors.com/2026/09/22/openai-gpt-6-sol-luna/",
+        "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/"
+      ]
+    },
+    {
+      "name": "GPT-6 Luna",
+      "lab": "OpenAI",
+      "released": "2026-09-22",
+      "params": "not disclosed",
+      "context": "unknown",
+      "modality": "multimodal in, text out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "pricing": "$0.10 in / $0.50 out per 1M",
+      "notable": "The cheapest GPT-6 model, shipped Sep 22 2026 and tuned for fast responses and high volume. Price drops to $0.10/$0.50 per 1M from GPT-5.6 Luna's $0.20/$1.20. Available to paid ChatGPT tiers and, via the desktop app, to Free and Go users; also in Codex, the API and GitHub Copilot (Pro and up).",
+      "sources": [
+        "https://openai.com/index/introducing-gpt-6-sol-and-luna/",
+        "https://www.macrumors.com/2026/09/22/openai-gpt-6-sol-luna/",
+        "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available/"
+      ]
+    },
+    {
+      "name": "Grok 4.7",
+      "lab": "xAI",
+      "released": "2026-09-21",
+      "params": "2.1T (up 40% from Grok 4.6's 1.5T)",
+      "context": "500K",
+      "modality": "text + image in, text out, reasoning",
+      "open": false,
+      "benchmarks": {
+        "DeepSWE v1.1": 71.0,
+        "Terminal-Bench 4.0": 38.0,
+        "CursorBench 4.0": 46.3,
+        "EEBench": 64.0,
+        "GDPval-AA": 1695,
+        "AA-Briefcase v1.1": 1657,
+        "HealthBench Professional": 56.7,
+        "Coding Agent Index": 56
+      },
+      "milestone": false,
+      "status": "live",
+      "pricing": "$2 in / $6 out per 1M (<200K prompt); $4/$12 above; cached input $0.50",
+      "notable": "xAI's new flagship, shipped Sep 21 2026 after at least five slipped targets since late July. A true scale-up: 2.1T parameters vs Grok 4.6's 1.5T, with supplemental SpaceX engineering data, at an unchanged $2/$6 price. Artificial Analysis puts it two points above Grok 4.6 on its Intelligence Index and +9 on its Coding Agent Index (56, fourth among native agent harnesses). Runner-up to Claude Fable 5.1 on GDPval-AA (1695 vs 1735) and AA-Briefcase, second to GPT-6 Astra on EEBench. Knowledge cutoff May 2026; live in the Grok app, API (grok-4.7), Cursor, Grok Build, OpenRouter and GitHub Copilot.",
+      "sources": [
+        "https://docs.x.ai/developers/release-notes",
+        "https://artificialanalysis.ai/articles/benchmarking-grok-4-7",
+        "https://www.marktechpost.com/2026/09/21/spacexai-releases-grok-4-7/",
+        "https://decrypt.co/378824/xai-launches-grok-4-7",
+        "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/"
+      ]
+    },
+    {
+      "name": "MiMo-V2.6-Pro",
+      "lab": "Xiaomi",
+      "released": "2026-09-22",
+      "params": "~1T (Xiaomi: 'trillion-parameter')",
+      "context": "unknown",
+      "modality": "omnimodal in, text out, reasoning",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Xiaomi's Sep 22 2026 flagship, the top of a three-model MiMo-V2.6 release (Pro, Flash, and a Pro-UltraSpeed variant Xiaomi says runs up to 20x faster). Pitched as an omnimodal, trillion-parameter reasoning model for complex projects, research and cybersecurity. Xiaomi's update page gives no benchmarks, pricing, context or weights details yet.",
+      "sources": [
+        "https://mimo.mi.com/docs/en-US/updates/model",
+        "https://llmgateway.io/timeline"
+      ]
     }
   ]
 }

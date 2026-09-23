@@ -1,39 +1,28 @@
 {
-  "updated": "2026-09-21T06:05:24-04:00",
+  "updated": "2026-09-23T11:47:25-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
-      "model": "Grok 4.7",
-      "lab": "xAI",
-      "expectedWindow": "by Oct 1 2026 (missed the Sep 21 leg)",
-      "expectedDate": "2026-09",
-      "prob": 99,
-      "frontier": false,
-      "status": "confirmed",
-      "basis": "Manifold 99% before Oct 1, flat; docs.x.ai re-checked this sweep still ends at grok-4.6.",
-      "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
-    },
-    {
-      "model": "Claude Opus 5.2 (next Opus)",
+      "model": "Claude Sonnet 5.5",
       "lab": "Anthropic",
-      "expectedWindow": "by Sep 30 2026",
-      "expectedDate": "2026-09",
-      "prob": 94,
-      "frontier": true,
-      "status": "expected",
-      "basis": "Polymarket Sep-30 leg steady at 94; Sep-24 firmed to 83 from 81 and the Sep-27 inversion corrected to 84.",
-      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260727142323912"
-    },
-    {
-      "model": "Grok 4.8",
-      "lab": "xAI",
-      "expectedWindow": "Q4 2026 (named, undated)",
-      "expectedDate": "2026-11",
+      "expectedWindow": "Oct 2026 ('coming weeks')",
+      "expectedDate": "2026-10",
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Musk named Grok 4.8 on Sep 13 - a bigger 2.5T-parameter model on the new C++ stack, no ship date - with 4.7 still unshipped.",
-      "source": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
+      "basis": "Anthropic's Sep 22 Opus 5.5 post says Sonnet 5.5 and Haiku 5.5 launch in the coming weeks; no dated Sonnet market found.",
+      "source": "https://www.anthropic.com/news/claude-opus-5-5"
+    },
+    {
+      "model": "Claude Haiku 5.5",
+      "lab": "Anthropic",
+      "expectedWindow": "by Oct 31 2026",
+      "expectedDate": "2026-10",
+      "prob": 88,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Anthropic confirmed Haiku 5.5 is weeks away; Polymarket jumped to 88% by Oct 31 from 60, 69% by Oct 15, 95% by Dec 31.",
+      "source": "https://polymarket.com/event/next-claude-haiku-released-byptptpt-20260701205353326"
     },
     {
       "model": "Gemini 3.5 Pro",
@@ -43,19 +32,8 @@
       "prob": 85,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 85% by Oct 31, steady; Oct-15 leg eased to 47 from 49, Sep-30 just 9; Manifold before-Oct-1 at 7%.",
+      "basis": "Polymarket 85% by Oct 31, steady; Oct-15 leg jumped to 60 from 47, Oct-23 at 86; Manifold before-Oct-1 still 7%.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
-    },
-    {
-      "model": "Claude Haiku 5",
-      "lab": "Anthropic",
-      "expectedWindow": "by Oct 31 2026",
-      "expectedDate": "2026-10",
-      "prob": 60,
-      "frontier": false,
-      "status": "expected",
-      "basis": "Polymarket Oct-31 leg recovered to 60 from 57; Oct-15 at 44, year-end leg 64 on a thin book.",
-      "source": "https://polymarket.com/event/next-claude-haiku-released-byptptpt-20260701205353326"
     },
     {
       "model": "GPT-6.1 Astra ('Astra 6.1')",
@@ -65,8 +43,19 @@
       "prob": 49,
       "frontier": true,
       "status": "rumored",
-      "basis": "Kalshi ~49% before Oct 30, ~70% before Nov 13 (Kalshi rate-limited this sweep; last read Sep 21 12AM).",
+      "basis": "Kalshi ~49% before Oct 30, ~70% before Nov 13 (Kalshi rate-limited again; last read Sep 21). Sol and Luna shipped Sep 22 instead.",
       "source": "https://kalshi.com/markets/kxgpt/chatgpt-release-date"
+    },
+    {
+      "model": "Grok 4.8",
+      "lab": "xAI",
+      "expectedWindow": "Q4 2026 (named, undated)",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Musk named Grok 4.8 as a bigger 2.5T model; with 4.7 out Sep 21 he now frames 4.9 as the Astra/Fable-class step.",
+      "source": "https://decrypt.co/378824/xai-launches-grok-4-7"
     },
     {
       "model": "DeepSeek V4.1 Pro",
@@ -109,7 +98,7 @@
       "prob": -1,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Announced speed tier of the 5.6 line, still limited-access; GA expected in H2.",
+      "basis": "Announced speed tier of the 5.6 line, still limited-access; may be overtaken by the GPT-6 Sol launch.",
       "source": "https://openai.com/index/"
     },
     {
@@ -150,10 +139,10 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31 2026 (slipping toward 2027)",
       "expectedDate": "2026-12",
-      "prob": 43,
+      "prob": 44,
       "frontier": true,
       "status": "expected",
-      "basis": "Manifold 43% before 2027, flat; 3% before Oct, 12% before Nov, 15% before Dec.",
+      "basis": "Manifold 44% before 2027, up a point; 1% before Oct, 8% before Nov, 15% before Dec. Musk gives no timeline.",
       "source": "https://manifold.markets/JoshYou/when-will-xai-release-grok-5"
     }
   ]
