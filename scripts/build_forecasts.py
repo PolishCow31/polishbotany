@@ -27,7 +27,9 @@ raw = json.load(open(RAW))
 res = raw.get("result", raw)  # tolerate either the wrapped workflow output or a bare result
 
 MKT_KEYS  = ("question", "platform", "forecast", "category", "relevantBenchmark", "resolveDate", "url")
-HIST_KEYS = ("benchmark", "model", "lab", "date", "value", "estimate", "basis")
+HIST_KEYS = ("benchmark", "model", "lab", "date", "value", "estimate", "basis", "scale")   # AA history MUST carry the
+# index version it was scored on ("v4.3"): index.html only draws AA history whose scale matches meta.aaScale, so an
+# untagged or old-scale raw file stays hidden instead of splicing two index versions into one trend line.
 FC_KEYS   = ("lab", "benchmark", "expectedDate", "predicted", "low", "high", "basis", "source")
 
 def pick(d, keys):

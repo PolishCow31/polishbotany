@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=34"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=35"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -700,7 +700,7 @@ function renderHome(){
   $('#v-home').innerHTML=`<div class="vh">Overview${updAgo?`<span class="vh-upd"> · updated ${updAgo}</span>`:''}</div>
     ${heroHTML}
     ${segCtl('home',homeMode,FO)}
-    <div class="hsec">Leaderboard · AA Index</div>
+    <div class="hsec">Leaderboard · AA Index${meta.aaScale?' '+meta.aaScale:''}</div>
     ${lb.length?lb.map((o,i)=>`<div class="lbrow ${i===0?'gold':''}"><div class="lbrank">${i+1}</div><div><div class="lbname"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${labHex(o.x.lab)}"></span>${o.x.name}${o.x.open?' <span class="badge b-open" style="font-size:10.0px;padding:1px 4px">OPEN</span>':''}</div><div class="lbsub">${o.x.lab}</div></div><div class="lbscore">${o.aa}<small>AA-INDEX</small></div></div>`).join(''):'<div class="empty">No AA-Index data for that filter — try All models.</div>'}
     <div class="hsec">Best model for…</div>
     <div class="bestgrid">${picks.map(bestCard).join('')||'<div class="empty">—</div>'}</div>`;
@@ -1095,6 +1095,9 @@ let trajMode={aa:'frontier',swe:'frontier'};
 function historicsUsable(cat){
   const hv=HISTORICS.filter(h=>h.benchmark===cat).map(h=>h.value).filter(v=>typeof v==='number');
   if(!hv.length) return false;
+  // A re-version can LOWER the top without lifting old points above it (v4.1 -> v4.3, Sep 2026), so the value
+  // check below misses it. AA history must carry the scale it was scored on, and only the live scale draws.
+  if(cat==='aa' && HISTORICS.some(h=>h.benchmark==='aa' && h.scale!==(DATA.meta||{}).aaScale)) return false;
   let lmax=-Infinity; DATA.models.forEach(m=>{const v=benchOf(m,cat); if(v!=null&&v>lmax)lmax=v;});
   if(lmax===-Infinity) return true;
   return Math.max(...hv) <= lmax*1.03;

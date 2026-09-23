@@ -5,6 +5,7 @@ set -uo pipefail
 cd /Users/christian/Sites/AI || exit 1
 
 CLAUDE=/Users/christian/.npm-global/bin/claude
+MODEL=claude-opus-5-5   # pinned Sep 23 2026: with no --model this inherited the interactive Fable default and died on its weekly cap
 LOG=scripts/update.log
 ts() { date "+%Y-%m-%d %H:%M:%S"; }
 
@@ -22,7 +23,7 @@ echo "=== $(ts) update start ===" >> "$LOG"
 rm -f data/_delta.json
 RUNOUT=$(mktemp -t ai-tracker-run)
 perl -e 'alarm shift @ARGV; exec @ARGV' 1500 \
-  "$CLAUDE" -p --dangerously-skip-permissions "$(cat scripts/research-prompt.md)" > "$RUNOUT" 2>&1 \
+  "$CLAUDE" -p --model "$MODEL" --dangerously-skip-permissions "$(cat scripts/research-prompt.md)" > "$RUNOUT" 2>&1 \
   || echo "$(ts) claude -p exited non-zero / hit the 25-min watchdog — merging any delta it wrote" >> "$LOG"
 cat "$RUNOUT" >> "$LOG"
 # AUTH DEATH DETECTOR, layer 1 — error strings, matched BROADLY. The Max OAuth cred expires
@@ -34,6 +35,15 @@ cat "$RUNOUT" >> "$LOG"
 if [ ! -f data/_delta.json ] && grep -qiE "authenticat|not logged in|/login|oauth" "$RUNOUT"; then
   echo "$(ts) AUTH EXPIRED — claude -p signed out; EVERY claude-p daemon is down. Fix: claude → /login" >> "$LOG"
   osascript -e 'display notification "claude -p signed out — Botany, Plate + all claude-p daemons are DOWN. Fix: run claude, then /login" with title "Botany updater: AUTH EXPIRED" sound name "Basso"' 2>/dev/null || true
+fi
+# LIMIT DETECTOR, layer 1b — a usage cap is NOT an auth death, and the fix is different. Sep 21-22
+# 2026: the Fable weekly cap was hit; claude -p died in ~3s with "You've reached your Fable 5 limit"
+# for 11+ straight runs while layer 2 told him to /login. Capture the cause so layer 2 names it.
+FAILCAUSE=""
+if [ ! -f data/_delta.json ]; then
+  CAP=$(grep -oiE "reached your [^.]*limit" "$RUNOUT" | head -1 | tr -d '"')
+  if [ -n "$CAP" ]; then FAILCAUSE="usage cap ($CAP)"
+  elif grep -qiE "authenticat|not logged in|/login|oauth" "$RUNOUT"; then FAILCAUSE="auth expired"; fi
 fi
 rm -f "$RUNOUT"
 
@@ -47,8 +57,13 @@ if [ -f data/_delta.json ]; then
 else
   STREAK=$(( $(cat "$STREAKF" 2>/dev/null || echo 0) + 1 )); echo "$STREAK" > "$STREAKF"
   if [ "$STREAK" -eq 4 ] || { [ "$STREAK" -gt 4 ] && [ $(( (STREAK-4) % 8 )) -eq 0 ]; }; then
-    echo "$(ts) DEAD STREAK: $STREAK consecutive sweeps with no delta — updater is silently down (auth? hang?). Check scripts/update.log; likely fix: claude → /login" >> "$LOG"
-    osascript -e "display notification \"$STREAK consecutive sweeps produced nothing — Botany's updater is silently down. Likely: claude -p auth. Fix: run claude, then /login\" with title \"Botany updater: DEAD STREAK\" sound name \"Basso\"" 2>/dev/null || true
+    if [ -n "$FAILCAUSE" ]; then WHY="cause: $FAILCAUSE"; else WHY="no error text (auth? hang?)"; fi
+    case "$FAILCAUSE" in
+      usage*) FIX="wait for the cap to reset, or point claude -p at a model with headroom" ;;
+      *)      FIX="run claude, then /login" ;;
+    esac
+    echo "$(ts) DEAD STREAK: $STREAK consecutive sweeps with no delta — $WHY. Check scripts/update.log; likely fix: $FIX" >> "$LOG"
+    osascript -e "display notification \"$STREAK sweeps produced nothing — $WHY. Fix: $FIX\" with title \"Botany updater: DEAD STREAK\" sound name \"Basso\"" 2>/dev/null || true
   fi
 fi
 
@@ -58,6 +73,16 @@ if [ -f data/_delta.json ]; then
   rm -f data/_delta.json
 else
   echo "$(ts) no delta written" >> "$LOG"
+fi
+
+# 2b. AA-Index column = a straight copy of Artificial Analysis's live index (scripts/aa_sync.py): fills new models,
+#     mirrors re-scores. When AA re-versions its index the sync refuses (exit 2) and this alarms once a day instead,
+#     because a re-version needs the manual `python3 scripts/aa_sync.py --rebase`. (Sep 23 2026: a hand-pinned v4.1
+#     scale froze the leaderboard for weeks after AA moved to v4.3 — Fable 5.1 shown at 66 vs AA's 53.)
+python3 scripts/aa_sync.py --sync >> "$LOG" 2>&1
+if [ $? -eq 2 ] && [ "$(cat scripts/.aa_rescale_alarm 2>/dev/null)" != "$(date +%F)" ]; then
+  date +%F > scripts/.aa_rescale_alarm
+  osascript -e 'display notification "Artificial Analysis re-versioned its index; AA numbers are frozen until you run: python3 scripts/aa_sync.py --rebase" with title "Botany: AA index re-versioned" sound name "Basso"' 2>/dev/null || true
 fi
 
 # 3. publish only if the dataset actually changed

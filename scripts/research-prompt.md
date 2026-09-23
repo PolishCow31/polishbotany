@@ -41,11 +41,14 @@ Rules:
 - Match `name` exactly to existing entries when updating/promoting.
 - Dates `YYYY-MM-DD` or `YYYY-MM`. Numbers as numbers, not strings.
 - Valid JSON only. No prose, no markdown — just write the file.
-- **AA-Index scale is PINNED to v4.1.** The app's leaderboard + `models.json` use Artificial Analysis's
-  **live v4.1** scale (Claude Opus 4.8 = **56**, GPT-5.5 = 55, Gemini 3.1 Pro = 46). Whenever you write an
-  AA-Index number ANYWHERE — especially the `pulse` — USE the value already in `models.json` (the v4.1 number).
-  **NEVER** cite the old **v4.0** scale (Opus 4.8 ≈ 61) or a number you re-researched off a v4.0 source — it
-  contradicts the leaderboard right below the pulse and makes the app look broken. Match the leaderboard.
+- **Never write AA-Index values into `benchmarks`.** `scripts/aa_sync.py` copies every model's AA-Index straight
+  from Artificial Analysis's own page data after your delta merges (the scale is pinned in `data/meta.json`
+  `aaScale`, currently **v4.3**: Claude Opus 5.5 = **58**, Claude Fable 5.1 = 53, GPT-6 Astra = 53), so any
+  AA-Index you put in `newModels`/`updatedModels` gets overwritten or dropped. When you CITE an AA-Index number
+  anywhere — especially the `pulse` — use the value in `models.json`, never one from an article, a model card or
+  an older index version: AA re-versions the index every few months and each version re-scores every model
+  (v4.1-era numbers ran 10–17 points above v4.3), so a re-researched number contradicts the leaderboard right
+  below the pulse and makes the app look broken. If AA ships a new index version, report THAT; never mix versions.
 
 ## Also refresh the News feed (`news`) — the "News" tab
 Find 6–12 of the most important, RECENT (last ~2 weeks) AI stories from large, reputable,
@@ -89,7 +92,7 @@ research breakthroughs, safety/governance, and AI in medicine.
     manufacture movement or re-dress the old pulse as if it were new** — an honest "nothing shipped" reads far
     better than fake motion.
   Wrap ~4–6 of the most important facts in `**double asterisks**` (the app renders them bold), sparingly. No
-  hype, no emoji, plain reporting voice. (AA-Index numbers stay on the **v4.1** scale per the pin above —
+  hype, no emoji, plain reporting voice. (AA-Index numbers come from `models.json` per the rule above —
   match the leaderboard.) The merge step stamps the time and which 3-hour sweep slot wrote it, so just provide the text.
   Format: `"pulse": "<the paragraph>"`.
 
