@@ -3,6 +3,31 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## State — Sep 23 2026
+
+### ✓ DONE (Sep 23) — AA-Index rebased onto Artificial Analysis v4.3, now synced from AA's own data (e111d03, 5369c72)
+- **What was wrong:** the Home leaderboard sat frozen on the hand-pinned v4.1 scale after AA re-versioned (v4.2 ~Sep 3
+  per the updater; v4.3 Sep 22, verified on AA's page): Fable 5.1 66 (AA live 53), Opus 5 63 (51), Muse Spark 1.3 62
+  (48). Opus 5.5, AA's #1 at 58, had NO value, so it was missing from the board while the pulse said it led. Root
+  cause: LLM-researched AA numbers + a pin that forbade re-researching = frozen on a dead scale, and nothing noticed.
+- **`scripts/aa_sync.py`:** parses the model dataset AA's leaderboard page embeds (Next.js flight data; 664 scored),
+  cross-checks every DISPLAYED value against it (288/288), keeps each model's best effort variant (half-up, like AA's
+  table), maps onto models.json by normalized name (+ lab-prefix strip, + 2 aliases). Modes: check (default) ·
+  `--sync` (update.sh, after every merge: fills new models, mirrors re-scores, drops values AA doesn't list) ·
+  `--rebase` (manual, after a re-version) · `--dry-run`. Exit 0 ok · 1 fetch/parse doubt, writes nothing · 2 AA
+  re-versioned: refuses, and update.sh fires a once-a-day "Botany: AA index re-versioned" notification. ~1 s/run.
+  **`scripts/test_aa_sync.py`:** 11 failure-path cases on temp copies of data/ (all pass); run after any edit.
+- **Rebase:** 110 models on v4.3 (49 re-scored, 61 older models gained real AA values, e.g. GPT-4 7, o1 15);
+  `meta.json` `aaScale: "v4.3"`. The LLM no longer writes AA numbers (`research-prompt.md`); it cites models.json.
+- **Predict guard gap closed:** the value-only `historicsUsable` check missed this rescale (the top DROPPED 66→58,
+  old points all sit below it). AA history now also needs `scale == meta.aaScale`; the 38 back-estimated AA
+  historics are tagged `v4.1` and hidden; `build_forecasts.py` passes `scale` through (untagged = hidden).
+- Leaderboard header shows the version ("AA Index v4.3"). Manifest **v35**.
+- **Prose:** 84 notables/briefs quoting pre-v4.3 numbers end with a number-free note pointing at the model's (synced)
+  AA-Index; glossary AAII def fixed (no "math", versions re-score). Historical claims left as written.
+- **Inert, left on old scales:** `trends.json` / `predictions.json` AA series and `forecasts.trajForecasts` render
+  nowhere (`trendChart` has no callers, `TRAJFC` unused), so they can't mix scales on screen.
+
 ## State — Jul 28 2026
 
 ### ✓ DONE (Jul 28) — PREDICT ▸ TIMELINE (honest release calendar) — SHIPPED v34
@@ -210,12 +235,12 @@ only by the manual `build_forecasts.py`; the cron never touched it, so the marke
   ALL 25 pass the guard**, all 4 categories; the agent even self-caught a Kalshi URL it had pattern-guessed).
   First LIVE markets refresh lands on the next scheduled run (6am/6pm) — wiring proven per-link, not yet run live.
 - Runtime logs (`scripts/*.log`) now gitignored.
-- **AA-rebaseline stays MANUAL by design** (the one remaining non-auto piece): when Artificial Analysis
-  re-versions its Index scale (v4.1→v4.2…), every model's score shifts non-linearly and must be RE-FETCHED
-  from AA (not computable from old values), the trigger isn't machine-announced, and it's a DESTRUCTIVE whole-
-  dataset rewrite (opposite of the additive/idempotent merge) that would corrupt every chart+leaderboard at
-  once if wrong. So it's human-launched (matches [[feedback_ai_auditor_architecture]]). To redo it: a research
-  pass re-fetching live AA values + the `historicsUsable` guard, like the Jun 19 v4.0→v4.1 rebaseline.
+- **AA-rebaseline: the REBASE stays human-launched; detection + the copy are automatic since Sep 23 2026**
+  (see the Sep 23 section). A re-version shifts every score non-linearly and the rebase is a DESTRUCTIVE whole-
+  column rewrite, so a human still launches it (matches [[feedback_ai_auditor_architecture]]). What changed: the
+  values are no longer LLM-researched (`scripts/aa_sync.py` copies them from AA's own page data every sweep),
+  and a re-version IS machine-detected now (the sync refuses + update.sh alarms daily). Rebase = one command:
+  `python3 scripts/aa_sync.py --rebase --dry-run`, review, then `--rebase`.
 
 ### ◷ PARKED (Jun 20, session 26b) — fox WALK animation: waiting for Fable 5
 The fox got a UI fix + a deep-dive that ended in a deliberate park:
