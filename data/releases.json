@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-23T21:01:40-04:00",
+  "updated": "2026-09-24T08:26:44-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,10 +7,10 @@
       "lab": "Anthropic",
       "expectedWindow": "by Oct 15 2026",
       "expectedDate": "2026-10",
-      "prob": 70,
+      "prob": 69,
       "frontier": false,
       "status": "confirmed",
-      "basis": "Anthropic says Haiku 5.5 is weeks away; Polymarket Oct-15 holds 70% on thin volume, Oct-31 87%, Dec-31 96%.",
+      "basis": "Anthropic says Haiku 5.5 is weeks away; Polymarket Oct-15 69% on thin volume, Oct-31 88%, Dec-31 96%.",
       "source": "https://polymarket.com/event/next-claude-haiku-released-byptptpt-20260701205353326"
     },
     {
@@ -29,10 +29,10 @@
       "lab": "Google DeepMind",
       "expectedWindow": "by Oct 31 2026",
       "expectedDate": "2026-10",
-      "prob": 84,
+      "prob": 77,
       "frontier": true,
       "status": "expected",
-      "basis": "Polymarket 84% by Oct 31, 80% by Oct 23, 53% by Oct 15, 33% by Oct 9, 7% by Sep 30. Still undated by Google.",
+      "basis": "Polymarket slipped to 77% by Oct 31 from 84%; 54% by Oct 23, 33% by Oct 15, 3% by Sep 30. Still undated.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -45,6 +45,17 @@
       "status": "rumored",
       "basis": "Kalshi last read ~49% before Oct 30, ~70% before Nov 13 (rate-limited again this sweep; last read Sep 21).",
       "source": "https://kalshi.com/markets/kxgpt/chatgpt-release-date"
+    },
+    {
+      "model": "Qwen 4 (Max / Plus / Flash / 27B)",
+      "lab": "Alibaba (Qwen)",
+      "expectedWindow": "undated (in training)",
+      "expectedDate": "2027-01",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Four Qwen 4 tiers named at Apsara Sep 22; Alibaba says the family is in training, with no date, price or weights.",
+      "source": "https://pandaily.com/alibaba-qwen4-training-roadmap-5-10t-apsara-2026"
     },
     {
       "model": "Grok 4.8",
