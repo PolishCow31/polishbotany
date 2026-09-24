@@ -3941,6 +3941,40 @@
         "https://siliconangle.com/2026/09/22/xiaomi-introduces-mimo-v2-6-series-open-source-ai-model-family/",
         "https://alternativeto.net/news/2026/9/xiaomi-open-sources-mimo-v2-6-pro-and-flash-ai-models/"
       ]
+    },
+    {
+      "name": "Gemini 3.8 Flash TTS",
+      "lab": "Google DeepMind",
+      "released": "2026-09-23",
+      "params": "undisclosed",
+      "context": "not stated at launch",
+      "modality": "text in, speech out (text-to-speech)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Google calls this its most expressive audio generation model yet. It adds generative voice design, voice replication from a 30-second sample, 2,000+ production voices and line-by-line direction over acting cues, pacing, dialect shifts and backchanneling across 100+ languages and dialects. Google reports it is #1 overall on Hume AI's Voice Design Benchmark (71.4) and on its accent-modeling test (60.8), and that it tops the Voice Arena for several languages. It is rolling out in the Gemini API, AI Studio and Gemini Notebook, with Gemini Enterprise support coming later.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+        "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts"
+      ]
+    },
+    {
+      "name": "Gemini 3.8 Flash-Lite TTS",
+      "lab": "Google DeepMind",
+      "released": "2026-09-23",
+      "params": "undisclosed",
+      "context": "8K in / 16K out",
+      "modality": "text in, speech out (text-to-speech)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "The fast, cheap sibling of 3.8 Flash TTS, marked stable in the Gemini API as the replacement for gemini-3.1-flash-tts-preview. It covers 101 languages with automatic language detection and supports voice design, voice replication and prebuilt voices. It is built for high-volume production, real-time voice agents and read-aloud features, and supports batch, flex and priority inference. It generates single-speaker audio, returns WAV by default and has no Live API or function-calling support. In Google's own apps it powers Google Vids.",
+      "sources": [
+        "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-lite-tts",
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/"
+      ]
     }
   ]
 }
