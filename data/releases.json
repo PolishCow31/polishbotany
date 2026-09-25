@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-25T09:10:08-04:00",
+  "updated": "2026-09-25T12:42:42-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -31,9 +31,31 @@
       "expectedDate": "2026-10",
       "prob": 77,
       "frontier": true,
-      "status": "expected",
-      "basis": "Polymarket Oct-31 flat at 77%; Oct-15 back to 40% (from 37), Oct-23 52% (from 49), Oct-9 10%, Sep-30 3%. Still undated.",
-      "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
+      "status": "rumored",
+      "basis": "DeepMind's Kavukcuoglu says Google 'took a step back' from 3.5 Pro for Flash and now Gemini 4; Polymarket Oct-31 77% carried, unread this sweep.",
+      "source": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/"
+    },
+    {
+      "model": "Gemini 4",
+      "lab": "Google DeepMind",
+      "expectedWindow": "before end-2026 ('as soon as possible')",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "frontier": true,
+      "status": "confirmed",
+      "basis": "Kavukcuoglu, Sep 24: Gemini 4 is in post-training, powering internal Antigravity tests; early version to ship 'much earlier' than year-end. No date.",
+      "source": "https://9to5google.com/2026/09/24/google-says-gemini-4-release-is-coming-as-soon-as-possible/"
+    },
+    {
+      "model": "GPT-6 Cyber",
+      "lab": "OpenAI",
+      "expectedWindow": "preview at DevDay Sep 29 or coming weeks",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "frontier": false,
+      "status": "confirmed",
+      "basis": "Fortune: alpha-testing in Daybreak Red; preview 'in the coming weeks', likely around the Sep 29 DevDay. OpenAI's fourth cyber model this year.",
+      "source": "https://fortune.com/2026/09/24/openai-launching-gpt-6-cyber-model-and-security-product-devday/"
     },
     {
       "model": "GPT-6.1 Astra ('Astra 6.1')",
@@ -43,7 +65,7 @@
       "prob": 59,
       "frontier": true,
       "status": "rumored",
-      "basis": "Kalshi Oct-30 leg last read at 59% (bid 55/ask 63); Kalshi timed out again this sweep, number carried from prior read.",
+      "basis": "Kalshi Oct-30 leg last read 59% (bid 55/ask 63); Kalshi rate-limited again this sweep, number carried from prior read.",
       "source": "https://kalshi.com/markets/kxgpt/chatgpt-release-date"
     },
     {
