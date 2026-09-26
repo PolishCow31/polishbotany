@@ -3975,6 +3975,61 @@
         "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-lite-tts",
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/"
       ]
+    },
+    {
+      "name": "Solar Mini 4",
+      "lab": "Upstage",
+      "released": "2026-09-22",
+      "params": "35B MoE (3B active)",
+      "context": "512K",
+      "modality": "text, reasoning",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Upstage's compact agentic model: a 35B sparse mixture-of-experts with 3B active parameters, 512K context and up to 128K output tokens, with reasoning, tool calling and structured outputs in English, Korean and Japanese. List price $0.10/$0.40 per million tokens, halved through Oct 22. No open weights and no published benchmarks at launch. Shipped alongside Solar Jev, a decision endpoint that returns a choice or probability instead of prose.",
+      "sources": [
+        "https://www.orcarouter.ai/blog/solar-mini-4-release",
+        "https://openrouter.ai/upstage/solar-mini4",
+        "https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker"
+      ]
+    },
+    {
+      "name": "FLUX 3 Action",
+      "lab": "Black Forest Labs",
+      "released": "2026-09-23",
+      "params": "7B",
+      "context": "n/a",
+      "modality": "video + robot state + text in, robot actions out (world action model)",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Black Forest Labs' first robotics model: an open-weight 7B 'world action model' built on the FLUX 3 backbone that predicts the next chunk of robot actions jointly with the next video frames. BFL reports first place on NVIDIA's RoboLab-120 at 42.92% success, 6.1 points above the previous best open model while using 56% fewer parameters and running up to 3.95x faster. Fits a 24GB consumer GPU in FP8; released under BFL's FLUX Kommunity license with three checkpoints.",
+      "sources": [
+        "https://bfl.ai/models/flux-3-action",
+        "https://huggingface.co/black-forest-labs/flux-3-action-base",
+        "https://the-decoder.com/black-forest-labs-launches-flux-3-action-an-open-robotics-ai-model/",
+        "https://www.marktechpost.com/2026/09/24/black-forest-labs-releases-flux-3-action-a-7b-open-weights-world-action-model-that-tops-robolab-120/"
+      ]
+    },
+    {
+      "name": "Ember-1",
+      "lab": "Fireworks AI",
+      "released": "2026-09-23",
+      "params": "Kimi K3 base (post-trained)",
+      "context": "1M",
+      "modality": "text + image in, text out, reasoning",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Fireworks Research's post-train of Moonshot's Kimi K3 aimed at shorter reasoning: Fireworks reports 35-50% fewer reasoning tokens at comparable accuracy, matching K3-Max quality at lower cost, and a new Pareto frontier on the clinical Bedside Bench. All figures are vendor-reported. Research preview on Fireworks Serverless with a two-week access window; permanence depends on demand.",
+      "sources": [
+        "https://fireworks.ai/blog/ember-1",
+        "https://fireworks.ai/models/fireworks/ember-1",
+        "https://www.digitalapplied.com/blog/fireworks-ember-1-kimi-k3-fewer-reasoning-tokens"
+      ]
     }
   ]
 }
