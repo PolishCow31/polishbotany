@@ -4030,6 +4030,25 @@
         "https://fireworks.ai/models/fireworks/ember-1",
         "https://www.digitalapplied.com/blog/fireworks-ember-1-kimi-k3-fewer-reasoning-tokens"
       ]
+    },
+    {
+      "name": "Saaras V4",
+      "lab": "Sarvam AI",
+      "released": "2026-09-25",
+      "params": "~3B decoder (hybrid state-space Sarvam-3B) plus audio encoder",
+      "context": "not disclosed (audio in, text out)",
+      "modality": "audio in, text out (speech recognition and speech translation)",
+      "open": false,
+      "benchmarks": {
+        "IndicContextEval L5 WER with keyterm prompting (%)": 16.03
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Sarvam AI's fourth-generation speech-recognition model, covering all 22 scheduled Indian languages plus global English in a single model. It offers five output modes (transcribe, verbatim, codemix, translit, translate), keyterm prompting of up to 50 terms, and WebSocket streaming with under 150ms time to first token. Sarvam reports that on noisy audio it makes fewer than half the errors of Deepgram Nova-3 and GPT-4o Transcribe; all benchmarks are vendor-reported. Available by API only as saaras:v4 at Rs 30 per audio hour (Rs 45 with diarization); weights are not released.",
+      "sources": [
+        "https://www.marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english/",
+        "https://www.business-standard.com/technology/artificial-intelligence/saaras-v4-sarvam-ai-new-speech-model-can-transcribe-22-indian-languages-126092500464_1.html"
+      ]
     }
   ]
 }
