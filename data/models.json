@@ -3932,7 +3932,9 @@
       "context": "1M",
       "modality": "omnimodal in (text, image, video, audio), text out, reasoning",
       "open": true,
-      "benchmarks": {},
+      "benchmarks": {
+        "AA-Index": 38
+      },
       "milestone": false,
       "status": "live",
       "notable": "The efficient tier of Xiaomi's Sep 22 MiMo-V2.6 release, open-sourced under MIT with a technical report plus the RL training environments and code. Xiaomi says it beats the older MiMo-V2.5-Pro outright, and its DeepSWE v1.1 score rose from 48.8 to 65.7 during RL. API price is $0.14/$0.28 per million tokens.",
