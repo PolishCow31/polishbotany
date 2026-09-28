@@ -1207,7 +1207,6 @@
       "open": false,
       "benchmarks": {
         "AA-Index": 38,
-        "GPQA": 0,
         "Terminal-Bench 2.0": 82.7,
         "FrontierMath T1-3": 51.7,
         "FrontierMath T4": 35.4
@@ -1384,7 +1383,7 @@
     {
       "name": "Gemini 3 Flash",
       "lab": "Google DeepMind",
-      "released": "2026",
+      "released": "2025-12-17",
       "params": "unknown",
       "context": "1M",
       "modality": "multimodal (text/image/speech/video), text out",
@@ -1395,7 +1394,10 @@
       "milestone": false,
       "notable": "Pro-grade reasoning at Flash speed/cost. Non-reasoning AA Index 35. Line later iterated to Gemini 3.5 Flash (AA 50, May 19 2026) and 3.1 Flash-Lite (AA 25, Mar 3 2026). $0.50/$3. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
       "pricing": "$0.50 in / $3 out per 1M",
-      "status": "live"
+      "status": "live",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gemini_3_(AI)"
+      ]
     },
     {
       "name": "DiffusionGemma",
@@ -1526,7 +1528,7 @@
         "SWE-bench": 73
       },
       "milestone": false,
-      "notable": "Announced at Computex Jun 1, released Jun 4. Fastest US open-weights frontier model (>300 tok/s) and best US open-weight intelligence (AA 48) — but still behind Chinese open models (Kimi K2.6 at 54). Full release of weights, reward models, quantized variants, and training recipes under NVIDIA Open Model License.",
+      "notable": "Announced at Computex Jun 1, released Jun 4. Fastest US open-weights frontier model (>300 tok/s) and best US open-weight intelligence (AA 48) — but still behind Chinese open models (Kimi K2.6 at 54). Full release of weights, reward models, quantized variants, and training recipes under NVIDIA Open Model License. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
       "pricing": "open weights (NVIDIA Open Model License)",
       "status": "live"
     },
@@ -2607,7 +2609,7 @@
       },
       "milestone": false,
       "status": "live",
-      "notable": "Meta Superintelligence Labs' laptop-class agentic model, announced Aug 10 2026 and open-sourced under a permissive Apache 2.0 license. It is a dense causal transformer of roughly 29.6B parameters with an integrated 1.8B perception encoder, distilled from the larger Muse Spark, and it is small enough to run on a Mac or PC with a single consumer GPU under 20GB. The design goal is a single model that does multi-step reasoning, reliable tool calling, multimodal understanding and failure recovery locally, with no cloud or network access -- targeted at local agents, function calling, local coding and LLM-as-a-judge evaluation. Meta ships speculative-decoding optimizations it says raise decode speed 3.1x on an RTX 5090, 1.8x on an M5 Max and 1.5x on an M4 Max, and the model supports more than 100 languages. Meta benchmarks it against Gemma4-31B and Qwen3.6-27B across agentic, coding, multimodal, safety and reasoning suites; the published card reports 76.0% on SWE-bench Verified, 51.2% on SWE-bench Pro, 94.7% on AIME 2026, 83.5% on GPQA Diamond, 74% MMMU-Pro, 75.5% MCP Atlas and 74.6% DeepSearch QA. Artificial Analysis tracks it but has not yet published an overall Intelligence Index score for it.",
+      "notable": "Meta Superintelligence Labs' laptop-class agentic model, announced Aug 10 2026 and open-sourced under a permissive Apache 2.0 license. It is a dense causal transformer of roughly 29.6B parameters with an integrated 1.8B perception encoder, distilled from the larger Muse Spark, and it is small enough to run on a Mac or PC with a single consumer GPU under 20GB. The design goal is a single model that does multi-step reasoning, reliable tool calling, multimodal understanding and failure recovery locally, with no cloud or network access -- targeted at local agents, function calling, local coding and LLM-as-a-judge evaluation. Meta ships speculative-decoding optimizations it says raise decode speed 3.1x on an RTX 5090, 1.8x on an M5 Max and 1.5x on an M4 Max, and the model supports more than 100 languages. Meta benchmarks it against Gemma4-31B and Qwen3.6-27B across agentic, coding, multimodal, safety and reasoning suites; the published card reports 76.0% on SWE-bench Verified, 51.2% on SWE-bench Pro, 94.7% on AIME 2026, 83.5% on GPQA Diamond, 74% MMMU-Pro, 75.5% MCP Atlas and 74.6% DeepSearch QA. Artificial Analysis tracks it but has not yet published an overall Intelligence Index score for it. (Written before Artificial Analysis scored it; the AA-Index shown with this model is its current v4.3 score.)",
       "sources": [
         "https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model",
         "https://huggingface.co/meta-models/Muse-Glimmer-30B",
@@ -2806,7 +2808,7 @@
       },
       "milestone": false,
       "status": "live",
-      "notable": "Z.ai shipped GLM-5.3 on Aug 14 2026 under the tagline 'Built to Code. Ready for Cyber Defense.' The base model is untouched from GLM-5.2 - roughly 743B parameters - and every capability gain comes from scaled-up post-training, the same post-training-only pattern DeepSeek used for V4-Pro-0813 a day earlier. Coding and agentic jumps are large on vendor numbers: Terminal-Bench 3.0 goes 4.6 to 28.3, DeepSWE v1.1 46.2 to 66.9, Agents' Last Exam 23.8 to 28.5, with Z.ai claiming roughly a 50% coding improvement over GLM-5.2 and capabilities 'approaching Claude Fable 5'. The louder story is cybersecurity, where Z.ai says capability compounded faster than expected as training scaled and the model began planning full exploitation chains rather than isolated bug-finding: CyberGym 84.5 (vs 77.2 for GLM-5.2) edges past Mythos 5 at 83.8 and GPT-5.6 Sol at 83.6, but ExploitBench 54.4 still trails both badly (78.0 and 76.5), and ExploitGym solve counts under a 2-hour budget are 105 tasks against Mythos 5's 181. Vision, the top community ask in Z.ai's July developer poll, did not ship. Availability is staged: live now via the GLM Coding Plan, ZCode and API, with open weights held back roughly two weeks pending safety evaluation and hardening - a deliberate break from GLM-5.2, whose weights went up on release day. No Artificial Analysis Intelligence Index score or public API price has been published yet, and none of the vendor benchmarks are independently replicated.",
+      "notable": "Z.ai shipped GLM-5.3 on Aug 14 2026 under the tagline 'Built to Code. Ready for Cyber Defense.' The base model is untouched from GLM-5.2 - roughly 743B parameters - and every capability gain comes from scaled-up post-training, the same post-training-only pattern DeepSeek used for V4-Pro-0813 a day earlier. Coding and agentic jumps are large on vendor numbers: Terminal-Bench 3.0 goes 4.6 to 28.3, DeepSWE v1.1 46.2 to 66.9, Agents' Last Exam 23.8 to 28.5, with Z.ai claiming roughly a 50% coding improvement over GLM-5.2 and capabilities 'approaching Claude Fable 5'. The louder story is cybersecurity, where Z.ai says capability compounded faster than expected as training scaled and the model began planning full exploitation chains rather than isolated bug-finding: CyberGym 84.5 (vs 77.2 for GLM-5.2) edges past Mythos 5 at 83.8 and GPT-5.6 Sol at 83.6, but ExploitBench 54.4 still trails both badly (78.0 and 76.5), and ExploitGym solve counts under a 2-hour budget are 105 tasks against Mythos 5's 181. Vision, the top community ask in Z.ai's July developer poll, did not ship. Availability is staged: live now via the GLM Coding Plan, ZCode and API, with open weights held back roughly two weeks pending safety evaluation and hardening - a deliberate break from GLM-5.2, whose weights went up on release day. No Artificial Analysis Intelligence Index score or public API price has been published yet, and none of the vendor benchmarks are independently replicated. (Written before Artificial Analysis scored it; the AA-Index shown with this model is its current v4.3 score.)",
       "sources": [
         "https://z.ai/blog/glm-5.3",
         "https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/",
