@@ -413,7 +413,7 @@
       "milestone": true,
       "benchmarks": {
         "MMLU": 88.7,
-        "GPQA": 53.6,
+        "GPQA Diamond": 53.6,
         "MATH": 76.6,
         "HumanEval": 90.2
       },
@@ -448,7 +448,7 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "GPQA": 73.3,
+        "GPQA Diamond": 73.3,
         "AIME": 56.7,
         "MATH": 85.5,
         "AA-Index": 11
@@ -483,7 +483,7 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "GPQA": 78,
+        "GPQA Diamond": 78,
         "AIME": 74.4,
         "MATH": 94.8,
         "AA-Index": 15
@@ -502,7 +502,7 @@
       "milestone": true,
       "benchmarks": {
         "MMLU": 86.8,
-        "GPQA": 50.4,
+        "GPQA Diamond": 50.4,
         "MATH": 60.1,
         "HumanEval": 84.9,
         "AA-Index": 9
@@ -521,7 +521,7 @@
       "milestone": false,
       "benchmarks": {
         "MMLU": 79,
-        "GPQA": 40.4,
+        "GPQA Diamond": 40.4,
         "HumanEval": 73,
         "AA-Index": 6
       },
@@ -539,7 +539,7 @@
       "milestone": false,
       "benchmarks": {
         "MMLU": 75.2,
-        "GPQA": 33.3,
+        "GPQA Diamond": 33.3,
         "HumanEval": 75.9,
         "AA-Index": 6
       },
@@ -557,9 +557,9 @@
       "milestone": true,
       "benchmarks": {
         "MMLU": 88.7,
-        "GPQA": 59.4,
+        "GPQA Diamond": 59.4,
         "HumanEval": 92,
-        "SWE-bench": 33.4,
+        "SWE-bench Verified": 33.4,
         "MATH": 71.1
       },
       "notable": "Mid-tier model that beat its own flagship Opus and GPT-4o on most benchmarks at 2x Opus speed; defined the price/performance frontier of 2024.",
@@ -575,8 +575,8 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "SWE-bench": 49,
-        "GPQA": 65,
+        "SWE-bench Verified": 49,
+        "GPQA Diamond": 65,
         "MMLU": 89
       },
       "notable": "Upgraded 'new' 3.5 Sonnet introduced public 'computer use' (agentic GUI control) beta; jumped SWE-bench Verified to 49.0%, beating o1-preview on agentic coding.",
@@ -592,7 +592,7 @@
       "open": false,
       "milestone": false,
       "benchmarks": {
-        "SWE-bench": 40.6,
+        "SWE-bench Verified": 40.6,
         "HumanEval": 88.1,
         "AA-Index": 9
       },
@@ -612,7 +612,7 @@
         "MMLU": 85.9,
         "MATH": 67.7,
         "HumanEval": 84.1,
-        "GPQA": 46.2
+        "GPQA Diamond": 46.2
       },
       "notable": "First mainstream model with a 1M-token context window (2M in preview); MoE architecture, near-perfect long-context retrieval, native multimodal incl. video. GA May 2024.",
       "status": "historic"
@@ -645,7 +645,7 @@
       "milestone": true,
       "benchmarks": {
         "MMLU": 76.4,
-        "GPQA": 65.2,
+        "GPQA Diamond": 65.2,
         "MATH": 89.7,
         "AA-Index": 9
       },
@@ -683,7 +683,7 @@
         "MMLU": 79.5,
         "HumanEval": 81.7,
         "MATH": 50.4,
-        "GPQA": 39.5,
+        "GPQA Diamond": 39.5,
         "AA-Index": 5
       },
       "notable": "Open 70B that closed much of the gap to GPT-4-class on knowledge; relaunched Meta's open-weights leadership. Limited 8K context.",
@@ -700,7 +700,7 @@
       "milestone": true,
       "benchmarks": {
         "MMLU": 88.6,
-        "GPQA": 51.1,
+        "GPQA Diamond": 51.1,
         "HumanEval": 89,
         "MATH": 73.8,
         "AA-Index": 7
@@ -721,7 +721,7 @@
         "MMLU": 86,
         "HumanEval": 80.5,
         "MATH": 68,
-        "GPQA": 46.7,
+        "GPQA Diamond": 46.7,
         "AA-Index": 7
       },
       "notable": "Llama 3 70B refreshed with 128K context and big gains; strong open mid-size workhorse.",
@@ -738,7 +738,7 @@
       "milestone": false,
       "benchmarks": {
         "MMLU": 86,
-        "GPQA": 50.5,
+        "GPQA Diamond": 50.5,
         "HumanEval": 88.4,
         "MATH": 77,
         "AA-Index": 8
@@ -775,7 +775,7 @@
       "milestone": true,
       "benchmarks": {
         "MMLU": 88.5,
-        "GPQA": 59.1,
+        "GPQA Diamond": 59.1,
         "HumanEval": 82.6,
         "MATH": 90.2
       },
@@ -795,7 +795,7 @@
         "MMLU": 84.2,
         "HumanEval": 64.6,
         "MATH": 59.7,
-        "GPQA": 37.9,
+        "GPQA Diamond": 37.9,
         "AA-Index": 6
       },
       "notable": "Strong open dense 72B with 128K context and broad multilingual coverage; topped open-model leaderboards mid-2024.",
@@ -814,7 +814,7 @@
         "MMLU": 86.1,
         "MATH": 83.1,
         "HumanEval": 86.6,
-        "GPQA": 49,
+        "GPQA Diamond": 49,
         "AA-Index": 8
       },
       "notable": "Flagship of a huge Qwen2.5 family (0.5B–72B, plus Coder/Math); trained on 18T tokens, big math/coding jump (MATH 69→83), became the leading open base for fine-tunes.",
@@ -850,7 +850,7 @@
         "MMLU": 84,
         "HumanEval": 92,
         "MATH": 71.5,
-        "GPQA": 48
+        "GPQA Diamond": 48
       },
       "notable": "123B dense with 128K context, strong code/math and multilingual; open weights under a research (non-commercial) license, competitive with Llama 3.1 405B at a third the size.",
       "status": "historic"
@@ -865,7 +865,7 @@
       "open": false,
       "milestone": false,
       "benchmarks": {
-        "GPQA": 79.7,
+        "GPQA Diamond": 79.7,
         "AIME": 87.3,
         "AA-Index": 12
       },
@@ -882,7 +882,7 @@
       "open": true,
       "milestone": true,
       "benchmarks": {
-        "GPQA": 71.5,
+        "GPQA Diamond": 71.5,
         "AIME": 79.8
       },
       "notable": "The open-weights reasoning shock: first open model to rival OpenAI o1 on math/science, trained with large-scale RL, released under MIT with a public technical report. Triggered a market-wide selloff and reset expectations for open reasoning. AIME=AIME 2024.",
@@ -911,7 +911,7 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "SWE-bench": 70.3,
+        "SWE-bench Verified": 70.3,
         "AA-Index": 18
       },
       "notable": "First Anthropic hybrid reasoning model (toggleable extended thinking) and launched alongside Claude Code. SWE-bench Verified ~62-70% (70.3% with custom scaffold); set the template for the agentic-coding era. 128K output in extended-thinking mode.",
@@ -927,7 +927,7 @@
       "open": false,
       "milestone": false,
       "benchmarks": {
-        "GPQA": 84.6,
+        "GPQA Diamond": 84.6,
         "AIME": 93.3,
         "AA-Index": 12
       },
@@ -944,7 +944,7 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "GPQA": 84,
+        "GPQA Diamond": 84,
         "AIME": 86.7,
         "HLE": 18.8,
         "AA-Index": 16
@@ -992,8 +992,8 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "GPQA": 87.7,
-        "SWE-bench": 71.7,
+        "GPQA Diamond": 87.7,
+        "SWE-bench Verified": 71.7,
         "AIME": 98.4,
         "AA-Index": 20
       },
@@ -1039,8 +1039,8 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "SWE-bench": 72.5,
-        "GPQA": 79.6,
+        "SWE-bench Verified": 72.5,
+        "GPQA Diamond": 79.6,
         "AIME": 75.5
       },
       "notable": "Frontier coding/agent model built for long-horizon autonomous work (Claude Code in the background); SWE-bench Verified ~72.5% led the field at launch. GPQA/AIME with extended thinking. Hybrid instant+reasoning model.",
@@ -1056,8 +1056,8 @@
       "open": false,
       "milestone": false,
       "benchmarks": {
-        "SWE-bench": 72.7,
-        "GPQA": 75.4
+        "SWE-bench Verified": 72.7,
+        "GPQA Diamond": 75.4
       },
       "notable": "Cost-efficient successor to 3.7 Sonnet; hybrid reasoning, strong agentic coding. SWE-bench Verified ~72-73%.",
       "status": "historic"
@@ -1072,7 +1072,7 @@
       "open": true,
       "milestone": false,
       "benchmarks": {
-        "GPQA": 81,
+        "GPQA Diamond": 81,
         "AIME": 87.5,
         "AA-Index": 13
       },
@@ -1089,7 +1089,7 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "GPQA": 87.7,
+        "GPQA Diamond": 87.7,
         "AIME": 94.3,
         "HLE": 23.9,
         "AA-Index": 22
@@ -1107,8 +1107,8 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "SWE-bench": 74.9,
-        "GPQA": 88.4,
+        "SWE-bench Verified": 74.9,
+        "GPQA Diamond": 88.4,
         "AIME": 94.6,
         "HLE": 42,
         "AA-Index": 23
@@ -1156,7 +1156,7 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "GPQA": 91.9,
+        "GPQA Diamond": 91.9,
         "HLE": 37.5
       },
       "notable": "Record-setting frontier model: HLE 37.5% (no tools, then a record), GPQA Diamond 91.9%. Deep Think mode pushed HLE to 41.0% and GPQA to 93.8%. Last major frontier launch of 2025.",
@@ -1190,7 +1190,7 @@
       "benchmarks": {
         "AA-Index": 39,
         "SWE-bench Pro": 57.7,
-        "GPQA": 92.8
+        "GPQA Diamond": 92.8
       },
       "milestone": false,
       "notable": "First time a new OpenAI flagship did NOT top the AA Index outright — tied Gemini 3.1 Pro at 57. Folded GPT-5.3-Codex coding into a general reasoner. Mini/nano followed Mar 17. $2.50/$15. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
@@ -1240,9 +1240,9 @@
       "open": false,
       "benchmarks": {
         "AA-Index": 32,
-        "SWE-bench": 80.8,
+        "SWE-bench Verified": 80.8,
         "SWE-bench Pro": 51.9,
-        "GPQA": 91.3
+        "GPQA Diamond": 91.3
       },
       "milestone": false,
       "notable": "First Opus with a 1M-token beta context; introduced adaptive thinking and 'agent teams' in Claude Code. $5/$25.",
@@ -1258,7 +1258,7 @@
       "modality": "multimodal, text out",
       "open": false,
       "benchmarks": {
-        "SWE-bench": 79.6,
+        "SWE-bench Verified": 79.6,
         "Terminal-Bench 2.0": 59.1,
         "OSWorld": 72.5,
         "ARC-AGI-2": 58.3,
@@ -1279,9 +1279,9 @@
       "open": false,
       "benchmarks": {
         "AA-Index": 41,
-        "SWE-bench": 87.6,
+        "SWE-bench Verified": 87.6,
         "SWE-bench Pro": 64.3,
-        "GPQA": 94.2
+        "GPQA Diamond": 94.2
       },
       "milestone": false,
       "notable": "Big jump on hardest coding tasks; new 'xhigh' effort level, higher-res vision (2576px), file-system memory recall. AA Index ~57.3 (4.1 below the later 4.8). (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
@@ -1298,9 +1298,9 @@
       "open": false,
       "benchmarks": {
         "AA-Index": 42,
-        "SWE-bench": 88.6,
+        "SWE-bench Verified": 88.6,
         "SWE-bench Pro": 69.2,
-        "GPQA": 93.6,
+        "GPQA Diamond": 93.6,
         "HLE": 57.9
       },
       "milestone": true,
@@ -1317,7 +1317,7 @@
       "modality": "multimodal, text out",
       "open": false,
       "benchmarks": {
-        "SWE-bench": 73.3,
+        "SWE-bench Verified": 73.3,
         "SWE-bench Pro": 39.5,
         "OSWorld": 50.7
       },
@@ -1335,7 +1335,7 @@
       "modality": "multimodal, text out, always-on adaptive thinking",
       "open": false,
       "benchmarks": {
-        "SWE-bench": 95,
+        "SWE-bench Verified": 95,
         "SWE-bench Pro": 80.3,
         "AA-Index": 50
       },
@@ -1353,7 +1353,7 @@
       "modality": "multimodal, text out",
       "open": false,
       "benchmarks": {
-        "SWE-bench": 93.9,
+        "SWE-bench Verified": 93.9,
         "SWE-bench Pro": 77.8
       },
       "milestone": false,
@@ -1371,8 +1371,8 @@
       "open": false,
       "benchmarks": {
         "AA-Index": 30,
-        "SWE-bench": 80.6,
-        "GPQA": 94.3,
+        "SWE-bench Verified": 80.6,
+        "GPQA Diamond": 94.3,
         "HLE": 51.4
       },
       "milestone": false,
@@ -1454,7 +1454,7 @@
       "modality": "text (+ multimodal family), text out",
       "open": true,
       "benchmarks": {
-        "GPQA": 68,
+        "GPQA Diamond": 68,
         "MMLU-Pro": 80.7,
         "MATH-500": 93.6,
         "AA-Index": 9
@@ -1488,8 +1488,8 @@
       "open": true,
       "benchmarks": {
         "AA-Index": 21,
-        "SWE-bench": 76.4,
-        "GPQA": 88.4,
+        "SWE-bench Verified": 76.4,
+        "GPQA Diamond": 88.4,
         "MMLU-Pro": 87.8,
         "AIME 2026": 91.3
       },
@@ -1508,7 +1508,7 @@
       "open": true,
       "benchmarks": {
         "AA-Index": 26,
-        "SWE-bench": 79
+        "SWE-bench Verified": 79
       },
       "milestone": false,
       "notable": "1T open-weight coding MoE (Modified MIT). ~30% fewer reasoning tokens than K2.6; all published numbers are Moonshot's OWN proprietary benches (Kimi Code Bench v2 +21.8%, etc.) — NO independent SWE-bench/GPQA/Terminal-Bench numbers as of release. $0.95/$4.00.",
@@ -1525,10 +1525,10 @@
       "open": true,
       "benchmarks": {
         "AA-Index": 23,
-        "SWE-bench": 73
+        "SWE-bench Verified": 73
       },
       "milestone": false,
-      "notable": "Announced at Computex Jun 1, released Jun 4. Fastest US open-weights frontier model (>300 tok/s) and best US open-weight intelligence (AA 48) — but still behind Chinese open models (Kimi K2.6 at 54). Full release of weights, reward models, quantized variants, and training recipes under NVIDIA Open Model License. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
+      "notable": "Announced at Computex Jun 1, released Jun 4. Fastest US open-weights frontier model (>300 tok/s) and best US open-weight intelligence — but still behind Chinese open models (Kimi K2.6 at 54). Full release of weights, reward models, quantized variants, and training recipes under NVIDIA Open Model License. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
       "pricing": "open weights (NVIDIA Open Model License)",
       "status": "live"
     },
@@ -1593,7 +1593,7 @@
       "open": true,
       "benchmarks": {
         "AA-Index": 28,
-        "SWE-bench": 77.8,
+        "SWE-bench Verified": 77.8,
         "HLE": 50.4
       },
       "milestone": false,
@@ -1615,7 +1615,7 @@
         "Terminal-Bench 2.1": 82.7,
         "AIME": 99.2,
         "AA-Index": 34,
-        "SWE-bench": 79
+        "SWE-bench Verified": 79
       },
       "milestone": false,
       "notable": "Open-weight (MIT) model that beat GPT-5.5 on several long-horizon coding benches at ~1/6 the cost. New IndexShare attention cuts per-token FLOPs 2.9x at 1M context. Trails Opus 4.8 on raw SWE-bench Pro (62.1 vs 69.2) but leads on Terminal-Bench 2.1 best-harness and agentic math.",
@@ -1632,7 +1632,7 @@
       "open": true,
       "benchmarks": {
         "AA-Index": 30,
-        "SWE-bench": 80
+        "SWE-bench Verified": 80
       },
       "milestone": true,
       "status": "live",
@@ -1915,9 +1915,9 @@
       "modality": "natively multimodal (text, image, audio, video in; text out)",
       "open": true,
       "benchmarks": {
-        "GPQA": 87.2,
+        "GPQA Diamond": 87.2,
         "AIME 2026": 97.1,
-        "SWE-bench": 77.6,
+        "SWE-bench Verified": 77.6,
         "HLE": 46.0,
         "Terminal-Bench 2.1": 63.8,
         "SimpleQA Verified": 43.9,
@@ -1963,7 +1963,7 @@
       "modality": "natively multimodal (text + vision), text out",
       "open": true,
       "benchmarks": {
-        "GPQA": 93.5,
+        "GPQA Diamond": 93.5,
         "Terminal-Bench 2.1": 88.3,
         "HLE": 43.5,
         "SWE-bench (DeepSWE)": 67.5,
@@ -2686,7 +2686,7 @@
       "benchmarks": {
         "AA-Index": 44,
         "DeepSWE v1.1": 65.9,
-        "Terminal-Bench v3.0": 26.0
+        "Terminal-Bench 3.0": 26.0
       },
       "milestone": false,
       "status": "live",
@@ -3497,7 +3497,7 @@
       "modality": "text + image in, text out",
       "open": false,
       "benchmarks": {
-        "GPQA": 90.9,
+        "GPQA Diamond": 90.9,
         "Terminal-Bench 2.1": 90.6,
         "Codeforces rating": 3471,
         "AA-Index": 39
@@ -3560,7 +3560,7 @@
         "FrontierCode 1.1": 50.0,
         "DeepSWE 1.1": 73.0,
         "Terminal-Bench 2.1": 92.8,
-        "Terminal-Bench 4": 27.3
+        "Terminal-Bench 4.0": 27.3
       },
       "milestone": false,
       "status": "live",

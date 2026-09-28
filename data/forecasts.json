@@ -1,69 +1,38 @@
 {
-  "updated": "2026-09-28T18:02:15-04:00",
-  "methodology": "These forecasts are anchored to live prediction markets and expert projections, not freehand guesses: release timing comes from Polymarket's dated release markets (GPT-5.6 ~96% by Jul 31; GPT-6 52% by Sep / 82% by Dec; Gemini 4.0 only ~10% by Jun 30; the $4.49M Claude 5 market pricing no Claude 5 before Q3) and the industry \"best model\" markets (Polymarket/Kalshi/Manifold pricing Anthropic ~64% to hold #1 at year-end, Google ~13-15% and OpenAI ~10-12% as the leading challengers). Benchmark ceilings are pinned to Epoch AI / Stanford AI Index 2026 (SWE-bench Verified effectively saturating at ~95-96% with frontier-accessible models around 88-95%) and the Artificial Analysis Index trajectory (frontier in the high-50s/low-60s on current v3/v4 scale, rising steadily but re-versioned as it saturates), then each lab's own AA/SWE back-trajectory from the historical backfill sets the slope and the gap-to-frontier. Where a market is silent on a specific lab (Zhipu, Alibaba, Meta), I extrapolate that lab's documented release cadence (~1-3 months per flagship, per the LM Council / release-pace tracker) and its current distance behind the leader, widening the uncertainty bands to reflect the thinner evidence.",
+  "updated": "2026-09-28T18:32:09-04:00",
   "markets": [
     {
-      "question": "Which company has the best AI model end of 2026?",
+      "question": "Which company has best AI model end of 2026?",
       "platform": "Polymarket",
-      "forecast": "76% — Anthropic, up a point as AA ranks Sonnet 5.5 #2; Google 11%, OpenAI 9%, xAI 2.7%, Meta 2%; $1.45M volume",
+      "forecast": "75.5% — Anthropic · Google 10.5% · OpenAI 8.5%",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
+      "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Which companies will have a #1 AI model by December 31?",
       "platform": "Polymarket",
-      "forecast": "27% — Google, flat; OpenAI 18%, xAI 13%, Meta 11%, Z.ai 9%, Alibaba 8% (Anthropic not listed as an outcome)",
+      "forecast": "26.5% — Google · OpenAI 18% · xAI 12.5%",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31"
-    },
-    {
-      "question": "GPT-6 released by...?",
-      "platform": "Polymarket",
-      "forecast": "99.5% - by Sep 15, effectively settled by Astra's Sep 3 launch; Sep 30 at 99.8% and every later leg above 99.7%.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/gpt-6-released-by"
-    },
-    {
-      "question": "Claude 5 released by...?",
-      "platform": "Polymarket",
-      "forecast": "Sep 30 leg still open on $109K of the market's $4.49M total; per-date odds did not return cleanly this sweep, so no fresh number is claimed.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-09-30",
-      "url": "https://polymarket.com/event/claude-5-released-by"
-    },
-    {
-      "question": "AI model scores >=90% on FrontierMath Benchmark before 2027?",
-      "platform": "Polymarket",
-      "forecast": "100% — Yes, pinned at the ceiling; GPT-5.6 Sol at 89% on the legacy set left this effectively settled",
-      "category": "benchmark",
-      "relevantBenchmark": "FrontierMath",
-      "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/ai-model-scores-90-on-frontiermath-benchmark-before-2027"
+      "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "OpenAI announces it has achieved AGI before 2027?",
       "platform": "Polymarket",
-      "forecast": "18% — Yes, flat; $281K volume",
+      "forecast": "17.5% — Yes",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027"
-    },
-    {
-      "question": "Next Google Gemini model: Arena debut at ≥1480/1490/1500/1510/1520 Elo within 7 days of release? (Chatbot Arena overall)",
-      "platform": "Polymarket",
-      "forecast": "Active, ~$207K volume; per-threshold YES odds not cleanly returned by fetch (each tier conditional on an as-yet-unreleased next Gemini). Reported as exists-but-unconfirmed-numbers",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/next-google-gemini-model-arena-debut"
+      "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Top ARC-AGI-2 score achieved by any AI in 2026",
@@ -71,8 +40,9 @@
       "forecast": "Community median 93.4 (50% CI 89.3–96.7). 737 forecasters. Note: aggressive vs. ~sub-20% real ARC-AGI-2 scores through 2025 — verify resolution scale before relying on it.",
       "category": "benchmark",
       "relevantBenchmark": "agi",
-      "resolveDate": "2026-12-31 (closes end of 2026)",
-      "url": "https://www.metaculus.com/questions/41131/top-arc-agi-2-score-in-2026/"
+      "resolveDate": "2026-12-31",
+      "url": "https://www.metaculus.com/questions/41131/top-arc-agi-2-score-in-2026/",
+      "seen": "2026-09-28"
     },
     {
       "question": "When will the first weakly general AI system be devised, tested, and publicly announced?",
@@ -81,43 +51,8 @@
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2028-08-23",
-      "url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/"
-    },
-    {
-      "question": "When will the first general AI system be devised, tested, and publicly announced? (strong AGI)",
-      "platform": "Metaculus",
-      "forecast": "Community median Mar 2033. 1.9k forecasters, 654 comments — Metaculus's flagship strong-AGI question.",
-      "category": "capability",
-      "relevantBenchmark": "agi",
-      "resolveDate": "On resolution (date-of-event question)",
-      "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
-    },
-    {
-      "question": "AGI by 2029 / by 2033 (full four-condition Metaculus definition incl. robotics)",
-      "platform": "Metaculus",
-      "forecast": "~25% by 2029, ~50% by 2033 (Feb 2026 update). Stripping the robotics requirement informally pulls the mass forward ~2–3 years (≈2027–2031).",
-      "category": "capability",
-      "relevantBenchmark": "agi",
-      "resolveDate": "2029 / 2033 thresholds",
-      "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
-    },
-    {
-      "question": "Top ARC-AGI-2 score achieved by any AI in 2026",
-      "platform": "Metaculus",
-      "forecast": "93.4 - community median (50% CI 89.3-96.7), 737 forecasters.",
-      "category": "benchmark",
-      "relevantBenchmark": "ARC-AGI-2",
-      "resolveDate": "2026-12-31",
-      "url": "https://www.metaculus.com/questions/41131/top-arc-agi-2-score-in-2026/"
-    },
-    {
-      "question": "Will AI achieve >80% on FrontierMath by January 2027?",
-      "platform": "Metaculus",
-      "forecast": "~44%.",
-      "category": "benchmark",
-      "relevantBenchmark": "other",
-      "resolveDate": "2027-01-31",
-      "url": "https://www.metaculus.com/questions/"
+      "url": "https://www.metaculus.com/questions/3479/date-weakly-general-ai-is-publicly-known/",
+      "seen": "2026-09-28"
     },
     {
       "question": "When will the first general AI system be devised, tested, and publicly announced? (strong AGI)",
@@ -126,115 +61,63 @@
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2033-03-01",
-      "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/"
+      "url": "https://www.metaculus.com/questions/5121/date-of-artificial-general-intelligence/",
+      "seen": "2026-09-28"
     },
     {
-      "question": "Will OpenAI publicly release a model branded GPT-5.6 by Sept 30, 2026?",
-      "platform": "Manifold",
-      "forecast": "~97%.",
-      "category": "release",
-      "relevantBenchmark": "none",
-      "resolveDate": "2026-09-30",
-      "url": "https://manifold.markets/CalibratedGhosts/will-openai-publicly-release-a-gpt5"
-    },
-    {
-      "question": "Artificial Analysis Intelligence Index — top model score (live benchmark, NOT a forecast market)",
-      "platform": "Epoch AI",
-      "forecast": "No prediction-market or Metaculus question exists for the AA Index. Live value (reported honestly): Claude Opus 4.8 leads at 61.4 (May 28 2026); Gemini 3.1 Pro 57.2; top tier 57+. Index aggregates ~10 evals.",
-      "category": "ranking",
-      "relevantBenchmark": "aa",
-      "resolveDate": "N/A (continuously-updated leaderboard, no forecast question)",
-      "url": "https://www.datalearner.com/en/leaderboards/external/aa-quality-index"
-    },
-    {
-      "question": "Compute used in the largest ML training run before 2030 (frontier compute scaling)",
-      "platform": "Metaculus",
-      "forecast": "No clean 2026/2027-resolving Metaculus market with a current median; the existing question is an 'amplified forecasting' framing. Best authoritative context (Epoch AI, not a market): frontier training compute growing ~4–5×/yr; largest known run ~5e26 FLOP (Grok 4); AI-2027 projects ~2e28 FLOP by early 2027.",
-      "category": "capability",
-      "relevantBenchmark": "compute",
-      "resolveDate": "2030 (existing question); no specific 2026/2027 market found",
-      "url": "https://www.metaculus.com/questions/4732/amplified-forecasting-what-will-bucks-informed-prediction-of-compute-used-in-the-largest-ml-training-run-before-2030-be/"
-    },
-    {
-      "question": "Best AI at the end of 2026? (LMArena year-end #1)",
+      "question": "Best AI at the end of 2026?",
       "platform": "Kalshi",
-      "forecast": "71.5% — Claude, easing from 74; ChatGPT 10.8%, Gemini 8.9%, Grok 2.8%, Muse Spark 2.3%",
+      "forecast": "75.7% — Claude · ChatGPT 11.5% · Gemini 10%",
       "category": "ranking",
       "relevantBenchmark": "LMArena",
       "resolveDate": "2026-12-31",
-      "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31"
+      "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
-      "question": "Which AI company will have the best coding model on Dec 31, 2026?",
+      "question": "Which AI company will have the best coding model at the end of 2026?",
       "platform": "Kalshi",
-      "forecast": "73% — Anthropic, up from 67; OpenAI 11%, xAI 3%, Google 5%",
+      "forecast": "70% — Anthropic · OpenAI 14% · Google 6%",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec"
-    },
-    {
-      "question": "GPT-6 released in 2026?",
-      "platform": "Manifold",
-      "forecast": "99% — Yes, flat; traders treat the Sep 3 GPT-6 Astra ship as settling it",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/predyx_markets/gpt6-released-in-2026"
-    },
-    {
-      "question": "Will OpenAI publicly release a GPT-5.6 model by September 30, 2026? (per search aggregation)",
-      "platform": "Manifold",
-      "forecast": "~97% (Polymarket/Manifold also price GPT-5.6 by Jun 30 at ~80-89%)",
-      "category": "release",
-      "relevantBenchmark": "none",
-      "resolveDate": "2026-09-30",
-      "url": "https://manifold.markets/CalibratedGhosts/will-openai-publicly-release-a-gpt5"
+      "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will any AI model score above 95% on ARC-AGI-2 by end of 2026?",
       "platform": "Manifold",
-      "forecast": "99% — Yes, jumping from 91 overnight; requires the official ARC Prize leaderboard",
+      "forecast": "99% — Yes",
       "category": "benchmark",
       "relevantBenchmark": "ARC-AGI-2",
       "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/CalibratedGhosts/will-any-ai-model-score-above-95-on-C8Q2tNUhyI"
+      "url": "https://manifold.markets/Terminator2/will-any-ai-model-score-above-95-on-C8Q2tNUhyI",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
-      "question": "Will the ARC-AGI Grand Prize be claimed before January 2027?",
+      "question": "Will the ARC AGI Grand Prize be claimed before January 2027?",
       "platform": "Manifold",
-      "forecast": "67% — Yes, up from 65; traders split on whether the relabeled writeup prize or the 85% ARC-AGI-2 bar governs",
+      "forecast": "67% — Yes",
       "category": "benchmark",
       "relevantBenchmark": "ARC-AGI-2",
       "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/CalibratedGhosts/will-the-arc-agi-grand-prize-be-cla-svtrhb42tx"
+      "url": "https://manifold.markets/AlanTuring/will-the-arc-agi-grand-prize-be-cla-svtrhb42tx",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will any AI achieve a score of 25% on ARC-AGI-3 by the end of 2026?",
       "platform": "Manifold",
-      "forecast": "99% - Yes, flat; Claude Opus 5 is the cited SOTA at 30.2%, already past the threshold.",
+      "forecast": "99% — Yes",
       "category": "benchmark",
       "relevantBenchmark": "ARC-AGI-3",
       "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/CalibratedGhosts/will-any-ai-achieve-a-score-of-25-o"
-    },
-    {
-      "question": "Above-human scores on ARC-AGI-3 in 2026?",
-      "platform": "Manifold",
-      "forecast": "87% - Yes, flat. Traders still dispute the baseline: ARC Prize documents it as 100% action-efficiency, while OpenAI reports the average human at ~48%.",
-      "category": "benchmark",
-      "relevantBenchmark": "ARC-AGI-3",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/CalibratedGhosts/above-human-scores-on-arcagi3-in-20"
-    },
-    {
-      "question": "Will we get AGI before 2027?",
-      "platform": "Manifold",
-      "forecast": "2% — Yes, holding at the floor; moderators say a lab declaration alone does not count",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/Bayesian/will-we-get-agi-before-2027-d7b5f2b00ace"
+      "url": "https://manifold.markets/TimothyJohnson5c16/will-any-ai-achieve-a-score-of-25-o",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Superhuman Coder (SC) milestone — AI that can do any coding task the best AGI-company engineer does, faster and cheaper. When does it arrive?",
@@ -243,7 +126,9 @@
       "category": "capability",
       "relevantBenchmark": "agi",
       "resolveDate": "2027-12-31",
-      "url": "https://ai-2027.com/research/timelines-forecast"
+      "url": "https://ai-2027.com/research/timelines-forecast",
+      "kind": "expert",
+      "curated": true
     },
     {
       "question": "METR task-completion time horizon (length of software task a frontier model can do at 50% reliability) — where does it land?",
@@ -252,7 +137,9 @@
       "category": "capability",
       "relevantBenchmark": "swe",
       "resolveDate": "2026-12-31",
-      "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/"
+      "url": "https://metr.org/blog/2026-1-29-time-horizon-1-1/",
+      "kind": "expert",
+      "curated": true
     },
     {
       "question": "SWE-bench Verified — best frontier score",
@@ -261,25 +148,9 @@
       "category": "benchmark",
       "relevantBenchmark": "swe",
       "resolveDate": "2026-12-31",
-      "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
-    },
-    {
-      "question": "GPQA Diamond (PhD-level science) — best frontier score",
-      "platform": "Metaculus / Epoch AI / Stanford AI Index 2026",
-      "forecast": "Metaculus forecasters: 97.3% in 2026, 98.9% in 2027 (30% chance of ≥99%). Current: Gemini 3.1 Pro 94.1%, Grok 4 87%; models already past the 81.2% human-expert baseline (hitting ~93%). Near-saturated.",
-      "category": "benchmark",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://www.metaculus.com/questions/21920/what-will-be-the-best-score-on-the-gpqa-benchmark-before-2025/"
-    },
-    {
-      "question": "Artificial Analysis Intelligence Index — frontier ceiling and trajectory",
-      "platform": "Artificial Analysis (v3/v4)",
-      "forecast": "Index repeatedly rebased as it saturates: v3 top models tied ~57 (Apr 2026); a June public snapshot shows Claude Opus 4.8 ~55.7, GPT-5.5 ~54.8. AA dropped MMLU-Pro/AIME-2025/LiveCodeBench in v4 (Jan 2026) due to saturation. No single AA point-forecast exists; trajectory = steady rise into the high-50s/60s on current scale, with the index re-versioned rather than left to cap out. Humanity's Last Exam (a component) still only ~35-45%, the main remaining headroom.",
-      "category": "benchmark",
-      "relevantBenchmark": "aa",
-      "resolveDate": "2026-12-31",
-      "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index"
+      "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "kind": "expert",
+      "curated": true
     },
     {
       "question": "Humanity's Last Exam (HLE) — frontier score (the hardest unsaturated component of AA Index)",
@@ -288,7 +159,9 @@
       "category": "benchmark",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance"
+      "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report/technical-performance",
+      "kind": "expert",
+      "curated": true
     },
     {
       "question": "Frontier training compute — when does the top model trend cross 1e26 FLOP, and how fast does it grow?",
@@ -297,7 +170,9 @@
       "category": "capability",
       "relevantBenchmark": "compute",
       "resolveDate": "2027-12-31",
-      "url": "https://epoch.ai/trends"
+      "url": "https://epoch.ai/trends",
+      "kind": "expert",
+      "curated": true
     },
     {
       "question": "How many notable AI models will exceed 1e26 FLOP of training compute?",
@@ -306,160 +181,108 @@
       "category": "capability",
       "relevantBenchmark": "compute",
       "resolveDate": "2027-12-31",
-      "url": "https://epoch.ai/publications/model-counts-compute-thresholds"
-    },
-    {
-      "question": "AI vs human forecasting (Metaculus FutureEval) — when do AI systems surpass humans at prediction?",
-      "platform": "Metaculus (FutureEval, launched Feb 2026)",
-      "forecast": "AI projected to surpass the broader Metaculus community ~Apr 2026 and Pro Forecasters ~mid-2027.",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2027-06-30",
-      "url": "https://markets.financialcontent.com/stocks/article/gnwcq-2026-2-18-metaculus-launches-futureeval-to-track-ai-forecasting-accuracy"
-    },
-    {
-      "question": "AGI timeline (prediction-market / aggregate forecaster view)",
-      "platform": "Metaculus / prediction-market aggregate (Feb 2026)",
-      "forecast": "~25% chance of AGI by 2029, 50% by 2033. Contrast: Grace et al. expert survey median for High-Level Machine Intelligence ~2047 (shortened 13 yrs vs the 2022 survey). Markets far more aggressive than the academic survey median.",
-      "category": "capability",
-      "relevantBenchmark": "agi",
-      "resolveDate": "2033-12-31",
-      "url": "https://forecastingaifutures.substack.com/p/forecasting-agi-insights-from-prediction-markets"
+      "url": "https://epoch.ai/publications/model-counts-compute-thresholds",
+      "kind": "expert",
+      "curated": true
     },
     {
       "question": "Will Anthropic or OpenAI IPO first?",
       "platform": "Polymarket",
-      "forecast": "95% — Anthropic first; $386K volume",
+      "forecast": "94.9% — Anthropic",
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2027-12-31",
-      "url": "https://polymarket.com/event/will-anthropic-or-openai-ipo-first"
+      "url": "https://polymarket.com/event/will-anthropic-or-openai-ipo-first",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
-      "question": "When will the first general AI system be devised, tested, and publicly announced?",
-      "platform": "Metaculus",
-      "forecast": "median ~Jan 2033 — Metaculus (range May 2029–Dec 2040)",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2033-01-01",
-      "url": "https://www.metaculus.com/questions/5121/when-will-the-first-general-ai-system-be-devised-tested-and-publicly-announced/"
-    },
-    {
-      "question": "AI model scores >=90% on FrontierMath before 2027?",
+      "question": "Next Google Gemini Pro Model released by...?",
       "platform": "Polymarket",
-      "forecast": "82% — Yes",
-      "category": "benchmark",
-      "relevantBenchmark": "FrontierMath",
-      "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/ai-model-scores-90-on-frontiermath-before-2027"
-    },
-    {
-      "question": "Next Google Gemini Pro model released by...?",
-      "platform": "Polymarket",
-      "forecast": "79% — by Oct 31, up a point; Oct 23 66%, Oct 15 45%, Oct 9 7%, Sep 30 3%",
+      "forecast": "78.5% — October 31",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-10-31",
-      "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
+      "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
-      "question": "Which companies will top Chatbot Arena leaderboard in 2026?",
+      "question": "Which Companies will top Chatbot Arena Leaderboard in 2026?",
       "platform": "Manifold",
-      "forecast": "64% — OpenAI, flat; xAI fell to 32% from 48, DeepSeek 13.7%; Google and Anthropic already at 100%",
+      "forecast": "64% — OpenAI · xAI 32.3% · DeepSeek 13.7%",
       "category": "ranking",
       "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/jim/which-companies-will-top-chatbot-ar-RQp5CdN0uE"
+      "url": "https://manifold.markets/jim/which-companies-will-top-chatbot-ar-RQp5CdN0uE",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
-      "question": "Who will ever rank #1 in LMSYS Chatbot Arena text leaderboard in 2026?",
-      "platform": "Manifold",
-      "forecast": "OpenAI 70% (xAI 45%, DeepSeek 32%, Mistral 26%)",
-      "category": "ranking",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/HenriThunberg/who-will-ever-rank-1-in-lmsys-chatb-zUZLSEsSNN"
-    },
-    {
-      "question": "Next Google Gemini Pro model: Arena debut Elo?",
+      "question": "Next Google Gemini Pro Model: Arena Debut?",
       "platform": "Polymarket",
-      "forecast": "95% — 1480+; 1490+ 92%, 1495+ 88%, 1500+ jumped to 80% from 62.5, 1510+ 44%",
+      "forecast": "94.7% — 1480+ · 1490+ 91.9% · 1495+ 87.5%",
       "category": "benchmark",
       "relevantBenchmark": "LMArena",
       "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/next-google-gemini-pro-model-arena-debut"
+      "url": "https://polymarket.com/event/next-google-gemini-pro-model-arena-debut",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
-      "question": "Best FrontierMath Tier 4 score by Dec 31, 2026?",
+      "question": "Will Claude Sonnet 5 exceed 85% on SWE-bench verified?",
       "platform": "Manifold",
-      "forecast": "99% - for the 90%-and-above bucket, flat; every lower bucket prices at 0.3% or less even though traders cite a 42% verified best-of-all-models today.",
-      "category": "benchmark",
-      "relevantBenchmark": "FrontierMath",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/Bayesian/what-will-be-the-best-frontiermath"
-    },
-    {
-      "question": "Will Claude Sonnet 5 exceed 85% on SWE-bench Verified?",
-      "platform": "Manifold",
-      "forecast": "94.5% — Yes, flat",
+      "forecast": "94.5% — Yes",
       "category": "benchmark",
       "relevantBenchmark": "SWE-bench Verified",
       "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/JaundicedBaboon/will-claude-5-sonnet-exceed-85-on-s"
+      "url": "https://manifold.markets/JaundicedBaboon/will-claude-5-sonnet-exceed-85-on-s",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will an autonomous agent resolve 90% of tasks on SWE-bench by 2027?",
       "platform": "Manifold",
-      "forecast": "85% — Manifold",
+      "forecast": "27.5% — Yes",
       "category": "benchmark",
       "relevantBenchmark": "SWE-bench",
-      "resolveDate": "2027-01-01",
-      "url": "https://manifold.markets/RationalHippy/will-an-autonomous-agent-resolve-90-97377876242a"
-    },
-    {
-      "question": "METR time-horizon doubling time in 2026?",
-      "platform": "Manifold",
-      "forecast": "3-3.5 mo = 32% (3.5-4mo 18%, 4-4.5mo 16%)",
-      "category": "capability",
-      "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/Bayesian/what-will-be-the-metr-time-horizon"
+      "url": "https://manifold.markets/RationalHippy/will-an-autonomous-agent-resolve-90-97377876242a",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will we get AGI before 2027?",
       "platform": "Manifold",
-      "forecast": "2% — Yes, holding at the floor; strict definition, moderators say a lab merely announcing AGI is insufficient",
+      "forecast": "2.3% — Yes",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2027-01-01",
-      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2027-d7b5f2b00ace"
+      "resolveDate": "2027-03-01",
+      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2027-d7b5f2b00ace",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will we get AGI before 2028?",
       "platform": "Manifold",
-      "forecast": "21% — Yes, flat",
+      "forecast": "23.4% — Yes",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2027-12-31",
-      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346"
-    },
-    {
-      "question": "Will we get AGI before 2030?",
-      "platform": "Manifold",
-      "forecast": "54% — Yes, up from 50; 23% before 2028, 58% before 2032, 63% before 2035",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2029-12-31",
-      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2030"
+      "resolveDate": "2028-03-03",
+      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will a Chinese company have a top ___ AI model by December 31?",
       "platform": "Polymarket",
-      "forecast": "10% — for #1; 13% for top 3, top 5 and top 10 near-certain",
+      "forecast": "8.5% — #1 · #3 13.5%",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/will-a-chinese-company-have-the-best-ai-model-by-december-31"
+      "url": "https://polymarket.com/event/will-a-chinese-company-have-the-best-ai-model-by-december-31",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "GPT-6 release date?",
@@ -468,70 +291,41 @@
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2028-01-17",
-      "url": "https://www.metaculus.com/questions/39297/gpt-6-release-date/"
+      "url": "https://www.metaculus.com/questions/39297/gpt-6-release-date/",
+      "seen": "2026-09-28"
     },
     {
-      "question": "Will OpenAI announce the creation of AGI?",
+      "question": "When will OpenAI achieve AGI?",
       "platform": "Kalshi",
-      "forecast": "14% — before 2027, easing from 17; 49% before 2028, 67% before 2030",
+      "forecast": "18% — Before 2027",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2030-01-01",
-      "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi"
-    },
-    {
-      "question": "Best AI at the end of 2026? (LMArena year-end #1)",
-      "platform": "Kalshi",
-      "forecast": "73% — Claude, firming from 70 and now matching Polymarket; ChatGPT 13%, Gemini 9.3%, Grok 4.2%",
-      "category": "ranking",
-      "relevantBenchmark": "Chatbot Arena",
       "resolveDate": "2026-12-31",
-      "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm"
-    },
-    {
-      "question": "Next OpenAI model: Arena debut Elo?",
-      "platform": "Polymarket",
-      "forecast": "93.4% — 1450+ (76.75% for 1470+; higher bands closed at 0)",
-      "category": "benchmark",
-      "relevantBenchmark": "LMArena",
-      "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/next-openai-model-arena-debut-685"
-    },
-    {
-      "question": "Will Anthropic release Claude 5 Opus (or next-gen flagship) before October 1, 2026?",
-      "platform": "Manifold",
-      "forecast": "99% — Yes; Opus 5 already shipped Jul 24, so this tracks a further Mythos-class flagship.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-10-01",
-      "url": "https://manifold.markets/CalibratedGhosts/will-anthropic-release-claude-5-opu"
+      "url": "https://kalshi.com/markets/kxoaiagi/openai-achieves-agi/oaiagi",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "AI wins IMO gold medal in 2026?",
       "platform": "Polymarket",
-      "forecast": "3.4% — Yes, collapsed from 14 as the strict live-competition resolution criteria go unmet",
+      "forecast": "5.8% — Yes",
       "category": "benchmark",
       "relevantBenchmark": "IMO",
       "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/ai-wins-imo-gold-medal-in-2026"
+      "url": "https://polymarket.com/event/ai-wins-imo-gold-medal-in-2026",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will any AI model reach ___ Overall Arena Score by December 31?",
       "platform": "Polymarket",
-      "forecast": "45% — odds of 1530+ Elo, up from 36; 1540+ 21%, 1550+ 16%, 1600+ 5%",
+      "forecast": "35.5% — ↑ 1530 · ↑ 1540 18.1% · ↑ 1550 13%",
       "category": "benchmark",
       "relevantBenchmark": "LMArena",
       "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/chatbot-arena-how-high-will-ai-score-by-december-31"
-    },
-    {
-      "question": "Will any AI model reach a Math Arena score by December 31?",
-      "platform": "Polymarket",
-      "forecast": "50% — 1550+ (1525+ ~94%)",
-      "category": "benchmark",
-      "relevantBenchmark": "LMArena",
-      "resolveDate": "2026-12-31",
-      "url": "https://polymarket.com/event/will-any-ai-model-reach-math-arena-score-by-december-31"
+      "url": "https://polymarket.com/event/chatbot-arena-how-high-will-ai-score-by-december-31",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "When will AI win gold at the Math Olympiad?",
@@ -540,34 +334,30 @@
       "category": "benchmark",
       "relevantBenchmark": "other",
       "resolveDate": "2026-12-31",
-      "url": "https://www.metaculus.com/questions/6728/ai-wins-imo-gold-medal/"
+      "url": "https://www.metaculus.com/questions/6728/ai-wins-imo-gold-medal/",
+      "seen": "2026-09-28"
     },
     {
-      "question": "When will OpenAI release GPT-6?",
+      "question": "Grok 5 (xAI) release date",
       "platform": "Manifold",
-      "forecast": "99% — before October, flat; settled in traders' eyes by GPT-6 Astra's Sep 3 launch",
+      "forecast": "45% — Before 2027",
       "category": "release",
       "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/Bayesian/when-will-openai-release-gpt6"
-    },
-    {
-      "question": "When will xAI release Grok 5?",
-      "platform": "Manifold",
-      "forecast": "43% — before 2027, unchanged; 3% before Oct, 8% before Nov, 15% before Dec",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5"
+      "resolveDate": "2026-10-31",
+      "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "By when will we have AGI?",
       "platform": "Manifold",
-      "forecast": "50% — by 2028 (69% by 2029, 76% by 2030, 90% by 2033-or-later bucket)",
+      "forecast": "50% — 2028",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2030-12-31",
-      "url": "https://manifold.markets/2s/by-when-will-we-have-agi"
+      "resolveDate": "2032-04-25",
+      "url": "https://manifold.markets/2s/by-when-will-we-have-agi",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Date of first AGI according to forecasters",
@@ -576,250 +366,74 @@
       "category": "capability",
       "relevantBenchmark": "other",
       "resolveDate": "2033-01-01",
-      "url": "https://www.metaculus.com/questions/4815/date-of-first-agi-according-to-forecasters/"
+      "url": "https://www.metaculus.com/questions/4815/date-of-first-agi-according-to-forecasters/",
+      "seen": "2026-09-28"
     },
     {
       "question": "Will we get AGI before 2030?",
       "platform": "Manifold",
-      "forecast": "41.5% - Yes, nudging up from 41%, so traders pushed probability out from 2028 rather than off the table.",
+      "forecast": "53.5% — Yes",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2030-01-01",
-      "url": "https://manifold.markets/JoshYou/will-we-get-agi-before-2030"
+      "resolveDate": "2030-03-01",
+      "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2030",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Which company has the best AI model end of September?",
       "platform": "Polymarket",
-      "forecast": "99.7% — Anthropic with two days left; every rival under 1%; $4.11M",
+      "forecast": "99.7% — Anthropic · OpenAI 0.2% · Google 0.1%",
       "category": "ranking",
       "relevantBenchmark": "LMArena",
       "resolveDate": "2026-09-30",
-      "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868"
-    },
-    {
-      "question": "When will OpenAI release GPT-6?",
-      "platform": "Kalshi",
-      "forecast": "67% - before 2027, cut from 75%, but the near legs ran the other way: before Oct 1 jumped to 47% from 25% and before Nov 1 to 55% from 51%.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2027-01-01",
-      "url": "https://kalshi.com/markets/kxgpt/chatgpt-release-date/kxgpt-open"
+      "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "When will xAI release Grok 5?",
       "platform": "Kalshi",
-      "forecast": "64% — before 2027 on the last trade, but the book is thin (bid 34 / ask 61); 2% before October",
+      "forecast": "45.5% — Before 2027",
       "category": "release",
       "relevantBenchmark": "other",
-      "resolveDate": "2027-01-01",
-      "url": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5"
-    },
-    {
-      "question": "Next Mythos-class model released by...?",
-      "platform": "Polymarket",
-      "forecast": "93% - by Sep 30, flat; Sep 15 at 77%. Volume above $1.6M as the book keeps trading past Mythos 5.1, which traders dispute counts as public access.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-09-30",
-      "url": "https://polymarket.com/event/next-mythos-class-model-released-by"
-    },
-    {
-      "question": "When will AI solve another FrontierMath Open Problem?",
-      "platform": "Kalshi",
-      "forecast": "36% — before Sep 1, up from 30.5% (67% before Oct 1, 75% before 2027).",
-      "category": "benchmark",
-      "relevantBenchmark": "FrontierMath",
       "resolveDate": "2026-12-31",
-      "url": "https://kalshi.com/markets/kxfrontier/frontier-ai-math-problem/kxfrontier-fron"
+      "url": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
-      "question": "Will any company announce that it has achieved AGI before Jan 1, 2028?",
+      "question": "When will any company achieve AGI?",
       "platform": "Kalshi",
-      "forecast": "65% — before 2028, cooling from the 69 spike; 49% before Oct 2027, 79% before 2030",
+      "forecast": "63.5% — Before Jan 1, 2028",
       "category": "capability",
       "relevantBenchmark": "other",
-      "resolveDate": "2028-01-01",
-      "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp"
-    },
-    {
-      "question": "OpenAI's Astra released by...?",
-      "platform": "Polymarket",
-      "forecast": "96% - by today Sep 3, up from 89% this morning; Sep 4 99%, Sep 15 99%, Sep 30 100% on $923K.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-09-30",
-      "url": "https://polymarket.com/event/openais-astra-released-by-20260801214557729"
-    },
-    {
-      "question": "When will OpenAI release Astra?",
-      "platform": "Kalshi",
-      "forecast": "82% - before Oct 1, up sharply from 66%; before Sep 18 at 79%, before Oct 16 90%, before Nov 1 92%. Directly contradicts Polymarket's cut to 80% by Sep 30.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-10-01",
-      "url": "https://kalshi.com/markets/kxgpt/chatgpt-release-date/kxgpt-astra"
-    },
-    {
-      "question": "Top ARC-AGI-2 score achieved by any AI in 2026",
-      "platform": "Metaculus",
-      "forecast": "93.4 - community median (50% CI 89.3-96.7), 737 forecasters.",
-      "category": "benchmark",
-      "relevantBenchmark": "ARC-AGI-2",
-      "resolveDate": "2026-12-31",
-      "url": "https://www.metaculus.com/questions/31287/top-arc-agi-2-score-in-2026/"
-    },
-    {
-      "question": "Will we get AGI before 2030?",
-      "platform": "Manifold",
-      "forecast": "39% - Yes. Companion legs: 3% before 2027, 15% before 2028. Last confirmed read Aug 30.",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2030-01-01",
-      "url": "https://manifold.markets/RemNiflheim/will-we-get-agi-before-2030"
-    },
-    {
-      "question": "When will the first general AI system be devised, tested, and publicly announced?",
-      "platform": "Metaculus",
-      "forecast": "50% by 2033 (25% by 2029); community median ~mid-2030s under the strict four-condition definition.",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2033-01-01",
-      "url": "https://www.metaculus.com/questions/5121/date-of-first-agi-strong/"
-    },
-    {
-      "question": "Will we get AGI before 2027?",
-      "platform": "Manifold",
-      "forecast": "6% - Yes, on a strict definition requiring human-level performance across all cognitive tasks.",
-      "category": "capability",
-      "relevantBenchmark": "other",
-      "resolveDate": "2027-01-01",
-      "url": "https://manifold.markets/ManifoldAI/will-we-get-agi-before-2027"
+      "resolveDate": "2027-12-31",
+      "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Which company has the best AI model end of October?",
       "platform": "Polymarket",
-      "forecast": "89% — Anthropic, flat; Google 9.0%, OpenAI 2.1%, Meta 1%; $522K volume",
+      "forecast": "88.5% — Anthropic · Google 9.2% · OpenAI 2%",
       "category": "ranking",
       "relevantBenchmark": "other",
       "resolveDate": "2026-10-31",
-      "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october"
-    },
-    {
-      "question": "Which week will OpenAI release Astra?",
-      "platform": "Polymarket",
-      "forecast": "90% - the Aug 31-Sep 6 week, flat. Sep 7-13 7%, Sep 21-27 3%, Sep 14-20 2%, not-by-Nov-1 under 1%.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-11-01",
-      "url": "https://polymarket.com/event/which-week-will-openai-release-astra"
-    },
-    {
-      "question": "When will OpenAI release GPT-6?",
-      "platform": "Manifold",
-      "forecast": "98% — before October, up sharply from 64% before-2027 last sweep as traders accept GPT-6 Astra's Sep 5 general availability as resolution; all later legs ~99%",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/JoshYou/when-will-openai-release-gpt6"
-    },
-    {
-      "question": "OpenAI's Astra released on...?",
-      "platform": "Polymarket",
-      "forecast": "82% - today, Sep 3, easing from 84.5%. Sep 4 at 5.5%, no-release-by-Sep-30 at 3.0%. $60K volume.",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-09-30",
-      "url": "https://polymarket.com/event/openais-astra-released-onptptpt-20260901080122046"
-    },
-    {
-      "question": "When will xAI release Grok 4.7 (or any version at/above 4.7)?",
-      "platform": "Manifold",
-      "forecast": "99% — before Oct 1, flat through the missed Sep-21 leg; every later leg also 99",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-01",
-      "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date"
-    },
-    {
-      "question": "Will Grok 4.7 be released by the end of September 2026?",
-      "platform": "Manifold",
-      "forecast": "95% — Yes, holding through every slipped Musk target",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-09-30",
-      "url": "https://manifold.markets/prismatic/will-grok-47-be-released-by-the-end-SCglESEnnL"
-    },
-    {
-      "question": "Will Grok 4.7 out-benchmark Opus 5?",
-      "platform": "Manifold",
-      "forecast": "35% — Yes, flat; matches Musk's own 'on par with Opus 5.0, not 5.1' framing",
-      "category": "benchmark",
-      "relevantBenchmark": "other",
-      "resolveDate": "2027-12-31",
-      "url": "https://manifold.markets/realTomBayes/will-grok-47-outbenchmark-opus-5"
+      "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
+      "asOf": "2026-09-28",
+      "by": "api"
     },
     {
       "question": "Will Google release \"Gemini 3.5 Pro\" to the public before October 1, 2026?",
       "platform": "Manifold",
-      "forecast": "5% — Yes, flat after DeepMind said it stepped back from 3.5 Pro for Gemini 4",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-10-01",
-      "url": "https://manifold.markets/Terminator2/will-google-release-gemini-35-pro-t"
-    },
-    {
-      "question": "Next Claude Haiku released by...?",
-      "platform": "Polymarket",
-      "forecast": "96% — by Oct 31 and by Oct 15; Dec 31 98%, thin $12.6K book",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-10-31",
-      "url": "https://polymarket.com/event/next-claude-haiku-released-byptptpt-20260701205353326"
-    },
-    {
-      "question": "Which company has the best AI model at the end of September?",
-      "platform": "Polymarket",
-      "forecast": "98% — Anthropic, holding with 10 days left; every rival priced in low single digits",
-      "category": "ranking",
-      "relevantBenchmark": "LMArena",
-      "resolveDate": "2026-09-30",
-      "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-september"
-    },
-    {
-      "question": "When will xAI release Grok 5?",
-      "platform": "Manifold",
-      "forecast": "44% — before 2027, flat; 1% before Oct, 8% before Nov, 15% before Dec",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-12-31",
-      "url": "https://manifold.markets/JoshYou/when-will-xai-release-grok-5"
-    },
-    {
-      "question": "Which AI company will have the best coding model on Dec 31, 2026?",
-      "platform": "Kalshi",
-      "forecast": "65% — Anthropic, easing from 68; OpenAI 19%, xAI 8%, Google 3%",
-      "category": "ranking",
-      "relevantBenchmark": "SWE-bench Verified",
-      "resolveDate": "2026-12-31",
-      "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model"
-    },
-    {
-      "question": "Next Claude Opus released by...?",
-      "platform": "Polymarket",
-      "forecast": "94% — by Sep 30, flat; Sep-24 leg firmed to 83 from 81 and the thin Sep-27 inversion corrected to 84, book monotone again; $241K volume",
+      "forecast": "1.4% — Yes",
       "category": "release",
       "relevantBenchmark": "other",
       "resolveDate": "2026-09-30",
-      "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260727142323912"
-    },
-    {
-      "question": "When will OpenAI release Astra 6.1?",
-      "platform": "Kalshi",
-      "forecast": "59% — before Oct 30 on the last trade (bid 55/ask 63), up from 49; ~45% before Oct 23, ~72-81% bid/ask before Nov 13, 4% before Sep 25",
-      "category": "release",
-      "relevantBenchmark": "other",
-      "resolveDate": "2026-11-13",
-      "url": "https://kalshi.com/markets/kxgpt/chatgpt-release-date"
+      "url": "https://manifold.markets/Terminator2/will-google-release-gemini-35-pro-t",
+      "asOf": "2026-09-28",
+      "by": "api"
     }
   ],
   "historics": [

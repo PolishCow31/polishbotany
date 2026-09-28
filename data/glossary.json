@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T14:22:31-04:00",
+  "updated": "2026-09-28T18:32:09-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -23,23 +23,14 @@
       ]
     },
     {
-      "term": "AA-LCR",
-      "acronym": "AA-LCR",
-      "category": "Benchmarks & evals",
-      "def": "Artificial Analysis Long Context Reasoning, one of nine evaluations in the AA Intelligence Index; tests multi-hop reasoning over long documents rather than simple retrieval.",
-      "aka": [
-        "Artificial Analysis Long Context Reasoning",
-        "AA Long Context Reasoning"
-      ]
-    },
-    {
       "term": "AA-LCR (Artificial Analysis Long Context Reasoning)",
       "acronym": "AA-LCR",
       "category": "Benchmarks & evals",
       "def": "Artificial Analysis's eval measuring multi-step reasoning over long inputs, requiring a model to combine facts scattered across a large context rather than retrieve one span. A component of the AA Intelligence Index.",
       "aka": [
         "Artificial Analysis Long Context Reasoning",
-        "AA Long Context Reasoning"
+        "AA Long Context Reasoning",
+        "Long-context reasoning eval"
       ]
     },
     {
@@ -606,17 +597,6 @@
       ]
     },
     {
-      "term": "AI Security Institute",
-      "acronym": "AISI",
-      "category": "Orgs, models & ecosystem",
-      "def": "UK government body that runs pre-deployment evaluations of frontier models for cyber, bio and autonomy risk; renamed from AI Safety Institute in 2025.",
-      "aka": [
-        "UK AI Safety Institute",
-        "UK AISI",
-        "AI Safety Institute"
-      ]
-    },
-    {
       "term": "AI Security Institute (UK)",
       "acronym": "AISI",
       "category": "Orgs, models & ecosystem",
@@ -624,7 +604,9 @@
       "aka": [
         "UK AISI",
         "AI Safety Institute",
-        "United Kingdom AI Security Institute"
+        "United Kingdom AI Security Institute",
+        "AI Security Institute",
+        "UK AI Safety Institute"
       ]
     },
     {
@@ -912,16 +894,6 @@
       ]
     },
     {
-      "term": "Application-Specific Integrated Circuit",
-      "acronym": "ASIC",
-      "category": "Economics & compute",
-      "def": "A chip custom-built for one workload — e.g. AI inference — trading the flexibility of a GPU for lower cost and higher performance per watt.",
-      "aka": [
-        "custom silicon",
-        "custom accelerator"
-      ]
-    },
-    {
       "term": "Approximate nearest neighbor search",
       "acronym": "ANN",
       "category": "Inference & serving",
@@ -985,17 +957,8 @@
         "Chatbot Arena Elo",
         "LMArena rating",
         "arena score",
-        "Bradley-Terry rating"
-      ]
-    },
-    {
-      "term": "Arena Score",
-      "acronym": "",
-      "category": "Benchmarks & evals",
-      "def": "LMArena's Bradley-Terry rating derived from pairwise human preference votes; the continuous number underlying a model's leaderboard rank.",
-      "aka": [
+        "Bradley-Terry rating",
         "Chatbot Arena score",
-        "Arena Elo",
         "LMArena score"
       ]
     },
@@ -1614,16 +1577,6 @@
       ]
     },
     {
-      "term": "CAISI",
-      "acronym": "CAISI",
-      "category": "Orgs, models & ecosystem",
-      "def": "Center for AI Standards and Innovation — the U.S. Commerce/NIST body (formerly the AI Safety Institute) that reviews frontier model releases; it cleared GPT-5.6's public launch in July 2026.",
-      "aka": [
-        "Center for AI Standards and Innovation",
-        "US AI Safety Institute successor"
-      ]
-    },
-    {
       "term": "Calibration",
       "acronym": "",
       "category": "Benchmarks & evals",
@@ -1763,7 +1716,8 @@
       "aka": [
         "CAISI",
         "AI Safety Institute successor",
-        "Commerce AI evaluation"
+        "Commerce AI evaluation",
+        "US AI Safety Institute successor"
       ]
     },
     {
@@ -1796,7 +1750,10 @@
         "CoT prompting",
         "step-by-step reasoning",
         "thinking tokens",
-        "scratchpad"
+        "scratchpad",
+        "Chain-of-Thought Prompting",
+        "step-by-step prompting",
+        "let's think step by step"
       ]
     },
     {
@@ -1807,17 +1764,6 @@
       "aka": [
         "CoT monitoring",
         "reasoning monitoring"
-      ]
-    },
-    {
-      "term": "Chain-of-Thought Prompting",
-      "acronym": "CoT",
-      "category": "Capabilities & agents",
-      "def": "A prompting style that asks a model to write out its intermediate reasoning steps before the final answer, which sharply improves accuracy on math, logic, and multi-step problems.",
-      "aka": [
-        "chain of thought",
-        "step-by-step prompting",
-        "let's think step by step"
       ]
     },
     {
@@ -2660,7 +2606,10 @@
         "Application-Specific Integrated Circuit",
         "custom silicon",
         "inference chip",
-        "AI ASIC"
+        "AI ASIC",
+        "custom accelerator",
+        "Inference accelerator (ASIC)",
+        "intelligence processor"
       ]
     },
     {
@@ -3106,18 +3055,6 @@
         "text diffusion LLM",
         "diffusion language model",
         "parallel token denoising"
-      ]
-    },
-    {
-      "term": "Distillation",
-      "acronym": "",
-      "category": "Model architecture",
-      "def": "Training a smaller, cheaper student model to imitate a larger teacher model's outputs, transferring much of its capability into a faster, lighter package.",
-      "aka": [
-        "knowledge distillation",
-        "model distillation",
-        "distilled model",
-        "teacher-student"
       ]
     },
     {
@@ -3819,16 +3756,6 @@
       ]
     },
     {
-      "term": "Finance Agent Benchmark",
-      "acronym": "",
-      "category": "Benchmarks & evals",
-      "def": "Vals AI evaluation of LLM finance agents on realistic end-to-end research and analysis tasks, reporting both accuracy and dollar cost per query.",
-      "aka": [
-        "Finance Agent v2",
-        "Vals AI Finance Agent"
-      ]
-    },
-    {
       "term": "Finance Agent v2",
       "acronym": "",
       "category": "Benchmarks & evals",
@@ -3932,32 +3859,14 @@
       ]
     },
     {
-      "term": "Forward Deployed Engineer",
-      "acronym": "FDE",
-      "category": "Orgs, models & ecosystem",
-      "def": "An engineer embedded with a customer to integrate and tune AI models for their specific workflows; a role labs scaled in 2026 as focus shifted from training to enterprise deployment.",
-      "aka": [
-        "forward-deployed engineer",
-        "deployment engineer"
-      ]
-    },
-    {
       "term": "Forward-deployed engineer",
       "acronym": "FDE",
       "category": "Economics & compute",
       "def": "An engineer embedded inside a customer's organization to build and integrate AI systems on-site, a go-to-market model AI labs increasingly use to speed enterprise adoption.",
       "aka": [
-        "FDE"
-      ]
-    },
-    {
-      "term": "Forward-deployed engineering",
-      "acronym": "FDE",
-      "category": "Economics & compute",
-      "def": "Practice of embedding a vendor's own engineers inside a customer's operations to design, build and run AI systems on-site, rather than selling software alone.",
-      "aka": [
         "FDE",
-        "forward deployed engineer",
+        "deployment engineer",
+        "Forward-deployed engineering",
         "embedded AI engineering"
       ]
     },
@@ -4699,23 +4608,13 @@
       ]
     },
     {
-      "term": "Grouped Query Attention",
-      "acronym": "GQA",
-      "category": "Model architecture",
-      "def": "Attention variant where several query heads share one key/value head, shrinking the KV cache and speeding long-context inference at near-full multi-head quality.",
-      "aka": [
-        "grouped-query attention",
-        "GQA",
-        "shared KV heads"
-      ]
-    },
-    {
       "term": "Grouped-Query Attention",
       "acronym": "GQA",
       "category": "Model architecture",
       "def": "An attention scheme where several query heads share one set of key/value heads, cutting memory and speeding inference with little quality loss versus full multi-head attention.",
       "aka": [
-        "grouped query attention"
+        "grouped query attention",
+        "shared KV heads"
       ]
     },
     {
@@ -4892,17 +4791,8 @@
       "aka": [
         "HBM3E",
         "HBM4",
-        "stacked DRAM"
-      ]
-    },
-    {
-      "term": "High-Bandwidth Memory",
-      "acronym": "HBM",
-      "category": "Economics & compute",
-      "def": "Vertically stacked DRAM placed next to an AI accelerator for very high memory bandwidth; the scarce, expensive component gating GPU supply during the 2026 AI buildout.",
-      "aka": [
+        "stacked DRAM",
         "HBM3",
-        "HBM4",
         "stacked memory"
       ]
     },
@@ -5013,16 +4903,6 @@
       ]
     },
     {
-      "term": "Hybrid linear attention",
-      "acronym": "",
-      "category": "Model architecture",
-      "def": "Interleaving cheap linear-attention layers with a minority of full-attention layers, cutting long-context memory and compute while keeping most quadratic-attention quality.",
-      "aka": [
-        "hybrid attention stack",
-        "linear-full attention hybrid"
-      ]
-    },
-    {
       "term": "Hybrid reasoning model",
       "acronym": "",
       "category": "Model architecture",
@@ -5050,7 +4930,9 @@
       "def": "Interleaving cheap linear-attention layers with a minority of full-attention layers at a fixed ratio, cutting long-context cost while keeping some exact-recall capacity.",
       "aka": [
         "hybrid linear attention",
-        "linear-full attention interleaving"
+        "linear-full attention interleaving",
+        "hybrid attention stack",
+        "linear-full attention hybrid"
       ]
     },
     {
@@ -5102,15 +4984,6 @@
       "def": "A DPO variant that adds a regularizer to stop the model from over-fitting to preference pairs, preventing it from pushing rejected answers to near-zero probability and degrading.",
       "aka": [
         "IPO loss"
-      ]
-    },
-    {
-      "term": "IFBench",
-      "acronym": "",
-      "category": "Benchmarks & evals",
-      "def": "Instruction-Following Benchmark measuring how precisely a model obeys explicit, often compound constraints in a prompt rather than just answering correctly.",
-      "aka": [
-        "Instruction Following Benchmark"
       ]
     },
     {
@@ -5235,17 +5108,6 @@
         "model inference",
         "serving",
         "runtime"
-      ]
-    },
-    {
-      "term": "Inference accelerator (ASIC)",
-      "acronym": "ASIC",
-      "category": "Economics & compute",
-      "def": "Application-specific chip built to serve (not train) AI models; less flexible than a GPU but cheaper and more power-efficient for fixed inference workloads.",
-      "aka": [
-        "application-specific integrated circuit",
-        "inference chip",
-        "intelligence processor"
       ]
     },
     {
@@ -5687,18 +5549,6 @@
       ]
     },
     {
-      "term": "Knowledge Distillation",
-      "acronym": "",
-      "category": "Training & post-training",
-      "def": "Training a smaller student model to imitate a larger teacher model's outputs, transferring much of its capability at lower size and inference cost.",
-      "aka": [
-        "knowledge distillation",
-        "distillation",
-        "teacher-student training",
-        "model distillation"
-      ]
-    },
-    {
       "term": "Knowledge graph",
       "acronym": "",
       "category": "Capabilities & agents",
@@ -5837,17 +5687,8 @@
       "aka": [
         "Lean 4",
         "theorem prover",
-        "proof assistant"
-      ]
-    },
-    {
-      "term": "Lean 4",
-      "acronym": "",
-      "category": "Capabilities & agents",
-      "def": "Interactive theorem prover and programming language in which mathematical proofs are formalized so a computer can mechanically verify every step from stated axioms.",
-      "aka": [
+        "proof assistant",
         "Lean theorem prover",
-        "Lean proof assistant",
         "mathlib"
       ]
     },
@@ -6079,16 +5920,6 @@
       "def": "The raw, unnormalized scores a language model assigns to every possible next token before they are turned into probabilities; most sampling controls act on these numbers.",
       "aka": [
         "logit scores"
-      ]
-    },
-    {
-      "term": "Long-context reasoning eval",
-      "acronym": "AA-LCR",
-      "category": "Benchmarks & evals",
-      "def": "Artificial Analysis's evaluation of reasoning that spans very long inputs, testing retrieval and synthesis across large contexts; a component of the Intelligence Index v4.1.",
-      "aka": [
-        "AA-LCR",
-        "Artificial Analysis Long Context Reasoning"
       ]
     },
     {
@@ -6342,16 +6173,6 @@
       "aka": [
         "Mostly Basic Python Problems",
         "Mostly Basic Programming Problems"
-      ]
-    },
-    {
-      "term": "MCP Atlas",
-      "acronym": "",
-      "category": "Benchmarks & evals",
-      "def": "A benchmark measuring how well a model uses external tools through the Model Context Protocol, scoring multi-step agentic tool-calling across many connected servers.",
-      "aka": [
-        "MCP-Atlas",
-        "Model Context Protocol Atlas"
       ]
     },
     {
@@ -6640,7 +6461,9 @@
       "def": "A method where a router lets each token skip or pass through a given transformer layer, so 'easy' tokens use fewer layers and overall compute drops.",
       "aka": [
         "MoD",
-        "depth routing"
+        "depth routing",
+        "token-level depth routing",
+        "conditional depth"
       ]
     },
     {
@@ -6651,17 +6474,6 @@
       "aka": [
         "MoVA",
         "mixture-of-value attention"
-      ]
-    },
-    {
-      "term": "Mixture-of-Depths",
-      "acronym": "MoD",
-      "category": "Model architecture",
-      "def": "Routing only a subset of tokens through each transformer layer, so easy tokens skip compute and the model spends depth where it is needed.",
-      "aka": [
-        "MoD",
-        "token-level depth routing",
-        "conditional depth"
       ]
     },
     {
@@ -6831,7 +6643,9 @@
       "aka": [
         "knowledge distillation",
         "distillation",
-        "teacher-student training"
+        "teacher-student training",
+        "distilled model",
+        "teacher-student"
       ]
     },
     {
@@ -7176,7 +6990,11 @@
         "multimodal model",
         "multi-modal",
         "omni-modal",
-        "any-to-any"
+        "any-to-any",
+        "multi-modal model",
+        "vision-language model",
+        "VLM",
+        "omni model"
       ]
     },
     {
@@ -7187,19 +7005,6 @@
       "aka": [
         "image prompt injection",
         "visual prompt injection"
-      ]
-    },
-    {
-      "term": "Multimodal model",
-      "acronym": "",
-      "category": "Model architecture",
-      "def": "A model that handles more than one input or output type (text, images, audio, video) within one system, typically by mapping each into a shared embedding space.",
-      "aka": [
-        "multimodal",
-        "multi-modal model",
-        "vision-language model",
-        "VLM",
-        "omni model"
       ]
     },
     {
@@ -7243,18 +7048,6 @@
       ]
     },
     {
-      "term": "MXFP4",
-      "acronym": "",
-      "category": "Inference & serving",
-      "def": "Open Compute Project microscaling 4-bit float format: blocks of 32 FP4 values share one 8-bit exponent scale, cutting weight size about 4x versus FP16.",
-      "aka": [
-        "microscaling FP4",
-        "MX FP4",
-        "OCP MXFP4",
-        "MXFP8"
-      ]
-    },
-    {
       "term": "MXFP4 (Microscaling FP4)",
       "acronym": "MXFP4",
       "category": "Inference & serving",
@@ -7262,7 +7055,9 @@
       "aka": [
         "Microscaling FP4",
         "MX FP4",
-        "4-bit floating point"
+        "4-bit floating point",
+        "OCP MXFP4",
+        "MXFP8"
       ]
     },
     {
@@ -7653,7 +7448,10 @@
       "aka": [
         "open-weight model",
         "weights release",
-        "downloadable weights"
+        "downloadable weights",
+        "open-weight",
+        "openly released weights",
+        "downloadable model"
       ]
     },
     {
@@ -7665,18 +7463,6 @@
         "open-ended AI research",
         "open-ended scientific research",
         "unstructured research tasks"
-      ]
-    },
-    {
-      "term": "Open-weight model",
-      "acronym": "",
-      "category": "Economics & compute",
-      "def": "A model whose trained parameters are downloadable so anyone can run or fine-tune it locally, though the training data and code may stay private.",
-      "aka": [
-        "open weights",
-        "open-weight",
-        "openly released weights",
-        "downloadable model"
       ]
     },
     {
@@ -7948,16 +7734,8 @@
       "aka": [
         "Pareto front",
         "efficient frontier",
-        "cost-quality frontier"
-      ]
-    },
-    {
-      "term": "Pareto frontier (intelligence vs cost)",
-      "acronym": "",
-      "category": "Economics & compute",
-      "def": "The set of models no other model beats on both quality and price; used by Artificial Analysis to flag genuinely efficient releases.",
-      "aka": [
-        "Pareto front",
+        "cost-quality frontier",
+        "Pareto frontier (intelligence vs cost)",
         "cost-intelligence frontier",
         "Pareto-optimal model"
       ]
@@ -8631,18 +8409,9 @@
         "8-bit",
         "INT4",
         "INT8",
-        "FP8"
-      ]
-    },
-    {
-      "term": "Quantization (inference cost)",
-      "acronym": "",
-      "category": "Inference & serving",
-      "def": "Storing a model's numbers at lower precision (like 8-bit instead of 16-bit) so it uses less memory and runs cheaper and faster, usually with little quality loss.",
-      "aka": [
-        "low-precision inference",
-        "8-bit",
-        "FP8"
+        "FP8",
+        "Quantization (inference cost)",
+        "low-precision inference"
       ]
     },
     {
@@ -9759,17 +9528,8 @@
       "aka": [
         "evaluation awareness",
         "test awareness",
-        "eval-aware"
-      ]
-    },
-    {
-      "term": "Situational awareness (evaluation)",
-      "acronym": "",
-      "category": "Safety & alignment",
-      "def": "A model's capacity to recognize it is being tested or observed, which can let it behave differently under evaluation than in deployment.",
-      "aka": [
-        "evaluation awareness",
-        "test awareness",
+        "eval-aware",
+        "Situational awareness (evaluation)",
         "eval-gaming"
       ]
     },
@@ -9957,16 +9717,8 @@
       "aka": [
         "off-balance-sheet vehicle",
         "special purpose entity",
-        "SPE"
-      ]
-    },
-    {
-      "term": "Special-purpose vehicle (compute financing)",
-      "acronym": "SPV",
-      "category": "Economics & compute",
-      "def": "Separate legal entity created to hold GPUs or a data center and its debt off the sponsor's balance sheet, letting outside investors fund AI capex.",
-      "aka": [
-        "SPV",
+        "SPE",
+        "Special-purpose vehicle (compute financing)",
         "compute SPV",
         "data-center special-purpose vehicle"
       ]
@@ -10768,26 +10520,19 @@
       ]
     },
     {
-      "term": "Token",
-      "acronym": "",
-      "category": "Inference & serving",
-      "def": "The basic unit of text a model reads and generates — typically a word-piece of about 3-4 English characters. Input and output are both measured in tokens.",
-      "aka": [
-        "tokens",
-        "subword",
-        "subword unit",
-        "wordpiece",
-        "BPE token"
-      ]
-    },
-    {
       "term": "Token (LLM)",
       "acronym": "",
       "category": "Inference & serving",
       "def": "The unit a language model reads and writes, typically a word piece or few characters; models generate text one token at a time, and pricing and limits are counted in tokens.",
       "aka": [
         "tokens",
-        "subword token"
+        "subword token",
+        "Token",
+        "subword",
+        "subword unit",
+        "wordpiece",
+        "BPE token",
+        "subword units"
       ]
     },
     {
@@ -10861,17 +10606,6 @@
       "aka": [
         "token maxxing",
         "token-maxxing"
-      ]
-    },
-    {
-      "term": "Tokens",
-      "acronym": "",
-      "category": "Model architecture",
-      "def": "The basic units a language model reads and writes, each a word fragment, whole word, or symbol; pricing, context limits, and output length are all counted in tokens.",
-      "aka": [
-        "token",
-        "tokens",
-        "subword units"
       ]
     },
     {
@@ -11698,15 +11432,6 @@
       "aka": [
         "world-action model",
         "WAM"
-      ]
-    },
-    {
-      "term": "World AI Cooperation Organization",
-      "acronym": "WAICO",
-      "category": "Orgs, models & ecosystem",
-      "def": "China-led AI-governance bloc launched at WAIC 2026 (Jul 16) with 29 founding states, pitched as a counterweight to U.S. export controls.",
-      "aka": [
-        "World Artificial Intelligence Cooperation Organization"
       ]
     },
     {

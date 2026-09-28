@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-28T18:02:15-04:00",
+  "updated": "2026-09-28T18:32:09-04:00",
   "pulse": {
     "text": "**Artificial Analysis indexed Claude Sonnet 5.5 at 56**, making it **#2 on the AA-Index** behind Opus 5.5 at 58 and three points ahead of GPT-6 Astra and Fable 5.1 at 53, so Anthropic now holds the top two slots. AA's own run tempers the launch claims: Sonnet 5.5 scores **63.6% on Terminal-Bench 4.0** against Opus 5.5's 59.6%, below Anthropic's self-reported 70.6%, and it burned **~193k output tokens per index task**, the most AA has measured, which puts its per-task cost about 50% above Sonnet 5 despite the unchanged $2/$10 price. Markets nudged rather than moved: Anthropic ticked up to 76% for year-end best model, the next Gemini Pro sits at 79% by Oct 31, and odds that any model clears 1530 Arena Elo this year jumped to **45% from 36%**. In news, an Axios exclusive has AI companies and building-trade unions forming a coalition to push data-center approvals, and Amodei, Zuckerberg, Pichai and Huang are due at a Trump luncheon Tuesday. Next is **OpenAI's DevDay keynote tomorrow at 10am PT**, where a GPT-6 Cyber preview is reported but nothing is officially confirmed.",
     "updated": "2026-09-28T18:02:15-04:00",
@@ -19,168 +19,92 @@
     "glm-5.2": "1.4/4.4",
     "claude fable 5": "10/50",
     "mistral large 3": "0.5/1.5",
-    "kimi k2.7 code": "0.95/4.0",
-    "gpt-5.6 sol": "4/20 (cut >20% on Aug 21 2026; promotional through ~Nov 21, was 5/30)",
+    "kimi k2.7 code": "0.95/4",
+    "gpt-5.6 sol": "4/20",
     "gpt-5.6 terra": "2/12",
-    "gpt-5.6 luna": "0.20/1.20",
-    "claude sonnet 5": "2/10 (permanent; the 3/15 increase scheduled for Sep 1 2026 was cancelled - re-confirmed on Anthropic's pricing page Aug 31)",
+    "gpt-5.6 luna": "0.2/1.2",
+    "claude sonnet 5": "2/10",
     "gemini 3.5 flash": "1.5/9",
     "grok 4.5": "2/6",
     "meta muse spark 1.1": "1.25/4.25",
-    "minimax m3": "0.30/1.20",
+    "minimax m3": "0.3/1.2",
     "kimi k3": "3/15",
     "gemini 3.6 flash": "1.5/7.5",
     "gemini 3.5 flash-lite": "0.3/2.5",
     "claude opus 5": "5/25",
     "fugu-ultra v1.1": "5/30",
     "mai-image-2.5-pro": "5/106",
-    "qwen3.7 flash": "$0.03/$0.13",
-    "deepseek-v4-flash-0731": "0.44/1.32 peak, 0.22/0.66 off-peak (from Aug 16 2026)",
-    "qwen3.8-max": "$2.00/$6.00",
-    "inkling-small": "0.30/1.20",
+    "qwen3.7 flash": "0.03/0.13",
+    "deepseek-v4-flash-0731": "0.44/1.32",
+    "qwen3.8-max": "2/6",
+    "inkling-small": "0.3/1.2",
     "meta muse spark 1.2": "1.25/4.25",
-    "flux 3 video": "$0.17/s HD, $0.29/s Full HD (full quality, audio included; $0.06/s draft HD)",
-    "minimax h3": "$0.13/s of 2K video output (768p tier $0.09/s, closed beta); first 5 reference images free, then $0.04 each",
     "grok 4.6": "2/6",
-    "deepseek-v4-pro-0813": "1.32/3.96 peak, 0.66/1.98 off-peak (from Aug 16 2026)",
+    "deepseek-v4-pro-0813": "1.32/3.96",
     "gemini 3.7 flash": "0.75/3.75",
-    "deepseek-v4-flash": "0.44/1.32 peak, 0.22/0.66 off-peak (from Aug 16 2026)",
-    "deepseek-v4-pro": "1.32/3.96 peak, 0.66/1.98 off-peak (from Aug 16 2026)",
-    "glm-5.3-flash": "0.15/0.50 (0.03 cached in; 50% launch discount through Sep 9 2026)",
-    "qwen3.8-flash-next": "$0.15 / $0.47 per 1M",
-    "deepseek-v4-flash-vision-exp": "0.22/0.66 (0.007 cached in)",
-    "glm-5.3": "$1.40 in / $4.40 out per 1M",
-    "ibm granite 4.2 30b": "open weights (Apache 2.0) - no first-party API price",
-    "ibm granite 4.2 8b": "open weights (Apache 2.0) - no first-party API price",
+    "deepseek-v4-flash": "0.44/1.32",
+    "deepseek-v4-pro": "1.32/3.96",
+    "glm-5.3-flash": "0.15/0.5",
+    "qwen3.8-flash-next": "0.15/0.47",
+    "deepseek-v4-flash-vision-exp": "0.22/0.66",
+    "glm-5.3": "1.4/4.4",
     "tencent hy4 preview": "0.834/2.501",
-    "cohere parse 5": "$1.50 per 1,000 pages",
-    "ling-3.0-flash-fin": "free (1-month promotional window via OpenRouter; standard rate not published)",
-    "apodex 1.1": "0.30/3.00 (90% cache discount)",
-    "quasar 438b": "0.60/1.80",
-    "claude fable 5.1": "10/50 (cache reads $0.25 per 1M, down 75% from Fable 5)",
-    "claude mythos 5.1": "10/50 (restricted access)",
-    "gemini omni 1.1 flash": "$1.50 in / $9.00 text out / $17.50 video out per 1M tokens (~$0.10 per second of 720p; 360p draft ~1/3 the rate)",
-    "gemini 3.8 flash": "0.75/3.75 (introductory through Dec 31 2026; rises to 1.50/7.50 on Jan 1 2027)",
-    "meta muse spark 1.3": "$1.25 in / $4.25 out ($0.15 cached; contributor tier $0.10/$0.20)",
-    "meta muse voice transcribe": "$3 per 1,000 audio minutes",
-    "qwen3.8-max-0902": "$2.00/$6.00",
-    "gpt-6 astra": "10/50 (Fast tier 20/100, up to 2x speed)",
-    "mai-transcribe-2": "$0.10 per audio hour (introductory, through Dec 2026)",
-    "deepseek-v4.1-flash": "0.30/1.20 peak, 0.15/0.60 off-peak (GA Sep 10 2026; API name deepseek-flash)",
+    "apodex 1.1": "0.3/3",
+    "quasar 438b": "0.6/1.8",
+    "claude fable 5.1": "10/50",
+    "claude mythos 5.1": "10/50",
+    "gemini omni 1.1 flash": "1.5/9",
+    "gemini 3.8 flash": "0.75/3.75",
+    "meta muse spark 1.3": "1.25/4.25",
+    "qwen3.8-max-0902": "2/6",
+    "gpt-6 astra": "10/50",
+    "deepseek-v4.1-flash": "0.3/1.2",
     "fugu max": "2/6",
-    "gemini 3.8 live": "$0.005/min audio in / $0.018/min audio out (Live API)",
-    "pareto": "2.50/7.50",
-    "step 5 preview": "1/2.70",
+    "pareto": "2.5/7.5",
+    "step 5 preview": "1/2.7",
     "qwen3.8-omni-flash": "0.15/0.47",
     "claude opus 5.5": "4/20",
     "gpt-6 sol": "2/10",
-    "gpt-6 luna": "0.10/0.50",
+    "gpt-6 luna": "0.1/0.5",
     "grok 4.7": "2/6",
-    "mimo-v2.6-flash": "$0.14/$0.28",
-    "mimo-v2.6-pro": "$0.435/$0.87",
-    "solar mini 4": "$0.10/$0.40",
+    "mimo-v2.6-flash": "0.14/0.28",
+    "mimo-v2.6-pro": "0.435/0.87",
+    "solar mini 4": "0.1/0.4",
+    "claude sonnet 5.5": "2/10",
+    "gpt-5.4": "2.5/15",
+    "claude opus 4.6": "5/25",
+    "claude mythos 5 (preview)": "10/50"
+  },
+  "priceNotes": {
+    "gpt-5.6 sol": "cut >20% on Aug 21 2026; promotional through ~Nov 21, was 5/30",
+    "claude sonnet 5": "permanent; the 3/15 increase scheduled for Sep 1 2026 was cancelled - re-confirmed on Anthropic's pricing page Aug 31",
+    "deepseek-v4-flash-0731": "peak, 0.22/0.66 off-peak (from Aug 16 2026)",
+    "flux 3 video": "$0.17/s HD, $0.29/s Full HD (full quality, audio included; $0.06/s draft HD)",
+    "minimax h3": "$0.13/s of 2K video output (768p tier $0.09/s, closed beta); first 5 reference images free, then $0.04 each",
+    "deepseek-v4-pro-0813": "peak, 0.66/1.98 off-peak (from Aug 16 2026)",
+    "deepseek-v4-flash": "peak, 0.22/0.66 off-peak (from Aug 16 2026)",
+    "deepseek-v4-pro": "peak, 0.66/1.98 off-peak (from Aug 16 2026)",
+    "glm-5.3-flash": "0.03 cached in; 50% launch discount through Sep 9 2026",
+    "deepseek-v4-flash-vision-exp": "0.007 cached in",
+    "ibm granite 4.2 30b": "open weights (Apache 2.0) - no first-party API price",
+    "ibm granite 4.2 8b": "open weights (Apache 2.0) - no first-party API price",
+    "cohere parse 5": "$1.50 per 1,000 pages",
+    "ling-3.0-flash-fin": "free (1-month promotional window via OpenRouter; standard rate not published)",
+    "apodex 1.1": "90% cache discount",
+    "claude fable 5.1": "cache reads $0.25 per 1M, down 75% from Fable 5",
+    "claude mythos 5.1": "restricted access",
+    "gemini omni 1.1 flash": "text out / $17.50 video out per 1M tokens (~$0.10 per second of 720p; 360p draft ~1/3 the rate)",
+    "gemini 3.8 flash": "introductory through Dec 31 2026; rises to 1.50/7.50 on Jan 1 2027",
+    "meta muse spark 1.3": "$0.15 cached; contributor tier $0.10/$0.20",
+    "meta muse voice transcribe": "$3 per 1,000 audio minutes",
+    "gpt-6 astra": "Fast tier 20/100, up to 2x speed",
+    "mai-transcribe-2": "$0.10 per audio hour (introductory, through Dec 2026)",
+    "deepseek-v4.1-flash": "peak, 0.15/0.60 off-peak (GA Sep 10 2026; API name deepseek-flash)",
+    "gemini 3.8 live": "$0.005/min audio in / $0.018/min audio out (Live API)",
     "ember-1": "n/a (free preview)",
     "saaras v4": "Rs 30/hr audio (Rs 45/hr with diarization)",
-    "claude sonnet 5.5": "2/10 (cache reads $0.20, cache writes $2.50)"
-  },
-  "leaderboard": {
-    "source": "LLM-Stats",
-    "rows": [
-      {
-        "rank": 1,
-        "name": "Claude Mythos Preview",
-        "lab": "Anthropic",
-        "score": 65.2,
-        "sub": "GPQA 94.6% · UNRELEASED",
-        "gold": true,
-        "flag": "preview"
-      },
-      {
-        "rank": 2,
-        "name": "GPT-5.2 Pro",
-        "lab": "OpenAI",
-        "score": 63.2,
-        "sub": "released",
-        "flag": "live"
-      },
-      {
-        "rank": 3,
-        "name": "Claude Opus 4.8",
-        "lab": "Anthropic",
-        "score": 61.3,
-        "sub": "released · current stable Opus",
-        "flag": "live"
-      }
-    ]
-  },
-  "upcoming": [
-    {
-      "name": "Claude Mythos Preview",
-      "lab": "Anthropic",
-      "status": "un",
-      "what": "Tops LLM-Stats (65.2, GPQA 94.6%) but never publicly released — held back by the Jun 12 US export order."
-    },
-    {
-      "name": "Mistral Large 3 — Reasoning",
-      "lab": "Mistral",
-      "status": "soon",
-      "what": "A reasoning variant of Large 3 was flagged \"coming soon\" on Mistral's own page; still unshipped as of April."
-    },
-    {
-      "name": "Grok 4.20 Heavy · 4.3 \"0309 v2\"",
-      "lab": "xAI",
-      "status": "soon",
-      "what": "xAI docs reference heavier / variant Grok tiers whose exact specs the research couldn't pin down yet."
-    },
-    {
-      "name": "Fable 5 / Mythos — return?",
-      "lab": "Anthropic",
-      "status": "un",
-      "what": "Both pulled ~Jun 12 by the US export order. Whether/when they return for any customer is unknown."
-    },
-    {
-      "name": "Generative-media wave",
-      "lab": null,
-      "status": "rum",
-      "what": "Veo 4, Sora 2, Seedance 2.0, Imagen 4, Kling, ElevenLabs/Stability music — all surfaced but NONE survived fact-check. Real activity likely; verified specs are not."
-    }
-  ],
-  "killed": [
-    {
-      "claim": "Google shipped a Gemini 3.5 Flash + \"Gemini Omni\" on May 19, 2026",
-      "vote": "1–2",
-      "src": "aireleasetracker"
-    },
-    {
-      "claim": "Opus 4.7 scored AA Index 57.28 / Coding 52.51",
-      "vote": "0–3",
-      "src": "whatllm.org"
-    },
-    {
-      "claim": "OpenAI's Feb-28 flagship was GPT-5.2 at $1.75 / $14 per M",
-      "vote": "1–2",
-      "src": "intuitionlabs"
-    },
-    {
-      "claim": "Grok 4.20: Mar 10 API, 2M ctx, $2/$6 (real: Feb, 1M, $1.25/$2.50)",
-      "vote": "0–3",
-      "src": "buildfastwithai"
-    },
-    {
-      "claim": "Opus 4.8 at $7.22/M (real: $5/$25; its 1M context was right)",
-      "vote": "0–3",
-      "src": "llm-stats"
-    },
-    {
-      "claim": "Over-specific Grok 4.3 figures from a bundled blog para",
-      "vote": "1–2",
-      "src": "venturebeat"
-    }
-  ],
-  "sources": [
-    "https://www.cnbc.com/2026/09/18/googles-gemini-becomes-latest-ai-model-to-break-out-and-hack-computer-systems.html",
-    "https://artificialanalysis.ai/changelog",
-    "https://docs.x.ai/docs/models",
-    "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026"
-  ]
+    "claude sonnet 5.5": "cache reads $0.20, cache writes $2.50",
+    "gpt-5.4": "Pro: $30/$180",
+    "claude mythos 5 (preview)": "preview"
+  }
 }
