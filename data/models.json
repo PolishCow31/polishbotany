@@ -4051,6 +4051,41 @@
         "https://www.marktechpost.com/2026/09/26/sarvam-ai-releases-saaras-v4-a-speech-to-text-model-for-all-22-indian-languages-and-global-english/",
         "https://www.business-standard.com/technology/artificial-intelligence/saaras-v4-sarvam-ai-new-speech-model-can-transcribe-22-indian-languages-126092500464_1.html"
       ]
+    },
+    {
+      "name": "Naive-N0.5-Flash",
+      "lab": "NaiveAI",
+      "released": "2026-09-27",
+      "params": "309B total MoE, 15.5B active",
+      "context": "1M tokens (native)",
+      "modality": "text in, text out (coding and AI R&D)",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Open-weight (MIT) MoE from Beijing lab NaiveAI, built on Xiaomi MiMo-V2.5. Uses a hybrid of sliding-window and DeepSeek Sparse Attention with no full-attention layers (39 SWA + 9 DSA layers) to reach a native 1M context; NaiveAI says AI systems designed much of the architecture and training stack under human guidance. Announced API price $0.10/$0.40 per M tokens, API not yet live at launch; up to ~2,000 tokens/s in an Ultrafast mode.",
+      "sources": [
+        "https://huggingface.co/NaiveAI/Naive-N0.5-Flash",
+        "https://pandaily.com/naiveai-naive-n05-flash-309b-moe-swa-dsa-1m-mit",
+        "https://naive.ai/en/research/"
+      ]
+    },
+    {
+      "name": "MiniMax M3.1-Flash-Preview",
+      "lab": "MiniMax",
+      "released": "2026-09-27",
+      "params": "not disclosed",
+      "context": "1M tokens",
+      "modality": "text in, text out (coding)",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Fast everyday-coding model available only inside MiniMax's own MiniMax Code tool, with a five-level reasoning-effort slider. MiniMax published no price, speed figure or benchmark, and there is no standalone M3.1 API yet; the full M3.1 release is still ahead.",
+      "sources": [
+        "https://pandaily.com/minimax-m3-1-flash-preview-coding-model-minimax-code",
+        "https://datanorth.ai/news/minimax-releases-m3-1-flash-preview"
+      ]
     }
   ]
 }
