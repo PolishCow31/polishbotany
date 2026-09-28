@@ -18,3 +18,14 @@ push-worker/package-lock.json
 push-worker/.wrangler/
 .wrangler/
 scripts/fox-sheet-elthen.png
+
+# updater runtime state — rewritten every sweep, never content
+scripts/.dead_streak
+scripts/.aa_rescale_alarm
+scripts/update.log.1
+# merge.py / market_sync.py write data files via <name>.<pid>.tmp + rename; a hard kill can strand one
+*.tmp
+# updater alarm state (merge.py / update.sh) — per-sweep bookkeeping, never content
+scripts/.section_rejects.json
+scripts/.section_alarm
+scripts/.aa_fail_streak

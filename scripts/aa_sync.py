@@ -18,8 +18,11 @@ half-up exactly like AA's table.
   python3 scripts/aa_sync.py --rebase        the manual step after AA re-versions: rewrites the whole column onto
                                              AA's current version and stamps data/meta.json aaScale.
   --dry-run                                  with --sync/--rebase: print the plan, write nothing.
+  --allow-drops                              accept a plan that removes more AA values than the drop guard allows
+                                             (only after checking why AA stopped listing those models).
 
-Exit: 0 ok · 1 fetch/parse failure (nothing written) · 2 AA re-versioned vs meta.aaScale (run --rebase).
+Exit: 0 ok · 1 fetch/parse failure (nothing written) · 2 refused, nothing written: AA re-versioned vs meta.aaScale
+(run --rebase), or the plan would drop too many existing values (AA-SYNC REFUSED; see DROP_GUARD).
 """
 import json, math, os, re, sys, urllib.request
 from datetime import datetime
@@ -32,6 +35,10 @@ UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML,
 KEY = "AA-Index"
 AA_KEY_RE = re.compile(r"aa[ -]?index|intelligence index", re.I)   # mirrors index.html benchOf('aa')
 MIN_SCORED, MIN_CHECKED = 300, 50                                  # sanity floors for a trustworthy parse
+# Drop guard: a run may remove existing AA values from at most max(5, 10% of scored models). If AA renames its models
+# (Sep 28 skeptic: every name prefixed with its lab), nothing matches and --sync would commit 111 -> 0 values; the
+# rescale guard didn't see it because it only counts values that MOVE, not values that vanish.
+DROP_GUARD_MIN, DROP_GUARD_FRAC = 5, 0.10
 
 # Botany name -> AA base name, only where normalized names genuinely differ. Keep this short and explicit.
 ALIASES = {
@@ -49,10 +56,22 @@ def load(name):
         return json.load(f)
 
 
-def save(name, obj):                      # identical to merge.py's save()
-    with open(os.path.join(DATA, name), "w") as f:
-        json.dump(obj, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+def save(name, obj):
+    """Same bytes as merge.py's dumps(), written atomically (tmp + os.replace): a crash or a serialization error
+    mid-write leaves the old file whole instead of a truncated models.json (Sep 28 skeptic #8)."""
+    path = os.path.join(DATA, name)
+    tmp = os.path.join(DATA, ".%s.%d.tmp" % (name, os.getpid()))
+    try:
+        with open(tmp, "w") as f:
+            json.dump(obj, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        os.replace(tmp, path)
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
 
 
 def half_up(x):
@@ -245,6 +264,11 @@ def apply(models, changes):
 
 
 def main(argv):
+    bad = [a for a in argv if a not in ("--check", "--sync", "--rebase", "--dry-run", "-v", "--allow-drops")]
+    if bad:    # a typo'd flag (e.g. "--sync --dry-rn") must never fall through to a real write
+        print("aa-sync: unknown argument %s; usage: aa_sync.py [--check|--sync|--rebase] [--dry-run] [-v] "
+              "[--allow-drops]. Nothing done." % " ".join(bad))
+        return 64
     mode = "--rebase" if "--rebase" in argv else "--sync" if "--sync" in argv else "--check"
     dry = "--dry-run" in argv or mode == "--check"
     verbose = "-v" in argv or dry
@@ -288,7 +312,8 @@ def main(argv):
     if rescaled and mode != "--rebase":
         print(summary)
         print("%s aa-sync: RESCALE — Artificial Analysis is on %s, Botany is pinned to %s%s. Nothing written. "
-              "Fix: python3 scripts/aa_sync.py --rebase"
+              "Fix: python3 scripts/aa_sync.py --rebase --dry-run, review, then --rebase (add --allow-drops if it "
+              "refuses on drops)"
               % (stamp, version or "an unannounced scale", pinned or "nothing",
                  "" if version else " (%d of %d values would move 3+ points)" % (len(moved), valued)))
         return 2
@@ -296,6 +321,15 @@ def main(argv):
         print(summary)
         print("%s aa-sync: can't read AA's index version off the page — refusing to stamp a scale." % stamp)
         return 1
+    limit = max(DROP_GUARD_MIN, DROP_GUARD_FRAC * valued)
+    if len(dropped) > limit and "--allow-drops" not in argv:
+        print(summary)
+        names = [n for n, _o, _v, _s in dropped]
+        print("%s AA-SYNC REFUSED: would drop %d scores (limit %d of %d scored) — nothing written. Would drop: %s%s. "
+              "If AA really renamed/delisted these: python3 scripts/aa_sync.py %s --allow-drops"
+              % (stamp, len(dropped), int(limit), valued, ", ".join(names[:20]),
+                 " (+%d more)" % (len(names) - 20) if len(names) > 20 else "", mode))
+        return 2
     print(summary)
     if dry or not changes and (mode != "--rebase" or pinned == version):
         return 0

@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=36"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=37"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -937,8 +937,7 @@ function platColor(p){
   const lo=(p||'').toLowerCase();
   return lo.includes('poly')?'#6f9ec4':lo.includes('metac')?'#4faf86':lo.includes('mani')?'#d9a85a':lo.includes('kalshi')?'#4fb8a6':lo.includes('epoch')?'#9a72c0':lo.includes('metr')?'#cf8a52':lo.includes('stanford')||lo.includes('artificial')?'#a98fd0':'#8a8d80';
 }
-function marketIsOpen(mk){
-  if(/\bresolved\b/i.test((mk.forecast||'')+' '+(mk.question||''))) return false;  // explicitly resolved (word-bounded so "unresolved" doesn't match)
+function marketIsOpen(mk){                          // resolution comes from market_sync's platform checks + resolveDate, never prose
   const dm=(mk.resolveDate||'').match(/^(\d{4}-\d{2}-\d{2})/);
   if(dm && dm[1] < todayISO()) return false;                                       // resolve date already passed
   return true;
