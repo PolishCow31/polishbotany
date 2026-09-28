@@ -5,6 +5,64 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Sep 28 2026
 
+### ✓ DONE (Sep 28) — updater pipeline hardened; market odds come from the platforms (f4c408d + cleanup b06b438, v37)
+Three adversarial skeptic rounds refuted earlier drafts. Each round found real defects: a stale Polymarket event
+endDate that would have dropped live release markets from Oct 1, an AA rename that could zero the whole column, and a
+merge crash on one malformed field that froze publishing with no alarm. Every fix landed with a regression test that
+fails on the pre-fix code. Chain: `claude -p` → `merge.py` → `aa_sync.py --sync` → `market_sync.py` → commit/push.
+**After ANY pipeline edit, all five must exit 0:** `python3 scripts/test_merge.py` · `test_market_sync.py` ·
+`test_oneshot_cleanup.py` · `test_aa_sync.py` (fetches AA live) · `bash scripts/test_update.sh all` (sandboxed
+update.sh: mktemp repo + bare remote + stubs; refuses to run if its rewrite could point at the real repo). Judge by
+exit code, never by grepping PASS lines.
+- **Markets = platform truth.** `scripts/market_sync.py` runs every sweep (150 s watchdog) and checks every
+  Polymarket, Manifold and Kalshi row against the platform's API.
+  - A row it can MAP is rendered entirely from the API: the platform's title, "NN% — Outcome" plus up to 2 more open
+    outcomes, the leg's resolveDate, `asOf`, `by:"api"`.
+  - A row it can't map is left byte-identical. Metaculus and expert rows are never fetched.
+  - Closed, resolved and dead rows drop, decided per LEG (the event-level endDate is stale by design).
+  - One row per (platform, question). A transient fetch failure never deletes anything.
+  - Why the redesign: the LLM's prose around a refreshed % contradicted it ("75.8% — easing from 74"), and the fresh
+    asOf hid that from the 14-day stale mute.
+- **merge.py:**
+  - Every delta value is type-checked, and each section is isolated: exit 3 = partial (published, but counted).
+  - Exit 4 = an unusable or fully rejected delta. ```json fences are stripped first.
+  - Benchmark values ≤ 0 are dropped.
+  - Every radar window form gets a real deadline: by / month / Qn / Hn / year / early-mid-late / season. "Not before X"
+    is open-ended. Lapsed items stay `late:true` for 30 days, then drop, and never roll into next year.
+  - Undated legacy market rows are pruned. Unchecked sources (Metaculus) get a `seen` stamp and 21 days of grace.
+  - The prose "resolved" drop is gone, from the renderer too (v37).
+- **update.sh:**
+  - The dead streak counts EVERY non-publishing sweep: no delta, merge 1/3/4, or a failed commit/push.
+  - The clean-data check sits right before merge, so a manual `aa_sync --rebase` during the claude window is safe.
+  - Watchdogs: aa_sync 180 s, push 120 s.
+  - Alarms (osascript, Mac only):
+    - AUTH EXPIRED;
+    - usage cap;
+    - DEAD STREAK (4 sweeps);
+    - SECTION FREEZE (a section offered items but accepted none for 8 sweeps);
+    - AA refused: the fix is printed in update.log. After a mass drop, review the listed names, then
+      `aa_sync.py --sync --allow-drops`. After a re-version: `--rebase --dry-run`, then `--rebase`;
+    - AA failing a day (`.aa_fail_streak`, 8× exit 1/142).
+- **aa_sync.py** refuses to drop > max(5, 10%) of scores and saves atomically. Unknown CLI flags on aa_sync or
+  market_sync exit 64 and write nothing.
+- **One-time cleanup** (`scripts/oneshot_cleanup_2026_09_28.py`, run on live data at 18:31, idempotent):
+  - markets 91 → 40: 24 closed/resolved/dead, 2 same-question duplicates, 9 URL duplicates, 13 invalid/audit rows,
+    3 undated;
+  - 64 benchmark keys canonicalized (the renderer matches both spellings; the crosswalk is still n=9, R² 0.89);
+  - prices 76 → 68, plus 30 priceNotes;
+  - glossary 1134 → 1104 (Circular and Vendor financing kept apart);
+  - sources 547 → 185 sweeps, with older ones in `data/sources-archive/YYYY-MM.json`.
+- **First real sweep on the new pipeline** (kickstarted 18:34, done 18:37, 718f6e0):
+  - merge exit 0: +3 news with 0 rejected, 14 radar items with 0 invalid, +1 market;
+  - aa-sync: 0 changes;
+  - market-sync: 29 checked, 29 rendered, 0 unmapped, 0 failed;
+  - pushed; streak 0, no freeze alarm;
+  - Pulse 76 words, absolute dates, no AA numbers.
+  - The new prompt and the validators agreed on the first try.
+- **Gotcha:** on `localhost:8095` inside the Claude browser pane the service worker never registers ("An unknown error
+  occurred when fetching the script"). That's the pane's localhost, not the app: on the live https site the same pane
+  shows the SW registered and activated (`botany-v5`), verified Sep 28 on v37.
+
 ### ✓ DONE (Sep 28) — v36 "large update": bugs, inconsistencies, over-explanation, UI (a26f789)
 - **Robustness:** per-view `safe()` render isolation + `boot().catch` (one bad data file can't blank the app); data
   normalized on load; dead `trends.json`/`predictions.json` fetches removed.
