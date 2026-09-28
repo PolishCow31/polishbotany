@@ -3,6 +3,36 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## State — Sep 28 2026
+
+### ✓ DONE (Sep 28) — v36 "large update": bugs, inconsistencies, over-explanation, UI (a26f789)
+- **Robustness:** per-view `safe()` render isolation + `boot().catch` (one bad data file can't blank the app); data
+  normalized on load; dead `trends.json`/`predictions.json` fetches removed.
+- **Longest-context bug:** `ctxNum` read a speech model's "80ms" as 80M tokens. Now needs a number whose K/M suffix
+  isn't followed by a letter. `benchOf` returns ONE preferred key per category (no max across SWE variants).
+- **SWE-bench Verified→Pro crosswalk** (his idea, "80% on legacy ≈ 33% on current"): logit-linear fit
+  `logit(Pro) = −0.885 + 0.789·logit(Verified)`, n=9 models that report both, R² 0.888, s≈0.21. Era guard: released
+  ≥ 2025-10-15 (earliest paired model, Claude Haiku 4.5) AND Verified ≥ 68.3 (min paired − 5). Converts 10 2026 models;
+  blocks GPT-5 / Opus 4 / Sonnet 4 / K-EXAONE 2.0 / Granite (at Pro's Sep 2025 launch, ~70% Verified models scored
+  ~23% on Pro: the relationship drifted, hence the guard). Feeds Home "Coding · SWE Pro", head-to-head Coding bars
+  ("~" = estimate) and the SWE-bench Pro trajectory (hollow = converted; live footnote prints n and R²). Native beats
+  estimated within a lab-month.
+- **Pricing:** exact-name key or the model's own pricing field, no substring fallback (killed "$NaN"/"$Rs"/"$$");
+  `priceNotes` render as a muted line.
+- **Timeline:** month cells derive from `expectedWindow` (LATE / TBA / Q4 / H2). Radar folded into Timeline
+  (All/Frontier/Open filter + "Next frontier release" hero).
+- **His Sep 28 picks:** toggle reads "Closed | Open" (internal values unchanged) · nav "Current" → "Models" · tagline
+  on the splash only · "Glossary" eyebrow · the Sep 23 AA-rescale notes on briefs KEPT.
+- **Perf/UX:** Sources tree lazy-built (boot DOM 4.6 MB → 1 KB); refresh on visibilitychange after 15 min; 16px
+  selects (no iOS zoom); hover styles gated to hover-capable pointers; "Add to Home Screen for alerts" hint; Markets
+  story clamped behind Read more; no "-0", axis clamps; head-to-head labels no longer cut mid-version; ~45 copy cuts.
+- **`sw.js`:** one cache `botany-v5`, network-first (4 s/8 s timeouts), caches only ok same-origin responses; push
+  handlers byte-identical.
+- Verified: live Pages serves v36 + "Models" (curl); iOS simulator on the live URL.
+- **Gotcha:** the :8095 `http.server` sends no Cache-Control, so a browser tab can heuristically serve an OLD
+  index.html (the browser pane showed v34 on Sep 28 while the server had v36). Reload with cache bypass before judging
+  a deploy. Pages sends `max-age=600`: a phone can see the previous shell for up to 10 min after a push.
+
 ## State — Sep 23 2026
 
 ### ✓ DONE (Sep 23) — AA-Index rebased onto Artificial Analysis v4.3, now synced from AA's own data (e111d03, 5369c72)
