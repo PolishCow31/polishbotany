@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=35"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=36"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -40,64 +40,39 @@
     background:transparent;}
   /* soft light-sage watercolor texture — even & airy behind the cards */
   #forest{position:fixed;inset:0;z-index:-2;pointer-events:none;
-    background:url(img/bgtex-a.jpeg) center top/cover fixed, #cfe3c2;}
+    background:url(img/bgtex-a.jpeg) center top/cover, #cfe3c2;}
   #pollen{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;pointer-events:none;opacity:.55}
   ::selection{background:rgba(98,193,119,.28);color:#fff}
   a{color:#8fd6a0;text-decoration:none}
 
-  header.bar{display:block;position:sticky;top:0;z-index:20;padding:calc(env(safe-area-inset-top) + 14px) 18px 12px;
-    background:linear-gradient(180deg,var(--bg) 90%,transparent);backdrop-filter:blur(8px)}  /* display:block guards against the .bar bar-chart grid (class-name collision, line ~234) */
+  header.bar{position:sticky;top:0;z-index:20;padding:calc(env(safe-area-inset-top) + 10px) 18px 10px;
+    background:linear-gradient(180deg,var(--bg) 90%,transparent);backdrop-filter:blur(8px)}   /* wordmark only — the tagline lives on the splash */
   .bar .row{display:flex;align-items:center;gap:11px;width:100%}
   .logo{width:30px;height:30px;flex:none}
-  .bar h1{font-size:23.8px;font-weight:780;letter-spacing:-.01em;margin:0;line-height:1.02;color:var(--ink)}
+  .bar h1{font-family:var(--display);font-size:23.8px;font-weight:600;letter-spacing:0;margin:0;line-height:1.02;color:var(--ink)}
   .bar .brand{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}
-  .bar .tagline{margin:0;font-size:12.4px;font-weight:500;color:var(--accent);letter-spacing:.005em;line-height:1.25}
-  .bar .upd{margin-left:auto;text-align:right;font:600 12.5px var(--mono);color:var(--ink3);line-height:1.45;white-space:nowrap}
-  .bar .upd b{color:var(--good)}
 
   main{padding:14px 14px calc(var(--navh) + env(safe-area-inset-bottom) + 22px)}
   .view{display:none;animation:fade .2s ease}
   .view.on{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
-  .vh{font:700 15.0px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:4px 0 4px}
-  .vsub{font-size:15.6px;color:var(--ink3);margin:0 0 14px;line-height:1.5}
+  .vh{font:700 15.0px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#27492f;margin:4px 0 4px}   /* deep forest: sits bare on the light sage bg */
 
-  /* filter chips */
-  .filters{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;margin:0 -2px 4px;scrollbar-width:none}
-  .filters::-webkit-scrollbar{display:none}
-  .fchip{flex:none;border:1px solid var(--line);background:var(--bg2);color:var(--ink2);border-radius:999px;
-    padding:5px 11px;font:600 15.0px var(--sans);display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap}
-  .fchip .sw{width:8px;height:8px;border-radius:50%}
-  .fchip.off{opacity:.34}
-  .fchip.all{border-color:var(--line2)}
-  .fchip.on{border-color:var(--accent);color:var(--ink);background:rgba(91,140,255,.13)}
-  /* segmented Frontier ↔ Open switch */
+  /* segmented switch: Closed ↔ Open weights (and the Timeline's All / Frontier / Open release filter) */
   .seg{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-bottom:12px;max-width:100%}
   .seg button{border:none;background:none;color:var(--ink3);font:650 15.6px var(--sans);padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.12s}
   .seg button.on{background:var(--panel2);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.35)}
-  .seg button[data-mode="open"].on{color:#7ea6ff}
+  .seg button[data-mode="open"].on{color:#9fd9ad}
 
   /* model card */
   .badge{font:700 11.9px var(--mono);padding:2px 6px;border-radius:5px;letter-spacing:.03em}
   .b-live{background:rgba(52,211,153,.12);color:var(--good)} .b-pulled{background:rgba(240,109,109,.12);color:var(--bad)}
-  .b-preview{background:rgba(245,185,69,.12);color:var(--warn)} .b-open{background:rgba(91,140,255,.12);color:#7ea6ff}
-  .b-historic{background:rgba(154,163,178,.12);color:var(--ghost)} .b-milestone{background:rgba(245,185,69,.14);color:var(--warn)}
-
-  /* timeline */
-  .tl{position:relative;padding-left:20px;margin-top:6px}
-  .tl::before{content:"";position:absolute;left:4px;top:6px;bottom:6px;width:2px;background:var(--line2)}
-  .tnode{position:relative;margin-bottom:15px}
-  .tnode::before{content:"";position:absolute;left:-20px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--lab,var(--accent));box-shadow:0 0 0 4px var(--bg)}
-  .tnode .yr{font:700 13.8px var(--mono);color:var(--accent)}
-  .tnode .nm{font-size:18.1px;font-weight:720;margin-top:1px}
-  .tnode .nm .lab{font:600 13.8px var(--sans);color:var(--ink3);margin-left:6px}
-  .tnode .why{font-size:15.0px;color:var(--ink2);margin-top:3px;line-height:1.45}
-  .showall{text-align:center;margin:6px 0 2px}
-  .showall button{background:var(--panel);border:1px solid var(--line2);color:var(--accent);border-radius:999px;padding:8px 18px;font:650 15.6px var(--sans);cursor:pointer}
+  .b-preview{background:rgba(245,185,69,.12);color:var(--warn)} .b-open{background:rgba(98,193,119,.13);color:var(--accent)}
+  .b-historic,.b-superseded{background:rgba(154,163,178,.12);color:var(--ghost)}
 
   /* accordion */
   details.acc{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin-bottom:10px;overflow:hidden}
-  details.acc>summary{cursor:pointer;padding:13px 15px;font-weight:720;font-size:18.1px;display:flex;align-items:center;gap:9px;list-style:none}
+  details.acc>summary{cursor:pointer;padding:13px 15px;font-weight:700;font-size:18.1px;display:flex;align-items:center;gap:9px;list-style:none}
   details.acc>summary::-webkit-details-marker{display:none}
   details.acc>summary .tw{transition:.2s;color:var(--ink3);font-size:13.8px}
   details.acc[open]>summary .tw{transform:rotate(90deg)}
@@ -108,46 +83,31 @@
   /* charts */
   .svgchart{display:block;width:100%;height:auto;overflow:visible}
   .svgchart text{font-family:var(--mono);fill:var(--ink3)}
-  .svgchart .mn{font-family:var(--mono)}
   .chartcard{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:13px 12px 10px;margin-bottom:11px}
-  .chartcard h4{margin:0 0 2px;font-size:16.9px;font-weight:720;color:var(--ink)}
+  .chartcard h4{margin:0 0 2px;font-size:16.9px;font-weight:700;color:var(--ink)}
   .chartcard .cd{font-size:13.8px;color:var(--ink3);margin-bottom:8px;line-height:1.4}
-  .lgd{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;font:600 12.5px var(--mono);color:var(--ink3)}
-  .lgd span{display:inline-flex;align-items:center;gap:5px}
-  .swline{width:13px;height:0;border-top:2px solid var(--accent)} .swdash{width:13px;height:0;border-top:2px dashed var(--warn)}
-  .swband{width:11px;height:8px;border-radius:2px;background:rgba(245,185,69,.2);border:1px solid rgba(245,185,69,.4)}
-  .sattag{font:700 11.2px var(--mono);color:var(--ghost);background:rgba(154,163,178,.1);padding:2px 5px;border-radius:5px}
   .legend2{display:flex;flex-wrap:wrap;gap:9px 12px;margin-top:9px;font:600 12.5px var(--mono);color:var(--ink3)}
   .legend2 span{display:inline-flex;align-items:center;gap:5px}
   .legend2 .ld{width:9px;height:9px;border-radius:50%}
-  .tdhint{font:600 13.1px var(--mono);color:var(--ink3);text-align:center;padding:9px;margin-top:10px;background:var(--bg);border:1px dashed var(--line2);border-radius:9px}
   .tdetail{margin-top:10px;background:var(--bg);border:1px solid var(--line);border-left:3px solid var(--lab,var(--accent));border-radius:9px;padding:10px 12px}
-  .tdetail.pred{border-left-color:var(--warn);border-left-style:dashed}
   .td-top{display:flex;align-items:baseline;gap:8px}
-  .td-nm{font-size:16.9px;font-weight:730}
+  .td-nm{font-size:16.9px;font-weight:700}
   .td-sc{margin-left:auto;font:700 17.5px var(--mono);color:var(--accent)}
-  .tdetail.pred .td-sc{color:var(--warn)}
   .td-meta{font:600 13.1px var(--mono);color:var(--ink3);margin-top:3px}
   .td-why{font-size:15.0px;color:var(--ink2);margin-top:6px;line-height:1.45}
-  svg circle[data-model]:active,svg circle[data-pred]:active{r:6.5}
-  .hh{width:100%;border-collapse:collapse;font-size:15.0px;min-width:320px}
-  .hh th{text-align:right;font:700 12.5px var(--mono);color:var(--ink3);padding:5px 7px;border-bottom:1px solid var(--line2);text-transform:uppercase}
-  .hh th:first-child{text-align:left}
-  .hh td{text-align:right;padding:7px;border-bottom:1px solid var(--line);font-family:var(--mono);color:var(--ink)}
-  .hh td:first-child{text-align:left;font-family:var(--sans);font-weight:650}
-  .hh tr:last-child td{border-bottom:none}
-  .hh .hhm{display:flex;align-items:center;gap:6px}
-  .hh .hd{width:8px;height:8px;border-radius:50%;flex:none}
+  svg circle[data-bench]:active{r:6.5}
   .mktrow{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:8px}
   .mkt-top{display:flex;align-items:center;gap:8px}
   .mkt-plat{font:700 11.2px var(--mono);border:1px solid;border-radius:5px;padding:2px 6px;text-transform:uppercase}
-  .mkt-fc{margin-left:auto;font:700 16.2px var(--mono);color:var(--ink)}
   .mkt-q{font-size:15.0px;color:var(--ink2);margin-top:6px;line-height:1.4}
   .mkt-d{font:600 12.5px var(--mono);color:var(--ink3);margin-left:auto}
   .mkt-go{margin-left:6px;color:var(--ink3);font-size:13.8px}
   .mkt-fc2{font:600 15.6px var(--mono);color:var(--ink);margin-top:6px;line-height:1.45;word-break:break-word}
+  .mkt-fc2.stale{color:var(--ink3)}                                   /* % older than 14 days (or never stamped): muted, no bar */
+  .mkt-asof{font:600 11.5px var(--mono);letter-spacing:.02em;color:var(--ink3);margin-top:3px}
   .mktrow.lnk{cursor:pointer;transition:border-color .15s,background .15s}
-  .mktrow.lnk:hover,.mktrow.lnk:focus-visible{border-color:var(--ink3);background:var(--panel);outline:none}
+  .mktrow.lnk:focus-visible{border-color:var(--ink3);background:var(--panel);outline:none}
+  @media (hover:hover){.mktrow.lnk:hover{border-color:var(--ink3);background:var(--panel)}}
   .subacc{border-left:2px solid var(--line);margin:8px 0 8px 1px}
   .subacc>summary{cursor:pointer;padding:7px 9px;font-weight:680;font-size:15.6px;display:flex;align-items:center;gap:7px;list-style:none;color:var(--ink2)}
   .subacc>summary::-webkit-details-marker{display:none}
@@ -158,46 +118,34 @@
   .mktstory p{font-size:16.2px;color:var(--ink);line-height:1.64;margin:0 0 11px}
   .mktstory p:last-child{margin-bottom:0}
   .mktstory p b{color:var(--accent);font-weight:700}
+  .mktstory.clamp p:not(:first-child){display:none}                  /* opens on paragraph one; "Read more" shows the rest */
+  .mktstory.clamp p:first-child{margin-bottom:0}
   .mktgrp-h{display:flex;align-items:center;font:700 13.1px var(--mono);letter-spacing:.4px;text-transform:uppercase;color:var(--ink3);margin:15px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line)}
   .mktgrp-h .ct{margin-left:auto;font-weight:600;color:var(--ink3)}
   .chartkey{font-size:13.1px;color:var(--ink3);margin-top:5px;line-height:1.4}
-  .rebasenote{font-size:13.1px;color:#cf9a3d;background:rgba(207,154,61,.09);border:1px solid rgba(207,154,61,.26);border-radius:7px;padding:6px 8px;margin:6px 0 2px;line-height:1.42}
-  .td-band{font:600 13.8px var(--mono);color:var(--ink3)}
   .td-src{font-size:13.1px;color:var(--ink3);margin-top:6px;line-height:1.4}
   .newsrow{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:9px}
   .newsrow.lnk{cursor:pointer;transition:border-color .15s,background .15s}
-  .newsrow.lnk:hover,.newsrow.lnk:focus-visible{border-color:var(--ink3);background:var(--panel);outline:none}
+  .newsrow.lnk:focus-visible{border-color:var(--ink3);background:var(--panel);outline:none}
+  @media (hover:hover){.newsrow.lnk:hover{border-color:var(--ink3);background:var(--panel)}}
   .news-top{display:flex;align-items:center;gap:8px}
   .news-src{font:700 11.2px var(--mono);border:1px solid;border-radius:5px;padding:2px 6px;text-transform:uppercase;letter-spacing:.3px}
   .news-topic{font:600 11.9px var(--mono);color:var(--ink3);border:1px solid var(--line);border-radius:5px;padding:2px 6px}
   .news-date{margin-left:auto;font:600 12.5px var(--mono);color:var(--ink3)}
   .news-title{font-size:16.9px;font-weight:680;color:var(--ink);margin-top:8px;line-height:1.38}
   .news-blurb{font-size:15.0px;color:var(--ink2);margin-top:5px;line-height:1.5}
-  /* predict — frontier release radar */
+  /* predict — Timeline hero + release sheet */
   .phero{background:linear-gradient(135deg,color-mix(in srgb,var(--lab) 22%,var(--panel)),var(--panel));border:1px solid color-mix(in srgb,var(--lab) 40%,var(--line));border-radius:13px;padding:13px 15px;margin-bottom:12px}
   .phero-k{font:700 12.5px var(--mono);letter-spacing:.5px;text-transform:uppercase;color:var(--lab)}
-  .phero-m{font-size:23.8px;font-weight:760;color:var(--ink);margin-top:4px;display:flex;align-items:center;gap:8px}
+  .phero-m{font-size:23.8px;font-weight:700;color:var(--ink);margin-top:4px;display:flex;align-items:center;gap:8px}
   .phero-w{font-size:16.2px;color:var(--ink2);margin-top:3px}
   .phero-w b{color:var(--ink)}
-  .phero-b{font-size:14.4px;color:var(--ink3);margin-top:6px;line-height:1.45}
-  .relrow{display:flex;gap:10px;padding:11px 0;border-bottom:1px solid var(--line)}
-  .relrow.fr{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 8%,transparent),transparent);border-left:2px solid var(--accent);padding:10px 9px;border-radius:0 9px 9px 0;margin:3px 0}
   .rel-dot{width:9px;height:9px;border-radius:50%;flex:none;margin-top:5px}
-  .rel-main{flex:1;min-width:0}
-  .rel-top{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
-  .rel-name{font-size:17.5px;font-weight:700;color:var(--ink)}
   .fr-tag{font:700 10.0px var(--mono);letter-spacing:.4px;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:4px;padding:1px 5px}
-  .rel-when{margin-left:auto;font:600 13.8px var(--mono);color:var(--ink2)}
-  .rel-sub{font-size:13.8px;color:var(--ink3);margin-top:3px;display:flex;align-items:center;gap:7px}
   .rel-noprob{font:600 13.1px var(--mono);color:var(--ink3);margin-top:6px}
-  .rel-basis{font-size:13.8px;color:var(--ink3);margin-top:5px;line-height:1.45}
   .pbar{position:relative;height:16px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;margin-top:7px;overflow:hidden}
   .pbar-fill{position:absolute;left:0;top:0;bottom:0;border-radius:8px 0 0 8px;opacity:.5}
   .pbar-n{position:absolute;right:7px;top:0;line-height:16px;font:700 12.5px var(--mono);color:var(--ink)}
-  .reldet{font-size:15.0px;color:var(--ink2);background:var(--bg2);border:1px solid var(--line);border-left:2px solid var(--lab);border-radius:8px;padding:8px 10px;line-height:1.5}
-  .reldet b{color:var(--ink)}
-  .reldet-b{margin-top:4px;color:var(--ink3)}
-  .reldet-s{margin-top:4px;font-size:13.1px;color:var(--ink3)}
   .mkt-bar{height:5px;background:var(--bg);border-radius:3px;margin-top:8px;overflow:hidden}
   .mkt-bar-fill{height:100%;border-radius:3px;opacity:.72}
   /* glossary search (More) */
@@ -212,21 +160,20 @@
   .gt-def{font-size:15.0px;color:var(--ink2);margin-top:4px;line-height:1.5}
   /* model info button + popup */
   .infobtn{display:inline-flex;align-items:center;gap:5px;margin-top:9px;background:var(--bg2);border:1px solid var(--line);color:var(--ink2);font:600 14.4px var(--sans);border-radius:8px;padding:5px 10px;cursor:pointer;transition:border-color .15s,color .15s}
-  .infobtn:hover{border-color:var(--accent);color:var(--ink)}
+  @media (hover:hover){.infobtn:hover{border-color:var(--accent);color:var(--ink)}}
   .infobtn svg{color:var(--accent)}
   .modal{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center}
   .modal[hidden]{display:none}
-  .modal-bg{position:absolute;inset:0;background:rgba(4,6,11,.66);backdrop-filter:blur(2px)}
-  .modal-card{position:relative;z-index:1;width:100%;max-width:540px;max-height:86vh;overflow-y:auto;background:var(--panel);border:1px solid var(--line);border-radius:18px 18px 0 0;padding:20px 18px calc(24px + env(safe-area-inset-bottom));box-shadow:0 -8px 40px rgba(0,0,0,.5);animation:sheet .22s ease}
+  .modal-bg{position:absolute;inset:0;background:rgba(4,6,11,.66);backdrop-filter:blur(2px);cursor:pointer}   /* cursor:pointer = iOS Safari delivers the tap-to-close click */
+  .modal-card{position:relative;z-index:1;width:100%;max-width:540px;max-height:86vh;max-height:86dvh;overflow-y:auto;overscroll-behavior:contain;background:var(--panel);border:1px solid var(--line);border-radius:18px 18px 0 0;padding:20px 18px calc(24px + env(safe-area-inset-bottom));box-shadow:0 -8px 40px rgba(0,0,0,.5);animation:sheet .22s ease}
   @keyframes sheet{from{transform:translateY(20px);opacity:.4}to{transform:none;opacity:1}}
   .modal-x{position:absolute;top:13px;right:13px;width:30px;height:30px;border-radius:50%;background:var(--bg2);border:1px solid var(--line);color:var(--ink2);font-size:17.5px;cursor:pointer;display:flex;align-items:center;justify-content:center}
-  .mi-nm{font-size:23.8px;font-weight:760;color:var(--ink);padding-right:34px;line-height:1.25}
+  .mi-nm{font-size:23.8px;font-weight:700;color:var(--ink);padding-right:34px;line-height:1.25}
   .mi-meta{display:flex;align-items:center;gap:7px;flex-wrap:wrap;font-size:15.0px;color:var(--ink2);margin-top:7px}
   .mi-meta .dot{width:8px;height:8px;border-radius:50%}
   .mi-brief{margin-top:12px}
   .mi-brief p{font-size:16.9px;color:var(--ink);line-height:1.62;margin:0 0 11px}
   .mi-brief p:last-child{margin-bottom:0}
-  .mi-fallback{font-size:13.8px;color:var(--ink3);margin-top:10px;font-style:italic}
   /* tie popup — list of all tied models */
   .tiemodal-list{margin-top:14px}
   .tierow{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}
@@ -235,84 +182,31 @@
   .tierow .tnm{font-size:16.9px;font-weight:650;color:var(--ink)}
   .tierow .tlab{margin-left:auto;font:600 13.8px var(--mono);color:var(--ink3)}
 
-  /* horizontal bar (head-to-head + weights) */
-  .bar{display:grid;grid-template-columns:96px 1fr 40px;align-items:center;gap:8px;margin-bottom:8px}
-  .bar .bl{font-size:14.4px;color:var(--ink2);text-align:right;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .bar .track{height:18px;background:var(--bg);border-radius:5px;overflow:hidden;position:relative;border:1px solid var(--line)}
-  .bar .fill{height:100%;border-radius:4px}
-  .bar .bv{font:700 14.4px var(--mono);color:var(--ink)}
-  .ceil-tick{position:absolute;top:-3px;bottom:-3px;border-left:2px dashed rgba(245,185,69,.6);z-index:3}
-  .ceil-lab{font:700 12.5px var(--mono);color:var(--warn);margin:0 0 9px;display:flex;align-items:center;gap:7px}
-  .ceil-lab::before{content:"";width:16px;border-top:2px dashed rgba(245,185,69,.6)}
-  .wlabel{font:600 13.1px var(--mono);color:var(--ink2);white-space:nowrap}
-
-  /* cadence stats */
-  .cadstats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:2px 0 14px}
-  .cadstat{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-  .cadstat .v{font:780 22.5px var(--sans);color:var(--ink);line-height:1.1}
-  .cadstat .v small{font-size:13.8px;color:var(--ink2);font-weight:600}
-  .cadstat .l{font:600 13.1px var(--sans);color:var(--ink3);margin-top:4px;line-height:1.3}
-
-  /* prediction gauge */
-  .pcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px}
-  .pcard .ptop{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-  .pcard .pnm{font-size:18.1px;font-weight:730}
-  .pcard .pbench{margin-left:auto;font:700 13.1px var(--mono);color:var(--accent)}
-  .pcard .pmeta{font:600 13.1px var(--mono);color:var(--ink3);margin-top:2px}
-  .pcard .basis{font-size:15.0px;color:var(--ink2);margin-top:8px;line-height:1.45}
-  .gauge{margin-top:10px}
-  .gauge .gtrack{position:relative;height:28px;background:var(--bg2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-  .gauge .band{position:absolute;top:0;bottom:0;background:rgba(245,185,69,.16);border-left:1px solid rgba(245,185,69,.5);border-right:1px solid rgba(245,185,69,.5)}
-  .gauge .pt{position:absolute;top:50%;width:11px;height:11px;border-radius:50%;background:var(--warn);transform:translate(-50%,-50%);box-shadow:0 0 0 3px var(--panel)}
-  .gauge .gv{position:absolute;top:-1px;transform:translateX(-50%);font:700 13.8px var(--mono);color:var(--warn)}
-  .gauge .lbls{display:flex;justify-content:space-between;font:600 11.9px var(--mono);color:var(--ink3);margin-top:4px}
-  .conf{font:700 11.2px var(--mono);padding:2px 6px;border-radius:5px}
-  .conf.high{background:rgba(52,211,153,.12);color:var(--good)} .conf.medium{background:rgba(245,185,69,.12);color:var(--warn)} .conf.low{background:rgba(240,109,109,.12);color:var(--bad)}
-
   /* leaderboard */
   .lbrow{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:11px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px}
   .lbrow.gold{border-color:rgba(245,185,69,.4);background:linear-gradient(100deg,rgba(245,185,69,.07),var(--bg2)),var(--bg2)}
-  .lbrank{font:780 23.8px var(--mono);color:var(--ink3);text-align:center}
+  .lbrank{font:700 23.8px var(--mono);color:var(--ink3);text-align:center}
   .lbrow.gold .lbrank{color:var(--warn)}
-  .lbname{font-weight:730;font-size:17.5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .lbname{font-weight:700;font-size:17.5px;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
   .lbsub{font:600 13.1px var(--mono);color:var(--ink3);margin-top:2px}
-  .lbscore{text-align:right;font:780 22.5px var(--mono);color:var(--ink)}
-  .lbscore small{display:block;font:600 10.6px var(--mono);color:var(--ink3);letter-spacing:.05em}
+  .lbscore{text-align:right;font:700 22.5px var(--mono);color:var(--ink)}
+  .lb-unscored{font-size:13.1px;line-height:1.45;color:#456a4d;margin:2px 3px 0}   /* bare on the sage bg */
 
-  /* upcoming + killed rows */
-  .hrow{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px}
-  .hrow.rum{opacity:.82;border-style:dashed}
-  .hname{font-size:16.9px;font-weight:720;display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px}
-  .hname .dot{width:8px;height:8px;border-radius:50%}
-  .hwhat{font-size:15.0px;color:var(--ink2);line-height:1.45}
+  /* release status pills (release sheet) */
   .hpill{font:700 11.2px var(--mono);padding:2px 6px;border-radius:5px}
-  .h-un{background:rgba(245,185,69,.12);color:var(--warn)} .h-soon{background:rgba(91,140,255,.12);color:#7ea6ff}
+  .h-soon{background:rgba(98,193,119,.14);color:#9fd9ad}
   .h-rum{background:rgba(154,163,178,.1);color:var(--ghost)}
-  .kill{display:flex;gap:11px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px}
-  .kill .x{color:var(--bad);font-weight:800;flex:none}
-  .kclaim{font-size:15.6px;color:var(--ink);font-weight:600;margin-bottom:3px;line-height:1.4}
-  .kmeta{font:600 13.1px var(--mono);color:var(--ink3)}
-  .correction{background:linear-gradient(100deg,rgba(52,211,153,.09),var(--bg2));border:1px solid rgba(52,211,153,.3);border-left:3px solid var(--good);border-radius:11px;padding:11px 13px;font-size:15.0px;color:var(--ink2);line-height:1.5;margin-bottom:12px}
-  .correction b{color:var(--ink)}
-  .src{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:14.4px}
-  .src:first-child{border-top:none}
-  .src a{color:#8db4ff;word-break:break-all}
   .srclist{padding-top:3px!important}
   .srcrow{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:14.4px;cursor:pointer}
   .srcrow:first-child{border-top:none}
-  .srcu{flex:1;color:#8db4ff;word-break:break-all}
-  .srcrow:hover .srcu{text-decoration:underline}
-  .sq{font:700 10.6px var(--mono);padding:2px 5px;border-radius:4px;flex:none}
-  .sq.primary{background:rgba(52,211,153,.13);color:var(--good)} .sq.secondary{background:rgba(91,140,255,.13);color:#7ea6ff} .sq.blog{background:rgba(154,163,178,.12);color:var(--ghost)}
+  .srcu{flex:1;color:#8fd6a0;word-break:break-all}
+  @media (hover:hover){.srcrow:hover .srcu{text-decoration:underline}}
 
-  .note{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:15.6px;color:var(--ink2);line-height:1.55;margin-bottom:10px}
-  .note b{color:var(--ink)}
-  .caveat{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14.4px;color:var(--ink3);line-height:1.5;margin-top:11px}
-  .caveat b{color:var(--ink2)}
-  .empty{text-align:center;color:var(--ink3);font-size:15.6px;padding:24px 10px}
+  .empty{text-align:center;color:#456a4d;font-size:15.6px;padding:24px 10px}   /* bare on the sage bg … */
+  .ftab-panel .empty,.chartcard .empty,.modal-card .empty{color:var(--ink3)}  /* … but light ink inside the dark panels */
 
   nav.tabs{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:560px;z-index:30;
-    display:flex;background:rgba(12,15,22,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);
+    display:flex;background:rgba(28,46,35,.93);backdrop-filter:blur(14px);border-top:1px solid var(--line);
     padding-bottom:env(safe-area-inset-bottom);height:calc(var(--navh) + env(safe-area-inset-bottom))}
   nav.tabs button{flex:1;background:none;border:none;color:var(--ink3);font-family:var(--sans);
     display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;padding:8px 1px;transition:color .15s}
@@ -323,55 +217,28 @@
   /* home */
   .hero{font-size:16.2px;color:var(--ink2);line-height:1.55;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:13px 15px;margin-bottom:13px}
   .hero b{color:var(--ink)}
-  .hsec{font:700 13.8px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin:20px 0 10px}
+  .hsec{font:700 13.8px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#375a43;margin:20px 0 10px}
   .bestgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
   .bestcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:11px 12px;border-left:3px solid var(--lab,var(--accent))}
   .bclabel{font:600 13.1px var(--sans);color:var(--ink3)}
-  .bcname{font-size:16.9px;font-weight:730;margin-top:3px;line-height:1.2}
+  .bcname{font-size:16.9px;font-weight:700;margin-top:3px;line-height:1.2}
   .bcval{font:700 14.4px var(--mono);color:var(--accent);margin-top:4px}
   .tiecard{cursor:pointer}
   .tiechev{color:var(--ink3);display:inline-block;transition:transform .2s;font-weight:700}
-  .tiecard.exp{grid-column:1/-1}
-  .tiecard.exp .tiechev{transform:rotate(90deg)}
-  .tielist{display:none;flex-wrap:wrap;gap:5px;margin-top:9px}
-  .tiecard.exp .tielist{display:flex}
-  .tiechip{display:inline-flex;align-items:center;gap:5px;font-size:14.4px;font-weight:600;color:var(--ink2);background:var(--bg2);border:1px solid var(--line);border-radius:7px;padding:3px 8px}
-  .tiedot{width:7px;height:7px;border-radius:50%;flex:none}
-  .explore{display:flex;flex-direction:column;gap:7px}
-  .explore button{text-align:left;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 14px;cursor:pointer;display:flex;align-items:baseline;gap:10px;color:var(--ink2);width:100%;font-family:var(--sans)}
-  .explore button b{color:var(--ink);font-size:16.9px;min-width:58px}
-  .explore button span{font-size:14.4px;color:var(--ink3)}
-  .explore button::after{content:"›";margin-left:auto;color:var(--ink3);font-size:22.5px;align-self:center}
 
   /* ════════════════ FOREST / WOODLAND @ DUSK — restrained reskin (overrides above) ════════════════ */
   /* soft & rounded, warm-bordered cards with a gentle drop shadow (cozier than the original) */
-  .chartcard,details.acc,.pcard,.phero,.lbrow,.mktrow,.newsrow,.hrow,.kill,.cadstat,.note,.caveat,
-  .bestcard,.modal-card,.reldet,.tdetail,.correction{border-radius:16px}
-  .chartcard,details.acc,.pcard,.lbrow{box-shadow:0 2px 12px rgba(0,0,0,.26);border-color:var(--line)}
-  .lbrow:hover{box-shadow:0 4px 18px rgba(0,0,0,.34)}
-  .infobtn,.showall button,.gsearch,.fchip,.seg,.badge,.hpill,.conf,.sq,.pbar,.mkt-bar{border-radius:10px}
+  .chartcard,details.acc,.phero,.lbrow,.mktrow,.newsrow,
+  .bestcard,.modal-card,.tdetail{border-radius:16px}
+  .chartcard,details.acc,.lbrow{box-shadow:0 2px 12px rgba(0,0,0,.26);border-color:var(--line)}
+  @media (hover:hover){.lbrow:hover{box-shadow:0 4px 18px rgba(0,0,0,.34)}}
+  .infobtn,.gsearch,.seg,.badge,.hpill,.pbar,.mkt-bar{border-radius:10px}
   /* topographic contour backdrop behind charts (faint concentric rings = elevation map) */
   .chartcard{background-image:
     repeating-radial-gradient(circle at 22% 118%,rgba(98,193,119,.055) 0 1px,transparent 1px 18px),
     repeating-radial-gradient(circle at 86% -12%,rgba(143,182,143,.04) 0 1px,transparent 1px 22px);}
-  /* recolor the bits that were hard-coded blue so nothing reads as the old theme */
-  .b-open{background:rgba(98,193,119,.13)!important;color:var(--accent)!important}
-  .seg button[data-mode="open"].on{color:#9fd9ad}
-  .src a,.srcu{color:#8fd6a0!important}
-  /* status pills + source-quality badge off old-blue → forest */
-  .h-soon{background:rgba(98,193,119,.14);color:#9fd9ad}
-  .sq.secondary{background:rgba(98,193,119,.13);color:#8fd6a0}
-  .seg button.on{color:var(--ink)}
-  .fchip.on{border-color:var(--accent);background:rgba(98,193,119,.12);color:var(--ink)}
-  .gsearch:focus{border-color:var(--accent)}
-  /* nav: soft forest glass + green active (no flashy motion) */
-  nav.tabs{background:rgba(13,24,18,.93)}
-  nav.tabs button.on{color:var(--accent)}
-  /* section headers a touch warmer */
-  .vh{color:var(--accent)}
-  .hsec{color:var(--ink2)}
   #v-home .hero{margin-top:54px}   /* a band above the overview for the fox to walk on (keeps it clear of the OVERVIEW words) */
-  /* the Frontier/Open toggle sits down near the leaderboard, away from the Pulse hero */
+  /* the Closed/Open toggle sits down near the leaderboard, away from the Pulse hero */
   #v-home .seg{margin-top:22px;margin-bottom:0}
   #v-home .seg + .hsec{margin-top:5px}
   /* ── living pixel fox: ambles along the TOP EDGE of the overview, sits at random ── */
@@ -380,15 +247,15 @@
   .fox-img{display:block;height:77px;width:auto;image-rendering:pixelated;filter:drop-shadow(0 2px 2px rgba(0,0,0,.4))}   /* Elthen pixel-art fox (32x32 cells): crisp chunky upscale, not smoothed */
   .fox-shadow{position:absolute;left:50%;bottom:-3px;transform:translateX(-50%);width:78%;height:6px;border-radius:50%;
     background:radial-gradient(ellipse at center,rgba(0,0,0,.4),transparent 72%)}
-  /* ── file-cabinet sub-tabs (Current / Charts / Predict / News): active tab is stitched to the panel ── */
+  /* ── file-cabinet sub-tabs (Models / Charts / Predict / News): active tab is stitched to the panel ── */
   /* ── section nav: editorial underline tabs (Fraunces), darkened to read on the light-sage bg ── */
   .ftabs{display:flex;gap:16px;overflow-x:auto;scrollbar-width:none;margin:6px 0 0;padding:0 1px;position:relative;z-index:2;
-    border-bottom:1px solid rgba(40,70,52,.22);touch-action:pan-x;overscroll-behavior-x:contain}
+    border-bottom:1px solid rgba(40,70,52,.22);overscroll-behavior-x:contain}
   .ftabs::-webkit-scrollbar{display:none}
   .ftab{flex:none;-webkit-user-select:none;user-select:none;display:inline-flex;align-items:baseline;gap:6px;
     background:none;border:none;padding:6px 1px 11px;font:650 16.5px var(--display);letter-spacing:.2px;
     color:#33503c;cursor:pointer;white-space:nowrap;position:relative;transition:color .16s}
-  .ftab:hover{color:#234829}
+  @media (hover:hover){.ftab:hover{color:#234829}}
   .ftab.on{color:#15732f}
   .ftab .ftab-ct{font:650 12px var(--mono);color:#557a5d;font-feature-settings:"tnum";transition:color .16s}
   .ftab.on .ftab-ct{color:#15732f}
@@ -402,7 +269,7 @@
   #splash.gone{opacity:0;visibility:hidden;pointer-events:none}
   #splash .sp-leaf{width:78px;height:78px;filter:drop-shadow(0 5px 20px rgba(127,227,161,.35));animation:spLeaf 3.4s ease-in-out infinite}
   @keyframes spLeaf{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-8px) rotate(3deg)}}
-  #splash .sp-name{font:800 48px var(--display);color:#eef4ea;letter-spacing:-.01em;line-height:1}
+  #splash .sp-name{font:700 48px var(--display);color:#eef4ea;letter-spacing:-.01em;line-height:1}
   #splash .sp-tag{font-family:var(--display);font-style:italic;font-size:15.5px;color:#7fe3a1;line-height:1.3;max-width:300px}
   #splash .sp-bar{width:160px;height:3px;border-radius:3px;margin-top:26px;background:rgba(127,227,161,.13);overflow:hidden;opacity:0;transition:opacity .3s ease}
   #splash .sp-bar.show{opacity:1}
@@ -410,11 +277,11 @@
   #splash .sp-bar.go .sp-bar-fill{animation:spLoad 1.5s cubic-bezier(.4,0,.2,1) forwards}
   @keyframes spLoad{from{transform:scaleX(0)}to{transform:scaleX(1)}}
   @media (prefers-reduced-motion:reduce){#splash .sp-leaf{animation:none}#splash .sp-bar.go .sp-bar-fill{animation:none;transform:scaleX(1)}}
-  /* Compare button — lives on the Current tab eyebrow */
+  /* Compare button — lives on the Models tab eyebrow */
   .vh-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
   .cmp-btn{flex:none;font:650 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#15732f;
     background:rgba(21,115,47,.10);border:1px solid rgba(21,115,47,.30);border-radius:999px;padding:5px 12px;cursor:pointer;transition:background .15s}
-  .cmp-btn:hover{background:rgba(21,115,47,.18)}
+  @media (hover:hover){.cmp-btn:hover{background:rgba(21,115,47,.18)}}
   .ftab-panel{background:var(--panel);border:1px solid var(--line);border-radius:13px;margin-top:11px;
     padding:15px 13px;position:relative;z-index:1;box-shadow:0 2px 12px rgba(0,0,0,.22)}
   /* charts/predict bodies inside a panel don't need their own card chrome */
@@ -425,12 +292,13 @@
      No probability bands / status pills / fake spine — the "why" lives in the release modal. All text on --ink vars. */
   .tl-head{font:650 10.5px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin:14px 0 8px}
   .tl-head:first-child{margin-top:2px}
-  .tl-cap{font-size:12px;line-height:1.45;color:var(--ink3);margin:0 0 10px}
+  .tl-head-row{display:flex;justify-content:space-between;align-items:baseline}   /* EXPECTED … ODDS */
   /* Expected row — line A [50px month | name | odds], line B (sub) spans cols 2-3. Whole row taps into the modal. */
   .tl-frow{display:grid;grid-template-columns:50px 1fr auto;align-items:baseline;column-gap:8px;
     width:100%;text-align:left;background:none;border:none;border-bottom:1px solid var(--line);
     padding:9px 2px;cursor:pointer;font:inherit;transition:background .12s}
-  .tl-frow:hover{background:var(--bg2)}
+  @media (hover:hover){.tl-frow:hover{background:var(--bg2)}}
+  .tl-frow.late .tl-t{color:var(--warn)}                               /* window already closed */
   .tl-t{font:600 11px var(--mono);letter-spacing:.06em;color:var(--ink3);white-space:nowrap}
   .tl-frow .tl-t{text-transform:uppercase}                                    /* coarse month only — Shipped's "Jul 16" stays title-case */
   .tl-nm2{display:flex;align-items:baseline;gap:7px;min-width:0;font:600 15.5px var(--display);color:var(--ink)}
@@ -458,26 +326,14 @@
   .pulse-more[hidden]{display:none}
   .pulse-more .pm-caret{font-size:11px;line-height:1;transition:transform .18s}
   .pulse-more[aria-expanded="true"] .pm-caret{transform:rotate(180deg)}
-  .pulse-meta{margin-top:11px;padding-top:9px;border-top:1px solid var(--line);
-    font:600 12.5px var(--mono);letter-spacing:.02em;color:var(--ink3);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-  .pulse-meta .pulse-dot{color:var(--accent);animation:pulseGlow 2.6s ease-in-out infinite}
-  @keyframes pulseGlow{0%,100%{opacity:.5}50%{opacity:1}}
-  @media (prefers-reduced-motion:reduce){.pulse-meta .pulse-dot{animation:none}}
   /* More: glossary search is live + persistent at the top; terms aren't listed until you search */
   #v-more .gsearch{margin-top:4px}
-  .gloss-hint{font-size:15.6px;color:var(--ink3);line-height:1.55;padding:18px 6px;text-align:center}
-  .gloss-hint b{color:var(--ink2);font-family:var(--mono)}
   /* ── LIGHT SAGE BACKDROP: text that sits bare on the bg goes deep forest-green so it stays legible ── */
-  .vh{color:#27492f}
-  .hsec{color:#375a43}
-  .vsub{color:#3c5a43}
-  .gloss-hint{color:#456a4d}
-  .gloss-hint b{color:#27492f}
-  .empty{color:#456a4d}
   .vh-upd{color:#5c7d62;font-weight:400}
-  /* Current tab: compact name-first rows; full detail lives in the Details popup */
+  /* Models tab: compact name-first rows; full detail lives in the Details popup */
   .mrow{display:flex;align-items:center;gap:11px;background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;margin-bottom:8px;cursor:pointer;transition:border-color .12s,background .12s}
-  .mrow:hover,.mrow:focus-visible{border-color:var(--line2);background:var(--panel);outline:none}
+  .mrow:focus-visible{border-color:var(--line2);background:var(--panel);outline:none}
+  @media (hover:hover){.mrow:hover{border-color:var(--line2);background:var(--panel)}}
   .mrow:active{background:var(--panel2)}
   .mrow-dot{width:9px;height:9px;border-radius:50%;flex:none;align-self:flex-start;margin-top:6px}
   .mrow-main{min-width:0;flex:1}
@@ -491,18 +347,18 @@
   .mi-grid{display:grid;grid-template-columns:max-content 1fr;gap:7px 18px;margin:0;align-items:baseline}
   .mi-grid dt{color:var(--ink3);font:500 14.8px var(--sans)}
   .mi-grid dd{margin:0;color:var(--ink);font:600 14.8px var(--sans);overflow-wrap:anywhere}
-  .mi-bench2 dd{font-family:var(--mono);font-weight:700}
+  .mi-bench2{grid-template-columns:minmax(0,1fr) auto}                /* a long benchmark name wraps; the value never gets crushed */
+  .mi-bench2 dt{min-width:0;overflow-wrap:anywhere}
+  .mi-bench2 dd{font-family:var(--mono);font-weight:700;white-space:nowrap;flex:none;text-align:right}
   .mi-u{color:var(--ink3);font-weight:400;font-size:.86em}
+  .mi-note{display:block;margin-top:2px;color:var(--ink3);font-weight:400;font-size:.9em;line-height:1.4}   /* editorial.priceNotes under the price */
 
   /* ════ LIGHTER FOREST + CHARACTERFUL TYPE (project-wide) ════ */
   /* Fraunces serif at the personality moments — wordmark, specimen names, section/card titles. Body = Spline Sans, data = Spline Sans Mono. */
-  .bar h1,.lbname,.mrow-nm,.news-title,.mi-nm,.pcard .pnm,.tnode .nm,.rel-name,.bcname,.gt-term,
+  .lbname,.mrow-nm,.news-title,.mi-nm,.bcname,.gt-term,
   .phero-m,.chartcard h4,details.acc>summary{font-family:var(--display)}
-  .bar h1{font-family:var(--display);font-weight:600;letter-spacing:0}
-  .lbname,.mrow-nm,.news-title,.gt-term,.rel-name,.pcard .pnm,.tnode .nm,.bcname,.chartcard h4,details.acc>summary{font-weight:600}
+  .lbname,.mrow-nm,.news-title,.gt-term,.bcname,.chartcard h4,details.acc>summary{font-weight:600}
   .mi-nm{font-weight:600;letter-spacing:0}
-  /* bottom-nav glass lightened to match the softer cards */
-  nav.tabs{background:rgba(28,46,35,.93)}
   /* More → glossary results render BARE on the light sage bg, so the light ink washed out → deep-forest text for legibility */
   #glossres .gt-term{color:#21452a}
   #glossres .gt-def{color:#2f4d39}
@@ -517,13 +373,12 @@
   /* More footer (pinned bottom-center): notifications toggle + version badge */
   .more-foot{margin-top:auto;display:flex;flex-direction:column;align-items:center;gap:9px;padding-top:18px}
   .notif-btn{font:650 11.5px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#15732f;background:rgba(21,115,47,.10);border:1px solid rgba(21,115,47,.30);border-radius:999px;padding:8px 18px;cursor:pointer;transition:background .15s}
-  .notif-btn:hover{background:rgba(21,115,47,.18)}
+  @media (hover:hover){.notif-btn:hover{background:rgba(21,115,47,.18)}}
   .notif-btn.on{background:#15732f;color:#eaf6ec;border-color:#15732f}
   .app-ver{display:block;text-align:center;font:600 10px var(--mono);letter-spacing:.5px;color:#5c7d62;opacity:.6;font-variant-numeric:tabular-nums;user-select:none}
-  /* model-to-model compare — discreet ★ by the Overview opens a popup */
-  /* (model compare moved from the faint Overview ★ to a Compare button on the Current tab) */
+  /* model-to-model compare sheet (Compare button on the Models tab) */
   .cmp-head{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px;margin:16px 0 10px}
-  .cmp-sel{width:100%;min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:9px;color:var(--ink);font:600 14px var(--sans);padding:9px 6px;-webkit-appearance:none;appearance:none;text-align:center;text-align-last:center}
+  .cmp-sel{width:100%;min-width:0;background:var(--bg2);border:1px solid var(--line2);border-radius:9px;color:var(--ink);font:600 16px var(--sans);padding:9px 6px;-webkit-appearance:none;appearance:none;text-align:center;text-align-last:center}
   .cmp-vs{font:700 12px var(--mono);color:var(--ink3)}
   .cmp-row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:9px;padding:9px 0;border-bottom:1px solid var(--line)}
   .cmp-row:last-child{border-bottom:none}
@@ -552,7 +407,7 @@
 <header class="bar">
   <div class="row">
     <svg class="logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#0f1d17" stroke="#37684a"/><path d="M16 5 C9 11 9 22 16 27 C23 22 23 11 16 5 Z" fill="none" stroke="#62c177" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 8 L16 25" stroke="#62c177" stroke-width="1.5" stroke-linecap="round"/><path d="M16 14 L12 12 M16 14 L20 12 M16 18.5 L12.5 17 M16 18.5 L19.5 17" stroke="#62c177" stroke-width="1.1" stroke-linecap="round"/></svg>
-    <div class="brand"><h1>Botany</h1><p class="tagline">The continuous growth and roots of AI</p></div>
+    <div class="brand"><h1>Botany</h1></div>
   </div>
 </header>
 
@@ -569,7 +424,7 @@
 
 <nav class="tabs" id="nav">
   <button data-v="home" class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v9h14v-9"/></svg><span>Home</span></button>
-  <button data-v="now"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Current</span></button>
+  <button data-v="now"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Models</span></button>
   <button data-v="charts"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-6 4 3 8-9"/><path d="M3 21h18"/></svg><span>Charts</span></button>
   <button data-v="predict"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3.5"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg><span>Predict</span></button>
   <button data-v="news"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h12v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2V5z"/><path d="M16 8h3a1 1 0 0 1 1 1v8a2 2 0 0 1-2 2"/><path d="M7 8.5h6M7 11.5h6M7 14.5h4"/></svg><span>News</span></button>
@@ -578,44 +433,116 @@
 
 <script>
 const LABV = {OpenAI:'--openai',Anthropic:'--anthropic',Google:'--google','Google DeepMind':'--google',DeepMind:'--google',xAI:'--xai',Mistral:'--mistral','Mistral AI':'--mistral',Alibaba:'--qwen','Alibaba (Qwen)':'--qwen',Qwen:'--qwen',NVIDIA:'--nvidia',Microsoft:'--microsoft','Microsoft + NVIDIA':'--microsoft',Moonshot:'--moonshot','Moonshot AI':'--moonshot',Meta:'--meta','Meta AI':'--meta','Meta Superintelligence Labs':'--meta',DeepSeek:'--deepseek',Zhipu:'--zhipu','Z.ai':'--zhipu','Zhipu / Z.ai':'--zhipu','Zhipu AI':'--zhipu'};
-function labVar(l){ if(LABV[l]) return LABV[l]; const k=Object.keys(LABV).find(x=>l&&l.includes(x.split(' ')[0])); return k?LABV[k]:'--ghost'; }
+function labVar(l){ l=l==null?'':String(l); if(LABV[l]) return LABV[l]; const k=Object.keys(LABV).find(x=>l&&l.includes(x.split(' ')[0])); return k?LABV[k]:'--ghost'; }
 const CANON={'--openai':'OpenAI','--anthropic':'Anthropic','--google':'Google','--xai':'xAI','--mistral':'Mistral','--qwen':'Alibaba','--nvidia':'NVIDIA','--microsoft':'Microsoft','--moonshot':'Moonshot','--meta':'Meta','--deepseek':'DeepSeek','--zhipu':'Zhipu'};
-function canonLab(l){ return CANON[labVar(l)] || l; }
+function canonLab(l){ return CANON[labVar(l)] || (l==null?'':String(l)); }
 const $ = (s,r=document)=>r.querySelector(s);
 const $$ = (s,r=document)=>[...r.querySelectorAll(s)];
 const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
-const labHex = l => css(labVar(l)) || css('--ghost');
-const esc = s => (s==null?'':String(s));
-const he = s => (s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+// lab colour = the lab's CSS var; a lab without one gets a stable hash-hued colour (fixed S/L tuned for the dark cards) so
+// unknown labs (Multiverse, Apodex, Celeris…) stop collapsing into one shared gray. The hash picks from the hue slots at
+// least 14° away from every named lab's hue (read from those CSS vars), so it never lands on e.g. DeepSeek's purple and
+// unknown labs spread evenly over what's left of the wheel. Memoized.
+const LABHEX=new Map(); let LAB_FREE=null;
+function hexHue(x){ const m=/^#([\da-f]{2})([\da-f]{2})([\da-f]{2})$/i.exec(x||''); if(!m) return null;
+  const [r,g,b]=[m[1],m[2],m[3]].map(v=>parseInt(v,16)/255), mx=Math.max(r,g,b), d=mx-Math.min(r,g,b); if(d<.08) return null;   // grays have no hue
+  return (((mx===r?((g-b)/d)%6:mx===g?(b-r)/d+2:(r-g)/d+4)*60)+360)%360; }
+function labHex(l){ l=l==null?'':String(l); if(LABHEX.has(l)) return LABHEX.get(l);
+  const v=labVar(l); let c=v==='--ghost'?'':css(v);
+  if(!c){ if(!l) c=css('--ghost')||'#7a977f'; else {
+    if(!LAB_FREE){ const named=[...new Set(Object.values(LABV))].map(k=>hexHue(css(k))).filter(h=>h!=null);
+      LAB_FREE=[]; for(let h=0;h<360;h+=5) if(!named.some(k=>Math.min(Math.abs(k-h),360-Math.abs(k-h))<14)) LAB_FREE.push(h);
+      if(!LAB_FREE.length) for(let h=0;h<360;h+=5) LAB_FREE.push(h); }
+    let h=0; for(const ch of l) h=(h*31+ch.codePointAt(0))>>>0;
+    c=`hsl(${LAB_FREE[h%LAB_FREE.length]},46%,60%)`; } }
+  LABHEX.set(l,c); return c; }
+// every data string that reaches innerHTML goes through he(): & < > " ' — Botany shares the polishcow31.github.io origin
+// with Dawn's Kitchen, so a hostile string in the LLM-fed data must never become markup
+const HE={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'};
+const he = s => (s==null?'':String(s)).replace(/[&<>"']/g,c=>HE[c]);
 const fmtPulse = s => he(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');   // **bold** key facts, everything else escaped
+const isHttp = u => /^https?:\/\//i.test(u==null?'':String(u));      // the only schemes a data-driven link may open
+const nfmt = n => (Number(n)||0).toLocaleString('en-US');             // user-facing counts: 9,592 not 9592
+const FAIL='<div class="empty">Couldn\'t load this section.</div>';
+// render isolation: safe() wraps a whole view (a throw leaves one quiet line in THAT view, every other view still renders);
+// guard() wraps a panel / chart body so one broken sub-tab never takes its tab strip down with it
+function safe(fn,sel){ try{ fn(); return true; }catch(e){ console.error(e); const v=sel&&$(sel); if(v) v.innerHTML=FAIL; return false; } }
+function guard(fn){ try{ return fn(); }catch(e){ console.error(e); return FAIL; } }
 
-// ---- editorial sets — loaded from data/editorial.json in boot() (updater-maintained) ----
-let PRICES={}, LB=[], LBMETA={source:'LLM-Stats'}, UPCOMING=[], KILLED=[], SOURCES=[], SWEEPS=[], PULSE={};
-
-let DATA = {models:[],trends:[],predictions:[],meta:{}};
-
-async function boot(){
-  const J = f => fetch('data/'+f+'.json',{cache:'no-store'}).then(r=>r.json());   // network-fresh: data updates 8×/day
-  try{
-    const [m,t,p,meta] = await Promise.all([J('models'),J('trends'),J('predictions'),J('meta')]);
-    DATA = {models:m.models||[], trends:t.trends||[], predictions:p.predictions||[], methodology:p.methodology||'', meta};
-  }catch(e){ console.error(e); }
-  const [fc,ed,nw,gl,rl,bf,sj] = await Promise.all([
-    J('forecasts').catch(e=>(console.warn('forecasts',e),{})),
-    J('editorial').catch(e=>(console.warn('editorial',e),{})),
-    J('news').catch(e=>(console.warn('news',e),{})),
-    J('glossary').catch(e=>(console.warn('glossary',e),{})),
-    J('releases').catch(e=>(console.warn('releases',e),{})),
-    J('briefs').catch(e=>(console.warn('briefs',e),{})),
-    J('sources').catch(e=>(console.warn('sources',e),{})),
-  ]);
-  MARKETS=fc.markets||[]; HISTORICS=fc.historics||[]; TRAJFC=fc.trajForecasts||[]; FCMETHOD=fc.methodology||''; FCSTORY=fc.marketsStory||[];
-  PRICES=ed.prices||{}; LB=(ed.leaderboard&&ed.leaderboard.rows)||[]; LBMETA=ed.leaderboard||LBMETA; UPCOMING=ed.upcoming||[]; KILLED=ed.killed||[]; SOURCES=ed.sources||[]; PULSE=ed.pulse||{};
-  NEWS=nw.items||[]; NEWSMETA=nw||{};
-  GLOSSARY=gl.terms||[]; RELEASES=rl.items||[]; RELMETA=rl||{}; BRIEFS=bf.briefs||{}; SWEEPS=sj.sweeps||[];
-  renderUpd(); renderHome(); renderNow(); renderCharts(); renderPredict(); renderNews(); renderMore();
-  runSplash();
+// ---- data: fetched by loadData(); every row normalized ONCE here so no renderer ever meets a null row, a number where it
+// expects text, a string "true", or an array where it expects a string — the feed is rewritten by an LLM 8×/day ----
+let DATA={models:[],meta:{}};
+let PRICES={}, PRICENOTES={}, PULSE={}, SWEEPS=[], MARKETS=[], HISTORICS=[], FCSTORY=[], NEWS=[], GLOSSARY=[], RELEASES=[], BRIEFS={};
+let GLOSS_READY=false, SWEEPS_READY=false;
+const isObj = x => x!=null && typeof x==='object' && !Array.isArray(x);
+const rows = x => (Array.isArray(x)?x:isObj(x)?Object.values(x):[]).filter(isObj);   // a list, or an {id:row} map → object rows only
+const str = v => v==null||isObj(v)?'':Array.isArray(v)?v.filter(x=>x!=null&&!isObj(x)).join(', '):String(v);
+const bool = v => v===true||v==='true';
+const num = v => { const n=typeof v==='number'?v:parseFloat(v); return Number.isFinite(n)?n:null; };
+function normModel(m){ const o=Object.assign({},m);
+  ['name','lab','released','params','context','modality','notable','status'].forEach(k=>{ o[k]=str(m[k]).trim(); });
+  o.status=o.status.toLowerCase(); o.open=bool(m.open);
+  o.benchmarks={}; if(isObj(m.benchmarks)) Object.entries(m.benchmarks).forEach(([k,v])=>{ const n=num(v); if(n!=null) o.benchmarks[k]=n; else if(str(v).trim()) o.benchmarks[k]=str(v).trim(); });
+  if(m.pricing!=null&&!isObj(m.pricing)) o.pricing=str(m.pricing);                    // {in,out} objects pass through — priceParts reads them
+  return o; }
+function normRelease(r){ const o=Object.assign({},r);
+  ['model','lab','expectedDate','expectedWindow','status','basis','source'].forEach(k=>{ o[k]=str(r[k]).trim(); });
+  o.status=o.status.toLowerCase(); o.prob=num(r.prob); o.frontier=bool(r.frontier);
+  if(r.open==null||r.open==='') delete o.open; else o.open=bool(r.open);                   // absent ≠ false: isOpenRel only guesses when absent
+  return o; }
+function normMarket(k){ const o=Object.assign({},k);
+  ['question','platform','forecast','category','resolveDate','url','asOf','kind'].forEach(f=>{ o[f]=str(k[f]).trim(); });
+  o.category=o.category.toLowerCase(); o.kind=o.kind.toLowerCase(); return o; }
+function normHist(h){ const o=Object.assign({},h);
+  ['benchmark','model','lab','date','basis'].forEach(k=>{ o[k]=str(h[k]).trim(); });
+  o.benchmark=o.benchmark.toLowerCase(); o.value=num(h.value);
+  if(h.open==null||h.open==='') delete o.open; else o.open=bool(h.open);
+  return o; }
+function normNews(it){ const o=Object.assign({},it); ['title','source','url','date','topic','blurb'].forEach(k=>{ o[k]=str(it[k]).trim(); }); return o; }
+function normTerm(t){ const o=Object.assign({},t); ['term','acronym','category','def'].forEach(k=>{ o[k]=str(t[k]).trim(); });
+  o.aka=(Array.isArray(t.aka)?t.aka:(t.aka==null||t.aka==='')?[]:[t.aka]).map(str).filter(Boolean); return o; }
+function normSweep(s){ return {date:str(s.date).trim().slice(0,10), routine:str(s.routine).trim(),
+  sources:(Array.isArray(s.sources)?s.sources:[]).map(q=>isObj(q)?{u:str(q.u).trim(),url:str(q.url).trim()}:(typeof q==='string'&&q.trim())?{u:q.trim(),url:''}:null).filter(Boolean)}; }
+// core files (everything Home / Models / Charts / Predict need) — a file that failed to load keeps the previous data
+function applyCore(m,meta,ed,fc,rl){
+  if(m) DATA.models=rows(m.models).map(normModel).filter(x=>x.name);
+  if(meta) DATA.meta=isObj(meta)?meta:{};
+  if(ed){ PRICES={}; if(isObj(ed.prices)) Object.entries(ed.prices).forEach(([k,v])=>{ PRICES[String(k).toLowerCase().trim()]=v; });
+    PRICENOTES={}; if(isObj(ed.priceNotes)) Object.entries(ed.priceNotes).forEach(([k,v])=>{ const s=str(v).trim(); if(s) PRICENOTES[String(k).toLowerCase().trim()]=s; });
+    PULSE=isObj(ed.pulse)?ed.pulse:{}; }
+  if(fc){ MARKETS=rows(fc.markets).map(normMarket).filter(k=>k.question||k.forecast);
+    HISTORICS=rows(fc.historics).map(normHist).filter(h=>h.value!=null&&h.date&&h.benchmark);
+    FCSTORY=rows(fc.marketsStory).map(s=>({h:str(s.h).trim(),t:str(s.t).trim()})).filter(s=>s.t); }
+  if(rl) RELEASES=rows(rl.items).map(normRelease).filter(r=>r.model);
+  fitProEq();
 }
+
+// ---- boot: every fetch starts at once; the core views paint as soon as the small core files land, and news / glossary /
+// sources fill in as they arrive (the 1.9 MB sources.json never gates first paint). no-cache = ETag revalidation. ----
+const J = f => fetch('data/'+f+'.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw new Error('data/'+f+'.json HTTP '+r.status); return r.json(); });
+const DATA_FILES=['models','meta','editorial','forecasts','releases','briefs','news','glossary','sources'];
+let lastLoad=0, LOADING=false;
+async function loadData(first){
+  LOADING=true;
+  try{
+    const P={}; DATA_FILES.forEach(f=>{ P[f]=J(f).catch(e=>(console.warn(f,e),null)); });   // each file fails soft to null
+    const [m,meta,ed,fc,rl]=await Promise.all([P.models,P.meta,P.editorial,P.forecasts,P.releases]);
+    applyCore(m,meta,ed,fc,rl); lastLoad=Date.now();
+    renderCore();
+    if(first){ safe(renderMore,'#v-more'); runSplash(); }
+    await Promise.all([
+      P.briefs.then(bf=>{ if(bf&&isObj(bf.briefs)){ BRIEFS={}; Object.entries(bf.briefs).forEach(([k,v])=>{ const s=str(v); if(s) BRIEFS[k]=s; }); } }),
+      P.news.then(nw=>safe(()=>{ if(nw) NEWS=rows(nw.items).map(normNews).filter(i=>i.title); renderNews(); },'#v-news')),
+      P.glossary.then(gl=>safe(()=>{ if(gl) GLOSSARY=rows(gl.terms).map(normTerm).filter(t=>t.term); if(gl||first) GLOSS_READY=true; refreshGloss(); },'#glossres')),
+      P.sources.then(sj=>safe(()=>{ if(sj) SWEEPS=rows(sj.sweeps).map(normSweep).filter(s=>/^\d{4}-\d{2}-\d{2}$/.test(s.date)); if(sj||first) SWEEPS_READY=true; refreshSources(); },'#src-tree')),
+    ]);
+  } finally { LOADING=false; }
+}
+function renderCore(){ safe(renderHome,'#v-home'); safe(renderNow,'#v-now'); safe(renderCharts,'#v-charts'); safe(renderPredict,'#v-predict'); }
+async function boot(){ await loadData(true); }
+// iOS keeps a backgrounded PWA / tab alive for hours: coming back after >15 min reloads the data and re-renders (no splash)
+const STALE_MS=15*60*1000;
+function maybeRefresh(){ if(document.hidden||LOADING||!lastLoad||Date.now()-lastLoad<STALE_MS) return; loadData(false).catch(e=>console.error(e)); }
 // ---- opening splash: branded loading screen (leaf + Botany + tagline + a fake loading bar) ----
 function dismissSplash(){ const s=$('#splash'); if(s) s.classList.add('gone'); }
 function runSplash(){
@@ -626,43 +553,112 @@ function runSplash(){
 }
 setTimeout(()=>{try{dismissSplash();}catch(e){}}, 6000);   // hard backstop: never let the splash stick
 
-function renderUpd(){
-  const m=DATA.meta||{}, d=m.lastUpdated?new Date(m.lastUpdated):null;
-  const u=$('#upd'); if(u) u.innerHTML = `<b>●</b> updated ${d?timeAgo(d):'—'}<br>${m.models||DATA.models.length} models · ${m.sweeps||0} sweeps`;
-}
-function timeAgo(d){const s=(Date.now()-d.getTime())/1000;if(s<3600)return Math.max(1,Math.round(s/60))+'m ago';if(s<86400)return Math.round(s/3600)+'h ago';return Math.round(s/86400)+'d ago';}
+// ---- dates: every formatter tolerates junk (numbers, full ISO timestamps, invalid dates) ----
+function timeAgo(d){ if(!(d instanceof Date)||isNaN(d)) return '—'; const s=(Date.now()-d.getTime())/1000; if(s<3600)return Math.max(1,Math.round(s/60))+'m ago'; if(s<86400)return Math.round(s/3600)+'h ago'; return Math.round(s/86400)+'d ago'; }
 const MM=['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-const fmtDate = s => { if(!s)return''; const p=s.split('-'); return p[2]?`${MM[+p[1]]} ${+p[2]}, ${p[0]}`:`${MM[+p[1]]||''} ${p[0]}`; };
-const yr = s => (s||'').slice(0,4);
-function priceFor(name){ const k=(name||'').toLowerCase(); return PRICES[k] || Object.entries(PRICES).find(([kk])=>k.includes(kk))?.[1]; }
-function statusBadge(s){const m={live:'b-live',pulled:'b-pulled',preview:'b-preview',historic:'b-historic'}[s];return m?`<span class="badge ${m}">${s.toUpperCase()}</span>`:'';}
+const fmtDate = s => { if(s==null||s==='') return ''; s=String(s).slice(0,10); const p=s.split('-'), y=p[0], mo=MM[+p[1]], d=+p[2];
+  if(!/^\d{4}$/.test(y)) return s; return mo?(d?`${mo} ${d}, ${y}`:`${mo} ${y}`):y; };   // non-ISO text comes back as-is — callers he() it
+function fmtDay(iso){ const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso==null?'':iso)); if(!m||!MM[+m[2]]||!+m[3]) return '';   // "2026-09-30" → "Sep 30"; other years "Dec 31, 2027"
+  return `${MM[+m[2]]} ${+m[3]}`+(+m[1]!==new Date().getFullYear()?`, ${m[1]}`:''); }
+const pad2 = n => String(n).padStart(2,'0');
+const todayISO = () => { const d=new Date(); return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`; };   // LOCAL date, not UTC (evening ET ≠ tomorrow)
+const ISO_RE=/^(\d{4})(?:-(\d{1,2}))?(?:-(\d{1,2}))?(?!\d)/;
+function dayNum(s){ const m=ISO_RE.exec(String(s==null?'':s)); return m?Date.UTC(+m[1],(+m[2]||1)-1,+m[3]||1)/864e5:null; }
+function tval(s){ const m=ISO_RE.exec(String(s==null?'':s)); return m?+m[1]+((+m[2]||1)-1)/12:NaN; }
+function statusBadge(s){const m={live:'b-live',pulled:'b-pulled',preview:'b-preview',historic:'b-historic',superseded:'b-superseded'}[s];return m?`<span class="badge ${m}">${he(String(s).toUpperCase())}</span>`:'';}
+
+// ---- benchmarks: ONE preferred key per category, never a max across keys (a max let "SWE-bench Multilingual" or some
+// variant stand in for Verified). Canonical spelling first; both spellings match, so the pipeline's key canonicalization
+// ("SWE-bench"→"SWE-bench Verified", "GPQA"→"GPQA Diamond") changes nothing here ----
+const BENCH_PREF={
+  aa:[/^aa[ -]?index$/i,/^(aa|artificial analysis)[ -]intelligence[ -]index$/i,/^intelligence index$/i],
+  swe:[/^swe[ -]?bench verified$/i,/^swe[ -]?bench$/i],
+  swepro:[/^swe[ -]?bench pro$/i],
+  gpqa:[/^gpqa diamond$/i,/^gpqa$/i],
+  aime:[/^aime 2026$/i,/^aime$/i],
+};
+function benchOf(m,cat){ const b=(m&&m.benchmarks)||{}, pref=BENCH_PREF[cat]; if(!pref) return null; const ks=Object.keys(b);
+  for(const re of pref) for(const k of ks) if(re.test(k)){ const v=num(b[k]); if(v!=null) return v; }
+  return null; }
+// ---- CODING on ONE scale (owner decision, Sep 28 2026): SWE-bench Pro, with SWE-bench Verified crosswalked in.
+// Fit at runtime over EVERY model that reports both, whatever its status (going superseded / historic doesn't invalidate
+// a paired measurement): OLS on logits, logit(Pro) = a + b·logit(Verified); off below 6 pairs.
+// ERA GUARD: the V→P relationship drifted (Pro-launch Sep 2025 models scored ~23% Pro at 70%+ Verified; today's pairs sit
+// far higher), so a Verified-only score converts ONLY if released ≥ the earliest paired model's release (no buffer) AND
+// V ≥ (lowest paired V − 5). Never extrapolate further. Native Pro always wins; the Details sheet keeps native scores. ----
+const logit=p=>Math.log(p/(1-p)), unlogit=z=>100/(1+Math.exp(-z)), r1=v=>Math.round(v*10)/10;
+let PROFIT=null;   // {n,a,b,s,r2,t0,vmin} — refit on every data load; null = conversion off
+function fitProEq(){
+  const pairs=DATA.models.map(m=>({V:benchOf(m,'swe'),P:benchOf(m,'swepro'),t:dayNum(m.released)}))
+    .filter(o=>o.V>0&&o.V<100&&o.P>0&&o.P<100&&o.t!=null);
+  const n=pairs.length; PROFIT=null;
+  if(n<6){ console.info(`proEq: off — ${n} models report both SWE-bench Verified and Pro (need 6)`); return; }
+  const xs=pairs.map(o=>logit(o.V/100)), ys=pairs.map(o=>logit(o.P/100)), mx=xs.reduce((s,x)=>s+x,0)/n, my=ys.reduce((s,y)=>s+y,0)/n;
+  let sxx=0,sxy=0,syy=0; xs.forEach((x,i)=>{ sxx+=(x-mx)**2; sxy+=(x-mx)*(ys[i]-my); syy+=(ys[i]-my)**2; });
+  if(!(sxx>0)) return;
+  const b=sxy/sxx, a=my-b*mx, sse=xs.reduce((s,x,i)=>s+(ys[i]-(a+b*x))**2,0);
+  PROFIT={n,a,b,s:Math.sqrt(sse/(n-2)),r2:syy>0?1-sse/syy:0,t0:Math.min(...pairs.map(o=>o.t)),vmin:Math.min(...pairs.map(o=>o.V))-5};
+  console.info(`proEq: logit(Pro) = ${a.toFixed(3)} + ${b.toFixed(3)}·logit(Verified) · n=${n} · R² ${PROFIT.r2.toFixed(2)} · s=${PROFIT.s.toFixed(3)} · converts V ≥ ${PROFIT.vmin} released ≥ ${new Date(PROFIT.t0*864e5).toISOString().slice(0,10)}`);
+}
+function proFromVerified(V,released){ const F=PROFIT, t=dayNum(released); V=num(V);
+  if(!F||V==null||!(V>0&&V<100)||t==null||t<F.t0||V<F.vmin) return null;                  // outside the era guard → no Pro-equivalent
+  const z=F.a+F.b*logit(V/100), d=1.96*F.s;
+  return {v:r1(unlogit(z)),est:true,lo:r1(unlogit(z-d)),hi:r1(unlogit(z+d)),from:V}; }
+function proEq(m){ const p=benchOf(m,'swepro'); if(p!=null) return {v:p,est:false}; const V=benchOf(m,'swe'); return V==null?null:proFromVerified(V,m.released); }
+function ctxNum(s){if(s==null)return 0;const m=String(s).match(/(\d[\d,]*(?:\.\d+)?)(?![\d.,])\s*([KM])?(?![A-Za-z])/i);if(!m)return 0;let v=+m[1].replace(/,/g,'');const u=(m[2]||'').toUpperCase();if(u==='K')v*=1e3;else if(u==='M')v*=1e6;return v;}
+function fmtTokens(n){ if(!(n>0)) return '—'; const t=(v,u)=>String(+v.toFixed(v<10?2:v<100?1:0))+u; return (n>=1e6?t(n/1e6,'M'):n>=1e3?t(n/1e3,'K'):String(Math.round(n)))+' tokens'; }
+// ---- prices: the EXACT editorial PRICES key (lower-cased name), else the model's own pricing field. No substring fallback —
+// that's what handed the TTS models their LLM sibling's price ----
+function priceFor(m){ if(!m) return null; const k=String(m.name||'').toLowerCase().trim(), p=Object.prototype.hasOwnProperty.call(PRICES,k)?PRICES[k]:null;
+  if(p!=null&&p!=='') return p; return (m.pricing!=null&&m.pricing!=='')?m.pricing:null; }
+// "4/20" · "$1.40 in / $4.40 out per 1M" · "0.44/1.32 peak, …" · {in,out} → {in,out} USD per 1M tokens. Per-second / per-minute /
+// per-page / "open weights" prices → null, so callers show the raw text (never with a "$" prefix).
+function priceParts(p){
+  if(p==null) return null;
+  if(isObj(p)){ const a=num(p.in), b=num(p.out); return (a!=null&&b!=null&&a>=0&&b>=0)?{in:a,out:b}:null; }
+  const m=String(p).match(/^\s*\$?\s*(\d+(?:\.\d+)?)\s*(?:in\b)?\s*\/\s*\$?\s*(\d+(?:\.\d+)?)(?![\d.]|\s*[KM]\b)/i);
+  return m?{in:+m[1],out:+m[2]}:null; }
+function outPrice(m){ const pp=priceParts(priceFor(m)); return pp?pp.out:null; }
+const fmtUSD = n => { if(!(n>=0)) return '—'; if(Number.isInteger(n)) return '$'+n; let s=n.toFixed(2); if(Math.abs(+s-n)>1e-9) s=String(+n.toFixed(4)); return '$'+s; };
+// non-text models (TTS / voice / transcription / image / video / music / robotics) never win an LLM category and never pad
+// the "not yet scored" line: name hints, a transcription / voice modality, a "-to-image/video/music" generator, or output
+// clauses ("… out") none of which is text
+const NONTEXT_NAME=/\b(TTS|transcribe|voice|image|video|flux|diffusion)\b/i;
+function isTextModel(m){
+  if(NONTEXT_NAME.test(m.name||'')) return false;
+  const mo=String(m.modality||'').toLowerCase();
+  if(/speech recognition|transcri|text-to-speech|full-duplex|real-time voice/.test(mo)) return false;
+  if(/\b(image|video|music|audio|speech) generation\b|-to-(image|video|music|speech|audio)\b/.test(mo)) return false;
+  const outs=mo.match(/[^;,()]*\bout\b/g);
+  return !(outs&&!outs.some(c=>/\btext\b/.test(c)));
+}
 
 // ---------------- HOME ----------------
 let homeMode='frontier';
-function segCtl(seg,mode,opts){return `<div class="seg" data-seg="${seg}">${opts.map(o=>`<button data-mode="${o[0]}" class="${mode===o[0]?'on':''}">${o[1]}</button>`).join('')}</div>`;}
-const FO=[['frontier','Frontier'],['open','Open source']];
-function benchOf(m,cat){const b=m.benchmarks||{},ks=Object.keys(b);
-  const re={aa:/aa[ -]?index|intelligence index/i,swe:/swe[ -]?bench/i,gpqa:/gpqa/i,aime:/aime/i}[cat];
-  if(!re)return null;
-  const vals=ks.filter(k=>re.test(k)).map(k=>b[k]).filter(v=>typeof v==='number');
-  return vals.length?Math.max(...vals):null;}
-function ctxNum(s){if(!s)return 0;const m=(''+s).match(/([\d.]+)\s*([KMT])?/i);if(!m)return 0;let v=+m[1];const u=(m[2]||'').toUpperCase();if(u==='K')v*=1e3;if(u==='M')v*=1e6;if(u==='T')v*=1e9;return v;}
-function outPrice(name){const p=priceFor(name);return p?+p.split('/')[1]:null;}
-const USECASES=[{label:'Top overall',cat:'aa',suf:''},{label:'Coding',cat:'swe',suf:'%'},{label:'Science · GPQA',cat:'gpqa',suf:'%'},{label:'Math · AIME',cat:'aime',suf:'%'},{label:'Longest context',cat:'context'},{label:'Best value',cat:'value'}];
+function segCtl(seg,mode,opts){return `<div class="seg" data-seg="${seg}">${opts.map(o=>`<button data-mode="${o[0]}" class="${mode===o[0]?'on':''}">${he(o[1])}</button>`).join('')}</div>`;}
+const FO=[['frontier','Closed'],['open','Open']];   // weights-openness toggle: labels only — the internal mode values stay 'frontier'/'open'
+const USECASES=[{label:'Top overall',cat:'aa',suf:''},{label:'Coding · SWE Pro',cat:'coding'},{label:'Science · GPQA',cat:'gpqa',suf:'%'},{label:'Math · AIME',cat:'aime',suf:'%'},{label:'Longest context',cat:'context'},{label:'Best value',cat:'value'}];
+const byRecent=(a,b)=>String(b.released).localeCompare(String(a.released));
 function pickBest(cands,uc){
-  const byRecent=(a,b)=>(b.released||'').localeCompare(a.released||'');
   if(uc.cat==='context'){
     let bv=0; cands.forEach(m=>{const v=ctxNum(m.context); if(v>bv)bv=v;});
     if(!bv)return null;
     const models=cands.filter(m=>ctxNum(m.context)===bv).sort(byRecent);
-    return {models, disp:(models[0].context||'').replace(/\s*[\(/].*$/,'').trim()+' ctx'};
+    return {models, disp:fmtTokens(bv)};                                                    // from the NUMBER ("1.05M tokens"), never the raw string
   }
   if(uc.cat==='value'){
-    const sc=m=>{const aa=benchOf(m,'aa'),p=outPrice(m.name); return (aa&&p)?aa/p:null;};
+    const sc=m=>{const aa=benchOf(m,'aa'),p=outPrice(m); return (aa!=null&&p>0)?aa/p:null;};
     let bs=-1; cands.forEach(m=>{const s=sc(m); if(s!=null&&s>bs)bs=s;});
     if(bs<0)return null;
     const models=cands.filter(m=>{const s=sc(m); return s!=null&&Math.abs(s-bs)<1e-9;}).sort(byRecent);
-    return {models, disp:'$'+outPrice(models[0].name)+'/M'};
+    return {models, disp:fmtUSD(outPrice(models[0]))+' per 1M tokens'};
+  }
+  if(uc.cat==='coding'){                                                                     // Pro scale via proEq; on ties native beats estimated
+    const q=new Map(); let bv=-1; cands.forEach(m=>{const p=proEq(m); if(p){q.set(m,p); if(p.v>bv)bv=p.v;}});
+    if(bv<0)return null;
+    let models=cands.filter(m=>q.has(m)&&q.get(m).v===bv); if(models.some(m=>!q.get(m).est)) models=models.filter(m=>!q.get(m).est);
+    models.sort(byRecent);
+    return {models, disp:(q.get(models[0]).est?'~':'')+bv+'%'};
   }
   let bv=-1; cands.forEach(m=>{const v=benchOf(m,uc.cat); if(v!=null&&v>bv)bv=v;});
   if(bv<0)return null;
@@ -672,9 +668,9 @@ function pickBest(cands,uc){
 let TIEMAP={};
 function bestCard(o){
   const ms=o.p.models, tie=ms.length>1;
-  if(!tie){ const m=ms[0]; return `<div class="bestcard" style="--lab:${labHex(m.lab)}"><div class="bclabel">${o.uc.label}</div><div class="bcname">${he(m.name)}</div><div class="bcval">${he(o.p.disp)}</div></div>`; }
+  if(!tie){ const m=ms[0]; return `<div class="bestcard" style="--lab:${labHex(m.lab)}"><div class="bclabel">${he(o.uc.label)}</div><div class="bcname">${he(m.name)}</div><div class="bcval">${he(o.p.disp)}</div></div>`; }
   TIEMAP[o.uc.label]={label:o.uc.label, disp:o.p.disp, models:ms};
-  return `<div class="bestcard tiecard" style="--lab:var(--accent)" data-tie="${he(o.uc.label)}" role="button" tabindex="0"><div class="bclabel">${o.uc.label}</div><div class="bcname">${ms.length}-way tie <span class="tiechev">›</span></div><div class="bcval">${he(o.p.disp)}</div></div>`;
+  return `<div class="bestcard tiecard" style="--lab:var(--accent)" data-tie="${he(o.uc.label)}" role="button" tabindex="0"><div class="bclabel">${he(o.uc.label)}</div><div class="bcname">${ms.length}-way tie <span class="tiechev">›</span></div><div class="bcval">${he(o.p.disp)}</div></div>`;
 }
 function tieInfo(t){
   const rows=t.models.map(m=>`<div class="tierow"><span class="tdot" style="background:${labHex(m.lab)}"></span><span class="tnm">${he(m.name)}</span><span class="tlab">${he(m.lab)}</span></div>`).join('');
@@ -683,68 +679,73 @@ function tieInfo(t){
     <div class="mi-meta"><b>${t.models.length}-way tie</b> · <span style="color:var(--accent)">${he(t.disp)}</span></div>
     <div class="tiemodal-list">${rows}</div>`;
 }
-function openTieModal(t){ if(!t)return; $('#modalcard').innerHTML=tieInfo(t); $('#modal').hidden=false; document.body.style.overflow='hidden'; $('#modalcard').scrollTop=0; }
 function renderHome(){
   const meta=DATA.meta||{};
-  const updAgo=meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'';
+  const ago=meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—', updAgo=ago==='—'?'':ago;
   let cands=DATA.models.filter(x=>x.status==='live');
   cands=cands.filter(x=> homeMode==='open'?x.open:!x.open);
   const lb=cands.map(x=>({x,aa:benchOf(x,'aa')})).filter(o=>o.aa!=null).sort((a,b)=>b.aa-a.aa).slice(0,5);
-  const picks=USECASES.map(uc=>({uc,p:pickBest(cands,uc)})).filter(o=>o.p);
+  const texts=cands.filter(isTextModel);                                                     // a TTS / image / video model never wins an LLM category
+  const picks=USECASES.map(uc=>({uc,p:pickBest(texts,uc)})).filter(o=>o.p);
+  const unscored=texts.filter(m=>benchOf(m,'aa')==null).sort(byRecent);                     // live text models AA hasn't scored yet
   TIEMAP={};   // rebuilt as bestCard() renders each tie
   const top=lb[0];
-  const pulseTxt = (PULSE&&PULSE.text)?PULSE.text:'';
+  const pulseTxt = (PULSE&&PULSE.text)?str(PULSE.text):'';
   const heroHTML = pulseTxt
-    ? `<div class="hero pulse"><div class="pulse-txt clamp">${fmtPulse(pulseTxt)}</div><button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button></div>`
-    : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open-source':'frontier'} models available right now. The leader sits at <b>${top?top.aa+' AA-Index':'—'}</b>${top?' ('+top.x.name+')':''}. Updated ${meta.lastUpdated?timeAgo(new Date(meta.lastUpdated)):'—'} · ${meta.models||DATA.models.length} tracked all-time.</div>`;
+    ? `<div class="hero pulse"><div class="pulse-txt clamp" data-clamp>${fmtPulse(pulseTxt)}</div><button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button></div>`
+    : `<div class="hero"><b>${cands.length}</b> ${homeMode==='open'?'open':'closed'} models available right now. The leader sits at <b>${top?he(top.aa)+' AA-Index':'—'}</b>${top?' ('+he(top.x.name)+')':''}.${updAgo?' Updated '+updAgo+'.':''}</div>`;
   $('#v-home').innerHTML=`<div class="vh">Overview${updAgo?`<span class="vh-upd"> · updated ${updAgo}</span>`:''}</div>
     ${heroHTML}
     ${segCtl('home',homeMode,FO)}
-    <div class="hsec">Leaderboard · AA Index${meta.aaScale?' '+meta.aaScale:''}</div>
-    ${lb.length?lb.map((o,i)=>`<div class="lbrow ${i===0?'gold':''}"><div class="lbrank">${i+1}</div><div><div class="lbname"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${labHex(o.x.lab)}"></span>${o.x.name}${o.x.open?' <span class="badge b-open" style="font-size:10.0px;padding:1px 4px">OPEN</span>':''}</div><div class="lbsub">${o.x.lab}</div></div><div class="lbscore">${o.aa}<small>AA-INDEX</small></div></div>`).join(''):'<div class="empty">No AA-Index data for that filter — try All models.</div>'}
+    <div class="hsec">Leaderboard · AA Index${meta.aaScale?' '+he(meta.aaScale):''}</div>
+    ${lb.length?lb.map((o,i)=>`<div class="lbrow ${i===0?'gold':''}"><div class="lbrank">${i+1}</div><div><div class="lbname"><span class="dot" style="width:8px;height:8px;border-radius:50%;background:${labHex(o.x.lab)}"></span>${he(o.x.name)}${o.x.open?' <span class="badge b-open" style="font-size:10.0px;padding:1px 4px">OPEN</span>':''}</div><div class="lbsub">${he(o.x.lab)}</div></div><div class="lbscore">${he(o.aa)}</div></div>`).join(''):'<div class="empty">No scores yet.</div>'}
+    ${unscored.length?`<div class="lb-unscored">Not yet scored on AA: ${he(unscored.slice(0,6).map(m=>m.name).join(', '))}${unscored.length>6?` +${unscored.length-6} more`:''}</div>`:''}
     <div class="hsec">Best model for…</div>
     <div class="bestgrid">${picks.map(bestCard).join('')||'<div class="empty">—</div>'}</div>`;
-  // Pulse clamp: only offer "Read more" when the brief actually overflows 4 lines
+  // Pulse clamp: only offer "Read more" when the brief actually overflows 4 lines (measured only while Home is on screen)
   const ptx=$('#v-home .pulse-txt'), pmore=$('#v-home .pulse-more');
-  if(ptx&&pmore&&ptx.scrollHeight<=ptx.clientHeight+2){ ptx.classList.remove('clamp'); pmore.hidden=true; }
+  if(ptx&&pmore&&ptx.clientHeight>0&&ptx.scrollHeight<=ptx.clientHeight+2){ ptx.classList.remove('clamp'); pmore.hidden=true; }
 }
 
-// ---------------- NOW ----------------
+// ---------------- MODELS (nav "Models"; internal view id stays "now") ----------------
 function modelCard(m){
-  // Current tab = a clean name-first list; the full breakdown (specs, all benchmarks, brief)
-  // lives in the Details popup (modelInfo). Tap anywhere on the row to open it.
-  const flag = (m.status && m.status!=='live') ? statusBadge(m.status) : '';   // only flag non-live (preview/pulled); LIVE stays clean
+  // a clean name-first list; the full breakdown (specs, all benchmarks, brief) lives in the Details sheet (modelInfo)
+  const flag = (m.status && m.status!=='live') ? statusBadge(m.status) : '';   // only flag non-live; LIVE stays clean
   const openTag = m.open ? '<span class="badge b-open">OPEN</span>' : '';
-  const nm=he(m.name).replace(/"/g,'&quot;');   // he() escapes &<> ; also escape " for the attributes (matches the .lnk[data-href] convention)
-  return `<div class="mrow" data-info="${nm}" role="button" tabindex="0" aria-label="${nm} — details">
+  return `<div class="mrow" data-info="${he(m.name)}" role="button" tabindex="0" aria-label="${he(m.name)} — details">
     <span class="mrow-dot" style="background:${labHex(m.lab)}"></span>
     <div class="mrow-main">
       <div class="mrow-nm">${he(m.name)}</div>
-      <div class="mrow-sub">${flag}${openTag}<span class="mrow-labdt">${he(m.lab)} · ${fmtDate(m.released)}</span></div>
+      <div class="mrow-sub">${flag}${openTag}<span class="mrow-labdt">${he(m.lab)} · ${he(fmtDate(m.released))}</span></div>
     </div>
     <span class="mrow-chev">›</span>
   </div>`;
 }
 function synthBrief(m){
-  const b=m.benchmarks||{}, pr=priceFor(m.name), bits=[];
-  bits.push(`${m.name} is ${m.open?'an open-weight':'a'} ${m.modality?m.modality.split(',')[0].trim()+' ':''}model from ${m.lab}${m.released?`, released ${fmtDate(m.released)}`:''}.`);
+  const b=m.benchmarks||{}, pp=priceParts(priceFor(m)), bits=[];
+  bits.push(`${m.name} is ${m.open?'an open-weight':'a'} ${m.modality?String(m.modality).split(',')[0].trim()+' ':''}model from ${m.lab}${m.released?`, released ${fmtDate(m.released)}`:''}.`);
   const bench=Object.entries(b).slice(0,4).map(([k,v])=>`${k.replace(/\s*\(.*\)/,'')} ${v}`);
   if(bench.length) bits.push(`Reported scores include ${bench.join(', ')}.`);
   const tail=[];
   if(m.params&&m.params!=='—') tail.push(`${m.params} parameters`);
   if(m.context&&m.context!=='—') tail.push(`a ${m.context} context window`);
-  if(pr) tail.push(`pricing of $${pr} per million tokens`);
+  if(pp) tail.push(`pricing of ${fmtUSD(pp.in)} in and ${fmtUSD(pp.out)} out per million tokens`);
   if(tail.length) bits.push(`It has ${tail.join(', ')}.`);
   if(m.notable) bits.push(m.notable);
   return bits.join(' ');
 }
+// Details ▸ Benchmarks: percentage benchmarks get a "%" (never Elo / index / AA values)
+const PCT_BENCH=/^(swe|gpqa|aime|hle|mmlu|osworld|arc-agi|terminal-bench)/i;
+const benchIsPct=(k,v)=>typeof v==='number'&&v>=0&&v<=100&&!/\belo\b|index|\baa\b|-aa\b|\baa-/i.test(k)&&(PCT_BENCH.test(k)||/\b(verified|pro|diamond)\b/i.test(k)||/\(%\)/.test(k));
 function modelInfo(m){
-  const b=m.benchmarks||{}, pr=priceFor(m.name);
+  const b=m.benchmarks||{}, pr=priceFor(m), pp=priceParts(pr);
   const brief=(BRIEFS[m.name]||synthBrief(m)).split(/\n\n+/).map(p=>`<p>${he(p)}</p>`).join('');
   const ok=v=>v&&v!=='—'&&v!=='unknown';
-  // pricing: "in/out" -> "$in in · $out out / 1M"
-  let price='';
-  if(pr){ const x=String(pr).split('/'); price = x.length===2 ? `$${he(x[0].trim())} in · $${he(x[1].trim())} out <span class="mi-u">/ 1M tok</span>` : `$${he(pr)}`; }
+  // editorial.priceNotes[name] (tiers / promos / cache rates the pipeline splits off the "in/out" price) → one muted line
+  // under the price, escaped, no "$" added; absent → nothing. A note that only repeats the raw price text is skipped.
+  const rawPr=(pr!=null&&!isObj(pr))?String(pr).trim():'', note=PRICENOTES[String(m.name||'').toLowerCase().trim()]||'';
+  const showNote=!!note&&!(!pp&&rawPr.toLowerCase()===note.toLowerCase());
+  const price = (pp ? `${fmtUSD(pp.in)} in · ${fmtUSD(pp.out)} out <span class="mi-u">/ 1M tokens</span>` : he(rawPr))+(showNote?`<span class="mi-note">${he(note)}</span>`:'');
   const specRows=[
     ['Parameters', ok(m.params)?he(m.params):''],
     ['Context', ok(m.context)?he(m.context):''],
@@ -753,58 +754,66 @@ function modelInfo(m){
     ['License', m.open?'Open weights':'Proprietary'],
   ].filter(r=>r[1]);
   const specsHTML = specRows.length?`<div class="mi-sec">Specs</div><dl class="mi-grid">${specRows.map(([k,v])=>`<dt>${k}</dt><dd>${v}</dd>`).join('')}</dl>`:'';
-  const be=Object.entries(b);
-  const benchHTML = be.length?`<div class="mi-sec">Benchmarks</div><dl class="mi-grid mi-bench2">${be.map(([k,v])=>`<dt>${he(k.replace(/\s*\(.*\)/,''))}</dt><dd>${he(String(v))}</dd>`).join('')}</dl>`:'';
+  // strip a "(…)" qualifier only when that doesn't collide with another row ("HLE (no tools)" vs "HLE (with tools)" keep theirs)
+  const be=Object.entries(b), base=be.map(([k])=>k.replace(/\s*\(.*\)/,'').trim()||k);
+  const label=i=>{ const k=be[i][0], q=base[i]; return q!==k&&be.some(([k2],j)=>j!==i&&(base[j]===q||k2===q))?k:q; };
+  const benchHTML = be.length?`<div class="mi-sec">Benchmarks</div><dl class="mi-grid mi-bench2">${be.map(([k,v],i)=>`<dt>${he(label(i))}</dt><dd>${he(v)}${benchIsPct(k,v)?'%':''}</dd>`).join('')}</dl>`:'';
   return `<button class="modal-x" aria-label="Close">✕</button>
     <div class="mi-nm">${he(m.name)}</div>
-    <div class="mi-meta"><span class="dot" style="background:${labHex(m.lab)}"></span>${he(m.lab)} · ${fmtDate(m.released)} ${statusBadge(m.status)}${m.open?' <span class="badge b-open">OPEN</span>':''}</div>
+    <div class="mi-meta"><span class="dot" style="background:${labHex(m.lab)}"></span>${he(m.lab)} · ${he(fmtDate(m.released))} ${m.status!=='live'?statusBadge(m.status):''}${m.open?' <span class="badge b-open">OPEN</span>':''}</div>
     ${specsHTML}
     ${benchHTML}
     <div class="mi-sec">About</div>
-    <div class="mi-brief">${brief}</div>${BRIEFS[m.name]?'':'<div class="mi-fallback">Quick summary from the model\'s data — a fuller write-up lands on the next sync.</div>'}`;
+    <div class="mi-brief">${brief}</div>`;
 }
-function openModal(name){
-  const m=DATA.models.find(x=>x.name===name); if(!m)return;
-  $('#modalcard').innerHTML=modelInfo(m);
+// bottom sheet: a builder that throws still opens the sheet with one quiet line + a close button
+function showSheet(build){
+  const h=guard(build); if(h==null) return;
+  $('#modalcard').innerHTML=h===FAIL?`<button class="modal-x" aria-label="Close">✕</button>${FAIL}`:h;
   $('#modal').hidden=false; document.body.style.overflow='hidden'; $('#modalcard').scrollTop=0;
 }
+function openModal(name){ const m=DATA.models.find(x=>x.name===name); if(m) showSheet(()=>modelInfo(m)); }
+function openTieModal(t){ if(t) showSheet(()=>tieInfo(t)); }
 function closeModal(){ const md=$('#modal'); if(md&&!md.hidden){ md.hidden=true; document.body.style.overflow=''; } }
-// ---- model-to-model compare (opens from the discreet ★ by the Overview) ----
+// ---- model-to-model compare (Compare button on the Models tab) ----
 let cmpA=null, cmpB=null;
 function cmpModels(){ return DATA.models.filter(m=>m.status==='live').sort((a,b)=>(benchOf(b,'aa')||0)-(benchOf(a,'aa')||0)); }
-function cmpNum(x,y){ return (x==null||y==null)?0:(x>y?1:x<y?-1:0); }
+function cmpNum(x,y){ return (x==null||y==null||Number.isNaN(x)||Number.isNaN(y))?0:(x>y?1:x<y?-1:0); }
 function cmpRow(label,av,bv,better){ return `<div class="cmp-row"><div class="cmp-v${better>0?' cmp-win':''}">${av}</div><div class="cmp-l">${label}</div><div class="cmp-v${better<0?' cmp-win':''}">${bv}</div></div>`; }
 function cmpResult(){
   const a=DATA.models.find(m=>m.name===cmpA), b=DATA.models.find(m=>m.name===cmpB);
   if(!a||!b) return '<div class="empty">Pick two models.</div>';
-  const v=(x,suf)=>x==null?'—':x+(suf||'');
-  let s='';
-  [['AA-Index','aa',''],['SWE-bench','swe','%'],['GPQA','gpqa','%'],['AIME','aime','%']].forEach(([lbl,cat,suf])=>{const av=benchOf(a,cat),bv=benchOf(b,cat);s+=cmpRow(lbl,v(av,suf),v(bv,suf),cmpNum(av,bv));});
-  s+=cmpRow('Lab', he(canonLab(a.lab)), he(canonLab(b.lab)), 0);
-  s+=cmpRow('Context', he(a.context||'—'), he(b.context||'—'), cmpNum(ctxNum(a.context),ctxNum(b.context)));
-  const pa=outPrice(a.name),pb=outPrice(b.name);
-  s+=cmpRow('Out $/M', pa!=null?'$'+pa:'—', pb!=null?'$'+pb:'—', -cmpNum(pa,pb));
-  s+=cmpRow('Params', he(a.params||'—'), he(b.params||'—'), 0);
-  s+=cmpRow('Released', fmtDate(a.released), fmtDate(b.released), cmpNum(tval(a.released),tval(b.released)));
-  s+=cmpRow('Type', a.open?'Open':'Closed', b.open?'Open':'Closed', 0);
+  const blank=x=>x==null||x===''||/^(—|-|unknown|undisclosed|not disclosed|n\/a)$/i.test(String(x).trim());
+  const row=(label,av,bv,better)=>(blank(av)&&blank(bv))?'':cmpRow(label,blank(av)?'—':av,blank(bv)?'—':bv,better);   // a row empty on BOTH sides is hidden
+  const pv=q=>q?(q.est?'~':'')+q.v+'%':null, qa=proEq(a), qb=proEq(b);
+  let s=row('AA-Index',benchOf(a,'aa'),benchOf(b,'aa'),cmpNum(benchOf(a,'aa'),benchOf(b,'aa')));
+  s+=row('SWE-bench Pro',pv(qa),pv(qb),cmpNum(qa&&qa.v,qb&&qb.v));                            // Pro scale; "~" = converted from Verified
+  [['SWE-bench Verified','swe'],['GPQA','gpqa'],['AIME','aime']].forEach(([lbl,cat])=>{const av=benchOf(a,cat),bv=benchOf(b,cat);s+=row(lbl,av==null?null:av+'%',bv==null?null:bv+'%',cmpNum(av,bv));});
+  s+=row('Lab', he(canonLab(a.lab)), he(canonLab(b.lab)), 0);
+  s+=row('Context', he(a.context), he(b.context), cmpNum(ctxNum(a.context)||null,ctxNum(b.context)||null));
+  const pa=outPrice(a),pb=outPrice(b);
+  s+=row('Output $ / 1M tokens', pa!=null?fmtUSD(pa):null, pb!=null?fmtUSD(pb):null, -cmpNum(pa,pb));
+  s+=row('Params', he(a.params), he(b.params), 0);
+  s+=row('Released', he(fmtDate(a.released)), he(fmtDate(b.released)), cmpNum(tval(a.released),tval(b.released)));
+  s+=row('Type', a.open?'Open':'Closed', b.open?'Open':'Closed', 0);
   return s;
 }
-function cmpSelect(id,sel){ return `<select id="${id}" class="cmp-sel" aria-label="model">${cmpModels().map(m=>`<option value="${he(m.name).replace(/"/g,'&quot;')}"${m.name===sel?' selected':''}>${he(m.name)}</option>`).join('')}</select>`; }
+function cmpSelect(id,sel){ return `<select id="${id}" class="cmp-sel" aria-label="model">${cmpModels().map(m=>`<option value="${he(m.name)}"${m.name===sel?' selected':''}>${he(m.name)}</option>`).join('')}</select>`; }
 function compareBody(){
   return `<button class="modal-x" aria-label="Close">✕</button>
     <div class="mi-nm" style="font-size:21px;padding-right:34px">Compare models</div>
     <div class="cmp-head">${cmpSelect('cmpA',cmpA)}<span class="cmp-vs">vs</span>${cmpSelect('cmpB',cmpB)}</div>
     <div id="cmp-result" class="cmp-grid">${cmpResult()}</div>
-    <div class="cmp-foot">Green = the stronger value · lower price wins</div>`;
+    <div class="cmp-foot">Green = better</div>`;
 }
 function openCompare(){
   const lb=cmpModels(); if(!cmpA)cmpA=lb[0]&&lb[0].name; if(!cmpB)cmpB=lb[1]&&lb[1].name;
-  $('#modalcard').innerHTML=compareBody(); $('#modal').hidden=false; document.body.style.overflow='hidden'; $('#modalcard').scrollTop=0;
+  showSheet(compareBody);
 }
 // file-cabinet sub-tabs: a tab strip whose active tab is stitched to the panel below
 function fileTabs(view,active,tabs){
   return `<div class="ftabs ${tabs.length<=4?'ftabs-fill':'ftabs-scroll'}" role="tablist">${tabs.map(t=>
-    `<button class="ftab${t[0]===active?' on':''}" data-ftab="${view}:${t[0]}" role="tab" aria-selected="${t[0]===active}">${he(t[1])}${(t[2]!=null&&t[2]!=='')?`<span class="ftab-ct">${t[2]}</span>`:''}</button>`
+    `<button class="ftab${t[0]===active?' on':''}" data-ftab="${view}:${t[0]}" role="tab" aria-selected="${t[0]===active}">${he(t[1])}${(t[2]!=null&&t[2]!=='')?`<span class="ftab-ct">${he(t[2])}</span>`:''}</button>`
   ).join('')}</div>`;
 }
 let nowCat='all';
@@ -812,113 +821,111 @@ function renderNow(){
   let list=DATA.models.slice();
   if(nowCat==='frontier') list=list.filter(m=>!m.open);
   else if(nowCat==='open') list=list.filter(m=>m.open);
-  list.sort((a,b)=>(b.released||'').localeCompare(a.released||''));
+  list.sort(byRecent);
   const nAll=DATA.models.length, nFr=DATA.models.filter(m=>!m.open).length, nOp=DATA.models.filter(m=>m.open).length;
-  $('#v-now').innerHTML = `<div class="vh vh-row">Every model chronologically<button class="cmp-btn" data-compare aria-label="Compare two models">⇄ Compare</button></div>
-    ${fileTabs('now',nowCat,[['all','All',nAll],['frontier','Frontier',nFr],['open','Open',nOp]])}
-    <div class="ftab-panel">${list.length?list.map(modelCard).join(''):'<div class="empty">No models here.</div>'}</div>`;
+  $('#v-now').innerHTML = `<div class="vh vh-row">All models<button class="cmp-btn" data-compare aria-label="Compare two models">⇄ Compare</button></div>
+    ${fileTabs('now',nowCat,[['all','All',nfmt(nAll)],['frontier','Closed',nfmt(nFr)],['open','Open',nfmt(nOp)]])}
+    <div class="ftab-panel">${guard(()=>list.length?list.map(modelCard).join(''):'<div class="empty">No models here.</div>')}</div>`;
 }
 
 // ---------------- CHARTS ----------------
-function tval(s){const p=(s||'').split('-');return(+p[0]||2020)+((+p[1]||1)-1)/12;}
-function trendChart(t){
-  const C={line:css('--line'),ink3:css('--ink3'),accent:css('--accent'),warn:css('--warn'),bg:css('--bg')};
-  const meas=(t.points||[]).slice().sort((a,b)=>tval(a.date)-tval(b.date));
-  const pred=(t.predicted||[]).slice().sort((a,b)=>tval(a.date)-tval(b.date));
-  if(!meas.length) return '<div class="empty">No data.</div>';
-  const all=[...meas,...pred], xs=all.map(p=>tval(p.date)), ys=all.flatMap(p=>[p.value,p.low,p.high].filter(v=>v!=null));
-  let x0v=Math.min(...xs),x1v=Math.max(...xs); if(x1v===x0v)x1v+=.5;
-  let y0v=Math.min(...ys),y1v=Math.max(...ys); const pad=(y1v-y0v)*.12||5; y0v-=pad; y1v+=pad;
-  const W=500,H=170,L=32,R=10,T=10,B=24;
-  const X=v=>L+((tval(v)-x0v)/(x1v-x0v))*(W-L-R), Y=v=>T+(1-(v-y0v)/(y1v-y0v))*(H-T-B);
-  let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="height:170px">`;
-  for(let i=0;i<=3;i++){const yy=y0v+(y1v-y0v)*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end">${yy.toFixed(0)}</text>`;}
-  [...new Set(all.map(p=>+yr(p.date)))].sort().forEach(y=>{s+=`<text x="${X(y+'-06').toFixed(1)}" y="${H-6}" font-size="9" text-anchor="middle">'${String(y).slice(2)}</text>`;});
-  if(pred.length){const last=meas[meas.length-1],lo=[{date:last.date,low:last.value,high:last.value},...pred.filter(p=>p.low!=null)];
-    if(lo.length>1){const up=lo.map(p=>`${X(p.date).toFixed(1)},${Y(p.high).toFixed(1)}`),dn=lo.slice().reverse().map(p=>`${X(p.date).toFixed(1)},${Y(p.low).toFixed(1)}`);s+=`<polygon points="${up.concat(dn).join(' ')}" fill="${C.warn}" opacity=".16"/>`;}
-    s+=`<polyline points="${[last,...pred].map(p=>`${X(p.date).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.warn}" stroke-width="2" stroke-dasharray="5 4"/>`;
-    pred.forEach(p=>s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="4" fill="${C.bg}" stroke="${C.warn}" stroke-width="2"><title>${p.model}: ${p.value} (band ${p.low}–${p.high})</title></circle>`);}
-  s+=`<polyline points="${meas.map(p=>`${X(p.date).toFixed(1)},${Y(p.value).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
-  meas.forEach(p=>s+=`<circle cx="${X(p.date).toFixed(1)}" cy="${Y(p.value).toFixed(1)}" r="3.5" fill="${C.accent}" stroke="${C.bg}" stroke-width="1.5"><title>${p.model}: ${p.value} ${fmtDate(p.date)}</title></circle>`);
-  return s+'</svg>';
-}
-function barChart(data,max,ceil){
-  const tick=ceil?`<div class="ceil-tick" style="left:${(ceil/max*100).toFixed(1)}%"></div>`:'';
-  const lab=ceil?`<div class="ceil-lab">prior ceiling ≈ ${ceil}</div>`:'';
-  return lab+data.map(d=>`<div class="bar"><div class="bl">${d.l}</div><div class="track">${tick}<div class="fill" style="width:${(d.v/max*100).toFixed(1)}%;background:${labHex(d.lab)};${d.hl?'box-shadow:0 0 10px '+labHex(d.lab):''};${d.approx?'opacity:.6':''}"></div></div><div class="bv">${d.v}${d.approx?'~':''}</div></div>`).join('');
-}
-const DAYMS=864e5, ddays=(a,b)=>Math.round((new Date(b+'T00:00:00')-new Date(a+'T00:00:00'))/DAYMS);
-function cadence(){
-  const C={line:css('--line'),ink3:css('--ink3'),ink2:css('--ink2'),bg:css('--bg')};
-  const all=DATA.models.filter(m=>(m.released||'')>='2026-01').map(m=>({lab:m.lab,sort:(m.released||'').slice(0,10)})).filter(m=>m.sort.length>=7);
-  if(!all.length) return {stats:'',svg:'<div class="empty">No 2026 data.</div>'};
-  const labCount={},labFirst={};all.forEach(m=>{labCount[m.lab]=(labCount[m.lab]||0)+1;if(!labFirst[m.lab]||m.sort<labFirst[m.lab])labFirst[m.lab]=m.sort;});
-  const lanes=Object.keys(labCount).sort((a,b)=>labCount[b]-labCount[a]||(labFirst[a]<labFirst[b]?-1:1)).slice(0,10);
-  const dates=[...new Set(all.map(m=>m.sort))].sort();
-  const gaps=dates.slice(1).map((d,i)=>ddays(dates[i],d)),sg=[...gaps].sort((a,b)=>a-b);
-  const median=sg.length?(sg.length%2?sg[(sg.length-1)/2]:(sg[sg.length/2-1]+sg[sg.length/2])/2):0;
-  const span=ddays(dates[0],dates[dates.length-1]),top1=lanes[0];
-  const byMo={};all.forEach(m=>{const k=m.sort.slice(0,7);byMo[k]=(byMo[k]||0)+1;});
-  const moE=Object.entries(byMo).sort((a,b)=>b[1]-a[1]),busy=moE[0],quiet=moE[moE.length-1];
-  const stats=`<div class="cadstats">
-    <div class="cadstat"><div class="v">${all.length} <small>releases</small></div><div class="l">${lanes.length} labs · ${span}-day span</div></div>
-    <div class="cadstat"><div class="v">~${(span/Math.max(1,all.length-1)).toFixed(1)}d <small>each</small></div><div class="l">median ${median}d between dates</div></div>
-    <div class="cadstat"><div class="v">${top1} <small>led</small></div><div class="l">${labCount[top1]} releases</div></div>
-    <div class="cadstat"><div class="v">${MM[+busy[0].slice(5)]} ${busy[1]}</div><div class="l">busiest · ${MM[+quiet[0].slice(5)]} ${quiet[1]} quietest</div></div></div>`;
-  const TS0=new Date('2026-02-01'),TS1=new Date('2026-06-30');
-  const MO=[['2026-02','Feb'],['2026-03','Mar'],['2026-04','Apr'],['2026-05','May'],['2026-06','Jun']];
-  const x0=86,x1=466,top=10,lh=24,bot=22,H=top+lanes.length*lh+bot,botY=top+lanes.length*lh;
-  const dx=iso=>x0+(new Date(iso+'T00:00:00')-TS0)/(TS1-TS0)*(x1-x0);
-  const grp={};all.forEach(m=>{const k=m.lab+'|'+m.sort;(grp[k]=grp[k]||{lab:m.lab,sort:m.sort,n:0}).n++;});
-  let s=`<svg class="svgchart" viewBox="0 0 500 ${H}">`;
-  gaps.forEach((g,i)=>{if(g>=21){const xa=dx(dates[i])+4,xb=dx(dates[i+1])-4;s+=`<rect x="${xa.toFixed(1)}" y="${top}" width="${(xb-xa).toFixed(1)}" height="${lanes.length*lh}" fill="${C.ink3}" opacity=".07"/><text class="mn" x="${((xa+xb)/2).toFixed(1)}" y="${(botY-6).toFixed(1)}" font-size="8.5" text-anchor="middle" fill="${C.ink3}">${g}d</text>`;}});
-  MO.forEach(([iso,l])=>{const x=dx(iso+'-01').toFixed(1);s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${botY}" stroke="${C.line}"/><text class="mn" x="${x}" y="${botY+15}" font-size="9" text-anchor="middle" fill="${C.ink3}">${l}</text>`;});
-  lanes.forEach((lab,i)=>{const y=top+i*lh+lh/2;s+=`<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="${C.line}" opacity=".5"/><text x="${x0-8}" y="${y+3}" font-size="10" font-weight="700" text-anchor="end" fill="${labHex(lab)}" font-family="var(--sans)">${lab.split(' ')[0]}</text><text class="mn" x="${x1+10}" y="${y+3}" font-size="10" font-weight="700" fill="${C.ink2}">${labCount[lab]}</text>`;});
-  Object.values(grp).forEach(g=>{const i=lanes.indexOf(g.lab);if(i<0)return;const y=top+i*lh+lh/2,r=(3.5+(g.n-1)*1.4).toFixed(1);s+=`<circle cx="${dx(g.sort).toFixed(1)}" cy="${y}" r="${r}" fill="${labHex(g.lab)}" stroke="${C.bg}" stroke-width="1.3"><title>${g.lab} ×${g.n} — ${fmtDate(g.sort)}</title></circle>`;});
-  return {stats, svg:s+'</svg>'};
-}
-let MARKETS=[], HISTORICS=[], TRAJFC=[], FCMETHOD='', FCSTORY=[], NEWS=[], NEWSMETA={}, GLOSSARY=[], RELEASES=[], RELMETA={}, BRIEFS={};
+const tick = v => String(Math.round(v)||0);                       // axis labels: whole numbers, never "-0"
+let cadenceMode='frontier';
+// releases per quarter, zero-filled from the first quarter to the last COMPLETE one (the in-progress quarter is excluded —
+// a partial quarter always reads as a slowdown), with a trailing 4-quarter (12-month) average line
 function cadenceLine(){
   const C={line:css('--line'),ink3:css('--ink3'),accent:css('--accent')};
-  const bins={};
-  const cands=DATA.models.filter(m=> cadenceMode==='open'?m.open:!m.open);
-  cands.forEach(m=>{const d=m.released;if(!d)return;const y=+d.slice(0,4),mo=+(d.slice(5,7)||1);if(!y)return;const t=y+Math.floor((mo-1)/3)/4;bins[t]=(bins[t]||0)+1;});
-  const pts=Object.entries(bins).map(([t,c])=>({t:+t,c})).sort((a,b)=>a.t-b.t);
-  if(pts.length<3)return '<div class="empty">Not enough data.</div>';
-  const roll=pts.map(p=>{const w=pts.filter(q=>q.t>p.t-1+1e-6&&q.t<=p.t);return {t:p.t,v:w.reduce((s,q)=>s+q.c,0)/w.length};});
-  const x0=pts[0].t,x1=pts[pts.length-1].t+0.25,y1=Math.max(...pts.map(p=>p.c),...roll.map(p=>p.v))*1.12;
-  const W=500,H=200,L=28,R=12,T=12,B=24;
+  const now=new Date(), curQ=now.getFullYear()*4+Math.floor(now.getMonth()/3), bins={};
+  DATA.models.filter(m=> cadenceMode==='open'?m.open:!m.open).forEach(m=>{
+    const r=/^(\d{4})-(\d{2})/.exec(m.released||''); if(!r||+r[2]<1||+r[2]>12) return;      // year-only dates can't be placed in a quarter
+    const q=+r[1]*4+Math.floor((+r[2]-1)/3); if(q>=curQ) return; bins[q]=(bins[q]||0)+1; });
+  const ks=Object.keys(bins).map(Number); if(!ks.length) return '<div class="empty">Not enough data.</div>';
+  const pts=[]; for(let q=Math.min(...ks);q<curQ;q++) pts.push({q,c:bins[q]||0});
+  if(pts.length<4) return '<div class="empty">Not enough data.</div>';
+  const roll=pts.slice(3).map((p,i)=>({q:p.q,v:(pts[i].c+pts[i+1].c+pts[i+2].c+pts[i+3].c)/4}));
+  const x0=pts[0].q/4, x1=(pts[pts.length-1].q+1)/4, y1=(Math.max(...pts.map(p=>p.c),...roll.map(p=>p.v))||1)*1.12;
+  const W=500,H=200,L=30,R=12,T=12,B=26;
   const X=t=>L+((t-x0)/(x1-x0))*(W-L-R),Y=v=>T+(1-v/y1)*(H-T-B);
   let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" style="width:100%;height:auto">`;
-  for(let i=0;i<=3;i++){const yy=y1*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end" fill="${C.ink3}">${yy.toFixed(0)}</text>`;}
-  for(let y=Math.ceil(x0);y<=Math.floor(x1);y++)s+=`<text x="${X(y).toFixed(1)}" y="${H-6}" font-size="9" text-anchor="middle" fill="${C.ink3}">${y}</text>`;
-  s+=`<polyline points="${roll.map(p=>`${X(p.t).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
-  pts.forEach(p=>s+=`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.c).toFixed(1)}" r="2.4" fill="${C.ink3}"><title>${p.c} that quarter</title></circle>`);
-  s+='</svg>';
-  const recent=roll[roll.length-1].v,early=roll[Math.min(roll.length-1,4)].v||roll[0].v;
-  return s+`<div class="accsub" style="margin-top:8px">Line = trailing-year average of tracked releases per quarter; gray dots = each quarter's count. The pace climbed from ~${early.toFixed(1)}/qtr to ~${recent.toFixed(1)}/qtr — about ${(recent/Math.max(0.4,early)).toFixed(0)}× the early-years rate.</div>`;
+  for(let i=0;i<=3;i++){const yy=y1*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+4).toFixed(1)}" font-size="11" text-anchor="end" fill="${C.ink3}">${tick(yy)}</text>`;}
+  const yrs=[]; for(let y=Math.ceil(x0);y<=Math.floor(x1);y++) yrs.push(y); const every=Math.max(1,Math.ceil(yrs.length/7));   // ≤7 year labels so they never collide
+  yrs.forEach((y,i)=>{ if(i%every===0) s+=`<text x="${X(y).toFixed(1)}" y="${H-6}" font-size="11" text-anchor="middle" fill="${C.ink3}">${y}</text>`; });
+  if(roll.length>1) s+=`<polyline points="${roll.map(p=>`${X(p.q/4).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
+  pts.forEach(p=>s+=`<circle cx="${X(p.q/4).toFixed(1)}" cy="${Y(p.c).toFixed(1)}" r="2.4" fill="${C.ink3}"><title>${p.c} that quarter</title></circle>`);
+  return s+'</svg><div class="accsub" style="margin-top:8px">Dots = models tracked per quarter · line = 12-month average.</div>';
 }
+function cadenceBlock(){ return segCtl('cadence',cadenceMode,FO)+guard(cadenceLine); }
+// Head-to-head: top 8 live models on one metric. Coding = the SWE-bench Pro scale via proEq (converted bars are faded + "~").
 let hhMetric='aa';
-let cadenceMode='frontier';
-function cadenceBlock(){ return segCtl('cadence',cadenceMode,FO)+cadenceLine(); }
-const HH_METRICS=[['aa','AA',80],['swe','SWE',100],['gpqa','GPQA',100],['aime','AIME',100]];
+const HH_METRICS=[['aa','Overall'],['coding','Coding'],['gpqa','Science'],['aime','Math']];
+function hhVal(m,cat){ if(cat==='coding') return proEq(m); const v=benchOf(m,cat); return v==null?null:{v,est:false}; }
+function niceMax(v,pct){ if(!(v>0)) return pct?100:10; const step=v<=10?2:v<=50?5:10, n=Math.ceil(v/step)*step; return pct?Math.min(100,n):n; }
+// chart label: never cut mid-version — drop a leading word that repeats the lab ("Meta Muse Spark 1.3" → "Muse Spark 1.3"),
+// then cut at a space / hyphen boundary + "…"
+function hhLabel(m){
+  let s=String(m.name||'').replace(/\s*\(.*\)/,'').trim(); if(s.length<=17) return s;
+  const w=s.split(/\s+/), lab=canonLab(m.lab).split(/\s+/)[0].toLowerCase();
+  if(w.length>1&&w[0].toLowerCase()===lab) s=w.slice(1).join(' ');
+  if(s.length<=17) return s;
+  const cut=s.slice(0,17), at=Math.max(cut.lastIndexOf(' '),cut.lastIndexOf('-'));
+  return (at>2?cut.slice(0,at):cut).replace(/[\s-]+$/,'')+'…';
+}
 function headToHead(){
-  const meta=HH_METRICS.find(x=>x[0]===hhMetric)||HH_METRICS[0], cat=meta[0];
-  const seg=segCtl('hh',hhMetric,HH_METRICS.map(x=>[x[0],x[1]]));
-  const rows=DATA.models.filter(m=>m.status==='live').map(m=>({m,v:benchOf(m,cat)})).filter(o=>o.v!=null).sort((a,b)=>b.v-a.v).slice(0,8);
+  const cat=(HH_METRICS.find(x=>x[0]===hhMetric)||HH_METRICS[0])[0], pct=cat!=='aa';
+  const seg=segCtl('hh',cat,HH_METRICS);
+  const rows=DATA.models.filter(m=>m.status==='live').map(m=>({m,q:hhVal(m,cat)})).filter(o=>o.q)
+    .sort((a,b)=>b.q.v-a.q.v||(a.q.est?1:0)-(b.q.est?1:0)).slice(0,8);
   if(!rows.length) return seg+'<div class="empty">No data for that metric.</div>';
   const C={line:css('--line'),ink2:css('--ink2'),ink3:css('--ink3')};
-  const hi=Math.max(meta[2],...rows.map(o=>o.v));
-  const W=500,rh=29,top=6,L=120,R=42,bw=W-L-R,H=top+rows.length*rh+14;
-  const X=v=>L+(v/hi)*bw;
+  const hi=niceMax(Math.max(...rows.map(o=>o.q.v)),pct);                                     // axis max = nice-rounded data max (≤100 for %)
+  const W=500,rh=31,top=6,L=134,R=54,bw=W-L-R,H=top+rows.length*rh+18;
+  const X=v=>L+(Math.max(0,Math.min(v,hi))/hi)*bw;
   let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" style="width:100%;height:auto">`;
-  [0,.25,.5,.75,1].forEach(f=>{const x=(L+f*bw).toFixed(1);s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${top+rows.length*rh}" stroke="${C.line}" opacity=".4"/><text x="${x}" y="${H-3}" font-size="8" text-anchor="middle" fill="${C.ink3}">${Math.round(f*hi)}</text>`;});
-  rows.forEach((o,i)=>{const y=top+i*rh+rh/2,col=labHex(o.m.lab),bx=X(o.v);
-    s+=`<text x="${L-7}" y="${(y+3).toFixed(1)}" font-size="10" font-weight="600" text-anchor="end" fill="${C.ink2}" font-family="var(--sans)">${esc(o.m.name).replace(/\s*\(.*\)/,'').slice(0,17)}</text>`;
-    s+=`<rect x="${L}" y="${(y-7.5).toFixed(1)}" width="${Math.max(1,bx-L).toFixed(1)}" height="15" rx="3" fill="${col}"><title>${esc(o.m.name)}: ${o.v}</title></rect>`;
-    s+=`<text x="${(bx+5).toFixed(1)}" y="${(y+3).toFixed(1)}" font-size="10" font-weight="700" fill="${C.ink2}" font-family="var(--mono)">${Math.round(o.v*10)/10}${cat==='aa'?'':'%'}</text>`;});
+  [0,.25,.5,.75,1].forEach(f=>{const x=(L+f*bw).toFixed(1);s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${top+rows.length*rh}" stroke="${C.line}" opacity=".4"/><text x="${x}" y="${H-3}" font-size="11" text-anchor="middle" fill="${C.ink3}">${tick(f*hi)}</text>`;});
+  rows.forEach((o,i)=>{const y=top+i*rh+rh/2,col=labHex(o.m.lab),bx=X(o.q.v),val=(o.q.est?'~':'')+r1(o.q.v)+(pct?'%':'');
+    s+=`<text x="${L-7}" y="${(y+4).toFixed(1)}" font-size="12" font-weight="600" text-anchor="end" fill="${C.ink2}" font-family="var(--sans)">${he(hhLabel(o.m))}</text>`;
+    s+=`<rect x="${L}" y="${(y-8).toFixed(1)}" width="${Math.max(1,bx-L).toFixed(1)}" height="16" rx="3" fill="${col}"${o.q.est?' opacity=".6"':''}><title>${he(o.m.name)}: ${he(val)}</title></rect>`;
+    s+=`<text x="${(bx+5).toFixed(1)}" y="${(y+4).toFixed(1)}" font-size="12" font-weight="700" fill="${C.ink2}" font-family="var(--mono)">${he(val)}</text>`;});
   s+='</svg>';
   return seg+s;
+}
+const TRAJ_META={aa:['AA Intelligence Index','Composite 0–100 — the headline "how smart" score.'],swe:['SWE-bench Pro','% of real coding tasks solved.']};
+function trajWrap(cat){ return guard(()=>trajBlock(cat,TRAJ_META[cat][0],TRAJ_META[cat][1])); }
+let chartsTab='frontier';
+function renderCharts(){
+  const panel = chartsTab==='cadence' ? `<div id="cadence-wrap">${cadenceBlock()}</div>`
+    : chartsTab==='hh' ? `<div id="hh-wrap">${guard(headToHead)}</div>`
+    : `<div id="traj-aa-wrap">${trajWrap('aa')}</div>
+      <div id="traj-swe-wrap">${trajWrap('swe')}</div>`;
+  $('#v-charts').innerHTML = `<div class="vh">Charts</div>
+    ${fileTabs('charts',chartsTab,[['frontier','By company'],['cadence','Cadence'],['hh','Head-to-head']])}
+    <div class="ftab-panel">${panel}</div>`;
+}
+
+// ---------------- PREDICT (Timeline with the release filter + hero, and prediction markets) ----------------
+let RELSORTED=[]; let predictTab='timeline'; let radarFilter='all';
+const OPEN_REL_LABS=new Set(['DeepSeek','Alibaba','Zhipu','Moonshot','NVIDIA']);   // open-weight labs → the "Open" release filter (Meta went closed)
+// the pipeline's explicit open flag wins; else "open-weights release" in the name; else the LEAD lab (first of "A + B" / "A / B")
+function isOpenRel(r){ if(typeof r.open==='boolean') return r.open; if(/\bopen[- ]?(weights?|source)\b/i.test(r.model||'')) return true;
+  return OPEN_REL_LABS.has(canonLab(String(r.lab||'').split(/\s*[+/]\s*/)[0])); }
+const firstPct = s => { const m=String(s==null?'':s).match(/^\s*[~≈]?\s*(\d{1,3}(?:\.\d+)?)\s*%/); return m?Math.max(0,Math.min(100,+m[1])):null; };   // only a LEADING % draws a bar
+function probBar(p,col){ if(p==null)return''; return `<div class="pbar"><div class="pbar-fill" style="width:${Math.max(2,p)}%;background:${col}"></div><span class="pbar-n">${(+p).toFixed(p%1?1:0)}%</span></div>`; }
+function relStatusPill(s){ const m={confirmed:['CONFIRMED','h-soon'],expected:['EXPECTED','h-soon'],rumored:['RUMORED','h-rum']}[s]||['EXPECTED','h-soon']; return `<span class="hpill ${m[1]}">${m[0]}</span>`; }
+const INFO_ICON='<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.6" r="0.2" stroke-width="2.6"/></svg>';
+const ARROW='<span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span>';
+const CHEV='<span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>';
+function marketRow(mk){
+  const pc=platColor(mk.platform), url=isHttp(mk.url)?mk.url:'';
+  const click=url?` data-href="${he(url)}" role="link" tabindex="0"`:'';
+  // a % is only as good as the day it was read: >14 days old (or never stamped) → muted, "last read …", and no bar
+  const am=/^(\d{4})-(\d{2})-(\d{2})/.exec(mk.asOf||''), asOf=am?new Date(+am[1],+am[2]-1,+am[3]):null;
+  const stale=!asOf||isNaN(asOf)||(Date.now()-asOf.getTime())>14*864e5;
+  const p=stale?null:firstPct(mk.forecast), rd=fmtDay(mk.resolveDate);                   // resolve slot only when it IS a date
+  return `<div class="mktrow${url?' lnk':''}"${click}>
+    <div class="mkt-top"><span class="mkt-plat" style="color:${pc};border-color:${pc}66">${he(shortPlat(mk.platform))}</span>${rd?`<span class="mkt-d">resolves ${he(rd)}</span>`:''}${url?ARROW:''}</div>
+    <div class="mkt-q">${he(mk.question)}</div>
+    ${p!=null?`<div class="mkt-bar"><div class="mkt-bar-fill" style="width:${Math.max(2,p)}%;background:${pc}"></div></div>`:''}
+    <div class="mkt-fc2${stale?' stale':''}">${he(mk.forecast)}</div>${stale?`<div class="mkt-asof">${asOf&&!isNaN(asOf)?'last read '+he(fmtDay(mk.asOf)):'date unknown'}</div>`:''}</div>`;
 }
 function shortPlat(p){
   const lo=(p||'').toLowerCase();
@@ -930,17 +937,6 @@ function platColor(p){
   const lo=(p||'').toLowerCase();
   return lo.includes('poly')?'#6f9ec4':lo.includes('metac')?'#4faf86':lo.includes('mani')?'#d9a85a':lo.includes('kalshi')?'#4fb8a6':lo.includes('epoch')?'#9a72c0':lo.includes('metr')?'#cf8a52':lo.includes('stanford')||lo.includes('artificial')?'#a98fd0':'#8a8d80';
 }
-function marketRow(mk){
-  const pc=platColor(mk.platform);
-  const click=mk.url?` data-href="${he(mk.url).replace(/"/g,'&quot;')}" role="link" tabindex="0"`:'';
-  const p=firstPct(mk.forecast);
-  return `<div class="mktrow${mk.url?' lnk':''}"${click}>
-    <div class="mkt-top"><span class="mkt-plat" style="color:${pc};border-color:${pc}66">${he(shortPlat(mk.platform))}</span>${mk.resolveDate?`<span class="mkt-d">resolves ${he(mk.resolveDate)}</span>`:''}${mk.url?'<span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span>':''}</div>
-    <div class="mkt-q">${he(mk.question)}</div>
-    ${p!=null?`<div class="mkt-bar"><div class="mkt-bar-fill" style="width:${Math.max(2,p)}%;background:${pc}"></div></div>`:''}
-    <div class="mkt-fc2">${he(mk.forecast)}</div></div>`;
-}
-const todayISO = () => new Date().toISOString().slice(0,10);
 function marketIsOpen(mk){
   if(/\bresolved\b/i.test((mk.forecast||'')+' '+(mk.question||''))) return false;  // explicitly resolved (word-bounded so "unresolved" doesn't match)
   const dm=(mk.resolveDate||'').match(/^(\d{4}-\d{2}-\d{2})/);
@@ -949,154 +945,128 @@ function marketIsOpen(mk){
 }
 function marketsBody(){
   const open = MARKETS.filter(marketIsOpen);
-  if(!FCSTORY.length && !open.length)
-    return '<div class="accsub">What forecasters and prediction markets actually expect.</div><div class="empty">Market forecasts are being researched — they land on the next data sync.</div>';
+  if(!FCSTORY.length && !open.length) return '<div class="empty">Nothing yet.</div>';
   let out='';
-  if(FCSTORY.length)
-    out+=`<div class="mktstory">${FCSTORY.map(s=>`<p>${s.h?`<b>${he(s.h)}</b> `:''}${he(s.t)}</p>`).join('')}</div>`;
+  if(FCSTORY.length){                                                               // the story opens on its first paragraph; "Read more" shows the rest
+    const more=FCSTORY.length>1;
+    out+=`<div class="mktstory${more?' clamp':''}" data-clamp>${FCSTORY.map(s=>`<p>${s.h?`<b>${he(s.h)}</b> `:''}${he(s.t)}</p>`).join('')}</div>${more?'<button class="pulse-more" data-pulse-toggle aria-expanded="false"><span class="pm-label">Read more</span><span class="pm-caret">▼</span></button>':''}`;
+  }
   if(open.length){
-    const groups=[['ranking','Who leads the field'],['release','What ships, and when'],['benchmark','Benchmark milestones'],['capability','Big-picture & AGI']];
-    const known=new Set(groups.map(g=>g[0]));
-    let inner='';
-    groups.forEach(([cat,label])=>{
-      const rows=open.filter(m=>m.category===cat).slice().sort((a,b)=>(a.resolveDate||'9999').localeCompare(b.resolveDate||'9999'));
-      if(!rows.length)return;
-      inner+=`<div class="mktgrp-h">${label}<span class="ct">${rows.length}</span></div>${rows.map(marketRow).join('')}`;
-    });
-    const rest=open.filter(m=>!known.has(m.category));
-    if(rest.length) inner+=`<div class="mktgrp-h">Other<span class="ct">${rest.length}</span></div>${rest.map(marketRow).join('')}`;
-    out+=`<details class="subacc" style="margin-top:14px"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>Browse the ${open.length} open markets<span class="ct">all</span></summary><div class="subbody">${inner}</div></details>`;
+    const groups=[['ranking','Rankings'],['release','Releases'],['benchmark','Benchmarks'],['capability','AGI']];
+    const known=new Set(groups.map(g=>g[0])), mkts=open.filter(m=>m.kind!=='expert'), experts=open.filter(m=>m.kind==='expert');
+    const byResolve=(a,b)=>(a.resolveDate||'9999').localeCompare(b.resolveDate||'9999');
+    const grp=(label,list)=>list.length?`<div class="mktgrp-h">${label}<span class="ct">${nfmt(list.length)}</span></div>${list.slice().sort(byResolve).map(marketRow).join('')}`:'';
+    let inner=groups.map(([cat,label])=>grp(label,mkts.filter(m=>m.category===cat))).join('');
+    inner+=grp('Other',mkts.filter(m=>!known.has(m.category)));
+    inner+=grp('Expert forecasts',experts);                                         // expert forecasts aren't tradable markets — their own group, last
+    out+=`<details class="subacc" style="margin-top:14px"><summary>${CHEV}All ${nfmt(open.length)} markets</summary><div class="subbody">${inner}</div></details>`;
   }
-  if(FCMETHOD) out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>How these forecasts are built</summary><div class="subbody"><div class="accsub" style="margin:2px 0 0">${he(FCMETHOD)}</div></div></details>`;
   return out;
-}
-const TRAJ_META={aa:['AA Intelligence Index','Composite 0–100 — the headline "how smart" score.'],swe:['SWE-bench','Real software-engineering issue resolution, % solved.']};
-function trajWrap(cat){ return trajBlock(cat,TRAJ_META[cat][0],TRAJ_META[cat][1]); }
-let chartsTab='frontier';
-function renderCharts(){
-  let panel='';
-  if(chartsTab==='cadence'){
-    panel=`<div class="accsub">How the pace of model releases has accelerated, on historical averages.</div><div id="cadence-wrap">${cadenceBlock()}</div>`;
-  } else if(chartsTab==='hh'){
-    panel=`<div id="hh-wrap">${headToHead()}</div>`;
-  } else {
-    panel=`<div id="traj-aa-wrap">${trajWrap('aa')}</div>
-      <div id="traj-swe-wrap">${trajWrap('swe')}</div>`;
-  }
-  $('#v-charts').innerHTML = `<div class="vh">Charts &amp; forecasts</div>
-    ${fileTabs('charts',chartsTab,[['frontier','By company'],['cadence','Cadence'],['hh','Head-to-head']])}
-    <div class="ftab-panel">${panel}</div>`;
-}
-
-// ---------------- PREDICT (frontier release radar + prediction markets) ----------------
-let RELSORTED=[]; let predictTab='timeline'; let radarFilter='all';
-const OPEN_REL_LABS=new Set(['DeepSeek','Alibaba','Zhipu','Moonshot','NVIDIA','Meta']);   // open-weight labs → "Open source" radar filter
-const isOpenRel=r=>OPEN_REL_LABS.has(r.lab);
-const firstPct = s => { const m=(s||'').match(/(\d{1,3}(?:\.\d)?)\s*%/); return m?Math.max(0,Math.min(100,+m[1])):null; };
-function probBar(p,col){ if(p==null)return''; return `<div class="pbar"><div class="pbar-fill" style="width:${Math.max(2,p)}%;background:${col}"></div><span class="pbar-n">${(+p).toFixed(p%1?1:0)}%</span></div>`; }
-function relStatusPill(s){ const m={confirmed:['CONFIRMED','h-soon'],expected:['EXPECTED','h-soon'],rumored:['RUMORED','h-rum']}[s]||['EXPECTED','h-soon']; return `<span class="hpill ${m[1]}">${m[0]}</span>`; }
-function relRow(r){
-  const col=labHex(r.lab), p=(r.prob!=null&&r.prob>=0)?r.prob:null, i=RELSORTED.indexOf(r);
-  return `<div class="relrow${r.frontier?' fr':''}">
-    <span class="rel-dot" style="background:${col}"></span>
-    <div class="rel-main">
-      <div class="rel-top"><span class="rel-name">${he(r.model)}</span>${r.frontier?'<span class="fr-tag">FRONTIER</span>':''}<span class="rel-when">${he(r.expectedWindow||fmtDate(r.expectedDate))}</span></div>
-      <div class="rel-sub">${he(r.lab)} · ${relStatusPill(r.status)}</div>
-      ${p!=null?probBar(p,col):`<div class="rel-noprob">no dated market — ${he(r.status||'expected')}</div>`}
-      <button class="infobtn" data-rel-info="${i}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.6" r="0.2" stroke-width="2.6"/></svg>Details</button>
-    </div></div>`;
 }
 function releaseInfo(r){
   const col=labHex(r.lab), p=(r.prob!=null&&r.prob>=0)?r.prob:null;
+  let host=''; if(isHttp(r.source)){ try{ host=new URL(r.source).hostname.replace(/^www\./,''); }catch(e){} }
   return `<button class="modal-x" aria-label="Close">✕</button>
     <div class="mi-nm">${he(r.model)}${r.frontier?' <span class="fr-tag">FRONTIER</span>':''}</div>
     <div class="mi-meta"><span class="dot" style="background:${col}"></span>${he(r.lab)} · expected ${he(r.expectedWindow||fmtDate(r.expectedDate))} · ${relStatusPill(r.status)}</div>
-    ${p!=null?`<div class="mi-relprob">${probBar(p,col)}<div class="rel-noprob" style="margin-top:5px">market-implied odds for this window</div></div>`:`<div class="rel-noprob" style="margin-top:11px">No dated prediction market — ${he(r.status||'expected')}.</div>`}
+    ${p!=null?`<div class="mi-relprob">${probBar(p,col)}<div class="rel-noprob" style="margin-top:5px">Market odds</div></div>`:''}
     ${r.basis?`<div class="mi-brief"><p>${he(r.basis)}</p></div>`:''}
-    ${r.source?`<div class="td-src" style="margin-top:8px">Source: ${he(r.source)}</div>`:''}`;
+    ${host?`<div class="td-src" style="margin-top:8px">Source: <a href="${he(r.source)}" target="_blank" rel="noopener">${he(host)}</a></div>`:r.source?`<div class="td-src" style="margin-top:8px">Source: ${he(r.source)}</div>`:''}`;
 }
-function openReleaseModal(i){ const r=RELSORTED[+i]; if(!r)return; $('#modalcard').innerHTML=releaseInfo(r); $('#modal').hidden=false; document.body.style.overflow='hidden'; $('#modalcard').scrollTop=0; }
+function openReleaseModal(i){ const r=RELSORTED[+i]; if(r) showSheet(()=>releaseInfo(r)); }
+const TL_MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+// Timeline month cell + sort key come from the window phrase the row itself prints (logic tested in the Sep 28 audit):
+// the LAST month named is the deadline ("by Oct 15 2026" → OCT); quarter / half only → "Q4" / "H2"; a bare year → "2027";
+// undated → TBA; otherwise fall back to expectedDate. day = the day number when the window names one ("by Oct 15").
+const TL_MONTH_RE=/\b(Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|June?|July?|Aug(?:ust)?|Sep(?:t(?:ember)?)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\.?(?:\s+(\d{1,2})(?!\d))?(?:,?\s+(20\d\d))?\b/g;
+function tlWhen(r,now=new Date()){
+  const w=String(r.expectedWindow||''), cy=now.getFullYear(), yy=y=>y!==cy?' ’'+String(y).slice(2):'';
+  const yrOf=s=>{const m=String(s).match(/\b(20\d\d)\b/);return m?+m[1]:null;};
+  const fallbackY=yrOf(w)||+(String(r.expectedDate||'').slice(0,4))||cy;
+  const mm=[...w.matchAll(TL_MONTH_RE)];
+  if(mm.length){ const m=mm[mm.length-1], mi=TL_MO.indexOf(m[1].slice(0,3)), y=m[3]?+m[3]:fallbackY, day=m[2]?+m[2]:null;
+    const by=/\bby\s+$/i.test(w.slice(0,m.index));
+    return {label:TL_MO[mi].toUpperCase()+yy(y), key:`${y}-${pad2(mi+1)}`, day, named:true, phrase:day?(by?'by ':'')+TL_MO[mi]+' '+day:''}; }
+  const q=w.match(/\b(?:Q([1-4])|H([12]))\b/i);
+  if(q){ const y=fallbackY, endMo=q[1]?+q[1]*3:+q[2]*6;
+    return {label:(q[1]?'Q'+q[1]:'H'+q[2])+yy(y), key:`${y}-${pad2(endMo)}`, day:null}; }
+  if(/undated|tba|tbd|unknown/i.test(w)||!r.expectedDate) return {label:'TBA', key:'9999-99', day:null};
+  const yo=w.match(/^\s*(20\d\d)\s*$/); if(yo) return {label:yo[1], key:`${yo[1]}-12`, day:null};
+  const p=String(r.expectedDate).split('-'), mi=+p[1]-1;
+  return mi>=0&&mi<12 ? {label:TL_MO[mi].toUpperCase()+yy(+p[0]), key:String(r.expectedDate).slice(0,7), day:null} : {label:'TBA',key:'9999-99',day:null};
+}
+const TL_WARNED=new Set();
+function sortReleases(list){
+  const now=new Date(), W=new Map(list.map(r=>[r,tlWhen(r,now)]));
+  list.forEach(r=>{ const w=W.get(r), ed=String(r.expectedDate||'').slice(0,7);                        // flag data drift once per row
+    if(w.named&&/^\d{4}-\d{2}$/.test(ed)&&w.key!==ed&&!TL_WARNED.has(r.model+w.key)){ TL_WARNED.add(r.model+w.key); console.warn(`Timeline: "${r.model}" window "${r.expectedWindow}" says ${w.key}, expectedDate says ${ed}`); } });
+  return list.map((r,i)=>({r,i,w:W.get(r)})).sort((a,b)=>a.w.key.localeCompare(b.w.key)||((a.w.day||99)-(b.w.day||99))||a.i-b.i).map(o=>o.r);
+}
 function nextFrontier(){
-  const fr=RELEASES.filter(r=>r.frontier).slice().sort((a,b)=>(a.expectedDate||'9999').localeCompare(b.expectedDate||'9999'));
+  const fr=RELSORTED.filter(r=>r.frontier);
   return fr.find(r=>r.prob==null||r.prob<0||r.prob>=25) || fr[0];
 }
-const TL_MO=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-// The honesty trick lives in the LEFT time-cell's granularity: future = coarse MONTH (a market-odds window),
-// past = EXACT date (a day we can verify). Two formatters, one for each certainty level.
-function tlMonth(s){ if(!s)return'TBA'; const p=(''+s).split('-'), mi=+p[1]-1; if(!(mi>=0&&mi<12))return'TBA';   // "2026-07"→"JUL"; off-year→"JAN ’27"; missing/bad→"TBA"
-  const mo=TL_MO[mi].toUpperCase(), y=+p[0], cy=new Date().getFullYear(); return (y&&y!==cy)?mo+' ’'+(''+y).slice(-2):mo; }
-function tlDate(s){ if(!s)return''; const p=(''+s).split('-'); if(p.length>=3)return TL_MO[+p[1]-1]+' '+(+p[2]);   // "2026-07-16"→"Jul 16" (title-case, exact day)
-  if(p.length===2)return TL_MO[+p[1]-1]+' '+p[0]; return ''+s; }
-// PREDICT ▸ Timeline — compact two-column agenda. Expected rows are coarse-month windows (tap → the "why" modal);
-// Shipped rows are exact-dated. No probability bands / status pills / fake spine here — that noise lives in the modal.
+// The honesty trick lives in the LEFT time-cell's granularity: future = coarse MONTH (a window), past = EXACT date.
+function tlDate(s){ if(s==null||s==='')return''; s=String(s).slice(0,10); const p=s.split('-'), mo=TL_MO[+p[1]-1];   // "2026-07-16"→"Jul 16" (title-case, exact day)
+  if(p.length>=3&&mo&&+p[2]) return mo+' '+(+p[2]); if(p.length===2&&mo) return mo+' '+p[0]; return s; }
+// PREDICT ▸ Timeline — release filter + hero (folded in from the old Radar tab), then a compact two-column agenda:
+// Expected rows are coarse-month windows (tap → the "why" sheet); Shipped rows are exact-dated.
 function timelineBody(){
-  const past=DATA.models.filter(m=>m.released && m.status==='live')                    // shipped + live only
-    .slice().sort((a,b)=>(''+b.released).localeCompare(''+a.released)).slice(0,14);     // newest first, cap 14
-  const n=new Date(), nowStr=TL_MO[n.getMonth()]+' '+n.getDate()+' '+n.getFullYear();   // "Jul 17 2026"
-  // Expected: RELSORTED is already asc by expectedDate → soonest first. Whole row carries data-rel-info (app-wide modal hook).
-  const futHTML=RELSORTED.length?RELSORTED.map(r=>{
-    const col=labHex(r.lab), i=RELSORTED.indexOf(r);
-    const odds=(r.prob!=null&&r.prob>=0)?'~'+r.prob+'%':'—';                            // right-aligned market odds, or em-dash when undated
-    return `<button class="tl-frow" data-rel-info="${i}">`+
-      `<span class="tl-t">${he(tlMonth(r.expectedDate))}</span>`+                        // line A: coarse month (uppercased via CSS)
-      `<span class="tl-nm2"><span class="rel-dot" style="background:${col}"></span>${he(r.model)}</span>`+
-      `<span class="tl-odds">${he(odds)}</span>`+
-      `<span class="tl-sub">${he(r.expectedWindow||'expected')} · ${he(r.lab)}</span>`+  // line B: window phrase · lab
-      `</button>`;
-  }).join(''):'<div class="empty">No expected releases on the radar yet.</div>';
+  const now=new Date(), curKey=`${now.getFullYear()}-${pad2(now.getMonth()+1)}`, nowStr=TL_MO[now.getMonth()]+' '+now.getDate()+' '+now.getFullYear();
+  let top='', futHTML='<div class="empty">Nothing yet.</div>';
+  if(RELSORTED.length){
+    const pool = radarFilter==='frontier' ? RELSORTED.filter(r=>r.frontier) : radarFilter==='open' ? RELSORTED.filter(isOpenRel) : RELSORTED;
+    const heroItem = radarFilter==='open' ? (pool.find(r=>r.prob==null||r.prob<0||r.prob>=25)||pool[0]) : nextFrontier();
+    const hero = heroItem && pool.includes(heroItem) ? `<div class="phero" style="--lab:${labHex(heroItem.lab)}">
+        <div class="phero-k">${radarFilter==='open'?'Next open release':'Next frontier release'}</div>
+        <div class="phero-m"><span class="rel-dot" style="background:${labHex(heroItem.lab)}"></span>${he(heroItem.model)}</div>
+        <div class="phero-w">${he(heroItem.expectedWindow||fmtDate(heroItem.expectedDate))}${(heroItem.prob!=null&&heroItem.prob>=0)?` · <b>${he(heroItem.prob)}%</b> likely`:''}</div>
+        <button class="infobtn" data-rel-info="${RELSORTED.indexOf(heroItem)}">${INFO_ICON}Details</button>
+      </div>`:'';
+    top = `<div class="seg" data-seg="radar"><button data-mode="all"${radarFilter==='all'?' class="on"':''}>All</button><button data-mode="frontier"${radarFilter==='frontier'?' class="on"':''}>Frontier</button><button data-mode="open"${radarFilter==='open'?' class="on"':''}>Open</button></div>${hero}`;
+    futHTML = pool.length ? pool.map(r=>{
+      const w=tlWhen(r,now), late=w.key!=='9999-99'&&w.key<curKey;                          // the window already closed → LATE
+      const odds=(r.prob!=null&&r.prob>=0)?'~'+r.prob+'%':'—';                              // right-aligned market odds, or em-dash when undated
+      return `<button class="tl-frow${late?' late':''}" data-rel-info="${RELSORTED.indexOf(r)}">`+
+        `<span class="tl-t">${late?'LATE':he(w.label)}</span>`+                              // line A: coarse month (uppercased via CSS)
+        `<span class="tl-nm2"><span class="rel-dot" style="background:${labHex(r.lab)}"></span>${he(r.model)}</span>`+
+        `<span class="tl-odds">${he(odds)}</span>`+
+        `<span class="tl-sub">${w.day?he(w.phrase)+' · ':''}${he(r.lab)}</span>`+            // line B: lab — plus "by Oct 15" when the window is sharper than the cell
+        `</button>`;
+    }).join('') : '<div class="empty">No matching releases.</div>';
+  }
   // Shipped: exact date left, name (with lab dot), lab right-aligned + ellipsized so long labs never wrap.
-  const pastHTML=past.map(m=>{const col=labHex(m.lab);
-    return `<div class="tl-prow">`+
+  const past=DATA.models.filter(m=>m.released && m.status==='live').slice().sort(byRecent).slice(0,14);   // shipped + live only, newest first, cap 14
+  const pastHTML=past.map(m=>`<div class="tl-prow">`+
       `<span class="tl-t">${he(tlDate(m.released))}</span>`+
-      `<span class="tl-pnm"><span class="rel-dot" style="background:${col}"></span>${he(m.name)}</span>`+
+      `<span class="tl-pnm"><span class="rel-dot" style="background:${labHex(m.lab)}"></span>${he(m.name)}</span>`+
       `<span class="tl-plab">${he(m.lab)}</span>`+
-      `</div>`;
-  }).join('');
-  return `<div class="tl-head">Expected</div>`+
-    `<div class="tl-cap">Months are windows backed by market odds — never exact dates. Tap a row for the why.</div>`+
+      `</div>`).join('');
+  return top+
+    `<div class="tl-head tl-head-row"><span>Expected</span><span>Odds</span></div>`+
     futHTML+
     `<div class="tl-now"><span class="tl-nowdot"></span>NOW · ${nowStr}</div>`+           // divider: separates the two sections
-    `<div class="tl-head">Shipped</div>`+                                                 // head ABOVE the past rows (v1 put it below — a bug)
+    `<div class="tl-head">Shipped</div>`+
     pastHTML;
 }
 function renderPredict(){
-  RELSORTED=[...RELEASES].sort((a,b)=>(a.expectedDate||'9999-99').localeCompare(b.expectedDate||'9999-99'));
-  let radarPanel='';
-  if(RELSORTED.length){
-    const pool = radarFilter==='frontier' ? RELSORTED.filter(r=>r.frontier)
-               : radarFilter==='open' ? RELSORTED.filter(isOpenRel) : RELSORTED;
-    const heroItem = radarFilter==='open' ? (pool.find(r=>r.prob==null||r.prob<0||r.prob>=25)||pool[0]) : nextFrontier();
-    const showHero = heroItem && pool.includes(heroItem);
-    const hero = showHero?`<div class="phero" style="--lab:${labHex(heroItem.lab)}">
-        <div class="phero-k">${radarFilter==='open'?'Next open-source drop':'Next frontier drop'}</div>
-        <div class="phero-m"><span class="rel-dot" style="background:${labHex(heroItem.lab)}"></span>${he(heroItem.model)}</div>
-        <div class="phero-w">${he(heroItem.expectedWindow||fmtDate(heroItem.expectedDate))}${(heroItem.prob!=null&&heroItem.prob>=0)?` · <b>${heroItem.prob}%</b> likely`:''}</div>
-        <button class="infobtn" data-rel-info="${RELSORTED.indexOf(heroItem)}"><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v5.5" stroke-linecap="round"/><circle cx="12" cy="7.6" r="0.2" stroke-width="2.6"/></svg>Details</button>
-      </div>`:'';
-    const listItems = pool.filter(r=>r!==heroItem);
-    const seg = `<div class="seg" data-seg="radar"><button data-mode="all"${radarFilter==='all'?' class="on"':''}>All</button><button data-mode="frontier"${radarFilter==='frontier'?' class="on"':''}>Frontier</button><button data-mode="open"${radarFilter==='open'?' class="on"':''}>Open source</button></div>`;
-    radarPanel = (!showHero && !listItems.length) ? `${seg}<div class="empty">No matching releases on the radar.</div>` : `${seg}${hero}${listItems.map(relRow).join('')}`;
-  } else {
-    radarPanel = '<div class="empty">The release radar is being researched — it lands on the next data sync.</div>';
-  }
-  const panel = predictTab==='timeline' ? timelineBody() : predictTab==='markets' ? marketsBody() : radarPanel;
+  if(predictTab!=='markets') predictTab='timeline';                                      // the old Radar tab now lives inside Timeline
+  RELSORTED=sortReleases(RELEASES);
+  const nOpen=MARKETS.filter(marketIsOpen).length;
+  const panel = guard(predictTab==='markets' ? marketsBody : timelineBody);
   $('#v-predict').innerHTML = `<div class="vh">Predict</div>
-    ${fileTabs('predict',predictTab,[['timeline','Timeline',''],['radar','Radar',RELSORTED.length||''],['markets','Markets',MARKETS.length||'']])}
+    ${fileTabs('predict',predictTab,[['timeline','Timeline',''],['markets','Markets',nOpen?nfmt(nOpen):'']])}
     <div class="ftab-panel">${panel}</div>`;
 }
 
-// ---------------- PREDICT (per-company trajectories + forecasts combined) ----------------
+// ---------------- CHARTS ▸ per-company trajectories ----------------
 let trajMode={aa:'frontier',swe:'frontier'};
-// Back-estimated history is only comparable when the benchmark hasn't been re-scaled.
-// AA Index was re-versioned in 2026 (frontier compressed from ~70 to high-50s/low-60s), so its
-// pre-rebase historics sit ABOVE today's live values — this guard auto-detects that and drops them.
-// SWE-bench is stable, so its historics pass and extend the lines back to 2023. Self-correcting:
-// if a future sweep re-bases the historics onto the live scale, they start passing automatically.
+// Back-estimated AA history is only comparable when the index hasn't been re-scaled: AA was re-versioned in 2026, so its
+// history must carry the live scale AND sit at/below today's top, else it's dropped. (The SWE line is on the Pro scale;
+// its Verified-scale history goes through the proEq conversion + era guard instead.)
 function historicsUsable(cat){
   const hv=HISTORICS.filter(h=>h.benchmark===cat).map(h=>h.value).filter(v=>typeof v==='number');
   if(!hv.length) return false;
-  // A re-version can LOWER the top without lifting old points above it (v4.1 -> v4.3, Sep 2026), so the value
-  // check below misses it. AA history must carry the scale it was scored on, and only the live scale draws.
   if(cat==='aa' && HISTORICS.some(h=>h.benchmark==='aa' && h.scale!==(DATA.meta||{}).aaScale)) return false;
   let lmax=-Infinity; DATA.models.forEach(m=>{const v=benchOf(m,cat); if(v!=null&&v>lmax)lmax=v;});
   if(lmax===-Infinity) return true;
@@ -1104,21 +1074,27 @@ function historicsUsable(cat){
 }
 const WINDOW_MONTHS=18;
 function windowCut(){ const d=new Date(); return d.getFullYear()+(d.getMonth()+Math.min(1,d.getDate()/30))/12 - WINDOW_MONTHS/12; }
-function leadingTrajectory(cands,cat){
-  const cut=windowCut();   // only the last 18 months of releases
-  const byLab={};
-  cands.forEach(m=>{const v=benchOf(m,cat);if(v==null||!m.released)return;const t=tval(m.released);if(t<cut)return;const L=canonLab(m.lab);(byLab[L]=byLab[L]||[]).push({t,date:m.released,v,model:m.name});});
-  // extend the lines back with back-estimated points (only when scale-continuous AND inside the window)
-  if(historicsUsable(cat)){
+function trajVal(m,cat){ if(cat==='swe') return proEq(m); const v=benchOf(m,cat); return v==null?null:{v,est:false}; }
+function histVal(h,cat){ if(cat==='swe'){ const q=proFromVerified(h.value,h.date); return q?q.v:null; } return h.value; }
+function leadingTrajectory(cands,cat,mode){
+  const cut=windowCut(), byLab={};   // only the last 18 months of releases
+  cands.forEach(m=>{const q=trajVal(m,cat),t=tval(m.released);if(!q||!Number.isFinite(t)||t<cut)return;const L=canonLab(m.lab);(byLab[L]=byLab[L]||[]).push({t,date:m.released,v:q.v,est:q.est,model:m.name});});
+  // extend the lines back with back-estimated points: AA only when scale-continuous; SWE only through the proEq era guard
+  if(cat==='swe'?!!PROFIT:historicsUsable(cat)){
     Object.keys(byLab).forEach(L=>{
-      HISTORICS.filter(h=>h.benchmark===cat && canonLab(h.lab)===L).forEach(h=>{
-        const t=tval(h.date); if(t<cut)return;
-        byLab[L].push({t,date:h.date,v:h.value,model:h.model,est:true});
+      HISTORICS.forEach((h,hi)=>{
+        if(h.benchmark!==cat||canonLab(h.lab)!==L) return;
+        if(typeof h.open==='boolean'&&h.open!==(mode==='open')) return;                   // a history row from the other weights camp
+        const t=tval(h.date), v=histVal(h,cat); if(!Number.isFinite(t)||t<cut||v==null) return;
+        byLab[L].push({t,date:h.date,v,est:true,model:h.model,hist:hi});
       });
     });
   }
-  const series=[];
+  const series=[], mo=p=>Math.round(p.t*12);                          // tval is month-granular → one integer per lab-month
   Object.entries(byLab).forEach(([lab,pts])=>{
+    // native beats estimated within a lab-month: a converted / back-estimated point only plots when that lab has NO native
+    // score that month (Anthropic Feb 2026 = Opus 4.6's native 51.9, never Sonnet 4.6's ~57 conversion)
+    const nat=new Set(pts.filter(p=>!p.est).map(mo)); pts=pts.filter(p=>!p.est||!nat.has(mo(p)));
     pts.sort((a,b)=>a.t-b.t || (b.v-a.v));
     // frontier over time, but KEEP models that MATCH the running best (so flagships that tie — e.g.
     // GPT-5.5 == GPT-5.4 — still show), while dropping lower-tier follow-ons (Sonnet/Haiku/Flash after
@@ -1131,37 +1107,45 @@ function leadingTrajectory(cands,cat){
 }
 function multiLineChart(series,cat){
   if(!series.length)return '<div class="empty">No data for that filter.</div>';
-  const C={line:css('--line'),ink3:css('--ink3'),bg:css('--bg')};
+  const C={line:css('--line'),ink3:css('--ink3'),bg:css('--bg')}, pct=cat!=='aa';
   const allP=series.flatMap(s=>s.points.map(p=>({t:p.t,v:p.v})));
   let x0=Math.min(...allP.map(p=>p.t)),x1=Math.max(...allP.map(p=>p.t));if(x1-x0<0.3)x1=x0+0.4;
-  let y0=Math.min(...allP.map(p=>p.v)),y1=Math.max(...allP.map(p=>p.v));const pad=(y1-y0)*.12||4;y0-=pad;y1+=pad;
-  const W=500,H=250,L=34,R=12,T=12,B=26;
+  let y0=Math.min(...allP.map(p=>p.v)),y1=Math.max(...allP.map(p=>p.v));const pad=(y1-y0)*.12||4;
+  y0=Math.max(0,y0-pad); y1=y1+pad; if(pct) y1=Math.min(100,y1); if(y1-y0<1) y1=y0+1;   // scores are ≥ 0; a % axis never runs past 100
+  const W=500,H=250,L=36,R=12,T=12,B=28;
   const X=t=>L+((t-x0)/(x1-x0))*(W-L-R),Y=v=>T+(1-(v-y0)/(y1-y0))*(H-T-B);
   let s=`<svg class="svgchart" viewBox="0 0 ${W} ${H}" style="width:100%;height:auto">`;
-  for(let i=0;i<=3;i++){const yy=y0+(y1-y0)*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+3).toFixed(1)}" font-size="9" text-anchor="end" fill="${C.ink3}">${yy.toFixed(0)}</text>`;}
-  for(let q=Math.ceil(x0*4)/4;q<=x1+1e-6;q+=0.25){if(q<x0-1e-6)continue;const yr=Math.floor(q+1e-6),qq=Math.round((q-yr)*4)+1;s+=`<text x="${X(q).toFixed(1)}" y="${H-6}" font-size="8.5" text-anchor="middle" fill="${C.ink3}">Q${qq} ’${(''+yr).slice(2)}</text>`;}
+  for(let i=0;i<=3;i++){const yy=y0+(y1-y0)*i/3,py=Y(yy).toFixed(1);s+=`<line x1="${L}" y1="${py}" x2="${W-R}" y2="${py}" stroke="${C.line}" opacity=".5"/><text x="${L-4}" y="${(+py+4).toFixed(1)}" font-size="11" text-anchor="end" fill="${C.ink3}">${tick(yy)}</text>`;}
+  const qs=[]; for(let q=Math.ceil(x0*4-1e-6)/4;q<=x1+1e-6;q+=0.25) qs.push(q); const every=Math.max(1,Math.ceil(qs.length/7));   // ≤7 quarter labels at 11px
+  qs.forEach((q,i)=>{ if(i%every) return; const yr=Math.floor(q+1e-6),qq=Math.round((q-yr)*4)+1; s+=`<text x="${X(q).toFixed(1)}" y="${H-7}" font-size="11" text-anchor="middle" fill="${C.ink3}">Q${qq} ’${String(yr).slice(2)}</text>`; });
   let anyEst=false;
   series.forEach(se=>{const col=labHex(se.lab);
     s+=`<polyline points="${se.points.map(p=>`${X(p.t).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ')}" fill="none" stroke="${col}" stroke-width="2.2" stroke-linejoin="round"/>`;
     se.points.forEach(p=>{if(p.est)anyEst=true;
-      const dot=p.est
-        ?`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4" fill="${C.bg}" stroke="${col}" stroke-width="1.6" data-model="${p.model.replace(/"/g,'&quot;')}" data-bench="${cat}" style="cursor:pointer"><title>${p.model}: ~${p.v} (back-estimate)</title></circle>`
-        :`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4.5" fill="${col}" stroke="${C.bg}" stroke-width="1.5" data-model="${p.model.replace(/"/g,'&quot;')}" data-bench="${cat}" style="cursor:pointer"><title>${p.model}: ${p.v}</title></circle>`;
-      s+=dot;});});
+      const at=`data-bench="${cat}"${p.hist!=null?` data-hist="${p.hist}"`:` data-model="${he(p.model)}"`} style="cursor:pointer"`, lbl=`${he(p.model)}: ${p.est?'~':''}${he(p.v)}${pct?'%':''}`;
+      s+=p.est
+        ?`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4" fill="${C.bg}" stroke="${col}" stroke-width="1.6" ${at}><title>${lbl} (estimated)</title></circle>`
+        :`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4.5" fill="${col}" stroke="${C.bg}" stroke-width="1.5" ${at}><title>${lbl}</title></circle>`;});});
   s+='</svg>';
-  const key=anyEst?'hollow dot = back-estimated onto today\'s scale':'';
-  return s+`<div class="legend2">${series.map(se=>`<span><span class="ld" style="background:${labHex(se.lab)}"></span>${se.lab.split(' ')[0]}</span>`).join('')}</div>${key?`<div class="chartkey">${key}</div>`:''}`;
+  const F=PROFIT, key=!anyEst?'':(cat==='swe'&&F)?`Hollow = converted from SWE-bench Verified (fit on ${F.n} models that report both, R² ${F.r2.toFixed(2)}).`:'Hollow = estimated';
+  return s+`<div class="legend2">${series.map(se=>`<span><span class="ld" style="background:${labHex(se.lab)}"></span>${he(se.lab.split(' ')[0])}</span>`).join('')}</div>${key?`<div class="chartkey">${key}</div>`:''}`;
 }
-function trajDetailCard(m,cat){const v=benchOf(m,cat);return `<div class="tdetail" style="--lab:${labHex(m.lab)}"><div class="td-top"><span class="td-nm">${m.name}</span><span class="td-sc">${v}${cat==='aa'?'':'%'}</span></div><div class="td-meta">${m.lab} · ${fmtDate(m.released)} ${statusBadge(m.status)}${m.open?' <span class="badge b-open">OPEN</span>':''}</div>${m.notable?`<div class="td-why">${m.notable}</div>`:''}</div>`;}
+// dot tap → a small card: name · score · lab · date + Details (the full write-up lives in the Details sheet, never here)
+function trajDetailCard(m,cat){ const q=trajVal(m,cat); if(!q) return ''; const pct=cat!=='aa';
+  return `<div class="tdetail" style="--lab:${labHex(m.lab)}"><div class="td-top"><span class="td-nm">${he(m.name)}</span><span class="td-sc">${q.est?'~':''}${he(q.v)}${pct?'%':''}</span></div>`+
+    `<div class="td-meta">${he(m.lab)} · ${he(fmtDate(m.released))}</div>`+
+    (q.est&&q.from!=null?`<div class="td-src">Converted from SWE-bench Verified ${he(q.from)}% (likely ${he(q.lo)}–${he(q.hi)}%)</div>`:'')+
+    `<button class="infobtn" data-info="${he(m.name)}">${INFO_ICON}Details</button></div>`; }
+function histDetailCard(h,cat){ const v=histVal(h,cat); if(v==null) return ''; const pct=cat!=='aa';
+  return `<div class="tdetail" style="--lab:${labHex(h.lab)}"><div class="td-top"><span class="td-nm">${he(h.model)}</span><span class="td-sc">~${he(v)}${pct?'%':''}</span></div>`+
+    `<div class="td-meta">${he(h.lab)} · ${he(fmtDate(h.date))}</div>`+
+    (cat==='swe'?`<div class="td-src">Converted from SWE-bench Verified ${he(h.value)}%</div>`:'')+
+    (h.basis?`<div class="td-why">${he(h.basis)}</div>`:'')+`</div>`; }
 function trajBlock(cat,title,sub){
-  let cands=DATA.models.filter(x=>x.status!=='preview');
-  cands=cands.filter(x=> trajMode[cat]==='open'?x.open:!x.open);
-  const hasHist=HISTORICS.some(h=>h.benchmark===cat);
-  const histNote = (hasHist && !historicsUsable(cat))
-    ? `<div class="rebasenote">${cat==='aa'?'AA Index was re-versioned in 2026 — pre-rebase scores aren\'t comparable, so this covers only the current-scale era.':'Pre-rebase history hidden — the benchmark scale changed.'}</div>` : '';
-  return `<div class="chartcard"><h4>${title}</h4><div class="cd">${sub}</div>${histNote}
+  const cands=DATA.models.filter(x=>x.status!=='preview').filter(x=> trajMode[cat]==='open'?x.open:!x.open);
+  return `<div class="chartcard"><h4>${title}</h4><div class="cd">${sub}</div>
     ${segCtl('traj-'+cat,trajMode[cat],FO)}
-    ${multiLineChart(leadingTrajectory(cands,cat),cat)}
+    ${multiLineChart(leadingTrajectory(cands,cat,trajMode[cat]),cat)}
     <div id="detail-${cat}"></div></div>`;
 }
 
@@ -1175,70 +1159,82 @@ const NEWS_BUCKET={Models:'models',Research:'models',Business:'business',Society
 const newsBucket=t=>NEWS_BUCKET[t]||'society';
 const NEWS_TABS=[['models','Models'],['business','Business'],['society','Society']];
 function newsRow(it){
-  const c=newsColor(it.source);
-  const click=it.url?` data-href="${he(it.url).replace(/"/g,'&quot;')}" role="link" tabindex="0"`:'';
-  return `<div class="newsrow${it.url?' lnk':''}"${click}>
-    <div class="news-top"><span class="news-src" style="color:${c};border-color:${c}66">${he(it.source||'')}</span>${it.topic?`<span class="news-topic">${he(it.topic)}</span>`:''}<span class="news-date">${it.date?fmtDate(it.date):''}</span>${it.url?'<span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span>':''}</div>
-    <div class="news-title">${he(it.title||'')}</div>${it.blurb?`<div class="news-blurb">${he(it.blurb)}</div>`:''}</div>`;
+  const c=newsColor(it.source), url=isHttp(it.url)?it.url:'';
+  const click=url?` data-href="${he(url)}" role="link" tabindex="0"`:'';
+  return `<div class="newsrow${url?' lnk':''}"${click}>
+    <div class="news-top"><span class="news-src" style="color:${c};border-color:${c}66">${he(it.source)}</span>${it.topic?`<span class="news-topic">${he(it.topic)}</span>`:''}<span class="news-date">${he(fmtDate(it.date))}</span>${url?ARROW:''}</div>
+    <div class="news-title">${he(it.title)}</div>${it.blurb?`<div class="news-blurb">${he(it.blurb)}</div>`:''}</div>`;
 }
 function renderNews(){
-  const items=[...NEWS].sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  const items=[...NEWS].sort((a,b)=>b.date.localeCompare(a.date));
   const buckets=NEWS_TABS.filter(([k])=>items.some(i=>newsBucket(i.topic)===k));
   if(newsTopic && !buckets.some(([k])=>k===newsTopic)) newsTopic=null;
   const list=newsTopic?items.filter(i=>newsBucket(i.topic)===newsTopic):items;
   const tabs=[['all','All',items.length], ...buckets.map(([k,lbl])=>[k,lbl,items.filter(i=>newsBucket(i.topic)===k).length])];
   $('#v-news').innerHTML = `<div class="vh">News &amp; good reads</div>
-    ${items.length?`${fileTabs('news',newsTopic||'all',tabs)}<div class="ftab-panel">${list.map(newsRow).join('')}</div>`
-    :`<div class="empty">Curated reads are being gathered — they land on the next sync.</div>`}`;
+    ${items.length?`${fileTabs('news',newsTopic||'all',tabs)}<div class="ftab-panel">${guard(()=>list.map(newsRow).join(''))}</div>`
+    :'<div class="empty">Nothing yet.</div>'}`;
 }
 
-// ---------------- glossary (definitions & acronyms — searched in More) ----------------
+// ---------------- glossary (searched in More) ----------------
 function glossRow(t){
-  return `<div class="gterm"><div class="gt-top"><span class="gt-term">${he(t.term)}</span>${t.acronym?`<span class="gt-acr">${he(t.acronym)}</span>`:''}${t.category?`<span class="gt-cat">${he((t.category).replace(/ &.*/,'').replace(/ \(.*/,''))}</span>`:''}</div><div class="gt-def">${he(t.def)}</div></div>`;
+  return `<div class="gterm"><div class="gt-top"><span class="gt-term">${he(t.term)}</span>${t.acronym?`<span class="gt-acr">${he(t.acronym)}</span>`:''}${t.category?`<span class="gt-cat">${he(t.category.replace(/ &.*/,'').replace(/ \(.*/,''))}</span>`:''}</div><div class="gt-def">${he(t.def)}</div></div>`;
 }
 function glossMatch(t,q){
   if(!q) return true;
-  const hay=(t.term+' '+(t.acronym||'')+' '+(t.def||'')+' '+((t.aka||[]).join(' '))).toLowerCase();
+  const hay=(t.term+' '+t.acronym+' '+t.def+' '+t.aka.join(' ')).toLowerCase();
   return q.toLowerCase().split(/\s+/).filter(Boolean).every(w=>hay.includes(w));
 }
 function glossResults(q){
-  const all=GLOSSARY||[];
-  if(!all.length) return '<div class="empty">The glossary is being written — it lands on the next data sync.</div>';
-  // terms live on the backend (glossary.json) — they are NOT listed up front; you search to surface them
-  if(!q) return `<div class="gloss-hint">Type a word or acronym to search <b>${all.length}</b> AI terms — MMLU, MoE, RLHF, context window, quantization…</div>`;
-  const hits=all.filter(t=>glossMatch(t,q));
+  if(!GLOSS_READY) return '';
+  if(!GLOSSARY.length) return '<div class="empty">Nothing yet.</div>';
+  if(!q) return '';                                   // terms aren't listed up front — you search to surface them
+  const hits=GLOSSARY.filter(t=>glossMatch(t,q));
   if(!hits.length) return `<div class="empty">No term matches “${he(q)}”.</div>`;
-  return `<div class="accsub" style="margin:0 0 8px">${hits.length} match${hits.length>1?'es':''}</div>` + hits.map(glossRow).join('');
+  return `<div class="accsub" style="margin:0 0 8px">${nfmt(hits.length)} match${hits.length>1?'es':''}</div>` + hits.map(glossRow).join('');
+}
+const glossPlaceholder = () => GLOSSARY.length?`Search ${nfmt(GLOSSARY.length)} terms — MMLU, MoE, RLHF…`:'Search terms — MMLU, MoE, RLHF…';
+function refreshGloss(){                                // glossary landed / reloaded: update in place so a half-typed search survives
+  const q=$('#glossq'), r=$('#glossres'); if(q) q.setAttribute('placeholder',glossPlaceholder()); if(r) r.innerHTML=glossResults(q?String(q.value||'').trim():'');
 }
 
-// ---------------- MORE ----------------
+// ---------------- MORE ▸ Sources (built on first open, never at boot: ~9.6k rows) ----------------
 const SDOW=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 function sParseD(s){ const p=(s||'').split('-').map(Number); return new Date(p[0]||2026,(p[1]||1)-1,p[2]||1); }
-function sWeekKey(dateStr){ const d=sParseD(dateStr); d.setDate(d.getDate()-d.getDay()); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
-function sWeekLabel(k){ const a=sParseD(k), b=new Date(a); b.setDate(b.getDate()+6); return `Week of ${MM[a.getMonth()+1]} ${a.getDate()} – ${a.getMonth()===b.getMonth()?'':MM[b.getMonth()+1]+' '}${b.getDate()}`; }
+function sWeekKey(dateStr){ const d=sParseD(dateStr); d.setDate(d.getDate()-d.getDay()); return `${d.getFullYear()}-${pad2(d.getMonth()+1)}-${pad2(d.getDate())}`; }
+function sWeekLabel(k){ const a=sParseD(k), b=new Date(a); b.setDate(b.getDate()+6); return `${MM[a.getMonth()+1]} ${a.getDate()} – ${a.getMonth()===b.getMonth()?'':MM[b.getMonth()+1]+' '}${b.getDate()}`; }
 function sDayLabel(dateStr){ const d=sParseD(dateStr); return `${SDOW[d.getDay()]} ${d.getMonth()+1}/${d.getDate()}`; }
-function sSweepLabel(s){ const d=sParseD(s.date), r=s.routine||'Build'; return `${d.getMonth()+1}/${d.getDate()} ${r} Sources`; }
-function srcRow(s){ const url=s.url||('https://'+(''+(s.u||'')).replace(/\s*\(.*$/,'').split(/\s/)[0]); return `<div class="srcrow lnk" data-href="${he(url).replace(/"/g,'&quot;')}">${s.q?`<span class="sq ${s.q}">${he((''+s.q).slice(0,4).toUpperCase())}</span>`:''}<span class="srcu">${he(s.u||url)}</span><span class="mkt-go"><svg viewBox="0 0 14 14" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 10 10 4"/><path d="M5.5 4H10V8.5"/></svg></span></div>`; }
-function renderSources(){
-  if(!SWEEPS.length) return '<div class="empty">No source sweeps logged yet — they accrue as the research runs (8×/day).</div>';
+function srcRow(s){ const raw=s.url||('https://'+String(s.u||'').replace(/\s*\(.*$/,'').split(/\s/)[0]), url=isHttp(raw)?raw:'';
+  return `<div class="srcrow${url?' lnk':''}"${url?` data-href="${he(url)}"`:''}><span class="srcu">${he(s.u||raw)}</span>${url?ARROW:''}</div>`; }
+const srcTotal = () => SWEEPS.reduce((n,s)=>n+s.sources.length,0);
+let SRCWEEKS=null;   // [{key,n,days:[{date,n,sweeps}]}] — grouped when the drawer first opens
+function srcWeeks(){
+  if(SRCWEEKS) return SRCWEEKS;
   const RORD={'9PM':8,'6PM':7,'3PM':6,'12PM':5,'9AM':4,'6AM':3,'3AM':2,'12AM':1,'PM':6,'AM':2};   // newest-first within a day; legacy AM/PM still sort
-  const rr=s=>RORD[s.routine]||0;
-  const sw=[...SWEEPS].sort((a,b)=> b.date.localeCompare(a.date) || rr(b)-rr(a));
-  const weeks=[];
-  sw.forEach(s=>{ const wk=sWeekKey(s.date); let W=weeks.find(w=>w.key===wk); if(!W){W={key:wk,days:[],n:0};weeks.push(W);} let D=W.days.find(d=>d.date===s.date); if(!D){D={date:s.date,sweeps:[],n:0};W.days.push(D);} D.sweeps.push(s); const c=(s.sources||[]).length; D.n+=c; W.n+=c; });
-  let out='';
-  weeks.forEach((W,wi)=>{
-    out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>${sWeekLabel(W.key)}<span class="ct">${W.n}</span></summary><div class="subbody">`;
-    W.days.forEach((D,di)=>{
-      out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>${sDayLabel(D.date)}<span class="ct">${D.n}</span></summary><div class="subbody">`;
-      D.sweeps.forEach((s,si)=>{
-        out+=`<details class="subacc"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>${sSweepLabel(s)}<span class="ct">${(s.sources||[]).length}</span></summary><div class="subbody srclist">${(s.sources||[]).map(srcRow).join('')}</div></details>`;
-      });
-      out+=`</div></details>`;
-    });
-    out+=`</div></details>`;
-  });
-  return out;
+  const rr=s=>RORD[s.routine]||0, weeks=[];
+  [...SWEEPS].sort((a,b)=> b.date.localeCompare(a.date) || rr(b)-rr(a)).forEach(s=>{
+    const wk=sWeekKey(s.date); let W=weeks.find(w=>w.key===wk); if(!W){W={key:wk,days:[],n:0};weeks.push(W);}
+    let D=W.days.find(d=>d.date===s.date); if(!D){D={date:s.date,sweeps:[],n:0};W.days.push(D);}
+    D.sweeps.push(s); D.n+=s.sources.length; W.n+=s.sources.length; });
+  return (SRCWEEKS=weeks);
+}
+// each level is an empty <details>; its children are rendered the first time it opens (see the 'toggle' listener)
+const srcAcc = (attr,label,n) => `<details class="subacc" ${attr}><summary>${CHEV}${he(label)}<span class="ct">${nfmt(n)}</span></summary><div class="subbody"></div></details>`;
+function srcTreeHTML(){
+  if(!SWEEPS_READY) return '<div class="empty">Loading…</div>';
+  if(!SWEEPS.length) return '<div class="empty">Nothing yet.</div>';
+  return srcWeeks().map((W,wi)=>srcAcc(`data-src-w="${wi}"`,sWeekLabel(W.key),W.n)).join('');
+}
+function srcFill(d){                                       // fill one lazily-built level of the tree
+  const body=d.querySelector('.subbody'); if(!body||d.dataset.built) return; d.dataset.built='1';
+  const W=srcWeeks(), a=(d.getAttribute('data-src-w')||d.getAttribute('data-src-d')||d.getAttribute('data-src-s')||'').split(':').map(Number);
+  if(d.hasAttribute('data-src-w')){ const wk=W[a[0]]; if(wk) body.innerHTML=wk.days.map((D,di)=>srcAcc(`data-src-d="${a[0]}:${di}"`,sDayLabel(D.date),D.n)).join(''); }
+  else if(d.hasAttribute('data-src-d')){ const D=W[a[0]]&&W[a[0]].days[a[1]]; if(D) body.innerHTML=D.sweeps.map((s,si)=>srcAcc(`data-src-s="${a[0]}:${a[1]}:${si}"`,s.routine||'Build',s.sources.length)).join(''); }
+  else { const s=W[a[0]]&&W[a[0]].days[a[1]]&&W[a[0]].days[a[1]].sweeps[a[2]]; if(s){ body.classList.add('srclist'); body.innerHTML=s.sources.map(srcRow).join(''); } }
+}
+function refreshSources(){                                 // sources landed / reloaded: badge from the array length; the tree only if it's showing
+  SRCWEEKS=null; const ct=$('#src-ct'); if(ct) ct.textContent=SWEEPS_READY?nfmt(srcTotal()):'…';
+  const dr=$('details.more-sources'), tree=$('#src-tree'); if(tree&&dr&&dr.open) tree.innerHTML=srcTreeHTML(); else if(tree) tree.innerHTML='';
 }
 // build version badge — copied from Plate's setAppVersion: stamp it from a LOADED asset's ?v= so it
 // can't drift from the deployed build. Botany is inline-only (no app.js), so it reads the versioned
@@ -1251,14 +1247,20 @@ const PUSH_WORKER='https://botany-push.cozog02.workers.dev';
 const VAPID_PUBLIC='BPhMKsm3XOHual5yDTBNRxxeQD32sOBaU8Ny-fSqGES5iWqjkEruW7L95XYJStjTJsRLp4JHJ-rEcOEGh4l4cHI';
 function urlBase64ToUint8Array(b64){ const pad='='.repeat((4-b64.length%4)%4); const s=(b64+pad).replace(/-/g,'+').replace(/_/g,'/'); const raw=atob(s); const a=new Uint8Array(raw.length); for(let i=0;i<raw.length;i++)a[i]=raw.charCodeAt(i); return a; }
 const pushOK=()=>('serviceWorker'in navigator)&&('PushManager'in window)&&('Notification'in window);
+// iOS only offers Web Push to a Home Screen app — in a Safari tab the honest label is the way in, not a dead end
+const isIOS=()=>/iP(hone|ad|od)/.test(navigator.userAgent||'')||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+const isStandalone=()=>navigator.standalone===true||!!(window.matchMedia&&window.matchMedia('(display-mode: standalone)').matches);
+const IOS_TAB_NOTIF='Add to Home Screen for alerts';
 function notifSet(t,on){ const b=document.getElementById('notif-toggle'); if(b){ b.textContent=t; b.classList.toggle('on',!!on); } }
 async function notifState(){
+  if(isIOS()&&!isStandalone()) return notifSet(IOS_TAB_NOTIF,false);
   if(!pushOK()) return notifSet('Notifications unavailable',false);
   if(Notification.permission==='denied') return notifSet('Notifications blocked',false);
   try{ const reg=await navigator.serviceWorker.ready; const sub=await reg.pushManager.getSubscription(); notifSet(sub?'Notifications on':'Enable notifications',!!sub); }
   catch(e){ notifSet('Enable notifications',false); }
 }
 async function toggleNotif(){
+  if(isIOS()&&!isStandalone()) return notifSet(IOS_TAB_NOTIF,false);
   if(!pushOK()) return notifSet('Notifications unavailable',false);
   const reg=await navigator.serviceWorker.ready;
   let sub=await reg.pushManager.getSubscription();
@@ -1281,13 +1283,13 @@ function setAppVersion(){
   try{ var s=document.querySelector('link[rel="manifest"]'); var m=s&&/[?&]v=(\d+)/.exec(s.getAttribute('href')||''); if(m) v='v'+m[1]; }catch(e){}
   var node=document.getElementById('app-ver'); if(node) node.textContent=v;
 }
+// More is rendered ONCE as a shell; glossary / sources fill it in place as they land (refreshGloss / refreshSources)
 function renderMore(){
-  const totalSrc=SWEEPS.reduce((n,s)=>n+((s.sources||[]).length),0);
-  $('#v-more').innerHTML = `<div class="vh">Definitions &amp; acronyms</div>
-    <input id="glossq" class="gsearch" type="search" placeholder="Search terms &amp; acronyms — MMLU, MoE, RLHF…" autocomplete="off" autocapitalize="off" spellcheck="false">
+  $('#v-more').innerHTML = `<div class="vh">Glossary</div>
+    <input id="glossq" class="gsearch" type="search" placeholder="${he(glossPlaceholder())}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
     <div id="glossres" class="glist">${glossResults('')}</div>
-    <details class="acc more-sources"><summary><span class="tw"><svg viewBox="0 0 12 12" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block"><path d="M4 2.5 8.5 6 4 9.5"/></svg></span>Sources<span class="ct">${totalSrc||'…'}</span></summary>
-      <div class="body"><div class="accsub">Every source the research consulted, logged per sweep (8×/day) — newest first. Sources roll up by sweep slot, then day, then week.</div>${renderSources()}<div class="accsub" style="margin-top:12px">Hero fox: pixel-art sprite by <a href="https://elthen.itch.io/2d-pixel-art-fox-sprites" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Elthen's Pixel Art Shop</a>, used under the asset pack's free license.</div></div></details>
+    <details class="acc more-sources"><summary>${CHEV}Sources<span class="ct" id="src-ct">${SWEEPS_READY?nfmt(srcTotal()):'…'}</span></summary>
+      <div class="body"><div id="src-tree"></div><div class="accsub" style="margin-top:12px">Fox sprite: <a href="https://elthen.itch.io/2d-pixel-art-fox-sprites" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Elthen's Pixel Art Shop</a> (free license).</div></div></details>
     <div class="more-foot">
       <button id="notif-toggle" class="notif-btn" type="button">Enable notifications</button>
       <div class="app-ver" id="app-ver" aria-hidden="true"></div>
@@ -1297,32 +1299,51 @@ function renderMore(){
 }
 
 // ---------------- events ----------------
-$('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$$('#nav button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$$('.view').forEach(v=>v.classList.remove('on'));$('#v-'+b.dataset.v).classList.add('on');window.scrollTo(0,0);});
+function showView(v){
+  $$('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===v)); $$('.view').forEach(x=>x.classList.toggle('on',x.id==='v-'+v));
+  window.scrollTo(0,0); document.dispatchEvent(new CustomEvent('botany:view',{detail:v}));   // the fox wakes its loop when Home returns
+}
+$('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;showView(b.dataset.v);});
 document.addEventListener('click',e=>{
-  const g=e.target.closest('[data-goto]'); if(g){const t=g.dataset.goto;$$('#nav button').forEach(x=>x.classList.toggle('on',x.dataset.v===t));$$('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));window.scrollTo(0,0);return;}
-  const te=e.target.closest('[data-tie]'); if(te){openTieModal(TIEMAP[te.getAttribute('data-tie')]);return;}
-  const lk=e.target.closest('.lnk[data-href]'); if(lk){window.open(lk.getAttribute('data-href'),'_blank','noopener');return;}
-  const dot=e.target.closest('circle[data-model]'); if(dot){const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model'));const d=$('#detail-'+dot.getAttribute('data-bench'));if(m&&d)d.innerHTML=trajDetailCard(m,dot.getAttribute('data-bench'));return;}
-  const rib=e.target.closest('[data-rel-info]'); if(rib){openReleaseModal(rib.getAttribute('data-rel-info'));return;}
-  const cmp=e.target.closest('[data-compare]'); if(cmp){openCompare();return;}
-  const sg=e.target.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode; if(which==='home'){homeMode=mode;renderHome();} else if(which==='now'){nowCat=mode;renderNow();} else if(which==='traj-aa'){trajMode.aa=mode;const w=$('#traj-aa-wrap');if(w)w.innerHTML=trajWrap('aa');else renderCharts();} else if(which==='traj-swe'){trajMode.swe=mode;const w=$('#traj-swe-wrap');if(w)w.innerHTML=trajWrap('swe');else renderCharts();} else if(which==='hh'){hhMetric=mode;const w=$('#hh-wrap');if(w)w.innerHTML=headToHead();else renderCharts();} else if(which==='cadence'){cadenceMode=mode;const w=$('#cadence-wrap');if(w)w.innerHTML=cadenceBlock();else renderCharts();} else if(which==='radar'){radarFilter=mode;renderPredict();} return;}
-  const f=e.target.closest('.fchip'); if(f){ if(f.dataset.newsTopic!==undefined){newsTopic=f.dataset.newsTopic||null;renderNews();} return;}
-  const ftb=e.target.closest('.ftab'); if(ftb){ const i=ftb.dataset.ftab.indexOf(':'),v=ftb.dataset.ftab.slice(0,i),val=ftb.dataset.ftab.slice(i+1);
-    if(v==='now'){nowCat=val;renderNow();} else if(v==='charts'){chartsTab=val;renderCharts();}
-    else if(v==='predict'){predictTab=val;renderPredict();} else if(v==='news'){newsTopic=(val==='all'?null:val);renderNews();}
+  const t=e.target; if(!t||!t.closest) return;
+  const te=t.closest('[data-tie]'); if(te){openTieModal(TIEMAP[te.getAttribute('data-tie')]);return;}
+  const lk=t.closest('.lnk[data-href]'); if(lk){const u=lk.getAttribute('data-href'); if(isHttp(u)) window.open(u,'_blank','noopener'); return;}
+  const dot=t.closest('circle[data-bench]'); if(dot){const cat=dot.getAttribute('data-bench'),sel='#detail-'+cat;
+    safe(()=>{const d=$(sel); if(!d) return; const hi=dot.getAttribute('data-hist');
+      if(hi!=null){ const h=HISTORICS[+hi]; d.innerHTML=h?histDetailCard(h,cat):''; return; }
+      const m=DATA.models.find(x=>x.name===dot.getAttribute('data-model')); d.innerHTML=m?trajDetailCard(m,cat):'';},sel); return;}
+  const rib=t.closest('[data-rel-info]'); if(rib){openReleaseModal(rib.getAttribute('data-rel-info'));return;}
+  const cmp=t.closest('[data-compare]'); if(cmp){openCompare();return;}
+  const sg=t.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode;
+    const part=(state,id,fn)=>{ state(); const w=$('#'+id); if(w) safe(()=>{w.innerHTML=fn();},'#'+id); else safe(renderCharts,'#v-charts'); };
+    if(which==='home'){homeMode=mode;safe(renderHome,'#v-home');}
+    else if(which==='traj-aa'||which==='traj-swe'){const c=which.slice(5); part(()=>{trajMode[c]=mode;},'traj-'+c+'-wrap',()=>trajWrap(c));}
+    else if(which==='hh'){part(()=>{hhMetric=mode;},'hh-wrap',()=>guard(headToHead));}
+    else if(which==='cadence'){part(()=>{cadenceMode=mode;},'cadence-wrap',cadenceBlock);}
+    else if(which==='radar'){radarFilter=mode;safe(renderPredict,'#v-predict');}
+    return;}
+  const ftb=t.closest('.ftab'); if(ftb){ const i=ftb.dataset.ftab.indexOf(':'),v=ftb.dataset.ftab.slice(0,i),val=ftb.dataset.ftab.slice(i+1);
+    if(v==='now'){nowCat=val;safe(renderNow,'#v-now');} else if(v==='charts'){chartsTab=val;safe(renderCharts,'#v-charts');}
+    else if(v==='predict'){predictTab=val;safe(renderPredict,'#v-predict');} else if(v==='news'){newsTopic=(val==='all'?null:val);safe(renderNews,'#v-news');}
     return; }
-  const pm=e.target.closest('[data-pulse-toggle]'); if(pm){ const tx=pm.parentElement.querySelector('.pulse-txt'); if(tx){ const expanded=!tx.classList.toggle('clamp'); pm.setAttribute('aria-expanded',expanded?'true':'false'); const lab=pm.querySelector('.pm-label'); if(lab)lab.textContent=expanded?'Read less':'Read more'; } return; }
-  const ib=e.target.closest('[data-info]'); if(ib){openModal(ib.getAttribute('data-info'));return;}
-  if(e.target.closest('.modal-bg')||e.target.closest('.modal-x')){closeModal();return;}
+  const pm=t.closest('[data-pulse-toggle]'); if(pm){ const tx=pm.parentElement&&pm.parentElement.querySelector('[data-clamp]'); if(tx){ const expanded=!tx.classList.toggle('clamp'); pm.setAttribute('aria-expanded',expanded?'true':'false'); const lab=pm.querySelector('.pm-label'); if(lab)lab.textContent=expanded?'Read less':'Read more'; } return; }
+  const ib=t.closest('[data-info]'); if(ib){openModal(ib.getAttribute('data-info'));return;}
+  if(t.closest('.modal-bg')||t.closest('.modal-x')){closeModal();return;}
 });
+// 'toggle' doesn't bubble — a capture-phase listener sees every <details> opening: the Sources drawer + its lazy levels
+document.addEventListener('toggle',e=>{ const d=e.target; if(!d||!d.open||!d.matches) return;
+  if(d.matches('details.more-sources')){ const tree=$('#src-tree'); if(tree&&!tree.firstChild) safe(()=>{tree.innerHTML=srcTreeHTML();},'#src-tree'); }
+  else if(d.matches('[data-src-w],[data-src-d],[data-src-s]')) safe(()=>srcFill(d)); },true);
 document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 // keyboard-activate the div-based buttons (model rows, tie cards): Enter/Space → click
 document.addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('[role="button"][tabindex]')){ e.preventDefault(); e.target.click(); } });
 
-document.addEventListener('input',e=>{ if(e.target&&e.target.id==='glossq'){ const r=$('#glossres'); if(r) r.innerHTML=glossResults(e.target.value.trim()); } });
-document.addEventListener('change',e=>{ if(e.target&&(e.target.id==='cmpA'||e.target.id==='cmpB')){ if(e.target.id==='cmpA')cmpA=e.target.value; else cmpB=e.target.value; const r=$('#cmp-result'); if(r) r.innerHTML=cmpResult(); } });
+document.addEventListener('input',e=>{ if(e.target&&e.target.id==='glossq'){ safe(()=>{ const r=$('#glossres'); if(r) r.innerHTML=glossResults(e.target.value.trim()); },'#glossres'); } });
+document.addEventListener('change',e=>{ if(e.target&&(e.target.id==='cmpA'||e.target.id==='cmpB')){ if(e.target.id==='cmpA')cmpA=e.target.value; else cmpB=e.target.value; safe(()=>{ const r=$('#cmp-result'); if(r) r.innerHTML=cmpResult(); },'#cmp-result'); } });
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) maybeRefresh(); });
+window.addEventListener('pageshow',e=>{ if(e.persisted) maybeRefresh(); });            // back-forward cache restore
 if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{});}
-boot();
+boot().catch(e=>{ console.error(e); dismissSplash(); });
 </script>
 
 <script>
@@ -1340,26 +1361,31 @@ boot();
     vx:(-0.12+Math.random()*0.24), vy:(-0.08-Math.random()*0.22),   // drift gently up + sideways
     a:0.12+Math.random()*0.28, ph:Math.random()*6.28, sp:0.006+Math.random()*0.012,
     col:COLORS[(Math.random()*COLORS.length)|0] }; }
-  function size(){ W=window.innerWidth; H=window.innerHeight;
+  function paint(){ x.clearRect(0,0,W,H);
+    for(const p of parts){
+      const a=reduce?p.a.toFixed(2):(p.a*(0.55+0.45*Math.sin(p.ph))).toFixed(3);   // gentle firefly pulse (static when reduced-motion)
+      x.beginPath(); x.fillStyle=p.col.replace('A',a);
+      x.arc(p.x,p.y,p.r,0,6.2832); x.fill();
+    } }
+  // Safari's toolbar collapse fires resize with only a new HEIGHT: keep the particles then (no reshuffle), regenerate only
+  // when the WIDTH changes. Resizing the canvas clears it, so always repaint (reduced-motion used to be left blank).
+  function size(){ const nw=window.innerWidth, regen=nw!==W||!parts.length; W=nw; H=window.innerHeight;
     c.width=W*dpr; c.height=H*dpr; c.style.width=W+'px'; c.style.height=H+'px'; x.setTransform(dpr,0,0,dpr,0,0);
-    const n=Math.min(90,Math.round(W*H/15000));   // denser on small phone viewports so the ambiance actually reads
-    parts=Array.from({length:n},make); }
+    if(regen){ const n=Math.min(90,Math.round(W*H/15000));   // denser on small phone viewports so the ambiance actually reads
+      parts=Array.from({length:n},make); }
+    paint(); }
   size(); let rt; window.addEventListener('resize',()=>{clearTimeout(rt);rt=setTimeout(size,200);});
   let last=0, raf=0;
   function step(t){ raf=requestAnimationFrame(step); if(t-last<1000/FPS) return; last=t;
-    x.clearRect(0,0,W,H);
     for(const p of parts){
       p.x+=p.vx; p.y+=p.vy; p.ph+=p.sp;
       if(p.y<-6){ p.y=H+6; p.x=Math.random()*W; }
       if(p.x<-6) p.x=W+6; else if(p.x>W+6) p.x=-6;
-      const a=(p.a*(0.55+0.45*Math.sin(p.ph))).toFixed(3);   // gentle firefly pulse
-      x.beginPath(); x.fillStyle=p.col.replace('A',a);
-      x.arc(p.x,p.y,p.r,0,6.2832); x.fill();
-    } }
+    }
+    paint(); }
   function start(){ if(!raf) raf=requestAnimationFrame(step); }
   function stop(){ cancelAnimationFrame(raf); raf=0; }
-  if(reduce){ for(const p of parts){ x.beginPath(); x.fillStyle=p.col.replace('A',(p.a).toFixed(2)); x.arc(p.x,p.y,p.r,0,6.2832); x.fill(); } }
-  else { start(); document.addEventListener('visibilitychange',()=>document.hidden?stop():start()); }
+  if(!reduce){ start(); document.addEventListener('visibilitychange',()=>document.hidden?stop():start()); }
 })();
 
 /* ════════ fox: trots along the top edge of the Home overview, then stops to look around or curl up for a nap; faces its direction. Elthen pixel-art sprite (credited in More ▸ Sources). ════════ */
@@ -1371,11 +1397,12 @@ boot();
   const SLEEP=[1,2,3,4,5,6].map(i=>'img/fox-sleep-'+i+'.png'+FOXV);     // curled nap (breathing), 6 frames. All sliced from Elthen's 32x32 sheet via scripts/slice_fox.py; bottom-anchored, shared ground line.
   [...WALK,...IDLE,...SLEEP].forEach(s=>{const p=new Image();p.src=s;});// preload every frame
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let x=24, dir=1, mode='walk', last=0, walked=0, modeUntil=0, curSrc='', restT=0;
+  let x=24, dir=1, mode='walk', last=0, walked=0, modeUntil=0, curSrc='', restT=0, raf=0, lastDraw=0, fw=0, fh=0;
   const SPEED=50;                                                     // px / second — a relaxed trot
   const STEP_PX=5;                                                    // advance one leg frame per this many px MOVED → legs lock to motion (feet plant, no skating); 8 frames × 5px ≈ 40px stride
   const IDLE_FPS=3.5, SLEEP_FPS=2;                                    // gentle, time-based (idle/sleep animate in place, not distance-locked)
-  function homeHero(){ const h=document.getElementById('v-home'); return (h&&h.classList.contains('on'))?h.querySelector('.hero'):null; }
+  const FRAME_MS=1000/30;                                             // ~30 fps cap — plenty for a pixel sprite, half the battery of 60
+  const home=document.getElementById('v-home');
   function setSrc(s){ if(s!==curSrc){ curSrc=s; img.src=s; } }
   function rest(t){                                                   // stop trotting → look around, or (rarer + longer) curl up for a nap
     restT=0;
@@ -1383,15 +1410,18 @@ boot();
     else { mode='idle'; modeUntil=t+2500+Math.random()*4000; }
   }
   function tick(t){
-    requestAnimationFrame(tick);
+    // Home not on screen (or the page hidden) → the loop STOPS; showView()'s botany:view event / visibilitychange wake it
+    if(document.hidden||!home||!home.classList.contains('on')){ raf=0; last=0; fox.classList.add('fox-off'); return; }
+    raf=requestAnimationFrame(tick);
+    if(t-lastDraw<FRAME_MS) return; lastDraw=t;
     const dt=last?Math.min(0.05,(t-last)/1000):0; last=t;
-    const hero=homeHero();
-    if(!hero){ fox.classList.add('fox-off'); return; }
+    const hero=home.querySelector('.hero');
+    if(!hero){ fox.classList.add('fox-off'); return; }                 // Home is up but not rendered yet — keep polling
     fox.classList.remove('fox-off');
     const r=hero.getBoundingClientRect();
     const b=document.body.getBoundingClientRect();   // fox is position:absolute in body's coord space → it's content, so it zooms/pans WITH the hero under pinch (fixed detached). r-b deltas are layout coords = zoom-invariant.
-    const fw=fox.offsetWidth||58, fh=fox.offsetHeight||58;
-    const minX=8, maxX=Math.max(minX, r.width-fw-8);
+    if(!fw){ fw=fox.offsetWidth; fh=fox.offsetHeight; }               // measured once (every frame shares one size); 0 until the PNG decodes → retried
+    const minX=8, maxX=Math.max(minX, r.width-(fw||58)-8);
     if(reduce){ setSrc(IDLE[0]); }
     else if(mode==='walk'){
       const mv=SPEED*dt;
@@ -1407,11 +1437,14 @@ boot();
       if(t>modeUntil){ mode='walk'; modeUntil=t+4000+Math.random()*6000; }
     }
     fox.style.left=(r.left-b.left+x)+'px';
-    fox.style.top=(r.top-b.top-fh)+'px';                              // bottom-anchored: the 32x32 cell's bottom sits on the hero's top edge → consistent ground line across walk/idle/sleep
+    fox.style.top=(r.top-b.top-(fh||58))+'px';                         // bottom-anchored: the 32x32 cell's bottom sits on the hero's top edge → consistent ground line across walk/idle/sleep
     img.style.transform = dir<0 ? 'scaleX(-1)' : 'none';              // sprite faces right; flip when heading left
   }
-  requestAnimationFrame(tick);
-  document.addEventListener('visibilitychange',()=>{ last=0; });      // avoid a dt spike after the tab was hidden
+  function wake(){ if(!raf){ last=0; raf=requestAnimationFrame(tick); } }
+  wake();
+  document.addEventListener('botany:view',wake);                      // nav handler → Home is back → restart the loop
+  document.addEventListener('visibilitychange',()=>{ last=0; if(!document.hidden) wake(); });   // no dt spike after the tab was hidden
+  window.addEventListener('resize',()=>{ fw=0; });                    // re-measure after a zoom / rotation
 })();
 
 </script>
