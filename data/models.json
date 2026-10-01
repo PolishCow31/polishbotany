@@ -3863,7 +3863,7 @@
       "modality": "multimodal in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 37
+        "AA-Index": 38
       },
       "milestone": false,
       "status": "live",
@@ -3988,7 +3988,9 @@
       "context": "512K",
       "modality": "text, reasoning",
       "open": false,
-      "benchmarks": {},
+      "benchmarks": {
+        "AA-Index": 24
+      },
       "milestone": false,
       "status": "live",
       "notable": "Upstage's compact agentic model: a 35B sparse mixture-of-experts with 3B active parameters, 512K context and up to 128K output tokens, with reasoning, tool calling and structured outputs in English, Korean and Japanese. List price $0.10/$0.40 per million tokens, halved through Oct 22. No open weights and no published benchmarks at launch. Shipped alongside Solar Jev, a decision endpoint that returns a choice or probability instead of prose.",
