@@ -4291,6 +4291,42 @@
         "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b",
         "https://www.kucoin.com/news/flash/perplexity-open-sources-27b-decision-model-outperforms-jev-in-official-tests"
       ]
+    },
+    {
+      "name": "Mercury Decide",
+      "lab": "Inception",
+      "released": "2026-09-30",
+      "params": "undisclosed",
+      "context": "33K",
+      "modality": "Text in, choice out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Inception's diffusion-based decision model returns a choice, score or yes/no answer with a probability, at up to 14 decisions per second.",
+      "sources": [
+        "https://openrouter.ai/inception/mercury-decide",
+        "https://x.com/_inception_ai/status/2105375133003325768",
+        "https://alphasignal.ai/news/inception-releases-mercury-decide-to-make-ai-routing-14x-faster"
+      ]
+    },
+    {
+      "name": "Liquid d1",
+      "lab": "Liquid AI",
+      "released": "2026-09-29",
+      "params": "undisclosed",
+      "context": "64K",
+      "modality": "Text in, choice out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Liquid AI's first decision model answers yes/no, multiple-choice and rating questions with a probability for each outcome, generating no text.",
+      "sources": [
+        "https://www.marktechpost.com/2026/09/29/liquid-ai-releases-d1-a-decision-model-that-returns-calibrated-probabilities-with-zero-output-tokens/",
+        "https://openrouter.ai/liquid/d1",
+        "https://aisocratic.org/news/liquid-ai-launches-d1-a-decision-model-aimed-at-fast-structured-choices"
+      ]
     }
   ]
 }

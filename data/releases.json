@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T12:00:05-04:00",
+  "updated": "2026-10-02T15:00:05-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,7 +7,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Oct 31",
       "expectedDate": "2026-10",
-      "prob": 92,
+      "prob": 92.5,
       "probAsOf": "2026-10-02",
       "frontier": false,
       "open": false,
@@ -21,7 +21,7 @@
       "lab": "Google",
       "expectedWindow": "by Oct 31",
       "expectedDate": "2026-10",
-      "prob": 21,
+      "prob": 21.5,
       "probAsOf": "2026-10-02",
       "frontier": true,
       "open": false,
@@ -87,6 +87,20 @@
       "source": "https://www.cnbc.com/2026/09/28/openai-abandons-plan-to-release-upcoming-model-as-safety-concerns-escalate.html"
     },
     {
+      "model": "GPT-Synopsys",
+      "lab": "OpenAI",
+      "expectedWindow": "TBA",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": false,
+      "status": "confirmed",
+      "late": false,
+      "basis": "OpenAI and Synopsys announced a jointly built chip-design model Sep 30; early customer trials are underway, with no release date.",
+      "source": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design"
+    },
+    {
       "model": "Qwen 4",
       "lab": "Alibaba",
       "expectedWindow": "TBA",
@@ -139,8 +153,8 @@
       "open": true,
       "status": "confirmed",
       "late": false,
-      "basis": "Preview live Sep 3; launch materials slate the open-weights release for October.",
-      "source": "https://humain.ai"
+      "basis": "Preview live Sep 3; Humain targets an October open-weights release under the MiniMax Community License.",
+      "source": "https://wavespeed.ai/blog/ai-news/humain-m3-open-weights/"
     },
     {
       "model": "GPT-5.6 Sol Ultrafast GA",
