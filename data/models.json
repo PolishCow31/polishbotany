@@ -3863,7 +3863,7 @@
       "modality": "multimodal in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 37
+        "AA-Index": 38
       },
       "milestone": false,
       "status": "live",
@@ -4159,6 +4159,41 @@
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon",
         "https://www.marktechpost.com/2026/09/30/google-deepmind-unveils-gemini-4-argon-with-1m-output-tokens-for-coding-knowledge-work-and-cyber-defense/",
         "https://arena.ai/leaderboard/text"
+      ]
+    },
+    {
+      "name": "Pareto 26.10 Preview",
+      "lab": "Unbiased AI",
+      "released": "2026-10-01",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "text + image in, text out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Preview of the next Pareto composite model, with four times the context and a lower price than Pareto 26.9.",
+      "sources": [
+        "https://unbiased.ai/model-card/",
+        "https://openrouter.ai/unbiased/pareto-26.10-preview",
+        "https://www.orcarouter.ai/blog/unbiased-pareto-26-10-preview"
+      ]
+    },
+    {
+      "name": "Mercury Voice",
+      "lab": "Inception",
+      "released": "2026-09-29",
+      "params": "undisclosed",
+      "context": "128K",
+      "modality": "text for voice agents",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Diffusion language model for voice agents that reasons and calls tools with a median 320 ms wait for the first answer token.",
+      "sources": [
+        "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
+        "https://runtimewire.com/article/inception-mercury-voice-enterprise-launch"
       ]
     }
   ]
