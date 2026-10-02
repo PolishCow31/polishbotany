@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T15:00:05-04:00",
+  "updated": "2026-10-02T18:00:05-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -59,18 +59,18 @@
       "source": "https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/"
     },
     {
-      "model": "GPT-6 Cyber",
-      "lab": "OpenAI",
-      "expectedWindow": "Q4 2026",
-      "expectedDate": "2026-11",
+      "model": "humain-m3 open weights",
+      "lab": "Humain",
+      "expectedWindow": "Oct 2026",
+      "expectedDate": "2026-10",
       "prob": -1,
       "probAsOf": null,
       "frontier": false,
-      "open": false,
-      "status": "rumored",
+      "open": true,
+      "status": "confirmed",
       "late": false,
-      "basis": "Fortune reported a restricted GPT-6 Cyber preview for DevDay; OpenAI's DevDay slate did not confirm it.",
-      "source": "https://fortune.com/2026/09/24/openai-launching-gpt-6-cyber-model-and-security-product-devday/"
+      "basis": "Preview live Sep 3; Humain targets an October open-weights release under the MiniMax Community License.",
+      "source": "https://wavespeed.ai/blog/ai-news/humain-m3-open-weights/"
     },
     {
       "model": "GPT-6.1 Astra",
@@ -87,32 +87,32 @@
       "source": "https://www.cnbc.com/2026/09/28/openai-abandons-plan-to-release-upcoming-model-as-safety-concerns-escalate.html"
     },
     {
-      "model": "GPT-Synopsys",
-      "lab": "OpenAI",
+      "model": "Tavus Griffin",
+      "lab": "Tavus",
       "expectedWindow": "TBA",
-      "expectedDate": "2026-12",
+      "expectedDate": "2026-11",
       "prob": -1,
       "probAsOf": null,
       "frontier": false,
       "open": false,
       "status": "confirmed",
       "late": false,
-      "basis": "OpenAI and Synopsys announced a jointly built chip-design model Sep 30; early customer trials are underway, with no release date.",
-      "source": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design"
+      "basis": "Griffin-Lite previewed Oct 1; Tavus says the full model follows once its safety and disclosure work is done.",
+      "source": "https://www.tavus.io/griffin"
     },
     {
-      "model": "Qwen 4",
-      "lab": "Alibaba",
-      "expectedWindow": "TBA",
-      "expectedDate": "2026-12",
+      "model": "GPT-6 Cyber",
+      "lab": "OpenAI",
+      "expectedWindow": "Q4 2026",
+      "expectedDate": "2026-11",
       "prob": -1,
       "probAsOf": null,
       "frontier": false,
-      "open": true,
-      "status": "confirmed",
+      "open": false,
+      "status": "rumored",
       "late": false,
-      "basis": "Four Qwen 4 tiers named at Apsara Sep 22; Alibaba says the family is in training, with no date.",
-      "source": "https://pandaily.com/alibaba-qwen4-training-roadmap-5-10t-apsara-2026"
+      "basis": "Fortune reported a restricted GPT-6 Cyber preview for DevDay; OpenAI's DevDay slate did not confirm it.",
+      "source": "https://fortune.com/2026/09/24/openai-launching-gpt-6-cyber-model-and-security-product-devday/"
     },
     {
       "model": "Grok 4.8",
@@ -141,20 +141,6 @@
       "late": false,
       "basis": "V4.1-Flash shipped Sep 8; the Pro tier is announced for H2 on DeepSeek's API updates page, undated.",
       "source": "https://api-docs.deepseek.com/updates"
-    },
-    {
-      "model": "humain-m3 open weights",
-      "lab": "Humain",
-      "expectedWindow": "Oct 2026",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "probAsOf": null,
-      "frontier": false,
-      "open": true,
-      "status": "confirmed",
-      "late": false,
-      "basis": "Preview live Sep 3; Humain targets an October open-weights release under the MiniMax Community License.",
-      "source": "https://wavespeed.ai/blog/ai-news/humain-m3-open-weights/"
     },
     {
       "model": "GPT-5.6 Sol Ultrafast GA",
@@ -197,6 +183,34 @@
       "late": false,
       "basis": "Meta has signaled an open-weights Spark variant for H2, with no date or confirmation.",
       "source": "https://ai.meta.com/blog/"
+    },
+    {
+      "model": "GPT-Synopsys",
+      "lab": "OpenAI",
+      "expectedWindow": "TBA",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": false,
+      "status": "confirmed",
+      "late": false,
+      "basis": "OpenAI and Synopsys announced a jointly built chip-design model Sep 30; early customer trials are underway, with no release date.",
+      "source": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design"
+    },
+    {
+      "model": "Qwen 4",
+      "lab": "Alibaba",
+      "expectedWindow": "TBA",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": true,
+      "status": "confirmed",
+      "late": false,
+      "basis": "Four Qwen 4 tiers named at Apsara Sep 22; Alibaba says the family is in training, with no date.",
+      "source": "https://pandaily.com/alibaba-qwen4-training-roadmap-5-10t-apsara-2026"
     },
     {
       "model": "Koa GA",
