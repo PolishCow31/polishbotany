@@ -4195,6 +4195,67 @@
         "https://www.inceptionlabs.ai/blog/introducing-mercury-voice",
         "https://runtimewire.com/article/inception-mercury-voice-enterprise-launch"
       ]
+    },
+    {
+      "name": "Clef",
+      "lab": "Cloudflare",
+      "released": "2026-10-01",
+      "params": "27B",
+      "context": "64K",
+      "modality": "Text, image, video in",
+      "open": true,
+      "benchmarks": {
+        "MMLU": 90.3,
+        "GSM8K": 80.8,
+        "ARC-Challenge": 97.7,
+        "Banking77 (macro-F1)": 94.2
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Cloudflare's first in-house model returns a probability for each allowed answer instead of writing text, built on Qwen3.8-27B with Apache 2.0 weights.",
+      "sources": [
+        "https://blog.cloudflare.com/clef-decision-models/",
+        "https://huggingface.co/Cloudflare/clef",
+        "https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/"
+      ]
+    },
+    {
+      "name": "Clef-flash",
+      "lab": "Cloudflare",
+      "released": "2026-10-01",
+      "params": "9B",
+      "context": "64K",
+      "modality": "Text, image, video in",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "The smaller, faster Clef, built on Qwen3.5-9B, answers typed yes/no, multiple-choice and ranking questions in about 39 milliseconds at the median.",
+      "sources": [
+        "https://blog.cloudflare.com/clef-decision-models/",
+        "https://www.marktechpost.com/2026/10/01/cloudflare-releases-clef-and-clef-flash/"
+      ]
+    },
+    {
+      "name": "Ling-3.1-flash",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-09-30",
+      "params": "560B / ~25B active",
+      "context": "256K",
+      "modality": "Text",
+      "open": false,
+      "benchmarks": {
+        "GDPval-AA v2.1": 1673,
+        "FrontierSWE": 75.16,
+        "HealthBench Professional": 65.35
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "Ant Group's larger follow-up to Ling-3.0-flash is in a two-week free trial, with open weights and a 1M-token window promised afterward.",
+      "sources": [
+        "https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/",
+        "https://www.orcarouter.ai/blog/ling-3-1-flash-announced-not-open-weights"
+      ]
     }
   ]
 }
