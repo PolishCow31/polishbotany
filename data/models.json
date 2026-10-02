@@ -3863,7 +3863,7 @@
       "modality": "multimodal in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 37
+        "AA-Index": 38
       },
       "milestone": false,
       "status": "live",
@@ -4255,6 +4255,41 @@
       "sources": [
         "https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/",
         "https://www.orcarouter.ai/blog/ling-3-1-flash-announced-not-open-weights"
+      ]
+    },
+    {
+      "name": "Strands Decider 2B",
+      "lab": "Amazon (AWS Strands Labs)",
+      "released": "2026-10-01",
+      "params": "2B",
+      "context": "—",
+      "modality": "Text in, choice out",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Amazon's open decision model picks among preset options with a confidence score, answering in under 150 milliseconds on a local machine.",
+      "sources": [
+        "https://siliconangle.com/2026/10/01/aws-debuts-strands-decider-2b-a-first-lightweight-decision-model-for-accelerate-agentic-workflows/",
+        "https://techcrunch.com/2026/10/01/amazon-releases-its-own-jev-clone-as-decision-models-flood-the-web/",
+        "https://huggingface.co/StrandsAgents/strands-decider-2B-hobson-v19"
+      ]
+    },
+    {
+      "name": "pplx-decider-v1-27b",
+      "lab": "Perplexity",
+      "released": "2026-10-01",
+      "params": "27B",
+      "context": "—",
+      "modality": "Text, image in",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Perplexity's open decision model powers its new Decisions API, returning probabilities over fixed answers from text and images instead of writing prose.",
+      "sources": [
+        "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b",
+        "https://www.kucoin.com/news/flash/perplexity-open-sources-27b-decision-model-outperforms-jev-in-official-tests"
       ]
     }
   ]

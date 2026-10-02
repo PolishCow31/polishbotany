@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-02T09:00:04-04:00",
+  "updated": "2026-10-02T12:00:05-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -5493,6 +5493,16 @@
       ]
     },
     {
+      "term": "JevBench",
+      "acronym": "",
+      "category": "Benchmarks & evals",
+      "def": "A benchmark for decision models that measures how accurately they choose among predefined options and how well their confidence scores match actual correctness.",
+      "aka": [
+        "Jevbench",
+        "decision model benchmark"
+      ]
+    },
+    {
       "term": "Jimeng AI",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -7975,6 +7985,17 @@
       "def": "Splitting a model by assigning different layers to different GPUs, so data flows through them like an assembly line; it fits huge models across devices but can leave GPUs idle ('bubbles') between stages.",
       "aka": [
         "inter-layer parallelism"
+      ]
+    },
+    {
+      "term": "Pointer head",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "An output layer that scores a fixed list of candidate options supplied in the input, replacing the usual vocabulary head so a language-model backbone returns a choice with probabilities.",
+      "aka": [
+        "pointer network head",
+        "choice head",
+        "decision head"
       ]
     },
     {
