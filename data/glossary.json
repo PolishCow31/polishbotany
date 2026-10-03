@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-03T12:14:14-04:00",
+  "updated": "2026-10-03T15:01:53-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -51,6 +51,17 @@
         "refusal ablation",
         "uncensoring",
         "safety stripping"
+      ]
+    },
+    {
+      "term": "Abstention",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A model declining to answer when it lacks sufficient evidence, rather than guessing; measured by how often it correctly withholds an answer it would otherwise get wrong.",
+      "aka": [
+        "selective answering",
+        "refusal to answer",
+        "knowing when not to answer"
       ]
     },
     {
@@ -6393,6 +6404,17 @@
       "aka": [
         "memory bound",
         "bandwidth-bound"
+      ]
+    },
+    {
+      "term": "Merlin-Arthur protocol",
+      "acronym": "",
+      "category": "Safety & alignment",
+      "def": "A training setup borrowed from interactive proofs in which a prover supplies supporting evidence and a verifier answers only from it, while an adversarial prover tries to mislead.",
+      "aka": [
+        "Merlin-Arthur classifier",
+        "interactive proof training",
+        "prover-verifier training"
       ]
     },
     {

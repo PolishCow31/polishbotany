@@ -4429,6 +4429,27 @@
         "https://huggingface.co/IndexTeam/Index-Translate-35B-A3B-preview",
         "https://github.com/bilibili/Index-Translate"
       ]
+    },
+    {
+      "name": "Kolibri",
+      "lab": "Aleph Alpha",
+      "released": "2026-10-03",
+      "params": "78B, 3.5B active",
+      "context": "1M",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 66.4,
+        "GPQA Diamond": 84.3,
+        "HLE": 21.5
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Open German-English model built and trained in Europe for governments and regulated industry to run on their own hardware.",
+      "sources": [
+        "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
+        "https://huggingface.co/Aleph-Alpha/Kolibri-1"
+      ]
     }
   ]
 }
