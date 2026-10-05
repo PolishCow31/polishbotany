@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T03:00:04-04:00",
+  "updated": "2026-10-05T06:00:02-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -15637,6 +15637,107 @@
           "u": "CNBC 2026-10-01",
           "url": "https://www.cnbc.com/2026/10/01/google-gemini-4-arrives-as-wall-street-shifts-to-personal-agents.html",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "routine": "6AM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com next Fable",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-onptptpt-20261002",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com next Haiku",
+          "url": "https://polymarket.com/event/next-claude-haiku-released-byptptpt-20260701205353326",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com next Gemini Pro",
+          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com best AI 2026",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com Grok 5",
+          "url": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com AGI",
+          "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets Grok 5",
+          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets October releases",
+          "url": "https://manifold.markets/prismatic/october-2026-ai-model-releases",
+          "q": "primary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/10/05/60-minutes-how-humans-make-ai-smarter",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/10/04/reflection-open-weight-ai",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/10/03/trump-jay-clayton-ai-czar.html",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/ai-news",
+          "url": "https://llm-stats.com/ai-news",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-releases.com",
+          "url": "https://www.llm-releases.com/",
+          "q": "secondary"
+        },
+        {
+          "u": "x.com/mikeyk",
+          "url": "https://x.com/mikeyk/status/2102441803253535060",
+          "q": "primary"
+        },
+        {
+          "u": "cellcog.ai Fable 5.5",
+          "url": "https://cellcog.ai/blog/fable-5-5-release-date/",
+          "q": "blog"
+        },
+        {
+          "u": "dhseadev.online Haiku 5.5",
+          "url": "https://dhseadev.online/2026/09/25/claude-haiku-5-5-confirmed-vs-rumor/",
+          "q": "blog"
+        },
+        {
+          "u": "geeky-gadgets.com Gemini 4",
+          "url": "https://www.geeky-gadgets.com/gemini-4-delay-fable-5/",
+          "q": "blog"
         }
       ]
     }
