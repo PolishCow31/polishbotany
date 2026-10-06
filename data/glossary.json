@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-05T12:00:00-04:00",
+  "updated": "2026-10-05T21:00:04-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -4430,6 +4430,16 @@
       ]
     },
     {
+      "term": "Goodput",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "The share of a training run's wall-clock compute time that ends up contributing to the final model, after losses from failures, restarts and discarded work.",
+      "aka": [
+        "training goodput",
+        "effective throughput"
+      ]
+    },
+    {
       "term": "Google DeepMind",
       "acronym": "",
       "category": "Orgs, models & ecosystem",
@@ -6517,6 +6527,16 @@
       "aka": [
         "mid training",
         "continued pretraining stage"
+      ]
+    },
+    {
+      "term": "Midtraining",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "A training stage between pretraining and fine-tuning that uses curated data to build specific skills, such as reasoning, tool use or longer context handling.",
+      "aka": [
+        "mid-training",
+        "intermediate training"
       ]
     },
     {

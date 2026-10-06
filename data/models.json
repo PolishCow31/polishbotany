@@ -4247,7 +4247,8 @@
       "benchmarks": {
         "GDPval-AA v2.1": 1673,
         "FrontierSWE": 75.16,
-        "HealthBench Professional": 65.35
+        "HealthBench Professional": 65.35,
+        "AA-Index": 41
       },
       "milestone": false,
       "status": "preview",
@@ -4449,6 +4450,30 @@
       "sources": [
         "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/",
         "https://huggingface.co/Aleph-Alpha/Kolibri-1"
+      ]
+    },
+    {
+      "name": "Beam",
+      "lab": "Reflection AI",
+      "released": "2026-10-05",
+      "params": "501B, 23B active",
+      "context": "1M",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 80.9,
+        "SWE-bench Pro": 65.5,
+        "GPQA Diamond": 90.5,
+        "AIME 2026": 97.8,
+        "HLE": 36.2,
+        "Terminal-Bench 2.1": 80.1
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "Reflection's first open-weight model, in early access now; Apache 2.0 weights are promised later in October.",
+      "sources": [
+        "https://reflection.ai/blog/introducing-beam",
+        "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/"
       ]
     }
   ]
