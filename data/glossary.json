@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T03:04:33-04:00",
+  "updated": "2026-10-07T15:07:37-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -6114,6 +6114,17 @@
       "def": "The raw, unnormalized scores a language model assigns to every possible next token before they are turned into probabilities; most sampling controls act on these numbers.",
       "aka": [
         "logit scores"
+      ]
+    },
+    {
+      "term": "Long-context surcharge",
+      "acronym": "",
+      "category": "Economics & compute",
+      "def": "A higher per-token price a provider charges once a single prompt passes a set length, reflecting the extra compute that very long inputs require.",
+      "aka": [
+        "tiered context pricing",
+        "long-prompt pricing",
+        "context tier pricing"
       ]
     },
     {

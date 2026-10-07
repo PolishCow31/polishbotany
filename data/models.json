@@ -1322,9 +1322,9 @@
         "OSWorld": 50.7
       },
       "milestone": false,
-      "notable": "Released Oct 2025 (BEFORE the Feb-Jun 2026 window) but still the current small-tier Claude through mid-2026. Near-frontier coding (73.3% SWE-bench) at $1/$5, the cheap engine for multi-agent setups.",
+      "notable": "Anthropic's small model from Oct 2025, replaced by Haiku 5.5 on Oct 7 2026 and still available as a legacy option.",
       "pricing": "$1 in / $5 out per 1M",
-      "status": "historic"
+      "status": "superseded"
     },
     {
       "name": "Claude Fable 5",
@@ -4598,6 +4598,33 @@
       "sources": [
         "https://huggingface.co/empiriolabsai/aplomb-1",
         "https://www.reddit.com/r/LocalLLaMA/comments/1wz96qs/aplomb_1_openweights_53b_decision_model_1m/"
+      ]
+    },
+    {
+      "name": "Claude Haiku 5.5",
+      "lab": "Anthropic",
+      "released": "2026-10-07",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "text + image in, text out",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 39.2,
+        "HLE": 45.9,
+        "HLE (with tools)": 57.4,
+        "GDPval-AA v2.1": 1620,
+        "OSWorld 2.1": 72.4,
+        "FrontierCode v1.1": 46.4,
+        "Chartography": 46.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Anthropic's cheapest and fastest model, the first Haiku with an adjustable effort setting, priced about 75% below Haiku 4.5 on average.",
+      "sources": [
+        "https://www.anthropic.com/claude-haiku-5-5",
+        "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "https://venturebeat.com/technology/anthropic-launches-claude-haiku-5-5-with-90-api-price-reduction-matching-gpt-6-luna",
+        "https://www.unite.ai/anthropic-releases-claude-haiku-5-5-cutting-small-model-api-prices/"
       ]
     }
   ]
