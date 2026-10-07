@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T15:07:37-04:00",
+  "updated": "2026-10-07T18:00:05-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -17145,6 +17145,112 @@
           "u": "kalshi.com AGI by date",
           "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
           "q": "primary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "routine": "6PM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?tag_slug=ai&closed=false",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com best model 2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com Mistral Large 4 Arena",
+          "url": "https://polymarket.com/event/mistral-large-4-text-arena-debut-20261007",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com Gemini Argon",
+          "url": "https://polymarket.com/event/gemini-argon-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com next Fable",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-onptptpt-20261002",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com Muse Charm",
+          "url": "https://polymarket.com/event/muse-charm-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com best AI 2026",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com Grok 5",
+          "url": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets Grok 5",
+          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets AGI before 2028",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "primary"
+        },
+        {
+          "u": "aiweekly.co/ai-news-today",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "blog"
+        },
+        {
+          "u": "cnbc.com Biohub",
+          "url": "https://cnbc.com/2026/10/07/government-google-join-zuckerberg-backed-biohub-ai-biology-data.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Meta Muse",
+          "url": "https://www.cnbc.com/2026/10/07/meta-muse-personal-ai-agents-dazzle.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Google Finland",
+          "url": "https://cnbc.com/2026/10/07/google-finland-data-center-halt.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Mistral Large 4",
+          "url": "https://www.cnbc.com/2026/10/06/mistral-ai-model-le-chonk.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Argon",
+          "url": "https://www.cnbc.com/2026/10/02/tech-download-google-argon-frontier-openai-anthropic.html",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com The Download",
+          "url": "https://www.technologyreview.com/2026/10/05/1145711/the-download-ai-popularity-paradox-emtech-future-2026/",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com brain scans",
+          "url": "https://www.technologyreview.com/2026/10/01/1145588/ai-mind-reading-reconstructs-what-youre-looking-at/",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Muse Charm",
+          "url": "https://www.cnbc.com/2026/09/24/meta-mark-zuckerberg-muse-charm-openai-agent.html",
+          "q": "secondary"
+        },
+        {
+          "u": "theregister.com Mistral",
+          "url": "https://theregister.com/ai-and-ml/2026/10/06/european-ai-flag-bearer-mistrals-new-open-weights-model-is-le-chonk/5301443",
+          "q": "secondary"
         }
       ]
     }
