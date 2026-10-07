@@ -4101,9 +4101,9 @@
       "open": false,
       "benchmarks": {
         "Terminal-Bench 4.0": 70.6,
-        "FrontierCode v1.1": 46.2,
+        "FrontierCode v1.1": 52.1,
         "CursorBench 4.0": 55.5,
-        "GDPval-AA v2.1": 1844,
+        "GDPval-AA v2.1": 1840,
         "HLE (with tools)": 64.5,
         "OSWorld 2.1 (partial)": 80.1,
         "Chartography": 61.6,
@@ -4111,8 +4111,8 @@
       },
       "milestone": false,
       "status": "live",
-      "pricing": "$2 in / $10 out per 1M; cache reads $0.20, cache writes $2.50",
-      "notable": "Anthropic's Sep 28 2026 successor to Sonnet 5 and the second model in the Claude 5.5 family, API id claude-sonnet-5-5. Anthropic says it runs 30%+ faster than Sonnet 5 and cuts cost per task by up to 30% through fewer tokens and tool calls, at an unchanged $2/$10 list price, half of Opus 5.5. On Anthropic's table it posts 70.6% on Terminal-Bench 4.0 (Sonnet 5: 10.3%; Opus 5.5: 66.4%), 1844 Elo on GDPval-AA v2.1 (two points under Opus 5.5), 64.5% on HLE with tools, 80.1% partial on OSWorld 2.1 and 46.2% on FrontierCode 1.1. CNBC reports Anthropic says it does not advance its frontier. First Sonnet to ship with the cyber safeguards and fallbacks used on Anthropic's top models, plus invisible text watermarking. Live on the Claude API, AWS, Google Cloud and Microsoft Azure; Haiku 5.5 promised in the coming weeks.",
+      "pricing": "$2 in / $10 out per 1M; cache reads $0.10 (cut from $0.20 on Oct 7 2026), cache writes $2.50",
+      "notable": "Anthropic's Sep 28 2026 successor to Sonnet 5 and the second model in the Claude 5.5 family, API id claude-sonnet-5-5. Anthropic says it runs 30%+ faster than Sonnet 5 and cuts cost per task by up to 30% through fewer tokens and tool calls, at an unchanged $2/$10 list price, half of Opus 5.5. On Anthropic's table it posts 70.6% on Terminal-Bench 4.0 (Sonnet 5: 10.3%; Opus 5.5: 66.4%), 1840 Elo on GDPval-AA v2.1 (1844 at launch, restated on Anthropic's Oct 7 table; six points under Opus 5.5), 64.5% on HLE with tools, 80.1% partial on OSWorld 2.1 and 52.1% on FrontierCode 1.1 at Xhigh effort (46.2% at Max, the launch figure). CNBC reports Anthropic says it does not advance its frontier. First Sonnet to ship with the cyber safeguards and fallbacks used on Anthropic's top models, plus invisible text watermarking. Live on the Claude API, AWS, Google Cloud and Microsoft Azure; Haiku 5.5 promised in the coming weeks.",
       "sources": [
         "https://www.anthropic.com/claude-sonnet-5-5",
         "https://www.cnbc.com/2026/09/28/anthropic-sonnet-5-5-launch.html",
@@ -4621,6 +4621,7 @@
       "milestone": false,
       "status": "live",
       "notable": "Anthropic's cheapest and fastest model, the first Haiku with an adjustable effort setting, priced about 75% below Haiku 4.5 on average.",
+      "pricing": "$0.10 in / $0.50 out per 1M up to 100K-token prompts; $0.50 / $2.50 above; cache reads $0.01, cache writes $0.125",
       "sources": [
         "https://www.anthropic.com/claude-haiku-5-5",
         "https://platform.claude.com/docs/en/about-claude/models/overview",
