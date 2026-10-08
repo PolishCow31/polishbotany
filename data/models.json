@@ -3778,7 +3778,7 @@
       },
       "milestone": false,
       "status": "preview",
-      "notable": "StepFun's new 600B flagship preview, released Sep 18 2026 — the Shanghai lab's strongest model yet. Artificial Analysis measured it well above average among reasoning models in its price tier (ranked ~#25 of 644 tracked models), with a 1M-token context, text+image input, and aggressive $1/$2.70 per-1M pricing. Serves ~100 tokens/s from StepFun's own API. Weights are proprietary; a non-preview GA build has not been dated.",
+      "notable": "StepFun's 600B flagship preview with a 1M-token context and low pricing; open weights are promised for Oct 15.",
       "sources": [
         "https://artificialanalysis.ai/models/step-5",
         "https://artificialanalysis.ai/changelog",
@@ -4698,6 +4698,26 @@
       "sources": [
         "https://huggingface.co/perplexity-ai/pplx-embed-v2-late-9b",
         "https://community.perplexity.ai/t/were-releasing-pplx-embed-v2-late-two-late-interaction-embedding-models-that-retrieve-text-images-and-pages-with-a-shared-embedding-space-for-cross-model-querying/6296"
+      ]
+    },
+    {
+      "name": "Mellum2.1",
+      "lab": "JetBrains",
+      "released": "2026-10",
+      "params": "12B, 2.5B active",
+      "context": "128K",
+      "modality": "Text and code",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 47.0,
+        "LiveCodeBench v6": 82.0
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "JetBrains' open coding-agent model, retrained mainly with reinforcement learning so it can explore a codebase, edit files and check its own changes.",
+      "sources": [
+        "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
+        "https://www.marktechpost.com/2026/10/08/jetbrains-releases-mellum2-1-a-12b-moe-open-model-for-coding-agents/"
       ]
     }
   ]
