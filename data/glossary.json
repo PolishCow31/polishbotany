@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T15:07:37-04:00",
+  "updated": "2026-10-08T06:00:05-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -5804,6 +5804,18 @@
       "aka": [
         "LTM",
         "tabular foundation model"
+      ]
+    },
+    {
+      "term": "Late-interaction retrieval",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A search method that stores one small vector per token instead of one per document, then scores a query by matching each of its tokens to the closest document token.",
+      "aka": [
+        "ColBERT",
+        "MaxSim",
+        "multi-vector retrieval",
+        "late interaction"
       ]
     },
     {

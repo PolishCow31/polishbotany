@@ -4680,6 +4680,25 @@
         "https://allenai.org/blog/astabrief",
         "https://huggingface.co/allenai/AstaBrief_8B"
       ]
+    },
+    {
+      "name": "pplx-embed-v2-late",
+      "lab": "Perplexity",
+      "released": "2026-10-07",
+      "params": "7.4B / 340M",
+      "context": "—",
+      "modality": "text, image, documents",
+      "open": true,
+      "benchmarks": {
+        "ViDoRe v3 Image nDCG@10": 65.2
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Two MIT-licensed search models that index text, images and PDF pages in one shared space, so the small one can query the large one's index.",
+      "sources": [
+        "https://huggingface.co/perplexity-ai/pplx-embed-v2-late-9b",
+        "https://community.perplexity.ai/t/were-releasing-pplx-embed-v2-late-two-late-interaction-embedding-models-that-retrieve-text-images-and-pages-with-a-shared-embedding-space-for-cross-model-querying/6296"
+      ]
     }
   ]
 }
