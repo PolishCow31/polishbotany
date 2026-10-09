@@ -4737,6 +4737,38 @@
         "https://docs.celeris.ai/decisions",
         "https://benchlm.ai/models/celeris-1-decision"
       ]
+    },
+    {
+      "name": "Qwen-Image-2.1-Turbo",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-10-09",
+      "params": "7B",
+      "context": "—",
+      "modality": "Text + image → image",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Eight-step accelerated version of Qwen-Image-2.1 for image generation and editing, released as open weights for research use.",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo"
+      ]
+    },
+    {
+      "name": "Youtu-Parsing-Omni",
+      "lab": "Tencent",
+      "released": "2026-10-09",
+      "params": "5B",
+      "context": "—",
+      "modality": "Docs, audio, video → JSON",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Compact open-weight model that turns documents, charts, audio and video into a single structured JSON output.",
+      "sources": [
+        "https://huggingface.co/tencent/Youtu-Parsing-Omni"
+      ]
     }
   ]
 }
