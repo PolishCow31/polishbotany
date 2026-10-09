@@ -3001,7 +3001,7 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 15,
+        "AA-Index": 13,
         "SWE-bench Verified": 57.0,
         "Terminal-Bench 2.1": 29.24,
         "MMLU-Pro": 77.6
@@ -4718,6 +4718,24 @@
       "sources": [
         "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/",
         "https://www.marktechpost.com/2026/10/08/jetbrains-releases-mellum2-1-a-12b-moe-open-model-for-coding-agents/"
+      ]
+    },
+    {
+      "name": "Celeris-1 Decision",
+      "lab": "Celeris AI Labs",
+      "released": "2026-10-08",
+      "params": "—",
+      "context": "—",
+      "modality": "Text, JSON, image in",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "A hosted diffusion model that answers yes-no, multiple-choice and scoring questions with probabilities in well under a tenth of a second.",
+      "sources": [
+        "https://celeris.ai/celeris-1-decision",
+        "https://docs.celeris.ai/decisions",
+        "https://benchlm.ai/models/celeris-1-decision"
       ]
     }
   ]
