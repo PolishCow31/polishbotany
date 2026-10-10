@@ -1,605 +1,7 @@
 {
-  "updated": "2026-10-09T21:00:05-04:00",
+  "updated": "2026-10-10T00:00:05-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
-    {
-      "date": "2026-09-09",
-      "routine": "12AM",
-      "sources": [
-        {
-          "u": "polymarket.com/best-ai-model-end-of-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-end-of-september",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-end-of-october",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/next-gemini-pro-released-by",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/grok-47-release-date",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/grok-5-release",
-          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/agi-before-2028",
-          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
-          "q": "primary"
-        },
-        {
-          "u": "fortune.com (Navier-Stokes / Tao)",
-          "url": "https://fortune.com/2026/09/08/openai-says-it-cracked-navier-stokes-math-grand-challenge-buckmaster-accusation-cheating-intimidation-tao-lament/",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com (Navier-Stokes credit)",
-          "url": "https://www.axios.com/2026/09/08/openai-math-solution-navier-stokes-credit",
-          "q": "secondary"
-        },
-        {
-          "u": "nature.com (Millennium Problem claim)",
-          "url": "https://www.nature.com/articles/d41586-026-02842-5",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (G20 ministerial)",
-          "url": "https://www.cnbc.com/2026/09/02/g20-innovation-ministerial-live-updates.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (SB Energy IPO)",
-          "url": "https://www.cnbc.com/2026/09/01/sb-energy-ipo-softbank-open-ai-nvidia.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (Mistral $24B round)",
-          "url": "https://www.cnbc.com/2026/09/08/mistral-ai-funding-valuation-samsung.html",
-          "q": "secondary"
-        },
-        {
-          "u": "techcrunch.com (Buckmaster interview)",
-          "url": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/",
-          "q": "secondary"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "routine": "3AM",
-      "sources": [
-        {
-          "u": "polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/which-company-has-the-best-ai-model-end-of-september",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/Bayesian/grok-47-xai-release-date",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/RemNi/will-we-get-agi-before-2028",
-          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/will-anthropic-or-openai-ipo-first",
-          "url": "https://polymarket.com/event/will-anthropic-or-openai-ipo-first",
-          "q": "primary"
-        },
-        {
-          "u": "cnbc.com/ai-artificial-intelligence",
-          "url": "https://www.cnbc.com/ai-artificial-intelligence/",
-          "q": "secondary"
-        },
-        {
-          "u": "cometapi.com/grok-4-7-release-date",
-          "url": "https://www.cometapi.com/grok-4-7-release-date/",
-          "q": "blog"
-        },
-        {
-          "u": "orcarouter.ai/blog/grok-4-7-release-date",
-          "url": "https://www.orcarouter.ai/blog/grok-4-7-release-date",
-          "q": "blog"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "routine": "6AM",
-      "sources": [
-        {
-          "u": "polymarket.com/best-model-end-of-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-end-of-september",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-end-of-october",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/next-gemini-pro-released-by",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/grok-47-release-date",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/when-will-xai-release-grok-5",
-          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "q": "primary"
-        },
-        {
-          "u": "cnbc.com/navier-stokes-solved",
-          "url": "https://www.cnbc.com/2026/09/09/openai-navier-stokes-math-problem-solved.html",
-          "q": "secondary"
-        },
-        {
-          "u": "theneuron.ai/sep-8-digest",
-          "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-tuesday-september-8-2026/",
-          "q": "secondary"
-        },
-        {
-          "u": "llm-stats.com/llm-updates",
-          "url": "https://llm-stats.com/llm-updates",
-          "q": "secondary"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "routine": "9AM",
-      "sources": [
-        {
-          "u": "polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/best-ai-model-end-of-september",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/best-ai-model-end-of-october",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31",
-          "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/next-google-gemini-pro-model-released-by",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/event/next-mythos-class-model-released-by",
-          "url": "https://polymarket.com/event/next-mythos-class-model-released-by",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/Bayesian/grok-47-xai-release-date",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "q": "primary"
-        },
-        {
-          "u": "cnbc.com (Qualcomm-Amazon AI infrastructure deal)",
-          "url": "https://www.cnbc.com/2026/09/08/qualcomm-amazon-data-center-infrastructure-deal.html",
-          "q": "secondary"
-        },
-        {
-          "u": "openai.com/index/navier-stokes-solution",
-          "url": "https://openai.com/index/navier-stokes-solution/",
-          "q": "primary"
-        },
-        {
-          "u": "spectrum.ieee.org/ai-in-mathematics",
-          "url": "https://spectrum.ieee.org/ai-in-mathematics",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com (Navier-Stokes credit controversy)",
-          "url": "https://www.axios.com/2026/09/08/openai-math-solution-navier-stokes-credit",
-          "q": "secondary"
-        },
-        {
-          "u": "techcrunch.com (Buckmaster on OpenAI proof race)",
-          "url": "https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/",
-          "q": "secondary"
-        },
-        {
-          "u": "llm-stats.com/llm-updates",
-          "url": "https://llm-stats.com/llm-updates",
-          "q": "secondary"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "routine": "12PM",
-      "sources": [
-        {
-          "u": "polymarket.com/…best-ai-model-end-of-september",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/…best-ai-model-end-of-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/…best-ai-model-end-of-october",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/…next-google-gemini-pro-released-by",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/…openai-announces-agi-before-2027",
-          "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/…chinese-company-best-ai-model",
-          "url": "https://polymarket.com/event/will-a-chinese-company-have-the-best-ai-model-by-december-31",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/…frontiermath-90-before-2027",
-          "url": "https://polymarket.com/event/ai-model-scores-90-on-frontiermath-benchmark-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/Bayesian/grok-47",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/Bayesian/grok-5",
-          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "q": "primary"
-        },
-        {
-          "u": "cisa.gov advisory AA26-251A",
-          "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a",
-          "q": "primary"
-        },
-        {
-          "u": "ai-tldr.dev/releases/deepseek-v4-1-flash",
-          "url": "https://ai-tldr.dev/releases/deepseek-v4-1-flash/",
-          "q": "secondary"
-        },
-        {
-          "u": "news.ycombinator.com (V4.1 Flash beta)",
-          "url": "https://news.ycombinator.com/item?id=49607094",
-          "q": "secondary"
-        },
-        {
-          "u": "cyberscoop.com (distillation advisory)",
-          "url": "https://cyberscoop.com/us-accuses-chinese-ai-companies-distillation/",
-          "q": "secondary"
-        },
-        {
-          "u": "theregister.com (distillation advisory)",
-          "url": "https://www.theregister.com/ai-and-ml/2026/09/09/us-claims-chinese-ai-companies-core-ai-strategy-is-distilling-american-models/5295171",
-          "q": "secondary"
-        },
-        {
-          "u": "defenseone.com (distillation advisory)",
-          "url": "https://www.defenseone.com/threats/2026/09/intelligence-agencies-warn-chinas-large-scale-ai-model-distillation-efforts/415858/",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (Astra cyber rollout)",
-          "url": "https://www.cnbc.com/2026/09/03/open-ai-astra-gpt-6-cyber.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (distillation dark web)",
-          "url": "https://www.cnbc.com/2026/09/03/anthropic-distillation-battle-turns-to-dark-web-china-concerns-swell.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (House Intelligence Black Swan)",
-          "url": "https://www.cnbc.com/2026/08/31/ai-warning-house-intelligence-committee.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (Apple event live)",
-          "url": "https://www.cnbc.com/2026/09/09/apple-event-today-live-updates.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (Google September momentum)",
-          "url": "https://www.cnbc.com/2026/09/02/google-starts-september-with-ai-momentum-after-long-losing-streak.html",
-          "q": "secondary"
-        },
-        {
-          "u": "technologyreview.com (The Download, Sep 9)",
-          "url": "https://www.technologyreview.com/2026/09/09/1143767/the-download-openai-math-future-battery-record/",
-          "q": "secondary"
-        },
-        {
-          "u": "cometapi.com (Grok 4.7 window)",
-          "url": "https://www.cometapi.com/grok-4-7-release-date/",
-          "q": "blog"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "routine": "3PM",
-      "sources": [
-        {
-          "u": "polymarket.com/best-ai-model-end-of-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-end-of-september",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-end-of-october",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/next-gemini-pro-released-by",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/openai-announces-agi-before-2027",
-          "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/grok-47-release-date",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "panews.io (DeepSeek V4.1 Flash GA ~Sep 10)",
-          "url": "https://panews.io/articles/01a0856e-2bce-75c8-bca5-2be6af74ffd9",
-          "q": "secondary"
-        },
-        {
-          "u": "cisa.gov/advisory AA26-251A",
-          "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-251a",
-          "q": "primary"
-        },
-        {
-          "u": "cellcog.ai (DeepSeek V4.1 Flash status)",
-          "url": "https://cellcog.ai/blog/deepseek-v4-1-flash-release-date/",
-          "q": "blog"
-        },
-        {
-          "u": "cometapi.com (Grok 4.7 window)",
-          "url": "https://www.cometapi.com/grok-4-7-release-date/",
-          "q": "blog"
-        },
-        {
-          "u": "cnbc.com (G20 innovation ministerial)",
-          "url": "https://www.cnbc.com/2026/09/02/g20-innovation-ministerial-live-updates.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com (SB Energy IPO)",
-          "url": "https://www.cnbc.com/2026/09/01/sb-energy-ipo-softbank-open-ai-nvidia.html",
-          "q": "secondary"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "routine": "6PM",
-      "sources": [
-        {
-          "u": "technode.com",
-          "url": "https://technode.com/2026/09/09/deepseek-v4-1-flash-multimodal-limited-beta/",
-          "q": "secondary"
-        },
-        {
-          "u": "cellcog.ai/blog (Grok 4.7)",
-          "url": "https://cellcog.ai/blog/grok-4-7-release-date/",
-          "q": "secondary"
-        },
-        {
-          "u": "orcarouter.ai/blog (Grok 4.7)",
-          "url": "https://www.orcarouter.ai/blog/grok-4-7-release-date",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com (best model end 2026)",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com (best model end Sep)",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com (best model end Oct)",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com (next Gemini Pro)",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets (Grok 4.7)",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets (Grok 5)",
-          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com (OpenAI AGI)",
-          "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com (Chinese top model)",
-          "url": "https://polymarket.com/event/will-a-chinese-company-have-the-best-ai-model-by-december-31",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com (Anthropic/OpenAI IPO)",
-          "url": "https://polymarket.com/event/will-anthropic-or-openai-ipo-first",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com (FrontierMath 90)",
-          "url": "https://polymarket.com/event/ai-model-scores-90-on-frontiermath-benchmark-before-2027",
-          "q": "primary"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-09",
-      "routine": "9PM",
-      "sources": [
-        {
-          "u": "api-docs.deepseek.com/updates",
-          "url": "https://api-docs.deepseek.com/updates/",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — best model end of 2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — best model end of September",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-september-20260717143435868",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — best model end of October",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — #1 AI model by Dec 31",
-          "url": "https://polymarket.com/event/which-companies-will-have-a-1-ai-model-by-december-31",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — next Gemini Pro released by",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — Anthropic or OpenAI IPO first",
-          "url": "https://polymarket.com/event/will-anthropic-or-openai-ipo-first",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — OpenAI announces AGI before 2027",
-          "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com — Chinese company top model by Dec 31",
-          "url": "https://polymarket.com/event/will-a-chinese-company-have-the-best-ai-model-by-december-31",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets — Grok 4.7 release date",
-          "url": "https://manifold.markets/Bayesian/grok-47-xai-release-date",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets — Grok 5 release date",
-          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
-          "q": "primary"
-        },
-        {
-          "u": "cnbc.com — Nvidia/Hugging Face deal (dedupe check)",
-          "url": "https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html",
-          "q": "secondary"
-        },
-        {
-          "u": "techflowpost.com — V4.1 Flash Sep 10 plan",
-          "url": "https://www.techflowpost.com/en-US/newsletter/135519",
-          "q": "secondary"
-        }
-      ]
-    },
     {
       "date": "2026-09-10",
       "routine": "12AM",
@@ -18174,6 +17576,92 @@
           "u": "manifold.markets",
           "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
           "q": "primary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-10",
+      "routine": "12AM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com · next Fable",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-onptptpt-20261002",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com · Argon by",
+          "url": "https://polymarket.com/event/gemini-argon-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com · Gemini Pro",
+          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com · HLE debut",
+          "url": "https://polymarket.com/event/gemini-argon-humanitys-last-exam-debut-20261002",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets · Grok 5",
+          "url": "https://manifold.markets/Bayesian/when-will-xai-release-grok-5",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets · October releases",
+          "url": "https://manifold.markets/prismatic/october-2026-ai-model-releases",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets · Argon",
+          "url": "https://manifold.markets/HumanClanker/will-gemini-4-argon-be-released-pub",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com · best AI 2026",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com · Grok 5",
+          "url": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5",
+          "q": "primary"
+        },
+        {
+          "u": "benchlm.ai release timeline",
+          "url": "https://benchlm.ai/md/model-updates/releases.md",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com · OpenAI researchers",
+          "url": "https://cnbc.com/2026/10/09/openai-fired-researchers-ai-concerns.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com · Trump officials",
+          "url": "https://www.cnbc.com/2026/10/09/openai-anthropic-poach-trump-officials.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com · OpenAI revenue",
+          "url": "https://www.cnbc.com/2026/10/08/open-ai-revenue-nvidia-oracle-coreweave.html",
+          "q": "secondary"
+        },
+        {
+          "u": "letsdatascience.com · Argon",
+          "url": "https://letsdatascience.com/news/google-releases-gemini-4-argon-to-cyber-defenders-1093bb0b",
+          "q": "blog"
+        },
+        {
+          "u": "thehansindia.com · October AI",
+          "url": "https://www.thehansindia.com/tech/upcoming-ai-updates-in-october-2026-major-developments-to-watch-1127036",
+          "q": "secondary"
         }
       ]
     }
