@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10T09:00:05-04:00",
+  "updated": "2026-10-10T12:00:04-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -2667,6 +2667,17 @@
       ]
     },
     {
+      "term": "Cross-region inference",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A cloud feature that routes a model request to spare capacity in another geographic region, raising throughput and availability but changing where the data is processed.",
+      "aka": [
+        "cross-Region inference",
+        "inference profile",
+        "global inference routing"
+      ]
+    },
+    {
       "term": "Crosscoder",
       "acronym": "",
       "category": "Safety & alignment",
@@ -3070,6 +3081,17 @@
         "prompt delimiters",
         "structured tags",
         "XML tags"
+      ]
+    },
+    {
+      "term": "Denoising step",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "One pass in which a diffusion model removes part of the noise from an image or other output; fewer steps mean faster generation, often at some cost in quality.",
+      "aka": [
+        "sampling step",
+        "diffusion step",
+        "inference step"
       ]
     },
     {
