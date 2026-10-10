@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T15:00:05-04:00",
+  "updated": "2026-10-09T21:00:05-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -1425,6 +1425,16 @@
       ]
     },
     {
+      "term": "Bi-encoder",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "A retrieval design that turns the query and each candidate into separate vectors, then scores matches by comparing those vectors, so candidates can be indexed ahead of time.",
+      "aka": [
+        "dual encoder",
+        "two-tower model"
+      ]
+    },
+    {
       "term": "BIG-Bench",
       "acronym": "",
       "category": "Benchmarks & evals",
@@ -2476,6 +2486,17 @@
         "contrastive decoding",
         "contrastive search",
         "expert-amateur decoding"
+      ]
+    },
+    {
+      "term": "Contrastive learning",
+      "acronym": "",
+      "category": "Training & post-training",
+      "def": "A training method that pulls the vectors of matching pairs together and pushes mismatched pairs apart, teaching a model which items belong together.",
+      "aka": [
+        "contrastive training",
+        "contrastive fine-tuning",
+        "InfoNCE"
       ]
     },
     {

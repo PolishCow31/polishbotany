@@ -4769,6 +4769,41 @@
       "sources": [
         "https://huggingface.co/tencent/Youtu-Parsing-Omni"
       ]
+    },
+    {
+      "name": "MetaEncoder",
+      "lab": "Meta",
+      "released": "2026-10-08",
+      "params": "30B",
+      "context": "—",
+      "modality": "Text, image, video to vector",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Meta's open embedding model turns its Muse Glimmer 30B into a ranker that picks among options described in plain language.",
+      "sources": [
+        "https://huggingface.co/facebook/meta-encoder",
+        "https://arxiv.org/abs/2610.11316"
+      ]
+    },
+    {
+      "name": "GPT-6 Luna Decisions",
+      "lab": "OpenAI",
+      "released": "2026-10-06",
+      "params": "—",
+      "context": "1.05M",
+      "modality": "Text and image in",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "OpenAI's beta Decisions API runs GPT-6 Luna as a classifier that returns yes-or-no odds, choices and scores instead of text.",
+      "sources": [
+        "https://aiweekly.co/alerts/openai-launches-decisions-api-public-beta-on-gpt-6-luna",
+        "https://vercel.com/ai-gateway/models/gpt-6-luna-decisions",
+        "https://openrouter.ai/openai/gpt-6-luna-decisions"
+      ]
     }
   ]
 }
