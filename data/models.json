@@ -4804,6 +4804,23 @@
         "https://vercel.com/ai-gateway/models/gpt-6-luna-decisions",
         "https://openrouter.ai/openai/gpt-6-luna-decisions"
       ]
+    },
+    {
+      "name": "Microsoft-Decision-1",
+      "lab": "Microsoft AI",
+      "released": "2026-10-09",
+      "params": "9B",
+      "context": "33K",
+      "modality": "Text in, probabilities out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Decision model built on Qwen3.5-9B that returns calibrated probabilities for preset options, in public preview on Microsoft Foundry.",
+      "sources": [
+        "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-microsoft-decision-1-in-microsoft-foundry-for-decision-and-classific/4562742",
+        "https://www.testingcatalog.com/microsoft-launches-decision-1-model-in-foundry/"
+      ]
     }
   ]
 }
