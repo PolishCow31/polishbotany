@@ -1764,8 +1764,8 @@
         "AA-Index": 34
       },
       "milestone": false,
-      "status": "live",
-      "notable": "Fast, cheap Flash-tier model that beats Gemini 3.1 Pro on several agentic/coding benchmarks while running ~3x faster; 1M context, natively multimodal, GA across the Gemini app, AI Studio and Gemini API.",
+      "status": "superseded",
+      "notable": "Google deprecated this Flash model on Oct 8 and now routes its API requests to Gemini 3.6 Flash.",
       "sources": [
         "https://deepmind.google/models/model-cards/gemini-3-5-flash/",
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/"
@@ -2747,9 +2747,9 @@
         "GDP.pdf": 34.0
       },
       "milestone": false,
-      "status": "live",
+      "status": "superseded",
       "pricing": "$0.75 in / $3.75 out per 1M (introductory through Dec 31 2026; $1.50 / $7.50 from Jan 1 2027)",
-      "notable": "Google's new workhorse Flash model, shipped Aug 13 2026 just three weeks after Gemini 3.6 Flash and pitched at coding and agents. Google frames it as an algorithmic refinement of the 3.6 Flash reasoning stack rather than a new pretraining run. Artificial Analysis scores it 56 on the Intelligence Index (v4.1) - up from 3.6 Flash's 52 and now the highest score of any Google model on the board, ahead of Gemini 3.1 Pro at 46 - while measuring 340.1 output tokens/sec, the fastest of any model AA tracks, and $0.40 per Intelligence Index task. Google-reported gains vs 3.6 Flash: DeepSWE v1.1 65.3% (from 49.0), FrontierCode 1.1 Main 43.6% (from 34.4), WebDev Arena 1588 Elo (from 1538), AutomationBench 30.4% (from 17.0) and 34.0% on GDP.pdf, an expert PDF-comprehension eval (from 22.0). Introductory pricing is $0.75/$3.75 per 1M - half of 3.6 Flash - reverting to $1.50/$7.50 on Jan 1 2027. Context stays at 1M. Available in Google AI Studio, Android Studio, Antigravity, the Gemini Enterprise Agent Platform, and for consumers only through Gemini Spark for AI Pro/Ultra subscribers in 160+ countries. Google says safeguards against CBRN and cyber-offense misuse were strengthened. The launch lands with flagship Gemini 3.5 Pro still delayed and unreleased. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
+      "notable": "Google deprecated this Flash model on Oct 8 and now routes its API requests to Gemini 3.8 Flash.",
       "sources": [
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
         "https://artificialanalysis.ai/models/gemini-3-7-flash",
@@ -4153,11 +4153,11 @@
         "AA-Index": 53
       },
       "milestone": true,
-      "status": "preview",
-      "notable": "Google's new flagship, first to cyber defenders; took #1 on the Arena text leaderboard and leads the Vals Index.",
+      "status": "live",
+      "notable": "Google's flagship opened to Google AI Pro and Ultra subscribers in the Gemini app on Oct 13 after two weeks limited to vetted partners.",
       "sources": [
         "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon",
-        "https://www.marktechpost.com/2026/09/30/google-deepmind-unveils-gemini-4-argon-with-1m-output-tokens-for-coding-knowledge-work-and-cyber-defense/",
+        "https://gemini.google/release-notes/",
         "https://arena.ai/leaderboard/text"
       ]
     },
