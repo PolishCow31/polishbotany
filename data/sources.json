@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-14T00:00:05-04:00",
+  "updated": "2026-10-14T03:00:05-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -19961,6 +19961,77 @@
           "u": "polymarket.com — Argon HLE debut",
           "url": "https://polymarket.com/event/gemini-argon-humanitys-last-exam-debut-20261002",
           "q": "primary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/gemini-argon-hle",
+          "url": "https://polymarket.com/event/gemini-argon-humanitys-last-exam-debut-20261002",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com (trade API)",
+          "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXLLM1-26DEC31",
+          "q": "primary"
+        },
+        {
+          "u": "nature.com/articles/d41586-026-03247-0",
+          "url": "https://www.nature.com/articles/d41586-026-03247-0",
+          "q": "primary"
+        },
+        {
+          "u": "nature.com/articles/s41551-026-01804-6",
+          "url": "https://nature.com/articles/s41551-026-01804-6",
+          "q": "primary"
+        },
+        {
+          "u": "axios.com/censys-ai-exposures",
+          "url": "https://www.axios.com/2026/10/13/censys-ai-vibe-coding-exposures",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/ai-companies-day-after",
+          "url": "https://www.axios.com/2026/10/09/ai-companies-day-after-major-attack",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/ai-artificial-intelligence",
+          "url": "https://www.cnbc.com/ai-artificial-intelligence/",
+          "q": "secondary"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        },
+        {
+          "u": "digitalapplied.com October tracker",
+          "url": "https://www.digitalapplied.com/blog/ai-model-releases-october-2026-tracker",
+          "q": "secondary"
+        },
+        {
+          "u": "developersdigest.tech Step 5",
+          "url": "https://www.developersdigest.tech/blog/stepfun-step-5-preview-open-weights-oct-15-2026",
+          "q": "blog"
+        },
+        {
+          "u": "emergent.sh Fable 5.5 status",
+          "url": "https://emergent.sh/news/claude-fable-5-5-release-date",
+          "q": "blog"
+        },
+        {
+          "u": "science.org Riemann story",
+          "url": "https://www.science.org/content/article/ai-edges-closer-solving-riemann-hypothesis-one-math-s-hardest-problems",
+          "q": "secondary"
         }
       ]
     }
