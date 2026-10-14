@@ -4938,6 +4938,46 @@
         "https://datanorth.ai/news/h-company-releases-holo4",
         "https://aiweekly.co/alerts/h-company-ships-holo4-agents-27b-hits-617-on-osworld-20"
       ]
+    },
+    {
+      "name": "GLM-Legal",
+      "lab": "Zhipu / Z.ai",
+      "released": "2026-10-12",
+      "params": "320B, 18B active",
+      "context": "1M",
+      "modality": "Text, files, image, video in",
+      "open": false,
+      "benchmarks": {
+        "Harvey LAB": 19.2
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "Z.ai's legal agent model for contract review, evidence analysis and compliance research, built on GLM-5.3-Flash and open by application only.",
+      "sources": [
+        "https://alphasignal.ai/news/z-ai-opens-gated-access-to-glm-legal-its-320b-legal-ai",
+        "https://www.marktechpost.com/2026/10/13/zai-glm-legal-harvey-lab-legal-ai-model/",
+        "https://www.kucoin.com/news/flash/zhipu-s-legal-ai-model-glm-legal-achieves-3x-higher-pass-rate-at-1-70th-cost"
+      ]
+    },
+    {
+      "name": "SubQ Snap",
+      "lab": "Subquadratic",
+      "released": "2026-10-12",
+      "params": "undisclosed",
+      "context": "384K",
+      "modality": "Text, image in; choice out",
+      "open": false,
+      "benchmarks": {
+        "Decision Index 0.2.1": 61.7
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "A decision model that picks from preset answers instead of writing text, reading long documents and screens in about a second.",
+      "sources": [
+        "https://subq.ai/introducing-subq-snap",
+        "https://natlawreview.com/press-releases/subquadratic-launches-subq-snap-first-long-context-decision-model-purpose",
+        "https://gigazine.net/gsc_news/en/20261013-subq-snap/"
+      ]
     }
   ]
 }
