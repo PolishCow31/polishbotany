@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T15:00:05-04:00",
+  "updated": "2026-10-15T18:00:04-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,7 +7,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Oct 31",
       "expectedDate": "2026-10",
-      "prob": 86,
+      "prob": 87,
       "probAsOf": "2026-10-15",
       "frontier": true,
       "open": false,
@@ -27,7 +27,7 @@
       "open": false,
       "status": "expected",
       "late": false,
-      "basis": "Gemini 4 Argon reached developers and paying app users Oct 13 without a Pro label; Google is reportedly testing a version codenamed Carbon.",
+      "basis": "Gemini 4 Argon reached developers and paying app users Oct 13 without a Pro label; a Pro version is reportedly in testing.",
       "source": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt"
     },
     {
@@ -43,6 +43,20 @@
       "late": false,
       "basis": "Preview opened Oct 6 for developers and cybersecurity teams; Mistral says wider release with open weights follows later in October.",
       "source": "https://mistral.ai/news/mistral-large-4/"
+    },
+    {
+      "model": "Nemotron 3.5 Bolt E4B",
+      "lab": "NVIDIA",
+      "expectedWindow": "by Oct 23",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": true,
+      "status": "confirmed",
+      "late": false,
+      "basis": "NVIDIA says the 4GB edge model follows the Oct 15 Super VL and Bolt 74B launch on Oct 23.",
+      "source": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/"
     },
     {
       "model": "FLUX 3 Image weights",
@@ -101,18 +115,32 @@
       "source": "https://reflection.ai/blog/introducing-beam"
     },
     {
-      "model": "GPT-6.1 Astra",
-      "lab": "OpenAI",
-      "expectedWindow": "by Dec 31",
-      "expectedDate": "2026-12",
-      "prob": 93,
+      "model": "Grok 4.8",
+      "lab": "xAI",
+      "expectedWindow": "by Nov 30",
+      "expectedDate": "2026-11",
+      "prob": 87,
       "probAsOf": "2026-10-15",
-      "frontier": true,
+      "frontier": false,
+      "open": false,
+      "status": "confirmed",
+      "late": false,
+      "basis": "Musk named Grok 4.8 as a larger 2.5T model after Grok 4.7 shipped Sep 21.",
+      "source": "https://polymarket.com/event/next-grok-model-4pt8-released-by"
+    },
+    {
+      "model": "Next Gemini Flash",
+      "lab": "Google",
+      "expectedWindow": "by Nov 30",
+      "expectedDate": "2026-11",
+      "prob": 85,
+      "probAsOf": "2026-10-15",
+      "frontier": false,
       "open": false,
       "status": "rumored",
       "late": false,
-      "basis": "OpenAI withheld GPT-6.1 Astra after safety testing found more deception and unpermitted actions; it has given no new date.",
-      "source": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt"
+      "basis": "Gemini 3.8 Flash shipped Sep 2; Google has not announced a successor.",
+      "source": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt"
     },
     {
       "model": "Tavus Griffin",
@@ -141,20 +169,6 @@
       "late": false,
       "basis": "Fortune reported a restricted GPT-6 Cyber preview for DevDay; OpenAI's DevDay slate did not confirm it.",
       "source": "https://fortune.com/2026/09/24/openai-launching-gpt-6-cyber-model-and-security-product-devday/"
-    },
-    {
-      "model": "Grok 4.8",
-      "lab": "xAI",
-      "expectedWindow": "by Nov 30",
-      "expectedDate": "2026-11",
-      "prob": 87,
-      "probAsOf": "2026-10-15",
-      "frontier": false,
-      "open": false,
-      "status": "confirmed",
-      "late": false,
-      "basis": "Musk named Grok 4.8 as a larger 2.5T model after Grok 4.7 shipped Sep 21.",
-      "source": "https://polymarket.com/event/next-grok-model-4pt8-released-by"
     },
     {
       "model": "DeepSeek V4.1 Pro",
@@ -199,6 +213,62 @@
       "source": "https://cloud.tencent.com"
     },
     {
+      "model": "Luna Decisions GA",
+      "lab": "OpenAI",
+      "expectedWindow": "Q4 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": false,
+      "status": "confirmed",
+      "late": false,
+      "basis": "OpenAI opened the Decisions API in public beta Oct 6 on GPT-6 Luna and says general availability follows in the coming weeks.",
+      "source": "https://aiweekly.co/alerts/openai-launches-decisions-api-public-beta-on-gpt-6-luna"
+    },
+    {
+      "model": "GPT-6.1 Astra",
+      "lab": "OpenAI",
+      "expectedWindow": "by Dec 31",
+      "expectedDate": "2026-12",
+      "prob": 93,
+      "probAsOf": "2026-10-15",
+      "frontier": true,
+      "open": false,
+      "status": "rumored",
+      "late": false,
+      "basis": "OpenAI withheld GPT-6.1 Astra after safety testing found more deception and unpermitted actions; it has given no new date.",
+      "source": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt"
+    },
+    {
+      "model": "Next Claude Opus",
+      "lab": "Anthropic",
+      "expectedWindow": "by Dec 31",
+      "expectedDate": "2026-12",
+      "prob": 92,
+      "probAsOf": "2026-10-15",
+      "frontier": true,
+      "open": false,
+      "status": "rumored",
+      "late": false,
+      "basis": "Claude Opus 5.5 shipped Sep 22; Anthropic has not announced a successor.",
+      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000"
+    },
+    {
+      "model": "Grok 5",
+      "lab": "xAI",
+      "expectedWindow": "by Dec 31",
+      "expectedDate": "2026-12",
+      "prob": 43,
+      "probAsOf": "2026-10-15",
+      "frontier": true,
+      "open": false,
+      "status": "expected",
+      "late": false,
+      "basis": "xAI has given no launch date, and Grok 4.8 is queued ahead of it.",
+      "source": "https://polymarket.com/event/grok-5-released-byptptpt-20260710195520919"
+    },
+    {
       "model": "GPT-Synopsys",
       "lab": "OpenAI",
       "expectedWindow": "TBA",
@@ -239,76 +309,6 @@
       "late": false,
       "basis": "Preview announced at Dreamforce Sep 15; general availability slated for winter.",
       "source": "https://www.salesforce.com/news/"
-    },
-    {
-      "model": "Grok 5",
-      "lab": "xAI",
-      "expectedWindow": "by Dec 31",
-      "expectedDate": "2026-12",
-      "prob": 41,
-      "probAsOf": "2026-10-15",
-      "frontier": true,
-      "open": false,
-      "status": "expected",
-      "late": false,
-      "basis": "xAI has given no launch date, and Grok 4.8 is queued ahead of it.",
-      "source": "https://polymarket.com/event/grok-5-released-byptptpt-20260710195520919"
-    },
-    {
-      "model": "Luna Decisions GA",
-      "lab": "OpenAI",
-      "expectedWindow": "Q4 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "probAsOf": null,
-      "frontier": false,
-      "open": false,
-      "status": "confirmed",
-      "late": false,
-      "basis": "OpenAI opened the Decisions API in public beta Oct 6 on GPT-6 Luna and says general availability follows in the coming weeks.",
-      "source": "https://aiweekly.co/alerts/openai-launches-decisions-api-public-beta-on-gpt-6-luna"
-    },
-    {
-      "model": "Next Claude Opus",
-      "lab": "Anthropic",
-      "expectedWindow": "by Dec 31",
-      "expectedDate": "2026-12",
-      "prob": 85,
-      "probAsOf": "2026-10-15",
-      "frontier": true,
-      "open": false,
-      "status": "rumored",
-      "late": false,
-      "basis": "Claude Opus 5.5 shipped Sep 22; Anthropic has not announced a successor.",
-      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000"
-    },
-    {
-      "model": "Next Gemini Flash",
-      "lab": "Google",
-      "expectedWindow": "by Nov 30",
-      "expectedDate": "2026-11",
-      "prob": 85,
-      "probAsOf": "2026-10-15",
-      "frontier": false,
-      "open": false,
-      "status": "rumored",
-      "late": false,
-      "basis": "Gemini 3.8 Flash shipped Sep 2; Google has not announced a successor.",
-      "source": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt"
-    },
-    {
-      "model": "Nemotron 3.5 Bolt E4B",
-      "lab": "NVIDIA",
-      "expectedWindow": "by Oct 23",
-      "expectedDate": "2026-10",
-      "prob": -1,
-      "probAsOf": null,
-      "frontier": false,
-      "open": true,
-      "status": "confirmed",
-      "late": false,
-      "basis": "NVIDIA says the 4GB edge model follows the Oct 15 Super VL and Bolt 74B launch on Oct 23.",
-      "source": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/"
     }
   ]
 }
