@@ -962,7 +962,7 @@
       "open": true,
       "milestone": true,
       "benchmarks": {
-        "AA-Index": 8
+        "AA-Index": 6
       },
       "notable": "First natively-multimodal MoE Llama; 10M-token context was the largest of any open model at launch. Released under the Llama 4 community license (open weights, not OSI-open).",
       "status": "historic"
@@ -977,7 +977,7 @@
       "open": true,
       "milestone": false,
       "benchmarks": {
-        "AA-Index": 10
+        "AA-Index": 9
       },
       "notable": "Distilled from a ~288B-active 'Behemoth' teacher; pitched as beating GPT-4o and Gemini 2.0 Flash and rivaling DeepSeek V3 on reasoning/coding at far fewer active params. The flagship Behemoth never shipped in 2025.",
       "status": "historic"
@@ -3770,7 +3770,7 @@
       "params": "600B",
       "context": "1M",
       "modality": "multimodal (text + image in), text out, reasoning",
-      "open": false,
+      "open": true,
       "benchmarks": {
         "SciCode": 58.9,
         "AA-LCR": 88.3,
@@ -3778,11 +3778,10 @@
       },
       "milestone": false,
       "status": "preview",
-      "notable": "StepFun's 600B flagship preview with a 1M-token context and low pricing; open weights are promised for Oct 15.",
+      "notable": "StepFun's 600B flagship with 27B active parameters and a 1M-token context; weights published on Hugging Face Oct 15.",
       "sources": [
-        "https://artificialanalysis.ai/models/step-5",
-        "https://artificialanalysis.ai/changelog",
-        "https://dataconomy.com/ai-models/step-5/"
+        "https://huggingface.co/stepfun-ai/Step-5-Preview",
+        "https://huggingface.co/stepfun-ai/Step-5-Preview-BF16"
       ]
     },
     {
