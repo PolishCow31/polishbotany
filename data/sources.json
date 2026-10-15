@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T09:00:04-04:00",
+  "updated": "2026-10-15T12:00:00-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -20341,6 +20341,82 @@
           "u": "manifold.markets AGI 2030",
           "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2030",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "routine": "12PM",
+      "sources": [
+        {
+          "u": "pricepertoken.com/news",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "secondary"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/ai-news",
+          "url": "https://llm-stats.com/ai-news",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com FTC",
+          "url": "https://www.axios.com/2026/10/15/ftc-openai-anthropic-ai-safety-investigation",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com Gates",
+          "url": "https://www.axios.com/2026/10/15/bill-gates-ai-safety-push",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com CoreWeave",
+          "url": "https://www.axios.com/2026/10/15/ai-coreweave-bonds-stocks",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Amazon Bee",
+          "url": "https://www.cnbc.com/2026/10/15/amazon-bee-frontier-eclipse-ai-devices.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Levine",
+          "url": "https://www.cnbc.com/video/2026/10/15/nyc-comptroller-mark-levine-on-calling-for-anthropic-ipo-pause-we-need-more-caution-transparency.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com TSMC",
+          "url": "https://www.cnbc.com/video/2026/10/15/nvidia-apple-broadcom-in-fierce-battle-to-make-chips-at-tsmc.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com DeepSeek",
+          "url": "https://www.cnbc.com/2026/10/06/deepseek-funding-round.html",
+          "q": "secondary"
+        },
+        {
+          "u": "x.ai/news",
+          "url": "https://x.ai/news/grok-imagine-video-1-5",
+          "q": "primary"
+        },
+        {
+          "u": "emergent.sh Fable 5.5",
+          "url": "https://emergent.sh/news/claude-fable-5-5-release-date",
+          "q": "blog"
+        },
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
         }
       ]
     }
