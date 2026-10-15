@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T12:00:00-04:00",
+  "updated": "2026-10-15T15:00:05-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,7 +7,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Oct 31",
       "expectedDate": "2026-10",
-      "prob": 87,
+      "prob": 86,
       "probAsOf": "2026-10-15",
       "frontier": true,
       "open": false,
@@ -105,7 +105,7 @@
       "lab": "OpenAI",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 92,
+      "prob": 93,
       "probAsOf": "2026-10-15",
       "frontier": true,
       "open": false,
@@ -199,20 +199,6 @@
       "source": "https://cloud.tencent.com"
     },
     {
-      "model": "Muse Spark open weights",
-      "lab": "Meta",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-11",
-      "prob": -1,
-      "probAsOf": null,
-      "frontier": false,
-      "open": true,
-      "status": "rumored",
-      "late": false,
-      "basis": "Meta has signaled an open-weights Spark variant for H2, with no date or confirmation.",
-      "source": "https://ai.meta.com/blog/"
-    },
-    {
       "model": "GPT-Synopsys",
       "lab": "OpenAI",
       "expectedWindow": "TBA",
@@ -259,7 +245,7 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 37,
+      "prob": 41,
       "probAsOf": "2026-10-15",
       "frontier": true,
       "open": false,
@@ -287,7 +273,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 83,
+      "prob": 85,
       "probAsOf": "2026-10-15",
       "frontier": true,
       "open": false,
@@ -309,6 +295,20 @@
       "late": false,
       "basis": "Gemini 3.8 Flash shipped Sep 2; Google has not announced a successor.",
       "source": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt"
+    },
+    {
+      "model": "Nemotron 3.5 Bolt E4B",
+      "lab": "NVIDIA",
+      "expectedWindow": "by Oct 23",
+      "expectedDate": "2026-10",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": true,
+      "status": "confirmed",
+      "late": false,
+      "basis": "NVIDIA says the 4GB edge model follows the Oct 15 Super VL and Bolt 74B launch on Oct 23.",
+      "source": "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/"
     }
   ]
 }

@@ -5047,6 +5047,82 @@
         "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
         "https://www.marktechpost.com/2026/10/14/liquid-ai-lfm2-5-24b-a2b/"
       ]
+    },
+    {
+      "name": "Muse Spark Open",
+      "lab": "Meta (Superintelligence Labs)",
+      "released": "2026-10-15",
+      "params": "816B / 42B active",
+      "context": "1M",
+      "modality": "Text, image, audio, video in",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 39
+      },
+      "milestone": true,
+      "status": "live",
+      "notable": "Meta's first open-weight Muse, built for coding and agents, and tuned with Apple to run on linked Mac Studios.",
+      "sources": [
+        "https://research.meta.ai/blog/muse-spark-open",
+        "https://huggingface.co/blog/meta-muse-spark-open",
+        "https://www.cnbc.com/2026/10/15/apple-meta-partner-ai.html"
+      ]
+    },
+    {
+      "name": "Nemotron 3.5 Super VL",
+      "lab": "NVIDIA",
+      "released": "2026-10-15",
+      "params": "120B / 12B active",
+      "context": "1M",
+      "modality": "Text, image, video in",
+      "open": true,
+      "benchmarks": {
+        "GPQA Diamond": 89.5,
+        "SWE-bench Verified": 71.1,
+        "AA-Index": 26
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "NVIDIA's open hybrid Mamba-Transformer vision-language model for always-on agents, covering documents, video, coding and tool use.",
+      "sources": [
+        "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+        "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B-BF16"
+      ]
+    },
+    {
+      "name": "Nemotron 3.5 Bolt 74B-A9B",
+      "lab": "NVIDIA",
+      "released": "2026-10-15",
+      "params": "74B / 9B active",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "AA-Index": 21
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Natively 2-bit open model that fits in 24GB, letting a single RTX card or DGX Spark run it locally.",
+      "sources": [
+        "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl/",
+        "https://www.unite.ai/nvidia-releases-open-nemotron-3-5-super-vl-and-bolt-edge-models/"
+      ]
+    },
+    {
+      "name": "Jais 3",
+      "lab": "Institute of Foundation Models (MBZUAI)",
+      "released": "2026-10-15",
+      "params": "0.9B to 375B",
+      "context": "512K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Six open Arabic-native agent models built on K2 Horizon, released with Jais Speech for 19 Arabic dialects.",
+      "sources": [
+        "https://www.prnewswire.com/news-releases/institute-of-foundation-models-and-inception42-launch-jais-3-the-worlds-leading-arabic-native-ai-for-speech-writing-and-agents-302909754.html",
+        "https://gulfnews.com/uae/uae-launches-jais-3-arabic-native-ai-for-speech-writing-and-agents-1.500711935"
+      ]
     }
   ]
 }
