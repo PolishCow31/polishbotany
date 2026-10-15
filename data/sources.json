@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T06:00:03-04:00",
+  "updated": "2026-10-15T09:00:04-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -20274,6 +20274,72 @@
         {
           "u": "polymarket.com best model Oct 19",
           "url": "https://polymarket.com/event/best-ai-model-on-october-19-20261006t124330088z",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "routine": "9AM",
+      "sources": [
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "aiagentstore.ai news",
+          "url": "https://aiagentstore.ai/ai-agent-news/this-week",
+          "q": "blog"
+        },
+        {
+          "u": "blog.google Gemini 4 Argon",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "q": "primary"
+        },
+        {
+          "u": "venturebeat.com Argon pricing",
+          "url": "https://venturebeat.com/technology/google-makes-gemini-4-argon-broadly-available-with-limited-time-low-api-pricing-of-2-10-per-1m-token",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Huang China AI",
+          "url": "https://www.cnbc.com/2026/10/15/jensen-huang-nvidia-china-ai.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com Anthropic Q3",
+          "url": "https://www.axios.com/2026/10/15/anthropic-q3-revenue-cash-flow",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com OpenAI Katti",
+          "url": "https://www.cnbc.com/amp/2026/10/14/openais-sachin-katti-to-leave-infrastructure-role-stay-on-as-advisor.html",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com Fable 5.2",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com best model Oct",
+          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com best model 2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "secondary"
+        },
+        {
+          "u": "manifold.markets AGI 2030",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2030",
           "q": "secondary"
         }
       ]
