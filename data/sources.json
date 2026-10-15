@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-15T00:00:00-04:00",
+  "updated": "2026-10-15T03:00:05-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -20107,6 +20107,67 @@
         {
           "u": "polymarket.com (Opus)",
           "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "developers.openai.com/deprecations",
+          "url": "https://developers.openai.com/api/docs/deprecations",
+          "q": "primary"
+        },
+        {
+          "u": "x.ai/news/grok-voice-3",
+          "url": "https://x.ai/news/grok-voice-3",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket gamma API",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi API",
+          "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXLLM1-26DEC31",
+          "q": "primary"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        },
+        {
+          "u": "theneuron.ai Oct 14 digest",
+          "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-wednesday-october-14-2026/",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co/ai-news-today",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com SK Hynix rout",
+          "url": "https://www.cnbc.com/2026/10/15/sk-hynix-samsung-softbank-stocks-asia-tech-rout-ai-funding-worries.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Intel Broadcom capital",
+          "url": "https://www.cnbc.com/2026/10/12/intel-broadcom-ceos-warn-capital-crunch-could-become-ai-bottleneck.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com Censys AI exposures",
+          "url": "https://axios.com/2026/10/13/censys-ai-vibe-coding-exposures",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com OpenAI arrest",
+          "url": "https://www.cnbc.com/2026/10/13/openai-employee-arrested-recording-device.html",
           "q": "secondary"
         }
       ]
