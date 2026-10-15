@@ -417,7 +417,7 @@
         "MATH": 76.6,
         "HumanEval": 90.2
       },
-      "notable": "First natively end-to-end multimodal ('omni') flagship handling text, audio and vision in a single model with ~320ms real-time voice latency; matched GPT-4 Turbo intelligence at 2x speed and half the cost.",
+      "notable": "OpenAI's first natively multimodal flagship for text, audio and vision; it leaves the OpenAI API on Jan 14, 2027.",
       "status": "historic"
     },
     {
@@ -435,7 +435,7 @@
         "MATH": 70.2,
         "AA-Index": 7
       },
-      "notable": "Cheap, fast small model that replaced GPT-3.5 Turbo; ~82% MMLU at a fraction of the cost, became the default budget API workhorse.",
+      "notable": "Cheap, fast model that replaced GPT-3.5 Turbo; OpenAI retires it from the API on Jan 14, 2027.",
       "status": "historic"
     },
     {
@@ -5027,6 +5027,26 @@
       "sources": [
         "https://x.ai/news/grok-voice-3",
         "https://www.unite.ai/xai-introduces-grok-voice-3-0-speech-to-speech-model-for-voice-agents/"
+      ]
+    },
+    {
+      "name": "LFM2.5-24B-A2B",
+      "lab": "Liquid AI",
+      "released": "2026-10-13",
+      "params": "24B, 2.45B active",
+      "context": "131K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "GPQA Diamond": 74.42,
+        "SWE-bench Verified": 51.0
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Open-weight mixture-of-experts reasoning model that runs tool-using agents locally on laptops, at 184 tokens per second on an M5 Max.",
+      "sources": [
+        "https://huggingface.co/LiquidAI/LFM2.5-24B-A2B",
+        "https://www.marktechpost.com/2026/10/14/liquid-ai-lfm2-5-24b-a2b/"
       ]
     }
   ]
