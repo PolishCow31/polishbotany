@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16T03:04:48-04:00",
+  "updated": "2026-10-16T09:15:19-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,7 +7,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Oct 31",
       "expectedDate": "2026-10",
-      "prob": 87,
+      "prob": 86,
       "probAsOf": "2026-10-16",
       "frontier": true,
       "open": false,
@@ -62,15 +62,15 @@
       "model": "FLUX 3 Image weights",
       "lab": "Black Forest Labs",
       "expectedWindow": "TBA",
-      "expectedDate": "2026-10",
+      "expectedDate": "2026-12",
       "prob": -1,
       "probAsOf": null,
       "frontier": false,
       "open": true,
       "status": "confirmed",
       "late": false,
-      "basis": "FLUX 3 Image launched Oct 1 through the API; Black Forest Labs promises an open-weight version in the coming weeks.",
-      "source": "https://the-decoder.com/black-forest-labs-launches-flux-3-image-with-multi-step-editing-that-leaves-the-rest-of-your-picture-alone/"
+      "basis": "The small Klein variant shipped open Oct 15; open weights for the full FLUX 3 Image model are still promised.",
+      "source": "https://bfl.ai/blog/flux-3-image-klein"
     },
     {
       "model": "Ling-3.1-flash weights",
@@ -119,7 +119,7 @@
       "lab": "xAI",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 60,
+      "prob": 64,
       "probAsOf": "2026-10-16",
       "frontier": false,
       "open": false,
@@ -133,7 +133,7 @@
       "lab": "Google",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 85,
+      "prob": 83,
       "probAsOf": "2026-10-16",
       "frontier": false,
       "open": false,
@@ -245,7 +245,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 93,
+      "prob": 94,
       "probAsOf": "2026-10-16",
       "frontier": true,
       "open": false,
@@ -259,7 +259,7 @@
       "lab": "xAI",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 44,
+      "prob": 40,
       "probAsOf": "2026-10-16",
       "frontier": true,
       "open": false,
@@ -309,6 +309,20 @@
       "late": false,
       "basis": "Preview announced at Dreamforce Sep 15; general availability slated for winter.",
       "source": "https://www.salesforce.com/news/"
+    },
+    {
+      "model": "MAI-Base-2 release",
+      "lab": "Microsoft",
+      "expectedWindow": "TBA",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": false,
+      "status": "expected",
+      "late": false,
+      "basis": "Microsoft says the 2.8-trillion-parameter base model is in post-training and may license weights through Foundry.",
+      "source": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
     }
   ]
 }
