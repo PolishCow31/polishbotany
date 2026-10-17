@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=38"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=39"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -63,6 +63,9 @@
   .seg button{border:none;background:none;color:var(--ink3);font:650 15.6px var(--sans);padding:6px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.12s}
   .seg button.on{background:var(--panel2);color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.35)}
   .seg button[data-mode="open"].on{color:#9fd9ad}
+  .seg[data-seg="hh-bench"]{overflow-x:auto;scrollbar-width:none}
+  .seg[data-seg="hh"] button{padding:6px 11px}   /* 4 metrics overflowed a 375px card by 13px */
+  .seg[data-seg="hh-bench"] button{font-size:13px;padding:5px 10px}
 
   /* model card */
   .badge{font:700 11.9px var(--mono);padding:2px 6px;border-radius:5px;letter-spacing:.03em}
@@ -694,7 +697,7 @@ function codingBoards(cands){
     let bv=-1; q.forEach(p=>{if(p.v>bv)bv=p.v;});
     let models=[...q.keys()].filter(m=>q.get(m).v===bv); if(models.some(m=>!q.get(m).est)) models=models.filter(m=>!q.get(m).est);   // native beats estimated
     models.sort(byRecent);
-    out.push({bench, n:rec.length, labs:new Set(rec.map(m=>canonLab(m.lab))).size, last:rec.map(m=>String(m.released)).sort().pop(),
+    out.push({bench, val, n:rec.length, labs:new Set(rec.map(m=>canonLab(m.lab))).size, last:rec.map(m=>String(m.released)).sort().pop(),
               models, disp:(q.get(models[0]).est?'~':'')+bv+'%'});
   });
   return out.sort((a,b)=>b.n-a.n||b.labs-a.labs||b.last.localeCompare(a.last));
@@ -895,8 +898,10 @@ function cadenceLine(){
   return s+'</svg><div class="accsub" style="margin-top:8px">Dots = models tracked per quarter · line = 12-month average.</div>';
 }
 function cadenceBlock(){ return segCtl('cadence',cadenceMode,FO)+guard(cadenceLine); }
-// Head-to-head: top 8 live models on one metric. Coding = the SWE-bench Pro scale via proEq (converted bars are faded + "~").
-let hhMetric='aa';
+// Head-to-head: top 8 live models on one metric, Closed | Open like every other chart. Coding = one codingBoards() board at a
+// time (Oct 16 2026: a Pro-only Coding showed no Sep/Oct frontier model): chips for up to 2 boards that ≥3 recent models
+// report, default = the top-coverage one, so Closed matches the Home card. Converted Pro bars are faded + "~".
+let hhMetric='aa', hhMode='frontier', hhBench=null;
 const HH_METRICS=[['aa','Overall'],['coding','Coding'],['gpqa','Science'],['aime','Math']];
 function hhVal(m,cat){ if(cat==='coding') return proEq(m); const v=benchOf(m,cat); return v==null?null:{v,est:false}; }
 function niceMax(v,pct){ if(!(v>0)) return pct?100:10; const step=v<=10?2:v<=50?5:10, n=Math.ceil(v/step)*step; return pct?Math.min(100,n):n; }
@@ -912,8 +917,16 @@ function hhLabel(m){
 }
 function headToHead(){
   const cat=(HH_METRICS.find(x=>x[0]===hhMetric)||HH_METRICS[0])[0], pct=cat!=='aa';
-  const seg=segCtl('hh',cat,HH_METRICS);
-  const rows=DATA.models.filter(m=>m.status==='live').map(m=>({m,q:hhVal(m,cat)})).filter(o=>o.q)
+  const live=DATA.models.filter(m=>m.status==='live'&&(hhMode==='open'?m.open:!m.open));
+  let seg=segCtl('hh-mode',hhMode,FO)+segCtl('hh',cat,HH_METRICS), val=m=>hhVal(m,cat), cap='';
+  if(cat==='coding'){
+    const bs=codingBoards(live.filter(isTextModel)).filter(b=>b.n>=3).slice(0,2);   // the Home card's pair; a 3rd chip doesn't fit 375px
+    if(!bs.length) return seg+'<div class="empty">No coding test enough recent models report.</div>';
+    const b=bs.find(x=>x.bench===hhBench)||bs[0];
+    if(bs.length>1) seg+=segCtl('hh-bench',b.bench,bs.map(x=>[x.bench,x.bench]));
+    val=b.val; cap=`<div class="accsub" style="margin-top:8px">${he(b.bench)} · ${b.n} model${b.n>1?'s':''} from the last ${CODE_WINDOW} days report it.${bs.length>1?' Labs split across tests, so each has its own chart.':''}</div>`;
+  }
+  const rows=live.map(m=>({m,q:val(m)})).filter(o=>o.q)
     .sort((a,b)=>b.q.v-a.q.v||(a.q.est?1:0)-(b.q.est?1:0)).slice(0,8);
   if(!rows.length) return seg+'<div class="empty">No data for that metric.</div>';
   const C={line:css('--line'),ink2:css('--ink2'),ink3:css('--ink3')};
@@ -927,7 +940,7 @@ function headToHead(){
     s+=`<rect x="${L}" y="${(y-8).toFixed(1)}" width="${Math.max(1,bx-L).toFixed(1)}" height="16" rx="3" fill="${col}"${o.q.est?' opacity=".6"':''}><title>${he(o.m.name)}: ${he(val)}</title></rect>`;
     s+=`<text x="${(bx+5).toFixed(1)}" y="${(y+4).toFixed(1)}" font-size="12" font-weight="700" fill="${C.ink2}" font-family="var(--mono)">${he(val)}</text>`;});
   s+='</svg>';
-  return seg+s;
+  return seg+s+cap;
 }
 const TRAJ_META={aa:['AA Intelligence Index','Composite 0–100 — the headline "how smart" score.'],swe:['SWE-bench Pro','% of real coding tasks solved.']};
 function trajWrap(cat){ return guard(()=>trajBlock(cat,TRAJ_META[cat][0],TRAJ_META[cat][1])); }
@@ -1358,6 +1371,8 @@ document.addEventListener('click',e=>{
     if(which==='home'){homeMode=mode;safe(renderHome,'#v-home');}
     else if(which==='traj-aa'||which==='traj-swe'){const c=which.slice(5); part(()=>{trajMode[c]=mode;},'traj-'+c+'-wrap',()=>trajWrap(c));}
     else if(which==='hh'){part(()=>{hhMetric=mode;},'hh-wrap',()=>guard(headToHead));}
+    else if(which==='hh-mode'){part(()=>{hhMode=mode;hhBench=null;},'hh-wrap',()=>guard(headToHead));}
+    else if(which==='hh-bench'){part(()=>{hhBench=mode;},'hh-wrap',()=>guard(headToHead));}
     else if(which==='cadence'){part(()=>{cadenceMode=mode;},'cadence-wrap',cadenceBlock);}
     else if(which==='radar'){radarFilter=mode;safe(renderPredict,'#v-predict');}
     return;}
