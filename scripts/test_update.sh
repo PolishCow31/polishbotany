@@ -36,8 +36,11 @@ d = TM.fixture()
 for f in os.listdir(d):
     shutil.copy(os.path.join(d, f), sys.argv[2])
 PY
-# settle the fixture once (the every-merge maintenance), so "no data changes" is reachable
-echo '{}' > data/_delta.json && SWEEP_STARTED=2026-09-28T12:00:00-04:00 /usr/bin/python3 scripts/merge.py > /dev/null
+# settle the fixture once (the every-merge maintenance), so "no data changes" is reachable. On the SAME clock update.sh
+# uses (its SWEEP_STARTED = now): a fixed Sep 28 settle let real-clock aging (markets past 21 days) fire on the real run,
+# so nochange_reset saw "data changes" from Oct 12 2026 on.
+SETTLE_AT=$(date "+%Y-%m-%dT%H:%M:%S%z" | sed -E 's/([+-][0-9]{2})([0-9]{2})$/\1:\2/')
+echo '{}' > data/_delta.json && SWEEP_STARTED=$SETTLE_AT /usr/bin/python3 scripts/merge.py > /dev/null
 [ -f data/_delta.json ] && mv data/_delta.json "$SBX/settle_delta.json"
 case "$SC" in                       # the stubbed `aa_sync.py --sync`: ok, hung (killed by its watchdog) or failing
   aa_hang)        printf 'import time\ntime.sleep(5)\nprint("aa-sync STUB woke up")\n' > scripts/aa_sync_stub.py ;;

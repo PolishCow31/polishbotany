@@ -21,6 +21,15 @@ half-up exactly like AA's table.
   --allow-drops                              accept a plan that removes more AA values than the drop guard allows
                                              (only after checking why AA stopped listing those models).
 
+COPIED columns (Oct 16 2026): besides the index, AA runs some benchmarks itself on one harness for every lab. Those are
+copied the same way into keys ending " (AA)" (never researched; merge.py drops any LLM write to them): today
+"Terminal-Bench 4.0 (AA)" from AA's terminalBench40, the best variant per model, as a percent to 1 decimal. The version is
+in the field name, so a new Terminal-Bench version is a new column, never a rescale; if AA stops publishing a field,
+the drop guard refuses the run like any other mass drop.
+
+Version: read off the leaderboard page; since Oct 6 2026 that page no longer names it, so the methodology page
+(METHOD_URL) is read instead. Neither naming it = "version?" and the mass-shift guard stands in.
+
 Exit: 0 ok · 1 fetch/parse failure (nothing written) · 2 refused, nothing written: AA re-versioned vs meta.aaScale
 (run --rebase), or the plan would drop too many existing values (AA-SYNC REFUSED; see DROP_GUARD).
 """
@@ -31,14 +40,24 @@ from html.parser import HTMLParser
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 URL = "https://artificialanalysis.ai/leaderboards/models"
+METHOD_URL = "https://artificialanalysis.ai/methodology/intelligence-benchmarking"   # still names the version
+VERSION_RE = re.compile(r"Intelligence Index v(\d+\.\d+)")
+COPIED = [("Terminal-Bench 4.0 (AA)", "terminalBench40")]          # (Botany key, AA field holding a 0-1 fraction)
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36"
 KEY = "AA-Index"
 AA_KEY_RE = re.compile(r"aa[ -]?index|intelligence index", re.I)   # mirrors index.html benchOf('aa')
-MIN_SCORED, MIN_CHECKED = 300, 50                                  # sanity floors for a trustworthy parse
+MIN_SCORED, MIN_CHECKED = 200, 50                                  # sanity floors for a trustworthy parse
+# (Oct 16 2026: AA's page shrank from ~690 embedded models to the ~270 its table shows; every one is still cross-checked)
 # Drop guard: a run may remove existing AA values from at most max(5, 10% of scored models). If AA renames its models
 # (Sep 28 skeptic: every name prefixed with its lab), nothing matches and --sync would commit 111 -> 0 values; the
 # rescale guard didn't see it because it only counts values that MOVE, not values that vanish.
 DROP_GUARD_MIN, DROP_GUARD_FRAC = 5, 0.10
+# KEEP-LAST (Oct 16 2026): AA stopped embedding retired models (GPT-4, Claude 3, o1, GPT-5 ...). Absent from the page is
+# not unscored: on the pinned version a model AA no longer lists keeps its last synced value (merge.py drops every LLM
+# write to the column, so a value here was synced). Only --rebase drops them: their values are on the old scale.
+# The Sep 28 rename protection is now a match floor: --sync refuses when fewer than MATCH_FLOOR of the scored Botany
+# models match anything on AA's page (a lab-prefix rename matches ~none; the trimmed page matched 61 of 122).
+MATCH_FLOOR = 0.25
 
 # Botany name -> AA base name, only where normalized names genuinely differ. Keep this short and explicit.
 ALIASES = {
@@ -188,9 +207,13 @@ def parse(html):
     if len(scored) < MIN_SCORED or checked < MIN_CHECKED or bad:
         raise ValueError("untrustworthy parse: %d scored, %d displayed rows checked, %d mismatched %s"
                          % (len(scored), checked, len(bad), bad[:5]))
-    vers = re.findall(r"Intelligence Index v(\d+\.\d+)", html)
-    version = ("v" + max(vers, key=lambda v: tuple(map(int, v.split("."))))) if vers else None
-    return scored, version, {"scored": len(scored), "checked": checked}
+    return scored, page_version(html), {"scored": len(scored), "checked": checked}
+
+
+def page_version(html):
+    """-> the highest "Intelligence Index vX.Y" a page names, or None."""
+    vers = VERSION_RE.findall(html)
+    return ("v" + max(vers, key=lambda v: tuple(map(int, v.split("."))))) if vers else None
 
 
 # ---------------------------------------------------------------- mapping
@@ -236,7 +259,7 @@ def match(models, groups):
     return hits, conflicts
 
 
-def plan(models, groups):
+def plan(models, groups, rebase=False):
     hits, conflicts = match(models, groups)
     changes = []                                     # (name, old, new)
     for m in models:
@@ -244,23 +267,55 @@ def plan(models, groups):
         olds = {k: v for k, v in b.items() if AA_KEY_RE.search(k)}
         old = olds.get(KEY)
         g = hits.get(m["name"])
-        new = g["value"] if g else None
+        new = g["value"] if g else (None if rebase else old)      # KEEP-LAST unless the scale is being replaced
         stray = [k for k in olds if k != KEY]         # any other AA-like key would win benchOf()'s max()
         if old != new or stray:
             changes.append((m["name"], old, new, stray))
     return hits, conflicts, changes
 
 
-def apply(models, changes):
+def field_groups(aa_models, field):
+    """norm(base name) -> the best 0-1 value of one AA field across a model's effort variants."""
+    g = {}
+    for m in aa_models:
+        v = m.get(field)
+        if isinstance(v, bool) or not isinstance(v, (int, float)) or not 0 <= v <= 1:
+            continue
+        k = norm(base_name(m.get("shortName") or m.get("name") or ""))
+        g[k] = max(g.get(k, -1.0), float(v))
+    return g
+
+
+def plan_copied(models, hits, aa_models, key, field):
+    """Changes for one COPIED column, matched through the index's own hits (same names, same conflicts). KEEP-LAST:
+    a model AA doesn't list (or doesn't score on this field) keeps its value; the field's version is in its name."""
+    fg, changes = field_groups(aa_models, field), []
+    for m in models:
+        old = (m.get("benchmarks") or {}).get(key)
+        g = hits.get(m["name"])
+        raw = fg.get(norm(g["base"])) if g else None
+        new = round(100 * raw, 1) if raw is not None else old
+        if old != new:
+            changes.append((m["name"], old, new, []))
+    return changes, len(fg)
+
+
+def valued_after(models, key, changes):
+    """-> how many models hold a value for key once changes are applied."""
+    new = {n: v for n, _o, v, _s in changes}
+    return sum(1 for m in models if (new[m["name"]] if m["name"] in new else (m.get("benchmarks") or {}).get(key)) is not None)
+
+
+def apply(models, changes, key=KEY):
     by = {m["name"]: m for m in models}
     for name, _old, new, stray in changes:
         b = by[name].setdefault("benchmarks", {})
         for k in stray:
             b.pop(k, None)
         if new is None:
-            b.pop(KEY, None)
+            b.pop(key, None)
         else:
-            b[KEY] = new
+            b[key] = new
 
 
 def main(argv):
@@ -278,12 +333,19 @@ def main(argv):
     except Exception as e:                            # network, block, layout change: never write on doubt
         print("%s aa-sync: SKIPPED (%s) — nothing written" % (stamp, str(e)[:200]))
         return 1
+    vsrc = ""
+    if version is None:                               # the leaderboard stopped naming it (Oct 6 2026)
+        try:
+            version = page_version(fetch(METHOD_URL))
+            vsrc = " via methodology page" if version else ""
+        except Exception:
+            version = None
     meta = load("meta.json")
     pinned = meta.get("aaScale")
     doc = load("models.json")
     models = doc["models"]
     groups = group(aa)
-    hits, conflicts, changes = plan(models, groups)
+    hits, conflicts, changes = plan(models, groups, rebase=(mode == "--rebase"))
 
     # rescale guard: a version change (or, when the page stops naming its version, a mass shift) must never
     # be mirrored piecemeal — that is exactly how two scales end up on one leaderboard.
@@ -294,11 +356,18 @@ def main(argv):
     added = [c for c in changes if c[1] is None and c[2] is not None]
     dropped = [c for c in changes if c[1] is not None and c[2] is None]
     rescored = [c for c in changes if c[1] is not None and c[2] is not None and c[1] != c[2]]
-    summary = ("%s aa-sync %s: AA %s (pinned %s) · %d AA models scored, %d displayed rows cross-checked · "
-               "Botany matched %d · %d re-scored, %d added, %d dropped%s"
-               % (stamp, mode[2:], version or "version?", pinned or "none", stats["scored"], stats["checked"],
+    copied, gone_fields = [], []
+    for key, field in COPIED:
+        ch, n_aa = plan_copied(models, hits, aa, key, field)
+        copied.append((key, ch))
+        if not n_aa:
+            gone_fields.append("%s (AA field %s)" % (key, field))
+    summary = ("%s aa-sync %s: AA %s%s (pinned %s) · %d AA models scored, %d displayed rows cross-checked · "
+               "Botany matched %d · %d re-scored, %d added, %d dropped%s%s"
+               % (stamp, mode[2:], version or "version?", vsrc, pinned or "none", stats["scored"], stats["checked"],
                   len(hits), len(rescored), len(added), len(dropped),
-                  " · %d name conflicts" % len(conflicts) if conflicts else ""))
+                  " · %d name conflicts" % len(conflicts) if conflicts else "",
+                  "".join(" · %s: %d valued, %d changed" % (k, valued_after(models, k, ch), len(ch)) for k, ch in copied)))
     if verbose:
         for n, o, v, s in sorted(changes, key=lambda c: -(c[2] if c[2] is not None else -1)):
             print("   %-38s %6s -> %-5s%s" % (n[:38], o, v, ("  (drops %s)" % s) if s else ""))
@@ -330,10 +399,27 @@ def main(argv):
               % (stamp, len(dropped), int(limit), valued, ", ".join(names[:20]),
                  " (+%d more)" % (len(names) - 20) if len(names) > 20 else "", mode))
         return 2
+    if mode != "--rebase" and valued >= 10 and len(hits) < MATCH_FLOOR * valued and "--allow-drops" not in argv:
+        print(summary)                                # AA renamed its models: keep-last would freeze the column silently
+        unmatched = [m["name"] for m in models if (m.get("benchmarks") or {}).get(KEY) is not None and m["name"] not in hits]
+        print("%s AA-SYNC REFUSED: matched only %d of %d scored Botany models (AA renamed its models?) — nothing written. "
+              "Unmatched: %s%s. If AA really renamed/delisted these: python3 scripts/aa_sync.py --sync --allow-drops"
+              % (stamp, len(hits), valued, ", ".join(unmatched[:20]),
+                 " (+%d more)" % (len(unmatched) - 20) if len(unmatched) > 20 else ""))
+        return 2
+    for g in gone_fields:
+        print("%s aa-sync: WARNING — AA's page no longer has %s; its values are kept, new models get none" % (stamp, g))
+    if verbose:
+        for key, ch in copied:
+            for n, o, v, _s in ch:
+                print("   %-38s %6s -> %-5s  (%s)" % (n[:38], o, v, key))
     print(summary)
-    if dry or not changes and (mode != "--rebase" or pinned == version):
+    any_copied = any(ch for _k, ch in copied)
+    if dry or not changes and not any_copied and (mode != "--rebase" or pinned == version):
         return 0
     apply(models, changes)
+    for key, ch in copied:
+        apply(models, ch, key)
     save("models.json", doc)
     if mode == "--rebase":
         meta["aaScale"] = version

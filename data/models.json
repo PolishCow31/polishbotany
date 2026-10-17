@@ -962,7 +962,8 @@
       "open": true,
       "milestone": true,
       "benchmarks": {
-        "AA-Index": 6
+        "AA-Index": 6,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "notable": "First natively-multimodal MoE Llama; 10M-token context was the largest of any open model at launch. Released under the Llama 4 community license (open weights, not OSI-open).",
       "status": "historic"
@@ -977,7 +978,8 @@
       "open": true,
       "milestone": false,
       "benchmarks": {
-        "AA-Index": 9
+        "AA-Index": 9,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "notable": "Distilled from a ~288B-active 'Behemoth' teacher; pitched as beating GPT-4o and Gemini 2.0 Flash and rivaling DeepSeek V3 on reasoning/coding at far fewer active params. The flagship Behemoth never shipped in 2025.",
       "status": "historic"
@@ -1373,7 +1375,8 @@
         "AA-Index": 30,
         "SWE-bench Verified": 80.6,
         "GPQA Diamond": 94.3,
-        "HLE": 51.4
+        "HLE": 51.4,
+        "Terminal-Bench 4.0 (AA)": 4.0
       },
       "milestone": false,
       "notable": "Took the AA Index top spot (57) on release, two weeks ahead of GPT-5.4 which only tied it. Native video input, 1M context. GPQA 94.3 (highest of the cluster). (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
@@ -1491,7 +1494,8 @@
         "SWE-bench Verified": 76.4,
         "GPQA Diamond": 88.4,
         "MMLU-Pro": 87.8,
-        "AIME 2026": 91.3
+        "AIME 2026": 91.3,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "notable": "Flagship of the Qwen3.5 wave; #3 open-weights model on AA Index (45) at launch. Unified text+vision lines, 201 languages, 8.6-19x throughput gain, 256K context decodes ~19x faster than Qwen3-Max. Beat Alibaba's own trillion-param model at lower cost. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
@@ -1508,7 +1512,8 @@
       "open": true,
       "benchmarks": {
         "AA-Index": 26,
-        "SWE-bench Verified": 79
+        "SWE-bench Verified": 79,
+        "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
       "notable": "1T open-weight coding MoE (Modified MIT). ~30% fewer reasoning tokens than K2.6; all published numbers are Moonshot's OWN proprietary benches (Kimi Code Bench v2 +21.8%, etc.) — NO independent SWE-bench/GPQA/Terminal-Bench numbers as of release. $0.95/$4.00.",
@@ -1525,7 +1530,8 @@
       "open": true,
       "benchmarks": {
         "AA-Index": 23,
-        "SWE-bench Verified": 73
+        "SWE-bench Verified": 73,
+        "Terminal-Bench 4.0 (AA)": 0.5
       },
       "milestone": false,
       "notable": "Announced at Computex Jun 1, released Jun 4. Fastest US open-weights frontier model (>300 tok/s) and best US open-weight intelligence — but still behind Chinese open models (Kimi K2.6 at 54). Full release of weights, reward models, quantized variants, and training recipes under NVIDIA Open Model License. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
@@ -1736,7 +1742,8 @@
         "SWE-bench Pro": 59.5,
         "Terminal-Bench 2.1": 70.8,
         "SWE-bench Multilingual": 77.3,
-        "AA-Index": 19
+        "AA-Index": 19,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": true,
       "status": "live",
@@ -1809,7 +1816,8 @@
         "GPQA Diamond": 90.4,
         "Terminal-Bench 2.1": 71.7,
         "USAMO 2026": 72.0,
-        "AA-Index": 25
+        "AA-Index": 25,
+        "Terminal-Bench 4.0 (AA)": 0.5
       },
       "milestone": false,
       "status": "live",
@@ -1830,7 +1838,8 @@
       "open": false,
       "benchmarks": {
         "Terminal-Bench 2.1": 84.3,
-        "AA-Index": 42
+        "AA-Index": 42,
+        "Terminal-Bench 4.0 (AA)": 35.4
       },
       "milestone": false,
       "status": "live",
@@ -1921,7 +1930,8 @@
         "HLE": 46.0,
         "Terminal-Bench 2.1": 63.8,
         "SimpleQA Verified": 43.9,
-        "AA-Index": 25
+        "AA-Index": 25,
+        "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": true,
       "status": "live",
@@ -1942,7 +1952,8 @@
       "open": true,
       "benchmarks": {
         "SWE-bench Pro": 59.0,
-        "AA-Index": 29
+        "AA-Index": 29,
+        "Terminal-Bench 4.0 (AA)": 2.0
       },
       "milestone": false,
       "status": "live",
@@ -1968,7 +1979,8 @@
         "HLE": 43.5,
         "SWE-bench (DeepSWE)": 67.5,
         "BrowseComp": 91.2,
-        "AA-Index": 44
+        "AA-Index": 44,
+        "Terminal-Bench 4.0 (AA)": 12.6
       },
       "milestone": true,
       "status": "live",
@@ -2016,7 +2028,8 @@
         "Terminal-Bench 2.1": 54.0,
         "SWE-bench Pro": 54.2,
         "OSWorld-Verified": 74.0,
-        "AA-Index": 22
+        "AA-Index": 22,
+        "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
       "status": "live",
@@ -2211,7 +2224,8 @@
       "open": false,
       "benchmarks": {
         "MMLU-Pro": 75.9,
-        "AA-Index": 6
+        "AA-Index": 6,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -2401,7 +2415,8 @@
         "HLE": 31.6,
         "ARC-AGI-2": 40.1,
         "MMMU-Pro": 74.0,
-        "SimpleQA Verified": 20.6
+        "SimpleQA Verified": 20.6,
+        "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
       "status": "live",
@@ -2445,7 +2460,8 @@
       "modality": "Text",
       "open": false,
       "benchmarks": {
-        "AA-Index": 11
+        "AA-Index": 11,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "preview",
@@ -2605,7 +2621,8 @@
         "MMMU-Pro": 74,
         "MCP Atlas": 75.5,
         "DeepSearch QA": 74.6,
-        "AA-Index": 17
+        "AA-Index": 17,
+        "Terminal-Bench 4.0 (AA)": 0.5
       },
       "milestone": false,
       "status": "live",
@@ -2664,7 +2681,8 @@
       "open": true,
       "benchmarks": {
         "PinchBench": 86,
-        "AA-Index": 13
+        "AA-Index": 13,
+        "Terminal-Bench 4.0 (AA)": 0.5
       },
       "milestone": false,
       "status": "live",
@@ -2718,7 +2736,8 @@
         "HLE (with tools)": 60.0,
         "CyberGym": 83.3,
         "AutomationBench": 31.8,
-        "Toolathlon-Verified": 74.1
+        "Toolathlon-Verified": 74.1,
+        "Terminal-Bench 4.0 (AA)": 14.1
       },
       "milestone": false,
       "status": "live",
@@ -2778,7 +2797,8 @@
         "PLawBench": 73.2,
         "MRCR v2 256K (8-needle)": 92.9,
         "LongBench v2": 66.3,
-        "AA-Index": 40
+        "AA-Index": 40,
+        "Terminal-Bench 4.0 (AA)": 11.1
       },
       "milestone": true,
       "status": "live",
@@ -2804,7 +2824,8 @@
         "Agents' Last Exam": 28.5,
         "CyberGym": 84.5,
         "ExploitBench": 54.4,
-        "AA-Index": 45
+        "AA-Index": 45,
+        "Terminal-Bench 4.0 (AA)": 41.9
       },
       "milestone": false,
       "status": "live",
@@ -2856,7 +2877,8 @@
         "MathVision": 94.6,
         "SWE-MM": 38.6,
         "Agents' Last Exam": 20.4,
-        "AA-Index": 34
+        "AA-Index": 34,
+        "Terminal-Bench 4.0 (AA)": 5.6
       },
       "milestone": false,
       "status": "live",
@@ -2880,7 +2902,8 @@
         "AA-Index": 42,
         "Terminal-Bench 2.1": 84.3,
         "DeepSWE 1.1": 63.4,
-        "Z.ai Code Bench 1.0": 29.0
+        "Z.ai Code Bench 1.0": 29.0,
+        "Terminal-Bench 4.0 (AA)": 32.8
       },
       "milestone": false,
       "status": "live",
@@ -2908,7 +2931,8 @@
         "IFBench": 81.3,
         "AndroidWorld": 84.5,
         "RealWorldQA": 88.5,
-        "AA-Index": 40
+        "AA-Index": 40,
+        "Terminal-Bench 4.0 (AA)": 25.3
       },
       "milestone": false,
       "status": "live",
@@ -3004,7 +3028,8 @@
         "AA-Index": 13,
         "SWE-bench Verified": 57.0,
         "Terminal-Bench 2.1": 29.24,
-        "MMLU-Pro": 77.6
+        "MMLU-Pro": 77.6,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -3027,7 +3052,8 @@
         "AA-Index": 11,
         "SWE-bench Verified": 47.67,
         "Terminal-Bench 2.1": 20.56,
-        "MMLU-Pro": 74.04
+        "MMLU-Pro": 74.04,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -3090,7 +3116,8 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 9
+        "AA-Index": 9,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -3113,7 +3140,8 @@
         "Finance Agent v2": 59.8,
         "APEX-Agents": 29.2,
         "SpreadsheetBench 2": 21.8,
-        "AA-Index": 23
+        "AA-Index": 23,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -3134,7 +3162,8 @@
       "modality": "Text + vision",
       "open": false,
       "benchmarks": {
-        "AA-Index": 26
+        "AA-Index": 26,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -3155,7 +3184,8 @@
       "modality": "Text",
       "open": false,
       "benchmarks": {
-        "AA-Index": 27
+        "AA-Index": 27,
+        "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
       "status": "live",
@@ -3184,7 +3214,8 @@
         "OSWorld 2.0 (partial)": 77.9,
         "OSWorld 2.0 (strict)": 41.7,
         "AutomationBench": 31.4,
-        "GDPval-AA v2": 1853
+        "GDPval-AA v2": 1853,
+        "Terminal-Bench 4.0 (AA)": 55.1
       },
       "milestone": true,
       "status": "live",
@@ -3261,7 +3292,8 @@
         "AA-Index": 41,
         "DeepSWE 1.1": 73.7,
         "HLE-Verified": 54.9,
-        "Tau-3 Banking (tool use)": 45
+        "Tau-3 Banking (tool use)": 45,
+        "Terminal-Bench 4.0 (AA)": 19.7
       },
       "milestone": true,
       "status": "live",
@@ -3314,7 +3346,8 @@
         "MRCR v2 256K (8-needle)": 98.5,
         "AA-Index": 48,
         "GPQA Diamond": 94.0,
-        "CritPt": 26.0
+        "CritPt": 26.0,
+        "Terminal-Bench 4.0 (AA)": 33.3
       },
       "milestone": true,
       "status": "live",
@@ -3368,7 +3401,8 @@
         "Toolathlon-Verified": 73.3,
         "MMMU-Pro": 82.7,
         "Code Arena WebDev (Elo)": 1691,
-        "AA-Index": 45
+        "AA-Index": 45,
+        "Terminal-Bench 4.0 (AA)": 38.9
       },
       "milestone": false,
       "status": "live",
@@ -3396,7 +3430,8 @@
         "ExploitBench": 100.0,
         "AA-Index": 53,
         "Coding Agent Index": 67,
-        "ARC-AGI-3 (provider adapter)": 99.9
+        "ARC-AGI-3 (provider adapter)": 99.9,
+        "Terminal-Bench 4.0 (AA)": 59.6
       },
       "milestone": true,
       "status": "live",
@@ -3419,7 +3454,8 @@
       "modality": "text in, text out; reasoning model with extended chain-of-thought",
       "open": true,
       "benchmarks": {
-        "AA-Index": 31
+        "AA-Index": 31,
+        "Terminal-Bench 4.0 (AA)": 1.5
       },
       "milestone": true,
       "status": "live",
@@ -3500,7 +3536,8 @@
         "GPQA Diamond": 90.9,
         "Terminal-Bench 2.1": 90.6,
         "Codeforces rating": 3471,
-        "AA-Index": 39
+        "AA-Index": 39,
+        "Terminal-Bench 4.0 (AA)": 26.8
       },
       "milestone": false,
       "status": "live",
@@ -3521,7 +3558,8 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 12
+        "AA-Index": 12,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -3774,7 +3812,8 @@
       "benchmarks": {
         "SciCode": 58.9,
         "AA-LCR": 88.3,
-        "AA-Index": 44
+        "AA-Index": 44,
+        "Terminal-Bench 4.0 (AA)": 33.3
       },
       "milestone": false,
       "status": "preview",
@@ -3819,7 +3858,8 @@
         "AutomationBench": 40.0,
         "HLE (with tools)": 67.7,
         "Chartography": 89.0,
-        "AA-Index": 58
+        "AA-Index": 58,
+        "Terminal-Bench 4.0 (AA)": 59.6
       },
       "milestone": true,
       "status": "live",
@@ -3862,7 +3902,8 @@
       "modality": "multimodal in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 38
+        "AA-Index": 38,
+        "Terminal-Bench 4.0 (AA)": 12.6
       },
       "milestone": false,
       "status": "live",
@@ -3891,7 +3932,8 @@
         "AA-Briefcase 1.1": 1657,
         "HealthBench Professional": 56.7,
         "Coding Agent Index": 56,
-        "AA-Index": 46
+        "AA-Index": 46,
+        "Terminal-Bench 4.0 (AA)": 25.8
       },
       "milestone": false,
       "status": "live",
@@ -3914,7 +3956,8 @@
       "modality": "omnimodal in, text out, reasoning",
       "open": true,
       "benchmarks": {
-        "AA-Index": 46
+        "AA-Index": 46,
+        "Terminal-Bench 4.0 (AA)": 34.8
       },
       "milestone": false,
       "status": "live",
@@ -3934,7 +3977,8 @@
       "modality": "omnimodal in (text, image, video, audio), text out, reasoning",
       "open": true,
       "benchmarks": {
-        "AA-Index": 38
+        "AA-Index": 38,
+        "Terminal-Bench 4.0 (AA)": 22.7
       },
       "milestone": false,
       "status": "live",
@@ -3988,7 +4032,8 @@
       "modality": "text, reasoning",
       "open": false,
       "benchmarks": {
-        "AA-Index": 24
+        "AA-Index": 24,
+        "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
       "status": "live",
@@ -4106,7 +4151,8 @@
         "HLE (with tools)": 64.5,
         "OSWorld 2.1 (partial)": 80.1,
         "Chartography": 61.6,
-        "AA-Index": 56
+        "AA-Index": 56,
+        "Terminal-Bench 4.0 (AA)": 63.6
       },
       "milestone": false,
       "status": "live",
@@ -4128,7 +4174,8 @@
       "modality": "multimodal in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 52
+        "AA-Index": 52,
+        "Terminal-Bench 4.0 (AA)": 56.1
       },
       "milestone": false,
       "status": "live",
@@ -4150,7 +4197,8 @@
       "benchmarks": {
         "Terminal-Bench 4.0": 57.4,
         "AA-Index": 53,
-        "DeepSWE 1.1": 77.9
+        "DeepSWE 1.1": 77.9,
+        "Terminal-Bench 4.0 (AA)": 57.1
       },
       "milestone": true,
       "status": "live",
@@ -4247,7 +4295,8 @@
         "GDPval-AA 2.1": 1673,
         "FrontierSWE": 75.16,
         "HealthBench Professional": 65.35,
-        "AA-Index": 41
+        "AA-Index": 41,
+        "Terminal-Bench 4.0 (AA)": 33.3
       },
       "milestone": false,
       "status": "preview",
@@ -4617,7 +4666,8 @@
         "OSWorld 2.1": 72.4,
         "FrontierCode 1.1": 46.4,
         "Chartography": 46.4,
-        "AA-Index": 43
+        "AA-Index": 43,
+        "Terminal-Bench 4.0 (AA)": 32.8
       },
       "milestone": false,
       "status": "live",
@@ -4884,7 +4934,8 @@
       "modality": "Text, image, audio, video in",
       "open": false,
       "benchmarks": {
-        "AA-Index": 52
+        "AA-Index": 52,
+        "Terminal-Bench 4.0 (AA)": 52.0
       },
       "milestone": true,
       "status": "live",
@@ -4911,7 +4962,8 @@
         "AutomationBench": 45.4,
         "SWE-Marathon": 57.5,
         "ProofBench": 94,
-        "AA-Index": 56
+        "AA-Index": 56,
+        "Terminal-Bench 4.0 (AA)": 57.1
       },
       "milestone": false,
       "status": "live",
@@ -5059,7 +5111,8 @@
       "modality": "Text, image, audio, video in",
       "open": true,
       "benchmarks": {
-        "AA-Index": 39
+        "AA-Index": 39,
+        "Terminal-Bench 4.0 (AA)": 8.1
       },
       "milestone": true,
       "status": "live",
@@ -5081,7 +5134,8 @@
       "benchmarks": {
         "GPQA Diamond": 89.5,
         "SWE-bench Verified": 71.1,
-        "AA-Index": 26
+        "AA-Index": 26,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",
@@ -5099,7 +5153,8 @@
       "modality": "Text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 21
+        "AA-Index": 21,
+        "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
       "status": "live",

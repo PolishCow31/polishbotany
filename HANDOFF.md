@@ -22,7 +22,25 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
   too):** `test_update.sh nochange_reset` (fixture markets dated Sep 20 now age past the 21-day drop against the real
   clock) and `test_aa_sync.py` (AA's page stopped naming its index version on Oct 6 at 23:10; the sync logs "version?" and
   the rescale guard falls back to the mass-shift heuristic).
-- Same disease, NOT fixed yet: Charts ▸ Head-to-head "Coding" and the SWE-bench Pro trajectory chart still read Pro only.
+- ~~Same disease: Head-to-head Coding + Pro trajectory~~ → fixed the same night, below.
+
+### ✓ DONE (Oct 16, later) — Head-to-head (v39), AA Terminal-Bench column + coding trajectory (v40), aa_sync repaired
+- **Head-to-head:** Closed | Open toggle (all metrics); Coding = chips for the top 2 `codingBoards()` tests (Closed:
+  DeepSWE 1.1 / Terminal-Bench 4.0, matching the Home card). Metric buttons tightened (Math overflowed 375px by 13px).
+- **His pick: the coding trajectory = "Terminal-Bench 4.0 (AA)"**, AA's own run on one setup for every lab, COPIED by
+  aa_sync.py (`COPIED` list; best variant, percent, 1 decimal) like the AA-Index. merge.py drops any LLM write to a
+  key ending " (AA)". 55 models valued on Oct 16 (Sonnet 5.5 63.6, Opus 5.5 / GPT-6 Astra 59.6, Argon 57.1). The lines
+  start mid-2026 (AA's page only carries current models) and grow forward. Google's line starts at Gemini 3.1 Pro's
+  4.0, which is AA's real number. The SWE-bench Pro trajectory is unrendered (code kept as cat 'swe').
+- **AA page changes found Oct 16, both fixed:** (1) the leaderboard stopped naming the index version on Oct 6;
+  aa_sync now reads it off METHOD_URL (methodology page), logged "via methodology page". (2) Around 22:00 the page went
+  from ~690 embedded models to the ~270 its table shows (retired models gone). Old behavior would have dropped 61 AA
+  scores (GPT-4 ... GPT-5), so the drop guard refused and the column froze. **New rule, KEEP-LAST:** on the pinned
+  version, a model AA stops listing keeps its last synced value; only `--rebase` drops them (old scale). The Sep 28
+  rename protection is now a MATCH_FLOOR (refuse when under 25% of scored models match; the trimmed page matches 61
+  of 122). MIN_SCORED 300 → 200.
+- **All five suites exit 0** (first time since Oct 6): test_update.sh now settles its sandbox on the real clock,
+  which fixed nochange_reset.
 
 ## State — Sep 28 2026
 

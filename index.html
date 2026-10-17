@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=39"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=40"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -586,6 +586,7 @@ const BENCH_PREF={
   swepro:[/^swe[ -]?bench pro$/i],
   gpqa:[/^gpqa diamond$/i,/^gpqa$/i],
   aime:[/^aime 2026$/i,/^aime$/i],
+  tbaa:[/^terminal-bench 4\.0 \(aa\)$/i],    // AA's own run, copied by scripts/aa_sync.py (never the lab-reported score)
 };
 function benchOf(m,cat){ const b=(m&&m.benchmarks)||{}, pref=BENCH_PREF[cat]; if(!pref) return null; const ks=Object.keys(b);
   for(const re of pref) for(const k of ks) if(re.test(k)){ const v=num(b[k]); if(v!=null) return v; }
@@ -942,14 +943,18 @@ function headToHead(){
   s+='</svg>';
   return seg+s+cap;
 }
-const TRAJ_META={aa:['AA Intelligence Index','Composite 0–100 — the headline "how smart" score.'],swe:['SWE-bench Pro','% of real coding tasks solved.']};
+// Coding trajectory (his pick, Oct 16 2026): Terminal-Bench 4.0 as Artificial Analysis runs it, one setup for every lab,
+// replacing SWE-bench Pro (closed labs stopped reporting Pro after Jul 2026, so that chart froze). AA's page only carries
+// current models, so the lines start mid-2026 and grow forward. 'swe' (Pro + crosswalk) stays in code, unrendered.
+const TRAJ_META={aa:['AA Intelligence Index','Composite 0–100 — the headline "how smart" score.'],swe:['SWE-bench Pro','% of real coding tasks solved.'],
+  tbaa:['Coding · Terminal-Bench 4.0','% of real terminal coding tasks solved, run by Artificial Analysis on one setup for every lab.']};
 function trajWrap(cat){ return guard(()=>trajBlock(cat,TRAJ_META[cat][0],TRAJ_META[cat][1])); }
 let chartsTab='frontier';
 function renderCharts(){
   const panel = chartsTab==='cadence' ? `<div id="cadence-wrap">${cadenceBlock()}</div>`
     : chartsTab==='hh' ? `<div id="hh-wrap">${guard(headToHead)}</div>`
     : `<div id="traj-aa-wrap">${trajWrap('aa')}</div>
-      <div id="traj-swe-wrap">${trajWrap('swe')}</div>`;
+      <div id="traj-tbaa-wrap">${trajWrap('tbaa')}</div>`;
   $('#v-charts').innerHTML = `<div class="vh">Charts</div>
     ${fileTabs('charts',chartsTab,[['frontier','By company'],['cadence','Cadence'],['hh','Head-to-head']])}
     <div class="ftab-panel">${panel}</div>`;
@@ -1112,7 +1117,7 @@ function renderPredict(){
 }
 
 // ---------------- CHARTS ▸ per-company trajectories ----------------
-let trajMode={aa:'frontier',swe:'frontier'};
+let trajMode={aa:'frontier',swe:'frontier',tbaa:'frontier'};
 // Back-estimated AA history is only comparable when the index hasn't been re-scaled: AA was re-versioned in 2026, so its
 // history must carry the live scale AND sit at/below today's top, else it's dropped. (The SWE line is on the Pro scale;
 // its Verified-scale history goes through the proEq conversion + era guard instead.)
@@ -1132,7 +1137,7 @@ function leadingTrajectory(cands,cat,mode){
   const cut=windowCut(), byLab={};   // only the last 18 months of releases
   cands.forEach(m=>{const q=trajVal(m,cat),t=tval(m.released);if(!q||!Number.isFinite(t)||t<cut)return;const L=canonLab(m.lab);(byLab[L]=byLab[L]||[]).push({t,date:m.released,v:q.v,est:q.est,model:m.name});});
   // extend the lines back with back-estimated points: AA only when scale-continuous; SWE only through the proEq era guard
-  if(cat==='swe'?!!PROFIT:historicsUsable(cat)){
+  if(cat==='tbaa'?false:cat==='swe'?!!PROFIT:historicsUsable(cat)){                  // AA's coding runs have no back-estimates
     Object.keys(byLab).forEach(L=>{
       HISTORICS.forEach((h,hi)=>{
         if(h.benchmark!==cat||canonLab(h.lab)!==L) return;
@@ -1369,7 +1374,7 @@ document.addEventListener('click',e=>{
   const sg=t.closest('.seg button[data-mode]'); if(sg){const which=sg.closest('.seg').dataset.seg,mode=sg.dataset.mode;
     const part=(state,id,fn)=>{ state(); const w=$('#'+id); if(w) safe(()=>{w.innerHTML=fn();},'#'+id); else safe(renderCharts,'#v-charts'); };
     if(which==='home'){homeMode=mode;safe(renderHome,'#v-home');}
-    else if(which==='traj-aa'||which==='traj-swe'){const c=which.slice(5); part(()=>{trajMode[c]=mode;},'traj-'+c+'-wrap',()=>trajWrap(c));}
+    else if(which==='traj-aa'||which==='traj-swe'||which==='traj-tbaa'){const c=which.slice(5); part(()=>{trajMode[c]=mode;},'traj-'+c+'-wrap',()=>trajWrap(c));}
     else if(which==='hh'){part(()=>{hhMetric=mode;},'hh-wrap',()=>guard(headToHead));}
     else if(which==='hh-mode'){part(()=>{hhMode=mode;hhBench=null;},'hh-wrap',()=>guard(headToHead));}
     else if(which==='hh-bench'){part(()=>{hhBench=mode;},'hh-wrap',()=>guard(headToHead));}

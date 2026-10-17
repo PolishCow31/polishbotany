@@ -58,7 +58,8 @@ Rules:
   `FrontierCode 1.1`, `CursorBench 4.0`. Write versions without a "v" (`DeepSWE 1.1`, not `DeepSWE v1.1`), and always
   include the version for a versioned benchmark (a bare `DeepSWE` can't be compared with anything). The coding card
   ranks Terminal-Bench, DeepSWE, FrontierCode, CursorBench and SWE-bench Pro, so log those whenever a source gives them.
-  `AA-Index` is written by `scripts/aa_sync.py` only.
+  `AA-Index` and any key ending ` (AA)` (e.g. `Terminal-Bench 4.0 (AA)`, AA's own runs) are written by
+  `scripts/aa_sync.py` only; the merge drops them from a delta.
   Omit any benchmark you don't have a sourced number for; never write 0 as a placeholder (the merge drops 0 and
   negative values).
 - **Never write an AA-Index number anywhere in the delta** — not in `benchmarks`, and not in the pulse, briefs,

@@ -310,6 +310,12 @@ def t_bench_alias():
     check("apply_bench_alias: v-spelling loses to the stored canonical one", b == {"DeepSWE 1.1": 72} and c == ["DeepSWE v1.1"], b)
 
 
+def t_aa_copied_guard():
+    b = M.clean_benchmarks({"Terminal-Bench 4.0 (AA)": 61, "Terminal-Bench 4.0": 66.4, "aa index": 50}, "X")
+    check("clean_benchmarks: an LLM write to a '(AA)' column or AA-Index is dropped, the lab-reported score kept",
+          b == {"Terminal-Bench 4.0": 66.4}, b)
+
+
 def t_stored_bench_keys():
     d = fixture()
     m = J(d, "models.json")
@@ -1033,7 +1039,7 @@ def t_resupply_clears_seen():       # round 4, item 8 (revised): the LLM re-read
 
 
 CASES = [("malformed input", t_malformed), ("newModels validation", t_new_models),
-         ("updatedModels validation", t_updated_models), ("prices", t_prices), ("benchmark aliases", t_bench_alias), ("stored benchmark keys", t_stored_bench_keys),
+         ("updatedModels validation", t_updated_models), ("prices", t_prices), ("benchmark aliases", t_bench_alias), ("stored benchmark keys", t_stored_bench_keys), ("AA copied-column guard", t_aa_copied_guard),
          ("market keys + dedupe", t_mkt_key), ("market pipeline", t_markets_merge), ("radar", t_radar),
          ("window_deadline", t_window_deadline), ("glossary", t_glossary), ("hosts + news", t_hosts),
          ("clock, sources, meta, pulse", t_clock_sources_meta), ("transactions", t_transactional),

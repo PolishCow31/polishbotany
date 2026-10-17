@@ -503,6 +503,7 @@ BENCH_ALIAS = {'SWE-bench': 'SWE-bench Verified', 'GPQA': 'GPQA Diamond', 'Termi
 # "DeepSWE v1.1" == "DeepSWE 1.1": a "v" before a DOTTED version is dropped (Oct 2026: 12 models carried the v spelling,
 # 7 the bare one, so the same benchmark showed as two). Undotted ("BFCL v4", "QwenSWEBench V2") and unversioned names
 # ("DeepSWE" — which version is unknown) are left alone: merging those would be a guess.
+AA_COPIED_RE = re.compile(r"\(AA\)\s*$", re.I)
 BENCH_V_RE = re.compile(r"^(.*\S) [vV](\d+\.\d+)$")
 
 
@@ -536,6 +537,9 @@ def clean_benchmarks(b, who):
             continue
         if AA_KEY_RE.search(k):     # scripts/aa_sync.py owns the AA-Index column; an LLM number would be off-scale
             note("%s: dropped benchmark %r — AA-Index is written by aa_sync.py only" % (who, k))
+            continue
+        if AA_COPIED_RE.search(k):  # "Terminal-Bench 4.0 (AA)" etc.: aa_sync.py COPIED columns, AA's own harness runs
+            note("%s: dropped benchmark %r — '(AA)' columns are copied from AA by aa_sync.py only" % (who, k))
             continue
         n = as_num(v)
         if n is None:
