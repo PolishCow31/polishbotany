@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=37"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=38"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -224,6 +224,13 @@
   .bcname{font-size:16.9px;font-weight:700;margin-top:3px;line-height:1.2}
   .bcval{font:700 14.4px var(--mono);color:var(--accent);margin-top:4px}
   .tiecard{cursor:pointer}
+  .bcsplit{grid-column:1/-1;border-left-color:var(--accent)}
+  .bestgrid:has(.bcsplit)>.bestcard:first-child{grid-column:1/-1}   /* split = 5 half cards: the headline goes full width so no slot sits empty */
+  .bcnote{font-weight:500;color:var(--ink3);font-size:12px}
+  .bchalves{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:6px}
+  .bchalf{border-left:3px solid var(--lab);padding-left:9px;min-width:0}
+  .bcbench{font:600 12px var(--mono);color:var(--ink3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bchalf .bcname{margin-top:2px}
   .tiechev{color:var(--ink3);display:inline-block;transition:transform .2s;font-weight:700}
 
   /* ════════════════ FOREST / WOODLAND @ DUSK — restrained reskin (overrides above) ════════════════ */
@@ -637,7 +644,7 @@ function isTextModel(m){
 let homeMode='frontier';
 function segCtl(seg,mode,opts){return `<div class="seg" data-seg="${seg}">${opts.map(o=>`<button data-mode="${o[0]}" class="${mode===o[0]?'on':''}">${he(o[1])}</button>`).join('')}</div>`;}
 const FO=[['frontier','Closed'],['open','Open']];   // weights-openness toggle: labels only — the internal mode values stay 'frontier'/'open'
-const USECASES=[{label:'Top overall',cat:'aa',suf:''},{label:'Coding · SWE Pro',cat:'coding'},{label:'Science · GPQA',cat:'gpqa',suf:'%'},{label:'Math · AIME',cat:'aime',suf:'%'},{label:'Longest context',cat:'context'},{label:'Best value',cat:'value'}];
+const USECASES=[{label:'Top overall',cat:'aa',suf:''},{label:'Coding',cat:'coding'},{label:'Science · GPQA',cat:'gpqa',suf:'%'},{label:'Math · AIME',cat:'aime',suf:'%'},{label:'Longest context',cat:'context'},{label:'Best value',cat:'value'}];
 const byRecent=(a,b)=>String(b.released).localeCompare(String(a.released));
 function pickBest(cands,uc){
   if(uc.cat==='context'){
@@ -653,21 +660,54 @@ function pickBest(cands,uc){
     const models=cands.filter(m=>{const s=sc(m); return s!=null&&Math.abs(s-bs)<1e-9;}).sort(byRecent);
     return {models, disp:fmtUSD(outPrice(models[0]))+' per 1M tokens'};
   }
-  if(uc.cat==='coding'){                                                                     // Pro scale via proEq; on ties native beats estimated
-    const q=new Map(); let bv=-1; cands.forEach(m=>{const p=proEq(m); if(p){q.set(m,p); if(p.v>bv)bv=p.v;}});
-    if(bv<0)return null;
-    let models=cands.filter(m=>q.has(m)&&q.get(m).v===bv); if(models.some(m=>!q.get(m).est)) models=models.filter(m=>!q.get(m).est);
-    models.sort(byRecent);
-    return {models, disp:(q.get(models[0]).est?'~':'')+bv+'%'};
+  if(uc.cat==='coding'){                                                                     // the benchmark recent models actually report (codingBoards)
+    const bs=codingBoards(cands); if(!bs.length) return null;
+    const a=bs[0], b=bs[1];
+    const split=b&&b.n>=3&&b.n>=CODE_SPLIT*a.n&&!b.models.some(m=>a.models.includes(m));   // same leader on both = one card
+    return split?{models:a.models,disp:a.disp,split:[a,b]}:{models:a.models,disp:a.disp,bench:a.bench};
   }
   let bv=-1; cands.forEach(m=>{const v=benchOf(m,uc.cat); if(v!=null&&v>bv)bv=v;});
   if(bv<0)return null;
   const models=cands.filter(m=>benchOf(m,uc.cat)===bv).sort(byRecent);
   return {models, disp:bv+(uc.suf||'')};
 }
+// ---- CODING (owner decision Oct 16 2026, replacing the Sep 28 one-scale rule): closed labs stopped reporting SWE-bench Pro
+// after Jul 2026 (2 of the live closed models since mid-July had it) and split between Terminal-Bench 4.0 and DeepSWE 1.1, so a
+// Pro-only card froze on Claude Opus 5. Now every coding benchmark is a board, ranked by how many candidates released in the
+// last CODE_WINDOW days report it, then by how many labs, then by the newest report. The card names its benchmark; when the
+// runner-up board's coverage is ≥ CODE_SPLIT of the top one's and its leader differs, both show side by side (the split is
+// real: Anthropic reports Terminal-Bench, OpenAI DeepSWE). Each VERSION is its own scale (Terminal-Bench 2.1 ≠ 4.0); a new
+// version joins by itself once models report it. SWE-bench Pro keeps the Verified crosswalk (proEq), which is why Open
+// mode still lands on it. Key spellings are canonical upstream (merge.py bench_key: "DeepSWE v1.1" → "DeepSWE 1.1").
+const CODE_FAMILIES=[/^terminal-bench \d+(\.\d+)?$/i,/^deepswe \d+(\.\d+)?$/i,/^frontiercode \d+(\.\d+)?$/i,/^cursorbench \d+(\.\d+)*$/i];
+const CODE_WINDOW=90, CODE_SPLIT=0.8;
+function codingBoards(cands){
+  const now=dayNum(todayISO()), recent=m=>{const t=dayNum(m.released); return t!=null&&now-t<=CODE_WINDOW;};
+  const boards=new Map([['SWE-bench Pro',m=>proEq(m)]]);
+  cands.forEach(m=>Object.keys(m.benchmarks||{}).forEach(k=>{
+    if(!boards.has(k)&&CODE_FAMILIES.some(re=>re.test(k))) boards.set(k,x=>{const v=num((x.benchmarks||{})[k]); return v!=null&&v>0&&v<=100?{v,est:false}:null;});
+  }));
+  const out=[];
+  boards.forEach((val,bench)=>{
+    const q=new Map(); cands.forEach(m=>{const p=val(m); if(p) q.set(m,p);});
+    const rec=[...q.keys()].filter(recent); if(!rec.length) return;
+    let bv=-1; q.forEach(p=>{if(p.v>bv)bv=p.v;});
+    let models=[...q.keys()].filter(m=>q.get(m).v===bv); if(models.some(m=>!q.get(m).est)) models=models.filter(m=>!q.get(m).est);   // native beats estimated
+    models.sort(byRecent);
+    out.push({bench, n:rec.length, labs:new Set(rec.map(m=>canonLab(m.lab))).size, last:rec.map(m=>String(m.released)).sort().pop(),
+              models, disp:(q.get(models[0]).est?'~':'')+bv+'%'});
+  });
+  return out.sort((a,b)=>b.n-a.n||b.labs-a.labs||b.last.localeCompare(a.last));
+}
 let TIEMAP={};
 function bestCard(o){
   const ms=o.p.models, tie=ms.length>1;
+  if(o.p.split){                                                                             // full-width: one half per benchmark
+    const half=b=>{ const m=b.models[0], t=b.models.length>1;
+      return `<div class="bchalf" style="--lab:${t?'var(--accent)':labHex(m.lab)}"><div class="bcbench">${he(b.bench)}</div><div class="bcname">${he(m.name)}${t?` <span class="bcnote">+${b.models.length-1} tied</span>`:''}</div><div class="bcval">${he(b.disp)}</div></div>`; };
+    return `<div class="bestcard bcsplit"><div class="bclabel">${he(o.uc.label)} <span class="bcnote">· recent models split between two tests</span></div><div class="bchalves">${o.p.split.map(half).join('')}</div></div>`;
+  }
+  if(o.p.bench) o={...o, uc:{...o.uc, label:o.uc.label+' · '+o.p.bench}};
   if(!tie){ const m=ms[0]; return `<div class="bestcard" style="--lab:${labHex(m.lab)}"><div class="bclabel">${he(o.uc.label)}</div><div class="bcname">${he(m.name)}</div><div class="bcval">${he(o.p.disp)}</div></div>`; }
   TIEMAP[o.uc.label]={label:o.uc.label, disp:o.p.disp, models:ms};
   return `<div class="bestcard tiecard" style="--lab:var(--accent)" data-tie="${he(o.uc.label)}" role="button" tabindex="0"><div class="bclabel">${he(o.uc.label)}</div><div class="bcname">${ms.length}-way tie <span class="tiechev">›</span></div><div class="bcval">${he(o.p.disp)}</div></div>`;

@@ -296,6 +296,33 @@ def t_bench_alias():
                               ("Terminal-Bench 4.0", 4)] and len(r) == 4 and not c, b)
     b, r, c = M.apply_bench_alias({"SWE-bench": 70, "SWE-bench Verified": 72})
     check("BENCH_ALIAS: canonical spelling wins a collision", b == {"SWE-bench Verified": 72} and c == ["SWE-bench"], b)
+    # Oct 16 2026: one benchmark, two spellings ("DeepSWE v1.1" x12, "DeepSWE 1.1" x7) split the coding comparison
+    cases = {"DeepSWE v1.1": "DeepSWE 1.1", "FrontierCode v1.1": "FrontierCode 1.1", "GDPval-AA v2.1": "GDPval-AA 2.1",
+             "HLE (no tools)": "HLE", "Terminal-Bench v3.0": "Terminal-Bench 3.0", "Terminal-Bench 4": "Terminal-Bench 4.0",
+             "DeepSWE 1.1": "DeepSWE 1.1", "BFCL v4": "BFCL v4", "QwenSWEBench V2": "QwenSWEBench V2",
+             "DeepSWE": "DeepSWE", "HLE (with tools)": "HLE (with tools)", "LiveCodeBench v6": "LiveCodeBench v6",
+             "GDPval-AA v2": "GDPval-AA v2", "AA-Index": "AA-Index"}
+    got = {k: M.bench_key(k) for k in cases}
+    check("bench_key: dotted 'vX.Y' dropped, HLE no-tools folded, undotted/unversioned untouched", got == cases,
+          {k: v for k, v in got.items() if v != cases[k]})
+    check("bench_key: idempotent", all(M.bench_key(M.bench_key(k)) == M.bench_key(k) for k in cases))
+    b, r, c = M.apply_bench_alias({"DeepSWE v1.1": 70, "DeepSWE 1.1": 72})
+    check("apply_bench_alias: v-spelling loses to the stored canonical one", b == {"DeepSWE 1.1": 72} and c == ["DeepSWE v1.1"], b)
+
+
+def t_stored_bench_keys():
+    d = fixture()
+    m = J(d, "models.json")
+    m["models"][1]["benchmarks"] = {"AA-Index": 58, "DeepSWE v1.1": 75.4, "Terminal-Bench 4.0": 66.4, "HLE (no tools)": 40}
+    with open(os.path.join(d, "models.json"), "w") as f:
+        f.write(M.dumps(m))
+    code, out = run(d, {})
+    b = J(d, "models.json")["models"][1]["benchmarks"]
+    check("stored keys: an empty delta still canonicalizes stored spellings, values and order kept",
+          list(b.items()) == [("AA-Index", 58), ("DeepSWE 1.1", 75.4), ("Terminal-Bench 4.0", 66.4), ("HLE", 40)], (code, b, out[-600:]))
+    before = md5s(d)
+    code2, out2 = run(d, {})
+    check("stored keys: second run is a no-op (nothing rewritten)", md5s(d) == before, out2[-600:])
 
 
 # ---------------------------------------------------------------- 4. market identity + pipeline
@@ -1006,7 +1033,7 @@ def t_resupply_clears_seen():       # round 4, item 8 (revised): the LLM re-read
 
 
 CASES = [("malformed input", t_malformed), ("newModels validation", t_new_models),
-         ("updatedModels validation", t_updated_models), ("prices", t_prices), ("benchmark aliases", t_bench_alias),
+         ("updatedModels validation", t_updated_models), ("prices", t_prices), ("benchmark aliases", t_bench_alias), ("stored benchmark keys", t_stored_bench_keys),
          ("market keys + dedupe", t_mkt_key), ("market pipeline", t_markets_merge), ("radar", t_radar),
          ("window_deadline", t_window_deadline), ("glossary", t_glossary), ("hosts + news", t_hosts),
          ("clock, sources, meta, pulse", t_clock_sources_meta), ("transactions", t_transactional),

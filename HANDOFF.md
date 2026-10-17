@@ -3,6 +3,27 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## State — Oct 16 2026
+
+### ✓ DONE (Oct 16) — coding card unfrozen + benchmark names canonical (v38)
+- **His decision (Oct 16, replaces the Sep 28 "coding = one SWE-bench Pro scale" rule):** the Coding card ranks every coding
+  benchmark (SWE-bench Pro with the Verified crosswalk, plus Terminal-Bench / DeepSWE / FrontierCode / CursorBench, each
+  VERSION its own board) by how many live candidates released in the last 90 days report it, then labs, then newest report.
+  The card names its benchmark. When the runner-up's coverage is at least 80% of the top's and its leader differs, both show
+  side by side ("recent models split between two tests"). Why: closed labs stopped reporting Pro after July (2 live closed
+  models since Jul 18), so the card sat on Claude Opus 5 for good. On Oct 16, closed showed DeepSWE 1.1 (Muse Wonder Full 79)
+  next to Terminal-Bench 4.0 (Sonnet 5.5 70.6); Anthropic reports only TB4, OpenAI only DeepSWE. Open showed SWE-bench Pro
+  next to TB 2.1. Code: `codingBoards()` in index.html.
+- **merge.py `bench_key`:** a "v" before a DOTTED version is dropped ("DeepSWE v1.1" → "DeepSWE 1.1"), and
+  "HLE (no tools)" → "HLE". Undotted ("BFCL v4") and unversioned ("DeepSWE") names are left alone, because merging them
+  would be a guess. New step 2b re-canonicalizes every STORED model on each sweep, so a new alias retires old spellings by
+  itself. 24 keys migrated tonight. The research prompt lists the canonical coding names.
+- Tests: test_merge 98/98, market_sync and oneshot pass (exit 0). **2 failures predate this change (both fail on HEAD
+  too):** `test_update.sh nochange_reset` (fixture markets dated Sep 20 now age past the 21-day drop against the real
+  clock) and `test_aa_sync.py` (AA's page stopped naming its index version on Oct 6 at 23:10; the sync logs "version?" and
+  the rescale guard falls back to the mass-shift heuristic).
+- Same disease, NOT fixed yet: Charts ▸ Head-to-head "Coding" and the SWE-bench Pro trajectory chart still read Pro only.
+
 ## State — Sep 28 2026
 
 ### ✓ DONE (Sep 28) — updater pipeline hardened; market odds come from the platforms (f4c408d + cleanup b06b438, v37)

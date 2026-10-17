@@ -498,7 +498,18 @@ def normalize_prices(ed, models, delta_prices=None):
 
 # ---------------------------------------------------------------- benchmarks
 BENCH_ALIAS = {'SWE-bench': 'SWE-bench Verified', 'GPQA': 'GPQA Diamond', 'Terminal-Bench v3.0': 'Terminal-Bench 3.0',
-               'Terminal-Bench 4': 'Terminal-Bench 4.0'}
+               'Terminal-Bench 4': 'Terminal-Bench 4.0',
+               'HLE (no tools)': 'HLE'}     # HLE's headline score is the no-tools one; "HLE (with tools)" stays its own row
+# "DeepSWE v1.1" == "DeepSWE 1.1": a "v" before a DOTTED version is dropped (Oct 2026: 12 models carried the v spelling,
+# 7 the bare one, so the same benchmark showed as two). Undotted ("BFCL v4", "QwenSWEBench V2") and unversioned names
+# ("DeepSWE" — which version is unknown) are left alone: merging those would be a guess.
+BENCH_V_RE = re.compile(r"^(.*\S) [vV](\d+\.\d+)$")
+
+
+def bench_key(k):
+    """-> the canonical spelling of one benchmark key (identity when it has none)."""
+    k = BENCH_ALIAS.get(k, k)
+    return BENCH_ALIAS.get(BENCH_V_RE.sub(r"\1 \2", k), BENCH_V_RE.sub(r"\1 \2", k))
 
 
 def apply_bench_alias(b):
@@ -506,8 +517,8 @@ def apply_bench_alias(b):
     -> (new dict, [renamed keys], [alias keys dropped because the canonical key exists])"""
     out, renamed, clash = {}, [], []
     for k, v in b.items():
-        c = BENCH_ALIAS.get(k)
-        if c is None:
+        c = bench_key(k)
+        if c == k:
             out[k] = v
         elif c in b:
             clash.append(k)
@@ -1151,6 +1162,18 @@ def main():
             c["updated"] += 1
         each("updatedModels", offer("updatedModels", "updatedModels"), one)
     section("updatedModels", ["models.json"], updated_models)
+
+    # 2b. every STORED model's benchmark keys re-canonicalized, so a spelling added to BENCH_ALIAS / BENCH_V_RE retires
+    # the old one everywhere on the next sweep (idempotent; models.json is only rewritten when a key actually moves)
+    def stored_bench_keys():
+        for m in doc["models.json"]["models"]:
+            if isinstance(m, dict) and isinstance(m.get("benchmarks"), dict):
+                b, renamed, clash = apply_bench_alias(m["benchmarks"])
+                if renamed or clash:
+                    m["benchmarks"] = b
+                    for k in clash:
+                        note("models: %s — dropped %r, its canonical spelling is already stored" % (m.get("name"), k))
+    section("storedBenchKeys", ["models.json"], stored_bench_keys)
 
     # (3-4. trend points + prediction promotion: retired Sep 28 2026 — nothing renders trends/predictions)
     # 5. news — rolling refresh: validate, dedupe by url, newest-first, cap the window

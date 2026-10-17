@@ -54,7 +54,11 @@ Rules:
   live | preview | historic | superseded | pulled), `open` (true/false) and `benchmarks` (an object of numbers,
   `{}` if none) — the merge drops an entry missing any of them.
 - **Benchmark keys** — use these exact names when they apply: `SWE-bench Verified`, `SWE-bench Pro`, `GPQA Diamond`,
-  `AIME 2026`, `HLE`, `Terminal-Bench 3.0`, `Terminal-Bench 4.0`. `AA-Index` is written by `scripts/aa_sync.py` only.
+  `AIME 2026`, `HLE` (the no-tools score), `HLE (with tools)`, `Terminal-Bench 3.0`, `Terminal-Bench 4.0`, `DeepSWE 1.1`,
+  `FrontierCode 1.1`, `CursorBench 4.0`. Write versions without a "v" (`DeepSWE 1.1`, not `DeepSWE v1.1`), and always
+  include the version for a versioned benchmark (a bare `DeepSWE` can't be compared with anything). The coding card
+  ranks Terminal-Bench, DeepSWE, FrontierCode, CursorBench and SWE-bench Pro, so log those whenever a source gives them.
+  `AA-Index` is written by `scripts/aa_sync.py` only.
   Omit any benchmark you don't have a sourced number for; never write 0 as a placeholder (the merge drops 0 and
   negative values).
 - **Never write an AA-Index number anywhere in the delta** — not in `benchmarks`, and not in the pulse, briefs,
