@@ -3531,7 +3531,7 @@
       "params": "undisclosed",
       "context": "1M (384K max output)",
       "modality": "text + image in, text out",
-      "open": false,
+      "open": true,
       "benchmarks": {
         "GPQA Diamond": 90.9,
         "Terminal-Bench 2.1": 90.6,
@@ -3540,7 +3540,7 @@
         "Terminal-Bench 4.0 (AA)": 26.8
       },
       "milestone": false,
-      "status": "live",
+      "status": "superseded",
       "notable": "GA Sep 10 2026, right on the announced date, after a two-day public API test. First of DeepSeek's V4.1 line on a new natively-multimodal base architecture: images are first-class input, KV cache is cut hard (DeepSeek cites HBM needs at 1/4 and SSD at 1/8 of the prior generation), and it keeps 1M context with 384K max output. Takes the new primary API name deepseek-flash; the retired deepseek-v4-flash and deepseek-v4-flash-vision-exp names now route here at Flash pricing. Priced at $0.30/$1.20 peak ($0.15/$0.60 off-peak) per 1M - roughly 30% below V4-Flash. DeepSeek says extensive testing shows it 'comprehensively surpassed V4 Pro across performance, cost, speed, and total time,' and had scheduled all deepseek-v4-pro requests to route here at Flash prices from Sep 14 2026 - but reversed that on Sep 14, keeping V4 Pro API service alive 'in response to user demand' with billing unchanged until V4.1 Pro launches. First published numbers (changelog, Sep 10): GPQA Diamond 90.9, Codeforces rating 3471, Terminal-Bench 2.1 90.6. Still no parameter count or open weights.",
       "sources": [
         "https://api-docs.deepseek.com/updates/",
@@ -5196,6 +5196,28 @@
       "sources": [
         "https://bfl.ai/blog/flux-3-image-klein",
         "https://bfl.ai/blog"
+      ]
+    },
+    {
+      "name": "DeepSeek-V4.1-Flash-1017",
+      "lab": "DeepSeek",
+      "released": "2026-10-17",
+      "params": "763B MoE",
+      "context": "1M",
+      "modality": "text + image in, text out",
+      "open": true,
+      "benchmarks": {
+        "HLE": 42.6,
+        "Terminal-Bench 4.0": 42.3,
+        "DeepSWE 1.1": 77.0
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Refreshed V4.1-Flash build that scores higher on agent coding while finishing tasks faster with shorter answers, shipped with open weights.",
+      "sources": [
+        "https://api-docs.deepseek.com/news/news261017",
+        "https://api-docs.deepseek.com/updates",
+        "https://huggingface.co/deepseek-ai"
       ]
     }
   ]
