@@ -4128,8 +4128,8 @@
       "open": false,
       "benchmarks": {},
       "milestone": false,
-      "status": "preview",
-      "notable": "Fast everyday-coding model available only inside MiniMax's own MiniMax Code tool, with a five-level reasoning-effort slider. MiniMax published no price, speed figure or benchmark, and there is no standalone M3.1 API yet; the full M3.1 release is still ahead.",
+      "status": "superseded",
+      "notable": "Coding preview inside MiniMax Code, replaced Oct 19 by the full M3.1 Flash on the public API.",
       "sources": [
         "https://pandaily.com/minimax-m3-1-flash-preview-coding-model-minimax-code",
         "https://datanorth.ai/news/minimax-releases-m3-1-flash-preview"
@@ -5237,6 +5237,28 @@
       "sources": [
         "https://huggingface.co/internlm/Intern-Decision-4B",
         "https://aiwiki.ai/wiki/intern_decision"
+      ]
+    },
+    {
+      "name": "MiniMax M3.1 Flash",
+      "lab": "MiniMax",
+      "released": "2026-10-19",
+      "params": "428B / 23B active",
+      "context": "1M",
+      "modality": "text in, text out; computer use",
+      "open": false,
+      "benchmarks": {
+        "DeepSWE 1.1": 73.7,
+        "AA-Index": 42,
+        "Terminal-Bench 4.0 (AA)": 25.8
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "MiniMax's cheap agent and coding model, revealed as the anonymous Space Bunny, now on the public API with open weights promised.",
+      "sources": [
+        "https://www.minimax.io/blog/minimax-m31f",
+        "https://startupfortune.com/minimax-quietly-launches-m31-flash-after-weeks-as-a-mystery-space-bunny-model/",
+        "https://openrouter.ai/minimax/minimax-m3.1-flash:free"
       ]
     }
   ]
