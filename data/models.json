@@ -5249,7 +5249,7 @@
       "open": false,
       "benchmarks": {
         "DeepSWE 1.1": 73.7,
-        "AA-Index": 42,
+        "AA-Index": 43,
         "Terminal-Bench 4.0 (AA)": 25.8
       },
       "milestone": false,
@@ -5292,6 +5292,23 @@
       "sources": [
         "https://mistral.ai/news/timestral/",
         "https://huggingface.co/mistralai/Timestral-5M"
+      ]
+    },
+    {
+      "name": "Clairic",
+      "lab": "Cloudflare",
+      "released": "2026-10-19",
+      "params": "Undisclosed",
+      "context": "—",
+      "modality": "Text, image to typed values",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Extracts numbers, dates and forecasts in one forward pass instead of generating text; open weights are planned.",
+      "sources": [
+        "https://blog.cloudflare.com/clairic-extraction-model",
+        "https://www.unite.ai/cloudflare-releases-clairic-its-first-system-one-extraction-model/"
       ]
     }
   ]
