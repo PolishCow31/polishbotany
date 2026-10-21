@@ -5327,6 +5327,45 @@
         "https://runtimewire.com/article/skywork-matrix-game-4-engine-neural-rendering",
         "https://toolnavs.com/article/2588-matrix-game-40-goes-open-source-the-engine-owns-the-logic-the-model-only-paints"
       ]
+    },
+    {
+      "name": "Voxtral 3",
+      "lab": "Mistral",
+      "released": "2026-10-20",
+      "params": "4B Mini",
+      "context": "—",
+      "modality": "speech-to-text, text-to-speech",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Mistral's speech family pairs transcription and expressive voice with a voice-agent API for real-time conversations in 50+ languages.",
+      "sources": [
+        "https://mistral.ai/news/voxtral-3/",
+        "https://www.marktechpost.com/2026/10/20/mistral-voxtral-3-speech-models-voice-agent-sdk/"
+      ]
+    },
+    {
+      "name": "Ornith-1.5-122B",
+      "lab": "DeepReinforce",
+      "released": "2026-10",
+      "params": "125B MoE, 10B active",
+      "context": "262K",
+      "modality": "text, image",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 84.5,
+        "SWE-bench Pro": 76.9,
+        "HLE": 37.7,
+        "HLE (with tools)": 48.0
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "A mid-size open coding and agent model under MIT license, sized to run on a single high-memory GPU.",
+      "sources": [
+        "https://huggingface.co/ornith-ai/Ornith-1.5-122B",
+        "https://www.mindstudio.ai/blog/ornith-1-5-122b-benchmarks-coding-agentic"
+      ]
     }
   ]
 }
