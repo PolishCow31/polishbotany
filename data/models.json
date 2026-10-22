@@ -5366,6 +5366,25 @@
         "https://huggingface.co/ornith-ai/Ornith-1.5-122B",
         "https://www.mindstudio.ai/blog/ornith-1-5-122b-benchmarks-coding-agentic"
       ]
+    },
+    {
+      "name": "Flint",
+      "lab": "Recursive",
+      "released": "2026-10-21",
+      "params": "40B, 2.5B active",
+      "context": "512K",
+      "modality": "text, code",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 74.2
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "A small open coding model built to run fast on a laptop, which Recursive says its automated research system largely designed.",
+      "sources": [
+        "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
+        "https://cellcog.ai/blog/recursive-flint/"
+      ]
     }
   ]
 }
