@@ -5385,6 +5385,41 @@
         "https://techcrunch.com/2026/10/21/recursive-launches-flint-a-laptop-coding-model-it-says-was-largely-built-by-ai/",
         "https://cellcog.ai/blog/recursive-flint/"
       ]
+    },
+    {
+      "name": "Ling-3.1-flash-1019",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-10-22",
+      "params": "560B / 25B active",
+      "modality": "Text",
+      "open": false,
+      "benchmarks": {
+        "AA-Index": 44,
+        "Terminal-Bench 4.0 (AA)": 32.8
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "An agent-focused refresh of Ling-3.1-flash; Ant says API access and open weights are coming soon.",
+      "sources": [
+        "https://x.com/AntLingAGI/status/2113226531522891851",
+        "https://artificialanalysis.ai/models/ling-3-1-flash-1019"
+      ]
+    },
+    {
+      "name": "HeyGen Video 1",
+      "lab": "HeyGen",
+      "released": "2026-09-30",
+      "context": "—",
+      "modality": "Text to video with audio",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "HeyGen's first general-purpose video model, making short clips with dialogue, ambience and sound effects in one pass.",
+      "sources": [
+        "https://www.heygen.com/models/heygen-video",
+        "https://help.heygen.com/en/articles/17272995-introducing-heygen-video-generate-cinematic-clips-from-a-prompt"
+      ]
     }
   ]
 }
