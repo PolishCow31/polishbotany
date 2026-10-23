@@ -5437,6 +5437,45 @@
         "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
         "https://www.orcarouter.ai/blog/nemotron-3-5-bolt-e4b-4gb-what-shipped"
       ]
+    },
+    {
+      "name": "Kimi K3.1 Pro",
+      "lab": "Moonshot AI",
+      "released": "2026-10-23",
+      "params": "2.8T / 104B active",
+      "context": "1M",
+      "modality": "text, image, video in; text out",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 65.7,
+        "AA-Index": 55,
+        "Terminal-Bench 4.0 (AA)": 67.2
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Post-trained upgrade of Kimi K3 with far more post-training compute; open weights are promised for Nov 4.",
+      "sources": [
+        "https://thenextweb.com/news/moonshot-kimi-k3-1-pro-open-weight-cyber",
+        "https://www.unite.ai/moonshot-ai-releases-kimi-k3-1-pro-first-model-in-new-k3-1-series/",
+        "https://felloai.com/kimi-k3-1/"
+      ]
+    },
+    {
+      "name": "Kimi K3.1 Pro Highspeed",
+      "lab": "Moonshot AI",
+      "released": "2026-10-23",
+      "params": "2.8T / 104B active",
+      "context": "1M",
+      "modality": "text, image, video in; text out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Faster serving of Kimi K3.1 Pro, two to three times quicker with the same capabilities; thinking mode is required.",
+      "sources": [
+        "https://www.unite.ai/moonshot-ai-releases-kimi-k3-1-pro-first-model-in-new-k3-1-series/",
+        "https://llmgateway.io/timeline"
+      ]
     }
   ]
 }
