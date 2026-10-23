@@ -5245,8 +5245,8 @@
       "released": "2026-10-19",
       "params": "428B / 23B active",
       "context": "1M",
-      "modality": "text in, text out; computer use",
-      "open": false,
+      "modality": "text, image, video in; text",
+      "open": true,
       "benchmarks": {
         "DeepSWE 1.1": 73.7,
         "AA-Index": 43,
@@ -5254,10 +5254,10 @@
       },
       "milestone": false,
       "status": "live",
-      "notable": "MiniMax's cheap agent and coding model, revealed as the anonymous Space Bunny, now on the public API with open weights promised.",
+      "notable": "MiniMax's cheap coding and agent model, first seen as the anonymous Space Bunny, now has downloadable weights under a community license.",
       "sources": [
         "https://www.minimax.io/blog/minimax-m31f",
-        "https://startupfortune.com/minimax-quietly-launches-m31-flash-after-weeks-as-a-mystery-space-bunny-model/",
+        "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash",
         "https://openrouter.ai/minimax/minimax-m3.1-flash:free"
       ]
     },
