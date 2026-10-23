@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-23T09:00:02-04:00",
+  "updated": "2026-10-23T12:00:05-04:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -3527,6 +3527,16 @@
       "aka": [
         "usable context",
         "effective context window"
+      ]
+    },
+    {
+      "term": "Effective parameters",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "The number of parameters actually active in compute for each token, smaller than the total stored when some weights are cached, offloaded or routed around.",
+      "aka": [
+        "effective params",
+        "active parameters on device"
       ]
     },
     {

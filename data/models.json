@@ -5420,6 +5420,23 @@
         "https://www.heygen.com/models/heygen-video",
         "https://help.heygen.com/en/articles/17272995-introducing-heygen-video-generate-cinematic-clips-from-a-prompt"
       ]
+    },
+    {
+      "name": "Nemotron 3.5 Bolt E4B",
+      "lab": "NVIDIA",
+      "released": "2026-10-23",
+      "params": "8B, 4B effective",
+      "context": "64K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "NVIDIA's on-device agent model, post-trained from Gemma 4 E4B to fit about 4GB of runtime memory.",
+      "sources": [
+        "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+        "https://www.orcarouter.ai/blog/nemotron-3-5-bolt-e4b-4gb-what-shipped"
+      ]
     }
   ]
 }
