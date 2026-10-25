@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-25T03:00:04-04:00",
+  "updated": "2026-10-25T06:08:59-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -22000,6 +22000,62 @@
         {
           "u": "emergent.sh Fable 5.5",
           "url": "https://emergent.sh/news/claude-fable-5-5-release-date",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "routine": "6AM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/grok-5",
+          "url": "https://polymarket.com/event/grok-5-released-byptptpt-20260710195520919",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co/ai-news-today",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "secondary"
+        },
+        {
+          "u": "mindstudio.ai/iquest-q1",
+          "url": "https://www.mindstudio.ai/blog/iquest-q1-benchmarks",
+          "q": "blog"
+        },
+        {
+          "u": "cnbc.com data-center survey",
+          "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com AI execs",
+          "url": "https://www.axios.com/2026/10/24/ai-ceos-washington-political-liability",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com ahead 2028",
+          "url": "https://www.axios.com/2026/10/24/axios-ahead-2028",
+          "q": "secondary"
+        },
+        {
+          "u": "orcarouter.ai Grok 5",
+          "url": "https://www.orcarouter.ai/blog/grok-5-release-date",
           "q": "blog"
         }
       ]
