@@ -5545,6 +5545,27 @@
         "https://openrouter.ai/xingchen-agi/xing4.0-29b-a4b",
         "https://www.activepieces.com/blog/what-is-xing40-29b-model-a-versatile-agentic-llm.md"
       ]
+    },
+    {
+      "name": "Nanbeige4.3-33B",
+      "lab": "Nanbeige",
+      "released": "2026-10-25",
+      "params": "33B dense",
+      "context": "512K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Pro": 60.3,
+        "GPQA Diamond": 89.5,
+        "AIME 2026": 95.2,
+        "Terminal-Bench 4.0": 23.8
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Apache-licensed 33B reasoning model built as Nanbeige's teacher for smaller models, tuned for agentic coding and tool use.",
+      "sources": [
+        "https://huggingface.co/Nanbeige/Nanbeige4.3-33B"
+      ]
     }
   ]
 }
