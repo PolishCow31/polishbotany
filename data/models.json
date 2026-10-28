@@ -5587,6 +5587,51 @@
         "https://vercel.com/ai-gateway/models/gpt-6.1-terra",
         "https://x.com/OpenAI/status/2114780711664398349"
       ]
+    },
+    {
+      "name": "Gemini 4 Carbon",
+      "lab": "Google DeepMind",
+      "released": "2026-10-28",
+      "params": "—",
+      "open": false,
+      "benchmarks": {
+        "SEC-bench Pro": 88.2,
+        "ExploitGym": 54.8,
+        "CWE-bench": 71.0,
+        "FrontierSWE 2": 61.2,
+        "AutomationBench": 53.9
+      },
+      "milestone": true,
+      "status": "preview",
+      "notable": "Google's new flagship, aimed at cyber defense and long agent tasks, opened first to vetted security teams through its Fairwind Program.",
+      "sources": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+        "https://deepmind.google/models/gemini/",
+        "https://9to5google.com/2026/10/28/gemini-4-carbon-announcement/"
+      ]
+    },
+    {
+      "name": "LFM3-1.7B",
+      "lab": "Liquid AI",
+      "released": "2026-10-27",
+      "params": "1.73B",
+      "context": "256K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "GPQA Diamond": 63.37,
+        "HLE": 7.17,
+        "HLE (with tools)": 13.9,
+        "SWE-bench Verified": 43.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Small open-weight model leading Liquid AI's LFM3 family, which also adds vision, audio and omni variants near two billion parameters.",
+      "sources": [
+        "https://huggingface.co/LiquidAI/LFM3-1.7B",
+        "https://huggingface.co/LiquidAI",
+        "https://benchlm.ai/model-updates"
+      ]
     }
   ]
 }
