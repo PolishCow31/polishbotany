@@ -72,7 +72,7 @@ case "$SC" in
   partial_merge)   echo "$GOOD_CLAUDE" > "$SBX/bin/claude"; merge_stub 3 ;;
   mergefail|mergefail_streak) echo "$GOOD_CLAUDE" > "$SBX/bin/claude"; merge_stub 1 ;;
   rebase_window)   # a hand-run `aa_sync.py --rebase` edits meta.json while claude runs; then the merge crashes
-    printf '#!/bin/bash\nsed -i "" "s/\\"aaScale\\": \\"v4.3\\"/\\"aaScale\\": \\"v9.9\\"/" data/meta.json\necho "{}" > data/_delta.json\n' > "$SBX/bin/claude"
+    printf '#!/bin/bash\nsed -i "" "s/\\"aaScale\\": \\"v[0-9.]*\\"/\\"aaScale\\": \\"v9.9\\"/" data/meta.json\necho "{}" > data/_delta.json\n' > "$SBX/bin/claude"
     merge_stub 1 ;;
   corrupt_left)    # data/ already dirty (corrupted) when the merge runs: never restored, never published, counted
     printf '#!/bin/bash\necho "{}" > data/_delta.json\necho corrupt > data/models.json\n' > "$SBX/bin/claude" ;;

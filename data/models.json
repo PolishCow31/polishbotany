@@ -254,8 +254,7 @@
       "benchmarks": {
         "MMLU": 86.4,
         "HumanEval": 67,
-        "GSM8K": 92,
-        "AA-Index": 7
+        "GSM8K": 92
       },
       "notable": "Frontier paradigm-setter: first broadly-multimodal (image+text in) flagship, MMLU 86.4% (5-shot), HumanEval 67%, GSM8K ~92%. Technical report deliberately withheld size/architecture/training details. 8K default and 32K extended context. Set the bar the rest of 2023 chased.",
       "status": "historic"
@@ -284,8 +283,7 @@
       "milestone": false,
       "benchmarks": {
         "MMLU": 78.3,
-        "GSM8K": 80.7,
-        "AA-Index": 5
+        "GSM8K": 80.7
       },
       "notable": "Powered Bard and Google's 2023 stack; came in Gecko/Otter/Bison/Unicorn sizes. Strong multilingual + reasoning, MMLU 78.3, GSM8K 80.7. Announced at Google I/O May 10 2023. Beat PaLM-540B while being smaller and more efficient.",
       "status": "historic"
@@ -347,9 +345,7 @@
       "modality": "text",
       "open": true,
       "milestone": false,
-      "benchmarks": {
-        "AA-Index": 5
-      },
+      "benchmarks": {},
       "notable": "Apache-2.0 efficiency landmark: a 7B that beat Llama 2 13B on every benchmark and rivaled 34B-class models on reasoning. Introduced grouped-query + sliding-window attention. Mistral AI's debut model, downloaded en masse as a fine-tune base.",
       "status": "historic"
     },
@@ -362,9 +358,7 @@
       "modality": "text+image",
       "open": false,
       "milestone": false,
-      "benchmarks": {
-        "AA-Index": 7
-      },
+      "benchmarks": {},
       "notable": "Announced at OpenAI's first DevDay (gpt-4-1106-preview): 128K context (~300 pages), knowledge cutoff April 2023, and sharply cheaper pricing than GPT-4. Brought GPT-4 closer to the long-context bar Claude 2 had set.",
       "status": "historic"
     },
@@ -396,8 +390,7 @@
       "open": true,
       "milestone": true,
       "benchmarks": {
-        "MMLU": 70.6,
-        "AA-Index": 5
+        "MMLU": 70.6
       },
       "notable": "First strong open sparse Mixture-of-Experts: 8 experts, 2 active per token, so 47B quality at ~13B inference cost. Matched/beat Llama 2 70B and GPT-3.5 on most benchmarks (MMLU 70.6), Apache-2.0, 32K context. Proved open MoE viable and kicked off the MoE wave.",
       "status": "historic"
@@ -432,8 +425,7 @@
       "benchmarks": {
         "MMLU": 82,
         "HumanEval": 87.2,
-        "MATH": 70.2,
-        "AA-Index": 7
+        "MATH": 70.2
       },
       "notable": "Cheap, fast model that replaced GPT-3.5 Turbo; OpenAI retires it from the API on Jan 14, 2027.",
       "status": "historic"
@@ -450,8 +442,7 @@
       "benchmarks": {
         "GPQA Diamond": 73.3,
         "AIME": 56.7,
-        "MATH": 85.5,
-        "AA-Index": 11
+        "MATH": 85.5
       },
       "notable": "Launched the inference-time-compute 'reasoning' paradigm (long internal chain-of-thought via RL); AIME jumped from GPT-4o's ~12% to 56.7% solo (83% w/ consensus). First of the o-series.",
       "status": "historic"
@@ -467,8 +458,7 @@
       "milestone": false,
       "benchmarks": {
         "AIME": 70,
-        "MATH": 90,
-        "AA-Index": 10
+        "MATH": 90
       },
       "notable": "Smaller, ~80% cheaper reasoning model specialized for STEM/coding; competitive with full o1 on AIME (70.0% vs 74.4%) despite less world knowledge.",
       "status": "historic"
@@ -485,8 +475,7 @@
       "benchmarks": {
         "GPQA Diamond": 78,
         "AIME": 74.4,
-        "MATH": 94.8,
-        "AA-Index": 15
+        "MATH": 94.8
       },
       "notable": "Full o1 GA (with o1 pro mode) during '12 Days of OpenAI'; exceeded human PhD-level on GPQA Diamond (78%), ~89th-percentile Codeforces. Cemented the reasoning era.",
       "status": "historic"
@@ -504,8 +493,7 @@
         "MMLU": 86.8,
         "GPQA Diamond": 50.4,
         "MATH": 60.1,
-        "HumanEval": 84.9,
-        "AA-Index": 9
+        "HumanEval": 84.9
       },
       "notable": "Anthropic's first model to credibly match/beat GPT-4-class on most benchmarks; flagship of the Claude 3 family, added vision, 200K context.",
       "status": "historic"
@@ -522,8 +510,7 @@
       "benchmarks": {
         "MMLU": 79,
         "GPQA Diamond": 40.4,
-        "HumanEval": 73,
-        "AA-Index": 6
+        "HumanEval": 73
       },
       "notable": "Mid-tier balanced model of the Claude 3 launch; 2x faster than Opus at lower cost.",
       "status": "historic"
@@ -540,8 +527,7 @@
       "benchmarks": {
         "MMLU": 75.2,
         "GPQA Diamond": 33.3,
-        "HumanEval": 75.9,
-        "AA-Index": 6
+        "HumanEval": 75.9
       },
       "notable": "Fastest/cheapest Claude 3 tier; near-instant responses with vision, the budget option in the family.",
       "status": "historic"
@@ -593,8 +579,7 @@
       "milestone": false,
       "benchmarks": {
         "SWE-bench Verified": 40.6,
-        "HumanEval": 88.1,
-        "AA-Index": 9
+        "HumanEval": 88.1
       },
       "notable": "Fast/cheap model that matched the original Claude 3 Opus on many coding tasks; SWE-bench Verified 40.6%.",
       "status": "historic"
@@ -646,8 +631,7 @@
       "benchmarks": {
         "MMLU": 76.4,
         "GPQA Diamond": 65.2,
-        "MATH": 89.7,
-        "AA-Index": 9
+        "MATH": 89.7
       },
       "notable": "First Gemini 2.0 model (experimental); ~2x faster than 1.5 Pro while beating it, added native tool use, native image+audio generation, and an agentic 'Multimodal Live' API.",
       "status": "historic"
@@ -664,8 +648,7 @@
       "benchmarks": {
         "MMLU": 66.6,
         "HumanEval": 62.2,
-        "MATH": 30,
-        "AA-Index": 5
+        "MATH": 30
       },
       "notable": "Small open-weights model trained on 15T tokens; punched well above its size class and became a fine-tuning default.",
       "status": "historic"
@@ -683,8 +666,7 @@
         "MMLU": 79.5,
         "HumanEval": 81.7,
         "MATH": 50.4,
-        "GPQA Diamond": 39.5,
-        "AA-Index": 5
+        "GPQA Diamond": 39.5
       },
       "notable": "Open 70B that closed much of the gap to GPT-4-class on knowledge; relaunched Meta's open-weights leadership. Limited 8K context.",
       "status": "historic"
@@ -702,8 +684,7 @@
         "MMLU": 88.6,
         "GPQA Diamond": 51.1,
         "HumanEval": 89,
-        "MATH": 73.8,
-        "AA-Index": 7
+        "MATH": 73.8
       },
       "notable": "First openly available model to rival GPT-4o/Claude 3.5 Sonnet at the frontier; 405B dense, expanded all Llama 3.1 sizes to 128K context.",
       "status": "historic"
@@ -721,8 +702,7 @@
         "MMLU": 86,
         "HumanEval": 80.5,
         "MATH": 68,
-        "GPQA Diamond": 46.7,
-        "AA-Index": 7
+        "GPQA Diamond": 46.7
       },
       "notable": "Llama 3 70B refreshed with 128K context and big gains; strong open mid-size workhorse.",
       "status": "historic"
@@ -740,8 +720,7 @@
         "MMLU": 86,
         "GPQA Diamond": 50.5,
         "HumanEval": 88.4,
-        "MATH": 77,
-        "AA-Index": 8
+        "MATH": 77
       },
       "notable": "Stealth-dropped on Hugging Face; delivered near-405B quality at 70B size/cost, beating Claude 3 Opus on 5/6 major benchmarks.",
       "status": "historic"
@@ -758,8 +737,7 @@
       "benchmarks": {
         "MMLU": 78.5,
         "HumanEval": 81.1,
-        "MATH": 43.6,
-        "AA-Index": 6
+        "MATH": 43.6
       },
       "notable": "Introduced Multi-head Latent Attention (MLA) + fine-grained MoE for radically cheap inference (21B of 236B active); triggered China's LLM price war.",
       "status": "historic"
@@ -795,8 +773,7 @@
         "MMLU": 84.2,
         "HumanEval": 64.6,
         "MATH": 59.7,
-        "GPQA Diamond": 37.9,
-        "AA-Index": 6
+        "GPQA Diamond": 37.9
       },
       "notable": "Strong open dense 72B with 128K context and broad multilingual coverage; topped open-model leaderboards mid-2024.",
       "status": "historic"
@@ -814,8 +791,7 @@
         "MMLU": 86.1,
         "MATH": 83.1,
         "HumanEval": 86.6,
-        "GPQA Diamond": 49,
-        "AA-Index": 8
+        "GPQA Diamond": 49
       },
       "notable": "Flagship of a huge Qwen2.5 family (0.5B–72B, plus Coder/Math); trained on 18T tokens, big math/coding jump (MATH 69→83), became the leading open base for fine-tunes.",
       "status": "historic"
@@ -866,8 +842,7 @@
       "milestone": false,
       "benchmarks": {
         "GPQA Diamond": 79.7,
-        "AIME": 87.3,
-        "AA-Index": 12
+        "AIME": 87.3
       },
       "notable": "Cost-efficient STEM reasoning model; o1-level reasoning at medium effort for a fraction of the cost. AIME is AIME 2024; GPQA is high-effort GPQA Diamond.",
       "status": "historic"
@@ -911,8 +886,7 @@
       "open": false,
       "milestone": true,
       "benchmarks": {
-        "SWE-bench Verified": 70.3,
-        "AA-Index": 18
+        "SWE-bench Verified": 70.3
       },
       "notable": "First Anthropic hybrid reasoning model (toggleable extended thinking) and launched alongside Claude Code. SWE-bench Verified ~62-70% (70.3% with custom scaffold); set the template for the agentic-coding era. 128K output in extended-thinking mode.",
       "status": "historic"
@@ -928,8 +902,7 @@
       "milestone": false,
       "benchmarks": {
         "GPQA Diamond": 84.6,
-        "AIME": 93.3,
-        "AA-Index": 12
+        "AIME": 93.3
       },
       "notable": "Trained on the Colossus ~100-200k GPU cluster; 'Think' reasoning mode plus DeepSearch agent. GPQA Diamond 84.6 and AIME 2025 93.3 with cons@64 test-time compute.",
       "status": "historic"
@@ -946,8 +919,7 @@
       "benchmarks": {
         "GPQA Diamond": 84,
         "AIME": 86.7,
-        "HLE": 18.8,
-        "AA-Index": 16
+        "HLE": 18.8
       },
       "notable": "Native 'thinking' model with a 1M-token context that topped LMArena at launch and led math/science benchmarks. SOTA 18.8% on Humanity's Last Exam (no tools) at release. AIME=AIME 2025.",
       "status": "historic"
@@ -962,7 +934,6 @@
       "open": true,
       "milestone": true,
       "benchmarks": {
-        "AA-Index": 6,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "notable": "First natively-multimodal MoE Llama; 10M-token context was the largest of any open model at launch. Released under the Llama 4 community license (open weights, not OSI-open).",
@@ -978,7 +949,6 @@
       "open": true,
       "milestone": false,
       "benchmarks": {
-        "AA-Index": 9,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "notable": "Distilled from a ~288B-active 'Behemoth' teacher; pitched as beating GPT-4o and Gemini 2.0 Flash and rivaling DeepSeek V3 on reasoning/coding at far fewer active params. The flagship Behemoth never shipped in 2025.",
@@ -996,8 +966,7 @@
       "benchmarks": {
         "GPQA Diamond": 87.7,
         "SWE-bench Verified": 71.7,
-        "AIME": 98.4,
-        "AA-Index": 20
+        "AIME": 98.4
       },
       "notable": "First OpenAI reasoning model that uses tools (web, Python, vision) inside the chain of thought — the agentic-reasoning template. AIME 2025 98.4% pass@1 with tools; Codeforces ~2727 Elo.",
       "status": "historic"
@@ -1012,8 +981,7 @@
       "open": false,
       "milestone": false,
       "benchmarks": {
-        "AIME": 99.5,
-        "AA-Index": 17
+        "AIME": 99.5
       },
       "notable": "Small, cheap tool-using reasoner; best-in-class AIME (99.5% with a Python interpreter on AIME 2025). First model in the 'o4' line.",
       "status": "historic"
@@ -1075,8 +1043,7 @@
       "milestone": false,
       "benchmarks": {
         "GPQA Diamond": 81,
-        "AIME": 87.5,
-        "AA-Index": 13
+        "AIME": 87.5
       },
       "notable": "Major refresh of R1: AIME 2025 jumped 70.0 -> 87.5, GPQA 71.5 -> 81.0, fewer hallucinations, plus JSON/function-calling. Brought the leading open model up to date with Google/OpenAI. Open weights (MIT).",
       "status": "historic"
@@ -1093,8 +1060,7 @@
       "benchmarks": {
         "GPQA Diamond": 87.7,
         "AIME": 94.3,
-        "HLE": 23.9,
-        "AA-Index": 22
+        "HLE": 23.9
       },
       "notable": "Trained on the 200k-GPU Colossus cluster with ~100x Grok 2 compute. Native tool-use reasoning; Grok 4 Heavy (multi-agent) pushed HLE to ~44% with tools. AIME 2025 ~92-100%. Briefly the AA Intelligence Index leader at launch.",
       "status": "historic"
@@ -1112,8 +1078,7 @@
         "SWE-bench Verified": 74.9,
         "GPQA Diamond": 88.4,
         "AIME": 94.6,
-        "HLE": 42,
-        "AA-Index": 23
+        "HLE": 42
       },
       "notable": "Unified system with an automatic router between a fast model and a 'thinking' reasoning model; ships as gpt-5 / mini / nano / pro. 400K total context (272K input). SWE-bench Verified ~74.9%; HLE ~42% (GPT-5 Pro, with tools). Frontier leader on the AA Intelligence Index at launch.",
       "status": "historic"
@@ -1127,9 +1092,7 @@
       "modality": "text",
       "open": true,
       "milestone": false,
-      "benchmarks": {
-        "AA-Index": 14
-      },
+      "benchmarks": {},
       "notable": "Hybrid model fusing V3 (direct) and R1 (chain-of-thought) into one — thinking/non-thinking via chat template. Open weights; a step toward DeepSeek's single-model agentic line. (V3 base launched 2024-12-26.)",
       "status": "historic"
     },
@@ -1142,9 +1105,7 @@
       "modality": "multimodal, router + reasoning",
       "open": false,
       "milestone": false,
-      "benchmarks": {
-        "AA-Index": 25
-      },
+      "benchmarks": {},
       "notable": "Refresh of GPT-5: GPT-5.1 Instant + GPT-5.1 Thinking, 'warmer' default personality and 8 selectable personalities. API Nov 13; additional variants Nov 19.",
       "status": "historic"
     },
@@ -1173,8 +1134,7 @@
       "modality": "text + image in, text out (agentic coding)",
       "open": false,
       "benchmarks": {
-        "SWE-bench Pro": 56.8,
-        "AA-Index": 33
+        "SWE-bench Pro": 56.8
       },
       "milestone": false,
       "notable": "Flagship Codex model; ~25% faster than its predecessor, fed coding gains into the later GPT-5.4 general model. A Spark variant shipped with a 128K window.",
@@ -1190,7 +1150,6 @@
       "modality": "multimodal text/image, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 39,
         "SWE-bench Pro": 57.7,
         "GPQA Diamond": 92.8
       },
@@ -1208,7 +1167,6 @@
       "modality": "multimodal, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 38,
         "Terminal-Bench 2.0": 82.7,
         "FrontierMath T1-3": 51.7,
         "FrontierMath T4": 35.4
@@ -1241,7 +1199,6 @@
       "modality": "multimodal, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 32,
         "SWE-bench Verified": 80.8,
         "SWE-bench Pro": 51.9,
         "GPQA Diamond": 91.3
@@ -1263,8 +1220,7 @@
         "SWE-bench Verified": 79.6,
         "Terminal-Bench 2.0": 59.1,
         "OSWorld": 72.5,
-        "ARC-AGI-2": 58.3,
-        "AA-Index": 30
+        "ARC-AGI-2": 58.3
       },
       "milestone": false,
       "notable": "Mid-tier workhorse within 1-2 pts of Opus 4.6 on SWE-bench at a fraction of cost; 4.3x jump on ARC-AGI-2 vs Sonnet 4.5. Users preferred it to Opus 4.5 59% of the time. $3/$15.",
@@ -1280,7 +1236,6 @@
       "modality": "multimodal, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 41,
         "SWE-bench Verified": 87.6,
         "SWE-bench Pro": 64.3,
         "GPQA Diamond": 94.2
@@ -1299,7 +1254,6 @@
       "modality": "multimodal, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 42,
         "SWE-bench Verified": 88.6,
         "SWE-bench Pro": 69.2,
         "GPQA Diamond": 93.6,
@@ -1338,8 +1292,7 @@
       "open": false,
       "benchmarks": {
         "SWE-bench Verified": 95,
-        "SWE-bench Pro": 80.3,
-        "AA-Index": 50
+        "SWE-bench Pro": 80.3
       },
       "milestone": true,
       "notable": "Mythos-class GA model, top reported SWE-bench Verified of the cycle (~95%). PULLED worldwide Jun 12 2026 by a US Commerce export-control order, then fully cleared Jun 30 and reinstated Jul 1. Held #1 on the Artificial Analysis Intelligence Index at 60-62 (v4.1) through the summer before Claude Opus 5 passed it at 63 on Aug 8. SUPERSEDED Sep 1 2026 by Claude Fable 5.1, which scores 66 at max effort and roughly doubles it on the newer agentic evals (Terminal-Bench 4.0 55.8% vs 42.0%, AutomationBench 31.4% vs 17.1%). Still available at $10/$50, but Fable 5.1 carries the same headline price with cache reads cut 75%. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
@@ -1372,7 +1325,6 @@
       "modality": "natively multimodal (text/audio/image/video/code), text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 30,
         "SWE-bench Verified": 80.6,
         "GPQA Diamond": 94.3,
         "HLE": 51.4,
@@ -1391,9 +1343,7 @@
       "context": "1M",
       "modality": "multimodal (text/image/speech/video), text out",
       "open": false,
-      "benchmarks": {
-        "AA-Index": 26
-      },
+      "benchmarks": {},
       "milestone": false,
       "notable": "Pro-grade reasoning at Flash speed/cost. Non-reasoning AA Index 35. Line later iterated to Gemini 3.5 Flash (AA 50, May 19 2026) and 3.1 Flash-Lite (AA 25, Mar 3 2026). $0.50/$3. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
       "pricing": "$0.50 in / $3 out per 1M",
@@ -1424,9 +1374,7 @@
       "context": "unknown",
       "modality": "multimodal, text out",
       "open": false,
-      "benchmarks": {
-        "AA-Index": 26
-      },
+      "benchmarks": {},
       "milestone": false,
       "notable": "Rapid-learning beta line; 'Beta 2' (Mar 3) fixed instruction-following, hallucinations, LaTeX, image search. Reasoning variant (0309 v2, Apr 7) scored 49 on the AA Index. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
       "pricing": "",
@@ -1440,9 +1388,7 @@
       "context": "1M",
       "modality": "multimodal incl. native video input, text out",
       "open": false,
-      "benchmarks": {
-        "AA-Index": 25
-      },
+      "benchmarks": {},
       "milestone": false,
       "notable": "xAI's 'cheap frontier' play: AA Index 53 (below GPT-5.5/Gemini 3.1 Pro) but aggressively priced at $1.25/$2.50 with native video and 1M context. Beta Apr 17, public API Apr 30, GA early May. (Index scores quoted here predate Artificial Analysis's Sep 22 2026 re-version to v4.3, which re-scored every model; the AA-Index shown with this model is its current v4.3 score.)",
       "pricing": "$1.25 in / $2.50 out per 1M",
@@ -1459,8 +1405,7 @@
       "benchmarks": {
         "GPQA Diamond": 68,
         "MMLU-Pro": 80.7,
-        "MATH-500": 93.6,
-        "AA-Index": 9
+        "MATH-500": 93.6
       },
       "milestone": false,
       "notable": "Released Dec 2025 (BEFORE the window) but the active flagship through 2026. 675B Apache-2.0 open-weight MoE, very cheap at $0.50/$1.50. Ministral 3 (3B/8B/14B) small siblings shipped alongside.",
@@ -1490,7 +1435,6 @@
       "modality": "natively multimodal (first Qwen open model with native vision), text out",
       "open": true,
       "benchmarks": {
-        "AA-Index": 21,
         "SWE-bench Verified": 76.4,
         "GPQA Diamond": 88.4,
         "MMLU-Pro": 87.8,
@@ -1511,7 +1455,6 @@
       "modality": "text, text out (agentic coding-first)",
       "open": true,
       "benchmarks": {
-        "AA-Index": 26,
         "SWE-bench Verified": 79,
         "Terminal-Bench 4.0 (AA)": 1.0
       },
@@ -1529,7 +1472,7 @@
       "modality": "text, text out",
       "open": true,
       "benchmarks": {
-        "AA-Index": 23,
+        "AA-Index": 12,
         "SWE-bench Verified": 73,
         "Terminal-Bench 4.0 (AA)": 0.5
       },
@@ -1580,7 +1523,6 @@
       "modality": "voice/text/image in, text out (natively multimodal reasoning)",
       "open": false,
       "benchmarks": {
-        "AA-Index": 31,
         "HealthBench Hard": 42.8,
         "HLE": 50.2
       },
@@ -1598,7 +1540,6 @@
       "modality": "text, text out (agentic)",
       "open": true,
       "benchmarks": {
-        "AA-Index": 28,
         "SWE-bench Verified": 77.8,
         "HLE": 50.4
       },
@@ -1620,7 +1561,6 @@
         "HLE": 54.7,
         "Terminal-Bench 2.1": 82.7,
         "AIME": 99.2,
-        "AA-Index": 34,
         "SWE-bench Verified": 79
       },
       "milestone": false,
@@ -1637,7 +1577,6 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 30,
         "SWE-bench Verified": 80
       },
       "milestone": true,
@@ -1656,9 +1595,7 @@
       "context": "1M",
       "modality": "text",
       "open": true,
-      "benchmarks": {
-        "AA-Index": 24
-      },
+      "benchmarks": {},
       "milestone": false,
       "status": "superseded",
       "notable": "Small, fast sibling to V4-Pro: 284B total / 13B active MoE, 1M-token default context, 384K max output, same Compressed-Sparse/Heavily-Compressed attention for cheap long-context inference. Open weights. Reached stable GA Jul 19 2026 alongside V4-Pro (exiting preview); the retiring deepseek-chat/deepseek-reasoner aliases resolved here during the preview window. Positioned as DeepSeek's high-volume budget tier against Gemini 3.x Flash and Qwen small models.",
@@ -1694,8 +1631,7 @@
       "open": false,
       "benchmarks": {
         "HealthBench": 57.0,
-        "HealthBench Hard": 33.1,
-        "AA-Index": 47
+        "HealthBench Hard": 33.1
       },
       "milestone": true,
       "status": "live",
@@ -1717,8 +1653,7 @@
       "open": false,
       "benchmarks": {
         "SWE-bench Pro": 63.2,
-        "Terminal-Bench 2.1": 80.4,
-        "AA-Index": 38
+        "Terminal-Bench 2.1": 80.4
       },
       "milestone": false,
       "status": "live",
@@ -1742,7 +1677,6 @@
         "SWE-bench Pro": 59.5,
         "Terminal-Bench 2.1": 70.8,
         "SWE-bench Multilingual": 77.3,
-        "AA-Index": 19,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": true,
@@ -1767,8 +1701,7 @@
         "Terminal-Bench 2.1": 76.2,
         "SWE-bench Pro": 55.1,
         "MCP Atlas": 83.6,
-        "CharXiv Reasoning": 84.2,
-        "AA-Index": 34
+        "CharXiv Reasoning": 84.2
       },
       "milestone": false,
       "status": "superseded",
@@ -1787,7 +1720,6 @@
       "modality": "multimodal (text + vision), text out, reasoning",
       "open": false,
       "benchmarks": {
-        "AA-Index": 39,
         "SWE-bench Pro": 64.7,
         "Terminal-Bench 2.1": 83.3,
         "DeepSWE 1.0": 62.0
@@ -1816,7 +1748,6 @@
         "GPQA Diamond": 90.4,
         "Terminal-Bench 2.1": 71.7,
         "USAMO 2026": 72.0,
-        "AA-Index": 25,
         "Terminal-Bench 4.0 (AA)": 0.5
       },
       "milestone": false,
@@ -1838,7 +1769,6 @@
       "open": false,
       "benchmarks": {
         "Terminal-Bench 2.1": 84.3,
-        "AA-Index": 42,
         "Terminal-Bench 4.0 (AA)": 35.4
       },
       "milestone": false,
@@ -1859,8 +1789,7 @@
       "modality": "multimodal, text out (reasoning)",
       "open": false,
       "benchmarks": {
-        "Terminal-Bench 2.1": 82.5,
-        "AA-Index": 37
+        "Terminal-Bench 2.1": 82.5
       },
       "milestone": false,
       "status": "live",
@@ -1902,8 +1831,7 @@
       "benchmarks": {
         "HLE": 62.1,
         "SWE-bench Pro": 61.5,
-        "MCP Atlas": 88.1,
-        "AA-Index": 34
+        "MCP Atlas": 88.1
       },
       "milestone": false,
       "status": "live",
@@ -1930,7 +1858,7 @@
         "HLE": 46.0,
         "Terminal-Bench 2.1": 63.8,
         "SimpleQA Verified": 43.9,
-        "AA-Index": 25,
+        "AA-Index": 12,
         "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": true,
@@ -1952,7 +1880,7 @@
       "open": true,
       "benchmarks": {
         "SWE-bench Pro": 59.0,
-        "AA-Index": 29,
+        "AA-Index": 19,
         "Terminal-Bench 4.0 (AA)": 2.0
       },
       "milestone": false,
@@ -1979,7 +1907,6 @@
         "HLE": 43.5,
         "SWE-bench (DeepSWE)": 67.5,
         "BrowseComp": 91.2,
-        "AA-Index": 44,
         "Terminal-Bench 4.0 (AA)": 12.6
       },
       "milestone": true,
@@ -2003,8 +1930,7 @@
       "benchmarks": {
         "OSWorld-Verified": 83.0,
         "MLE-bench": 63.9,
-        "GDPval-AA v2": 1421,
-        "AA-Index": 34
+        "GDPval-AA v2": 1421
       },
       "milestone": false,
       "status": "live",
@@ -2028,7 +1954,7 @@
         "Terminal-Bench 2.1": 54.0,
         "SWE-bench Pro": 54.2,
         "OSWorld-Verified": 74.0,
-        "AA-Index": 22,
+        "AA-Index": 12,
         "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
@@ -2068,7 +1994,6 @@
       "open": false,
       "benchmarks": {
         "SWE-bench Pro": 79.2,
-        "AA-Index": 51,
         "Terminal-Bench 2.1": 89
       },
       "milestone": true,
@@ -2165,9 +2090,7 @@
       "context": "262K",
       "modality": "Text",
       "open": false,
-      "benchmarks": {
-        "AA-Index": 20
-      },
+      "benchmarks": {},
       "milestone": false,
       "status": "preview",
       "notable": "Ant Group's efficiency play from its inclusionAI lab — a hybrid-reasoning MoE with a thinking/non-thinking toggle, 124B total but only ~5.1B active per token, built on a hybrid-linear attention stack mixing Kimi Delta Attention and Multi-head Latent Attention layers at a 5:1 ratio. 262K native context with 1M stated as the scaling target. Ant claims it matches or beats its own ~1T Ling-2.6 flagship on most benchmarks at 1/8 the total and 1/12 the active parameters, but published no benchmark table or technical report. Announced as Apache 2.0, yet no weights were posted to the inclusionAI Hugging Face org as of Jul 26 — so it is endpoint-only today, free through Aug 3 2026 via OpenRouter (hosted by Novita), Vercel AI Gateway and ZenMux. Surfaced on inference endpoints before Ant announced it.",
@@ -2224,7 +2147,6 @@
       "open": false,
       "benchmarks": {
         "MMLU-Pro": 75.9,
-        "AA-Index": 6,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -2331,7 +2253,6 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 34,
         "Terminal-Bench 2.1": 82.7,
         "DeepSWE": 54.4,
         "CyberGym": 76.7
@@ -2358,8 +2279,7 @@
         "AIME 2026": 92.3,
         "GPQA Diamond": 82.2,
         "SWE-bench Verified": 68.2,
-        "OpenAI-MRCR": 94.4,
-        "AA-Index": 20
+        "OpenAI-MRCR": 94.4
       },
       "milestone": false,
       "status": "live",
@@ -2384,7 +2304,6 @@
         "OSWorld-Verified": 86.1,
         "SWE-bench Pro": 67.7,
         "DeepSWE 1.1": 56.6,
-        "AA-Index": 40,
         "PaperBench": 93.0,
         "HLE": 43.6
       },
@@ -2408,7 +2327,7 @@
       "modality": "natively multimodal (text, image, audio in; text out)",
       "open": true,
       "benchmarks": {
-        "AA-Index": 26,
+        "AA-Index": 13,
         "GPQA Diamond": 89.5,
         "AIME 2026": 95.5,
         "SWE-bench Verified": 80.2,
@@ -2437,7 +2356,6 @@
       "modality": "multimodal (text, image, video, audio, PDF in; text out)",
       "open": false,
       "benchmarks": {
-        "AA-Index": 40,
         "Terminal-Bench 2.1": 82.9,
         "DeepSWE 1.1": 59.3
       },
@@ -2460,7 +2378,6 @@
       "modality": "Text",
       "open": false,
       "benchmarks": {
-        "AA-Index": 11,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -2483,8 +2400,7 @@
       "benchmarks": {
         "ToolSandbox": 77.83,
         "Multi-IF": 80.07,
-        "IFStruct": 85.49,
-        "AA-Index": 8
+        "IFStruct": 85.49
       },
       "milestone": false,
       "status": "live",
@@ -2621,7 +2537,7 @@
         "MMMU-Pro": 74,
         "MCP Atlas": 75.5,
         "DeepSearch QA": 74.6,
-        "AA-Index": 17,
+        "AA-Index": 6,
         "Terminal-Bench 4.0 (AA)": 0.5
       },
       "milestone": false,
@@ -2681,7 +2597,6 @@
       "open": true,
       "benchmarks": {
         "PinchBench": 86,
-        "AA-Index": 13,
         "Terminal-Bench 4.0 (AA)": 0.5
       },
       "milestone": false,
@@ -2702,7 +2617,6 @@
       "modality": "multimodal (text + image in), text out, reasoning",
       "open": false,
       "benchmarks": {
-        "AA-Index": 44,
         "DeepSWE 1.1": 65.9,
         "Terminal-Bench 3.0": 26.0
       },
@@ -2726,7 +2640,7 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 36,
+        "AA-Index": 23,
         "Terminal-Bench 2.1": 87.9,
         "DeepSWE": 62.7,
         "SWE-bench Verified": 80.6,
@@ -2758,7 +2672,6 @@
       "modality": "natively multimodal (text/image/audio/video/PDF in), text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 40,
         "DeepSWE 1.1": 65.3,
         "FrontierCode 1.1 Main": 43.6,
         "WebDev Arena (Elo)": 1588,
@@ -2797,7 +2710,6 @@
         "PLawBench": 73.2,
         "MRCR v2 256K (8-needle)": 92.9,
         "LongBench v2": 66.3,
-        "AA-Index": 40,
         "Terminal-Bench 4.0 (AA)": 11.1
       },
       "milestone": true,
@@ -2824,7 +2736,7 @@
         "Agents' Last Exam": 28.5,
         "CyberGym": 84.5,
         "ExploitBench": 54.4,
-        "AA-Index": 45,
+        "AA-Index": 32,
         "Terminal-Bench 4.0 (AA)": 41.9
       },
       "milestone": false,
@@ -2877,7 +2789,7 @@
         "MathVision": 94.6,
         "SWE-MM": 38.6,
         "Agents' Last Exam": 20.4,
-        "AA-Index": 34,
+        "AA-Index": 20,
         "Terminal-Bench 4.0 (AA)": 5.6
       },
       "milestone": false,
@@ -2899,7 +2811,6 @@
       "modality": "natively multimodal (text + image + video in), text out",
       "open": true,
       "benchmarks": {
-        "AA-Index": 42,
         "Terminal-Bench 2.1": 84.3,
         "DeepSWE 1.1": 63.4,
         "Z.ai Code Bench 1.0": 29.0,
@@ -2931,7 +2842,6 @@
         "IFBench": 81.3,
         "AndroidWorld": 84.5,
         "RealWorldQA": 88.5,
-        "AA-Index": 40,
         "Terminal-Bench 4.0 (AA)": 25.3
       },
       "milestone": false,
@@ -3025,7 +2935,6 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 13,
         "SWE-bench Verified": 57.0,
         "Terminal-Bench 2.1": 29.24,
         "MMLU-Pro": 77.6,
@@ -3049,7 +2958,6 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 11,
         "SWE-bench Verified": 47.67,
         "Terminal-Bench 2.1": 20.56,
         "MMLU-Pro": 74.04,
@@ -3116,7 +3024,6 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 9,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -3140,7 +3047,6 @@
         "Finance Agent v2": 59.8,
         "APEX-Agents": 29.2,
         "SpreadsheetBench 2": 21.8,
-        "AA-Index": 23,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -3162,7 +3068,6 @@
       "modality": "Text + vision",
       "open": false,
       "benchmarks": {
-        "AA-Index": 26,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -3184,7 +3089,6 @@
       "modality": "Text",
       "open": false,
       "benchmarks": {
-        "AA-Index": 27,
         "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
@@ -3205,7 +3109,7 @@
       "modality": "multimodal in, text out, adaptive reasoning with low/medium/high/xhigh/max effort",
       "open": false,
       "benchmarks": {
-        "AA-Index": 53,
+        "AA-Index": 50,
         "Terminal-Bench 4.0": 55.8,
         "Terminal-Bench-Science 0.1": 52.6,
         "CursorBench 3.2.0": 73.4,
@@ -3289,7 +3193,7 @@
       "modality": "multimodal in, text out, configurable reasoning effort (low/medium/high)",
       "open": false,
       "benchmarks": {
-        "AA-Index": 41,
+        "AA-Index": 31,
         "DeepSWE 1.1": 73.7,
         "HLE-Verified": 54.9,
         "Tau-3 Banking (tool use)": 45,
@@ -3344,7 +3248,6 @@
         "AutomationBench": 49.4,
         "DeepSearch QA": 89.4,
         "MRCR v2 256K (8-needle)": 98.5,
-        "AA-Index": 48,
         "GPQA Diamond": 94.0,
         "CritPt": 26.0,
         "Terminal-Bench 4.0 (AA)": 33.3
@@ -3401,7 +3304,7 @@
         "Toolathlon-Verified": 73.3,
         "MMMU-Pro": 82.7,
         "Code Arena WebDev (Elo)": 1691,
-        "AA-Index": 45,
+        "AA-Index": 34,
         "Terminal-Bench 4.0 (AA)": 38.9
       },
       "milestone": false,
@@ -3428,7 +3331,7 @@
         "ARC-AGI-3": 62.7,
         "DeepSWE 1.1": 74.1,
         "ExploitBench": 100.0,
-        "AA-Index": 53,
+        "AA-Index": 57,
         "Coding Agent Index": 67,
         "ARC-AGI-3 (provider adapter)": 99.9,
         "Terminal-Bench 4.0 (AA)": 59.6
@@ -3454,7 +3357,7 @@
       "modality": "text in, text out; reasoning model with extended chain-of-thought",
       "open": true,
       "benchmarks": {
-        "AA-Index": 31,
+        "AA-Index": 18,
         "Terminal-Bench 4.0 (AA)": 1.5
       },
       "milestone": true,
@@ -3536,7 +3439,6 @@
         "GPQA Diamond": 90.9,
         "Terminal-Bench 2.1": 90.6,
         "Codeforces rating": 3471,
-        "AA-Index": 39,
         "Terminal-Bench 4.0 (AA)": 26.8
       },
       "milestone": false,
@@ -3558,7 +3460,6 @@
       "modality": "text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 12,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -3812,7 +3713,7 @@
       "benchmarks": {
         "SciCode": 58.9,
         "AA-LCR": 88.3,
-        "AA-Index": 44,
+        "AA-Index": 29,
         "Terminal-Bench 4.0 (AA)": 33.3
       },
       "milestone": false,
@@ -3880,9 +3781,7 @@
       "context": "unknown",
       "modality": "multimodal in, text out, reasoning",
       "open": false,
-      "benchmarks": {
-        "AA-Index": 48
-      },
+      "benchmarks": {},
       "milestone": false,
       "status": "live",
       "pricing": "$2 in / $10 out per 1M",
@@ -3902,7 +3801,7 @@
       "modality": "multimodal in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 38,
+        "AA-Index": 28,
         "Terminal-Bench 4.0 (AA)": 12.6
       },
       "milestone": false,
@@ -3932,7 +3831,7 @@
         "AA-Briefcase 1.1": 1657,
         "HealthBench Professional": 56.7,
         "Coding Agent Index": 56,
-        "AA-Index": 46,
+        "AA-Index": 35,
         "Terminal-Bench 4.0 (AA)": 25.8
       },
       "milestone": false,
@@ -3956,7 +3855,7 @@
       "modality": "omnimodal in, text out, reasoning",
       "open": true,
       "benchmarks": {
-        "AA-Index": 46,
+        "AA-Index": 30,
         "Terminal-Bench 4.0 (AA)": 34.8
       },
       "milestone": false,
@@ -3977,7 +3876,7 @@
       "modality": "omnimodal in (text, image, video, audio), text out, reasoning",
       "open": true,
       "benchmarks": {
-        "AA-Index": 38,
+        "AA-Index": 27,
         "Terminal-Bench 4.0 (AA)": 22.7
       },
       "milestone": false,
@@ -4032,7 +3931,6 @@
       "modality": "text, reasoning",
       "open": false,
       "benchmarks": {
-        "AA-Index": 24,
         "Terminal-Bench 4.0 (AA)": 1.0
       },
       "milestone": false,
@@ -4151,7 +4049,7 @@
         "HLE (with tools)": 64.5,
         "OSWorld 2.1 (partial)": 80.1,
         "Chartography": 61.6,
-        "AA-Index": 56,
+        "AA-Index": 54,
         "Terminal-Bench 4.0 (AA)": 63.6
       },
       "milestone": false,
@@ -4174,7 +4072,7 @@
       "modality": "multimodal in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 52,
+        "AA-Index": 55,
         "Terminal-Bench 4.0 (AA)": 56.1
       },
       "milestone": false,
@@ -4196,7 +4094,7 @@
       "open": false,
       "benchmarks": {
         "Terminal-Bench 4.0": 57.4,
-        "AA-Index": 53,
+        "AA-Index": 50,
         "DeepSWE 1.1": 77.9,
         "Terminal-Bench 4.0 (AA)": 57.1
       },
@@ -4295,7 +4193,6 @@
         "GDPval-AA 2.1": 1673,
         "FrontierSWE": 75.16,
         "HealthBench Professional": 65.35,
-        "AA-Index": 41,
         "Terminal-Bench 4.0 (AA)": 33.3
       },
       "milestone": false,
@@ -4553,7 +4450,8 @@
       "benchmarks": {
         "Terminal-Bench 4.0": 28.3,
         "DeepSWE 1.1": 61.7,
-        "AutomationBench": 59.9
+        "AutomationBench": 59.9,
+        "AA-Index": 25
       },
       "milestone": false,
       "status": "preview",
@@ -4666,7 +4564,7 @@
         "OSWorld 2.1": 72.4,
         "FrontierCode 1.1": 46.4,
         "Chartography": 46.4,
-        "AA-Index": 43,
+        "AA-Index": 36,
         "Terminal-Bench 4.0 (AA)": 32.8
       },
       "milestone": false,
@@ -4934,7 +4832,7 @@
       "modality": "Text, image, audio, video in",
       "open": false,
       "benchmarks": {
-        "AA-Index": 52,
+        "AA-Index": 43,
         "Terminal-Bench 4.0 (AA)": 52.0
       },
       "milestone": true,
@@ -4962,7 +4860,7 @@
         "AutomationBench": 45.4,
         "SWE-Marathon": 57.5,
         "ProofBench": 94,
-        "AA-Index": 56,
+        "AA-Index": 50,
         "Terminal-Bench 4.0 (AA)": 57.1
       },
       "milestone": false,
@@ -5111,7 +5009,7 @@
       "modality": "Text, image, audio, video in",
       "open": true,
       "benchmarks": {
-        "AA-Index": 39,
+        "AA-Index": 25,
         "Terminal-Bench 4.0 (AA)": 8.1
       },
       "milestone": true,
@@ -5134,7 +5032,7 @@
       "benchmarks": {
         "GPQA Diamond": 89.5,
         "SWE-bench Verified": 71.1,
-        "AA-Index": 26,
+        "AA-Index": 14,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -5153,7 +5051,6 @@
       "modality": "Text",
       "open": true,
       "benchmarks": {
-        "AA-Index": 21,
         "Terminal-Bench 4.0 (AA)": 0.0
       },
       "milestone": false,
@@ -5210,7 +5107,7 @@
         "HLE": 42.6,
         "Terminal-Bench 4.0": 42.3,
         "DeepSWE 1.1": 77.0,
-        "AA-Index": 45,
+        "AA-Index": 32,
         "Terminal-Bench 4.0 (AA)": 33.8
       },
       "milestone": false,
@@ -5249,7 +5146,7 @@
       "open": true,
       "benchmarks": {
         "DeepSWE 1.1": 73.7,
-        "AA-Index": 43,
+        "AA-Index": 29,
         "Terminal-Bench 4.0 (AA)": 25.8
       },
       "milestone": false,
@@ -5394,7 +5291,7 @@
       "modality": "Text",
       "open": false,
       "benchmarks": {
-        "AA-Index": 44,
+        "AA-Index": 29,
         "Terminal-Bench 4.0 (AA)": 32.8
       },
       "milestone": false,
@@ -5448,7 +5345,7 @@
       "open": false,
       "benchmarks": {
         "Terminal-Bench 4.0": 65.7,
-        "AA-Index": 55,
+        "AA-Index": 46,
         "Terminal-Bench 4.0 (AA)": 67.2
       },
       "milestone": false,
@@ -5576,7 +5473,7 @@
       "modality": "text and image in, text out",
       "open": false,
       "benchmarks": {
-        "AA-Index": 48
+        "AA-Index": 51
       },
       "milestone": false,
       "status": "live",
@@ -5599,7 +5496,8 @@
         "ExploitGym": 54.8,
         "CWE-bench": 71.0,
         "FrontierSWE 2": 61.2,
-        "AutomationBench": 53.9
+        "AutomationBench": 53.9,
+        "AA-Index": 59
       },
       "milestone": true,
       "status": "preview",

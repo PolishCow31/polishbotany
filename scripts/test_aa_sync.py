@@ -80,9 +80,17 @@ out = case("off-scale LLM value corrected by --sync", PAGE, ["--sync"], 0, True,
 def phantom(tmp):
     set_models(tmp, lambda ms: ms.append({"name": "Totally Unlisted Model 9", "lab": "X", "status": "live", "benchmarks": {"AA-Index": 60}}))
 case("unlisted model keeps its value on --sync", PAGE, ["--sync"], 0, False, mutate=phantom)
-out = case("--rebase drops unlisted values (guarded)", PAGE, ["--rebase", "--dry-run"], 2, False, mutate=phantom)
-ok = "AA-SYNC REFUSED: would drop" in out
+out = case("--rebase drops unlisted values", PAGE, ["--rebase", "--dry-run"], 0, False, mutate=phantom)
+ok = any("Totally Unlisted Model 9" in l and "-> None" in l for l in out.splitlines())
 results.append(ok); print(f"[{'PASS' if ok else 'FAIL'}] --rebase plans to drop the unlisted value")
+# 7b. ...and past the drop guard it refuses. 60 phantoms clear max(5, 10%) for any column under ~540 values (Oct 28 2026:
+#     this used to lean on the stale keep-last values a fresh rebase no longer has).
+def phantoms(tmp):
+    set_models(tmp, lambda ms: ms.extend({"name": "Totally Unlisted Model %d" % i, "lab": "X", "status": "live",
+                                          "benchmarks": {"AA-Index": 60}} for i in range(60)))
+out = case("--rebase drop guard refuses a mass drop", PAGE, ["--rebase", "--dry-run"], 2, False, mutate=phantoms)
+ok = "AA-SYNC REFUSED: would drop" in out
+results.append(ok); print(f"[{'PASS' if ok else 'FAIL'}] --rebase mass drop names the refusal")
 # 8. a second AA-like key (would win benchOf's max) -> removed
 def stray(tmp):
     set_models(tmp, lambda ms: next(m for m in ms if m["name"] == "Claude Fable 5.1")["benchmarks"].__setitem__("AA Index (v4.1)", 66))
@@ -91,8 +99,8 @@ case("stray AA-like key removed", PAGE, ["--sync"], 0, True, mutate=stray)
 case("unpinned meta refuses --sync", PAGE, ["--sync"], 2, False, mutate=lambda t: set_meta(t, aaScale=None))
 # 10. page drops its version banner AND values shift massively -> treated as a rescale
 def shifted_page():
-    return PAGE.replace(BANNER, "Intelligence Index")
-NOVER_METH = METH.replace(BANNER, "Intelligence Index")
+    return A.VERSION_RE.sub("Intelligence Index", PAGE)
+NOVER_METH = A.VERSION_RE.sub("Intelligence Index", METH)   # every version: the page still names v4.3 as history (Oct 28)
 def inflate(tmp):
     set_models(tmp, lambda ms: [m["benchmarks"].__setitem__("AA-Index", m["benchmarks"]["AA-Index"] + 12)
                                 for m in ms if (m.get("benchmarks") or {}).get("AA-Index") is not None])
@@ -156,11 +164,12 @@ if not ONLY or "refusal_fix_commands" in ONLY:
         out = case("refusal_fix_commands", PAGE, ["--sync"], 2, False)
     finally:
         A.parse = real_parse
-    first = next(m for m in json.load(open(os.path.join(REAL, "models.json")))["models"]
-                 if (m.get("benchmarks") or {}).get("AA-Index") is not None)["name"]
+    valued = {m["name"] for m in json.load(open(os.path.join(REAL, "models.json")))["models"]
+              if (m.get("benchmarks") or {}).get("AA-Index") is not None}
     listed = out.split("Unmatched: ", 1)[1].split(". ", 1)[0] if "Unmatched: " in out else ""
+    names = listed.split(" (+")[0].split(", ")
     ok = ("If AA really renamed/delisted these: python3 scripts/aa_sync.py --sync --allow-drops" in out
-          and first in listed and len(listed.split(" (+")[0].split(", ")) == 20)
+          and len(names) == 20 and set(names) <= valued)
     out2 = case("refusal_fix_commands", rev(PAGE), ["--sync"], 2, False, meth=rev(METH))
     ok = ok and "python3 scripts/aa_sync.py --rebase --dry-run, review, then --rebase (add --allow-drops if it refuses on drops)" in out2
     results.append(ok)
@@ -168,10 +177,20 @@ if not ONLY or "refusal_fix_commands" in ONLY:
 
 # 15. COPIED column (Terminal-Bench 4.0 (AA)): an off value is overwritten with AA's; a model AA doesn't score keeps its
 #     value; AA dropping the field entirely wipes nothing and logs a WARNING.
-TBK = A.COPIED[0][0]
+TBK, TBF = A.COPIED[0]
+real_parse = A.parse
+if not any(isinstance(m.get(TBF), (int, float)) for m in real_parse(PAGE)[0]):
+    # AA dropped the field from its page (v5.0, Oct 28 2026): give every model one so the copy logic is still exercised
+    def with_field(html):
+        models, version, stats = real_parse(html)
+        return [dict(m, **{TBF: 0.5}) for m in models], version, stats
+    A.parse = with_field
 def tb_wrong(tmp):
     set_models(tmp, lambda ms: next(m for m in ms if m["name"] == "Claude Opus 5.5")["benchmarks"].__setitem__(TBK, 12.3))
-case("copied column: off value corrected", PAGE, ["--sync"], 0, True, mutate=tb_wrong)
+try:
+    case("copied column: off value corrected", PAGE, ["--sync"], 0, True, mutate=tb_wrong)
+finally:
+    A.parse = real_parse
 def tb_unlisted(tmp):
     set_models(tmp, lambda ms: ms.append({"name": "Totally Unlisted Model 9", "lab": "X", "status": "live", "benchmarks": {TBK: 40.0}}))
 case("copied column: unlisted model keeps its value", PAGE, ["--sync"], 0, False, mutate=tb_unlisted)

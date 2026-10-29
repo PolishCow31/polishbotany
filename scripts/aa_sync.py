@@ -46,8 +46,10 @@ COPIED = [("Terminal-Bench 4.0 (AA)", "terminalBench40")]          # (Botany key
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36"
 KEY = "AA-Index"
 AA_KEY_RE = re.compile(r"aa[ -]?index|intelligence index", re.I)   # mirrors index.html benchOf('aa')
-MIN_SCORED, MIN_CHECKED = 200, 50                                  # sanity floors for a trustworthy parse
+MIN_SCORED, MIN_CHECKED = 50, 50                                   # sanity floors for a trustworthy parse
 # (Oct 16 2026: AA's page shrank from ~690 embedded models to the ~270 its table shows; every one is still cross-checked)
+# (Oct 28 2026: v5.0 launched scoring only 77 variants; the old 200 floor read that as a broken parse, so the RESCALE
+# alarm never fired. The floor only has to catch a gutted parse; the every-displayed-row cross-check does the rest.)
 # Drop guard: a run may remove existing AA values from at most max(5, 10% of scored models). If AA renames its models
 # (Sep 28 skeptic: every name prefixed with its lab), nothing matches and --sync would commit 111 -> 0 values; the
 # rescale guard didn't see it because it only counts values that MOVE, not values that vanish.
@@ -63,6 +65,7 @@ MATCH_FLOOR = 0.25
 ALIASES = {
     "Gemini 3.1 Pro": "Gemini 3.1 Pro Preview",   # AA only ever listed the preview entry
     "Grok 4.20 Beta": "Grok 4.20 0309 v2",        # Botany's entry covers the line through the 0309 v2 reasoning variant
+    "Mistral Large 4": "Mistral Large 4 Preview", # AA scored the preview (Oct 2026); weights land Oct 31
 }
 LAB_PREFIXES = {"meta", "ibm", "nvidia", "google", "openai", "xai", "anthropic", "alibaba", "microsoft",
                 "amazon", "mistral", "cohere", "tencent", "baidu", "xiaomi", "zhipu", "moonshot"}
