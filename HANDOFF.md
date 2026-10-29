@@ -3,6 +3,23 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## State — Oct 28 2026
+
+### ✓ DONE (Oct 28) — auth outage cleared; AA-Index rebased onto v5.0 (d25ab43)
+- **Outage:** the claude -p OAuth login died at midnight Oct 27; 13 sweeps wrote only market odds (still committed +
+  pushed every 3h, so "last modified" looked fresh). He ran /login Oct 28 ~4 pm; a manual `launchctl kickstart` sweep
+  merged dataVersion 759 (+Gemini 4 Carbon, +LFM3-1.7B). Next expected death ~late Nov.
+- **AA re-versioned v4.3 → v5.0 (Oct 28)** and scores only 77 variants so far. `MIN_SCORED=200` (set when the page held
+  ~270) read that as a broken parse → exit 1 "untrustworthy parse", so the RESCALE alarm never fired. Floor now 50
+  (the every-displayed-row cross-check still guards). Lesson: a sanity floor sized to today's page can mask the
+  alarm it sits in front of.
+- **Rebase, on his call:** 35 models on v5.0 (32 re-scored, 2 added), 94 old-scale values dropped (GPT-4, Claude 3,
+  o1, Llama 3...). They return automatically if AA re-scores them. AA history on v4.3 is now hidden by
+  `historicsUsable` (scale ≠ aaScale). Alias added: "Mistral Large 4" → AA "Mistral Large 4 Preview".
+- AA dropped `terminalBench40` from the page: the Terminal-Bench 4.0 (AA) column keeps its 59 values (keep-last),
+  new models get none; WARNING logs every sweep until a replacement field is wired.
+- Tests de-coupled from live AA data (test_aa_sync 28/28; test_update.sh rebase_window no longer hardcodes v4.3; all 20 pass).
+
 ## State — Oct 16 2026
 
 ### ✓ DONE (Oct 16) — coding card unfrozen + benchmark names canonical (v38)
