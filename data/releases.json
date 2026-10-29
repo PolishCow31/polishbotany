@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T12:00:05-04:00",
+  "updated": "2026-10-29T15:00:05-04:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -15,6 +15,34 @@
       "late": false,
       "basis": "Azure listed Claude Fable 5.5 on Oct 13; Anthropic has not announced it, and leaks now point to November.",
       "source": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt"
+    },
+    {
+      "model": "GPT-6.1 Astra",
+      "lab": "OpenAI",
+      "expectedWindow": "by Nov 30",
+      "expectedDate": "2026-11",
+      "prob": 88,
+      "probAsOf": "2026-10-29",
+      "frontier": true,
+      "open": false,
+      "status": "expected",
+      "late": false,
+      "basis": "OpenAI pulled its planned launch Sep 28 after safety tests; it says the same base model will return.",
+      "source": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt"
+    },
+    {
+      "model": "Next Claude Opus",
+      "lab": "Anthropic",
+      "expectedWindow": "by Dec 31",
+      "expectedDate": "2026-12",
+      "prob": 90,
+      "probAsOf": "2026-10-29",
+      "frontier": true,
+      "open": false,
+      "status": "expected",
+      "late": false,
+      "basis": "Opus 5.5 shipped Sep 22; Anthropic has released a new Opus every few months this year.",
+      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000"
     },
     {
       "model": "Gemini 4 Pro",
@@ -45,39 +73,11 @@
       "source": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
     },
     {
-      "model": "Next Claude Opus",
-      "lab": "Anthropic",
-      "expectedWindow": "by Dec 31",
-      "expectedDate": "2026-12",
-      "prob": 87,
-      "probAsOf": "2026-10-29",
-      "frontier": true,
-      "open": false,
-      "status": "expected",
-      "late": false,
-      "basis": "Opus 5.5 shipped Sep 22; Anthropic has released a new Opus every few months this year.",
-      "source": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000"
-    },
-    {
-      "model": "GPT-6.1 Astra",
-      "lab": "OpenAI",
-      "expectedWindow": "by Dec 31",
-      "expectedDate": "2026-12",
-      "prob": 89,
-      "probAsOf": "2026-10-29",
-      "frontier": true,
-      "open": false,
-      "status": "expected",
-      "late": false,
-      "basis": "OpenAI pulled its planned launch Sep 28 after safety tests; it says the same base model will return.",
-      "source": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt"
-    },
-    {
       "model": "Grok 5",
       "lab": "xAI",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 30,
+      "prob": 28,
       "probAsOf": "2026-10-29",
       "frontier": true,
       "open": false,
@@ -85,6 +85,34 @@
       "late": false,
       "basis": "Musk has repeatedly promised Grok 5; xAI is shipping Grok 4.x point releases first.",
       "source": "https://polymarket.com/event/grok-5-released-byptptpt-20260710195520919"
+    },
+    {
+      "model": "Grok 4.8",
+      "lab": "xAI",
+      "expectedWindow": "by Nov 30",
+      "expectedDate": "2026-11",
+      "prob": 76,
+      "probAsOf": "2026-10-29",
+      "frontier": false,
+      "open": false,
+      "status": "confirmed",
+      "late": false,
+      "basis": "Musk says the 2.5-trillion-parameter Grok 4.8 has finished main training; xAI has set no release date.",
+      "source": "https://polymarket.com/event/next-grok-model-4pt8-released-by"
+    },
+    {
+      "model": "Next Gemini Flash",
+      "lab": "Google",
+      "expectedWindow": "by Nov 30",
+      "expectedDate": "2026-11",
+      "prob": 31,
+      "probAsOf": "2026-10-29",
+      "frontier": false,
+      "open": false,
+      "status": "rumored",
+      "late": false,
+      "basis": "Gemini 3.8 Flash shipped Sep 2; a gemini-4-flash-preview identifier has leaked, but Google has announced nothing.",
+      "source": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt"
     },
     {
       "model": "Kimi K3.1 Pro weights",
@@ -141,34 +169,6 @@
       "late": false,
       "basis": "Preview live Sep 3; Humain targets an October open-weights release under the MiniMax Community License.",
       "source": "https://wavespeed.ai/blog/ai-news/humain-m3-open-weights/"
-    },
-    {
-      "model": "Grok 4.8",
-      "lab": "xAI",
-      "expectedWindow": "by Nov 30",
-      "expectedDate": "2026-11",
-      "prob": 76,
-      "probAsOf": "2026-10-29",
-      "frontier": false,
-      "open": false,
-      "status": "confirmed",
-      "late": false,
-      "basis": "Musk says the 2.5-trillion-parameter Grok 4.8 has finished main training; xAI has set no release date.",
-      "source": "https://polymarket.com/event/next-grok-model-4pt8-released-by"
-    },
-    {
-      "model": "Next Gemini Flash",
-      "lab": "Google",
-      "expectedWindow": "by Nov 30",
-      "expectedDate": "2026-11",
-      "prob": 15,
-      "probAsOf": "2026-10-29",
-      "frontier": false,
-      "open": false,
-      "status": "rumored",
-      "late": false,
-      "basis": "Gemini 3.8 Flash shipped Sep 2; Google has not announced a successor.",
-      "source": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt"
     },
     {
       "model": "Genie 4 wider access",
