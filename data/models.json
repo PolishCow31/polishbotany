@@ -5563,6 +5563,42 @@
         "https://thenextweb.com/news/nvidia-nemotron-3-5-transcribe-granary-v2-open-speech",
         "https://thenewstack.io/nvidia-nemotron-promptable-transcription/"
       ]
+    },
+    {
+      "name": "Particle-1",
+      "lab": "Particle",
+      "released": "2026-10-28",
+      "params": "Undisclosed",
+      "context": "1M",
+      "modality": "Text",
+      "open": false,
+      "benchmarks": {
+        "GPQA Diamond": 90.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "A coding model post-trained from DeepSeek V4.1 Flash to finish tasks with far fewer reasoning and tool-call tokens.",
+      "sources": [
+        "https://openrouter.ai/particle-ai/particle-1",
+        "https://explainx.ai/blog/particle-1-deepseek-v4-1-flash-45-percent-fewer-tokens-coding-model-openrouter-claimed-vs-verified-2026"
+      ]
+    },
+    {
+      "name": "Ternary Bonsai 2 9B",
+      "lab": "PrismML",
+      "released": "2026-10-15",
+      "params": "8.95B",
+      "context": "256K",
+      "modality": "Text, image",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "A Qwen3.5-based model stored in ternary weights, shrinking to about 2GB so it runs on phones.",
+      "sources": [
+        "https://openrouter.ai/prism-ml/ternary-bonsai-2-9b",
+        "https://www.llmreference.com/model/bonsai-2-9b"
+      ]
     }
   ]
 }
