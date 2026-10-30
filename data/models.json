@@ -5606,6 +5606,60 @@
         "https://openrouter.ai/prism-ml/ternary-bonsai-2-9b",
         "https://www.llmreference.com/model/bonsai-2-9b"
       ]
+    },
+    {
+      "name": "Pika H3 Flex",
+      "lab": "Pika",
+      "released": "2026-10-29",
+      "params": "—",
+      "context": "—",
+      "modality": "Text, image, video to video",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Open video model family post-trained from MiniMax H3, with up-to-4K output and a soundtrack split into five editable stems.",
+      "sources": [
+        "https://pika.art/blog/pika-h3-flex-research",
+        "https://huggingface.co/Pika-Labs/Pika-H3-Flex"
+      ]
+    },
+    {
+      "name": "Unlimited-OCR-2",
+      "lab": "Baidu",
+      "released": "2026-10-27",
+      "params": "—",
+      "context": "—",
+      "modality": "Document image to text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Baidu's open document reader built for very long files, released under MIT with a new long-document parsing benchmark.",
+      "sources": [
+        "https://huggingface.co/baidu/Unlimited-OCR-2",
+        "https://github.com/baidu/Unlimited-OCR"
+      ]
+    },
+    {
+      "name": "Clover-35B-A3B-Preview",
+      "lab": "DiffuSpace",
+      "released": "2026-10",
+      "params": "35B, 3B active",
+      "context": "128K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 73.6,
+        "GPQA Diamond": 83.8
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "DiffuSpace's first model, an open diffusion language model derived from Qwen3.6 that generates text in blocks for speed.",
+      "sources": [
+        "https://diffuspace.ai/blog/clover-35b/",
+        "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview"
+      ]
     }
   ]
 }
