@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T06:14:04-04:00",
+  "updated": "2026-10-30T12:00:08-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -22305,6 +22305,67 @@
         {
           "u": "unite.ai",
           "url": "https://www.unite.ai/mistrals-1-trillion-parameter-le-chonk-checkpoint-lands-on-hugging-face/",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "routine": "12PM",
+      "sources": [
+        {
+          "u": "huggingface.co/mistralai",
+          "url": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/inclusionAI",
+          "url": "https://huggingface.co/inclusionAI/Ling-3.1-flash-1019",
+          "q": "primary"
+        },
+        {
+          "u": "api-docs.deepseek.com/updates",
+          "url": "https://api-docs.deepseek.com/updates",
+          "q": "primary"
+        },
+        {
+          "u": "techcrunch.com",
+          "url": "https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/",
+          "q": "secondary"
+        },
+        {
+          "u": "pricepertoken.com",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "secondary"
+        },
+        {
+          "u": "trewknowledge.com",
+          "url": "https://trewknowledge.com/2026/10/30/ai-this-week-anthropic-goes-public-openai-goes-offline/",
+          "q": "blog"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com",
+          "url": "https://kalshi.com/markets/kxgrok/grok/kxgrok-grok5",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "primary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/d41586-026-03320-8",
+          "q": "secondary"
+        },
+        {
+          "u": "interestingengineering.com",
+          "url": "https://interestingengineering.com/ai-robotics/openai-frontier-model-offline-training",
           "q": "secondary"
         }
       ]

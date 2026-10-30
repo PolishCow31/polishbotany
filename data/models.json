@@ -4465,7 +4465,8 @@
         "https://mistral.ai/news/mistral-large-4/",
         "https://www.cnbc.com/2026/10/06/mistral-ai-model-le-chonk.html",
         "https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/"
-      ]
+      ],
+      "context": "1M"
     },
     {
       "name": "EmbeddingGemma 2",
@@ -5294,14 +5295,14 @@
       "released": "2026-10-22",
       "params": "560B / 25B active",
       "modality": "Text",
-      "open": false,
+      "open": true,
       "benchmarks": {
         "AA-Index": 29,
         "Terminal-Bench 4.0 (AA)": 32.8
       },
       "milestone": false,
-      "status": "preview",
-      "notable": "An agent-focused refresh of Ling-3.1-flash; Ant says API access and open weights are coming soon.",
+      "status": "live",
+      "notable": "An agent-focused refresh of Ling-3.1-flash, with full weights now on Hugging Face under the MIT license.",
       "sources": [
         "https://x.com/AntLingAGI/status/2113226531522891851",
         "https://artificialanalysis.ai/models/ling-3-1-flash-1019"
