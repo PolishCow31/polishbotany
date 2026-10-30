@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T18:00:05-04:00",
+  "updated": "2026-10-29T21:05:09-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -22518,6 +22518,102 @@
         {
           "u": "cnbc.com",
           "url": "https://www.cnbc.com/2026/10/23/php-vulnerabilities-ai-cybersecurity.html",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-29",
+      "routine": "9PM",
+      "sources": [
+        {
+          "u": "openai.com/news",
+          "url": "https://openai.com/news/rss.xml",
+          "q": "primary"
+        },
+        {
+          "u": "anthropic.com/news",
+          "url": "https://www.anthropic.com/news",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co trending",
+          "url": "https://huggingface.co/models?sort=trending",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com best model 2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com Fable release",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com GPT Astra 6.1",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com Claude Opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com Grok 4.8",
+          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com Gemini Pro",
+          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "kalshi.com best AI 2026",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "secondary"
+        },
+        {
+          "u": "kalshi.com best coding model",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "secondary"
+        },
+        {
+          "u": "manifold.markets AGI 2028",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "secondary"
+        },
+        {
+          "u": "lmmarketcap.com/llm-updates",
+          "url": "https://www.lmmarketcap.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Alphabet worst day",
+          "url": "https://www.cnbc.com/2026/10/29/alphabet-google-microsoft-msft-shares-today-earnings.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Alphabet search",
+          "url": "https://www.cnbc.com/2026/10/29/alphabet-google-search-ai-earnings.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Microsoft debt",
+          "url": "https://www.cnbc.com/2026/10/29/microsoft-25-billion-debt-offering.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com ServiceNow",
+          "url": "https://www.cnbc.com/2026/10/29/servicenow-now-earnings-q3-2026.html",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com AI feed",
+          "url": "https://www.technologyreview.com/topic/artificial-intelligence/",
           "q": "secondary"
         }
       ]
