@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-30T03:07:28-04:00",
+  "updated": "2026-10-30T06:14:04-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -22239,6 +22239,72 @@
         {
           "u": "axios.com (Reddit logins)",
           "url": "https://www.axios.com/2026/10/29/reddit-logged-in-ai-search-incognito",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-30",
+      "routine": "6AM",
+      "sources": [
+        {
+          "u": "huggingface.co/mistralai",
+          "url": "https://huggingface.co/mistralai",
+          "q": "primary"
+        },
+        {
+          "u": "mistral.ai/news",
+          "url": "https://mistral.ai/news/mistral-large-4-oss/",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/10/30/amazon-intel-earnings-big-tech-ai-spending-concerns.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
+          "q": "secondary"
+        },
+        {
+          "u": "pricepertoken.com",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "secondary"
+        },
+        {
+          "u": "benchlm.ai",
+          "url": "https://benchlm.ai/model-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "datalearner.com",
+          "url": "https://www.datalearner.com/ai-models/pretrained-models/gpt-6-1-astra",
+          "q": "secondary"
+        },
+        {
+          "u": "foxnews.com",
+          "url": "https://www.foxnews.com/live-news/ai-news-anthropic-claude-openai-chatgpt-10-27-26",
+          "q": "secondary"
+        },
+        {
+          "u": "unite.ai",
+          "url": "https://www.unite.ai/mistrals-1-trillion-parameter-le-chonk-checkpoint-lands-on-hugging-face/",
           "q": "secondary"
         }
       ]
