@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T15:00:03-05:00",
+  "updated": "2026-11-01T18:00:02-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -22445,6 +22445,62 @@
         {
           "u": "orcarouter.ai Kimi weights",
           "url": "https://www.orcarouter.ai/blog/kimi-k3-1-pro-open-weights",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "routine": "6PM",
+      "sources": [
+        {
+          "u": "huggingface.co/sensenova",
+          "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview",
+          "q": "primary"
+        },
+        {
+          "u": "anthropic.com/news",
+          "url": "https://www.anthropic.com/news",
+          "q": "primary"
+        },
+        {
+          "u": "openrouter.ai/models",
+          "url": "https://openrouter.ai/api/v1/models",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "secondary"
+        },
+        {
+          "u": "kalshi.com",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "secondary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/01/scoop-openai-post-midterm-policy",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/10/26/meta-stock-offering-ai.html",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com",
+          "url": "https://www.technologyreview.com/2026/10/29/1147824/monitor-ai-agents-actions-real-time/",
+          "q": "secondary"
+        },
+        {
+          "u": "mindandmachineweekly.substack.com",
+          "url": "https://mindandmachineweekly.substack.com/p/mind-and-machine-weekly-1-november",
           "q": "blog"
         }
       ]

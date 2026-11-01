@@ -5741,6 +5741,22 @@
         "https://developers.openai.com/changelog/",
         "https://deploymentsafety.openai.com/gpt-rosalind-6"
       ]
+    },
+    {
+      "name": "SenseNova-Loop-9B-Preview",
+      "lab": "SenseTime",
+      "released": "2026-10-30",
+      "params": "9B",
+      "context": "262K",
+      "modality": "Text, image",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Open preview with a looped decoder that runs 24 layers twice on shared weights, aimed at long-context agent work.",
+      "sources": [
+        "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview"
+      ]
     }
   ]
 }
