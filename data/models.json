@@ -5692,6 +5692,22 @@
       "sources": [
         "https://huggingface.co/ibm-granite/granite-speech-5.0-2b"
       ]
+    },
+    {
+      "name": "Lumma-Fev-27B-v2",
+      "lab": "FrontiersMind",
+      "released": "2026-10-29",
+      "params": "27B",
+      "context": "8K",
+      "modality": "Text in, choice out",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Open decision model built on Qwen3.8-27B that returns a probability for each option in one pass, generating no text.",
+      "sources": [
+        "https://huggingface.co/blog/FrontiersMind/lumma-fev-27b-v2"
+      ]
     }
   ]
 }

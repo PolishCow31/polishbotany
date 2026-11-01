@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T18:07:56-04:00",
+  "updated": "2026-10-31T21:04:45-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -22366,6 +22366,57 @@
         {
           "u": "thenewstack.io/mistral-large-4",
           "url": "https://thenewstack.io/mistral-large-4-weights/",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "routine": "9PM",
+      "sources": [
+        {
+          "u": "huggingface.co/blog/FrontiersMind",
+          "url": "https://huggingface.co/blog/FrontiersMind/lumma-fev-27b-v2",
+          "q": "primary"
+        },
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "api.elections.kalshi.com",
+          "url": "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXCODINGMODEL-26DEC",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/10/29/reddit-logged-in-ai-search-incognito",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s41598-026-77832-8",
+          "q": "secondary"
+        },
+        {
+          "u": "AI Week in Review 26.10.31",
+          "url": "https://patmcguinness.substack.com/p/ai-week-in-review-261031",
+          "q": "blog"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        },
+        {
+          "u": "marktechpost.com",
+          "url": "https://www.marktechpost.com/2026/10/23/moonshot-ai-kimi-k3-1-pro-open-weight-model/",
           "q": "secondary"
         }
       ]
