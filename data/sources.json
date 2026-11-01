@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-31T15:00:05-04:00",
+  "updated": "2026-10-31T18:07:56-04:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -22281,6 +22281,92 @@
           "u": "emergent.sh Fable 5.5",
           "url": "https://emergent.sh/news/claude-fable-5-5-release-date",
           "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "routine": "6PM",
+      "sources": [
+        {
+          "u": "polymarket.com/event/next-fable",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com/event/gpt-astra",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com/event/kimi-weights",
+          "url": "https://polymarket.com/event/moonshot-publishes-kimi-k3pt1-pro-weights-by-november-4",
+          "q": "secondary"
+        },
+        {
+          "u": "kalshi.com/best-coding-model",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "secondary"
+        },
+        {
+          "u": "kalshi.com/best-ai-2026",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "secondary"
+        },
+        {
+          "u": "huggingface.co/moonshotai",
+          "url": "https://huggingface.co/api/models?author=moonshotai&sort=lastModified&direction=-1&limit=5",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/anthropic-ipo",
+          "url": "https://www.cnbc.com/2026/10/31/anthropic-ipo-ai-spending.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/openai-funding",
+          "url": "https://www.cnbc.com/2026/10/31/openai-funding-target-cut-10-billion.html",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com/nature-cancer",
+          "url": "https://nature.com/articles/s43018-026-01264-6",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com/npj-digital-medicine",
+          "url": "https://www.nature.com/articles/s41746-026-03408-5",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com",
+          "url": "https://technologyreview.com/2026/10/26/1147645/the-focus-on-ai-safety-disasters-ignores-everyday-harms",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/ai-safety-money",
+          "url": "https://www.axios.com/2026/10/14/ai-safety-regulation-election-spending-50-million",
+          "q": "secondary"
+        },
+        {
+          "u": "patmcguinness.substack.com",
+          "url": "https://patmcguinness.substack.com/p/ai-week-in-review-261031",
+          "q": "blog"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "pricepertoken.com/news",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "secondary"
+        },
+        {
+          "u": "thenewstack.io/mistral-large-4",
+          "url": "https://thenewstack.io/mistral-large-4-weights/",
+          "q": "secondary"
         }
       ]
     }
