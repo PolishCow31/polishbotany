@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T12:00:04-05:00",
+  "updated": "2026-11-02T15:00:05-05:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -49,7 +49,7 @@
       "lab": "Google",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 39,
+      "prob": 36,
       "probAsOf": "2026-11-02",
       "frontier": true,
       "open": false,
@@ -105,13 +105,13 @@
       "lab": "Google",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 37,
+      "prob": 50,
       "probAsOf": "2026-11-02",
       "frontier": false,
       "open": false,
       "status": "rumored",
       "late": false,
-      "basis": "Gemini 3.8 Flash shipped Sep 2; a gemini-4-flash-preview identifier has leaked, but Google has announced nothing.",
+      "basis": "A gemini-4-flash-preview identifier leaked and testers report a Flash model codenamed Hydrogen; Google has announced nothing.",
       "source": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt"
     },
     {
@@ -119,7 +119,7 @@
       "lab": "DeepSeek",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 19,
+      "prob": 16,
       "probAsOf": "2026-11-02",
       "frontier": false,
       "open": true,
@@ -141,6 +141,20 @@
       "late": false,
       "basis": "K3.1 Pro shipped Oct 23 via app and API; Moonshot says full weights follow Nov 4.",
       "source": "https://polymarket.com/event/moonshot-publishes-kimi-k3pt1-pro-weights-by-november-4"
+    },
+    {
+      "model": "LongCat-2.5 weights",
+      "lab": "Meituan",
+      "expectedWindow": "TBA",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": true,
+      "status": "confirmed",
+      "late": false,
+      "basis": "LongCat-2.5 launched Nov 2 via chat and API; Meituan plans GitHub and Hugging Face releases without a date.",
+      "source": "https://insideai.news/news/agentic-ai/meituan-longcat-2-5/14286/"
     },
     {
       "model": "FLUX 3 Image weights",
