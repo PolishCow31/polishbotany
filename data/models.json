@@ -4189,9 +4189,9 @@
       "lab": "Ant Group (inclusionAI)",
       "released": "2026-09-30",
       "params": "560B / ~25B active",
-      "context": "256K",
+      "context": "1M",
       "modality": "Text",
-      "open": false,
+      "open": true,
       "benchmarks": {
         "GDPval-AA 2.1": 1673,
         "FrontierSWE": 75.16,
@@ -4199,8 +4199,8 @@
         "Terminal-Bench 4.0 (AA)": 33.3
       },
       "milestone": false,
-      "status": "preview",
-      "notable": "Ant Group's larger follow-up to Ling-3.0-flash is in a two-week free trial, with open weights and a 1M-token window promised afterward.",
+      "status": "live",
+      "notable": "Ant Group's larger follow-up to Ling-3.0-flash now has open MIT-licensed weights and a 1M-token window.",
       "sources": [
         "https://technode.com/2026/09/30/ant-group-launches-ling-3-1-flash-with-560-billion-parameters/",
         "https://www.orcarouter.ai/blog/ling-3-1-flash-announced-not-open-weights"
@@ -5756,6 +5756,38 @@
       "notable": "Open preview with a looped decoder that runs 24 layers twice on shared weights, aimed at long-context agent work.",
       "sources": [
         "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview"
+      ]
+    },
+    {
+      "name": "TBC mischief 1",
+      "lab": "The Biological Computing Co.",
+      "released": "2026-10-30",
+      "params": "—",
+      "context": "—",
+      "modality": "Image to video",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "An image-to-video model built on Wan 2.2 that runs five times faster, using efficiencies found by measuring living neurons.",
+      "sources": [
+        "https://www.tbc.co/press-releases/neuron-derived-ai-video-model"
+      ]
+    },
+    {
+      "name": "Rime Prism",
+      "lab": "Rime",
+      "released": "2026-10-28",
+      "params": "—",
+      "context": "—",
+      "modality": "Speech in, speech out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "An end-to-end speech-to-speech model for enterprise voice agents, with an inspectable text layer and customer fine-tuning planned.",
+      "sources": [
+        "https://www.rime.ai/resources/prism-first-speech-to-speech-for-enterprise"
       ]
     }
   ]
