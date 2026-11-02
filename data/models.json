@@ -5789,6 +5789,23 @@
       "sources": [
         "https://www.rime.ai/resources/prism-first-speech-to-speech-for-enterprise"
       ]
+    },
+    {
+      "name": "MiniCPM-OCR 1.0",
+      "lab": "OpenBMB / ModelBest",
+      "released": "2026-10-28",
+      "params": "1.3B",
+      "context": "—",
+      "modality": "image, PDF to text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "First OCR-specific model in the MiniCPM family, reading scans and PDFs into Markdown or JSON under Apache 2.0.",
+      "sources": [
+        "https://github.com/OpenBMB/MiniCPM-OCR",
+        "https://huggingface.co/openbmb/MiniCPM-OCR-1.0"
+      ]
     }
   ]
 }
