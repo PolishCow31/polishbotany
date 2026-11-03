@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-03T12:14:21-05:00",
+  "updated": "2026-11-03T15:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -21683,6 +21683,47 @@
           "u": "letsdatascience.com Kimi K3.1 Pro",
           "url": "https://letsdatascience.com/news/moonshot-releases-kimi-k31-pro-api-open-weights-due-nov-4-786e160c",
           "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-03",
+      "routine": "3PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=which-company-has-the-best-ai-model-end-of-november",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/moonshotai",
+          "url": "https://huggingface.co/moonshotai",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/crowdstrike-kill-switch",
+          "url": "https://www.cnbc.com/2026/11/03/crowdstrike-ai-kill-switch-rogue-agents.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/meta-bond-sale",
+          "url": "https://www.cnbc.com/2026/11/03/meta-bond-sale-ai-funding.html",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co/ai-news-today",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "blog"
+        },
+        {
+          "u": "letsdatascience.com/kimi-k3.1-pro",
+          "url": "https://letsdatascience.com/news/moonshot-releases-kimi-k31-pro-api-open-weights-due-nov-4-786e160c",
+          "q": "secondary"
         }
       ]
     }
