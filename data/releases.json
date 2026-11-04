@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T00:00:00-05:00",
+  "updated": "2026-11-04T09:04:50-05:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -21,7 +21,7 @@
       "lab": "OpenAI",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 84,
+      "prob": 92,
       "probAsOf": "2026-11-04",
       "frontier": true,
       "open": false,
@@ -49,7 +49,7 @@
       "lab": "Google",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 33,
+      "prob": 35,
       "probAsOf": "2026-11-04",
       "frontier": true,
       "open": false,
@@ -91,7 +91,7 @@
       "lab": "xAI",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 64,
+      "prob": 65,
       "probAsOf": "2026-11-04",
       "frontier": false,
       "open": false,
@@ -105,7 +105,7 @@
       "lab": "Google",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 41,
+      "prob": 56,
       "probAsOf": "2026-11-04",
       "frontier": false,
       "open": false,
@@ -119,7 +119,7 @@
       "lab": "DeepSeek",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 16,
+      "prob": 12,
       "probAsOf": "2026-11-04",
       "frontier": false,
       "open": true,
@@ -133,13 +133,13 @@
       "lab": "Moonshot AI",
       "expectedWindow": "by Nov 4",
       "expectedDate": "2026-11",
-      "prob": 94,
+      "prob": 96,
       "probAsOf": "2026-11-04",
       "frontier": false,
       "open": true,
       "status": "confirmed",
       "late": false,
-      "basis": "K3.1 Pro shipped Oct 23 via app and API; Moonshot promised full weights by Nov 4, and its Hugging Face page still lists Kimi K3 as newest.",
+      "basis": "K3.1 Pro shipped Oct 23 via app and API; Moonshot promised full weights by Nov 4, and none were public on Hugging Face Nov 4 morning.",
       "source": "https://polymarket.com/event/moonshot-publishes-kimi-k3pt1-pro-weights-by-november-4"
     },
     {
@@ -255,20 +255,6 @@
       "source": "https://openai.com/index/"
     },
     {
-      "model": "Hy4 GA",
-      "lab": "Tencent",
-      "expectedWindow": "H2 2026",
-      "expectedDate": "2026-12",
-      "prob": -1,
-      "probAsOf": null,
-      "frontier": false,
-      "open": false,
-      "status": "expected",
-      "late": false,
-      "basis": "Hy4 preview live since Aug 28; no general-availability date beyond H2.",
-      "source": "https://cloud.tencent.com"
-    },
-    {
       "model": "GPT-Synopsys",
       "lab": "OpenAI",
       "expectedWindow": "TBA",
@@ -323,6 +309,34 @@
       "late": false,
       "basis": "Microsoft says the 2.8-trillion-parameter base model is in post-training and may license weights through Foundry.",
       "source": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+    },
+    {
+      "model": "Hy4 weights",
+      "lab": "Tencent",
+      "expectedWindow": "Nov 2026",
+      "expectedDate": "2026-11",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": true,
+      "status": "confirmed",
+      "late": false,
+      "basis": "Tencent launched official Hy4 Nov 4 by API and says weights and system cards follow in the coming days.",
+      "source": "https://manilatimes.net/2026/11/04/tmt-newswire/pr-newswire/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/2461683"
+    },
+    {
+      "model": "Hy4 Flash",
+      "lab": "Tencent",
+      "expectedWindow": "TBA",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": false,
+      "status": "confirmed",
+      "late": false,
+      "basis": "Tencent's Nov 4 Hy4 announcement says a cheaper Hy4 Flash is scheduled for release soon, without a date.",
+      "source": "https://manilatimes.net/2026/11/04/tmt-newswire/pr-newswire/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/2461683"
     }
   ]
 }
