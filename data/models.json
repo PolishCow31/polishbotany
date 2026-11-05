@@ -5880,6 +5880,63 @@
         "https://emergent.sh/news/tencent-hy4-launch-770b-vision-model-computer",
         "https://openrouter.ai/tencent/hy4"
       ]
+    },
+    {
+      "name": "GPT Image 2.6",
+      "lab": "OpenAI",
+      "released": "2026-11-04",
+      "params": "undisclosed",
+      "context": "—",
+      "modality": "text, image in; image out",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Adds animated GIFs and saved reference images to ChatGPT, plus two API models: fast Flare and higher-quality Sunburst.",
+      "sources": [
+        "https://community.openai.com/t/images-upgraded-introducing-chatgpt-images-2-6/1412901"
+      ]
+    },
+    {
+      "name": "SWE-2 Flash",
+      "lab": "Cognition",
+      "released": "2026-11-04",
+      "params": "276B MoE, 12B act",
+      "context": "undisclosed",
+      "modality": "text in; text out",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 20.0,
+        "DeepSWE 1.1": 60.1,
+        "FrontierCode 1.1": 45.5,
+        "Terminal-Bench 2.1": 89.2
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "A faster, cheaper sibling of SWE-2 built on Inkling-Small, running about three times faster at one-fifth the price.",
+      "sources": [
+        "https://cognition.com/blog/swe-2-flash",
+        "https://www.unite.ai/cognition-launches-swe-2-flash-for-faster-lower-cost-coding-agents/"
+      ]
+    },
+    {
+      "name": "Ripple-65B Preview",
+      "lab": "Ricursive Intelligence",
+      "released": "2026-11-04",
+      "params": "65B dense",
+      "context": "1M",
+      "modality": "text in; text out",
+      "open": true,
+      "benchmarks": {
+        "Terminal-Bench 2.1": 80.52
+      },
+      "milestone": false,
+      "status": "preview",
+      "notable": "General-purpose spin-off of Ricursive's chip-design model, with open weights and a strong agentic-coding score for a dense model.",
+      "sources": [
+        "https://www.ricursive.com/ripple",
+        "https://huggingface.co/ricursiveAI/Ripple-65B-Preview"
+      ]
     }
   ]
 }
