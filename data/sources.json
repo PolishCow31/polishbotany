@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T12:13:11-05:00",
+  "updated": "2026-11-06T15:09:54-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -20316,6 +20316,52 @@
         {
           "u": "kalshi.com",
           "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "routine": "3PM",
+      "sources": [
+        {
+          "u": "cnbc.com/microsoft-neoclouds",
+          "url": "https://www.cnbc.com/2026/11/06/microsoft-moves-to-consolidate-its-relationships-with-neoclouds-in-ai.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/openai-bugging-suspect",
+          "url": "https://cnbc.com/2026/11/06/openai-bugging-alfozan-saudi.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cometapi.com/gpt-6-2-astra-sightings",
+          "url": "https://www.cometapi.com/es/gpt-6-2-astra-codex-sightings/",
+          "q": "blog"
+        },
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/best-ai-coding-model",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/yearend-top-llm",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/agi-before-2028",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/gemini-4-flash",
+          "url": "https://manifold.markets/Bayesian/gemini-4-flash-google-release-date",
           "q": "secondary"
         }
       ]
