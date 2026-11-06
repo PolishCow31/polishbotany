@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T15:09:54-05:00",
+  "updated": "2026-11-06T18:10:52-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -20363,6 +20363,67 @@
           "u": "manifold.markets/gemini-4-flash",
           "url": "https://manifold.markets/Bayesian/gemini-4-flash-google-release-date",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-06",
+      "routine": "6PM",
+      "sources": [
+        {
+          "u": "polymarket.com gamma API",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-fable",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/papers FrontierPhysics",
+          "url": "https://huggingface.co/papers/2611.06910",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/ai",
+          "url": "https://www.cnbc.com/ai-artificial-intelligence/",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Anthropic valuation",
+          "url": "https://www.cnbc.com/2026/11/06/investors-brace-for-anthropic-valuation-1point5-trillion-a-stretch.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Hassett",
+          "url": "https://www.cnbc.com/2026/11/06/data-centers-ai-elections-hassett.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com cyber warfare",
+          "url": "https://www.axios.com/2026/11/06/ai-government-hackers-fridge-hacks",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co",
+          "url": "https://aiweekly.co/ai-news-today/openai-news",
+          "q": "blog"
+        },
+        {
+          "u": "llm-stats.com",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "blog"
+        },
+        {
+          "u": "pricepertoken.com",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "blog"
         }
       ]
     }
