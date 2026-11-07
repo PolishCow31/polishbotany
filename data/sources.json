@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T00:02:50-05:00",
+  "updated": "2026-11-07T03:10:27-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -19689,6 +19689,62 @@
           "u": "cnbc.com/tech-execs-selloff",
           "url": "https://amp.cnbc.com/amp/2026/11/06/tech-executives-ai-data-center-selloff-midterms.html?hostDomain=www.cnbc.com",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-07",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com (trade API)",
+          "url": "https://api.elections.kalshi.com/trade-api/v2/events/KXLLM1-26DEC31",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets (API)",
+          "url": "https://api.manifold.markets/v0/slug/will-the-arc-agi-grand-prize-be-cla-svtrhb42tx",
+          "q": "primary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/ai",
+          "url": "https://www.cnbc.com/ai-artificial-intelligence/",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/06/anthropicai-ipo-valuation-ai-trade",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/06/ai-stocks-midterms-nasdaq",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com",
+          "url": "https://www.technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/",
+          "q": "secondary"
+        },
+        {
+          "u": "kingy.ai GPT-6.2 tracker",
+          "url": "https://kingy.ai/blog/gpt-6-2-astra-tracker-screenshot-evidence/",
+          "q": "blog"
+        },
+        {
+          "u": "x.com/AGTPinsights",
+          "url": "https://x.com/AGTPinsights/status/2118362216785232005",
+          "q": "blog"
         }
       ]
     }
