@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T09:07:15-05:00",
+  "updated": "2026-11-08T12:00:04-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -19512,6 +19512,67 @@
           "u": "datalearner.com/claude-fable-5-5",
           "url": "https://www.datalearner.com/ai-models/pretrained-models/claude-fable-5-5",
           "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-08",
+      "routine": "12PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/gemini-carbon",
+          "url": "https://polymarket.com/event/gemini-carbon-released-byptptpt-20261026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/gpt-astra",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/best-ai-model-november",
+          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-november",
+          "q": "primary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "aiworldtoday.com Inkling 2 Small",
+          "url": "https://aiworldtoday.com/news/thinking_machines_inkling_2_small_enterprise_ai_benchmarks",
+          "q": "secondary"
+        },
+        {
+          "u": "benchlm.ai/model-updates",
+          "url": "https://benchlm.ai/model-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com democrats data-center moratorium",
+          "url": "https://www.cnbc.com/2026/11/05/democrats-data-center-restrictions-midterms.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com AI earthquake",
+          "url": "https://www.axios.com/2026/11/04/ai-data-center-election-slowdown",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com AI selloff",
+          "url": "https://www.cnbc.com/2026/11/06/ai-data-center-midterms-selloff.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com Anthropic valuation",
+          "url": "https://www.cnbc.com/2026/11/06/investors-brace-for-anthropic-valuation-1point5-trillion-a-stretch.html",
+          "q": "secondary"
         }
       ]
     }
