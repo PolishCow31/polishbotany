@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T15:00:03-05:00",
+  "updated": "2026-11-09T18:00:04-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -19116,6 +19116,62 @@
           "u": "datalearner.com GPT-6.1 Astra",
           "url": "https://www.datalearner.com/ai-models/pretrained-models/gpt-6-1-astra",
           "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "routine": "6PM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/gpt-astra-6.1",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/gemini-carbon",
+          "url": "https://polymarket.com/event/gemini-carbon-released-byptptpt-20261026",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/goldman-ai-financing",
+          "url": "https://www.cnbc.com/2026/11/09/goldman-ceo-ai-financing-market.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/huang-succession",
+          "url": "https://www.cnbc.com/2026/11/09/jensen-huang-affair-nvidia-succession.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/huang-congress",
+          "url": "https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-affair-congress-scrutiny.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/fable-5-2",
+          "url": "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/chicago-google-ai-schools",
+          "url": "https://www.axios.com/local/chicago/2026/11/09/google-wont-turn-off-artificial-intelligence-overview-on-school-search",
+          "q": "secondary"
+        },
+        {
+          "u": "smartscope.blog/gemini-4-carbon",
+          "url": "https://smartscope.blog/en/blog/gemini-4-carbon-availability-release-date-differences-argon-2026/",
+          "q": "blog"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
         }
       ]
     }
