@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T06:01:16-05:00",
+  "updated": "2026-11-09T12:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -18949,6 +18949,82 @@
           "u": "axios.com",
           "url": "https://www.axios.com/2026/11/04/ai-data-center-election-slowdown",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-09",
+      "routine": "12PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/gpt-astra",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/gemini-carbon",
+          "url": "https://polymarket.com/event/gemini-carbon-released-byptptpt-20261026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/next-fable",
+          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com best AI 2026",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com best coding model",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "primary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "testingcatalog.com Meta Muse",
+          "url": "https://testingcatalog.com/icymi-meta-rolls-out-specialized-models-for-muse-and-meta-ai",
+          "q": "blog"
+        },
+        {
+          "u": "cnbc.com Nvidia Huang probe",
+          "url": "https://www.cnbc.com/2026/11/09/nasdaq-defies-nvidia-impact-huang-faces-espionage-affair-probe.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com AI sell-off rally",
+          "url": "https://www.cnbc.com/2026/11/09/ai-selloff-stock-market-year-end-rally.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com Nvidia key man risk",
+          "url": "https://www.axios.com/2026/11/09/nvidia-key-man-risk-huang",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com Musk midterms",
+          "url": "https://www.axios.com/2026/11/09/elon-musk-midterms-risks-empire",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com reverse game theory",
+          "url": "https://www.technologyreview.com/2026/11/03/1147934/reverse-game-theory-mechanism-design-ai-alignment/",
+          "q": "secondary"
+        },
+        {
+          "u": "how2shout.com robots.txt AI signal",
+          "url": "https://www.how2shout.com/ai/shared-robots-txt-ai-training-opt-out-google-openai-microsoft-anthropic.html",
+          "q": "blog"
         }
       ]
     }
