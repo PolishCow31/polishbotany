@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T03:00:03-05:00",
+  "updated": "2026-11-10T06:00:39-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -18362,6 +18362,62 @@
           "u": "smartscope.blog Carbon access",
           "url": "https://smartscope.blog/en/blog/gemini-4-carbon-availability-release-date-differences-argon-2026/",
           "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "routine": "6AM",
+      "sources": [
+        {
+          "u": "huggingface.co/meituan-longcat",
+          "url": "https://huggingface.co/meituan-longcat/LongCat-2.5",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=gemini-carbon-released-byptptpt-20261026",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com (API)",
+          "url": "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXLLM1-26DEC31",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com — Anthropic IPO range",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com — SoftBank Q2",
+          "url": "https://www.cnbc.com/2026/11/10/softbank-2q-earnings-tech-selloff.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com — Nvidia probe",
+          "url": "https://www.cnbc.com/2026/11/10/nvidia-scandal-fails-to-bring-down-the-tech-bulls-as-spy-investigation-widens.html",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com — smartwatch hypertension",
+          "url": "https://www.nature.com/articles/s41586-026-11336-3",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co/ai-news-today",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "blog"
+        },
+        {
+          "u": "pricepertoken.com/news",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "blog"
+        },
+        {
+          "u": "etvbharat.com — Nov 9 releases",
+          "url": "https://etvbharat.com/en/technology/major-ai-upgrades-meta-muse-openai-dot-multi-device-support-google-maps-platform-in-ai-studio-and-claude-fable-mythos-enn26111002884",
+          "q": "secondary"
         }
       ]
     }

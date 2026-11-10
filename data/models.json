@@ -5818,14 +5818,18 @@
       "params": "1.6T MoE, 48B active",
       "context": "1M",
       "modality": "text, image",
-      "open": false,
-      "benchmarks": {},
+      "open": true,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 38.5,
+        "DeepSWE 1.1": 64.6,
+        "HLE (with tools)": 63.1
+      },
       "milestone": false,
       "status": "live",
-      "notable": "Meituan's multimodal agent model for long coding jobs, live in its chat app and API with open weights planned.",
+      "notable": "Meituan's 1.6-trillion-parameter multimodal agent model, now downloadable under the MIT license.",
       "sources": [
-        "https://insideai.news/news/agentic-ai/meituan-longcat-2-5/14286/",
-        "https://aiweekly.co/alerts/meituan-ships-longcat-25-a-16t-param-multimodal-agent-model"
+        "https://huggingface.co/meituan-longcat/LongCat-2.5",
+        "https://insideai.news/news/agentic-ai/meituan-longcat-2-5/14286/"
       ]
     },
     {
