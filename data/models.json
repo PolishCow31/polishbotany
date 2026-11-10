@@ -6075,6 +6075,41 @@
         "https://www.anthropic.com/claude-fable-and-mythos-5-2",
         "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html"
       ]
+    },
+    {
+      "name": "Meta Muse Ember",
+      "lab": "Meta",
+      "released": "2026-11-09",
+      "params": "undisclosed",
+      "context": "1M",
+      "modality": "text, image, audio, video in",
+      "open": false,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 40.9,
+        "AA-Index": 36
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Meta's smallest, cheapest Muse model, built for high-volume agent work like tool calls, routing and document extraction.",
+      "sources": [
+        "https://research.meta.ai/blog/muse-ember"
+      ]
+    },
+    {
+      "name": "NVIDIA GR00T 2",
+      "lab": "NVIDIA",
+      "released": "2026-11-09",
+      "params": "undisclosed",
+      "context": "—",
+      "modality": "robot world action model",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "preview",
+      "notable": "Open robot-control model built on Cosmos; averaged 71% success across 50 tasks from one demonstration each.",
+      "sources": [
+        "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/"
+      ]
     }
   ]
 }
