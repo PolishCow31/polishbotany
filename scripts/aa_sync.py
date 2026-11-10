@@ -42,7 +42,12 @@ DATA = os.path.join(ROOT, "data")
 URL = "https://artificialanalysis.ai/leaderboards/models"
 METHOD_URL = "https://artificialanalysis.ai/methodology/intelligence-benchmarking"   # still names the version
 VERSION_RE = re.compile(r"Intelligence Index v(\d+\.\d+)")
-COPIED = [("Terminal-Bench 4.0 (AA)", "terminalBench40")]          # (Botany key, AA field holding a 0-1 fraction)
+# (Botany key, AA field holding a 0-1 fraction; dots walk into nested objects). AA moved this one from a top-level
+# `terminalBench40` into `scores["terminalbench-4-0"]` around Oct 28 2026: same numbers (36 of 36 matched on Nov 10).
+COPIED = [("Terminal-Bench 4.0 (AA)", "scores.terminalbench-4-0")]
+# Every --rebase first saves the outgoing scale's scores here (Nov 10 2026, his ask): the app converts them onto the
+# current scale and draws them as hollow points, so a re-version no longer wipes the AA chart's history.
+HISTORY = "aa_history.json"
 UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0 Safari/537.36"
 KEY = "AA-Index"
 AA_KEY_RE = re.compile(r"aa[ -]?index|intelligence index", re.I)   # mirrors index.html benchOf('aa')
@@ -277,11 +282,37 @@ def plan(models, groups, rebase=False):
     return hits, conflicts, changes
 
 
+def field_value(m, field):
+    """-> m[a][b]... for a dotted field path, or None."""
+    for part in field.split("."):
+        m = m.get(part) if isinstance(m, dict) else None
+    return m
+
+
+def snapshot_history(models, scale, new_scale, when):
+    """Record every model's score on the outgoing scale in HISTORY (one entry per scale, replaced if re-run).
+    -> number of scores saved."""
+    try:
+        hist = load(HISTORY)
+    except (OSError, ValueError):
+        hist = {}
+    if not isinstance(hist, dict) or not isinstance(hist.get("scales"), list):
+        hist = {"note": "AA Intelligence Index scores on retired scale versions, saved by scripts/aa_sync.py at each "
+                        "--rebase. The app converts them onto the current scale (hollow chart points). Never hand-edit.",
+                "scales": []}
+    values = {m["name"]: m["benchmarks"][KEY] for m in models
+              if isinstance(m.get("name"), str) and isinstance((m.get("benchmarks") or {}).get(KEY), (int, float))}
+    hist["scales"] = [e for e in hist["scales"] if not (isinstance(e, dict) and e.get("scale") == scale)]
+    hist["scales"].append({"scale": scale, "replacedBy": new_scale, "at": when, "values": values})
+    save(HISTORY, hist)
+    return len(values)
+
+
 def field_groups(aa_models, field):
     """norm(base name) -> the best 0-1 value of one AA field across a model's effort variants."""
     g = {}
     for m in aa_models:
-        v = m.get(field)
+        v = field_value(m, field)
         if isinstance(v, bool) or not isinstance(v, (int, float)) or not 0 <= v <= 1:
             continue
         k = norm(base_name(m.get("shortName") or m.get("name") or ""))
@@ -420,6 +451,9 @@ def main(argv):
     any_copied = any(ch for _k, ch in copied)
     if dry or not changes and not any_copied and (mode != "--rebase" or pinned == version):
         return 0
+    if mode == "--rebase" and pinned and version and pinned != version:   # before the old scores are overwritten
+        n = snapshot_history(models, pinned, version, datetime.now().strftime("%Y-%m-%d"))
+        print("%s aa-sync: saved %d %s scores to data/%s" % (stamp, n, pinned, HISTORY))
     apply(models, changes)
     for key, ch in copied:
         apply(models, ch, key)

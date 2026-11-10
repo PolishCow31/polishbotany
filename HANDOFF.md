@@ -3,6 +3,33 @@
 Phone-first, self-updating AI history + trends + forecasts app for Christian & dad.
 Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](ARCHITECTURE.md).
 
+## State — Nov 10 2026
+
+### ✓ DONE (Nov 10) — AA chart keeps its history across re-versions; Terminal-Bench (AA) column re-wired (v41)
+- **His ask:** old-scale AA scores converted onto the current scale and drawn as hollow points, one line through
+  both, instead of a chart that restarts at each AA re-version.
+- **`data/aa_history.json`** (new, loaded with the core files): each retired scale's scores, `{scale, replacedBy, at,
+  values{name: score}}`. v4.1 (49, hand-researched) and v4.3 (127, AA's own) were recovered from git (`e111d03^`,
+  `083647e`). **`aa_sync.py --rebase` now saves the outgoing scale there BEFORE overwriting** (`snapshot_history`),
+  so the next re-version adds a hop by itself. Never hand-edit it.
+- **App (`buildAAConv` / `aaConverted` in index.html):** per retired scale, OLS on logits over models scored on that
+  scale and the next; the newest hop refits live from current scores (Nov 10: v4.3→v5.0 on 40 pairs, R² 0.95, rms
+  4.1 points; v4.1→v4.3 on 49 pairs, R² 0.92). Hops chain forward. Under 8 pairs a hop and everything older is off.
+  Converted points: hollow, integer, tap shows the original score and version; footnote prints n, R², typical error
+  live. Charts only: the leaderboard, Head-to-head and the Home cards stay native. AA chart window is 46 months
+  (`TRAJ_WINDOW`), back to GPT-4; other charts stay 18.
+- **Known bias, by design accepted:** a re-version re-weights what it rewards (v5.0 lifted OpenAI, lowered
+  Meta/Kimi), so a lab's converted past reads a little low or high. Good for the shape of a line, weak for a close
+  race between two labs in the past.
+- **The 38 `historics` AA rows (v4.1 back-estimates)** now convert too (two hops) and plot only when the model has
+  no score of its own (matched with and without a leading lab word). They are tagged `open: true|false` in
+  forecasts.json so they land in the right chart; `build_forecasts.py` HIST_KEYS carries `open`.
+- **Terminal-Bench 4.0 (AA):** AA had not dropped it. It moved from `terminalBench40` to
+  `scores["terminalbench-4-0"]` (36 of 36 overlapping values identical). `COPIED` fields are now dotted paths
+  (`field_value`). 67 models valued (+8: Fable 5.2 61.6, Gemini 4 Carbon 65.2 ...). The every-sweep WARNING is gone.
+- Tests: test_aa_sync 32 checks (history saved at rebase, dry run saves none, second re-version appends; dotted
+  paths). All five suites exit 0.
+
 ## State — Oct 28 2026
 
 ### ✓ DONE (Oct 28) — auth outage cleared; AA-Index rebased onto v5.0 (d25ab43)

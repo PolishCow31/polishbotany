@@ -179,11 +179,17 @@ if not ONLY or "refusal_fix_commands" in ONLY:
 #     value; AA dropping the field entirely wipes nothing and logs a WARNING.
 TBK, TBF = A.COPIED[0]
 real_parse = A.parse
-if not any(isinstance(m.get(TBF), (int, float)) for m in real_parse(PAGE)[0]):
-    # AA dropped the field from its page (v5.0, Oct 28 2026): give every model one so the copy logic is still exercised
+def put_field(m, val):               # set (or with val=None, remove) the dotted TBF path on a copy of m
+    m = json.loads(json.dumps(m)); parts = TBF.split("."); d = m
+    for part in parts[:-1]:
+        d = d.setdefault(part, {}) if isinstance(d.get(part), dict) or val is not None else {}
+    d.pop(parts[-1], None) if val is None else d.__setitem__(parts[-1], val)
+    return m
+if not any(isinstance(A.field_value(m, TBF), (int, float)) for m in real_parse(PAGE)[0]):
+    # AA's page lacks the field today: give every model one so the copy logic is still exercised
     def with_field(html):
         models, version, stats = real_parse(html)
-        return [dict(m, **{TBF: 0.5}) for m in models], version, stats
+        return [put_field(m, 0.5) for m in models], version, stats
     A.parse = with_field
 def tb_wrong(tmp):
     set_models(tmp, lambda ms: next(m for m in ms if m["name"] == "Claude Opus 5.5")["benchmarks"].__setitem__(TBK, 12.3))
@@ -198,7 +204,7 @@ if not ONLY or "copied_field_gone" in ONLY:
     real_parse = A.parse
     def no_field(html):
         models, version, stats = real_parse(html)
-        return [{k: v for k, v in m.items() if k != A.COPIED[0][1]} for m in models], version, stats
+        return [put_field(m, None) for m in models], version, stats
     A.parse = no_field
     try:
         out = case("copied_field_gone", PAGE, ["--sync"], 0, False)
@@ -210,6 +216,44 @@ fg = A.field_groups([{"shortName": "M (max)", "f": 0.5}, {"shortName": "M (high)
                      {"shortName": "N", "f": True}, {"shortName": "O", "f": None}], "f")
 ok = fg == {"m": 0.7}
 results.append(ok); print(f"[{'PASS' if ok else 'FAIL'}] field_groups: best variant, out-of-range/bool/None ignored (got {fg})")
+
+fv = [A.field_value({"scores": {"t-4": 0.6}}, "scores.t-4"), A.field_value({"scores": None}, "scores.t-4"),
+      A.field_value({"t": 0.2}, "t"), A.field_value({}, "a.b.c")]
+ok = fv == [0.6, None, 0.2, None]
+results.append(ok); print(f"[{'PASS' if ok else 'FAIL'}] field_value: dotted paths walk nested objects (got {fv})")
+
+# 16. HISTORY (Nov 10 2026): a real --rebase saves every score on the outgoing scale to aa_history.json BEFORE it
+#     overwrites them; a dry run saves nothing; a second re-version appends and keeps the first entry.
+if not ONLY or "rebase_saves_history" in ONLY:
+    tmp = tempfile.mkdtemp(prefix="aa-sync-hist-")
+    for f in ("models.json", "meta.json"):
+        shutil.copy(os.path.join(REAL, f), tmp)
+    set_meta(tmp, aaScale="v0.9")                      # Botany pinned to a scale AA has left
+    before = {m["name"]: m["benchmarks"]["AA-Index"] for m in json.load(open(os.path.join(tmp, "models.json")))["models"]
+              if (m.get("benchmarks") or {}).get("AA-Index") is not None}
+    A.DATA = tmp
+    A.fetch = lambda url=A.URL: METH if url == A.METHOD_URL else PAGE
+    hp = os.path.join(tmp, A.HISTORY)
+    with redirect_stdout(io.StringIO()):
+        c1 = A.main(["--rebase", "--dry-run", "--allow-drops"])
+    dry_clean = not os.path.exists(hp)
+    with redirect_stdout(io.StringIO()) as buf:
+        c2 = A.main(["--rebase", "--allow-drops"])
+    h = json.load(open(hp)) if os.path.exists(hp) else {}
+    e = (h.get("scales") or [{}])[-1]
+    ok = (c1 == 0 and dry_clean and c2 == 0 and e.get("scale") == "v0.9" and e.get("replacedBy") == VER
+          and e.get("values") == before and len(before) > 10
+          and json.load(open(os.path.join(tmp, "meta.json")))["aaScale"] == VER)
+    results.append(ok)
+    print(f"[{'PASS' if ok else 'FAIL'}] rebase_saves_history: {len(e.get('values') or {})} old-scale scores saved, dry run saves none"
+          + ("" if ok else "\n     " + buf.getvalue()[-600:]))
+    set_meta(tmp, aaScale="v0.8")
+    with redirect_stdout(io.StringIO()):
+        A.main(["--rebase", "--allow-drops"])
+    sc = [x.get("scale") for x in json.load(open(hp))["scales"]]
+    ok = sc == ["v0.9", "v0.8"]
+    results.append(ok); print(f"[{'PASS' if ok else 'FAIL'}] rebase_saves_history: a later re-version appends (got {sc})")
+    shutil.rmtree(tmp)
 
 print("ALL PASS" if results and all(results) else "SOME FAILED")
 sys.exit(0 if results and all(results) else 1)

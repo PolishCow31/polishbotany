@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=40"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=41"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -530,14 +530,15 @@ function applyCore(m,meta,ed,fc,rl){
 // ---- boot: every fetch starts at once; the core views paint as soon as the small core files land, and news / glossary /
 // sources fill in as they arrive (the 1.9 MB sources.json never gates first paint). no-cache = ETag revalidation. ----
 const J = f => fetch('data/'+f+'.json',{cache:'no-cache'}).then(r=>{ if(!r.ok) throw new Error('data/'+f+'.json HTTP '+r.status); return r.json(); });
-const DATA_FILES=['models','meta','editorial','forecasts','releases','briefs','news','glossary','sources'];
+const DATA_FILES=['models','meta','editorial','forecasts','releases','aa_history','briefs','news','glossary','sources'];
 let lastLoad=0, LOADING=false;
 async function loadData(first){
   LOADING=true;
   try{
     const P={}; DATA_FILES.forEach(f=>{ P[f]=J(f).catch(e=>(console.warn(f,e),null)); });   // each file fails soft to null
-    const [m,meta,ed,fc,rl]=await Promise.all([P.models,P.meta,P.editorial,P.forecasts,P.releases]);
+    const [m,meta,ed,fc,rl,ah]=await Promise.all([P.models,P.meta,P.editorial,P.forecasts,P.releases,P.aa_history]);
     applyCore(m,meta,ed,fc,rl); lastLoad=Date.now();
+    safe(()=>{ if(ah) AAHIST=rows(ah.scales).filter(e=>str(e.scale)&&str(e.replacedBy)&&isObj(e.values)); buildAAConv(); },'#v-charts');
     renderCore();
     if(first){ safe(renderMore,'#v-more'); runSplash(); }
     await Promise.all([
@@ -1129,19 +1130,60 @@ function historicsUsable(cat){
   if(lmax===-Infinity) return true;
   return Math.max(...hv) <= lmax*1.03;
 }
-const WINDOW_MONTHS=18;
-function windowCut(){ const d=new Date(); return d.getFullYear()+(d.getMonth()+Math.min(1,d.getDate()/30))/12 - WINDOW_MONTHS/12; }
-function trajVal(m,cat){ if(cat==='swe') return proEq(m); const v=benchOf(m,cat); return v==null?null:{v,est:false}; }
-function histVal(h,cat){ if(cat==='swe'){ const q=proFromVerified(h.value,h.date); return q?q.v:null; } return h.value; }
+// ---- AA scale history (his ask, Nov 10 2026): Artificial Analysis re-scores every model at each index version, and a
+// model it no longer runs loses its score, so each re-version used to wipe the chart's past. scripts/aa_sync.py now saves
+// the outgoing scale's scores (data/aa_history.json) at every rebase, and the chart CONVERTS them: for each retired scale,
+// OLS on logits over the models scored on both that scale and the next one (the newest hop refits live as AA scores more
+// models), chained forward to the current scale. Converted points are hollow and carry their original score. Under
+// AA_MIN_PAIRS pairs a hop (and everything older) is off. The error is not random: a new version re-weights what it
+// rewards, so a lab the new scale favours reads a little low in its converted past. Charts only, never the leaderboard.
+let AAHIST=[], AACONV={};
+const AA_MIN_PAIRS=8, pin01=v=>Math.min(99.5,Math.max(0.5,v))/100;
+function fitHop(pairs){
+  const n=pairs.length; if(n<AA_MIN_PAIRS) return null;
+  const xs=pairs.map(p=>logit(pin01(p[0]))), ys=pairs.map(p=>logit(pin01(p[1]))), mx=xs.reduce((a,x)=>a+x,0)/n, my=ys.reduce((a,y)=>a+y,0)/n;
+  let sxx=0,sxy=0,syy=0; xs.forEach((x,i)=>{ sxx+=(x-mx)**2; sxy+=(x-mx)*(ys[i]-my); syy+=(ys[i]-my)**2; });
+  if(!(sxx>0)||!(sxy>0)) return null;                                                       // flat or inverted: not a conversion
+  const b=sxy/sxx, a=my-b*mx, f=v=>unlogit(a+b*logit(pin01(v)));
+  const sse=xs.reduce((t,x,i)=>t+(ys[i]-(a+b*x))**2,0), rms=Math.sqrt(pairs.reduce((t,p)=>t+(f(p[0])-p[1])**2,0)/n);   // rms in index points
+  return {n,f,r2:syy>0?1-sse/syy:0,rms};
+}
+function buildAAConv(){
+  AACONV={}; let to=str((DATA.meta||{}).aaScale), toVals={}; if(!to) return;
+  DATA.models.forEach(m=>{ const v=benchOf(m,'aa'); if(v!=null) toVals[m.name]=v; });
+  for(let i=0;i<12;i++){                                                                     // walk back one retired scale at a time
+    const e=AAHIST.find(x=>x.replacedBy===to&&!AACONV[x.scale]&&x.scale!==(DATA.meta||{}).aaScale); if(!e) break;
+    const pairs=[]; Object.entries(e.values).forEach(([name,v])=>{ const o=num(v), w=num(toVals[name]); if(o!=null&&w!=null) pairs.push([o,w]); });
+    const hop=fitHop(pairs); if(!hop) break;
+    const hops=[{...hop,from:e.scale,to}].concat(AACONV[to]?AACONV[to].hops:[]);
+    AACONV[e.scale]={hops,vals:e.values,f:v=>hops.reduce((x,h)=>h.f(x),v)};
+    to=e.scale; toVals=e.values;
+  }
+}
+function aaConverted(m){                                                                     // newest retired scale that scored this model
+  for(const e of [...AAHIST].reverse()){ const c=AACONV[e.scale], o=c?num(c.vals[m.name]):null;
+    if(o!=null) return {v:Math.round(c.f(o)),est:true,from:o,scale:e.scale}; }
+  return null;
+}
+const WINDOW_MONTHS=18, TRAJ_WINDOW={aa:46};   // AA reaches back to GPT-4 (Mar 2023) now that old scales convert
+function windowCut(cat){ const d=new Date(); return d.getFullYear()+(d.getMonth()+Math.min(1,d.getDate()/30))/12 - (TRAJ_WINDOW[cat]||WINDOW_MONTHS)/12; }
+function trajVal(m,cat){ if(cat==='swe') return proEq(m); const v=benchOf(m,cat); return v!=null?{v,est:false}:cat==='aa'?aaConverted(m):null; }
+function histVal(h,cat){ if(cat==='swe'){ const q=proFromVerified(h.value,h.date); return q?q.v:null; }
+  if(cat==='aa'&&h.scale!==(DATA.meta||{}).aaScale){ const c=AACONV[h.scale], o=num(h.value); return c&&o!=null?Math.round(c.f(o)):null; }
+  return h.value; }
+const nameKey=s=>String(s||'').toLowerCase().replace(/[^0-9a-z.]+/g,' ').trim();           // same normalizer as aa_sync.norm
+const nameKeys=(name,lab)=>{ const k=nameKey(name), l=nameKey(canonLab(lab)).split(' ')[0];  // + the name without a leading lab word ("OpenAI o1" == "o1")
+  return l&&k.startsWith(l+' ')?[k,k.slice(l.length+1)]:[k]; };
 function leadingTrajectory(cands,cat,mode){
-  const cut=windowCut(), byLab={};   // only the last 18 months of releases
-  cands.forEach(m=>{const q=trajVal(m,cat),t=tval(m.released);if(!q||!Number.isFinite(t)||t<cut)return;const L=canonLab(m.lab);(byLab[L]=byLab[L]||[]).push({t,date:m.released,v:q.v,est:q.est,model:m.name});});
+  const cut=windowCut(cat), byLab={}, have=new Set();   // only the window's releases (18 months; AA: TRAJ_WINDOW)
+  cands.forEach(m=>{const q=trajVal(m,cat),t=tval(m.released);if(!q||!Number.isFinite(t)||t<cut)return;const L=canonLab(m.lab);nameKeys(m.name,m.lab).forEach(k=>have.add(k));(byLab[L]=byLab[L]||[]).push({t,date:m.released,v:q.v,est:q.est,model:m.name});});
   // extend the lines back with back-estimated points: AA only when scale-continuous; SWE only through the proEq era guard
-  if(cat==='tbaa'?false:cat==='swe'?!!PROFIT:historicsUsable(cat)){                  // AA's coding runs have no back-estimates
+  if(cat==='tbaa'?false:cat==='swe'?!!PROFIT:cat==='aa'?true:historicsUsable(cat)){   // AA's coding runs have no back-estimates; AA history converts per row (histVal)
     Object.keys(byLab).forEach(L=>{
       HISTORICS.forEach((h,hi)=>{
         if(h.benchmark!==cat||canonLab(h.lab)!==L) return;
         if(typeof h.open==='boolean'&&h.open!==(mode==='open')) return;                   // a history row from the other weights camp
+        if(nameKeys(h.model,h.lab).some(k=>have.has(k))) return;                                             // the model itself already plots (real or converted from a real score)
         const t=tval(h.date), v=histVal(h,cat); if(!Number.isFinite(t)||t<cut||v==null) return;
         byLab[L].push({t,date:h.date,v,est:true,model:h.model,hist:hi});
       });
@@ -1184,19 +1226,24 @@ function multiLineChart(series,cat){
         ?`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4" fill="${C.bg}" stroke="${col}" stroke-width="1.6" ${at}><title>${lbl} (estimated)</title></circle>`
         :`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4.5" fill="${col}" stroke="${C.bg}" stroke-width="1.5" ${at}><title>${lbl}</title></circle>`;});});
   s+='</svg>';
-  const F=PROFIT, key=!anyEst?'':(cat==='swe'&&F)?`Hollow = converted from SWE-bench Verified (fit on ${F.n} models that report both, R² ${F.r2.toFixed(2)}).`:'Hollow = estimated';
+  const F=PROFIT, cur=str((DATA.meta||{}).aaScale), A=Object.values(AACONV).map(c=>c.hops[0]).find(h=>h.to===cur);   // the newest hop
+  const key=!anyEst?'':(cat==='swe'&&F)?`Hollow = converted from SWE-bench Verified (fit on ${F.n} models that report both, R² ${F.r2.toFixed(2)}).`
+    :(cat==='aa'&&A)?`Hollow = scored on an older AA version, converted to ${he(cur)}. The ${he(A.from)} conversion is fit on ${A.n} models scored on both versions (R² ${A.r2.toFixed(2)}) and is usually within ${Math.max(1,Math.round(A.rms))} points. Older points pass through more than one conversion and are rougher.`
+    :'Hollow = estimated';
   return s+`<div class="legend2">${series.map(se=>`<span><span class="ld" style="background:${labHex(se.lab)}"></span>${he(se.lab.split(' ')[0])}</span>`).join('')}</div>${key?`<div class="chartkey">${key}</div>`:''}`;
 }
 // dot tap → a small card: name · score · lab · date + Details (the full write-up lives in the Details sheet, never here)
 function trajDetailCard(m,cat){ const q=trajVal(m,cat); if(!q) return ''; const pct=cat!=='aa';
   return `<div class="tdetail" style="--lab:${labHex(m.lab)}"><div class="td-top"><span class="td-nm">${he(m.name)}</span><span class="td-sc">${q.est?'~':''}${he(q.v)}${pct?'%':''}</span></div>`+
     `<div class="td-meta">${he(m.lab)} · ${he(fmtDate(m.released))}</div>`+
-    (q.est&&q.from!=null?`<div class="td-src">Converted from SWE-bench Verified ${he(q.from)}% (likely ${he(q.lo)}–${he(q.hi)}%)</div>`:'')+
+    (q.est&&q.from!=null?(cat==='aa'?`<div class="td-src">Converted from its AA ${he(q.scale)} score of ${he(q.from)}</div>`
+      :`<div class="td-src">Converted from SWE-bench Verified ${he(q.from)}% (likely ${he(q.lo)}–${he(q.hi)}%)</div>`):'')+
     `<button class="infobtn" data-info="${he(m.name)}">${INFO_ICON}Details</button></div>`; }
 function histDetailCard(h,cat){ const v=histVal(h,cat); if(v==null) return ''; const pct=cat!=='aa';
   return `<div class="tdetail" style="--lab:${labHex(h.lab)}"><div class="td-top"><span class="td-nm">${he(h.model)}</span><span class="td-sc">~${he(v)}${pct?'%':''}</span></div>`+
     `<div class="td-meta">${he(h.lab)} · ${he(fmtDate(h.date))}</div>`+
-    (cat==='swe'?`<div class="td-src">Converted from SWE-bench Verified ${he(h.value)}%</div>`:'')+
+    (cat==='swe'?`<div class="td-src">Converted from SWE-bench Verified ${he(h.value)}%</div>`
+      :cat==='aa'&&h.scale&&h.scale!==(DATA.meta||{}).aaScale?`<div class="td-src">Converted from an estimated AA ${he(h.scale)} score of ${he(h.value)}</div>`:'')+
     (h.basis?`<div class="td-why">${he(h.basis)}</div>`:'')+`</div>`; }
 function trajBlock(cat,title,sub){
   const cands=DATA.models.filter(x=>x.status!=='preview').filter(x=> trajMode[cat]==='open'?x.open:!x.open);
