@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T12:00:03-05:00",
+  "updated": "2026-11-11T15:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -18239,6 +18239,62 @@
         {
           "u": "cometapi.com",
           "url": "https://www.cometapi.com/gpt-6-2-astra-codex-sightings/",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "routine": "3PM",
+      "sources": [
+        {
+          "u": "deepmind.google/blog",
+          "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/09/anthropic-claude-fable-5-2-mythos-5-2.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/10/anthropic-ipo-nvidia-stocks-spark",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s41586-026-11228-6",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "blog"
+        },
+        {
+          "u": "the-decoder.com",
+          "url": "https://the-decoder.com/meta-returns-to-open-models-with-zuckerbergs-plan-to-out-copy-china-and-sell-compute-by-auction/",
+          "q": "blog"
+        },
+        {
+          "u": "orcarouter.ai",
+          "url": "https://www.orcarouter.ai/blog/gemini-4-flash-hydrogen-leak",
           "q": "blog"
         }
       ]
