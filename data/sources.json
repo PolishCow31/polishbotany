@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T18:00:00-05:00",
+  "updated": "2026-11-10T21:00:00-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -18727,6 +18727,62 @@
           "u": "manifold AGI before 2028",
           "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
           "q": "primary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-10",
+      "routine": "9PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com (markets API)",
+          "url": "https://api.elections.kalshi.com/trade-api/v2/markets?event_ticker=KXAGICO-COMP",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets (API)",
+          "url": "https://api.manifold.markets/v0/slug/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "primary"
+        },
+        {
+          "u": "blogs.nvidia.com",
+          "url": "https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/10/nvidia-nvda-jensen-huang-affair-chinese-spy.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/10/anthropic-claude-meetings-knowledge-work",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/10/ai-race-politics-slowdown",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/10/ai-stocks-nvidia-broadcom",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "blog"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "blog"
         }
       ]
     }
