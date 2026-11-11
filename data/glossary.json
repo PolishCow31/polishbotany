@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T15:00:03-05:00",
+  "updated": "2026-11-11T06:09:23-05:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -3323,6 +3323,16 @@
         "dLLM",
         "text diffusion model",
         "diffusion LLM"
+      ]
+    },
+    {
+      "term": "Diffusion transformer",
+      "acronym": "DiT",
+      "category": "Model architecture",
+      "def": "A diffusion model whose denoising network is a transformer operating on image or video patches, replacing the older convolutional U-Net backbone and scaling more predictably.",
+      "aka": [
+        "DiT",
+        "diffusion transformer backbone"
       ]
     },
     {
@@ -9042,6 +9052,17 @@
         "prompting",
         "prompt design",
         "prompt optimization"
+      ]
+    },
+    {
+      "term": "Prompt expansion",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "A step where a language model rewrites a short user prompt into a longer, more detailed one before it reaches an image or video generator.",
+      "aka": [
+        "prompt expander",
+        "prompt enhancer",
+        "prompt rewriting"
       ]
     },
     {
