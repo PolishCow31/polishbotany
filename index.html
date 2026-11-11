@@ -8,7 +8,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Botany">
 <meta name="robots" content="noindex">
-<link rel="manifest" href="manifest.json?v=41"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
+<link rel="manifest" href="manifest.json?v=42"><!-- ?v= = the app build/ship version (Plate-style ship-counter). BUMP per code deploy; the More-tab badge reads it so it can't drift. -->
 
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2316261d'/%3E%3Cpath d='M16 6 C10 11 10 21 16 26 C22 21 22 11 16 6 Z' fill='none' stroke='%2362c177' stroke-width='2.4' stroke-linejoin='round'/%3E%3Cpath d='M16 9 L16 24' stroke='%2362c177' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E">
@@ -538,7 +538,7 @@ async function loadData(first){
     const P={}; DATA_FILES.forEach(f=>{ P[f]=J(f).catch(e=>(console.warn(f,e),null)); });   // each file fails soft to null
     const [m,meta,ed,fc,rl,ah]=await Promise.all([P.models,P.meta,P.editorial,P.forecasts,P.releases,P.aa_history]);
     applyCore(m,meta,ed,fc,rl); lastLoad=Date.now();
-    safe(()=>{ if(ah) AAHIST=rows(ah.scales).filter(e=>str(e.scale)&&str(e.replacedBy)&&isObj(e.values)); buildAAConv(); },'#v-charts');
+    safe(()=>{ if(ah) AAHIST=rows(ah.scales).filter(e=>str(e.scale)&&str(e.replacedBy)&&isObj(e.values)); buildAAConv(); buildTBConv(); },'#v-charts');
     renderCore();
     if(first){ safe(renderMore,'#v-more'); runSplash(); }
     await Promise.all([
@@ -896,7 +896,7 @@ function cadenceLine(){
   const yrs=[]; for(let y=Math.ceil(x0);y<=Math.floor(x1);y++) yrs.push(y); const every=Math.max(1,Math.ceil(yrs.length/7));   // ≤7 year labels so they never collide
   yrs.forEach((y,i)=>{ if(i%every===0) s+=`<text x="${X(y).toFixed(1)}" y="${H-6}" font-size="11" text-anchor="middle" fill="${C.ink3}">${y}</text>`; });
   if(roll.length>1) s+=`<polyline points="${roll.map(p=>`${X(p.q/4).toFixed(1)},${Y(p.v).toFixed(1)}`).join(' ')}" fill="none" stroke="${C.accent}" stroke-width="2.5" stroke-linejoin="round"/>`;
-  pts.forEach(p=>s+=`<circle cx="${X(p.q/4).toFixed(1)}" cy="${Y(p.c).toFixed(1)}" r="2.4" fill="${C.ink3}"><title>${p.c} that quarter</title></circle>`);
+  pts.forEach(p=>s+=`<circle cx="${X(p.q/4).toFixed(1)}" cy="${Y(p.c).toFixed(1)}" r="2.4" fill="${C.ink3}" aria-label="${p.c} that quarter"></circle>`);
   return s+'</svg><div class="accsub" style="margin-top:8px">Dots = models tracked per quarter · line = 12-month average.</div>';
 }
 function cadenceBlock(){ return segCtl('cadence',cadenceMode,FO)+guard(cadenceLine); }
@@ -939,7 +939,7 @@ function headToHead(){
   [0,.25,.5,.75,1].forEach(f=>{const x=(L+f*bw).toFixed(1);s+=`<line x1="${x}" y1="${top}" x2="${x}" y2="${top+rows.length*rh}" stroke="${C.line}" opacity=".4"/><text x="${x}" y="${H-3}" font-size="11" text-anchor="middle" fill="${C.ink3}">${tick(f*hi)}</text>`;});
   rows.forEach((o,i)=>{const y=top+i*rh+rh/2,col=labHex(o.m.lab),bx=X(o.q.v),val=(o.q.est?'~':'')+r1(o.q.v)+(pct?'%':'');
     s+=`<text x="${L-7}" y="${(y+4).toFixed(1)}" font-size="12" font-weight="600" text-anchor="end" fill="${C.ink2}" font-family="var(--sans)">${he(hhLabel(o.m))}</text>`;
-    s+=`<rect x="${L}" y="${(y-8).toFixed(1)}" width="${Math.max(1,bx-L).toFixed(1)}" height="16" rx="3" fill="${col}"${o.q.est?' opacity=".6"':''}><title>${he(o.m.name)}: ${he(val)}</title></rect>`;
+    s+=`<rect x="${L}" y="${(y-8).toFixed(1)}" width="${Math.max(1,bx-L).toFixed(1)}" height="16" rx="3" fill="${col}"${o.q.est?' opacity=".6"':''} aria-label="${he(o.m.name)}: ${he(val)}"></rect>`;
     s+=`<text x="${(bx+5).toFixed(1)}" y="${(y+4).toFixed(1)}" font-size="12" font-weight="700" fill="${C.ink2}" font-family="var(--mono)">${he(val)}</text>`;});
   s+='</svg>';
   return seg+s+cap;
@@ -1165,9 +1165,23 @@ function aaConverted(m){                                                        
     if(o!=null) return {v:Math.round(c.f(o)),est:true,from:o,scale:e.scale}; }
   return null;
 }
+// ---- Terminal-Bench gap fill (his ask, Nov 10 2026): AA runs Terminal-Bench 4.0 itself on one setup, but not every model.
+// A model AA has not run converts from the score its own lab reported: its Terminal-Bench 4.0 run first, else its 2.1 run.
+// Same fit as an AA hop (OLS on logits over the models that have both numbers), refit on every load. The 2.1 fit is loose
+// (labs use their own agent setups on an easier test), and the footnote prints how loose. Charts only.
+const TB_SRC=['Terminal-Bench 4.0','Terminal-Bench 2.1'], TB_AA='Terminal-Bench 4.0 (AA)';
+let TBCONV=[];
+function buildTBConv(){
+  TBCONV=[]; TB_SRC.forEach(key=>{ const pairs=[];
+    DATA.models.forEach(m=>{ const b=m.benchmarks||{}, o=num(b[key]), w=num(b[TB_AA]); if(o!=null&&w!=null) pairs.push([o,w]); });
+    const hop=fitHop(pairs); if(hop) TBCONV.push({key,...hop}); });
+}
+function tbConverted(m){ const b=m.benchmarks||{};
+  for(const c of TBCONV){ const o=num(b[c.key]); if(o!=null) return {v:Math.round(c.f(o)),est:true,from:o,src:c.key}; }
+  return null; }
 const WINDOW_MONTHS=18, TRAJ_WINDOW={aa:46};   // AA reaches back to GPT-4 (Mar 2023) now that old scales convert
 function windowCut(cat){ const d=new Date(); return d.getFullYear()+(d.getMonth()+Math.min(1,d.getDate()/30))/12 - (TRAJ_WINDOW[cat]||WINDOW_MONTHS)/12; }
-function trajVal(m,cat){ if(cat==='swe') return proEq(m); const v=benchOf(m,cat); return v!=null?{v,est:false}:cat==='aa'?aaConverted(m):null; }
+function trajVal(m,cat){ if(cat==='swe') return proEq(m); const v=benchOf(m,cat); return v!=null?{v,est:false}:cat==='aa'?aaConverted(m):cat==='tbaa'?tbConverted(m):null; }
 function histVal(h,cat){ if(cat==='swe'){ const q=proFromVerified(h.value,h.date); return q?q.v:null; }
   if(cat==='aa'&&h.scale!==(DATA.meta||{}).aaScale){ const c=AACONV[h.scale], o=num(h.value); return c&&o!=null?Math.round(c.f(o)):null; }
   return h.value; }
@@ -1223,12 +1237,13 @@ function multiLineChart(series,cat){
     se.points.forEach(p=>{if(p.est)anyEst=true;
       const at=`data-bench="${cat}"${p.hist!=null?` data-hist="${p.hist}"`:` data-model="${he(p.model)}"`} style="cursor:pointer"`, lbl=`${he(p.model)}: ${p.est?'~':''}${he(p.v)}${pct?'%':''}`;
       s+=p.est
-        ?`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4" fill="${C.bg}" stroke="${col}" stroke-width="1.6" ${at}><title>${lbl} (estimated)</title></circle>`
-        :`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4.5" fill="${col}" stroke="${C.bg}" stroke-width="1.5" ${at}><title>${lbl}</title></circle>`;});});
+        ?`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4" fill="${C.bg}" stroke="${col}" stroke-width="1.6" ${at} aria-label="${lbl} (estimated)"></circle>`
+        :`<circle cx="${X(p.t).toFixed(1)}" cy="${Y(p.v).toFixed(1)}" r="4.5" fill="${col}" stroke="${C.bg}" stroke-width="1.5" ${at} aria-label="${lbl}"></circle>`;});});
   s+='</svg>';
   const F=PROFIT, cur=str((DATA.meta||{}).aaScale), A=Object.values(AACONV).map(c=>c.hops[0]).find(h=>h.to===cur);   // the newest hop
   const key=!anyEst?'':(cat==='swe'&&F)?`Hollow = converted from SWE-bench Verified (fit on ${F.n} models that report both, R² ${F.r2.toFixed(2)}).`
     :(cat==='aa'&&A)?`Hollow = scored on an older AA version, converted to ${he(cur)}. The ${he(A.from)} conversion is fit on ${A.n} models scored on both versions (R² ${A.r2.toFixed(2)}) and is usually within ${Math.max(1,Math.round(A.rms))} points. Older points pass through more than one conversion and are rougher.`
+    :(cat==='tbaa'&&TBCONV.length)?`Hollow = not run by Artificial Analysis yet, converted from the lab's own reported score. `+TBCONV.map(c=>`From ${he(c.key)}: fit on ${c.n} models with both scores (R² ${c.r2.toFixed(2)}), usually within ${Math.max(1,Math.round(c.rms))} points.`).join(' ')
     :'Hollow = estimated';
   return s+`<div class="legend2">${series.map(se=>`<span><span class="ld" style="background:${labHex(se.lab)}"></span>${he(se.lab.split(' ')[0])}</span>`).join('')}</div>${key?`<div class="chartkey">${key}</div>`:''}`;
 }
@@ -1237,6 +1252,7 @@ function trajDetailCard(m,cat){ const q=trajVal(m,cat); if(!q) return ''; const 
   return `<div class="tdetail" style="--lab:${labHex(m.lab)}"><div class="td-top"><span class="td-nm">${he(m.name)}</span><span class="td-sc">${q.est?'~':''}${he(q.v)}${pct?'%':''}</span></div>`+
     `<div class="td-meta">${he(m.lab)} · ${he(fmtDate(m.released))}</div>`+
     (q.est&&q.from!=null?(cat==='aa'?`<div class="td-src">Converted from its AA ${he(q.scale)} score of ${he(q.from)}</div>`
+      :cat==='tbaa'?`<div class="td-src">Converted from the lab's own ${he(q.src)} score of ${he(q.from)}%</div>`
       :`<div class="td-src">Converted from SWE-bench Verified ${he(q.from)}% (likely ${he(q.lo)}–${he(q.hi)}%)</div>`):'')+
     `<button class="infobtn" data-info="${he(m.name)}">${INFO_ICON}Details</button></div>`; }
 function histDetailCard(h,cat){ const v=histVal(h,cat); if(v==null) return ''; const pct=cat!=='aa';

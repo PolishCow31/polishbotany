@@ -5,6 +5,18 @@ Resume command: `/ai`. Local: `localhost:8095`. Full design: [ARCHITECTURE.md](A
 
 ## State — Nov 10 2026
 
+### ✓ DONE (Nov 10, 10 pm) — Terminal-Bench chart fills its gaps from lab-reported scores (v42)
+- **His ask (he had to ask twice):** the Terminal-Bench chart should get converted hollow points too, not just the AA chart.
+- **`buildTBConv` / `tbConverted` in index.html:** a model with no `Terminal-Bench 4.0 (AA)` value converts from its
+  lab's own `Terminal-Bench 4.0` score, else its `Terminal-Bench 2.1` score (same `fitHop` logit OLS, refit each load,
+  off under 8 pairs). Nov 10: lab 4.0 → AA on 11 pairs, R² 0.85, rms 5.1; 2.1 → AA on 14 pairs, R² 0.67, rms 10.1.
+  Closed chart gained 7 hollow points (Claude Opus 5 ~18 from 89, Sonnet 5 ~8, Grok 4.5 ~10, Gemini 3.5 Flash ~5 ...),
+  Open gained 6. Footnote prints both fits live; tap shows the source score. Charts only.
+- **The 2.1 fit is loose and biased low for strong closed models** (GPT-5.6 Terra 84.3 → fit 11, AA measured 35.4).
+  TB 2.0 (0 pairs) and 3.0 (2 pairs) cannot be fit and stay off. Terminal-Bench did not exist before 2025, so this
+  chart cannot reach back like the AA one.
+- **No tooltips rule:** the four SVG `<title>` hover labels in the charts are now `aria-label`s.
+
 ### ✓ DONE (Nov 10) — AA chart keeps its history across re-versions; Terminal-Bench (AA) column re-wired (v41)
 - **His ask:** old-scale AA scores converted onto the current scale and drawn as hollow points, one line through
   both, instead of a chart that restarts at each AA re-version.
