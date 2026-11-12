@@ -6207,6 +6207,39 @@
       "sources": [
         "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence"
       ]
+    },
+    {
+      "name": "Ling-3.2-flash",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-11-05",
+      "params": "560B / 25B active",
+      "context": "1M",
+      "modality": "Text, image, video in",
+      "open": false,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Ant Group's Ling flash line goes natively multimodal, reading images and video alongside text for long-horizon agent work.",
+      "sources": [
+        "https://developer.ant-ling.com/en/docs/getting-started/changelog"
+      ]
+    },
+    {
+      "name": "ERNIE-5.5-Flash-Base",
+      "lab": "Baidu",
+      "released": "2026-11",
+      "params": "280B / 14B active",
+      "context": "1M",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Baidu published the raw pre-trained ERNIE 5.5 Flash checkpoint, before any post-training, as a starting point for fine-tuning research.",
+      "sources": [
+        "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
+        "https://www.nocode.mba/ai-release-tracker/2026/11"
+      ]
     }
   ]
 }
