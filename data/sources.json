@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T00:00:04-05:00",
+  "updated": "2026-11-12T03:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -17041,6 +17041,87 @@
           "u": "kalshi.com year-end top LLM",
           "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
           "q": "primary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-12",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "polymarket.com/gamma-api",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-ai-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/yearend-top-llm",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/agi",
+          "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/qwen4-weights",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "nvidianews.nvidia.com/cosmos-3",
+          "url": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/nvidia-board",
+          "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-affair-employee.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/musk-huang",
+          "url": "https://www.cnbc.com/2026/11/12/elon-musk-jensen-huang-nvidia-tesla.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/anthropic-ipo-range",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/alibaba-t-head",
+          "url": "https://www.cnbc.com/2026/11/11/alibaba-pr.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/anthropic-ipo",
+          "url": "https://www.axios.com/2026/11/10/anthropic-ipo-nvidia-stocks-spark",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/nvidia-affair",
+          "url": "https://www.axios.com/2026/11/11/nvidia-jensen-huang-affair-shares",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com/smartwatch-hypertension",
+          "url": "https://www.nature.com/articles/s41586-026-11336-3",
+          "q": "primary"
+        },
+        {
+          "u": "nature.com/autonomous-lab",
+          "url": "https://www.nature.com/articles/s41586-026-11228-6",
+          "q": "primary"
+        },
+        {
+          "u": "cometapi.com/gpt-6-2-astra",
+          "url": "https://www.cometapi.com/gpt-6-2-astra-codex-sightings/",
+          "q": "blog"
         }
       ]
     }
