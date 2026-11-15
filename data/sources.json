@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T18:00:04-05:00",
+  "updated": "2026-11-14T21:00:03-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -17120,6 +17120,77 @@
         {
           "u": "polymarket.com — Claude 6 released by...?",
           "url": "https://polymarket.com/event/claude-6-released-byptptpt",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-14",
+      "routine": "9PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-grok-4.8",
+          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://cnbc.com/2026/11/13/stock-market-next-week-outlook-for-nov-16-20-2026.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/11/anthopic-australian-retail-ipo-offering-.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/11/anthropic-ipo-ai-nvidia-midterms",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s41586-026-11228-6",
+          "q": "primary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s41698-026-01772-9",
+          "q": "primary"
+        },
+        {
+          "u": "runtimewire.com",
+          "url": "https://runtimewire.com/article/gpt-62-late-openai-alignment-reports-vals-ai",
+          "q": "blog"
+        },
+        {
+          "u": "fourweekmba.com",
+          "url": "https://fourweekmba.com/ai-grok-4-8-in-rl-after-a-57-day-wait-as-xai-dumps-jax-for-cpp/",
+          "q": "blog"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
           "q": "secondary"
         }
       ]
