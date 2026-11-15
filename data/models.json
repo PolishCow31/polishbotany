@@ -6386,6 +6386,55 @@
         "https://www.wam.ae/en/article/c37a8kv-mbzuai-launches-open-source-pan-model-simulate",
         "https://www.marktechpost.com/2026/11/10/ifm-pan-2-open-world-model/"
       ]
+    },
+    {
+      "name": "SOV-Transcribe-1",
+      "lab": "Salesforce",
+      "released": "2026-11-12",
+      "params": "26B total, 4B active",
+      "context": "—",
+      "modality": "Audio to text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Apache 2.0 speech recognition model that takes formatting instructions and keyword lists; Salesforce says it leads open non-streaming transcription.",
+      "sources": [
+        "https://huggingface.co/blog/salesforce-sovereign-intelligence/sov-transcribe-1"
+      ]
+    },
+    {
+      "name": "ZONOS3-Mini",
+      "lab": "Zyphra",
+      "released": "2026-11-12",
+      "params": "0.8B total, 0.1B active",
+      "context": "—",
+      "modality": "Text to speech",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Small open text-to-speech model covering 43 languages, with voice cloning from a short clip and runtimes down to phones and browsers.",
+      "sources": [
+        "https://huggingface.co/blog/Zyphra/zonos3-mini"
+      ]
+    },
+    {
+      "name": "Arete-27B",
+      "lab": "Nous Research",
+      "released": "2026-11-06",
+      "params": "27B",
+      "context": "—",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "A Qwen3.8-27B fine-tune that Nous says cuts Chinese state framing in political answers from 22% to 0.9% on its own test.",
+      "sources": [
+        "https://www.marktechpost.com/2026/11/07/nous-research-arete-27b-qwen3-8-27b-propaganda-fine-tune/",
+        "https://thursdai.news/releases/2026-11"
+      ]
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T00:00:00-05:00",
+  "updated": "2026-11-15T03:00:04-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16554,6 +16554,107 @@
         {
           "u": "llmgateway.io/timeline",
           "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "thursdai.news/releases",
+          "url": "https://thursdai.news/releases/2026-11",
+          "q": "secondary"
+        },
+        {
+          "u": "nocode.mba/ai-release-tracker",
+          "url": "https://www.nocode.mba/ai-release-tracker/2026/11",
+          "q": "secondary"
+        },
+        {
+          "u": "huggingface.co/blog (Salesforce)",
+          "url": "https://huggingface.co/blog/salesforce-sovereign-intelligence/sov-transcribe-1",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/blog (Zyphra)",
+          "url": "https://huggingface.co/blog/Zyphra/zonos3-mini",
+          "q": "primary"
+        },
+        {
+          "u": "marktechpost.com",
+          "url": "https://www.marktechpost.com/2026/11/07/nous-research-arete-27b-qwen3-8-27b-propaganda-fine-tune/",
+          "q": "secondary"
+        },
+        {
+          "u": "overchat.ai (GPT-6.2)",
+          "url": "https://overchat.ai/ai-hub/gpt-6-2-release-date",
+          "q": "blog"
+        },
+        {
+          "u": "cometapi.com (GPT-6.2 Astra)",
+          "url": "https://www.cometapi.com/gpt-6-2-astra-codex-sightings/",
+          "q": "blog"
+        },
+        {
+          "u": "hashout.jp (Grok 4.8)",
+          "url": "https://hashout.jp/?p=14136",
+          "q": "blog"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/10/anthropic-sets-price-range-of-70-to-78-in-upcoming-ipo.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/13/nvidia-huang-ceo-replacement-search.html",
+          "q": "secondary"
+        },
+        {
+          "u": "sec.gov (Nvidia 8-K)",
+          "url": "https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm",
+          "q": "primary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/10/ai-race-politics-slowdown",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s41586-026-11336-3",
+          "q": "primary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s41586-026-11228-6",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
+          "q": "secondary"
+        },
+        {
+          "u": "kalshi.com",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "secondary"
+        },
+        {
+          "u": "kalshi.com",
+          "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
+          "q": "secondary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
           "q": "secondary"
         }
       ]
