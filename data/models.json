@@ -6134,8 +6134,8 @@
       "open": false,
       "benchmarks": {},
       "milestone": false,
-      "status": "preview",
-      "notable": "First Qwen 4 model, a flagship preview open to Token Plan subscribers until Nov 25, with no published benchmarks yet.",
+      "status": "superseded",
+      "notable": "Token Plan preview of Qwen4-Max, replaced by the generally available model on Nov 16.",
       "sources": [
         "https://x.com/Alibaba_Qwen/status/2120335993643684315",
         "https://technode.com/2026/11/11/alibaba-opens-qwen4-max-preview-with-a-million-token-context-window/",
@@ -6454,6 +6454,27 @@
       "sources": [
         "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
         "https://huggingface.co/Edge0/Edge0-145B-NVFP4"
+      ]
+    },
+    {
+      "name": "Qwen4-Max",
+      "lab": "Alibaba (Qwen)",
+      "released": "2026-11-16",
+      "params": "2.4T MoE, 71B active",
+      "context": "1M",
+      "modality": "text, image, video in; text out",
+      "open": false,
+      "benchmarks": {
+        "DeepSWE 1.1": 75.7,
+        "Terminal-Bench 4.0": 48.5
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Alibaba's first generally available Qwen 4 model, a closed-weight flagship priced well below Western rivals.",
+      "sources": [
+        "https://bloomberg.com/news/articles/2026-11-16/alibaba-unveils-new-flagship-ai-model-in-riposte-to-us-rivals",
+        "https://www.datacamp.com/blog/qwen4-max",
+        "https://byteiota.com/qwen4-max-ga-launch/"
       ]
     }
   ]
