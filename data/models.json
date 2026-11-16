@@ -6435,6 +6435,26 @@
         "https://www.marktechpost.com/2026/11/07/nous-research-arete-27b-qwen3-8-27b-propaganda-fine-tune/",
         "https://thursdai.news/releases/2026-11"
       ]
+    },
+    {
+      "name": "Edge0-145B",
+      "lab": "Edge0",
+      "released": "2026-11-12",
+      "params": "145B MoE, 10B active",
+      "context": "256K",
+      "modality": "Text",
+      "open": true,
+      "benchmarks": {
+        "DeepSWE 1.1": 64.6,
+        "GPQA Diamond": 90.4
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Open-weight coding and reasoning model built to run on a laptop, using about 29GB of memory at over 80 tokens per second.",
+      "sources": [
+        "https://edge0.ai/blog/introducing-edge0-145b-frontier-ai-capabilities-on-your-own-computer",
+        "https://huggingface.co/Edge0/Edge0-145B-NVFP4"
+      ]
     }
   ]
 }
