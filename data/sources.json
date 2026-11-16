@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T00:00:01-05:00",
+  "updated": "2026-11-16T03:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16586,6 +16586,62 @@
           "u": "polymarket.com/next-deepseek-pro-released-byptptpt",
           "url": "https://polymarket.com/event/next-deepseek-pro-released-byptptpt",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/gpt-astra",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/claude-6",
+          "url": "https://polymarket.com/event/claude-6-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/best-ai-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/stock-market-next-week",
+          "url": "https://www.cnbc.com/2026/11/13/stock-market-next-week-outlook-for-nov-16-20-2026.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/stock-market-today",
+          "url": "https://www.cnbc.com/2026/11/15/stock-market-today-live-updates.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/nvidia-jensen-huang-return",
+          "url": "https://www.cnbc.com/2026/11/16/nvidia-jensen-huang-return-tech.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/anthropic-ipo-ai-nvidia",
+          "url": "https://www.axios.com/2026/11/11/anthropic-ipo-ai-nvidia-midterms",
+          "q": "secondary"
+        },
+        {
+          "u": "hashout.jp/grok-4-8",
+          "url": "https://hashout.jp/?p=14136",
+          "q": "blog"
         }
       ]
     }
