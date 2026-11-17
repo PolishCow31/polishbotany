@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T03:00:03-05:00",
+  "updated": "2026-11-17T06:00:03-05:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,7 +7,7 @@
       "lab": "OpenAI",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 85,
+      "prob": 90,
       "probAsOf": "2026-11-17",
       "frontier": true,
       "open": false,
@@ -21,7 +21,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 67,
+      "prob": 69,
       "probAsOf": "2026-11-17",
       "frontier": true,
       "open": false,
@@ -63,7 +63,7 @@
       "lab": "xAI",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 48,
+      "prob": 52,
       "probAsOf": "2026-11-17",
       "frontier": false,
       "open": false,
@@ -113,6 +113,20 @@
       "late": false,
       "basis": "Anthropic has not announced a Claude 6 generation; markets expect it during 2027.",
       "source": "https://polymarket.com/event/claude-6-released-byptptpt"
+    },
+    {
+      "model": "Qwen 4",
+      "lab": "Alibaba",
+      "expectedWindow": "by Nov 25",
+      "expectedDate": "2026-11",
+      "prob": 78,
+      "probAsOf": "2026-11-17",
+      "frontier": false,
+      "open": true,
+      "status": "confirmed",
+      "late": false,
+      "basis": "Qwen4-Max went generally available Nov 16 with closed weights; Alibaba says smaller Qwen4 models open later, undated.",
+      "source": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f"
     },
     {
       "model": "FLUX 3 Image weights",
@@ -213,20 +227,6 @@
       "source": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design"
     },
     {
-      "model": "Qwen 4",
-      "lab": "Alibaba",
-      "expectedWindow": "by Nov 25",
-      "expectedDate": "2026-11",
-      "prob": 78,
-      "probAsOf": "2026-11-17",
-      "frontier": false,
-      "open": true,
-      "status": "confirmed",
-      "late": false,
-      "basis": "Qwen4-Max went generally available Nov 16 with closed weights; Alibaba says smaller Qwen4 models open later, undated.",
-      "source": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f"
-    },
-    {
       "model": "Koa GA",
       "lab": "Salesforce",
       "expectedWindow": "Q4 2026",
@@ -269,18 +269,18 @@
       "source": "https://manilatimes.net/2026/11/04/tmt-newswire/pr-newswire/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/2461683"
     },
     {
-      "model": "Hy4 Flash",
+      "model": "Hy4 Flash weights",
       "lab": "Tencent",
       "expectedWindow": "TBA",
-      "expectedDate": "2026-11",
+      "expectedDate": "2026-12",
       "prob": -1,
       "probAsOf": null,
       "frontier": false,
-      "open": false,
+      "open": true,
       "status": "confirmed",
       "late": false,
-      "basis": "Tencent's Nov 4 Hy4 announcement says a cheaper Hy4 Flash is scheduled for release soon, without a date.",
-      "source": "https://manilatimes.net/2026/11/04/tmt-newswire/pr-newswire/tencent-launches-hy4-joining-the-ranks-of-the-worlds-leading-open-source-ai-models/2461683"
+      "basis": "Hy4 Flash launched Nov 16 by API; Tencent says it plans to open-source the model, without a date.",
+      "source": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/"
     }
   ]
 }

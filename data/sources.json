@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T03:00:03-05:00",
+  "updated": "2026-11-17T06:00:03-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16616,6 +16616,82 @@
         {
           "u": "cnbc.com/ai-week-ahead",
           "url": "https://www.cnbc.com/2026/11/13/stock-market-next-week-outlook-for-nov-16-20-2026.html",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-17",
+      "routine": "6AM",
+      "sources": [
+        {
+          "u": "tencent.com",
+          "url": "https://www.tencent.com/tencent-launches-hy4-flash-to-power-high-speed-cost-efficient-ai-deployment-for-everyday-workflows/",
+          "q": "primary"
+        },
+        {
+          "u": "openrouter.ai/tencent/hy4-flash",
+          "url": "https://openrouter.ai/tencent/hy4-flash",
+          "q": "primary"
+        },
+        {
+          "u": "unite.ai",
+          "url": "https://www.unite.ai/tencent-launches-hy4-flash-as-a-lower-cost-multimodal-model/",
+          "q": "secondary"
+        },
+        {
+          "u": "pricepertoken.com",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/ai",
+          "url": "https://www.cnbc.com/ai-artificial-intelligence/",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/17/nvidia-china-cloud-ai-chip-access.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/17/megaspeed-investigation-nvidia-jensen-huang.html",
+          "q": "secondary"
+        },
+        {
+          "u": "fourweekmba.com",
+          "url": "https://fourweekmba.com/ai-anthropics-ipo-day-by-day-pricing-18-nov-trading-19-nov/",
+          "q": "blog"
+        },
+        {
+          "u": "openai.com",
+          "url": "https://openai.com/index/introducing-chatgpt-wallet/",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "secondary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
+          "q": "secondary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
           "q": "secondary"
         }
       ]
