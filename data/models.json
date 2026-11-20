@@ -5761,7 +5761,7 @@
       "open": true,
       "benchmarks": {},
       "milestone": false,
-      "status": "preview",
+      "status": "superseded",
       "notable": "Open preview with a looped decoder that runs 24 layers twice on shared weights, aimed at long-context agent work.",
       "sources": [
         "https://huggingface.co/sensenova/SenseNova-Loop-9B-Preview"
@@ -6710,6 +6710,45 @@
       "sources": [
         "https://www.malaymail.com/news/money/mediaoutreach/2026/11/17/kling-ai-launches-kling-image-40-with-photographic-realism-and-native-8k-generation/502070",
         "https://kling.ai/blog/kling-image-4-stunningly-realistic-sharp-precise"
+      ]
+    },
+    {
+      "name": "DaisyRose-27B",
+      "lab": "RadixArk",
+      "released": "2026-11-18",
+      "params": "27B",
+      "context": "256K",
+      "modality": "text, image in; text out",
+      "open": true,
+      "benchmarks": {
+        "Terminal-Bench 4.1": 12.0,
+        "DeepSWE 1.1": 46.2,
+        "GPQA Diamond": 90.7,
+        "HLE": 34.3
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "RadixArk's first model, an Apache 2.0 agent-coding fine-tune of Qwen3.8-27B that doubles its base on Terminal-Bench 4.1.",
+      "sources": [
+        "https://huggingface.co/blog/RadixArk/daisyrose-27b-pushing-the-frontier-of-post-trainin",
+        "https://huggingface.co/RadixArk/DaisyRose-27B"
+      ]
+    },
+    {
+      "name": "SenseNova-Loop-9B",
+      "lab": "SenseTime",
+      "released": "2026-11-17",
+      "params": "9B",
+      "context": "512K",
+      "modality": "text, image in; text out",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Full release of SenseTime's looped model: 32 layers whose shared middle runs twice, now with a 512K context window.",
+      "sources": [
+        "https://technode.com/2026/11/18/sensetime-releases-open-weight-loop-9b-model-that-reuses-layers-for-deeper-computation/",
+        "https://huggingface.co/sensenova/SenseNova-Loop-9B"
       ]
     }
   ]

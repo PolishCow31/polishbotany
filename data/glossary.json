@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T12:00:03-05:00",
+  "updated": "2026-11-20T03:00:03-05:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -6213,6 +6213,16 @@
         "key-value cache",
         "attention cache",
         "KV-cache"
+      ]
+    },
+    {
+      "term": "KV cache quantization",
+      "acronym": "",
+      "category": "Inference & serving",
+      "def": "Storing a model's cached attention keys and values at lower numeric precision, cutting the memory long contexts need at a small cost in accuracy.",
+      "aka": [
+        "quantized KV cache",
+        "8-bit KV cache"
       ]
     },
     {
