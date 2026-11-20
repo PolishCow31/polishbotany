@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T09:00:05-05:00",
+  "updated": "2026-11-20T12:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16722,6 +16722,77 @@
         {
           "u": "sumus.im/qwen-4",
           "url": "https://sumus.im/blog/qwen-4",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "routine": "12PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-gemini-pro",
+          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets (API)",
+          "url": "https://api.manifold.markets/v0/slug/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/20/anthropic-stock-ai-amd-nvidia.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/20/stocks-moving-the-most-today-live-updates.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/16/openai-california-bonta-ai-lawsuit.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/20/anthropic-stock-fall-ipo-ai",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/20/banks-feast-on-ant-offering",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/local/san-francisco",
+          "url": "https://www.axios.com/local/san-francisco/2026/11/16/california-openai-lawsuit-hugging-face-hack",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "blog"
+        },
+        {
+          "u": "orcarouter.ai (Grok 4.8)",
+          "url": "https://www.orcarouter.ai/blog/grok-4-8-limited-rollout-what-we-know",
           "q": "blog"
         }
       ]
