@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-20T12:00:05-05:00",
+  "updated": "2026-11-20T15:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16793,6 +16793,57 @@
         {
           "u": "orcarouter.ai (Grok 4.8)",
           "url": "https://www.orcarouter.ai/blog/grok-4-8-limited-rollout-what-we-know",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-20",
+      "routine": "3PM",
+      "sources": [
+        {
+          "u": "polymarket.com (Gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-ai-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/qwen4-open-weights",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/anthropic-stock",
+          "url": "https://www.cnbc.com/2026/11/20/anthropic-stock-ai-amd-nvidia.html",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com/metr-graph",
+          "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+          "q": "secondary"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "secondary"
+        },
+        {
+          "u": "aireleasetracker.com/latest",
+          "url": "https://aireleasetracker.com/latest",
+          "q": "secondary"
+        },
+        {
+          "u": "runtimewire.com/grok-4-8",
+          "url": "https://runtimewire.com/article/spacexai-grok-4-8-reinforcement-learning-cpp-stack",
           "q": "blog"
         }
       ]
