@@ -6750,6 +6750,26 @@
         "https://technode.com/2026/11/18/sensetime-releases-open-weight-loop-9b-model-that-reuses-layers-for-deeper-computation/",
         "https://huggingface.co/sensenova/SenseNova-Loop-9B"
       ]
+    },
+    {
+      "name": "Inkling 2 Mini",
+      "lab": "Thinking Machines Lab",
+      "released": "2026-11-20",
+      "params": "26.4B / 3.4B active",
+      "context": "1M",
+      "modality": "text + image in, text out",
+      "open": true,
+      "benchmarks": {
+        "DeepSWE 1.1": 48.2,
+        "Terminal-Bench 4.0": 5.6
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "A looped small model that runs its middle layers three times per token, small enough for a laptop, with Apache 2.0 weights.",
+      "sources": [
+        "https://thinkingmachines.ai/news/inkling-2-mini/",
+        "https://huggingface.co/thinkingmachines/Inkling-2-Mini"
+      ]
     }
   ]
 }
