@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-21T00:00:00-05:00",
+  "updated": "2026-11-21T03:00:02-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16628,6 +16628,82 @@
           "u": "scientificamerican.com/riemann",
           "url": "https://scientificamerican.com/article/no-ai-didnt-just-solve-the-thorniest-problem-in-math",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-model-november",
+          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-november",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/best-coding-model",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/yearend-top-llm",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/qwen4-open-weights",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/sp-500-correction",
+          "url": "https://www.cnbc.com/2026/11/20/sp-500-correction-market-sell-off.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/kalshi-sp500-odds",
+          "url": "https://www.cnbc.com/2026/11/20/sp-500-8000-kalshi-odds-ai-selloff.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/anthropic-ai-trade",
+          "url": "https://www.cnbc.com/2026/11/19/anthropic-ipo-ai-stocks-selloff.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/nvidia-selloff",
+          "url": "https://www.axios.com/2026/11/20/anthropic-ipo-nvidia-ai-tech-selloff",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com/npjdigitalmed",
+          "url": "https://www.nature.com/articles/s41746-026-03475-8",
+          "q": "secondary"
+        },
+        {
+          "u": "aireleasetracker.com",
+          "url": "https://aireleasetracker.com/latest",
+          "q": "blog"
+        },
+        {
+          "u": "ai-tldr.dev",
+          "url": "https://ai-tldr.dev/",
+          "q": "blog"
+        },
+        {
+          "u": "fourweekmba.com/grok-4-8",
+          "url": "https://fourweekmba.com/ai-grok-4-8-in-rl-after-a-57-day-wait-as-xai-dumps-jax-for-cpp/",
+          "q": "blog"
         }
       ]
     }
