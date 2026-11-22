@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T03:00:04-05:00",
+  "updated": "2026-11-22T06:00:04-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16633,6 +16633,72 @@
         {
           "u": "thursdai.news/releases",
           "url": "https://thursdai.news/releases/2026-11",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "routine": "6AM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/best-coding-model",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/yearend-top-llm",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/qwen4-open-weights",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/anthropic-ipo-tech-selloff",
+          "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/chip-curbs-southeast-asia",
+          "url": "https://www.cnbc.com/2026/11/18/nvidia-us-ai-chip-export-controls-data-centers-.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/china-chip-sales-congress",
+          "url": "https://www.cnbc.com/2026/11/19/nvidia-amd-china-chip-sales-congress.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/nvidia-china-cloud",
+          "url": "https://www.cnbc.com/2026/11/17/nvidia-china-cloud-ai-chip-access.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/nvidia-commerce-china",
+          "url": "https://www.cnbc.com/2026/11/16/nvidia-commerce-china-lutnick.html",
+          "q": "secondary"
+        },
+        {
+          "u": "thursdai.news/releases",
+          "url": "https://thursdai.news/releases/2026-11",
+          "q": "blog"
+        },
+        {
+          "u": "fourweekmba.com/grok-4-8",
+          "url": "https://fourweekmba.com/ai-grok-4-8-in-rl-after-a-57-day-wait-as-xai-dumps-jax-for-cpp/",
           "q": "blog"
         }
       ]
