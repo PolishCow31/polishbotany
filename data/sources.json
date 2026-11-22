@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T12:00:05-05:00",
+  "updated": "2026-11-22T15:00:01-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16837,6 +16837,72 @@
           "u": "aireleasetracker.com",
           "url": "https://aireleasetracker.com/latest",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "routine": "3PM",
+      "sources": [
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-ai-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/claude-6",
+          "url": "https://polymarket.com/event/claude-6-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/qwen-4-open-weights",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/trump-data-centers",
+          "url": "https://www.cnbc.com/amp/2026/11/20/trump-data-centers-ai-companies-tax.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/sp-500-correction",
+          "url": "https://www.cnbc.com/amp/2026/11/20/sp-500-correction-market-sell-off.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/nvidia-losing-streak",
+          "url": "https://www.cnbc.com/2026/11/20/nvidias-7-week-losing-streak-is-longest-since-2008-financial-crisis.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/fed-warsh-ai",
+          "url": "https://www.cnbc.com/2026/11/16/fed-ai-task-force-kevin-warsh.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/ai-bubble",
+          "url": "https://www.axios.com/2026/11/16/nvidia-jensen-huang-ai-bubble",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com/metr-graph",
+          "url": "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/",
+          "q": "secondary"
+        },
+        {
+          "u": "tech-insider.org/qwen4",
+          "url": "https://tech-insider.org/qwen4-four-variants-no-confirmed-open-weights-alibaba-2026/",
+          "q": "blog"
         }
       ]
     }
