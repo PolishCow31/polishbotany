@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T06:00:04-05:00",
+  "updated": "2026-11-22T09:00:04-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16700,6 +16700,82 @@
           "u": "fourweekmba.com/grok-4-8",
           "url": "https://fourweekmba.com/ai-grok-4-8-in-rl-after-a-57-day-wait-as-xai-dumps-jax-for-cpp/",
           "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "routine": "9AM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-ai-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/claude-6",
+          "url": "https://polymarket.com/event/claude-6-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/best-coding-model",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/yearend-top-llm",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/qwen-4-open-weights",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets/agi-before-2028",
+          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
+          "q": "primary"
+        },
+        {
+          "u": "thursdai.news/releases/2026-11",
+          "url": "https://thursdai.news/releases/2026-11",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com/riemann-proofs",
+          "url": "https://www.nature.com/articles/d41586-026-03812-7",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com/ai-planet-hunting",
+          "url": "https://www.nature.com/articles/d41586-026-03790-w",
+          "q": "secondary"
+        },
+        {
+          "u": "science.org/riemann",
+          "url": "https://www.science.org/content/article/ai-may-have-solved-math-s-greatest-mystery-can-humans-understand-answer",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/anthropic-ipo-selloff",
+          "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/nvidia-huang-legal",
+          "url": "https://cnbc.com/2026/11/19/nvidia-jensen-huang-legal.html",
+          "q": "secondary"
         }
       ]
     }
