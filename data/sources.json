@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T09:00:04-05:00",
+  "updated": "2026-11-22T12:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16775,6 +16775,67 @@
         {
           "u": "cnbc.com/nvidia-huang-legal",
           "url": "https://cnbc.com/2026/11/19/nvidia-jensen-huang-legal.html",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "routine": "12PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/kxllm1",
+          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
+          "q": "primary"
+        },
+        {
+          "u": "kalshi.com/kxcodingmodel",
+          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/21/anthropic-ipo-tech-selloff.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/16/fed-ai-task-force-kevin-warsh.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/18/jpmorgan-hyundai-card-ai-agents-payments.html",
+          "q": "secondary"
+        },
+        {
+          "u": "omniakey.com",
+          "url": "https://omniakey.com/blog/grok-4-8-release-date",
+          "q": "blog"
+        },
+        {
+          "u": "en.wikipedia.org/Grok",
+          "url": "https://en.wikipedia.org/wiki/Grok_(chatbot)",
+          "q": "secondary"
+        },
+        {
+          "u": "aireleasetracker.com",
+          "url": "https://aireleasetracker.com/latest",
           "q": "secondary"
         }
       ]
