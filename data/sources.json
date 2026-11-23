@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T15:00:05-05:00",
+  "updated": "2026-11-23T18:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16847,6 +16847,67 @@
         {
           "u": "cnbc.com — Megaspeed probe",
           "url": "https://www.cnbc.com/2026/11/23/nvidia-megaspeed-chipmaker-us.html",
+          "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "routine": "6PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets (API)",
+          "url": "https://api.manifold.markets/v0/slug/will-the-arc-agi-grand-prize-be-cla-svtrhb42tx",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/inclusionAI",
+          "url": "https://huggingface.co/inclusionAI/LingSante-3.1-flash",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/StrandsAgents",
+          "url": "https://huggingface.co/StrandsAgents/strands-decider-31B-gemma4-v2-2611",
+          "q": "primary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/d41586-026-03812-7",
+          "q": "secondary"
+        },
+        {
+          "u": "technologyreview.com",
+          "url": "https://www.technologyreview.com/2026/11/23/1149548/the-download-ai-judgment-problem-carbon-removal-crop-threat/",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/23/nvidia-stock-jensen-huang-ai-trade.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/23/ai-spending-slowdown",
+          "q": "secondary"
+        },
+        {
+          "u": "itbrief.com.au",
+          "url": "https://itbrief.com.au/story/ant-open-sources-medical-ai-models-for-healthcare-use",
+          "q": "secondary"
+        },
+        {
+          "u": "thenewstack.io",
+          "url": "https://thenewstack.io/aws-strands-decider-v2",
+          "q": "secondary"
+        },
+        {
+          "u": "scientificamerican.com",
+          "url": "https://www.scientificamerican.com/article/the-ai-riemann-hypothesis-proof-is-almost-certainly-true-independent-mathematicians-attest/",
           "q": "secondary"
         }
       ]

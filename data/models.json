@@ -6806,6 +6806,57 @@
         "https://letsdatascience.com/news/zai-launches-glm-54-its-first-loop-transformer-flagship-7b50e4c7",
         "https://cellcog.ai/blog/glm-5-4/"
       ]
+    },
+    {
+      "name": "LingSante-3.1-flash",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-11-23",
+      "params": "560B / 25B active",
+      "context": "1M",
+      "modality": "Text in, text out",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Ant's open medical model for complex clinical work, built on Ling and already serving its Afu health app.",
+      "sources": [
+        "https://itbrief.com.au/story/ant-open-sources-medical-ai-models-for-healthcare-use",
+        "https://huggingface.co/inclusionAI/LingSante-3.1-flash"
+      ]
+    },
+    {
+      "name": "LingSante-3.1-air-VL",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-11-23",
+      "params": "124B / 5.5B active",
+      "context": "—",
+      "modality": "Text, image, video in",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Ant's lighter open medical model reads scans, skin photos, meals and medical reports for individuals and small clinics.",
+      "sources": [
+        "https://itbrief.com.au/story/ant-open-sources-medical-ai-models-for-healthcare-use",
+        "https://huggingface.co/inclusionAI/LingSante-3.1-air-VL"
+      ]
+    },
+    {
+      "name": "Strands Decider v2",
+      "lab": "Amazon (AWS Strands Labs)",
+      "released": "2026-11",
+      "params": "2B to 31B",
+      "context": "—",
+      "modality": "Text in, choice out",
+      "open": true,
+      "benchmarks": {},
+      "milestone": false,
+      "status": "live",
+      "notable": "Five Apache-licensed decision models on Gemma 4 that pick among preset options for AI agents.",
+      "sources": [
+        "https://thenewstack.io/aws-strands-decider-v2",
+        "https://huggingface.co/StrandsAgents/strands-decider-31B-gemma4-v2-2611"
+      ]
     }
   ]
 }
