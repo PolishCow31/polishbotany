@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T03:00:01-05:00",
+  "updated": "2026-11-23T09:00:05-05:00",
   "note": "Frontier release radar: expected upcoming models + market-implied odds, adversarially verified against real markets/announcements.",
   "items": [
     {
@@ -7,7 +7,7 @@
       "lab": "Anthropic",
       "expectedWindow": "by Dec 31",
       "expectedDate": "2026-12",
-      "prob": 84,
+      "prob": 85,
       "probAsOf": "2026-11-23",
       "frontier": true,
       "open": false,
@@ -63,7 +63,7 @@
       "lab": "Google",
       "expectedWindow": "by Nov 30",
       "expectedDate": "2026-11",
-      "prob": 3,
+      "prob": 2,
       "probAsOf": "2026-11-23",
       "frontier": false,
       "open": false,
@@ -113,6 +113,20 @@
       "late": false,
       "basis": "Qwen4-Max went generally available Nov 16 with closed weights; Alibaba says smaller open Qwen 4 models will ship soon, undated.",
       "source": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f"
+    },
+    {
+      "model": "GLM-5.4 weights",
+      "lab": "Zhipu",
+      "expectedWindow": "TBA",
+      "expectedDate": "2026-12",
+      "prob": -1,
+      "probAsOf": null,
+      "frontier": false,
+      "open": true,
+      "status": "confirmed",
+      "late": false,
+      "basis": "GLM-5.4 launched Nov 23 on Z.ai's Coding Plan; Z.ai plans to open the weights after safety hardening, undated.",
+      "source": "https://letsdatascience.com/news/zai-launches-glm-54-its-first-loop-transformer-flagship-7b50e4c7"
     },
     {
       "model": "FLUX 3 Image weights",
