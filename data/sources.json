@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T03:00:05-05:00",
+  "updated": "2026-11-25T06:00:01-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16542,6 +16542,67 @@
         },
         {
           "u": "datalearner.com Grok 4.8",
+          "url": "https://www.datalearner.com/en/ai-models/pretrained-models/grok-4-8",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "routine": "6AM",
+      "sources": [
+        {
+          "u": "huggingface.co/tencent/OmniEVIE-4B",
+          "url": "https://huggingface.co/tencent/OmniEVIE-4B",
+          "q": "primary"
+        },
+        {
+          "u": "github.com/Tencent/OmniEVIE",
+          "url": "https://github.com/Tencent/OmniEVIE",
+          "q": "primary"
+        },
+        {
+          "u": "gamma-api.polymarket.com",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "api.manifold.markets",
+          "url": "https://api.manifold.markets/v0/slug/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/Qwen",
+          "url": "https://huggingface.co/Qwen",
+          "q": "primary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/25/ai-debt-big-tech-spending-nvidia.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://cnbc.com/2026/11/24/trump-jensen-huang-nvidia.html",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s41467-026-78758-5",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/s43588-026-01094-7",
+          "q": "secondary"
+        },
+        {
+          "u": "datalearner.com",
           "url": "https://www.datalearner.com/en/ai-models/pretrained-models/grok-4-8",
           "q": "blog"
         }
