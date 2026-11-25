@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T00:00:00-05:00",
+  "updated": "2026-11-25T03:00:05-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16492,6 +16492,57 @@
         {
           "u": "llm-stats.com",
           "url": "https://llm-stats.com/llm-updates",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "routine": "3AM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets API",
+          "url": "https://api.manifold.markets/v0/slug/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/24/nvidia-stock-jensen-huang-return.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/24/nvidia-jensen-huang-politics-market.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://cnbc.com/2026/11/24/jensen-huang-nvidia-employee-meeting.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/24/anthropic-openai-unreleased-ai-safety-risks",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "blog"
+        },
+        {
+          "u": "llmgateway.io/timeline",
+          "url": "https://llmgateway.io/timeline",
+          "q": "blog"
+        },
+        {
+          "u": "datalearner.com Grok 4.8",
+          "url": "https://www.datalearner.com/en/ai-models/pretrained-models/grok-4-8",
           "q": "blog"
         }
       ]
