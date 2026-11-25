@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-25T09:00:03-05:00",
+  "updated": "2026-11-25T12:00:03-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16686,6 +16686,72 @@
           "u": "manifold.markets/qwen4",
           "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "routine": "12PM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/best-ai-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets (API)",
+          "url": "https://api.manifold.markets/v0/slug/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com/ai",
+          "url": "https://www.cnbc.com/2026/11/25/ai-debt-big-tech-spending-nvidia.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/anthropic-ipo",
+          "url": "https://www.cnbc.com/investingclub/2026/11/25/anthropics-stock-has-been-a-clunker-post-ipo-why-that-matters-for-the-ai-trade.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/kalshi-data-centers",
+          "url": "https://www.cnbc.com/2026/11/25/kalshi-traders-say-the-odds-of-states-imposing-data-center-moratoriums-is-more-likely-than-not.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com/stocks-moving",
+          "url": "https://www.cnbc.com/2026/11/25/stocks-moving-the-most-today-live-updates.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/bonds-ai",
+          "url": "https://www.axios.com/2026/11/25/bonds-nvidia-ai-stocks",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com/unreleased-models",
+          "url": "https://www.axios.com/2026/11/24/anthropic-openai-unreleased-ai-safety-risks",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "secondary"
+        },
+        {
+          "u": "datalearner.com/grok-4-8",
+          "url": "https://www.datalearner.com/en/ai-models/pretrained-models/grok-4-8",
+          "q": "blog"
         }
       ]
     }
