@@ -6857,6 +6857,24 @@
         "https://thenewstack.io/aws-strands-decider-v2",
         "https://huggingface.co/StrandsAgents/strands-decider-31B-gemma4-v2-2611"
       ]
+    },
+    {
+      "name": "Ling-3.2-air",
+      "lab": "Ant Group (inclusionAI)",
+      "released": "2026-11-23",
+      "params": "124B MoE, 5.5B active",
+      "context": "256K",
+      "modality": "text, image, video in",
+      "open": true,
+      "benchmarks": {
+        "Terminal-Bench 4.0": 27
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "Open-weight hybrid-linear MoE under MIT license, tuned for workflow automation and reasoning over professional documents.",
+      "sources": [
+        "https://huggingface.co/inclusionAI/Ling-3.2-air"
+      ]
     }
   ]
 }

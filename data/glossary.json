@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-24T18:00:04-05:00",
+  "updated": "2026-11-25T00:00:00-05:00",
   "note": "AI terms & acronyms for the Definitions search. Authored by category and adversarially fact-checked (skeptic pass corrected/flagged defs); the updater can add new terms.",
   "terms": [
     {
@@ -4630,6 +4630,17 @@
       "def": "A benchmark of real-world questions that require an agent to chain reasoning, web browsing, and tool use; questions are easy for humans but hard for current AI assistants.",
       "aka": [
         "General AI Assistants benchmark"
+      ]
+    },
+    {
+      "term": "Gated attention",
+      "acronym": "",
+      "category": "Model architecture",
+      "def": "An attention variant that multiplies each head's output by a learned, input-dependent sigmoid gate, damping uninformative heads and improving training stability and long-context behaviour.",
+      "aka": [
+        "attention output gate",
+        "gated softmax attention",
+        "head gating"
       ]
     },
     {

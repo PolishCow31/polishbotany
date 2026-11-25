@@ -1,535 +1,7 @@
 {
-  "updated": "2026-11-24T21:00:03-05:00",
+  "updated": "2026-11-25T00:00:00-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
-    {
-      "date": "2026-10-25",
-      "routine": "12AM",
-      "sources": [
-        {
-          "u": "polymarket.com/next-fable",
-          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/next-grok-4.8",
-          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/next-claude-opus",
-          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/gpt-astra-6.1",
-          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/grok-5",
-          "url": "https://polymarket.com/event/grok-5-released-byptptpt-20260710195520919",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/gemini-pro",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/gemini-flash",
-          "url": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-october",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/openai-agi-2027",
-          "url": "https://polymarket.com/event/openai-announces-it-has-achieved-agi-before-2027",
-          "q": "primary"
-        },
-        {
-          "u": "llmgateway.io/timeline",
-          "url": "https://llmgateway.io/timeline/2026",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com/openai-google-cloud",
-          "url": "https://www.cnbc.com/2026/10/21/openai-bring-its-ai-models-to-googles-cloud-expands-beyond-microsoft.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com/claude-duet",
-          "url": "https://www.cnbc.com/2026/10/21/anthropic-preview-of-claude-duet-personal-ai-agent-take-on-muse-dots.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com/trump-ai-buildout",
-          "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com/ai-funding-neoclouds",
-          "url": "https://www.axios.com/2026/10/21/ai-funding-neoclouds-debt",
-          "q": "secondary"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-25",
-      "routine": "3AM",
-      "sources": [
-        {
-          "u": "polymarket.com (gamma API)",
-          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com best model 2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "kalshi.com best coding model",
-          "url": "https://kalshi.com/markets/kxcodingmodel/best-ai-coding-model/kxcodingmodel-26dec",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets ARC-AGI-2",
-          "url": "https://manifold.markets/Terminator2/will-any-ai-model-score-above-95-on-C8Q2tNUhyI",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets AGI before 2028",
-          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
-          "q": "primary"
-        },
-        {
-          "u": "cnbc.com Nvidia financier",
-          "url": "https://www.cnbc.com/2026/10/24/nvidias-role-as-ai-financier-faces-first-big-test-as-neoclouds-take-market-hit.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com data-center voters",
-          "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com AI agents banks",
-          "url": "https://www.axios.com/2026/10/22/ai-agents-banks-unauthorized-accounts-access",
-          "q": "secondary"
-        },
-        {
-          "u": "borncity.com Mistral Large 4",
-          "url": "https://borncity.com/news/mistral-large-4-modellgewichte-sollen-am-27-oktober-2026-erscheinen/",
-          "q": "secondary"
-        },
-        {
-          "u": "pasqualepillitteri.it Mistral Large 4",
-          "url": "https://pasqualepillitteri.it/en/news/21196/mistral-large-4-launches-open-weights-late-october",
-          "q": "secondary"
-        },
-        {
-          "u": "fortune.com Anthropic trust",
-          "url": "https://fortune.com/2026/10/21/anthropic-adds-harvard-astrophysicist-to-the-trust-that-controls-its-board",
-          "q": "secondary"
-        },
-        {
-          "u": "emergent.sh Fable 5.5",
-          "url": "https://emergent.sh/news/claude-fable-5-5-release-date",
-          "q": "blog"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-25",
-      "routine": "6AM",
-      "sources": [
-        {
-          "u": "polymarket.com (gamma API)",
-          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/grok-5",
-          "url": "https://polymarket.com/event/grok-5-released-byptptpt-20260710195520919",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "llmgateway.io/timeline",
-          "url": "https://llmgateway.io/timeline",
-          "q": "secondary"
-        },
-        {
-          "u": "aiweekly.co/ai-news-today",
-          "url": "https://aiweekly.co/ai-news-today",
-          "q": "secondary"
-        },
-        {
-          "u": "mindstudio.ai/iquest-q1",
-          "url": "https://www.mindstudio.ai/blog/iquest-q1-benchmarks",
-          "q": "blog"
-        },
-        {
-          "u": "cnbc.com data-center survey",
-          "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com AI execs",
-          "url": "https://www.axios.com/2026/10/24/ai-ceos-washington-political-liability",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com ahead 2028",
-          "url": "https://www.axios.com/2026/10/24/axios-ahead-2028",
-          "q": "secondary"
-        },
-        {
-          "u": "orcarouter.ai Grok 5",
-          "url": "https://www.orcarouter.ai/blog/grok-5-release-date",
-          "q": "blog"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-25",
-      "routine": "9AM",
-      "sources": [
-        {
-          "u": "pricepertoken.com/news",
-          "url": "https://pricepertoken.com/news/model-releases",
-          "q": "secondary"
-        },
-        {
-          "u": "llmgateway.io/timeline",
-          "url": "https://llmgateway.io/timeline",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com",
-          "url": "https://www.cnbc.com/2026/10/24/nvidias-role-as-ai-financier-faces-first-big-test-as-neoclouds-take-market-hit.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com",
-          "url": "https://www.cnbc.com/amp/2026/10/24/ai-customer-service-jobs-work.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com",
-          "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-          "q": "secondary"
-        },
-        {
-          "u": "dev.to digest",
-          "url": "https://dev.to/hiroki-ii-ai/ai-daily-digest-october-24-2026-anthropic-opens-the-books-ai-finds-phps-oldest-bugs-europe-118c",
-          "q": "blog"
-        },
-        {
-          "u": "pasqualepillitteri.it",
-          "url": "https://pasqualepillitteri.it/en/news/21196/mistral-large-4-launches-open-weights-late-october",
-          "q": "blog"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/gpt-astra-6pt1-released-byptptpt",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/grok-5-released-byptptpt-20260710195520919",
-          "q": "secondary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-google-gemini-pro-model-released-byptptpt",
-          "q": "secondary"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-25",
-      "routine": "12PM",
-      "sources": [
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-gemini-flash-model-3pt9-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "kalshi.com",
-          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets",
-          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
-          "q": "primary"
-        },
-        {
-          "u": "aiweekly.co",
-          "url": "https://aiweekly.co/alerts/mistrals-1t-parameter-large-4-slated-for-october-31-drop",
-          "q": "secondary"
-        },
-        {
-          "u": "pricepertoken.com",
-          "url": "https://pricepertoken.com/news/model-releases",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com",
-          "url": "https://cnbc.com/2026/10/25/wonder-ipo-texas-automation.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com",
-          "url": "https://cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-          "q": "secondary"
-        },
-        {
-          "u": "orcarouter.ai",
-          "url": "https://www.orcarouter.ai/fr/blog/claude-fable-5-5-release-date",
-          "q": "blog"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-25",
-      "routine": "3PM",
-      "sources": [
-        {
-          "u": "gamma-api.polymarket.com",
-          "url": "https://gamma-api.polymarket.com/events?slug=next-fable-model-5pt2-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com/best-model-2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets/openai-resumed",
-          "url": "https://manifold.markets/JimMcMillan/will-openai-announce-it-has-resumed",
-          "q": "primary"
-        },
-        {
-          "u": "pricepertoken.com/model-releases",
-          "url": "https://pricepertoken.com/news/model-releases",
-          "q": "secondary"
-        },
-        {
-          "u": "llmgateway.io/timeline",
-          "url": "https://llmgateway.io/timeline",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com",
-          "url": "https://www.axios.com/2026/10/25/ai-cybersecurity-politics-risks-2028",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com",
-          "url": "https://www.cnbc.com/2026/10/24/biotech-stocks-drug-innovation-rally.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com/deepseek",
-          "url": "https://www.cnbc.com/2026/10/06/deepseek-funding-round.html",
-          "q": "secondary"
-        },
-        {
-          "u": "techcrunch.com/replit",
-          "url": "https://techcrunch.com/2026/10/20/replit-is-no-longer-working-with-anthropic-ceo-says/",
-          "q": "secondary"
-        },
-        {
-          "u": "emergent.sh/fable-5-5",
-          "url": "https://emergent.sh/news/claude-fable-5-5-release-date",
-          "q": "blog"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-25",
-      "routine": "6PM",
-      "sources": [
-        {
-          "u": "polymarket.com (gamma API)",
-          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com best model 2026",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com best model October",
-          "url": "https://polymarket.com/event/which-company-has-the-best-ai-model-end-of-october",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets ARC-AGI-2",
-          "url": "https://manifold.markets/Terminator2/will-any-ai-model-score-above-95-on-C8Q2tNUhyI",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets AGI before 2028",
-          "url": "https://manifold.markets/RemNi/will-we-get-agi-before-2028-ff560f9e9346",
-          "q": "primary"
-        },
-        {
-          "u": "testingcatalog.com Fable 5.5",
-          "url": "https://www.testingcatalog.com/anthropic-several-models-coming-fable-5-5-reaches-partners/",
-          "q": "secondary"
-        },
-        {
-          "u": "llmgateway.io timeline",
-          "url": "https://llmgateway.io/timeline/2026",
-          "q": "secondary"
-        },
-        {
-          "u": "cheatsheets.davidveksler.com release log",
-          "url": "https://cheatsheets.davidveksler.com/ai-model-release-log.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com voter backlash",
-          "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com Nvidia financier",
-          "url": "https://www.cnbc.com/2026/10/24/nvidias-role-as-ai-financier-faces-first-big-test-as-neoclouds-take-market-hit.html",
-          "q": "secondary"
-        },
-        {
-          "u": "technologyreview.com robotics",
-          "url": "https://www.technologyreview.com/2026/10/08/1145923/ai-breakthroughs-in-robotics-wont-change-your-life-any-time-soon/",
-          "q": "secondary"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-25",
-      "routine": "9PM",
-      "sources": [
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-fable-model-5pt2-released-byptptpt",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
-          "q": "primary"
-        },
-        {
-          "u": "polymarket.com",
-          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
-          "q": "primary"
-        },
-        {
-          "u": "kalshi.com",
-          "url": "https://kalshi.com/markets/kxllm1/yearend-top-llm/kxllm1-26dec31",
-          "q": "primary"
-        },
-        {
-          "u": "kalshi.com",
-          "url": "https://kalshi.com/markets/kxagico/will-any-company-achieve-agi-before-date/kxagico-comp",
-          "q": "primary"
-        },
-        {
-          "u": "manifold.markets",
-          "url": "https://manifold.markets/AlanTuring/will-the-arc-agi-grand-prize-be-cla-svtrhb42tx",
-          "q": "primary"
-        },
-        {
-          "u": "axios.com",
-          "url": "https://www.axios.com/2026/10/25/anthropic-claude-georgia-voter-data",
-          "q": "secondary"
-        },
-        {
-          "u": "axios.com",
-          "url": "https://www.axios.com/2026/10/25/ai-cybersecurity-politics-risks-2028",
-          "q": "secondary"
-        },
-        {
-          "u": "cnbc.com/ai",
-          "url": "https://www.cnbc.com/ai-artificial-intelligence/",
-          "q": "secondary"
-        },
-        {
-          "u": "pricepertoken.com",
-          "url": "https://pricepertoken.com/news/model-releases",
-          "q": "secondary"
-        },
-        {
-          "u": "llmgateway.io/timeline",
-          "url": "https://llmgateway.io/timeline",
-          "q": "secondary"
-        },
-        {
-          "u": "testingcatalog.com",
-          "url": "https://www.testingcatalog.com/anthropic-several-models-coming-fable-5-5-reaches-partners/",
-          "q": "blog"
-        },
-        {
-          "u": "letsdatascience.com",
-          "url": "https://letsdatascience.com/news/mistral-debuts-large-4-open-weight-model-preview-cbf9e0b5",
-          "q": "secondary"
-        }
-      ]
-    },
     {
       "date": "2026-10-26",
       "routine": "12AM",
@@ -16919,6 +16391,107 @@
         {
           "u": "tech-insider.org",
           "url": "https://tech-insider.org/qwen4-four-variants-no-confirmed-open-weights-alibaba-2026/",
+          "q": "blog"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-25",
+      "routine": "12AM",
+      "sources": [
+        {
+          "u": "huggingface.co/inclusionAI",
+          "url": "https://huggingface.co/inclusionAI/Ling-3.2-air",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/Qwen",
+          "url": "https://huggingface.co/Qwen",
+          "q": "primary"
+        },
+        {
+          "u": "huggingface.co/x-square-robot",
+          "url": "https://huggingface.co/x-square-robot",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com",
+          "url": "https://polymarket.com/event/claude-6-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/Terminator2/will-alibaba-publish-open-weights-f",
+          "q": "primary"
+        },
+        {
+          "u": "manifold.markets",
+          "url": "https://manifold.markets/AlanTuring/will-the-arc-agi-grand-prize-be-cla-svtrhb42tx",
+          "q": "primary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://cnbc.com/2026/11/24/meta-instagram-muse-ad-revenue.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://cnbc.com/2026/11/24/openai-bugging-aflozan-release-saudi.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/24/anthropic-stock-ipo-price.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/24/trump-cyber-leaders-ai-threats",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/d41586-026-03795-5",
+          "q": "secondary"
+        },
+        {
+          "u": "nature.com",
+          "url": "https://www.nature.com/articles/d41586-026-03788-4",
+          "q": "secondary"
+        },
+        {
+          "u": "aiweekly.co",
+          "url": "https://aiweekly.co/ai-news-today",
+          "q": "blog"
+        },
+        {
+          "u": "pricepertoken.com",
+          "url": "https://pricepertoken.com/news/model-releases",
+          "q": "blog"
+        },
+        {
+          "u": "aireleasetracker.com",
+          "url": "https://aireleasetracker.com/latest",
+          "q": "blog"
+        },
+        {
+          "u": "llm-stats.com",
+          "url": "https://llm-stats.com/llm-updates",
           "q": "blog"
         }
       ]
