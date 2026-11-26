@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-26T00:00:04-05:00",
+  "updated": "2026-11-26T09:01:30-05:00",
   "note": "Per-sweep source log. Each research run (8×/day, every 3h ET) appends the sources it consulted, organized newest-first as week > day > sweep slot. Sweeps older than 30 days are moved to data/sources-archive/YYYY-MM.json by scripts/merge.py.",
   "sweeps": [
     {
@@ -16474,6 +16474,62 @@
           "u": "cnbc.com",
           "url": "https://www.cnbc.com/2026/11/25/jensen-huang-nvidia-ai-talent-race.html",
           "q": "secondary"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-26",
+      "routine": "9AM",
+      "sources": [
+        {
+          "u": "polymarket.com (gamma API)",
+          "url": "https://gamma-api.polymarket.com/events?slug=next-grok-model-4pt8-released-by",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/next-claude-opus",
+          "url": "https://polymarket.com/event/next-claude-opus-released-byptptpt-20260923144500000",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/best-ai-model-2026",
+          "url": "https://polymarket.com/event/which-company-has-best-ai-model-end-of-2026",
+          "q": "primary"
+        },
+        {
+          "u": "polymarket.com/event/claude-6",
+          "url": "https://polymarket.com/event/claude-6-released-byptptpt",
+          "q": "primary"
+        },
+        {
+          "u": "technologyreview.com",
+          "url": "https://www.technologyreview.com/2026/11/26/1149934/the-download-better-bionic-hands-ai-natural-gas-boom",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/26/stock-markets-today-.html",
+          "q": "secondary"
+        },
+        {
+          "u": "cnbc.com",
+          "url": "https://www.cnbc.com/2026/11/25/openai-ipo-odds-2027-prediction-markets.html",
+          "q": "secondary"
+        },
+        {
+          "u": "axios.com",
+          "url": "https://www.axios.com/2026/11/26/ai-thanksgiving-meals-chefs",
+          "q": "secondary"
+        },
+        {
+          "u": "llm-stats.com/llm-updates",
+          "url": "https://llm-stats.com/llm-updates",
+          "q": "blog"
+        },
+        {
+          "u": "aireleasetracker.com",
+          "url": "https://aireleasetracker.com/latest",
+          "q": "blog"
         }
       ]
     }
