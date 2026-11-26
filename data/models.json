@@ -6892,6 +6892,26 @@
         "https://huggingface.co/tencent/OmniEVIE-4B",
         "https://github.com/Tencent/OmniEVIE"
       ]
+    },
+    {
+      "name": "Ternary Bonsai 2.5 27B",
+      "lab": "PrismML",
+      "released": "2026-11-24",
+      "params": "27B ternary",
+      "context": "—",
+      "modality": "Text, vision, tools",
+      "open": true,
+      "benchmarks": {
+        "SWE-bench Verified": 75.6,
+        "DeepSWE 1.1": 27
+      },
+      "milestone": false,
+      "status": "live",
+      "notable": "A 5.9 GB compressed Qwen3.8 27B that recovers most of the full model's agentic coding skill on a laptop or phone.",
+      "sources": [
+        "https://prismml.com/news/bonsai-2-5-27b",
+        "https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-GGUF"
+      ]
     }
   ]
 }
